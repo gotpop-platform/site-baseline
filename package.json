@@ -3,13 +3,16 @@
   "module": "src/ts/index.ts",
   "type": "module",
   "scripts": {
-    "start": "./node_modules/.bin/bun --hot src/ts/index.tsx"
+    "start": "./node_modules/.bin/bun --hot src/ts/server.tsx",
+    "dev": "./node_modules/.bin/bun --watch src/ts/index.tsx",
+    "browser-sync": "browser-sync start --server 'src' --files 'src/**/*.tsx'"
   },
   "peerDependencies": {
     "@types/bun": "latest",
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "browser-sync": "^3.0.2",
     "bun": "^1.0.23"
   }
 }
