@@ -5,6 +5,7 @@
         }
     ],
     "settings": {
-        "workbench.colorTheme": "Dark Purple Flat"
+        "workbench.colorTheme": "Github Purple",
+        "window.title": "${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}[Branch: master]"
     }
 }
