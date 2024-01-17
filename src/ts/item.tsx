@@ -18,8 +18,15 @@ declare global {
       </head>
       <body>
         <div>
-          <h1>Hello, World !!!!</h1>
+          <h1>Hello, World hello gggg</h1>
           <article>
+            <style>
+                {`
+                    h3 {
+                    color: red;
+                    }
+                `}
+            </style>
             <h3>Test v</h3>
           </article>
         </div>

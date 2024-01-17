@@ -3,16 +3,18 @@
   "module": "src/ts/index.ts",
   "type": "module",
   "scripts": {
+    "go": "npm-run-all --parallel dev browser-sync start",
     "start": "./node_modules/.bin/bun --hot src/ts/server.tsx",
     "dev": "./node_modules/.bin/bun --watch src/ts/index.tsx",
-    "browser-sync": "browser-sync start --server 'src' --files 'src/**/*.tsx'"
+    "browser-sync": "browser-sync start --server './' --files 'src/**/*.tsx'"
   },
   "peerDependencies": {
     "@types/bun": "latest",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "browser-sync": "^3.0.2"
   },
   "dependencies": {
-    "browser-sync": "^3.0.2",
-    "bun": "^1.0.23"
+    "bun": "^1.0.23",
+    "npm-run-all": "^4.1.5"
   }
 }

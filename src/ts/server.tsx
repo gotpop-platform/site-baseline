@@ -12,4 +12,4 @@ const server = Bun.serve({
   },
 })
 
-console.log(`Listening on http://localhost:${server.port} ...`)
+console.log(`\x1b[32m%s\x1b[0m`, `Listening on http://localhost:${server.port} ...`);
