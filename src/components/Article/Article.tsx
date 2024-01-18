@@ -6,7 +6,7 @@ type ArticleProps = { title: string; content: string }
 export const useName = import.meta.file.split(".").shift()?.toLowerCase()
 
 export const Article = ({ title, content }: ArticleProps) => {
-  const { css } = useCSS(import.meta)
+  const { css } = useCSS({ meta: import.meta })
   const path = "src/components/Article/ArticleClient.js"
 
   return (

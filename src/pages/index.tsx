@@ -1,17 +1,12 @@
+import { arr, title } from "@data/data"
+
 import { Article } from "@components/Article"
 import { h } from "../utils/jsxFactory"
 
-const title = "MiniMax About"
-const h1 = <h1>{title}</h1>
-const data = { title: "Test", content: "Testyyyyy2 333" }
-const arr = [
-  { title: "Test", content: "Testyyyyy2 333" },
-  { title: "Test", content: "Testyyyyy2 333" },
-]
-
+export const h1 = <h1>{title}</h1>
 const articles = arr.map((item) => Article(item))
 
-const aboutContent = (
+const indexContent = (
   <html lang="en">
     <head>
       <meta charset="UTF-8" />
@@ -27,4 +22,4 @@ const aboutContent = (
   </html>
 )
 
-export default aboutContent
+export default indexContent

@@ -1,16 +1,20 @@
-import { dirname } from "path"
-import { fileURLToPath } from "url"
-import { join } from "path"
 import { readFileSync } from "fs"
 
-export function useCSS(meta: any) {
-    const __filename = fileURLToPath(meta.url)
-    const __dirname = dirname(__filename)
+interface UseCSSOptions {
+    meta: ImportMeta,
+    global?: boolean
+}
 
-    const theFile = meta.file.split(".").shift()
-    console.log('theFile :', theFile);
+export function useCSS({ meta, global = false }: UseCSSOptions) {
+    const { file, dir } = meta
+    const theFile = file.split(".").shift()
+    const theRoot = process.cwd()
 
-    const css = readFileSync(join(__dirname, `./${theFile}.css`), "utf-8")
+    const thePath = global
+        ? `${theRoot}/src/styles/global.css`
+        : `${dir}/${theFile}.css`
+
+    const css = readFileSync(thePath, "utf-8")
 
     return {
         css

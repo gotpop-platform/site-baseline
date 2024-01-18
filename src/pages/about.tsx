@@ -1,40 +1,16 @@
-import "@styles/global.css"
+import { arr, title } from "@data/data"
 
 import { Article } from "@components/Article"
+import { Head } from "@components/Head/Head"
 import { h } from "@utils/jsxFactory"
 
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      [elemName: string]: any
-    }
-  }
-}
-
-const title = "MiniMax About"
-const h1 = <h1>{title}</h1>
-const data = { title: "Test", content: "Testyyyyy2 333" }
-const arr = [
-  { title: "Test", content: "Testyyyyy2 333" },
-  { title: "Test", content: "Testyyyyy2 333" },
-]
-
+export const h1 = <h1>{title}</h1>
 const articles = arr.map((item) => Article(item))
-
-// const { css } = useCSS(import.meta)
-
-// const liam = Bun.File("liam.jpg")
 
 const aboutContent = () => {
   return (
     <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{title}</title>
-        {/* <style>{css}</style> */}
-        <link rel="icon" href="favicon.png" />
-      </head>
+      {Head({ title })}
       <body>
         <div>
           {h1}
@@ -45,4 +21,4 @@ const aboutContent = () => {
   )
 }
 
-export default aboutContent()
+export default aboutContent
