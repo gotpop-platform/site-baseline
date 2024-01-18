@@ -17,6 +17,8 @@ const arr = [
   { title: "Test", content: "Testyyyyy2 333" },
 ]
 
+const articles = arr.map((item) => Article(item))
+
 export const content = (
   <html lang="en">
     <head>
@@ -27,17 +29,7 @@ export const content = (
     <body>
       <div>
         {h1}
-        <article>
-          <style>
-            {`
-                    h3 {
-                    color: red;
-                    }
-                `}
-          </style>
-          <h3>Test v</h3>
-        </article>
-        {Article(data)}
+        {articles}
       </div>
     </body>
   </html>
