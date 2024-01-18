@@ -1,11 +1,13 @@
 {
-    "folders": [
-        {
-            "path": ".."
-        }
-    ],
-    "settings": {
-        "workbench.colorTheme": "Github Purple",
-        "window.title": "${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}[Branch: master]"
+  "folders": [
+    {
+      "path": ".."
     }
+  ],
+  "settings": {
+    "workbench.colorTheme": "Github Purple",
+    "window.title": "${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}[Branch: master]",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
+  }
 }

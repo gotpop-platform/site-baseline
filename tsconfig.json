@@ -22,5 +22,11 @@
     "jsx": "react",
     "jsxFactory": "h",
     "jsxFragmentFactory": "Fragment",
+
+    /* Paths */
+    "baseUrl": ".", // This must be specified if "paths" is specified
+    "paths": {
+      "@components/*": ["src/components/*"] // Specifies an alias for the "src/components" directory
+    }
   }
 }
