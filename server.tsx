@@ -15,12 +15,14 @@ const server = Bun.serve({
     }
 
     const module = await import(route.filePath)
-    const response = await module.default
+    const response = await module.default()
 
-    return new Response(response(), {
+    return new Response(response, {
       headers: { "Content-Type": "text/html" },
     })
   },
 })
 
-console.log(`\x1b[32m%s\x1b[0m`, `Listening on http://localhost:${server.port} ...`)
+const style = `\x1b[32m%s\x1b[0m`
+const msg = `Listening on http://localhost:${server.port} ...`
+console.log(style, msg)
