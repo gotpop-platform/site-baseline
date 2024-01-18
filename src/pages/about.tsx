@@ -16,6 +16,8 @@ const articles = arr.map((item) => Article(item))
 
 // const { css } = useCSS(import.meta)
 
+// const liam = Bun.File("liam.jpg")
+
 const aboutContent = () => {
   return (
     <html lang="en">
