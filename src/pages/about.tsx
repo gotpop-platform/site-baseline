@@ -2,7 +2,6 @@ import "@styles/global.css"
 
 import { Article } from "@components/Article"
 import { h } from "@utils/jsxFactory"
-import { useCSS } from "@hooks/useCSS"
 
 declare global {
   namespace JSX {
