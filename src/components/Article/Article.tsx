@@ -10,7 +10,7 @@ export const Article = ({ title, content }: ArticleProps) => {
   const path = "src/components/Article/ArticleClient.js"
 
   return (
-    <article class-name={useName}>
+    <article class={useName}>
       <script src={path} type="module"></script>
       <style>{css}</style>
       <h2>{title}</h2>

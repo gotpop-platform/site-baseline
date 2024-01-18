@@ -1,3 +1,24 @@
-h1 {
-  background-color: yellow;
+.header {
+  display: flex;
+  padding: 4rem;
+  justify-content: space-between;
+  gap: 2rem;
+
+  nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
