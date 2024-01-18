@@ -1,7 +1,27 @@
+import { FileSystemRouter } from "bun"
+
+const router = new Bun.FileSystemRouter({
+  style: "nextjs",
+  dir: "./src/pages",
+  origin: "http://localhost:9000",
+  assetPrefix: "public/",
+})
+
 const server = Bun.serve({
   port: 9000,
-  fetch(req: Request) {
-    return new Response(Bun.file("index.html"), {
+  async fetch(request) {
+    const route = router.match(request)
+    // console.log("route :", router)
+
+    if (!route) {
+      return new Response("Not Found", { status: 404 })
+    }
+    console.log("route.filePath :", route)
+
+    const module = await import(route.filePath)
+    const response = await module.default
+
+    return new Response(response, {
       headers: { "Content-Type": "text/html" },
     })
   },
