@@ -1,5 +1,5 @@
 import { Article } from "@components/Article"
-import { h } from "./jsxFactory"
+import { h } from "../utils/jsxFactory"
 
 declare global {
   namespace JSX {

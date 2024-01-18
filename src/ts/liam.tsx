@@ -1,4 +1,4 @@
-import { h } from "./jsxFactory"
+import { h } from "../utils/jsxFactory"
 
 type LiamProps = { title: string; content: string }
 

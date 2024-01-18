@@ -1,24 +1,17 @@
-import { dirname } from "path"
-import { fileURLToPath } from "url"
-import { h } from "../../ts/jsxFactory"
-import { join } from "path"
-import { readFileSync } from "fs"
+import { h } from "@utils/jsxFactory"
+import { useCSS } from "src/hooks/useCSS"
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+type ArticleProps = { title: string; content: string }
 
-type LiamProps = { title: string; content: string }
+export const Article = ({ title, content }: ArticleProps) => {
+  const { css } = useCSS(import.meta)
 
-export const Article = (props: LiamProps) => {
-  const css = readFileSync(join(__dirname, "./Articles.css"), "utf-8")
-
-  const article = (
-    <article>
+  return (
+    <article class-name="liam">
+      <script src="./ArticleClient.ts" type="module"></script>
       <style>{css}</style>
-      <h2>{props.title}</h2>
-      <p>{props.content}</p>
+      <h2>{title}</h2>
+      <p>{content}</p>
     </article>
   )
-
-  return article
 }

@@ -26,7 +26,13 @@
     /* Paths */
     "baseUrl": ".", // This must be specified if "paths" is specified
     "paths": {
-      "@components/*": ["src/components/*"] // Specifies an alias for the "src/components" directory
+      "@components/*": ["src/components/*"],
+      "@utils/*": ["src/utils/*"],
+      "@styles/*": ["src/styles/*"],
+      "@assets/*": ["src/assets/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@pages/*": ["src/pages/*"],
+      "@types/*": ["src/types/*"]
     }
   }
 }
