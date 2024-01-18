@@ -1,8 +1,16 @@
 import "@styles/global.css"
 
 import { Article } from "@components/Article"
-import { h } from "../utils/jsxFactory"
+import { h } from "@utils/jsxFactory"
 import { useCSS } from "@hooks/useCSS"
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      [elemName: string]: any
+    }
+  }
+}
 
 const title = "MiniMax About"
 const h1 = <h1>{title}</h1>
