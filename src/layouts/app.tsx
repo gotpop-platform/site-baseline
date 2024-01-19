@@ -1,18 +1,21 @@
-import { Head } from "@components/Head/Head"
+import Head from "@components/Head"
+import Header from "@components/Header"
 import h from "@utils/jsxFactory"
 
 interface AppProps {
-  children?: any
+  children?: string | JSX.Element | JSX.Element[]
+  title: string
 }
 
-const title = "My Title"
-
-const App = ({ children }: AppProps) => {
+const App = ({ title, children }: AppProps) => {
   return (
     <html lang="en">
-      {Head({ title })}
+      <Head title={title} />
       <body class="body">
-        <div>{children}</div>
+        <div class="site">
+          <Header />
+          {children}
+        </div>
       </body>
     </html>
   )

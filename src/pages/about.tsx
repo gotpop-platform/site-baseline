@@ -1,8 +1,7 @@
 import { arr, title } from "@data/data"
 
+import App from "src/layouts/app"
 import Article from "@components/Article"
-import Head from "@components/Head"
-import Header from "@components/Header"
 import Main from "@components/Main"
 import h from "@utils/jsxFactory"
 
@@ -11,18 +10,12 @@ const articles = arr.map((item) => Article(item))
 
 const aboutContent = () => {
   return (
-    <html lang="en">
-      <Head title="About" />
-      <body>
-        <div class="site">
-          <Header />
-          <Main>
-            {h1}
-            {articles}
-          </Main>
-        </div>
-      </body>
-    </html>
+    <App title="Home">
+      <Main>
+        {h1}
+        {articles}
+      </Main>
+    </App>
   )
 }
 

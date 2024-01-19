@@ -1,8 +1,16 @@
 function h(type: string | Function, props = {}, ...children: string[]) {
+
+
+  console.log('props :', props);
+
   if (typeof type === 'function') {
+
     const childArr = [...children].flat(Infinity).join('')
 
-    return type({ children: childArr })
+    return type({
+      ...props,
+      children: childArr
+    })
   } else {
     const mapProps = Object.entries(props || {})
       .map(([key, value]) => `${key}="${value}"`)
