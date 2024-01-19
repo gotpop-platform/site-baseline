@@ -3,7 +3,8 @@
 	"module": "src/ts/index.ts",
 	"type": "module",
 	"scripts": {
-		"start": "./node_modules/.bin/bun --hot server.tsx"
+		"start": "./node_modules/.bin/bun --hot server.tsx",
+		"build:client": "./node_modules/.bin/bun build src/**/*.client.ts"
 	},
 	"peerDependencies": {
 		"@types/bun": "latest",

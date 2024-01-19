@@ -6,7 +6,7 @@ const router = new Bun.FileSystemRouter({
 })
 
 const build = await Bun.build({
-  entrypoints: ["./index.tsx"],
+  entrypoints: ["./src/pages/index.tsx"],
   outdir: "./out",
 })
 
