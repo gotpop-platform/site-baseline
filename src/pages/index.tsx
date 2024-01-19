@@ -2,6 +2,7 @@ import { arr, title } from "@data/data"
 
 import App from "src/layouts/app"
 import Article from "@components/Article"
+import Button from "@components/Button"
 import Main from "@components/Main"
 import h from "@utils/jsxFactory"
 
@@ -13,6 +14,7 @@ const indexContent = () => (
     <Main>
       {h1}
       {articles}
+      <Button>Click me</Button>
     </Main>
   </App>
 )
