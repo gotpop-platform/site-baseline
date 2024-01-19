@@ -1,13 +1,11 @@
-import { Glob } from "bun"
+import { Glob, type BuildArtifact } from "bun"
 
 async function liam() {
   const glob = new Glob("**/*.client.ts")
-  console.log("glob :", glob.scan("."))
 
   let arr = []
-  // Scans the current working directory and each of its sub-directories recursively
   for await (const file of glob.scan(".")) {
-    console.log(file)
+    console.log(file, glob.scan("."))
     arr.push(file)
   }
 
@@ -18,8 +16,19 @@ async function liam() {
 
   const style = `\x1b[32m%s\x1b[0m`
   const error = `\x1b[31m%s\x1b[0m`
+  const orange = `\x1b[33m%s\x1b[0m`
+  const purple = `\x1b[35m%s\x1b[0m`
 
   if (build.success) {
+    // console.log("build.outputs :", build.outputs)
+
+    const root = process.cwd().toString()
+
+    for await (const output of build.outputs) {
+      const liam = output.path.replace(root, "")
+
+      console.log(purple, output.hash, orange, liam)
+    }
     console.log(style, "Build succeeded")
   } else {
     console.log(error, "Build failed")
