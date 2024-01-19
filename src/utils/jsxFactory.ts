@@ -1,10 +1,5 @@
 function h(type: string | Function, props = {}, ...children: string[]) {
-
-
-  console.log('props :', props);
-
   if (typeof type === 'function') {
-
     const childArr = [...children].flat(Infinity).join('')
 
     return type({

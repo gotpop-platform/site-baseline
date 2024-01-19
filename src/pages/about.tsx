@@ -6,7 +6,7 @@ import Main from "@components/Main"
 import h from "@utils/jsxFactory"
 
 export const h1 = <h1>{title}</h1>
-const articles = arr.map((item) => Article(item))
+const articles = arr.map((item) => <Article {...item} />)
 
 const aboutContent = () => {
   return (
