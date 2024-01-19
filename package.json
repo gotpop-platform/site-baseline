@@ -4,7 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"start": "./node_modules/.bin/bun --hot server.tsx",
-		"build:client": "./node_modules/.bin/bun build src/**/*.client.ts"
+		"make": "bun build.tsx"
 	},
 	"peerDependencies": {
 		"@types/bun": "latest",

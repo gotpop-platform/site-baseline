@@ -12,7 +12,7 @@ const Button = ({ title, content }: ButtonProps) => {
   // const path = "src/components/Button/ButtonClient.js"
 
   console.log(
-    "GetColocatedJS :",
+    "GetColocatedJS! :",
     GetColocatedJS.text().then((text) => console.log(text))
   )
 
