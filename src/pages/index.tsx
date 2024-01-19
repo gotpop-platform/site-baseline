@@ -8,15 +8,13 @@ import h from "@utils/jsxFactory"
 export const h1 = <h1>{title}</h1>
 const articles = arr.map((item) => <Article {...item} />)
 
-const indexContent = () => {
-  return (
-    <App title="Home">
-      <Main>
-        {h1}
-        {articles}
-      </Main>
-    </App>
-  )
-}
+const indexContent = () => (
+  <App title="Home">
+    <Main>
+      {h1}
+      {articles}
+    </Main>
+  </App>
+)
 
 export default indexContent

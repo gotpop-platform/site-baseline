@@ -8,15 +8,13 @@ import h from "@utils/jsxFactory"
 export const h1 = <h1>{title}</h1>
 const articles = arr.map((item) => <Article {...item} />)
 
-const aboutContent = () => {
-  return (
-    <App title="Home">
-      <Main>
-        {h1}
-        {articles}
-      </Main>
-    </App>
-  )
-}
+const aboutContent = () => (
+  <App title="About">
+    <Main>
+      {h1}
+      {articles}
+    </Main>
+  </App>
+)
 
 export default aboutContent
