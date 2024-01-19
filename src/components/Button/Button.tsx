@@ -5,16 +5,9 @@ type ButtonProps = { title?: string; content?: string }
 
 export const useName = import.meta.file.split(".").shift()?.toLowerCase()
 
-const GetColocatedJS = Bun.file(import.meta.dir + "/ButtonClient.ts")
-
 const Button = ({ title, content }: ButtonProps) => {
   const { css } = useCSS({ meta: import.meta })
   // const path = "src/components/Button/ButtonClient.js"
-
-  console.log(
-    "GetColocatedJS! :",
-    GetColocatedJS.text().then((text) => console.log(text))
-  )
 
   return (
     <button class={useName}>

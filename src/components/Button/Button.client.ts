@@ -1,3 +1,3 @@
-alert("yo")
+// alert("yo")
 
 console.log(" hey:")
