@@ -1,11 +1,11 @@
-import { h } from "@utils/jsxFactory"
+import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
 type HeaderProps = { title: string; content: string }
 
 export const useName = import.meta.file.split(".").shift()?.toLowerCase()
 
-export const Header = () => {
+const Header = () => {
   const { css } = useCSS({ meta: import.meta })
   // const path = "src/components/Header/HeaderClient.js"
 
@@ -23,3 +23,5 @@ export const Header = () => {
     </header>
   )
 }
+
+export default Header

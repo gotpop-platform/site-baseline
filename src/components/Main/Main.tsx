@@ -1,11 +1,8 @@
-import { h } from "@utils/jsxFactory"
+import h from "@utils/jsxFactory"
 
 interface MainProps {
   children?: any
-  el: string
 }
-
-const title = "My Title"
 
 const Main = ({ children }: MainProps) => {
   return (

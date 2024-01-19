@@ -1,25 +1,17 @@
-export function h(type: any, props = {}, ...children: any[]) {
-  console.log('type :', type, typeof type);
-
-  // if (typeof type === 'function')
-
-  let renderType = '';
-
+function h(type: string | Function, props = {}, ...children: string[]) {
   if (typeof type === 'function') {
-    renderType = 'main';
+    const childArr = [...children].flat(Infinity).join('')
 
-    const getContent = type({ children: children })
-    console.log('getContent :', getContent);
-
-    return getContent;
+    return type({ children: childArr })
   } else {
-    renderType = type;
-
-    let element = `<${renderType} ${Object.entries(props || {})
+    const mapProps = Object.entries(props || {})
       .map(([key, value]) => `${key}="${value}"`)
-      .join(' ')}>${children.join('')}</${renderType}>`;
+      .join(' ')
 
-    return element;
+    let element = `<${type} ${mapProps}>${children.join('')}</${type}>`
+
+    return element
   }
 }
 
+export default h

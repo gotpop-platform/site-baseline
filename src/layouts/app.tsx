@@ -1,5 +1,5 @@
 import { Head } from "@components/Head/Head"
-import { h } from "@utils/jsxFactory"
+import h from "@utils/jsxFactory"
 
 interface AppProps {
   children?: any

@@ -1,7 +1,7 @@
-import { h } from "@utils/jsxFactory"
+import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
-export const Head = ({ title }: { title: string }) => {
+const Head = ({ title }: { title: string }) => {
   const { css } = useCSS({ meta: import.meta, global: true })
 
   return (
@@ -14,3 +14,5 @@ export const Head = ({ title }: { title: string }) => {
     </head>
   )
 }
+
+export default Head
