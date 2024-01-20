@@ -2,7 +2,7 @@ import { colour } from "./logging.style";
 
 const { red, underscore } = colour
 
-const error = (msg: string, error: unknown) => console.error(red, msg, error)
+const error = (msg: string, error?: unknown) => console.error(red, msg, error)
 
 const info = (msg: string) => console.info(msg)
 

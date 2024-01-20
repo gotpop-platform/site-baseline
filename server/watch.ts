@@ -1,3 +1,5 @@
+import { build } from "bun"
+import buildClientJSFiles from "./build"
 import { watch } from "fs"
 
 const url = process.cwd() + "/src"
@@ -6,6 +8,7 @@ const watcher = watch(
     url,
     { recursive: true },
     (event, filename) => {
+        buildClientJSFiles()
         console.log(`Detected ${event} in ${filename}`)
     }
 )
