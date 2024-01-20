@@ -7,8 +7,10 @@ import { log } from "./logging"
 const glob = new Glob("**/*.client.ts")
 let watchers: FSWatcher[] = []
 
+log.info(`Watching client files:
+`)
 for await (const file of glob.scan(".")) {
-  console.log("Watching:", file)
+  log.watching(file)
 
   const watcher = watch(file, (event, filename) => {
     if (event !== "change") return
@@ -20,9 +22,12 @@ for await (const file of glob.scan(".")) {
 
   watchers.push(watcher)
 }
+log.info(`
+Press Ctrl+C to stop
+`)
 
 process.on("SIGINT", () => {
-  console.log("Closing watchers...")
+  log.closing("Server stopped")
 
   for (const watcher of watchers) {
     watcher.close()
