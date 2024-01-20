@@ -7,9 +7,8 @@ const buildClientJSFiles = async () => {
   let arr = []
 
   for await (const file of glob.scan(".")) {
-    console.log("file :", file)
     const parentDir = path.dirname(file)
-    console.log("parent directory :", parentDir)
+
     arr.push(file)
 
     const build = await Bun.build({
