@@ -176,3 +176,7 @@ dist
 
 # Node modules
 node_modules
+
+# Generated files
+*.client.js
+
