@@ -15,6 +15,9 @@ const buildClientJSFiles = async () => {
     const build = await Bun.build({
       entrypoints: [file],
       outdir: parentDir,
+      target: "browser",
+      format: "esm",
+      minify: true,
     })
 
     if (build.success) {
