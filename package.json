@@ -1,9 +1,9 @@
 {
 	"name": "minimax",
-	"module": "src/ts/index.ts",
+	"module": "server/index.ts",
 	"type": "module",
 	"scripts": {
-		"dev": "bun --hot server.tsx"
+		"dev": "bun --hot server/index.ts"
 	},
 	"peerDependencies": {
 		"@types/bun": "latest",
