@@ -1,20 +1,33 @@
-import { build } from "bun"
+import { Glob } from "bun"
 import buildClientJSFiles from "./build"
+import { log } from "./logging"
 import { watch } from "fs"
 
-const url = process.cwd() + "/src"
+const glob = new Glob("**/*.client.ts")
 
-const watcher = watch(
-    url,
-    { recursive: true },
-    (event, filename) => {
-        buildClientJSFiles()
-        console.log(`Detected ${event} in ${filename}`)
-    }
-)
+for await (const file of glob.scan(".")) {
+    console.log('Watching:', file);
+    watch(file, (event, filename) => {
+        if (event === 'change') {
+            log.updated(`${filename}: updated`);
+            buildClientJSFiles();
+        }
+    });
+}
+
+
+// const url = process.cwd() + "/src"
+
+// const watcher = watch(
+//     url,
+//     { recursive: true },
+//     (event, filename) => {
+//         // buildClientJSFiles()
+//         log.updated(`${filename}: updated`)
+//     }
+// )
 
 process.on("SIGINT", () => {
-    // close watcher when Ctrl-C is pressed
     console.log(" Closing watcher...")
     watcher.close()
 
