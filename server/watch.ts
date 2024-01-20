@@ -14,6 +14,7 @@ for await (const file of glob.scan(".")) {
     if (event !== "change") return
 
     log.updated(`${filename}: updated`)
+
     buildClientJSFiles()
   })
 
