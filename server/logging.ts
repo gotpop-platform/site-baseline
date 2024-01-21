@@ -1,39 +1,53 @@
 import { colour, emoji } from "./logging.style"
 
-const error = (msg: string, error?: unknown) =>
-  console.error(colour.red, msg, error)
-
-const closing = (msg: string) => {
-  let log = `\n${colour.dim}${msg}${colour.dim}${colour.red}  `
-  log += `${emoji.cross}${colour.reset}\n`
-
-  console.error(log)
-}
+const { red, dim, reset, green, bright, grey, italic, underscore } = colour
 
 const info = (msg: string) => console.info(msg)
-
 const warn = (msg: string) => console.warn(msg)
+const success = (msg: string) => console.log(green + msg)
 
-const success = (msg: string) => console.log(colour.green, msg)
+const error = (msg: string, error?: unknown) => {
+  console.error(red + msg + error)
+}
 
 const listening = (msg1: string, msg2: string) => {
-  let log = `${colour.green}${colour.italic}${msg1}${colour.reset}\n`
-  log += `${colour.underscore}${msg2}${colour.reset} ${emoji.checkMark}\n`
+  let log = "\n" + green + italic + msg1 + reset + "\n"
+  log += underscore + msg2 + reset + " " + emoji.checkMark + "\n"
+
+  console.log(log)
+}
+
+const watchStart = () => {
+  const log = bright + "Watching client files:\n" + reset
 
   console.log(log)
 }
 
 const watching = (filePath: string) => {
   const repPath = filePath.replace("src/components/", "")
-  let log = `${colour.grey}${emoji.watch} `
-  log += `${colour.reset}${colour.grey}${repPath}${colour.reset}`
+  let log = grey + emoji.watch
+  log += reset + grey + repPath + reset
+
+  console.log(log)
+}
+
+const watchEnd = () => {
+  const log = bright + "\nPress Ctrl+C to stop\n" + reset
 
   console.log(log)
 }
 
 const updated = (msg: string) => {
   const theMsg = msg.replace("components/", "")
-  console.log(colour.grey, theMsg, emoji.checkMark)
+
+  console.log(grey + theMsg + emoji.checkMark)
+}
+
+const closing = (msg: string) => {
+  let log = "\n" + dim + msg + dim + red + "  "
+  log += emoji.cross + reset + "\n"
+
+  console.error(log)
 }
 
 const log = {
@@ -45,6 +59,8 @@ const log = {
   updated,
   warn,
   watching,
+  watchStart,
+  watchEnd,
 }
 
 export { log }

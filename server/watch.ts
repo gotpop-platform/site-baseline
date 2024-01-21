@@ -1,14 +1,13 @@
-import type { FSWatcher } from "fs"
 import { Glob } from "bun"
+import type { FSWatcher } from "fs"
+import { watch } from "fs"
 import buildClientJSFiles from "./build"
 import { log } from "./logging"
-import { watch } from "fs"
 
 const glob = new Glob("**/*.client.ts")
 let watchers: FSWatcher[] = []
 
-log.info(`Watching client files:
-`)
+log.watchStart()
 for await (const filePath of glob.scan(".")) {
   log.watching(filePath)
 
@@ -20,9 +19,7 @@ for await (const filePath of glob.scan(".")) {
 
   watchers.push(watcher)
 }
-log.info(`
-Press Ctrl+C to stop
-`)
+log.watchEnd()
 
 process.on("SIGINT", () => {
   log.closing("Server stopped")
