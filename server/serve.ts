@@ -15,6 +15,8 @@ try {
 
         if (file) {
           return new Response(file)
+        } else {
+          return new Response("Not Found", { status: 404 })
         }
       }
 
