@@ -3,7 +3,7 @@
 	"module": "server/index.ts",
 	"type": "module",
 	"scripts": {
-		"dev": "bun --hot server/index.ts"
+		"dev": "bun --watch server/index.ts"
 	},
 	"peerDependencies": {
 		"@types/bun": "latest",

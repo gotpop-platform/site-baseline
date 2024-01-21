@@ -1,15 +1,12 @@
 import { Glob } from "bun"
-import { log } from "./logging"
 import path from "path"
 
 const buildClientJSFiles = async () => {
   const glob = new Glob("**/*.client.ts")
-  let arr = []
+  let arr = new Map()
 
   for await (const file of glob.scan(".")) {
     const parentDir = path.dirname(file)
-
-    arr.push(file)
 
     const build = await Bun.build({
       entrypoints: [file],
@@ -19,25 +16,15 @@ const buildClientJSFiles = async () => {
       minify: true,
     })
 
-    if (build.success) {
-      const root = process.cwd().toString()
+    for (const output of build.outputs) {
+      const rootDir = path.dirname(output.path)
+      const thePath = output.path.replace(rootDir, "")
 
-      for await (const output of build.outputs) {
-        const thePath = output.path.replace(root + "/dist", "")
-
-        const tableData = {
-          hash: output.hash,
-          output: thePath,
-        }
-
-        console.table(tableData)
-      }
-
-      log.success("Build successful")
-    } else {
-      log.error("Build failed")
+      arr.set(thePath, output.hash)
     }
   }
+
+  console.table(arr)
 }
 
 export default buildClientJSFiles

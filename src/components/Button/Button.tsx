@@ -12,7 +12,7 @@ const Button = ({ title, content }: ButtonProps) => {
   return (
     <button class={useName}>
       {content}
-      <script src={path} type="module"></script>
+      {/* <script src={path} type="module"></script> */}
       <style>{css}</style>
     </button>
   )
