@@ -8,6 +8,7 @@ const glob = new Glob("**/*.client.ts")
 let watchers: FSWatcher[] = []
 
 log.watchStart()
+
 for await (const filePath of glob.scan(".")) {
   log.watching(filePath)
 
@@ -19,6 +20,7 @@ for await (const filePath of glob.scan(".")) {
 
   watchers.push(watcher)
 }
+
 log.watchEnd()
 
 process.on("SIGINT", () => {

@@ -3,7 +3,9 @@
 	"module": "server/index.ts",
 	"type": "module",
 	"scripts": {
-		"dev": "bun server/index.ts"
+		"client": "bun server/watch.ts",
+		"dev": "bun --watch server/serve.ts",
+		"start": "bun client & bun dev"
 	},
 	"peerDependencies": {
 		"@types/bun": "latest",
