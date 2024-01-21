@@ -1,3 +1,3 @@
-// alert("yo")
-
-console.log(" hey:")
+export const sillyMan = () => {
+  console.log("Silly man")
+}

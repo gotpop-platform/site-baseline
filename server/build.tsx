@@ -1,30 +1,40 @@
-import { Glob } from "bun"
-import path from "path"
+import type { BuildConfig } from "bun"
 
-const buildClientJSFiles = async () => {
-  const glob = new Glob("**/*.client.ts")
-  let arr = new Map()
+const buildClientJSFiles = async (
+  filePath: string,
+  filename: string | null
+) => {
+  const url = new URL(filePath, import.meta.url)
+  let outDir = "./public"
 
-  for await (const file of glob.scan(".")) {
-    const parentDir = path.dirname(file)
-
-    const build = await Bun.build({
-      entrypoints: [file],
-      outdir: parentDir,
-      target: "browser",
-      format: "esm",
-      minify: true,
-    })
-
-    for (const output of build.outputs) {
-      const rootDir = path.dirname(output.path)
-      const thePath = output.path.replace(rootDir, "")
-
-      arr.set(thePath, output.hash)
-    }
+  if (url.pathname.endsWith(".ts")) {
+    outDir = "./public/assets/js"
   }
 
-  console.table(arr)
+  const buildConfig: BuildConfig = {
+    entrypoints: [filePath],
+    outdir: outDir,
+    target: "browser",
+    format: "esm",
+    minify: true,
+  }
+
+  const build = await Bun.build(buildConfig)
+  const arr = new Map()
+
+  for (const output of build.outputs) {
+    const rootDir = process.cwd() + "/public/assets"
+    const thePath = output.path.replace(rootDir, "")
+
+    arr.set(thePath, output.hash)
+  }
+
+  const tableData = Array.from(arr, ([key, value]) => ({
+    Path: key,
+    Hash: value,
+  }))
+
+  console.table(tableData)
 }
 
 export default buildClientJSFiles

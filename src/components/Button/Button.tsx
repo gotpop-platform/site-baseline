@@ -7,12 +7,12 @@ export const useName = import.meta.file.split(".").shift()?.toLowerCase()
 
 const Button = ({ title, content }: ButtonProps) => {
   const { css } = useCSS({ meta: import.meta })
-  const path = "src/components/Button/ButtonClient.js"
+  const path = "assets/js/Button.client.js"
 
   return (
     <button class={useName}>
       {content}
-      {/* <script src={path} type="module"></script> */}
+      <script src={path} type="module"></script>
       <style>{css}</style>
     </button>
   )

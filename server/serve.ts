@@ -9,12 +9,13 @@ try {
     async fetch(request) {
       const url = new URL(request.url)
 
-      // If the URL starts with /public, serve static files from the public directory
-      if (url.pathname.startsWith("/public")) {
-        const path = `.${url.pathname}`
-        const file = await Bun.file(path)
+      if (url.pathname.startsWith("/assets")) {
+        const pathRenamedToPublic = `./public${url.pathname}`
+        const file = await Bun.file(pathRenamedToPublic)
 
-        return new Response(file)
+        if (file) {
+          return new Response(file)
+        }
       }
 
       const route = router.match(request)

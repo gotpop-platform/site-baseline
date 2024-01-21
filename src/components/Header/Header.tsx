@@ -7,11 +7,11 @@ export const useName = import.meta.file.split(".").shift()?.toLowerCase()
 
 const Header = () => {
   const { css } = useCSS({ meta: import.meta })
-  // const path = "src/components/Header/HeaderClient.js"
+  const path = "assets/js/Header.client.js"
 
   return (
     <header class={useName}>
-      {/* <script src={path} type="module"></script> */}
+      <script src={path} type="module"></script>
       <style>{css}</style>
       <div>
         <h1>Logo</h1>

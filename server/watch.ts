@@ -1,23 +1,21 @@
-import { Glob } from "bun"
 import type { FSWatcher } from "fs"
-import { watch } from "fs"
+import { Glob } from "bun"
 import buildClientJSFiles from "./build"
 import { log } from "./logging"
+import { watch } from "fs"
 
 const glob = new Glob("**/*.client.ts")
 let watchers: FSWatcher[] = []
 
 log.info(`Watching client files:
 `)
-for await (const file of glob.scan(".")) {
-  log.watching(file)
+for await (const filePath of glob.scan(".")) {
+  log.watching(filePath)
 
-  const watcher = watch(file, (event, filename) => {
+  const watcher = watch(filePath, (event, filename) => {
     if (event !== "change") return
 
-    // log.updated(`${filename}: updated`)
-
-    buildClientJSFiles()
+    buildClientJSFiles(filePath, filename)
   })
 
   watchers.push(watcher)
