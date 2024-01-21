@@ -13,6 +13,7 @@ try {
       if (url.pathname.startsWith("/public")) {
         const path = `.${url.pathname}`
         const file = await Bun.file(path)
+
         return new Response(file)
       }
 
