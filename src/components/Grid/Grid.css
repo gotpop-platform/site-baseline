@@ -1,9 +1,8 @@
-button {
-  background-color: red;
-  font-size: 2rem;
-  padding: 2rem;
-  margin: 2rem;
-  border-radius: 0.5rem;
-  border: none;
-  color: white;
+@scope {
+  :scope {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+    grid-auto-rows: minmax(100px, auto);
+  }
 }

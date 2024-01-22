@@ -5,7 +5,7 @@
     }
   ],
   "settings": {
-    "workbench.colorTheme": "Github Purple",
+    "workbench.colorTheme": "Default Dark Modern",
     "window.title": "${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}[Branch: master]",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true

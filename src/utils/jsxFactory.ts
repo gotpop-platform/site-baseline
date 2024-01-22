@@ -1,9 +1,6 @@
 function h(type: string | Function, props = {}, ...children: string[]) {
   if (typeof type === "function") {
     const childArr = [...children].flat(Infinity).join("")
-    console.log("childArr :", childArr)
-
-    // if (!childArr) return
 
     return type({
       ...props,

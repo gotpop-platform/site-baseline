@@ -1,5 +1,5 @@
 @scope {
-  .block {
+  :scope {
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -9,9 +9,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
+    align-items: center;
 
-  .block > * {
-    max-width: 800px;
+    > * {
+      max-width: 800px;
+    }
   }
 }

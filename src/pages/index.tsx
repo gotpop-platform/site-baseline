@@ -1,23 +1,21 @@
 import { arr, title } from "@data/data"
 
+import App from "@layouts/app"
 import Article from "@components/Article"
 import Block from "@components/Block"
-import Button from "@components/Button"
+import Grid from "@components/Grid"
 import h from "@utils/jsxFactory"
-import App from "src/layouts/app"
 
-export const h1 = <h1>{title}</h1>
+export const h1 = <h1 class="liam">{title}</h1>
 const articles = arr.map((item) => <Article {...item} />)
 
 const indexContent = () => (
   <App title="Home">
     <Block>
-      <div>
-        <h1>Home of biggest balls!!!</h1>
+      <Grid>
         {h1}
         {articles}
-        <Button>Click me</Button>
-      </div>
+      </Grid>
     </Block>
   </App>
 )
