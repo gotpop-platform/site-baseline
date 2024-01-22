@@ -1,9 +1,6 @@
 import type { BuildConfig } from "bun"
 
-const buildClientJSFiles = async (
-  filePath: string,
-  filename: string | null
-) => {
+const buildClientJSFiles = async (filePath: string) => {
   const url = new URL(filePath, import.meta.url)
   let outDir = "./public"
 

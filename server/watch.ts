@@ -12,10 +12,12 @@ log.watchStart()
 for await (const filePath of glob.scan(".")) {
   log.watching(filePath)
 
-  const watcher = watch(filePath, (event, filename) => {
+  buildClientJSFiles(filePath)
+
+  const watcher = watch(filePath, (event) => {
     if (event !== "change") return
 
-    buildClientJSFiles(filePath, filename)
+    buildClientJSFiles(filePath)
   })
 
   watchers.push(watcher)
