@@ -5,7 +5,7 @@ type ButtonProps = { title?: string; content?: string }
 
 export const useName = import.meta.file.split(".").shift()?.toLowerCase()
 
-const Button = ({ title, content }: ButtonProps) => {
+const Button = ({ content }: ButtonProps) => {
   const { css } = useCSS({ meta: import.meta })
   const path = "assets/js/Button.client.js"
 
