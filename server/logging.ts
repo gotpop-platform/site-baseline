@@ -1,3 +1,5 @@
+import * as path from "path"
+
 import { colour, emoji } from "./logging.style"
 
 const { red, dim, reset, green, bright, grey, italic, underscore } = colour
@@ -12,7 +14,7 @@ const error = (msg: string, error?: unknown) => {
 
 const listening = (msg1: string, msg2: string) => {
   let log = "\n" + green + italic + msg1 + reset + "\n"
-  log += underscore + msg2 + reset + " " + emoji.checkMark + "\n"
+  log += underscore + msg2 + reset + " " + emoji.check + "\n"
 
   console.log(log)
 }
@@ -24,9 +26,11 @@ const watchStart = () => {
 }
 
 const watching = (filePath: string) => {
-  const repPath = filePath.replace("src/components/", "")
-  let log = grey + emoji.watch
-  log += reset + grey + repPath + reset
+  const url = new URL(`file://${path.resolve(process.cwd(), filePath)}`)
+  const pathname = url.pathname
+  const filename = pathname.split("/").pop()
+
+  let log = grey + filename + reset + " " + emoji.watch
 
   console.log(log)
 }
