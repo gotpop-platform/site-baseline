@@ -1,28 +1,19 @@
 import Block from "@components/Block"
+import Logo from "@components/Logo"
+import Nav from "@components/Nav"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
-
-type HeaderProps = { title: string; content: string }
 
 export const useName = import.meta.file.split(".").shift()?.toLowerCase()
 
 const Header = () => {
   const { css } = useCSS({ meta: import.meta })
-  const path = "assets/js/Header.client.js"
 
   return (
     <Block tag="header">
-      <header class={useName}>
-        <script src={path} type="module"></script>
-        <style>{css}</style>
-        <div>
-          <h1>Logo</h1>
-        </div>
-        <nav>
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-        </nav>
-      </header>
+      <style>{css}</style>
+      <Logo />
+      <Nav />
     </Block>
   )
 }

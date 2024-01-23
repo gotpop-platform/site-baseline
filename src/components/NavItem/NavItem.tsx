@@ -1,19 +1,19 @@
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
-type NavProps = { children?: string; id?: string }
+type NavItemProps = { href: string; text: string }
 
 export const useName = import.meta.file.split(".").shift()?.toLowerCase()
 
-const Nav = ({ children }: NavProps) => {
+const NavItem = ({ href, text }: NavItemProps) => {
   const { css } = useCSS({ meta: import.meta })
 
   return (
-    <a class={useName}>
+    <a href={href} class={useName}>
       <style>{css}</style>
-      {children}
+      <span>{text}</span>
     </a>
   )
 }
 
-export default Nav
+export default NavItem
