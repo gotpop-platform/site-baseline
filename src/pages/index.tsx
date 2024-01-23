@@ -11,7 +11,7 @@ const articles = arr.map((item) => <Article {...item} />)
 
 const indexContent = () => (
   <App title="Home">
-    <Block>
+    <Block tag="section">
       <Grid>
         {h1}
         {articles}

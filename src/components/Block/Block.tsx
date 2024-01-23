@@ -1,19 +1,22 @@
+import Grid from "@components/Grid"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
-type BlockProps = { children?: string; id?: string }
+type BlockProps = {
+  children?: JSX.Element | JSX.Element[] | string | string[]
+  tag: string
+}
 
-export const useName = import.meta.file.split(".").shift()?.toLowerCase()
-
-const Block = ({ children }: BlockProps) => {
+const Block = ({ children: grandChildren, tag }: BlockProps) => {
   const { css } = useCSS({ meta: import.meta })
+  const { file } = import.meta
+  const useName = file.split(".").shift()?.toLowerCase()
 
-  return (
-    <section class={useName}>
-      <style>{css}</style>
-      {children}
-    </section>
-  )
+  const children = [<style>{css}</style>, <Grid>{grandChildren}</Grid>]
+
+  const generatedTag = h(tag, { class: useName }, ...children)
+
+  return generatedTag
 }
 
 export default Block

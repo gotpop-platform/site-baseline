@@ -1,4 +1,4 @@
-function h(type: string | Function, props = {}, ...children: string[]) {
+function h(type: string | Function, props = {}, ...children: any) {
   if (typeof type === "function") {
     const childArr = [...children].flat(Infinity).join("")
 
