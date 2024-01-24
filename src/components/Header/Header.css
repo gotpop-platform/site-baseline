@@ -3,6 +3,8 @@
     background-color: #fff;
     display: grid;
     grid-template-columns: subgrid;
+    position: sticky;
+    top: 0;
 
     .logo {
       grid-column: 1 / span 2;

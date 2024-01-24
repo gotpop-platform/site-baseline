@@ -2,17 +2,17 @@
   :scope {
     display: grid;
     min-height: 100dvh;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: 100dvh 1fr min-content;
     grid-template-columns:
       [full-width-start] minmax(1rem, 1fr)
       [col-start] repeat(12, minmax(1rem, 6rem))
       [col-end] minmax(1rem, 1fr) [full-width-end];
 
-    > header {
+    header {
       grid-column: col-start / col-end;
     }
 
-    > section {
+    > .hero {
       grid-column: full-width-start / full-width-end;
     }
 

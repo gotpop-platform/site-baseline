@@ -1,13 +1,16 @@
 import * as path from "path"
 
 import NavItem from "@components/NavItem"
-import h from "@utils/jsxFactory"
 import { glob } from "glob"
+import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
 type LogoProps = { children?: string; id?: string }
 
-export const useName = import.meta.file.split(".").shift()?.toLowerCase()
+export const useName = import.meta.file
+  .split(".")
+  .shift()
+  ?.toLowerCase()
 
 const Logo = ({ children }: LogoProps) => {
   const { css } = useCSS({ meta: import.meta })
@@ -16,17 +19,20 @@ const Logo = ({ children }: LogoProps) => {
 
   const navItems = files.map((file) => {
     const href = `/${path.basename(file, ".tsx")}`
-    const text = href.slice(1).charAt(0).toUpperCase() + href.slice(2)
+    const text =
+      href.slice(1).charAt(0).toUpperCase() + href.slice(2)
     return { href, text }
   })
 
+  const items = navItems
+    .map((item) => <NavItem {...item} />)
+    .join("")
+
   return (
-    <div class={useName}>
+    <nav class={useName}>
       <style>{css}</style>
-      {navItems.map((item) => (
-        <NavItem {...item} />
-      ))}
-    </div>
+      {items}
+    </nav>
   )
 }
 

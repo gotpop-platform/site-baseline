@@ -1,20 +1,15 @@
-import { arr, title } from "@data/data"
-
-import Article from "@components/Article"
+import AppFull from "@layouts/app-full"
+import Articles from "@components/Articles"
 import Footer from "@components/Footer"
 import GridFull from "@components/GridFull"
-import Header from "@components/Header"
-import AppFull from "@layouts/app-full"
+import Hero from "@components/Hero"
 import h from "@utils/jsxFactory"
-
-export const h1 = <h1 class="liam">{title}</h1>
-const articles = arr.map((item) => <Article {...item} />)
 
 const indexContent = () => (
   <AppFull title="Home">
     <GridFull>
-      <Header />
-      <section>{articles}</section>
+      <Hero title="Home" text="This is the home page" />
+      <Articles />
       <Footer />
     </GridFull>
   </AppFull>

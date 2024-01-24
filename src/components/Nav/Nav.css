@@ -2,5 +2,7 @@
   :scope {
     display: grid;
     grid-template-columns: subgrid;
+    padding: 1rem 0;
+    align-items: center;
   }
 }
