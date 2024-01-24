@@ -1,3 +1,4 @@
+import Footer from "@components/Footer"
 import Head from "@components/Head"
 import Header from "@components/Header"
 import h from "@utils/jsxFactory"
@@ -15,6 +16,7 @@ const App = ({ title, children }: AppProps) => {
         <div class="site">
           <Header />
           {children}
+          <Footer />
         </div>
       </body>
     </html>

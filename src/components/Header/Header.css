@@ -1,24 +1,15 @@
-.header {
-  display: flex;
-  padding: 4rem;
-  justify-content: space-between;
-  gap: 2rem;
+@scope {
+  :scope {
+    background-color: #fff;
+    display: grid;
+    grid-template-columns: subgrid;
 
-  nav {
-    display: flex;
-    gap: 2rem;
-  }
+    .logo {
+      grid-column: 1 / span 2;
+    }
 
-  a {
-    text-decoration: none;
-    color: #000;
-    font-size: 1.5rem;
-    font-weight: bold;
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .nav {
+      grid-column: 6 / col-end;
+    }
   }
 }

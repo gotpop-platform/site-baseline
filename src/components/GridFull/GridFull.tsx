@@ -1,19 +1,19 @@
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
-type FooterProps = { children?: string; id?: string }
+type GridFullProps = { title?: string; children?: string }
 
 export const useName = import.meta.file.split(".").shift()?.toLowerCase()
 
-const Footer = ({ children }: FooterProps) => {
+const GridFull = ({ title, children }: GridFullProps) => {
   const { css } = useCSS({ meta: import.meta })
 
   return (
     <div class={useName}>
       <style>{css}</style>
-      <h1>Footer</h1>
+      {children}
     </div>
   )
 }
 
-export default Footer
+export default GridFull
