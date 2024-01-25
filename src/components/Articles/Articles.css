@@ -1,13 +1,35 @@
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 @scope {
   :scope {
     display: grid;
     grid-template-columns: subgrid;
+    grid-column: full-width-start / full-width-end;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
 
     article {
       background-color: blue;
       display: grid;
       grid-column: col-start / full-width-end;
       place-items: center;
+      height: 100vh;
+      scroll-snap-align: start;
+      animation: slide-in 1s 2s both;
+      animation-timeline: scroll(0%, 100%);
+    }
+
+    article:nth-child(2n) {
+      background-color: grey;
+      grid-column: full-width-start / col-end;
     }
   }
 }

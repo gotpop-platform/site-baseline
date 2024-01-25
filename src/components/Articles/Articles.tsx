@@ -8,12 +8,19 @@ export const useName = import.meta.file
   .shift()
   ?.toLowerCase()
 
-const articles = arr.map((item) => <Article {...item} />)
+const articles = arr
+  .map((item) => <Article {...item} />)
+  .join("")
 
 const Articles = () => {
   const { css } = useCSS({ meta: import.meta })
 
-  return <section>{articles}</section>
+  return (
+    <section>
+      <style>{css}</style>
+      {articles}
+    </section>
+  )
 }
 
 export default Articles

@@ -2,13 +2,17 @@
   :scope {
     display: grid;
     grid-template-columns: subgrid;
-    grid-template-rows: min-content 1fr;
+    grid-template-rows: min-content 1fr min-content 1fr;
+    background-color: whitesmoke;
+    grid-column: full-width-start / full-width-end;
+    align-items: center;
 
     article {
-      background-color: yellow;
+      background-color: white;
       display: grid;
-      grid-column: full-width-start / full-width-end;
+      grid-column: 6 / span 4;
       place-items: center;
+      grid-row: 3;
     }
   }
 }
