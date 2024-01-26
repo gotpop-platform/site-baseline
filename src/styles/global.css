@@ -1,16 +1,14 @@
 * {
   box-sizing: border-box;
+  min-width: 0;
 }
 
-/* html {
-  scroll-snap-type: y mandatory;
-} */
+html {
+  overflow: hidden;
+  background-color: aqua;
+}
 
 body {
-  /* scroll-snap-type: y mandatory; */
-  /* height: 100vh; */
-  background-color: aqua;
   padding: 0;
   margin: 0;
-  /* overflow-y: scroll; */
 }

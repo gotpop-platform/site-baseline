@@ -1,18 +1,21 @@
 @scope {
   :scope {
+    align-items: center;
+    background-color: whitesmoke;
     display: grid;
+    grid-column: full-width-start / full-width-end;
     grid-template-columns: subgrid;
     grid-template-rows: min-content 1fr min-content 1fr;
-    background-color: whitesmoke;
-    grid-column: full-width-start / full-width-end;
-    align-items: center;
+    height: 100dvh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 
     article {
       background-color: white;
       display: grid;
       grid-column: 6 / span 4;
-      place-items: center;
       grid-row: 3;
+      place-items: center;
     }
   }
 }
