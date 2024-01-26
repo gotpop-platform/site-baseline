@@ -18,7 +18,7 @@ const Nav = async () => {
     arr.push(filePath)
   }
 
-  const navItems = arr.map((file: string) => {
+  const navItems = arr.map((file) => {
     const href = `/${path.basename(file, ".tsx")}`
     const text =
       href.slice(1).charAt(0).toUpperCase() + href.slice(2)
@@ -27,9 +27,7 @@ const Nav = async () => {
   })
 
   const items = navItems
-    .map((item: { href: string; text: string }) => (
-      <NavItem {...item} />
-    ))
+    .map((item) => <NavItem {...item} />)
     .join("")
 
   return (
