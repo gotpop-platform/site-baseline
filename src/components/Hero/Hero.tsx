@@ -17,10 +17,17 @@ const Hero = async ({ title, text }: HeroProps) => {
     <section class={useName}>
       <style>{css}</style>
       {headerItem}
-      <article>
+      {/* <article>
         <h1>{title}</h1>
         <p>{text}</p>
-      </article>
+      </article> */}
+      <div class="container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
     </section>
   )
 }
