@@ -1,18 +1,25 @@
-import AppFull from "@layouts/app-full"
 import Articles from "@components/Articles"
 import Footer from "@components/Footer"
 import GridFull from "@components/GridFull"
 import Hero from "@components/Hero"
+import AppFull from "@layouts/app-full"
 import h from "@utils/jsxFactory"
 
-const indexContent = () => (
-  <AppFull title="Home">
-    <GridFull>
-      <Hero title="Home" text="This is the home page" />
-      <Articles />
-      <Footer />
-    </GridFull>
-  </AppFull>
-)
+const indexPage = async () => {
+  const heroComponent = await Hero({
+    title: "Welcome to the home page",
+    text: "This is the home page of the website",
+  })
 
-export default indexContent
+  return (
+    <AppFull title="Home">
+      <GridFull>
+        {heroComponent}
+        <Articles />
+        <Footer />
+      </GridFull>
+    </AppFull>
+  )
+}
+
+export default indexPage

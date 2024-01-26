@@ -8,14 +8,15 @@ export const useName = import.meta.file
   .shift()
   ?.toLowerCase()
 
-const Header = () => {
+const Header = async () => {
   const { css } = useCSS({ meta: import.meta })
+  const navComponent = await Nav()
 
   return (
     <header>
       <style>{css}</style>
       <Logo />
-      <Nav />
+      {navComponent}
     </header>
   )
 }

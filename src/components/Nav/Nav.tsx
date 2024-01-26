@@ -1,31 +1,35 @@
-import * as path from "path"
-
 import NavItem from "@components/NavItem"
-import { glob } from "glob"
 import h from "@utils/jsxFactory"
+import { Glob } from "bun"
+import path from "path"
 import { useCSS } from "src/hooks/useCSS"
-
-type LogoProps = { children?: string; id?: string }
 
 export const useName = import.meta.file
   .split(".")
   .shift()
   ?.toLowerCase()
 
-const Logo = ({ children }: LogoProps) => {
+const Nav = async () => {
+  const glob = new Glob("./src/pages/*.tsx")
   const { css } = useCSS({ meta: import.meta })
+  let arr = []
 
-  const files = glob.sync("./src/pages/*.tsx")
+  for await (const filePath of glob.scan(".")) {
+    arr.push(filePath)
+  }
 
-  const navItems = files.map((file) => {
+  const navItems = arr.map((file: string) => {
     const href = `/${path.basename(file, ".tsx")}`
     const text =
       href.slice(1).charAt(0).toUpperCase() + href.slice(2)
+
     return { href, text }
   })
 
   const items = navItems
-    .map((item) => <NavItem {...item} />)
+    .map((item: { href: string; text: string }) => (
+      <NavItem {...item} />
+    ))
     .join("")
 
   return (
@@ -36,4 +40,4 @@ const Logo = ({ children }: LogoProps) => {
   )
 }
 
-export default Logo
+export default Nav

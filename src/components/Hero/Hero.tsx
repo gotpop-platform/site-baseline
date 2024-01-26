@@ -9,13 +9,14 @@ export const useName = import.meta.file
   .shift()
   ?.toLowerCase()
 
-const Hero = ({ title, text }: HeroProps) => {
+const Hero = async ({ title, text }: HeroProps) => {
   const { css } = useCSS({ meta: import.meta })
+  const headerItem = await Header()
 
   return (
     <section class={useName}>
       <style>{css}</style>
-      <Header />
+      {headerItem}
       <article>
         <h1>{title}</h1>
         <p>{text}</p>
