@@ -8,15 +8,26 @@ export const useName = import.meta.file
   .shift()
   ?.toLowerCase()
 
-const articles = arr
-  .map((item) => <Article {...item} />)
-  .join("")
-
-const Articles = () => {
+const Articles = async () => {
   const { css } = useCSS({ meta: import.meta })
+  // const articleItem = await Article({
+  //   title: "Nice article",
+  //   content:
+  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  // })
+
+  const articles = await Promise.all(
+    arr.map(async (item) => {
+      const article = await Article({
+        title: item.title,
+        content: item.content,
+      })
+      return article
+    })
+  ).then((articles) => articles.join(""))
 
   return (
-    <section>
+    <section class="articles">
       <style>{css}</style>
       {articles}
     </section>

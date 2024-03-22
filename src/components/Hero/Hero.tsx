@@ -1,4 +1,5 @@
 import Header from "@components/Header"
+import PopOverImage from "@components/PopOverImage"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
@@ -13,20 +14,21 @@ const Hero = async ({ title, text }: HeroProps) => {
   const { css } = useCSS({ meta: import.meta })
   const headerItem = await Header()
 
+  const popOverImageItem = await PopOverImage({
+    title: "Nice image",
+    text: "Nice image",
+  })
+
   return (
     <section class={useName}>
       <style>{css}</style>
       {headerItem}
-      {/* <article>
-        <h1>{title}</h1>
-        <p>{text}</p>
-      </article> */}
       <div class="container">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
+        <article>
+          <h1>{title}</h1>
+          <p>{text}</p>
+          <a href="#liam">More</a>
+        </article>
       </div>
     </section>
   )

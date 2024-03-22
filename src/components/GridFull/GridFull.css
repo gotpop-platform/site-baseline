@@ -9,6 +9,7 @@
     height: 100%;
     overflow: hidden scroll;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 
     header {
       grid-column: col-start / col-end;

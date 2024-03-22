@@ -1,21 +1,23 @@
 * {
   box-sizing: border-box;
-  min-width: 0;
+  /* min-width: 0; */
 }
 
 html {
   overflow: hidden;
   background-color: aqua;
+  scroll-behavior: smooth;
 }
 
 body {
   padding: 0;
+  scroll-behavior: smooth;
   margin: 0;
 }
 
-::selection {
+/* ::selection {
   background: var(--accent);
-}
+} */
 
 /* html {
   scroll-behavior: smooth;

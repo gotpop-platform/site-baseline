@@ -53,15 +53,9 @@
     scroll-snap-align: start;
     scroll-snap-stop: always;
 
-    animation: gradient-shift 1s infinite alternate;
-    background: linear-gradient(
-      to right,
-      var(--gradient-start-color),
-      var(--gradient-end-color)
-    );
-
     article {
       background-color: yellow;
+      padding: 1rem;
       display: grid;
       grid-column: 6 / span 4;
       grid-row: 3;
@@ -69,66 +63,9 @@
     }
 
     .container {
-      position: relative;
-      height: 200px;
-
-      display: grid;
       grid-column: 6 / span 4;
       grid-row: 3;
       place-items: center;
-
-      :hover {
-        .circle {
-          animation-play-state: paused;
-          --radius: 450px;
-        }
-      }
-    }
-
-    .circle {
-      --radius: 150px;
-      --size: 550px;
-      animation: time 2s infinite linear;
-      position: absolute;
-      height: var(--size);
-      width: var(--size);
-      border-radius: 50%;
-      background-color: transparent;
-      border: 15px solid rgba(255, 255, 255, 0.8);
-      opacity: 0.5;
-      filter: invert(100%);
-    }
-
-    .circle:nth-child(1) {
-      --offset: 0;
-    }
-
-    .circle:nth-child(2) {
-      --offset: 0.2;
-    }
-
-    .circle:nth-child(3) {
-      --offset: 0.4;
-    }
-
-    .circle:nth-child(4) {
-      --offset: 0.6;
-    }
-
-    .circle:nth-child(5) {
-      --offset: 0.8;
-    }
-
-    .circle {
-      top: calc(
-        50% + var(--radius) *
-          sin((var(--time) + var(--offset)) * 2 * 3.14159)
-      );
-      left: calc(
-        50% + var(--radius) *
-          cos((var(--time) + var(--offset)) * 2 * 3.14159)
-      );
-      transform: translate(-50%, -50%);
     }
   }
 }
