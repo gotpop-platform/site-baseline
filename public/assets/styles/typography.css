@@ -12,6 +12,8 @@ html {
 h1 {
   font-weight: 1000;
   font-size: var(--font-size-xxxl);
+  font-family: "Playfair Display", "Times New Roman", Times,
+    serif;
 }
 
 h2 {
