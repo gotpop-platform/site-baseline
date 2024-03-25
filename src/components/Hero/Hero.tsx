@@ -1,4 +1,5 @@
 import Header from "@components/Header"
+import Icon from "@components/Icon"
 import PopOverImage from "@components/PopOverImage"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
@@ -43,6 +44,10 @@ const Hero = async ({ title, text }: HeroProps) => {
               favorite
             </span>
           </div>
+
+          <Icon iconName="home" />
+          <Icon iconName="shield_lock" />
+          <Icon iconName="14mp" />
 
           <div style="font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48;">
             <span class="material-symbols-outlined">
