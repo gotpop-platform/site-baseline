@@ -28,6 +28,20 @@ const Hero = async ({ title, text }: HeroProps) => {
           <h1>{title}</h1>
           <p>{text}</p>
           <a href="#liam">More</a>
+
+          <selectlist id="browser-filter">
+            <button type="selectlist">
+              <selectedoption></selectedoption>
+            </button>
+            <option value="edge" checked="">
+              Edge
+            </option>
+            <option value="chrome">Chrome</option>
+            <option value="firefox">Firefox</option>
+            <option value="brave">Brave</option>
+            <option value="safari">Safari</option>
+            <option value="opera">Opera</option>
+          </selectlist>
         </article>
       </div>
     </section>

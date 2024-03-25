@@ -3,44 +3,6 @@
   --red: red;
 }
 
-@property --gradient-start-color {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: blue;
-}
-
-@property --gradient-end-color {
-  syntax: "<color>";
-  inherits: false;
-  initial-value: red;
-}
-
-@keyframes gradient-shift {
-  0% {
-    --gradient-start-color: var(--blue);
-    --gradient-end-color: var(--red);
-  }
-  100% {
-    --gradient-start-color: var(--red);
-    --gradient-end-color: var(--blue);
-  }
-}
-
-@property --time {
-  syntax: "<number>";
-  initial-value: 0;
-  inherits: false;
-}
-
-@keyframes time {
-  from {
-    --time: 0;
-  }
-  to {
-    --time: 1;
-  }
-}
-
 @scope {
   :scope {
     align-items: center;
@@ -52,6 +14,10 @@
     height: 100dvh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
+
+    .styled-select::part(button) {
+      background-color: red;
+    }
 
     article {
       background-color: yellow;

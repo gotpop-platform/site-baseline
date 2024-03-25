@@ -1,6 +1,5 @@
 import Articles from "@components/Articles"
 import Footer from "@components/Footer"
-import Gallery from "@components/Gallery"
 import GridFull from "@components/GridFull"
 import Hero from "@components/Hero"
 import AppFull from "@layouts/app-full"
@@ -12,10 +11,10 @@ const indexPage = async () => {
     text: "This is the home page of the website",
   })
 
-  const galleryItem = await Gallery({
-    title: "Nice gallery",
-    content: "Nice gallery",
-  })
+  // const galleryItem = await Gallery({
+  //   title: "Nice gallery",
+  //   content: "Nice gallery",
+  // })
 
   const articlesItem = await Articles()
 
@@ -23,7 +22,7 @@ const indexPage = async () => {
     <AppFull title="Home">
       <GridFull>
         {heroComponent}
-        {galleryItem}
+        {/* {galleryItem} */}
         {articlesItem}
         <Footer />
       </GridFull>
