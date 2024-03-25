@@ -29,6 +29,36 @@ const Hero = async ({ title, text }: HeroProps) => {
           <p>{text}</p>
           <a href="#liam">More</a>
 
+          <div style="font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 48;">
+            <span class="material-symbols-outlined">
+              search
+            </span>
+            <span class="material-symbols-outlined">
+              home
+            </span>
+            <span class="material-symbols-outlined">
+              settings
+            </span>
+            <span class="material-symbols-outlined">
+              favorite
+            </span>
+          </div>
+
+          <div style="font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48;">
+            <span class="material-symbols-outlined">
+              search
+            </span>
+            <span class="material-symbols-outlined">
+              home
+            </span>
+            <span class="material-symbols-outlined">
+              settings
+            </span>
+            <span class="material-symbols-outlined">
+              favorite
+            </span>
+          </div>
+
           <selectlist id="browser-filter">
             <button type="selectlist">
               <selectedoption></selectedoption>
