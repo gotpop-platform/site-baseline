@@ -28,7 +28,7 @@
       place-items: center;
     }
 
-    .container {
+    .hero-inner {
       grid-column: 6 / span 4;
       grid-row: 3;
       place-items: center;

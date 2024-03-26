@@ -24,16 +24,17 @@ const Hero = async ({ title, text }: HeroProps) => {
     <section class={useName}>
       <style>{css}</style>
       {headerItem}
-      <div class="container">
-        <article>
+      <div class="hero-inner">
+        <div class="inner-intro">
           <h1>{title}</h1>
           <p>{text}</p>
           <a href="#liam">Learn More</a>
-
+        </div>
+        <div class="inner-actions">
           <Icon iconName="home" />
           <Icon iconName="shield_lock" />
           <Icon iconName="14mp" />
-        </article>
+        </div>
       </div>
     </section>
   )
