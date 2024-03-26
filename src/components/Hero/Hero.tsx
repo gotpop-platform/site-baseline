@@ -28,55 +28,11 @@ const Hero = async ({ title, text }: HeroProps) => {
         <article>
           <h1>{title}</h1>
           <p>{text}</p>
-          <a href="#liam">More</a>
-
-          <div style="font-variation-settings: 'FILL' 0, 'wght' 700, 'GRAD' 0, 'opsz' 48;">
-            <span class="material-symbols-outlined">
-              search
-            </span>
-            <span class="material-symbols-outlined">
-              home
-            </span>
-            <span class="material-symbols-outlined">
-              settings
-            </span>
-            <span class="material-symbols-outlined">
-              favorite
-            </span>
-          </div>
+          <a href="#liam">Learn More</a>
 
           <Icon iconName="home" />
           <Icon iconName="shield_lock" />
           <Icon iconName="14mp" />
-
-          <div style="font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 48;">
-            <span class="material-symbols-outlined">
-              search
-            </span>
-            <span class="material-symbols-outlined">
-              home
-            </span>
-            <span class="material-symbols-outlined">
-              settings
-            </span>
-            <span class="material-symbols-outlined">
-              favorite
-            </span>
-          </div>
-
-          <selectlist id="browser-filter">
-            <button type="selectlist">
-              <selectedoption></selectedoption>
-            </button>
-            <option value="edge" checked="">
-              Edge
-            </option>
-            <option value="chrome">Chrome</option>
-            <option value="firefox">Firefox</option>
-            <option value="brave">Brave</option>
-            <option value="safari">Safari</option>
-            <option value="opera">Opera</option>
-          </selectlist>
         </article>
       </div>
     </section>
