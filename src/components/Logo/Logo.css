@@ -3,6 +3,12 @@
     display: flex;
     padding: 1rem 2rem;
 
+    .icon {
+      font-size: var(--font-size-lg);
+      margin-right: 1rem;
+      color: grey;
+    }
+
     h1 {
       font-size: var(--font-size-md);
     }

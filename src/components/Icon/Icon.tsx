@@ -1,6 +1,6 @@
-import type { IconName } from "./Icon.types"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
+import type { IconName } from "./Icon.types"
 
 type IconProps = {
   iconName?: IconName
@@ -25,7 +25,7 @@ const Icon = ({
   const { css } = useCSS({ meta: import.meta })
 
   return (
-    <div
+    <span
       class={`${useName} ${useName}-${iconName}`}
       style={`font-variation-settings: 'FILL' ${fill}, 'wght' ${weight}, 'GRAD' ${grad}, 'opsz' ${opsz};`}
     >
@@ -33,7 +33,7 @@ const Icon = ({
       <span class="material-symbols-outlined">
         {iconName}
       </span>
-    </div>
+    </span>
   )
 }
 

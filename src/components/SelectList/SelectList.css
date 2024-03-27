@@ -3,5 +3,9 @@
     .material-symbols-outlined {
       font-size: 5rem;
     }
+
+    .styled-select::part(button) {
+      background-color: red;
+    }
   }
 }

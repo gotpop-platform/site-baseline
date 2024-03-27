@@ -1,3 +1,4 @@
+import Brands from "@components/Brands"
 import Header from "@components/Header"
 import Icon from "@components/Icon"
 import PopOverImage from "@components/PopOverImage"
@@ -14,6 +15,10 @@ export const useName = import.meta.file
 const Hero = async ({ title, text }: HeroProps) => {
   const { css } = useCSS({ meta: import.meta })
   const headerItem = await Header()
+  const brandsItem = await Brands({
+    title: "Brands",
+    text: "Brands",
+  })
 
   const popOverImageItem = await PopOverImage({
     title: "Nice image",
@@ -26,16 +31,34 @@ const Hero = async ({ title, text }: HeroProps) => {
       {headerItem}
       <div class="hero-inner">
         <div class="inner-intro">
-          <h1>{title}</h1>
+          <h2>{title}</h2>
           <p>{text}</p>
-          <a href="#liam">Learn More</a>
+          <a href="#liam" class="link-button">
+            Learn More
+          </a>
         </div>
         <div class="inner-actions">
-          <Icon iconName="home" />
-          <Icon iconName="shield_lock" />
-          <Icon iconName="14mp" />
+          <a href="#liam" class="action">
+            <span>
+              <Icon iconName="fast_forward" />
+            </span>
+            <span>Fast</span>
+          </a>
+          <a href="#liam" class="action">
+            <span>
+              <Icon iconName="bedroom_child" />
+            </span>
+            <span>Light</span>
+          </a>
+          <a href="#liam" class="action">
+            <span>
+              <Icon iconName="healing" />
+            </span>
+            <span>Simple</span>
+          </a>
         </div>
       </div>
+      {brandsItem}
     </section>
   )
 }

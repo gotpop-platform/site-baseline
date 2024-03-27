@@ -13,8 +13,8 @@ const Logo = () => {
   return (
     <a href="/" class={useName}>
       <style>{css}</style>
-      <Icon iconName="home" />
-      <h1>Logo</h1>
+      <Icon iconName="child_care" />
+      <h1>SingleMum</h1>
     </a>
   )
 }

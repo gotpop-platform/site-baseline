@@ -7,8 +7,8 @@ import h from "@utils/jsxFactory"
 
 const indexPage = async () => {
   const heroComponent = await Hero({
-    title: "Welcome to the home page",
-    text: "This is the home page of the website",
+    title: "The single dependency framework",
+    text: "SingleMum is a single dependency framework for building web applications. It is a simple, fast, and light framework.",
   })
 
   // const galleryItem = await Gallery({
