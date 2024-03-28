@@ -3,24 +3,24 @@
     display: grid;
     grid-template-columns:
       [full-width-start] minmax(1rem, 1fr)
-      [col-start] repeat(12, minmax(1rem, 6rem))
-      [col-end] minmax(1rem, 1fr) [full-width-end];
+      [col-start] repeat(12, minmax(1rem, 6rem)) [col-end]
+      minmax(1rem, 1fr) [full-width-end];
     grid-template-rows: 100dvh 1fr min-content;
     height: 100%;
     overflow: hidden scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 
-    header {
-      grid-column: col-start / col-end;
+    .hero {
+      grid-column: full-width;
+
+      header {
+        grid-column: col;
+      }
     }
 
-    > .hero {
-      grid-column: full-width-start / full-width-end;
-    }
-
-    > .footer {
-      grid-column: full-width-start / full-width-end;
+    .footer {
+      grid-column: full-width;
     }
   }
 }
