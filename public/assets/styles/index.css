@@ -1,4 +1,4 @@
-@layer fonts, colours, vars, reset, typography, icons;
+@layer fonts, colours, vars, reset, typography, icons, animations;
 
 @import url(./fonts.css) layer(fonts);
 @import url(./colours.css) layer(colours);
@@ -6,3 +6,4 @@
 @import url(./reset.css) layer(reset);
 @import url(./typography.css) layer(typography);
 @import url(./icons.css) layer(icons);
+@import url(./animations.css) layer(animations);

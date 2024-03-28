@@ -27,17 +27,6 @@
       place-items: center;
       scroll-snap-align: center;
       scroll-snap-stop: always;
-      animation: rotate 2s infinite linear;
-      background: conic-gradient(
-        from var(--angle) at 0% 0%,
-        red,
-        yellow,
-        lime,
-        aqua,
-        blue,
-        magenta,
-        red
-      );
     }
 
     article:nth-child(2n) {

@@ -8,12 +8,12 @@
     grid-template-rows: min-content 1fr;
     row-gap: 7rem;
     align-items: center;
+    background-color: yellow;
 
     .inner {
       display: grid;
       grid-template-columns: subgrid;
       grid-column: col-start / col-end;
-      background-color: yellow;
       /* gap: 2rem; */
       align-items: center;
     }
@@ -25,10 +25,42 @@
       align-items: center;
       background-color: orange;
       gap: 2rem;
-
-      @media (max-width: 600px) {
-        background-color: red;
-      }
     }
+
+    .boat {
+      anchor-name: --tooltip;
+    }
+
+    /* alternative with anchor-default */
+    .boat {
+      /* Fixpos means we don’t need to worry about
+     containing block relationships;
+     the tooltip can live anywhere in the DOM. */
+      position: fixed;
+
+      /* All the anchoring behavior will default to
+     referring to the --tooltip anchor. */
+      position-anchor: --tooltip;
+
+      /* Align the tooltip’s bottom to the top of the anchor;
+     this also defaults to horizontally center-aligning
+     the tooltip and the anchor (in horizontal writing modes). */
+      inset-area: block-start;
+
+      /* Automatically swap if this overflows the window
+     so the tooltip’s top aligns to the anchor’s bottom
+     instead. */
+      position-try: flip-block;
+
+      /* Prevent getting too wide */
+      max-inline-size: 20em;
+    }
+  }
+}
+
+@supports (anchor-name: --foo) {
+  /* Styles... */
+  .nice {
+    background-color: lightgreen !important;
   }
 }

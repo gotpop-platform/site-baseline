@@ -16,11 +16,16 @@ const Brands = async ({ title, text }: BrandsProps) => {
       <style>{css}</style>
       <div class="inner">
         <div class="nice">
-          <img
-            height="32"
-            width="32"
-            src="https://cdn.simpleicons.org/apple/gray"
-          />
+          <a id="my-anchor" class="anchor">
+            <img
+              height="32"
+              width="32"
+              src="https://cdn.simpleicons.org/apple/gray"
+            />
+          </a>
+          <div anchor="my-anchor" class="boat">
+            I’m a boat!
+          </div>
           <img
             height="32"
             width="32"

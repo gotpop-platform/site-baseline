@@ -32,7 +32,6 @@ const Articles = async () => {
     (article) => article.join("")
   )
 
-  console.log("articles :", articles)
   return (
     <section class="articles">
       <style>{css}</style>

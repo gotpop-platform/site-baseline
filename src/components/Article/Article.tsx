@@ -21,7 +21,7 @@ const Article = async ({
   })
 
   return (
-    <article class={useName}>
+    <article class={`${useName} groce`}>
       <script src={path} type="module"></script>
       <style>{css}</style>
       <div class="intro">
