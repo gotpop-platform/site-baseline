@@ -1,22 +1,24 @@
 @scope {
   :scope {
     display: grid;
-    grid-template-columns:
+    /* grid-template-columns:
       [full-width-start] minmax(1rem, 1fr)
       [col-start] repeat(12, minmax(1rem, 6rem)) [col-end]
+      minmax(1rem, 1fr) [full-width-end]; */
+    grid-template-columns:
+      [full-width-start] minmax(1rem, 1fr)
+      [breakout-start] 100px
+      [col-start] repeat(12, minmax(1rem, 6rem)) [col-end]
+      100px [breakout-end]
       minmax(1rem, 1fr) [full-width-end];
-    grid-template-rows: 100dvh 1fr min-content;
+    grid-template-rows: 1fr 100dvh 1fr min-content;
     height: 100%;
     overflow: hidden scroll;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: y proximity;
     scroll-behavior: smooth;
 
     .hero {
       grid-column: full-width;
-
-      header {
-        grid-column: col;
-      }
     }
 
     .footer {

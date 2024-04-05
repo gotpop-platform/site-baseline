@@ -28,7 +28,7 @@ const Hero = async ({ title, text }: HeroProps) => {
   return (
     <section class={useName}>
       <style>{css}</style>
-      {headerItem}
+      {/* {headerItem} */}
       <div class="hero-inner">
         <div class="inner-intro">
           <h2>{title}</h2>

@@ -6,9 +6,8 @@
     grid-row: 3;
     align-items: center;
     grid-template-rows: min-content 1fr;
-    row-gap: 7rem;
+    row-gap: 20rem;
     align-items: center;
-    background-color: yellow;
 
     .inner {
       display: grid;

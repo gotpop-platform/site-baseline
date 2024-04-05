@@ -1,3 +1,12 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @scope {
   :scope {
     display: grid;
@@ -7,6 +16,7 @@
       grid-column: col-start / span 4;
       grid-row: 1;
       padding: 1rem;
+      animation: fadeIn 1s forwards;
     }
 
     .popoverimage {

@@ -26,12 +26,12 @@
       minmax(1rem, 1fr) [full-width-end];
     scroll-behavior: smooth;
 
-    header {
+    /* header {
       grid-column: col;
-    }
+    } */
 
     footer {
-      grid-column: col;
+      grid-column: full-width;
     }
   }
 }

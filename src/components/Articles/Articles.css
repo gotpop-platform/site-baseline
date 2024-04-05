@@ -20,7 +20,8 @@
     grid-template-columns: subgrid;
 
     article {
-      background-color: blue;
+      backdrop-filter: blur(0.35rem);
+      background-color: rgba(255, 255, 255, 0.6);
       display: grid;
       grid-column: col-start / full-width-end;
       height: 100vh;
@@ -30,7 +31,6 @@
     }
 
     article:nth-child(2n) {
-      background-color: grey;
       grid-column: full-width-start / col-end;
     }
   }

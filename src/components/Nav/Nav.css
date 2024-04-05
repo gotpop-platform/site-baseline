@@ -1,8 +1,9 @@
 @scope {
   :scope {
-    display: grid;
+    /* display: grid;
     grid-template-columns: subgrid;
-    padding: 1rem 0;
     align-items: center;
+    gap: 2rem;
+    margin: 0 1rem; */
   }
 }

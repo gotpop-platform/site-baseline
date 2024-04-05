@@ -1,6 +1,6 @@
+import { Glob } from "bun"
 import NavItem from "@components/NavItem"
 import h from "@utils/jsxFactory"
-import { Glob } from "bun"
 import path from "path"
 import { useCSS } from "src/hooks/useCSS"
 

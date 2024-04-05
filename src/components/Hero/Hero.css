@@ -1,18 +1,15 @@
 @scope {
   :scope {
     align-items: center;
-    background-color: whitesmoke;
     display: grid;
     grid-column: full-width-start / full-width-end;
     grid-template-columns: subgrid;
     grid-template-rows: min-content 3fr 1fr;
     height: 100dvh;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
     row-gap: 7rem;
 
     .hero-inner {
-      grid-column: 4 / span 8;
+      grid-column: 5 / span 8;
       grid-row: 2;
       display: grid;
       grid-template-columns: subgrid;

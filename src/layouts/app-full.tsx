@@ -7,10 +7,12 @@ interface AppFullProps {
 }
 
 const AppFull = ({ title, children }: AppFullProps) => {
+  const titleAsClass = title.toLowerCase().replace(" ", "-")
+
   return (
     <html lang="en">
       <Head title={title} />
-      <body class="body">{children}</body>
+      <body class={`body ${titleAsClass}`}>{children}</body>
     </html>
   )
 }
