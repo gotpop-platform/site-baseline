@@ -13,53 +13,77 @@
       display: grid;
       grid-template-columns: subgrid;
       grid-column: col-start / col-end;
-      /* gap: 2rem; */
+      gap: 2rem;
       align-items: center;
     }
 
-    .nice {
+    .disclaimer {
+      grid-column: 1 / -1;
+      grid-template-columns: subgrid;
+      align-items: center;
+      text-align: center;
+    }
+
+    .icons {
       grid-column: 5 / span 4;
       display: grid;
       grid-template-columns: subgrid;
       align-items: center;
-      background-color: orange;
       gap: 2rem;
     }
 
-    .boat {
-      anchor-name: --tooltip;
+    .trigger {
+      position: relative;
+
+      &.apple {
+        anchor-name: --tooltipApple;
+      }
+
+      &.google {
+        anchor-name: --tooltipGoogle;
+      }
+
+      &.facebook {
+        anchor-name: --tooltipFacebook;
+      }
+
+      &.spotify {
+        anchor-name: --tooltipSpotify;
+      }
     }
 
-    /* alternative with anchor-default */
-    .boat {
-      /* Fixpos means we don’t need to worry about
-     containing block relationships;
-     the tooltip can live anywhere in the DOM. */
-      position: fixed;
-
-      /* All the anchoring behavior will default to
-     referring to the --tooltip anchor. */
-      position-anchor: --tooltip;
-
-      /* Align the tooltip’s bottom to the top of the anchor;
-     this also defaults to horizontally center-aligning
-     the tooltip and the anchor (in horizontal writing modes). */
+    .tooltip {
+      position: absolute;
       inset-area: block-start;
-
-      /* Automatically swap if this overflows the window
-     so the tooltip’s top aligns to the anchor’s bottom
-     instead. */
       position-try: flip-block;
+      margin: 0;
 
-      /* Prevent getting too wide */
-      max-inline-size: 20em;
+      &.apple {
+        position-anchor: --tooltipApple;
+      }
+
+      &.google {
+        position-anchor: --tooltipGoogle;
+      }
+
+      &.facebook {
+        position-anchor: --tooltipFacebook;
+      }
+
+      &.spotify {
+        position-anchor: --tooltipSpotify;
+      }
     }
-  }
-}
 
-@supports (anchor-name: --foo) {
-  /* Styles... */
-  .nice {
-    background-color: lightgreen !important;
+    [popover]:popover-open {
+      @starting-style {
+        --open: 0;
+      }
+
+      --open: 1;
+      transition: display 0.2s, overlay 0.2s, opacity 0.2s,
+        scale 0.2s, top 0.2s, right 0.2s, left 0.2s,
+        bottom 0.2s;
+    }
   }
 }

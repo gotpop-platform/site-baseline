@@ -12,16 +12,27 @@
     display: grid;
     grid-template-columns: subgrid;
 
+    .content {
+      grid-column: col-start / col-end;
+      grid-row: 1;
+      display: grid;
+      grid-template-columns: subgrid;
+      gap: 2rem;
+      align-items: center;
+    }
+
     .intro {
-      grid-column: col-start / span 4;
+      grid-column: col-start / span 6;
       grid-row: 1;
       padding: 1rem;
       animation: fadeIn 1s forwards;
+      background: white;
     }
 
-    .popoverimage {
-      grid-column: 8 / span 4;
+    .image {
+      grid-column: 5 / span 8;
       grid-row: 1;
+      align-items: center;
     }
   }
 }

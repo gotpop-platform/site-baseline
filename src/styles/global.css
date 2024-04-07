@@ -79,3 +79,11 @@ img {
   width: 100%;
   height: auto;
 }
+
+/* h2 {
+  background-color: aqua;
+
+  @media screen and (min-width: 768px) {
+    background-color: red;
+  }
+} */
