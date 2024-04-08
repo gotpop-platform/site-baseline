@@ -6,7 +6,7 @@
 		"client": "bun server/watch.ts",
 		"dev": "bun --watch server/serve.ts",
 		"start": "bun client & bun dev",
-		"prod": "bun server/serve.ts"
+		"render": "bun server/render.ts"
 	},
 	"peerDependencies": {
 		"@types/bun": "latest",
