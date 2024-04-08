@@ -9,7 +9,7 @@
     row-gap: 7rem;
 
     .hero-inner {
-      grid-column: 5 / span 8;
+      grid-column: 6 / span 8;
       grid-row: 2;
       display: grid;
       grid-template-columns: subgrid;
@@ -52,35 +52,6 @@
       display: grid;
       place-items: center;
       grid-column: span 5;
-    }
-
-    .inner-actions {
-      display: flex;
-      grid-column: span 3;
-      background-color: rgba(255, 255, 255);
-      padding: 2rem;
-      border-radius: 2rem;
-      flex-direction: column;
-      gap: 1rem;
-      justify-content: space-between;
-    }
-
-    .action {
-      display: flex;
-      gap: 1rem;
-      padding: 1rem;
-      justify-content: space-between;
-      align-items: center;
-
-      .icon {
-        font-size: 2rem;
-        color: grey;
-      }
-
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-        border-radius: 1rem;
-      }
     }
   }
 }

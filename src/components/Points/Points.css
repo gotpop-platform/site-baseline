@@ -3,19 +3,29 @@
     align-content: center;
     background-color: white;
     display: grid;
-    grid-column: col-start / full-width-end;
+    grid-column: full-width;
     grid-template-columns: subgrid;
     place-items: center;
 
-    .wrap {
+    .inner {
       gap: 2rem;
-      padding: 2rem;
+      padding: 2rem 0;
       display: grid;
       grid-column: col-start / col-end;
       grid-template-columns: subgrid;
+      gap: 2rem;
 
-      > * {
+      > *:not(.intro) {
         grid-column: span 4;
+        background-color: whitesmoke;
+        padding: 2rem;
+      }
+
+      .intro {
+        grid-column: col;
+        text-align: center;
+        display: grid;
+        justify-content: center;
       }
     }
   }

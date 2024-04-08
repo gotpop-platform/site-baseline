@@ -21,7 +21,7 @@ const Article = async ({
       <style>{css}</style>
       <section class="content">
         <div class="intro">
-          <h2>{title}</h2>
+          <h3>{title}</h3>
           <p>{content}</p>
         </div>
         <img

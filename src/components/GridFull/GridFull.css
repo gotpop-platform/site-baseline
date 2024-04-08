@@ -14,7 +14,6 @@
     grid-template-rows: 1fr 100dvh 1fr min-content;
     height: 100%;
     overflow: hidden scroll;
-    scroll-snap-type: y proximity;
     scroll-behavior: smooth;
 
     .hero {

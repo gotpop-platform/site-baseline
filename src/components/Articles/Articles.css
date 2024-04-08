@@ -15,23 +15,42 @@
 
 @scope {
   :scope {
+    --direction: col-start / full-width-end;
+    --directionImage: 5 / col-end;
+    --directionIntro: col-start / span 6;
+
     display: grid;
     grid-column: full-width-start / full-width-end;
     grid-template-columns: subgrid;
 
-    article {
-      backdrop-filter: blur(0.35rem);
-      background-color: rgba(255, 255, 255, 0.6);
+    .article {
+      background-color: #f1f1f1;
       display: grid;
-      grid-column: col-start / full-width-end;
-      height: 100vh;
+      grid-column: var(--direction);
+      padding: 2rem 0;
       place-items: center;
       scroll-snap-align: center;
       scroll-snap-stop: always;
-    }
 
-    article:nth-child(2n) {
-      grid-column: full-width-start / col-end;
+      .intro {
+        grid-column: var(--directionIntro);
+      }
+
+      .image {
+        grid-column: var(--directionImage);
+      }
+
+      &:nth-child(2n) {
+        --direction: full-width-start / col-end;
+
+        .intro {
+          --directionIntro: 6 / col-end;
+        }
+
+        .image {
+          --directionImage: col-start / span 8;
+        }
+      }
     }
   }
 }

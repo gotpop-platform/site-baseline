@@ -27,6 +27,11 @@
       padding: 1rem;
       animation: fadeIn 1s forwards;
       background: white;
+
+      h3 {
+        font-size: 2rem;
+        margin: 0 0 1rem;
+      }
     }
 
     .image {
