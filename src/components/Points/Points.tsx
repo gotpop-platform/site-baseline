@@ -20,8 +20,8 @@ const Points = async ({
       <style>{css}</style>
       <div class="inner">
         <div class="intro">
-          <Icon iconName="child_care" />
-          <h2>About us</h2>
+          <Icon fill="0" iconName="4g_mobiledata" />
+          <h2 class="title">About us</h2>
           <p>
             SingleMum is a single dependency framework for
             building web applications. It is a simple, fast,
@@ -31,7 +31,7 @@ const Points = async ({
           </p>
         </div>
         <article>
-          <Icon iconName="child_care" />
+          <Icon iconName="zone_person_alert" />
           <h3>Lorem ipsum dolor</h3>
           <p>
             Sit amet consectetur adipisicing elit. Earum

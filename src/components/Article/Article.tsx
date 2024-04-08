@@ -30,6 +30,7 @@ const Article = async ({
           width="1800"
           height="300"
           alt="Hero image"
+          loading="lazy"
         />
       </section>
     </article>

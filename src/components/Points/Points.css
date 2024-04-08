@@ -9,7 +9,7 @@
 
     .inner {
       gap: 2rem;
-      padding: 2rem 0;
+      padding: 4rem 0;
       display: grid;
       grid-column: col-start / col-end;
       grid-template-columns: subgrid;
@@ -19,6 +19,15 @@
         grid-column: span 4;
         background-color: whitesmoke;
         padding: 2rem;
+
+        .icon {
+          --font-size: 2rem;
+        }
+
+        h3 {
+          font-size: 2rem;
+          margin: 0 0 1rem;
+        }
       }
 
       .intro {
@@ -26,6 +35,12 @@
         text-align: center;
         display: grid;
         justify-content: center;
+        gap: 1rem;
+
+        .title {
+          font-size: 2rem;
+          margin: 0;
+        }
       }
     }
   }

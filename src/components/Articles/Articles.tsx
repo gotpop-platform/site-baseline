@@ -18,7 +18,7 @@ const Articles = async () => {
   })
 
   const promises = arr.map((item, i) => {
-    if (i === 3) {
+    if (i === 2) {
       return galleryItem
     } else {
       return Article({
