@@ -1,22 +1,14 @@
-import type { FSWatcher } from "fs"
 import { Glob } from "bun"
-import buildPagesFiles from "./renderPage"
+import type { FSWatcher } from "fs"
 import { log } from "./logging"
-import { watch } from "fs"
+import buildPagesFiles from "./renderPage"
 
-const glob = new Glob("src/pages/*.ts")
+const glob = new Glob("src/pages/*.tsx")
+console.log("glob :", glob)
 let watchers: FSWatcher[] = []
 
 for await (const filePath of glob.scan(".")) {
   log.watching(filePath)
 
   buildPagesFiles(filePath)
-
-  const watcher = watch(filePath, (event) => {
-    if (event !== "change") return
-
-    buildPagesFiles(filePath)
-  })
-
-  watchers.push(watcher)
 }
