@@ -22,7 +22,6 @@
     }
 
     .intro {
-      grid-column: col-start / span 6;
       grid-row: 1;
       padding: 1rem;
       animation: fadeIn 1s forwards;
