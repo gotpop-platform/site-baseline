@@ -5,7 +5,8 @@ const PORT = 9000
 
 try {
   Bun.serve({
-    port: PORT,
+    hostname: "::",
+    port: process.env.PORT ?? PORT,
     async fetch(request) {
       const url = new URL(request.url)
 
