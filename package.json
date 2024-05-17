@@ -1,6 +1,6 @@
 {
 	"name": "minimax",
-	"module": "server/index.ts",
+	"module": "server/index.ts ",
 	"type": "module",
 	"scripts": {
 		"client": "bun server/watch.ts",
