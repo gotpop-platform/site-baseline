@@ -15,12 +15,12 @@ const Head = ({ title }: { title: string }) => {
         content="width=device-width, initial-scale=1.0"
       />
       <title>{title}</title>
-      <style>{css}</style>
       <link rel="icon" href="/assets/img/favicon.png" />
       <link
         rel="stylesheet"
         href="/assets/styles/index.css"
       />
+      <style>{css}</style>
     </head>
   )
 }

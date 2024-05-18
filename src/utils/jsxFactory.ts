@@ -3,12 +3,29 @@ function h(
   props = {},
   ...children: any
 ) {
-  if (typeof type === "function") {
-    const childArr = [...children].flat(Infinity).join("")
+  const selfClosingTags = [
+    "meta",
+    "img",
+    "br",
+    "input",
+    "link",
+    "area",
+    "base",
+    "col",
+    "command",
+    "embed",
+    "hr",
+    "keygen",
+    "param",
+    "source",
+    "track",
+    "wbr",
+  ]
 
+  if (typeof type === "function") {
     return type({
       ...props,
-      children: childArr,
+      children: children.flat(Infinity).join(""),
     })
   } else {
     const mapProps = Object.entries(props || {})
@@ -16,12 +33,17 @@ function h(
       .join(" ")
 
     const childArr = children.flat(Infinity).join("")
-    let element = `<${type} ${mapProps}>${childArr}</${type}>`
+    let element = ""
 
     // Special case for <!DOCTYPE html>
     if (type === "!DOCTYPE html") {
       element = `<!DOCTYPE html>${childArr}`
+    } else if (selfClosingTags.includes(type)) {
+      element = `<${type} ${mapProps}>`
+    } else {
+      element = `<${type} ${mapProps}>${childArr}</${type}>`
     }
+
     return element
   }
 }
