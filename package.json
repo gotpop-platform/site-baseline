@@ -2,11 +2,10 @@
 	"name": "minimax",
 	"module": "server/index.ts ",
 	"type": "module",
+	"license": "MIT",
 	"scripts": {
-		"client": "bun server/watch.ts",
 		"dev": "bun --watch server/serve.ts",
-		"start": "bun server/serve.ts",
-		"render": "bun server/render.ts"
+		"start": "bun server/serve.ts"
 	},
 	"peerDependencies": {
 		"@types/bun": "latest",

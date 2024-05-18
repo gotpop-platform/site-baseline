@@ -1,8 +1,8 @@
 import { Glob } from "bun"
 import type { FSWatcher } from "fs"
 import { watch } from "fs"
-import buildClientJSFiles from "./build"
-import { log } from "./logging"
+import buildClientJSFiles from "../build"
+import { log } from "../logging"
 
 const glob = new Glob("**/*.client.ts")
 let watchers: FSWatcher[] = []

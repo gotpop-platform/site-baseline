@@ -36,7 +36,7 @@ try {
     },
   })
 
-  log.listening("Listening on:", `http://localhost:${PORT}`)
+  log.listening("Listening on port:", `${PORT}`)
 } catch (error) {
   log.error("Failed to start server:", error)
 }
