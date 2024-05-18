@@ -1,4 +1,8 @@
-function h(type: string | Function, props = {}, ...children: any) {
+function h(
+  type: string | Function,
+  props = {},
+  ...children: any
+) {
   if (typeof type === "function") {
     const childArr = [...children].flat(Infinity).join("")
 
@@ -11,8 +15,13 @@ function h(type: string | Function, props = {}, ...children: any) {
       .map(([key, value]) => `${key}="${value}"`)
       .join(" ")
 
-    let element = `<${type} ${mapProps}>${children.join("")}</${type}>`
+    const childArr = children.flat(Infinity).join("")
+    let element = `<${type} ${mapProps}>${childArr}</${type}>`
 
+    // Special case for <!DOCTYPE html>
+    if (type === "!DOCTYPE html") {
+      element = `<!DOCTYPE html>${childArr}`
+    }
     return element
   }
 }
