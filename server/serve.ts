@@ -15,7 +15,11 @@ try {
         const file = await Bun.file(pathRenamedToPublic)
 
         if (file) {
-          return new Response(file)
+          return new Response(file, {
+            headers: {
+              "Cache-Control": "max-age=31536000",
+            },
+          })
         } else {
           return new Response("Not Found", { status: 404 })
         }
