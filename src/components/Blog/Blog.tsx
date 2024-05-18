@@ -92,6 +92,7 @@ const Blog = async ({ title, children }: BlogProps) => {
       </div>
       <img
         class="banner"
+        loading="lazy"
         src="https://picsum.photos/1800/300"
         width="1800"
         height="300"

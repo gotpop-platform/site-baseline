@@ -28,12 +28,14 @@ const PopOverImage = async ({
         <img
           src={`https://picsum.photos/${width}/${height}`}
           alt="Nice image"
+          loading="lazy"
         />
       </button>
       <figure id="mypopover" popover="auto" class="figure">
         <img
           src={`https://picsum.photos/${width}/${height}`}
           alt="Nice image"
+          loading="lazy"
         />
         <figcaption>{text}</figcaption>
       </figure>

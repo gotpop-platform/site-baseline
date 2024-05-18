@@ -24,6 +24,7 @@ const Brands = async ({ title, text }: BrandsProps) => {
             popovertarget="apple"
           >
             <img
+              loading="lazy"
               height="32"
               width="32"
               src="https://cdn.simpleicons.org/apple/gray"
@@ -41,11 +42,13 @@ const Brands = async ({ title, text }: BrandsProps) => {
             popovertarget="google"
           >
             <img
+              loading="lazy"
               height="32"
               width="32"
               src="https://cdn.simpleicons.org/google/gray"
             />
             <div
+              loading="lazy"
               class="tooltip google"
               popover="auto"
               id="google"
