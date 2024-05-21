@@ -1,18 +1,20 @@
 @scope {
   :scope {
-    align-items: center;
     display: grid;
     grid-column: full-width-start / full-width-end;
     grid-template-columns: subgrid;
-    grid-template-rows: min-content 3fr 1fr;
-    height: 100dvh;
-    row-gap: 7rem;
+    /* grid-template-rows: repeat(3, min-content); */
+    row-gap: 4rem;
+    align-content: space-evenly;
+    /* overflow: hidden; */
 
     .hero-inner {
-      grid-column: 6 / span 8;
-      grid-row: 2;
+      grid-column: 5 / span 8;
       display: grid;
       grid-template-columns: subgrid;
+      background-color: var(--slate-50);
+      padding: 5rem 0;
+      border-radius: 2rem;
 
       h2 {
         font-size: 5rem;
@@ -28,6 +30,7 @@
         line-height: 1.4em;
         letter-spacing: 0.015em;
         opacity: 0.75;
+        margin: 0;
       }
 
       .link-button {
@@ -39,8 +42,8 @@
         font-size: 1.5rem;
         font-weight: 600;
         text-decoration: none;
-        margin-top: 2rem;
         transition: background-color 0.3s;
+        justify-self: center;
 
         &:hover {
           background-color: var(--pink-900);
@@ -50,8 +53,9 @@
 
     .inner-intro {
       display: grid;
-      place-items: center;
-      grid-column: span 5;
+      /* place-items: center; */
+      grid-column: 2 / span 6;
+      row-gap: 2rem;
     }
   }
 }

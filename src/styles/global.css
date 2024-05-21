@@ -5,10 +5,10 @@
 html {
   scroll-behavior: smooth;
 
-  --s: 100px; /* control the size */
-  --c1: #eee;
-  --c2: #d2d3d5;
-  --c3: #fff;
+  --s: 30px; /* control the size */
+  --c1: var(--slate-50);
+  --c2: var(--slate-100);
+  --c3: var(--slate-200);
 
   --g1: conic-gradient(
     at calc(250% / 3) calc(50% / 3),
