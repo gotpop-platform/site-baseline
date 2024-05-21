@@ -1,16 +1,23 @@
 @scope {
   :scope {
     display: flex;
-    padding: 1rem 2rem;
+    padding: 0.5em 1em;
+    grid-column: span 4;
+    gap: 0.5em;
+    align-items: center;
 
     .icon {
-      font-size: var(--font-size-lg);
-      margin-right: 1rem;
+      font-size: 2em;
       color: grey;
+
+      .material-symbols-outlined {
+        font-size: 1.5em;
+      }
     }
 
     h1 {
-      font-size: var(--font-size-md);
+      font-size: 1.5em;
+      margin: 0 0 0.1em 0;
     }
   }
 }

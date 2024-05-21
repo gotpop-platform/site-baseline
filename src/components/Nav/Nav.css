@@ -1,9 +1,12 @@
 @scope {
   :scope {
-    /* display: grid;
-    grid-template-columns: subgrid;
+    --nav-columns: 5 / col-end;
+
     align-items: center;
-    gap: 2rem;
-    margin: 0 1rem; */
+    display: grid;
+    gap: 1em;
+    grid-column: var(--nav-columns);
+    grid-template-columns: subgrid;
+    margin: var(--nav-margin, 0 1rem);
   }
 }
