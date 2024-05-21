@@ -11,7 +11,7 @@ const indexPage = async () => {
   const headerItem = await Header()
   const pointsItem = await Points({})
   const heroComponent = await Hero({
-    title: "The single dependency framework!!!!!!!!",
+    title: "The single dependency framework",
     text: "SingleMum is a single dependency framework for building web applications. It is a simple, fast, and light framework.",
   })
 
@@ -23,7 +23,7 @@ const indexPage = async () => {
         {headerItem}
         {heroComponent}
         {pointsItem}
-        {/* {articlesItem} */}
+        {articlesItem}
         <Footer />
       </GridFull>
     </AppFull>

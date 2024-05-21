@@ -14,7 +14,7 @@ const Logo = () => {
     <a href="/" class={useName}>
       <style>{css}</style>
       <Icon iconName="child_care" />
-      <h1>SingleMum</h1>
+      <h1>Singleton</h1>
     </a>
   )
 }

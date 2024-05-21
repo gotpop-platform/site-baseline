@@ -3,7 +3,8 @@
     --bg: hsl(0deg 0% 100% / 58%);
 
     animation: stickyNav linear forwards;
-    animation-timeline: view(100vh calc(100vh + 300px));
+    animation-timeline: view(block);
+    animation-range: 100vh calc(100vh + 500px);
     backdrop-filter: blur(0.35rem);
     background-color: var(--bg);
     display: grid;
@@ -12,15 +13,15 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     border-radius: 0 0 2em 2em;
   }
 }
 
 @keyframes stickyNav {
   to {
-    font-size: 1rem;
+    font-size: 1.2rem;
     /* grid-column: full-width; */
-    background-color: hsl(0deg 0% 100% / 78%);
+    background-color: hsl(0deg 0% 100% / 98%);
   }
 }
