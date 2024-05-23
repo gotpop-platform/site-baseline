@@ -33,6 +33,23 @@
       }
     }
 
+    .link-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background-color: var(--pink-500);
+      color: white;
+      border-radius: 2rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      justify-self: center;
+
+      &:hover {
+        background-color: var(--pink-900);
+      }
+    }
+
     .image {
       grid-column: 5 / span 8;
       grid-row: 1;

@@ -13,16 +13,19 @@ const Article = async ({
   content,
 }: ArticleProps) => {
   const { css } = useCSS({ meta: import.meta })
-  const path = "/assets/js/Article.client.js"
+  // const path = "/assets/js/Article.client.js"
 
   return (
     <article class={`${useName}`}>
-      <script src={path} type="module"></script>
+      {/* <script src={path} type="module"></script> */}
       <style>{css}</style>
       <section class="content">
         <div class="intro">
           <h3>{title}</h3>
           <p>{content}</p>
+          <a class="link-button" href="/about">
+            About
+          </a>
         </div>
         <img
           class="image"

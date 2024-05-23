@@ -3,9 +3,10 @@
     align-content: center;
     background-color: white;
     display: grid;
-    grid-column: full-width;
+    grid-column: breakout;
     grid-template-columns: subgrid;
     place-items: center;
+    border-radius: 2rem 2rem 0 0;
 
     .inner {
       gap: 2rem;

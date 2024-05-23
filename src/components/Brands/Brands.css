@@ -8,11 +8,12 @@
     align-items: center;
     background-color: var(--slate-50);
     /* border-radius: 5rem 5rem 0 0; */
+    grid-column: 2 / span 8;
 
     .inner {
       display: grid;
       grid-template-columns: subgrid;
-      grid-column: col-start / col-end;
+      grid-column: 3 / span 4;
       gap: 2rem;
       align-items: center;
       padding: 2rem 0;
@@ -26,7 +27,7 @@
     }
 
     .icons {
-      grid-column: 5 / span 4;
+      grid-column: 1 /-1;
       display: grid;
       grid-template-columns: subgrid;
       align-items: center;

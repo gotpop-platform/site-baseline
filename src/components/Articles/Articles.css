@@ -15,7 +15,7 @@
 
 @scope {
   :scope {
-    --direction: col-start / full-width-end;
+    --direction: breakout-start / breakout-end;
     --directionImage: 5 / col-end;
     --directionIntro: col-start / span 6;
 
@@ -41,7 +41,7 @@
       }
 
       &:nth-child(2n) {
-        --direction: full-width-start / col-end;
+        --direction: breakout-start / breakout-end;
 
         .intro {
           --directionIntro: 6 / col-end;

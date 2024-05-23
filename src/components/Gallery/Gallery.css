@@ -3,7 +3,7 @@
     align-content: center;
     background-color: white;
     display: grid;
-    grid-column: col-start / full-width-end;
+    grid-column: breakout;
     grid-template-columns: subgrid;
     place-items: center;
 
