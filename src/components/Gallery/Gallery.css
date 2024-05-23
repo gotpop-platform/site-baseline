@@ -9,7 +9,7 @@
 
     .wrap {
       gap: 2rem;
-      padding: 2rem;
+      padding: 5rem 0;
       display: grid;
       grid-column: col-start / col-end;
       grid-template-columns: subgrid;

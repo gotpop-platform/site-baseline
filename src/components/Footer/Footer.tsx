@@ -12,7 +12,9 @@ const Footer = () => {
   return (
     <footer class={useName}>
       <style>{css}</style>
-      <h1>Footer</h1>
+      <div class="inner">
+        <h1>Footer</h1>
+      </div>
     </footer>
   )
 }

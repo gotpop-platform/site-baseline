@@ -27,7 +27,7 @@
       background-color: #f1f1f1;
       display: grid;
       grid-column: var(--direction);
-      padding: 2rem 0;
+      padding: 10rem 0;
       place-items: center;
       scroll-snap-align: center;
       scroll-snap-stop: always;

@@ -1,12 +1,20 @@
 @scope {
   :scope {
-    align-items: center;
-    background-color: #fff;
-    display: flex;
-    padding: 10rem;
-    flex-direction: column;
-    justify-content: center;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-auto-rows: 7rem min-content;
+
+    .inner {
+      align-items: center;
+      background-color: #fff;
+      display: flex;
+      padding: 10rem;
+      flex-direction: column;
+      justify-content: center;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      grid-row: 2;
+      grid-column: full-width;
+    }
   }
 }
