@@ -51,6 +51,7 @@ h2 {
         text-box-trim: both;
         text-box-edge: cap alphabetic;
         margin-top: 0.6em;
+        text-wrap: balance;
       }
     }
 
