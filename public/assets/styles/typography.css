@@ -19,6 +19,8 @@ h1 {
 h2 {
   font-weight: 800;
   font-size: var(--font-size-xxl);
+  font-feature-settings: "liga", "dlig";
+  font-style: oblique 0deg 10deg;
   font-family: "Playfair Display", "Times New Roman", Times,
     serif;
 }

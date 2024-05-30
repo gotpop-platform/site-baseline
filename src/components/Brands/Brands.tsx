@@ -15,9 +15,6 @@ const Brands = async ({ title, text }: BrandsProps) => {
     <aside class={useName}>
       <style>{css}</style>
       <div class="inner">
-        <span class="disclaimer">
-          None of these companies use this framework
-        </span>
         <div class="icons">
           <button
             class="trigger apple"
@@ -91,6 +88,9 @@ const Brands = async ({ title, text }: BrandsProps) => {
             </div>
           </button>
         </div>
+        <span class="disclaimer">
+          None of these companies use this framework
+        </span>
       </div>
     </aside>
   )

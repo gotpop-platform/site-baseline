@@ -9,6 +9,8 @@
     background-color: var(--slate-50);
     /* border-radius: 5rem 5rem 0 0; */
     grid-column: 2 / span 8;
+    margin-top: 5rem;
+    grid-row: 10;
 
     .inner {
       display: grid;
@@ -16,7 +18,7 @@
       grid-column: 3 / span 4;
       gap: 2rem;
       align-items: center;
-      padding: 2rem 0;
+      /* padding: 2rem 0; */
     }
 
     .disclaimer {
@@ -24,6 +26,8 @@
       grid-template-columns: subgrid;
       align-items: center;
       text-align: center;
+      opacity: 0.45;
+      font-size: 0.8rem;
     }
 
     .icons {
@@ -32,10 +36,21 @@
       grid-template-columns: subgrid;
       align-items: center;
       gap: 2rem;
+      padding-inline: 1rem;
     }
 
     .trigger {
       position: relative;
+      background: transparent;
+      border: none;
+      padding: 0;
+      filter: grayscale(1);
+      transition: filter 0.3s;
+      cursor: pointer;
+
+      &:hover {
+        filter: grayscale(0);
+      }
 
       &.apple {
         anchor-name: --tooltipApple;

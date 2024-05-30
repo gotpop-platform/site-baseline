@@ -21,10 +21,15 @@ const Hero = async ({ title, text }: HeroProps) => {
       <style>{css}</style>
       <div class="hero-inner">
         <div class="inner-intro">
-          <h2>{title}</h2>
+          <h2>
+            <span>The </span>
+            <span>{title}</span>
+          </h2>
         </div>
         <aside class="text">
-          <p>{text}</p>
+          <p>
+            {text} some text goes here some text goes here
+          </p>
           <a href="#liam" class="link-button">
             Learn More
           </a>
