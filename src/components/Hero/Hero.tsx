@@ -20,20 +20,24 @@ const Hero = async ({ title, text }: HeroProps) => {
     <section class={useName}>
       <style>{css}</style>
       <div class="hero-inner">
-        <div class="inner-intro">
-          <h2>
-            <span>The </span>
-            <span>{title}</span>
-          </h2>
+        <div class="liam">
+          <div class="inner-intro">
+            <h2>
+              <span>The </span>
+              <span>{title}</span>
+            </h2>
+          </div>
+          <aside class="text">
+            <p>{text}</p>
+            <p>
+              It is a simple, fast, and light framework.{" "}
+              <a href="#">here</a>
+            </p>
+            <a href="#liam" class="link-button">
+              Learn More
+            </a>
+          </aside>
         </div>
-        <aside class="text">
-          <p>
-            {text} some text goes here some text goes here
-          </p>
-          <a href="#liam" class="link-button">
-            Learn More
-          </a>
-        </aside>
         {brandsItem}
       </div>
     </section>

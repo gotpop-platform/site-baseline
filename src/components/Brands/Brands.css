@@ -9,8 +9,7 @@
     background-color: var(--slate-200);
     /* border-radius: 5rem 5rem 0 0; */
     grid-column: 2 / span 8;
-    margin-top: 5rem;
-    grid-row: 10;
+    grid-row: 4;
     padding: 2rem;
     border-radius: 1rem;
 

@@ -12,7 +12,7 @@ const indexPage = async () => {
   const pointsItem = await Points({})
   const heroComponent = await Hero({
     title: "single dependency template",
-    text: "SingleMum is a single dependency framework for building web applications. It is a simple, fast, and light framework. SingleMum is a single dependency framework for building web applications. It is a simple, fast, and light framework.",
+    text: "Singleton is a single dependency framework for building web applications.",
   })
 
   const articlesItem = await Articles()
