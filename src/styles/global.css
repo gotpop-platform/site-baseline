@@ -40,7 +40,7 @@ html {
   --_p: calc(
     9 * tan(30deg) * var(--s)
   ); /* if you don't see the pattern replace tan(30deg) with 0.577 */
-  background: var(--g1) calc(-1 * var(--s)) 0,
+  /* background: var(--g1) calc(-1 * var(--s)) 0,
     var(--g1) calc(2 * var(--s)) var(--_p), var(--g2),
     var(--g2) calc(3 * var(--s)) var(--_p), var(--g3),
     var(--g3) calc(3 * var(--s)) var(--_p), var(--g4),
@@ -48,7 +48,8 @@ html {
     var(--g5) calc(3 * var(--s)) 0,
     var(--g5) 0 var(--_p) var(--c3);
   background-size: calc(6 * var(--s)) calc(2 * var(--_p));
-  background-attachment: fixed;
+  background-attachment: fixed; */
+  background-color: var(--slate-200);
 }
 
 body {
