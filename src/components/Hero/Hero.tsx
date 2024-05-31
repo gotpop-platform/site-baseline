@@ -34,7 +34,7 @@ const Hero = async ({ title, text }: HeroProps) => {
           <aside class="text">
             <p>{text}</p>
             <p>{textSecondary}</p>
-            <a href="#liam" class="link-button">
+            <a href="#liam" class="link">
               Learn More
             </a>
           </aside>

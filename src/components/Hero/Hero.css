@@ -97,6 +97,20 @@
     }
   }
 
+  .link {
+    color: var(--pink-500);
+    text-decoration-color: var(--pink-900);
+    text-decoration-style: dashed;
+    text-decoration-thickness: 0.07lh;
+    text-decoration: underline;
+    text-underline-offset: 0.17lh;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--pink-900);
+    }
+  }
+
   .text {
     grid-column: span 4;
     grid-row: span 8;

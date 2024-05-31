@@ -21,7 +21,6 @@
 @keyframes stickyNav {
   to {
     font-size: 1.2rem;
-    /* grid-column: full-width; */
     background-color: hsl(0deg 0% 100% / 98%);
   }
 }
