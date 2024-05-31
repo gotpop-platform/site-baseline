@@ -6,13 +6,12 @@
     grid-column: breakout;
     grid-template-columns: subgrid;
     place-items: center;
-    border-radius: 2rem 2rem 0 0;
+    border-radius: 4rem 4rem 0 0;
 
     .inner {
-      gap: 2rem;
       padding: 4rem 0;
       display: grid;
-      grid-column: col-start / col-end;
+      grid-column: col;
       grid-template-columns: subgrid;
       gap: 2rem;
 
@@ -20,6 +19,7 @@
         grid-column: span 4;
         background-color: whitesmoke;
         padding: 2rem;
+        border-radius: 1rem;
 
         .icon {
           --font-size: 2rem;
@@ -39,6 +39,7 @@
         gap: 1rem;
 
         .title {
+          text-align: center;
           font-size: 2rem;
           margin: 0;
         }

@@ -30,8 +30,9 @@ const Hero = async ({ title, text }: HeroProps) => {
           <aside class="text">
             <p>{text}</p>
             <p>
-              It is a simple, fast, and light framework.{" "}
-              <a href="#">here</a>
+              It is a simple, fast, and light framework
+              which does things.{" "}
+              {/* <a href="#">here</a> */}
             </p>
             <a href="#liam" class="link-button">
               Learn More

@@ -23,9 +23,10 @@
 
     .intro {
       grid-row: 1;
-      padding: 1rem;
+      padding: 2rem;
       animation: fadeIn 1s forwards;
       background: white;
+      border-radius: 1rem;
 
       h3 {
         font-size: 2rem;
@@ -54,6 +55,7 @@
       grid-column: 5 / span 8;
       grid-row: 1;
       align-items: center;
+      border-radius: 1rem;
     }
   }
 }

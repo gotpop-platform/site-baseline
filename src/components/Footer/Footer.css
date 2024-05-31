@@ -5,6 +5,7 @@
     grid-auto-rows: 7rem min-content;
 
     .inner {
+      border-radius: 4rem 4rem 0 0;
       align-items: center;
       background-color: #fff;
       display: flex;

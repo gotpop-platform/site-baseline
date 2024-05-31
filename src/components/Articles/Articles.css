@@ -20,17 +20,19 @@
     --directionIntro: col-start / span 6;
 
     display: grid;
-    grid-column: full-width-start / full-width-end;
+    grid-column: full-width;
     grid-template-columns: subgrid;
 
     .article {
-      background-color: #f1f1f1;
+      background-color: var(--slate-50);
       display: grid;
       grid-column: var(--direction);
       padding: 10rem 0;
       place-items: center;
-      scroll-snap-align: center;
-      scroll-snap-stop: always;
+
+      &:last-of-type {
+        border-radius: 0 0 4rem 4rem;
+      }
 
       .intro {
         grid-column: var(--directionIntro);
@@ -41,7 +43,8 @@
       }
 
       &:nth-child(2n) {
-        --direction: breakout-start / breakout-end;
+        --direction: breakout;
+        background-color: var(--slate-500);
 
         .intro {
           --directionIntro: 6 / col-end;
