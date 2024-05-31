@@ -16,31 +16,31 @@ const Hero = async ({ title, text }: HeroProps) => {
     text: "Brands",
   })
 
+  const textSecondary =
+    "It is a simple, fast, and light framework which does things."
+  const the = "The"
+
   return (
     <section class={useName}>
       <style>{css}</style>
-      <div class="hero-inner">
-        <div class="liam">
-          <div class="inner-intro">
-            <h2>
-              <span>The </span>
-              <span>{title}</span>
+      <article class="hero-panel">
+        <div class="intro">
+          <section class="title-wrap">
+            <h2 class="title">
+              <em class="words word-first">{the + " "}</em>
+              {title}
             </h2>
-          </div>
+          </section>
           <aside class="text">
             <p>{text}</p>
-            <p>
-              It is a simple, fast, and light framework
-              which does things.{" "}
-              {/* <a href="#">here</a> */}
-            </p>
+            <p>{textSecondary}</p>
             <a href="#liam" class="link-button">
               Learn More
             </a>
           </aside>
         </div>
         {brandsItem}
-      </div>
+      </article>
     </section>
   )
 }
