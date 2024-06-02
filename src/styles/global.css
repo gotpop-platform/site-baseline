@@ -1,54 +1,13 @@
+::selection {
+  background: var(--accent);
+}
+
 * {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-
-  --s: 30px; /* control the size */
-  --c1: var(--slate-50);
-  --c2: var(--slate-100);
-  --c3: var(--slate-200);
-
-  --g1: conic-gradient(
-    at calc(250% / 3) calc(50% / 3),
-    var(--c2) 60deg,
-    #0000 0 300deg,
-    var(--c1) 0
-  );
-  --g2: conic-gradient(
-    at calc(50% / 3) 50%,
-    #0000 75%,
-    var(--c1) 0
-  );
-  --g3: conic-gradient(
-    at calc(100% / 3) 50%,
-    #0000 75%,
-    var(--c2) 0
-  );
-  --g4: conic-gradient(
-    from 59deg at calc(200% / 3) calc(249% / 9),
-    var(--c3) 61deg,
-    #0000 62deg
-  );
-  --g5: conic-gradient(
-    from 60deg at 50% calc(250% / 3),
-    #f1f1f1 /*4th color*/ 60deg,
-    var(--c1) 0 120deg,
-    #0000 0
-  );
-  --_p: calc(
-    9 * tan(30deg) * var(--s)
-  ); /* if you don't see the pattern replace tan(30deg) with 0.577 */
-  /* background: var(--g1) calc(-1 * var(--s)) 0,
-    var(--g1) calc(2 * var(--s)) var(--_p), var(--g2),
-    var(--g2) calc(3 * var(--s)) var(--_p), var(--g3),
-    var(--g3) calc(3 * var(--s)) var(--_p), var(--g4),
-    var(--g4) calc(3 * var(--s)) var(--_p),
-    var(--g5) calc(3 * var(--s)) 0,
-    var(--g5) 0 var(--_p) var(--c3);
-  background-size: calc(6 * var(--s)) calc(2 * var(--_p));
-  background-attachment: fixed; */
   background-color: var(--slate-200);
 }
 
@@ -57,34 +16,7 @@ body {
   margin: 0;
 }
 
-/* ::selection {
-  background: var(--accent);
-} */
-
-/* html {
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  scroll-snap-type: y proximity;
-  background-color: var(--hwb-grey-1);
-} */
-
-/* body {
-  accent-color: var(--accent);
-  font-size: clamp(0.8rem, 2.5vw, 1.5rem);
-  margin: 0;
-  min-height: 100vh;
-} */
-
 img {
   width: 100%;
   height: auto;
 }
-
-/* h2 {
-  background-color: aqua;
-
-  @media screen and (min-width: 768px) {
-    background-color: red;
-  }
-} */

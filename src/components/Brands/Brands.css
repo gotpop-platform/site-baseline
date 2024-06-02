@@ -1,107 +1,105 @@
 @scope {
   :scope {
-    display: grid;
-    grid-template-columns: subgrid;
-    grid-column: full-width-start / full-width-end;
     align-items: center;
-    grid-template-rows: min-content 1fr;
     align-items: center;
     background-color: var(--slate-200);
-    /* border-radius: 5rem 5rem 0 0; */
-    grid-column: 2 / span 8;
-    grid-row: 4;
-    padding: 2rem;
     border-radius: 1rem;
+    display: grid;
+    grid-column: 2 / span 8;
+    grid-column: full-width-start / full-width-end;
+    grid-row: 4;
+    grid-template-columns: subgrid;
+    grid-template-rows: min-content 1fr;
+    padding: 2rem;
+  }
 
-    .inner {
-      display: grid;
-      grid-template-columns: subgrid;
-      grid-column: 3 / span 4;
-      gap: 2rem;
-      align-items: center;
-      /* padding: 2rem 0; */
+  .inner {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 3 / span 4;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .disclaimer {
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    align-items: center;
+    text-align: center;
+    opacity: 0.45;
+    font-size: 0.8rem;
+  }
+
+  .icons {
+    grid-column: 1 /-1;
+    display: grid;
+    grid-template-columns: subgrid;
+    align-items: center;
+    gap: 2rem;
+    padding-inline: 1rem;
+  }
+
+  .trigger {
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: 0;
+    filter: grayscale(1);
+    transition: filter 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      filter: grayscale(0);
     }
 
-    .disclaimer {
-      grid-column: 1 / -1;
-      grid-template-columns: subgrid;
-      align-items: center;
-      text-align: center;
-      opacity: 0.45;
-      font-size: 0.8rem;
+    &.apple {
+      anchor-name: --tooltipApple;
     }
 
-    .icons {
-      grid-column: 1 /-1;
-      display: grid;
-      grid-template-columns: subgrid;
-      align-items: center;
-      gap: 2rem;
-      padding-inline: 1rem;
+    &.google {
+      anchor-name: --tooltipGoogle;
     }
 
-    .trigger {
-      position: relative;
-      background: transparent;
-      border: none;
-      padding: 0;
-      filter: grayscale(1);
-      transition: filter 0.3s;
-      cursor: pointer;
-
-      &:hover {
-        filter: grayscale(0);
-      }
-
-      &.apple {
-        anchor-name: --tooltipApple;
-      }
-
-      &.google {
-        anchor-name: --tooltipGoogle;
-      }
-
-      &.facebook {
-        anchor-name: --tooltipFacebook;
-      }
-
-      &.spotify {
-        anchor-name: --tooltipSpotify;
-      }
+    &.facebook {
+      anchor-name: --tooltipFacebook;
     }
 
-    .tooltip {
-      position: absolute;
-      inset-area: block-start;
-      position-try: flip-block;
-      margin: 0;
+    &.spotify {
+      anchor-name: --tooltipSpotify;
+    }
+  }
 
-      &.apple {
-        position-anchor: --tooltipApple;
-      }
+  .tooltip {
+    inset-area: block-start;
+    margin: 0;
+    position-try: flip-block;
+    position: absolute;
 
-      &.google {
-        position-anchor: --tooltipGoogle;
-      }
-
-      &.facebook {
-        position-anchor: --tooltipFacebook;
-      }
-
-      &.spotify {
-        position-anchor: --tooltipSpotify;
-      }
+    &.apple {
+      position-anchor: --tooltipApple;
     }
 
-    [popover]:popover-open {
-      @starting-style {
-        --open: 0;
-      }
-
-      --open: 1;
-      transition: display 0.2s, overlay 0.2s, opacity 0.2s,
-        scale 0.2s, top 0.2s, right 0.2s, left 0.2s,
-        bottom 0.2s;
+    &.google {
+      position-anchor: --tooltipGoogle;
     }
+
+    &.facebook {
+      position-anchor: --tooltipFacebook;
+    }
+
+    &.spotify {
+      position-anchor: --tooltipSpotify;
+    }
+  }
+
+  [popover]:popover-open {
+    @starting-style {
+      --open: 0;
+    }
+
+    --open: 1;
+    transition: display 0.2s, overlay 0.2s, opacity 0.2s,
+      scale 0.2s, top 0.2s, right 0.2s, left 0.2s,
+      bottom 0.2s;
   }
 }

@@ -1,10 +1,6 @@
 @scope {
   :scope {
     display: grid;
-    /* grid-template-columns:
-      [full-width-start] minmax(1rem, 1fr)
-      [col-start] repeat(12, minmax(1rem, 6rem)) [col-end]
-      minmax(1rem, 1fr) [full-width-end]; */
     grid-template-columns:
       [full-width-start] minmax(1rem, 1fr)
       [breakout-start] 100px
@@ -15,13 +11,5 @@
     height: 100%;
     overflow: hidden scroll;
     scroll-behavior: smooth;
-
-    .hero {
-      grid-column: full-width;
-    }
-
-    .footer {
-      grid-column: full-width;
-    }
   }
 }
