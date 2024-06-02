@@ -1,12 +1,10 @@
 @scope {
   :scope {
     align-items: center;
-    align-items: center;
     background-color: var(--slate-200);
     border-radius: 1rem;
     display: grid;
     grid-column: 2 / span 8;
-    grid-column: full-width-start / full-width-end;
     grid-row: 4;
     grid-template-columns: subgrid;
     grid-template-rows: min-content 1fr;
