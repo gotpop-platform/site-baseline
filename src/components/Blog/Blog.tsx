@@ -1,13 +1,9 @@
 import PopOverImage from "@components/PopOverImage"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
+import { useName } from "@utils/class"
 
 type BlogProps = { title?: string; children?: string }
-
-export const useName = import.meta.file
-  .split(".")
-  .shift()
-  ?.toLowerCase()
 
 const Blog = async ({ title, children }: BlogProps) => {
   const { css } = useCSS({ meta: import.meta })

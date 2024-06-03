@@ -1,5 +1,6 @@
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
+import { useName } from "@utils/class"
 
 type PopOverImageProps = {
   title: string
@@ -7,11 +8,6 @@ type PopOverImageProps = {
   width?: number
   height?: number
 }
-
-export const useName = import.meta.file
-  .split(".")
-  .shift()
-  ?.toLowerCase()
 
 const PopOverImage = async ({
   title,
