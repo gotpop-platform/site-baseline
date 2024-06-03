@@ -1,13 +1,9 @@
 import Brands from "@components/Brands"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
+import { useName } from "@utils/class"
 
 type HeroProps = { title: string; text: string }
-
-export const useName = import.meta.file
-  .split(".")
-  .shift()
-  ?.toLowerCase()
 
 const Hero = async ({ title, text }: HeroProps) => {
   const { css } = useCSS({ meta: import.meta })
