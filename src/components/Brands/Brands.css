@@ -45,6 +45,7 @@
     filter: grayscale(1);
     transition: filter 0.3s;
     cursor: pointer;
+    color: red;
 
     &:hover {
       filter: grayscale(0);

@@ -1,93 +1,44 @@
+import { useName } from "@utils/class"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
+import { brandsData, type Brand } from "./Brands.data"
 
 type BrandsProps = { title?: string; text?: string }
 
-export const useName = import.meta.file
-  .split(".")
-  .shift()
-  ?.toLowerCase()
+const BrandItem = async ({
+  classData,
+  icon,
+  tooltip,
+}: Brand) => {
+  return (
+    <button
+      class={`trigger ${classData}`}
+      popovertarget={classData}
+    >
+      {icon}
+      <div
+        class={`tooltip ${classData}`}
+        popover="auto"
+        id={classData}
+      >
+        {tooltip}
+      </div>
+    </button>
+  )
+}
 
 const Brands = async ({ title, text }: BrandsProps) => {
   const { css } = useCSS({ meta: import.meta })
+
+  const icons = await Promise.all(
+    brandsData.map(async (brand) => await BrandItem(brand))
+  )
 
   return (
     <aside class={useName}>
       <style>{css}</style>
       <div class="inner">
-        <div class="icons">
-          <button
-            class="trigger apple"
-            popovertarget="apple"
-          >
-            <img
-              loading="lazy"
-              height="32"
-              width="32"
-              src="https://cdn.simpleicons.org/apple/gray"
-            />
-            <div
-              class="tooltip apple"
-              popover="auto"
-              id="apple"
-            >
-              Apple Nope
-            </div>
-          </button>
-          <button
-            class="trigger google"
-            popovertarget="google"
-          >
-            <img
-              loading="lazy"
-              height="32"
-              width="32"
-              src="https://cdn.simpleicons.org/google/gray"
-            />
-            <div
-              loading="lazy"
-              class="tooltip google"
-              popover="auto"
-              id="google"
-            >
-              Google Nope
-            </div>
-          </button>
-          <button
-            class="trigger facebook"
-            popovertarget="facebook"
-          >
-            <img
-              height="32"
-              width="32"
-              src="https://cdn.simpleicons.org/facebook/hotpink"
-            />
-            <div
-              class="tooltip facebook"
-              popover="auto"
-              id="facebook"
-            >
-              Facebook Nope
-            </div>
-          </button>
-          <button
-            class="trigger spotify"
-            popovertarget="spotify"
-          >
-            <img
-              height="32"
-              width="32"
-              src="https://cdn.simpleicons.org/spotify/0cf"
-            />
-            <div
-              class="tooltip spotify"
-              popover="auto"
-              id="spotify"
-            >
-              Spotify Nope
-            </div>
-          </button>
-        </div>
+        <div class="icons">{icons}</div>
         <span class="disclaimer">
           None of these companies use this framework
         </span>
