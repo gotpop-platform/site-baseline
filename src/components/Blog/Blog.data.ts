@@ -1,5 +1,6 @@
-export const introTitle = "Welcome to SingleMum"
-export const introParagraph = "This is a sample paragraph."
+export const introTitle = "Welcome to Singleton"
+export const introParagraph =
+  "Singleton is a single dependency framework for building web applications. It is a simple, fast, and light framework that provides numerous benefits to developers."
 
 export const textContent = [
   "SingleMum is a single dependency framework for building web applications. It is a simple, fast, and light framework. It is designed for developers who want to build ggrgr applications with a single dependency.",
