@@ -1,45 +1,8 @@
 @scope {
   :scope {
-    --direction: breakout-start / breakout-end;
-    --directionImage: 5 / col-end;
-    --directionIntro: col-start / span 6;
-
     display: grid;
     grid-column: full-width;
     grid-template-columns: subgrid;
-  }
-
-  .article {
-    background-color: var(--slate-50);
-    display: grid;
-    grid-column: var(--direction);
-    padding: 10rem 0;
-    place-items: center;
-
-    &:last-of-type {
-      border-radius: 0 0 4rem 4rem;
-    }
-  }
-
-  .intro {
-    grid-column: var(--directionIntro);
-  }
-
-  .image {
-    grid-column: var(--directionImage);
-  }
-
-  &:nth-child(2n) {
-    --direction: breakout;
-    background-color: var(--slate-500);
-
-    .intro {
-      --directionIntro: 6 / col-end;
-    }
-
-    .image {
-      --directionImage: col-start / span 8;
-    }
   }
 
   @property --angle {

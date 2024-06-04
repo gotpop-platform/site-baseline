@@ -10,6 +10,7 @@ import h from "@utils/jsxFactory"
 const indexPage = async () => {
   const headerItem = await Header()
   const pointsItem = await Points({})
+  const footerItem = await Footer()
   const heroComponent = await Hero({
     title: "single dependency template",
     text: "Singleton is a single dependency framework for building web applications.",
@@ -24,7 +25,7 @@ const indexPage = async () => {
         {heroComponent}
         {pointsItem}
         {articlesItem}
-        <Footer />
+        {footerItem}
       </GridFull>
     </AppFull>
   )

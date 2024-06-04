@@ -4,11 +4,6 @@ import { arr } from "@data/data"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
-export const useName = import.meta.file
-  .split(".")
-  .shift()
-  ?.toLowerCase()
-
 const Articles = async () => {
   const { css } = useCSS({ meta: import.meta })
 

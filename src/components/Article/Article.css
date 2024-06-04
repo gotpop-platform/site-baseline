@@ -1,7 +1,40 @@
 @scope {
   :scope {
+    --direction: breakout-start / breakout-end;
+    --directionImage: 5 / col-end;
+    --directionIntro: col-start / span 6;
+
     display: grid;
     grid-template-columns: subgrid;
+    background-color: var(--slate-50);
+    display: grid;
+    grid-column: var(--direction);
+    padding: 10rem 0;
+
+    &:last-of-type {
+      border-radius: 0 0 4rem 4rem;
+    }
+
+    .intro {
+      grid-column: var(--directionIntro);
+    }
+
+    .image {
+      grid-column: var(--directionImage);
+    }
+
+    &:nth-child(2n) {
+      --direction: breakout;
+      background-color: var(--slate-300);
+
+      .intro {
+        --directionIntro: 6 / col-end;
+      }
+
+      .image {
+        --directionImage: col-start / span 8;
+      }
+    }
   }
 
   .content {
@@ -14,29 +47,45 @@
   }
 
   .intro {
-    animation: fadeIn 1s forwards;
     background: white;
     border-radius: 1rem;
     grid-row: 1;
-    padding: 2rem;
+    padding: 4rem;
+    position: relative;
+    display: grid;
+    align-items: baseline;
 
     h3 {
-      font-size: 2rem;
-      margin: 0 0 1rem;
+      font-size: var(--font-size-lg);
+      margin: 0 0 2rem;
+      text-box-edge: cap alphabetic;
+      text-box-trim: both;
+      font-family: "Playfair Display", "Times New Roman",
+        Times, serif;
+    }
+
+    p {
+      font-size: var(--font-size-base);
+      line-height: 1.4em;
+      margin: 0 0 2rem;
+      text-box-edge: cap alphabetic;
+      text-box-trim: both;
+      color: var(--gray-600);
     }
   }
 
   .link-button {
     background-color: var(--pink-500);
-    border-radius: 2rem;
+    border-radius: 0.5rem;
     color: white;
     display: inline-block;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: var(--font-size-md);
+    font-weight: 500;
     justify-self: center;
-    padding: 1rem 2rem;
+    padding: 0.5em 2em;
     text-decoration: none;
     transition: background-color 0.3s;
+    justify-self: end;
 
     &:hover {
       background-color: var(--pink-900);
@@ -48,14 +97,5 @@
     border-radius: 1rem;
     grid-column: 5 / span 8;
     grid-row: 1;
-  }
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
   }
 }
