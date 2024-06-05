@@ -1,3 +1,4 @@
+import Button from "@components/Button"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
@@ -16,9 +17,7 @@ const Article = async ({
         <div class="intro">
           <h3>{title}</h3>
           <p>{content}</p>
-          <a class="link-button" href="/about">
-            About
-          </a>
+          <Button href="/about">About</Button>
         </div>
         <img
           class="image"

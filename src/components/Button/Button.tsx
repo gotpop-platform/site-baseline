@@ -1,20 +1,19 @@
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
-type ButtonProps = { title?: string; content?: string }
+type ButtonProps = {
+  href: string
+  children?: string | JSX.Element | JSX.Element[]
+}
 
-export const useName = import.meta.file.split(".").shift()?.toLowerCase()
-
-const Button = ({ content }: ButtonProps) => {
-  const { css } = useCSS({ meta: import.meta })
-  const path = "assets/js/Button.client.js"
+const Button = ({ href, children }: ButtonProps) => {
+  const { css, useName } = useCSS({ meta: import.meta })
 
   return (
-    <button class={useName}>
-      {content}
-      <script src={path} type="module"></script>
+    <a class={useName + " link-button"} href={href}>
       <style>{css}</style>
-    </button>
+      {children}
+    </a>
   )
 }
 

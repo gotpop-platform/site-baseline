@@ -4,14 +4,9 @@ import h from "@utils/jsxFactory"
 import path from "path"
 import { useCSS } from "src/hooks/useCSS"
 
-export const useName = import.meta.file
-  .split(".")
-  .shift()
-  ?.toLowerCase()
-
 const Nav = async () => {
   const glob = new Glob("./src/pages/*.tsx")
-  const { css } = useCSS({ meta: import.meta })
+  const { css, useName } = useCSS({ meta: import.meta })
   let arr = []
 
   for await (const filePath of glob.scan(".")) {

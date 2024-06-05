@@ -1,15 +1,19 @@
 @scope {
   :scope {
-    display: flex;
+    background-color: var(--pink-500);
+    border-radius: 0.5rem;
+    color: white;
+    display: inline-block;
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    justify-self: center;
+    padding: 0.5em 2em;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    justify-self: end;
 
-    button {
-      background-color: red;
-      font-size: 2rem;
-      padding: 2rem;
-      margin: 2rem;
-      border-radius: 0.5rem;
-      border: none;
-      color: white;
+    &:hover {
+      background-color: var(--pink-900);
     }
   }
 }
