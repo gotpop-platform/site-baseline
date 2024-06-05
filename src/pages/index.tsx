@@ -8,24 +8,36 @@ import Points from "@components/Points"
 import h from "@utils/jsxFactory"
 
 const indexPage = async () => {
-  const headerItem = await Header()
-  const pointsItem = await Points({})
-  const footerItem = await Footer()
-  const heroComponent = await Hero({
+  const heroData = {
     title: "single dependency template",
     text: "Singleton is a single dependency framework for building web applications.",
-  })
+  }
 
-  const articlesItem = await Articles()
+  const components = [
+    Header,
+    Hero,
+    Points,
+    Articles,
+    Footer,
+  ]
+  const data = [null, heroData, {}, null, null]
+
+  // const componentDataMap = new Map([
+  //   [Header, null],
+  //   [Hero, heroData],
+  //   [Points, {}],
+  //   [Articles, null],
+  //   [Footer, null],
+  // ])
 
   return (
     <AppFull title="Home">
       <GridFull>
-        {headerItem}
-        {heroComponent}
-        {pointsItem}
-        {articlesItem}
-        {footerItem}
+        {await Promise.all(
+          components.map(async (Component, index) =>
+            Component(data[index])
+          )
+        )}
       </GridFull>
     </AppFull>
   )
