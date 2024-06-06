@@ -15,13 +15,10 @@ function Footer() {
       <style>{css}</style>
       <div class="inner">
         <h1>Footer</h1>
-        {/* {brandsItem} */}
-        <Nav />
+        <Nav pages={[]} />
       </div>
     </footer>
   )
 }
-
-// const Footer = await createFooter()
 
 export default Footer
