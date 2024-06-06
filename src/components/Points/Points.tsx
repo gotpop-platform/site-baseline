@@ -5,7 +5,7 @@ import { useCSS } from "src/hooks/useCSS"
 
 type PointsProps = { title?: string; content?: string }
 
-const Points = async ({
+const Points = ({
   title = "Points",
   content = "Points content",
 }: PointsProps) => {

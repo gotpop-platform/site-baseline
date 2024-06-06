@@ -20,8 +20,8 @@ const indexPage = async () => {
     <AppFull title="Home">
       <GridFull>
         <Header pages={pages} />
-        {await Hero(heroData)}
-        {await Points({})}
+        <Hero {...heroData} />
+        <Points />
         {await Articles()}
         {await Footer()}
       </GridFull>

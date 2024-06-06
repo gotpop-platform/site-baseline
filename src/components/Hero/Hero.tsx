@@ -1,15 +1,14 @@
-import Brands from "@components/Brands"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
 type HeroProps = { title: string; text: string }
 
-const Hero = async ({ title, text }: HeroProps) => {
+const Hero = ({ title, text }: HeroProps) => {
   const { css, useName } = useCSS({ meta: import.meta })
-  const brandsItem = await Brands({
-    title: "Brands",
-    text: "Brands",
-  })
+  // const brandsItem = await Brands({
+  //   title: "Brands",
+  //   text: "Brands",
+  // })
 
   const textSecondary =
     "It is a simple, fast, and light framework which does things."
@@ -34,7 +33,7 @@ const Hero = async ({ title, text }: HeroProps) => {
             </a>
           </aside>
         </div>
-        {brandsItem}
+        {/* {brandsItem} */}
       </article>
     </section>
   )
