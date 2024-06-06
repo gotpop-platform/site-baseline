@@ -2,7 +2,6 @@ import Icon from "@components/Icon"
 import { articles } from "./Points.data"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
-import { useName } from "@utils/class"
 
 type PointsProps = { title?: string; content?: string }
 
@@ -10,7 +9,7 @@ const Points = async ({
   title = "Points",
   content = "Points content",
 }: PointsProps) => {
-  const { css } = useCSS({ meta: import.meta })
+  const { css, useName } = useCSS({ meta: import.meta })
 
   const allArticles = articles.map((article, index) => (
     <article key={index}>

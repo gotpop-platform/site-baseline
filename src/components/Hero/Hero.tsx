@@ -1,12 +1,11 @@
 import Brands from "@components/Brands"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
-import { useName } from "@utils/class"
 
 type HeroProps = { title: string; text: string }
 
 const Hero = async ({ title, text }: HeroProps) => {
-  const { css } = useCSS({ meta: import.meta })
+  const { css, useName } = useCSS({ meta: import.meta })
   const brandsItem = await Brands({
     title: "Brands",
     text: "Brands",

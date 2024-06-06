@@ -6,16 +6,12 @@ import Header from "@components/Header"
 import h from "@utils/jsxFactory"
 
 const aboutPage = async () => {
-  const headerItem = await Header()
-  const blogItem = await Blog({})
-  const footerItem = await Footer()
-
   return (
     <AppFull title="About">
       <Grid>
-        {headerItem}
-        {blogItem}
-        {footerItem}
+        {await Header()}
+        {await Blog({})}
+        {await Footer()}
       </Grid>
     </AppFull>
   )

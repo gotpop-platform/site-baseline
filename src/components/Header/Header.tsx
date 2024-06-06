@@ -3,20 +3,14 @@ import Nav from "@components/Nav"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
-export const useName = import.meta.file
-  .split(".")
-  .shift()
-  ?.toLowerCase()
-
-const Header = async () => {
-  const { css } = useCSS({ meta: import.meta })
-  const navComponent = await Nav()
+const Header = ({ pages }: { pages: string[] }) => {
+  const { css, useName } = useCSS({ meta: import.meta })
 
   return (
-    <header>
+    <header class={useName}>
       <style>{css}</style>
       <Logo />
-      {navComponent}
+      <Nav pages={pages} />
     </header>
   )
 }

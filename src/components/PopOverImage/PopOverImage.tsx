@@ -1,6 +1,5 @@
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
-import { useName } from "@utils/class"
 
 type PopOverImageProps = {
   title: string
@@ -15,7 +14,7 @@ const PopOverImage = async ({
   width = 500,
   height = 300,
 }: PopOverImageProps) => {
-  const { css } = useCSS({ meta: import.meta })
+  const { css, useName } = useCSS({ meta: import.meta })
 
   return (
     <div class={useName}>

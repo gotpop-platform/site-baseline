@@ -5,6 +5,7 @@ import GridFull from "@components/GridFull"
 import Header from "@components/Header"
 import Hero from "@components/Hero"
 import Points from "@components/Points"
+import { getPages } from "@utils/getPages"
 import h from "@utils/jsxFactory"
 
 const indexPage = async () => {
@@ -13,31 +14,16 @@ const indexPage = async () => {
     text: "Singleton is a single dependency framework for building web applications.",
   }
 
-  const components = [
-    Header,
-    Hero,
-    Points,
-    Articles,
-    Footer,
-  ]
-  const data = [null, heroData, {}, null, null]
-
-  // const componentDataMap = new Map([
-  //   [Header, null],
-  //   [Hero, heroData],
-  //   [Points, {}],
-  //   [Articles, null],
-  //   [Footer, null],
-  // ])
+  const pages = await getPages()
 
   return (
     <AppFull title="Home">
       <GridFull>
-        {await Promise.all(
-          components.map(async (Component, index) =>
-            Component(data[index])
-          )
-        )}
+        <Header pages={pages} />
+        {await Hero(heroData)}
+        {await Points({})}
+        {await Articles()}
+        {await Footer()}
       </GridFull>
     </AppFull>
   )

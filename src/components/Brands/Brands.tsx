@@ -1,4 +1,3 @@
-import { useName } from "@utils/class"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 import { brandsData, type Brand } from "./Brands.data"
@@ -28,7 +27,7 @@ const BrandItem = async ({
 }
 
 const Brands = async ({ title, text }: BrandsProps) => {
-  const { css } = useCSS({ meta: import.meta })
+  const { css, useName } = useCSS({ meta: import.meta })
 
   const icons = await Promise.all(
     brandsData.map(async (brand) => await BrandItem(brand))

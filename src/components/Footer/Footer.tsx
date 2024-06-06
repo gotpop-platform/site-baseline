@@ -1,10 +1,9 @@
 import Nav from "@components/Nav"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
-import { useName } from "@utils/class"
 
 function Footer() {
-  const { css } = useCSS({ meta: import.meta })
+  const { css, useName } = useCSS({ meta: import.meta })
 
   // const brandsItem = await Brands({
   //   title: "Brands",
@@ -25,5 +24,4 @@ function Footer() {
 
 // const Footer = await createFooter()
 
-console.log("Footer :", Footer)
 export default Footer

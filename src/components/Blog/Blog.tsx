@@ -10,12 +10,11 @@ import { introParagraph, introTitle } from "./Blog.data"
 
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
-import { useName } from "@utils/class"
 
 type BlogProps = { title?: string; children?: string }
 
 const Blog = async ({ title, children }: BlogProps) => {
-  const { css } = useCSS({ meta: import.meta })
+  const { css, useName } = useCSS({ meta: import.meta })
 
   return (
     <main class={useName}>
