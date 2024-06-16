@@ -13,7 +13,7 @@ import { useCSS } from "src/hooks/useCSS"
 
 type BlogProps = { title?: string; children?: string }
 
-const Blog = async ({ title, children }: BlogProps) => {
+const Blog = ({ title, children }: BlogProps) => {
   const { css, useName } = useCSS({ meta: import.meta })
 
   return (

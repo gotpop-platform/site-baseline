@@ -4,14 +4,17 @@ import Footer from "@components/Footer"
 import Grid from "@components/Grid"
 import Header from "@components/Header"
 import h from "@utils/jsxFactory"
+import { getPages } from "@utils/getPages"
 
 const aboutPage = async () => {
+  const pages = await getPages()
+
   return (
     <AppFull title="About">
       <Grid>
-        {await Header()}
-        {await Blog({})}
-        {await Footer()}
+        <Header pages={pages} />
+        <Blog />
+        <Footer />
       </Grid>
     </AppFull>
   )
