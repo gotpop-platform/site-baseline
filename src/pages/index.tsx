@@ -44,8 +44,8 @@ const indexPage = async () => {
   }
 
   const pages = await getPages()
-
   const articles = await buildArticles()
+
   return (
     <AppFull title="Home">
       <GridFull>
