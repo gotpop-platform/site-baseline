@@ -14,7 +14,6 @@ const indexPage = async () => {
   return (
     <AppFull title="Home">
       <GridFull>
-        <h1>Demo</h1>
         <Header pages={pages} />
         <Hero {...heroData} />
         <Points />

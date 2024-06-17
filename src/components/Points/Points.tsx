@@ -5,19 +5,19 @@ import { useCSS } from "src/hooks/useCSS"
 
 type PointsProps = { title?: string; content?: string }
 
+const allArticles = articles.map((article, index) => (
+  <article class="point" key={index}>
+    <Icon iconName={article.iconName} />
+    <h3>{article.heading}</h3>
+    <p>{article.text}</p>
+  </article>
+))
+
 const Points = ({
   title = "Points",
   content = "Points content",
 }: PointsProps) => {
   const { css, useName } = useCSS({ meta: import.meta })
-
-  const allArticles = articles.map((article, index) => (
-    <article key={index}>
-      <Icon iconName={article.iconName} />
-      <h3>{article.heading}</h3>
-      <p>{article.text}</p>
-    </article>
-  ))
 
   return (
     <section class={useName}>

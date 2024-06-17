@@ -15,22 +15,6 @@
     grid-column: col;
     grid-template-columns: subgrid;
     gap: 2rem;
-
-    > *:not(.intro) {
-      grid-column: span 4;
-      background-color: whitesmoke;
-      padding: 2rem;
-      border-radius: 1rem;
-
-      .icon {
-        --font-size: 2rem;
-      }
-
-      h3 {
-        font-size: 2rem;
-        margin: 0 0 1rem;
-      }
-    }
   }
 
   .intro {
@@ -45,5 +29,21 @@
     text-align: center;
     font-size: 2rem;
     margin: 0;
+  }
+
+  .point {
+    grid-column: span 4;
+    background-color: whitesmoke;
+    padding: 2rem;
+    border-radius: 1rem;
+
+    .icon {
+      --font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 2rem;
+      margin: 0 0 1rem;
+    }
   }
 }
