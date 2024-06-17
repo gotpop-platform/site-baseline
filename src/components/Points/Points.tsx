@@ -2,15 +2,12 @@ import Icon from "@components/Icon"
 import { articles } from "./Points.data"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
+import Point from "./Point/Point"
 
 type PointsProps = { title?: string; content?: string }
 
-const allArticles = articles.map((article, index) => (
-  <article class="point" key={index}>
-    <Icon iconName={article.iconName} />
-    <h3>{article.heading}</h3>
-    <p>{article.text}</p>
-  </article>
+const allArticles = articles.map((article) => (
+  <Point {...article} />
 ))
 
 const Points = ({
