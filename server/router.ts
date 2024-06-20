@@ -13,9 +13,11 @@ export const handleGetPages = async (request: Request) => {
     ? "/src/pages"
     : `/src/pages/subdomains/${subdomain}`
 
+  const dir = process.cwd() + routerPath
+
   const router = new Bun.FileSystemRouter({
     style: "nextjs",
-    dir: process.cwd() + routerPath,
+    dir,
   })
 
   const route = router.match(request)

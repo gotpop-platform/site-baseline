@@ -7,25 +7,14 @@ export const BASE = process.env.BASE_URL ?? ""
 function handleGetAssets(url: URL) {
   const pathRenamedToPublic = `./public${url.pathname}`
   const file = Bun.file(pathRenamedToPublic)
+
   const headers = {
     "Cache-Control": "max-age=31536000",
   }
 
-  const res = file
-    ? {
-        body: file,
-        headers,
-      }
-    : {
-        body: "Not Found",
-        status: 404,
-      }
-
-  const { body, status } = res
-
-  return new Response(body, {
-    status: status,
-    headers: headers,
+  return new Response(file ?? "Not Found", {
+    status: file ? 200 : 404,
+    headers: headers ?? {},
   })
 }
 
