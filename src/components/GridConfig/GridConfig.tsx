@@ -1,11 +1,17 @@
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
-type GridFullProps = { title?: string; children?: string }
+type GridConfigProps = { title?: string; children?: string }
 
-export const useName = import.meta.file.split(".").shift()?.toLowerCase()
+export const useName = import.meta.file
+  .split(".")
+  .shift()
+  ?.toLowerCase()
 
-const GridFull = ({ title, children }: GridFullProps) => {
+const GridConfig = ({
+  title,
+  children,
+}: GridConfigProps) => {
   const { css } = useCSS({ meta: import.meta })
 
   return (
@@ -16,4 +22,4 @@ const GridFull = ({ title, children }: GridFullProps) => {
   )
 }
 
-export default GridFull
+export default GridConfig

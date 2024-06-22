@@ -28,8 +28,9 @@ export const handleGetPages = async (request: Request) => {
     })
   }
 
+  const theQuery = route.query
   const module = await import(route.filePath)
-  const response = await module.default()
+  const response = await module.default(theQuery)
 
   return new Response(response, {
     headers: { "Content-Type": "text/html" },

@@ -1,15 +1,51 @@
 @scope {
-  :scope {
+  & {
     display: grid;
     grid-template-columns:
-      [full-width-start] minmax(1rem, 1fr)
-      [breakout-start] 100px
-      [col-start] repeat(12, minmax(1rem, 6rem)) [col-end]
-      100px [breakout-end]
+      [full-width-start left-start] minmax(1rem, 1fr)
+      [box-start left-end] 1rem
+      [col-start] repeat(12, [bro] minmax(1rem, 5rem))
+      [col-end]
+      1rem [box-end]
       minmax(1rem, 1fr) [full-width-end];
-    grid-template-rows: min-content 100dvh 1fr min-content;
+
     height: 100%;
-    overflow: hidden scroll;
+    /* overflow: hidden scroll; */
     scroll-behavior: smooth;
+  }
+
+  .main-box {
+    grid-column: box;
+    /* grid-row: 2 / 4; */
+    display: grid;
+    grid-template-columns: subgrid;
+    /* gap: 1rem; */
+    background-color: white;
+    padding-block: 1rem;
+    border-radius: 1rem;
+    row-gap: 1rem;
+
+    .intro {
+      padding: 1rem;
+      border-radius: 0.5rem;
+      grid-column: bro 2 / span 10;
+      background-color: var(--slate-300);
+    }
+
+    .inner {
+      grid-column: col;
+      display: grid;
+      grid-template-columns: subgrid;
+      gap: 1rem;
+      /* background-color: blue; */
+    }
+
+    article {
+      grid-column: span 6;
+      grid-row: span 1;
+      border-radius: 0.5rem;
+      background-color: var(--slate-200);
+      padding: 2rem;
+    }
   }
 }

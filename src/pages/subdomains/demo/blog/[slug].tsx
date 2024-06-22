@@ -5,7 +5,12 @@ import { useCSSTheme } from "@hooks/useCSSTheme"
 import AppFull from "@layouts/app-full"
 import h from "@utils/jsxFactory"
 
-const indexPage = async () => {
+const indexPage = async ({
+  slug,
+}: {
+  slug: string
+}): Promise<JSX.Element> => {
+  console.log("slug :", slug)
   const { css } = useCSSTheme()
 
   return (
@@ -14,7 +19,7 @@ const indexPage = async () => {
         <MegaMenu />
         <section class="main-box">
           <div class="intro">
-            <h2>Intro</h2>
+            <h2>Intro {slug}</h2>
           </div>
           <div class="inner">
             <article>
