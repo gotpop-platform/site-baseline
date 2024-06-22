@@ -10,7 +10,6 @@ const indexPage = async ({
 }: {
   slug: string
 }): Promise<JSX.Element> => {
-  console.log("slug :", slug)
   const { css } = useCSSTheme()
 
   return (
