@@ -43,7 +43,7 @@
       grid-column: bro 1 / span 10;
       background-color: var(--slate-300);
       view-transition-name: slider;
-      display: none;
+      min-height: 10rem;
     }
 
     .inner {

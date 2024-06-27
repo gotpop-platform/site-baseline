@@ -13,15 +13,6 @@
     transition: padding 0.4s 0.5s ease;
     height: 7rem;
 
-    margin: 0 auto;
-    grid-template-columns:
-      [box-start] 1rem
-      [col-start] repeat(12, [bro] minmax(1rem, 5rem))
-      [col-end]
-      1rem [box-end];
-
-    width: fit-content;
-
     &:has(.mega:popover-open) {
       padding-bottom: 17rem;
       transition: padding 0.4s ease;
@@ -62,6 +53,11 @@
     /* width: 100%; */
     overflow: hidden;
     margin: 0 auto;
+
+    width: auto;
+    left: 25%;
+    right: 25%;
+    margin: 0;
 
     &:popover-open {
       opacity: 1;

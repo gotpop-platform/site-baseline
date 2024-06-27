@@ -25,15 +25,15 @@ const BrandItem = ({ classData, icon, tooltip }: Brand) => {
 const Brands = ({ title, text }: BrandsProps) => {
   const { css, useName } = useCSS({ meta: import.meta })
 
-  // const icons = await Promise.all(
-  //   brandsData.map(async (brand) => await BrandItem(brand))
-  // )
+  const icons = brandsData.map((brand) => (
+    <BrandItem {...brand} />
+  ))
 
   return (
     <aside class={useName}>
       <style>{css}</style>
       <div class="inner">
-        {/* <div class="icons">{icons}</div> */}
+        <div class="icons">{icons}</div>
         <span class="disclaimer">
           None of these companies use this framework
         </span>
