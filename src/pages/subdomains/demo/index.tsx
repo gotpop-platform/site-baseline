@@ -18,7 +18,7 @@ const indexPage = async () => {
           </div>
           <div class="inner">
             <article>
-              <h3>Text</h3>
+              <h3>Lorem</h3>
             </article>
             <article>
               <h3>Text</h3>

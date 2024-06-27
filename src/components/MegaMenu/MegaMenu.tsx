@@ -1,4 +1,5 @@
 import GridConfig from "@components/GridConfig"
+import Logo from "@components/Logo"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
@@ -15,7 +16,7 @@ const MegaMenu = ({ title, children }: MegaMenuProps) => {
   return (
     <header class={useName}>
       <style>{css}</style>
-
+      <Logo />
       <nav>
         <button
           id="menu-toggle-1"
@@ -33,7 +34,7 @@ const MegaMenu = ({ title, children }: MegaMenuProps) => {
             <div class="inner">
               <ul>
                 <li class="item">
-                  <a href="#">Product item</a>
+                  <a href="/gallery/1">Product item</a>
                 </li>
                 <li class="item">
                   <a href="#">Product item</a>
@@ -56,6 +57,11 @@ const MegaMenu = ({ title, children }: MegaMenuProps) => {
             <li class="item">Menu item 233</li>
           </ul>
         </div>
+        <input
+          type="checkbox"
+          switch
+          class="special"
+        ></input>
       </nav>
     </header>
   )

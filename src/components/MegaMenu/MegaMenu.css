@@ -8,9 +8,17 @@
     grid-column: box;
     grid-template-columns: subgrid;
     z-index: 1000;
-    border-radius: 0 0 2em 2em;
+    border-radius: 0 0 1rem 1rem;
     view-transition-name: header;
     padding: 1rem;
+    margin-bottom: 2rem;
+    transition: margin 0.4s ease;
+
+    height: 7rem;
+
+    &:has(.mega:popover-open) {
+      margin-bottom: 12rem;
+    }
   }
 
   button {
@@ -32,51 +40,65 @@
     padding: 1rem;
     background-color: var(--bg);
     border-radius: 0 0 2em 2em;
-    grid-column: 4 / span 8;
-  }
-
-  .menu-items {
-    bottom: anchor(bottom);
-    translate: 0% 100%;
-
-    &:popover-open {
-      grid-column: span 8;
-      display: grid;
-      position: relative;
-    }
+    grid-column: 6 / span 8;
   }
 
   .mega {
+    background: unset;
+    border: none;
+    bottom: anchor(bottom);
+    /* opacity: 0; */
+    padding: 0;
+    padding-top: 32px;
+    overflow: visible;
+    transition: all 0.3s allow-discrete;
+    translate: 0% 100%;
+    width: 100%;
+    overflow: hidden;
+
     &:popover-open {
-      padding: 0;
-      border: none;
-      width: 100%;
-      background: unset;
-      overflow: visible;
+      @starting-style {
+        /* opacity: 0; */
+        /* translate: 0% -100%; */
+      }
 
       .inner {
-        grid-column: box;
-        background-color: white;
-        padding: 2rem;
-        box-shadow: 0px 6px 9px 1px rgb(0 0 0 / 10%);
-        border-radius: 0 0 2rem 2rem;
+        @starting-style {
+          /* opacity: 0; */
+          translate: 0% -100%;
+        }
+        translate: 0% 0%;
       }
 
-      ul {
-        padding: 0;
-      }
+      /* translate: 0% 100%; */
+      opacity: 1;
+    }
+  }
 
-      li {
-        list-style-type: none;
-      }
+  .inner {
+    translate: 0% -100%;
+    transition: all 0.3s ease 0.4s;
 
-      li a {
-        background: #eee;
-        padding: 0.2rem 0.5rem;
-        margin-bottom: 0.5rem;
-        border-radius: 0.5rem;
-        display: inline-flex;
-      }
+    grid-column: col;
+    background-color: var(--slate-400);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0 0 1rem 1rem;
+
+    ul {
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    li a {
+      background: #eee;
+      padding: 0.2rem 0.5rem;
+      margin-bottom: 0.5rem;
+      border-radius: 0.5rem;
+      display: inline-flex;
     }
   }
 }
