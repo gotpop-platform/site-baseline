@@ -1,8 +1,5 @@
 @scope {
   :scope {
-    --bg: hsl(0deg 0% 100% / 58%);
-
-    background-color: var(--bg);
     background-color: white;
     display: grid;
     grid-column: box;
@@ -11,13 +8,14 @@
     border-radius: 0 0 1rem 1rem;
     view-transition-name: header;
     padding: 1rem;
+    padding-bottom: 2rem;
     margin-bottom: 2rem;
-    transition: margin 0.4s ease;
-
+    transition: padding 0.4s 0.5s ease;
     height: 7rem;
 
     &:has(.mega:popover-open) {
-      margin-bottom: 12rem;
+      padding-bottom: 17rem;
+      transition: padding 0.4s ease;
     }
   }
 
@@ -46,44 +44,29 @@
   .mega {
     background: unset;
     border: none;
-    bottom: anchor(bottom);
-    /* opacity: 0; */
+    bottom: calc(-200px + anchor(bottom));
+    opacity: 0;
     padding: 0;
-    padding-top: 32px;
-    overflow: visible;
-    transition: all 0.3s allow-discrete;
-    translate: 0% 100%;
+    transition: opacity 0.3s 0.3s,
+      display 0.5s allow-discrete,
+      overlay 0.5s allow-discrete;
     width: 100%;
     overflow: hidden;
 
     &:popover-open {
-      @starting-style {
-        /* opacity: 0; */
-        /* translate: 0% -100%; */
-      }
-
-      .inner {
-        @starting-style {
-          /* opacity: 0; */
-          translate: 0% -100%;
-        }
-        translate: 0% 0%;
-      }
-
-      /* translate: 0% 100%; */
       opacity: 1;
+
+      @starting-style {
+        opacity: 0;
+      }
     }
   }
 
   .inner {
-    translate: 0% -100%;
-    transition: all 0.3s ease 0.4s;
-
     grid-column: col;
     background-color: var(--slate-400);
-    background-color: white;
     padding: 2rem;
-    border-radius: 0 0 1rem 1rem;
+    border-radius: 0 0 0.5rem 0.5rem;
 
     ul {
       padding: 0;
