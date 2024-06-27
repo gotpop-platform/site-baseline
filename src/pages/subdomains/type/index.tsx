@@ -1,4 +1,4 @@
-import GridType from "@components/GridType"
+import GridConfig from "@components/GridConfig"
 import { useCSSTheme } from "@hooks/useCSSTheme"
 import AppFull from "@layouts/app-full"
 import h from "@utils/jsxFactory"
@@ -8,7 +8,7 @@ const indexPage = async () => {
 
   return (
     <AppFull title="Home">
-      <GridType>
+      <GridConfig>
         <div class="container">
           <div class="main-col">
             <h1>Lorem ipsum dolor sit&nbsp;amet</h1>
@@ -57,7 +57,7 @@ const indexPage = async () => {
             </p>
           </div>
         </div>
-      </GridType>
+      </GridConfig>
     </AppFull>
   )
 }

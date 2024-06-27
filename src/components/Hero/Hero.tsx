@@ -1,3 +1,4 @@
+import Brands from "@components/Brands"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
@@ -33,7 +34,7 @@ const Hero = ({ title, text }: HeroProps) => {
             </a>
           </aside>
         </div>
-        {/* {brandsItem} */}
+        <Brands />
       </article>
     </section>
   )

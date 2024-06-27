@@ -1,4 +1,4 @@
-import GridConfig from "@components/GridConfig"
+import GridMenu from "@components/GridMenu"
 import Logo from "@components/Logo"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
@@ -30,7 +30,7 @@ const MegaMenu = ({ title, children }: MegaMenuProps) => {
           popover="auto"
           anchor="menu-toggle-1"
         >
-          <GridConfig>
+          <GridMenu>
             <div class="inner">
               <ul>
                 <li class="item">
@@ -41,7 +41,7 @@ const MegaMenu = ({ title, children }: MegaMenuProps) => {
                 </li>
               </ul>
             </div>
-          </GridConfig>
+          </GridMenu>
         </div>
         <button id="menu-toggle" popovertarget="menu-items">
           About

@@ -46,8 +46,6 @@
 
   .word-first {
     opacity: 0.75;
-    position: relative;
-    top: 0.26em;
   }
 
   .word-rest {
