@@ -22,20 +22,20 @@
 
   .mega {
     --repeat: repeat(12, [bro] minmax(1rem, 5rem));
-    --cols: [col-start] var(--repeat) [col-end];
+    --cols: [box-start] 1rem [col-start] var(--repeat)
+      [col-end] 1rem [box-end];
     --display: display 0.3s allow-discrete;
     --opacity: 0;
 
-    background-color: var(--slate-200);
-    border-radius: 0 0 0.5rem 0.5rem;
     border: none;
     inset: auto 0 calc(-10rem + anchor(bottom)) 0;
     display: grid;
     grid-template-columns: var(--cols);
     margin: 0 auto;
     opacity: var(--opacity);
-    padding: 1rem;
+    padding: 0;
     transition: opacity 0.3s 0.2s, var(--display);
+    min-height: 8rem;
 
     &:popover-open {
       --opacity: 1;
@@ -44,6 +44,14 @@
         --opacity: 0;
       }
     }
+  }
+
+  .content {
+    background-color: var(--slate-200);
+    border-radius: 0 0 0.5rem 0.5rem;
+    grid-column: col;
+    display: grid;
+    gap: 1rem;
   }
 
   ul {
