@@ -1,0 +1,25 @@
+@scope {
+  & {
+    padding: 2rem;
+    border-radius: 0.5rem;
+    grid-column: bro 1 / span 12;
+    background-color: var(--slate-300);
+    view-transition-name: slider;
+    min-height: 10rem;
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .link {
+    background-color: #eee;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+  }
+}

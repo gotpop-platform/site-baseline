@@ -1,0 +1,27 @@
+@scope {
+  & {
+    grid-column: span 6;
+    grid-row: span 1;
+    border-radius: 0.5rem;
+    background-color: var(--slate-200);
+    padding: 2rem;
+
+    h3 {
+      font-size: 44px;
+      margin: 0;
+      opacity: 0.8;
+      margin-bottom: 2rem;
+      line-height: 4rem;
+    }
+
+    p {
+      padding-top: calc(1rem - 1cap);
+      line-height: 32px;
+      opacity: 0.6;
+
+      &:last-child {
+        margin-bottom: none;
+      }
+    }
+  }
+}
