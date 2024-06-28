@@ -64,20 +64,15 @@ const MegaNav = () => {
       <MegaNavItem textButton="Products" position="1">
         <MegaNavContent />
       </MegaNavItem>
+      <MegaNavItem textButton="About" position="2">
+        <ul>
+          <li class="item">Menu item 133</li>
+          <li class="item">Menu item 233</li>
+        </ul>
+      </MegaNavItem>
+      {/* <input type="checkbox" switch class="special"></input>{" "} */}
     </nav>
   )
 }
 
 export default MegaNav
-
-// {
-//   /* <MegaNavItem textButton="Liam" position="2">
-//   <ul>
-//     <li class="item">Menu item 133</li>
-//     <li class="item">Menu item 233</li>
-//   </ul>
-// </MegaNavItem> */
-// }
-// {
-//   /* <input type="checkbox" switch class="special"></input> */
-// }
