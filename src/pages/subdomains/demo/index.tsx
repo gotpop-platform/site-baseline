@@ -1,42 +1,20 @@
 import Footer from "@components/Footer"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/MegaMenu"
-import { useCSSTheme } from "@hooks/useCSSTheme"
 import AppFull from "@layouts/app-full"
 import h from "@utils/jsxFactory"
+import Surface from "src/themes/demo/components/Surface"
 
-const indexPage = async () => {
-  const { css } = useCSSTheme()
-
+const indexPage = async ({
+  slug,
+}: {
+  slug: string
+}): Promise<JSX.Element> => {
   return (
     <AppFull title="Home">
       <GridConfig>
         <MegaMenu />
-        <section class="main-box">
-          <div class="intro">
-            <h2>Intro</h2>
-          </div>
-          <div class="inner">
-            <article>
-              <h3>Lorem</h3>
-            </article>
-            <article>
-              <h3>Text</h3>
-            </article>
-            <article>
-              <h3>Text</h3>
-            </article>
-            <article>
-              <h3>Text</h3>
-            </article>
-            <article>
-              <h3>Text</h3>
-            </article>
-            <article>
-              <h3>Text</h3>
-            </article>
-          </div>
-        </section>
+        <Surface slug={slug} />
         <Footer />
       </GridConfig>
     </AppFull>
