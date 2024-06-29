@@ -13,7 +13,7 @@ const pageGalleryItem = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
   return (
-    <AppTheme title={`Gallery | ${slug}`}>
+    <AppTheme title={`Gallery | ${slug}`} subdomain="demo">
       <GridConfig>
         <MegaMenu />
         <Surface slug={slug} />

@@ -9,11 +9,11 @@ type PageProps = {
   slug: string
 }
 
-const pageGalleryItem = async ({
+const pageGallery = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
   return (
-    <AppTheme title={`Gallery | ${slug}`}>
+    <AppTheme title={`Gallery | ${slug}`} subdomain="demo">
       <GridConfig>
         <MegaMenu />
         <Surface slug={slug} />
@@ -23,4 +23,4 @@ const pageGalleryItem = async ({
   )
 }
 
-export default pageGalleryItem
+export default pageGallery

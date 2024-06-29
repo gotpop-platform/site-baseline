@@ -4,17 +4,20 @@ import h from "@utils/jsxFactory"
 interface AppThemeProps {
   children?: string | JSX.Element | JSX.Element[]
   title: string
+  subdomain?: string
 }
 
-const AppTheme = ({ title, children }: AppThemeProps) => {
+const AppTheme = ({
+  title,
+  subdomain,
+  children,
+}: AppThemeProps) => {
   const titleAsClass = title.toLowerCase().replace(" ", "-")
+  const subdomainPath = `src/themes/${subdomain}/styles/global.css`
 
   return (
     <html lang="en">
-      <Head
-        title={title}
-        theme="src/themes/demo/styles/global.css"
-      />
+      <Head title={title} theme={subdomainPath} />
       <body class={`body ${titleAsClass}`}>{children}</body>
     </html>
   )
