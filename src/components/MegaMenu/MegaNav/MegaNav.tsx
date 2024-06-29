@@ -70,6 +70,10 @@ const MegaNav = () => {
           <li class="item">Menu item 233</li>
         </ul>
       </MegaNavItem>
+      <a class="trigger" href="/gallery">
+        Gallery
+      </a>
+      <button class="trigger">Grid</button>
       {/* <input type="checkbox" switch class="special"></input>{" "} */}
     </nav>
   )
