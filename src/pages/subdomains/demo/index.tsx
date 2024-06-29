@@ -1,24 +1,26 @@
 import Footer from "@components/Footer"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/MegaMenu"
-import AppFull from "@layouts/app-full"
+import AppTheme from "@layouts/app-theme"
 import h from "@utils/jsxFactory"
 import Surface from "src/themes/demo/components/Surface"
 
-const indexPage = async ({
-  slug,
-}: {
+type PageProps = {
   slug: string
-}): Promise<JSX.Element> => {
+}
+
+const pageIndex = async ({
+  slug,
+}: PageProps): Promise<JSX.Element> => {
   return (
-    <AppFull title="Home">
+    <AppTheme title={`Gallery | ${slug}`}>
       <GridConfig>
         <MegaMenu />
         <Surface slug={slug} />
         <Footer />
       </GridConfig>
-    </AppFull>
+    </AppTheme>
   )
 }
 
-export default indexPage
+export default pageIndex

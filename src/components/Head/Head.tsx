@@ -1,12 +1,21 @@
+import { useCSSTheme } from "@hooks/useCSSTheme"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
-const Head = ({ title }: { title: string }) => {
+const Head = ({
+  title,
+  theme = "",
+}: {
+  title: string
+  theme: string
+}) => {
+  const { cssTheme } = useCSSTheme(theme)
   const { css } = useCSS({
     meta: import.meta,
     global: true,
   })
 
+  console.log("theme :", theme)
   return (
     <head>
       <meta charset="UTF-8" />
@@ -20,7 +29,7 @@ const Head = ({ title }: { title: string }) => {
         rel="stylesheet"
         href="/assets/styles/index.css"
       />
-      <style>{css}</style>
+      <style>{theme ? cssTheme : css}</style>
     </head>
   )
 }

@@ -20,6 +20,7 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--slate-200);
+  background-color: var(--slate-600);
 }
 
 body {

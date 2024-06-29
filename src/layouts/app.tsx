@@ -1,6 +1,5 @@
 import Footer from "@components/Footer"
 import Head from "@components/Head"
-import Header from "@components/Header"
 import h from "@utils/jsxFactory"
 
 interface AppProps {
@@ -14,7 +13,6 @@ const App = ({ title, children }: AppProps) => {
       <Head title={title} />
       <body class="body">
         <div class="site">
-          <Header />
           {children}
           <Footer />
         </div>

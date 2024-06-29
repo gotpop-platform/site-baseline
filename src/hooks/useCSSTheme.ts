@@ -5,12 +5,19 @@ interface UseCSSOptions {
   global?: boolean
 }
 
-export function useCSSTheme() {
-  const pathy = "src/themes/demo/Points.css"
+export function useCSSTheme(url: string) {
+  const pathy = url
+  console.log("pathy :", pathy)
 
-  const css = readFileSync(pathy, "utf-8")
+  if (!pathy) {
+    return {
+      cssTheme: "",
+    }
+  }
+
+  const cssTheme = readFileSync(pathy, "utf-8")
 
   return {
-    css,
+    cssTheme,
   }
 }
