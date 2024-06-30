@@ -2,7 +2,7 @@ import { log } from "./logging"
 import { handleGetPages } from "./router"
 
 const PORT = 9000
-export const BASE = process.env.BASE_URL ?? ""
+export const BASE = process.env.BASE_SITE_URL ?? ""
 
 function handleGetAssets(url: URL) {
   const pathRenamedToPublic = `./public${url.pathname}`

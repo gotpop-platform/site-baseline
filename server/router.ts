@@ -7,7 +7,8 @@ export const handleGetPages = async (request: Request) => {
   const subdomain = url.hostname.split(".")[0]
   const isOrigin =
     subdomain === baseUrl.hostname ||
-    subdomain === "minimax-production"
+    subdomain === "localhost" ||
+    subdomain === "gotpop"
 
   const routerPath = isOrigin
     ? "/src/pages"
