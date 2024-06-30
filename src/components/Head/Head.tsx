@@ -15,7 +15,6 @@ const Head = ({
     global: true,
   })
 
-  console.log("theme :", theme)
   return (
     <head>
       <meta charset="UTF-8" />

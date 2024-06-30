@@ -10,6 +10,9 @@ export const handleGetPages = async (request: Request) => {
     subdomain === "localhost" ||
     subdomain === "gotpop"
 
+  console.log("subdomain :", subdomain)
+  console.log("isOrigin :", isOrigin)
+
   const routerPath = isOrigin
     ? "/src/pages"
     : `/src/pages/subdomains/${subdomain}`
