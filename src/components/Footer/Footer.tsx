@@ -2,6 +2,14 @@ import Nav from "@components/Nav"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
+export const makePath = (subdomain: null | string) => {
+  const { PROTOCOL, DOMAIN, PORT } = process.env
+  const portStr = PORT ? `:${PORT}` : ""
+  const subdomainStr = subdomain ? `${subdomain}.` : ""
+
+  return `${PROTOCOL}://${subdomainStr}${DOMAIN}${portStr}/`
+}
+
 function Footer() {
   const { css, useName } = useCSS({ meta: import.meta })
 
@@ -12,9 +20,9 @@ function Footer() {
         <h1>Footer</h1>
         <Nav pages={[]} />
         <nav class="subdomains">
-          <a href="http://demo.localhost:9000/">Demo</a>
-          <a href="http://api.localhost:9000/">API</a>
-          <a href="http://localhost:9000/">Root</a>
+          <a href={makePath("demo")}>Demo !</a>
+          <a href={makePath("api")}>API</a>
+          <a href={makePath(null)}>Root</a>
         </nav>
       </div>
     </footer>

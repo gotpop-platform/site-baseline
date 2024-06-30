@@ -7,7 +7,7 @@ interface UseCSSOptions {
 
 export function useCSSTheme(url: string) {
   const pathy = url
-  console.log("pathy :", pathy)
+  // console.log("pathy :", pathy)
 
   if (!pathy) {
     return {
