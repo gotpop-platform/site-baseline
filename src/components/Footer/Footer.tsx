@@ -3,8 +3,8 @@ import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
 export const makePath = (subdomain: null | string) => {
-  const { PROTOCOL, DOMAIN, PORT } = process.env
-  const portStr = PORT ? `:${PORT}` : ""
+  const { PROTOCOL, DOMAIN, LOCAL_PORT } = process.env
+  const portStr = LOCAL_PORT ? `:${LOCAL_PORT}` : ""
   const subdomainStr = subdomain ? `${subdomain}.` : ""
 
   return `${PROTOCOL}://${subdomainStr}${DOMAIN}${portStr}/`
