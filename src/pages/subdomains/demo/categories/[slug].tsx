@@ -10,13 +10,13 @@ const indexPage = async ({
 }: {
   slug: string
 }): Promise<JSX.Element> => {
-  const { css } = useCSSTheme()
+  // const { css } = useCSSTheme()
 
   return (
     <AppFull title="Home">
       <GridConfig>
         <MegaMenu />
-        <section class="main-box">
+        {/* <section class="main-box">
           <div class="intro">
             <h2>Intro {slug}</h2>
             <nav class="links">
@@ -57,7 +57,7 @@ const indexPage = async ({
             </article>
           </div>
         </section>
-        <Footer />
+        <Footer /> */}
       </GridConfig>
     </AppFull>
   )

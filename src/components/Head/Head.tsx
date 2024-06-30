@@ -7,7 +7,7 @@ const Head = ({
   theme = "",
 }: {
   title: string
-  theme: string
+  theme?: string
 }) => {
   const { cssTheme } = useCSSTheme(theme)
   const { css } = useCSS({

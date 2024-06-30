@@ -1,43 +1,43 @@
-import Header from "@components/Header"
-import h from "@utils/jsxFactory"
-import { useCSS } from "src/hooks/useCSS"
+// import Header from "@components/Header"
+// import h from "@utils/jsxFactory"
+// import { useCSS } from "src/hooks/useCSS"
 
-type CircleProps = { title: string; text: string }
+// type CircleProps = { title: string; text: string }
 
-export const useName = import.meta.file
-  .split(".")
-  .shift()
-  ?.toLowerCase()
+// export const useName = import.meta.file
+//   .split(".")
+//   .shift()
+//   ?.toLowerCase()
 
-const Circle = async ({ title, text }: CircleProps) => {
-  const { css } = useCSS({ meta: import.meta })
-  const headerItem = await Header()
+// const Circle = async ({ title, text }: CircleProps) => {
+//   const { css } = useCSS({ meta: import.meta })
+//   const headerItem = await Header()
 
-  return (
-    <section class={useName}>
-      <style>{css}</style>
-      {headerItem}
-      {/* <article>
-        <h1>{title}</h1>
-        <p>{text}</p>
-      </article> */}
-      <div className="container">
-        <div popovertarget="mypopover">
-          Toggle the popover
-        </div>
-        <div id="mypopover" popover>
-          Popover content
-        </div>
-      </div>
-      <div class="container">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-      </div>
-    </section>
-  )
-}
+//   return (
+//     <section class={useName}>
+//       <style>{css}</style>
+//       {headerItem}
+//       {/* <article>
+//         <h1>{title}</h1>
+//         <p>{text}</p>
+//       </article> */}
+//       <div className="container">
+//         <div popovertarget="mypopover">
+//           Toggle the popover
+//         </div>
+//         <div id="mypopover" popover>
+//           Popover content
+//         </div>
+//       </div>
+//       <div class="container">
+//         <div class="circle"></div>
+//         <div class="circle"></div>
+//         <div class="circle"></div>
+//         <div class="circle"></div>
+//         <div class="circle"></div>
+//       </div>
+//     </section>
+//   )
+// }
 
-export default Circle
+// export default Circle

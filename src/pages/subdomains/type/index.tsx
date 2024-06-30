@@ -1,10 +1,9 @@
 import GridConfig from "@components/GridConfig"
-import { useCSSTheme } from "@hooks/useCSSTheme"
 import AppFull from "@layouts/app-full"
 import h from "@utils/jsxFactory"
 
 const indexPage = async () => {
-  const { css } = useCSSTheme()
+  // const { css } = useCSSTheme()
 
   return (
     <AppFull title="Home">

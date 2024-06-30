@@ -1,36 +1,36 @@
-import { Glob } from "bun"
-import type { FSWatcher } from "fs"
-import { watch } from "fs"
-import buildClientJSFiles from "../build"
-import { log } from "../logging"
+// import { Glob } from "bun"
+// import type { FSWatcher } from "fs"
+// import { watch } from "fs"
+// import buildClientJSFiles from "../build"
+// import { log } from "../logging"
 
-const glob = new Glob("**/*.client.ts")
-let watchers: FSWatcher[] = []
+// const glob = new Glob("**/*.client.ts")
+// let watchers: FSWatcher[] = []
 
-log.watchStart()
+// log.watchStart()
 
-for await (const filePath of glob.scan(".")) {
-  log.watching(filePath)
+// for await (const filePath of glob.scan(".")) {
+//   log.watching(filePath)
 
-  buildClientJSFiles(filePath)
+//   buildClientJSFiles(filePath)
 
-  const watcher = watch(filePath, (event) => {
-    if (event !== "change") return
+//   const watcher = watch(filePath, (event) => {
+//     if (event !== "change") return
 
-    buildClientJSFiles(filePath)
-  })
+//     buildClientJSFiles(filePath)
+//   })
 
-  watchers.push(watcher)
-}
+//   watchers.push(watcher)
+// }
 
-log.watchEnd()
+// log.watchEnd()
 
-process.on("SIGINT", () => {
-  log.closing("Server stopped")
+// process.on("SIGINT", () => {
+//   log.closing("Server stopped")
 
-  for (const watcher of watchers) {
-    watcher.close()
-  }
+//   for (const watcher of watchers) {
+//     watcher.close()
+//   }
 
-  process.exit(0)
-})
+//   process.exit(0)
+// })
