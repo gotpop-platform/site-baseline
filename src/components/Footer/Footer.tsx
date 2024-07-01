@@ -17,13 +17,11 @@ function Footer() {
     <footer class={useName}>
       <style>{css}</style>
       <div class="inner">
-        <h1>Footer</h1>
+        <h3>Subdomains</h3>
         <Nav pages={[]} />
         <nav class="subdomains">
-          <a href={makePath("demo")}>Demo !</a>
-          <a href={makePath("api")}>API</a>
+          <a href={makePath("demo")}>Demo</a>
           <a href={makePath("singleton")}>Singleton</a>
-          <a href={makePath(null)}>Root</a>
         </nav>
       </div>
     </footer>
