@@ -3,8 +3,6 @@ import { useCSS } from "@hooks/useCSS"
 import h from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 
-type MegaMenuProps = { title?: string; children?: string }
-
 const MegaNavContent = () => {
   return (
     <div class="content">
@@ -55,28 +53,6 @@ const MegaNavItem = ({
 
   return <Fragment />
 }
-
-// const BaseLinePopOver = ({
-//   popovertarget = "basegrid",
-// }) => {
-//   const { css } = useCSS({ meta: import.meta })
-
-//   return (
-//     <div class="baseline" popover id={popovertarget}>
-//       <style>{css}</style>
-//       <h4>Baseline</h4>
-//       <p>Click anywhere to dismiss</p>
-
-//       <button
-//         class="trigger"
-//         popovertarget="basegrid"
-//         popovertargetaction="hide"
-//       >
-//         Close
-//       </button>
-//     </div>
-//   )
-// }
 
 const MegaNav = () => {
   const { css } = useCSS({ meta: import.meta })
