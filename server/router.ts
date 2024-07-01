@@ -4,18 +4,29 @@ export const handleGetPages = async (request: Request) => {
   const url = new URL(request.url)
   const baseUrl = new URL(BASE)
 
-  const subdomain = url.hostname.split(".")[0]
+  // Extract the full subdomain (if any) by removing the base domain from the hostname
+  const baseDomain = baseUrl.hostname.startsWith("www.")
+    ? baseUrl.hostname.substring(4)
+    : baseUrl.hostname
+
+  const fullSubdomain = url.hostname.replace(
+    `.${baseDomain}`,
+    ""
+  )
+
+  // Determine if the request is for the origin domain
   const isOrigin =
-    subdomain === baseUrl.hostname ||
-    subdomain === "localhost" ||
-    subdomain === "gotpop"
+    fullSubdomain === "" ||
+    fullSubdomain === "www" ||
+    fullSubdomain === "localhost"
 
-  console.log("subdomain :", subdomain)
-  console.log("isOrigin :", isOrigin)
+  console.log("Full subdomain:", fullSubdomain)
+  console.log("Is origin:", isOrigin)
 
+  // Adjust the router path based on whether the request is for the origin or a subdomain
   const routerPath = isOrigin
     ? "/src/pages"
-    : `/src/pages/subdomains/${subdomain}`
+    : `/src/pages/subdomains/${fullSubdomain}`
 
   const dir = process.cwd() + routerPath
 
