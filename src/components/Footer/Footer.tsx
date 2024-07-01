@@ -22,6 +22,7 @@ function Footer() {
         <nav class="subdomains">
           <a href={makePath("demo")}>Demo !</a>
           <a href={makePath("api")}>API</a>
+          <a href={makePath("singleton")}>API</a>
           <a href={makePath(null)}>Root</a>
         </nav>
       </div>
