@@ -18,6 +18,8 @@ export const handleGetPages = async (request: Request) => {
   const isOrigin =
     fullSubdomain === "" ||
     fullSubdomain === "www" ||
+    fullSubdomain === "gotpop.co" ||
+    fullSubdomain === "gotpop" ||
     fullSubdomain === "localhost"
 
   console.log("Full subdomain:", fullSubdomain)
