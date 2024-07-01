@@ -1,0 +1,23 @@
+@scope {
+  & {
+    --bg: linear-gradient(
+      to bottom,
+      #0ff 0,
+      transparent 1px
+    );
+
+    background-color: var(--slate-300);
+    border-radius: 0.5rem;
+    inset: 1rem auto auto 1rem;
+    padding: 1rem;
+    border: 5px solid var(--slate-900);
+
+    &::backdrop {
+      position: absolute;
+      inset: 0 0 0 0;
+      background-image: var(--bg);
+      background-repeat: repeat-y;
+      background-size: 100% 1rem;
+    }
+  }
+}

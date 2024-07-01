@@ -1,3 +1,4 @@
+import BaseLinePopOver from "@components/BaseLinePopOver"
 import { useCSS } from "@hooks/useCSS"
 import h from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
@@ -55,6 +56,28 @@ const MegaNavItem = ({
   return <Fragment />
 }
 
+// const BaseLinePopOver = ({
+//   popovertarget = "basegrid",
+// }) => {
+//   const { css } = useCSS({ meta: import.meta })
+
+//   return (
+//     <div class="baseline" popover id={popovertarget}>
+//       <style>{css}</style>
+//       <h4>Baseline</h4>
+//       <p>Click anywhere to dismiss</p>
+
+//       <button
+//         class="trigger"
+//         popovertarget="basegrid"
+//         popovertargetaction="hide"
+//       >
+//         Close
+//       </button>
+//     </div>
+//   )
+// }
+
 const MegaNav = () => {
   const { css } = useCSS({ meta: import.meta })
 
@@ -73,8 +96,10 @@ const MegaNav = () => {
       <a class="trigger" href="/gallery">
         Gallery
       </a>
-      <button class="trigger">Grid</button>
-      {/* <input type="checkbox" switch class="special"></input>{" "} */}
+      <button class="trigger" popovertarget="basegrid">
+        Grid
+      </button>
+      <BaseLinePopOver />
     </nav>
   )
 }

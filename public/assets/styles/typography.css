@@ -71,23 +71,3 @@ p {
   line-height: 1.4em;
   letter-spacing: 0.015em;
 }
-
-body {
-  position: relative;
-
-  &:has([type="checkbox"]:checked) {
-    &:after {
-      content: "";
-      position: absolute;
-      inset: 0 0 0 0;
-      background-image: linear-gradient(
-        to bottom,
-        #0ff 0,
-        transparent 1px
-      );
-      background-repeat: repeat-y;
-      background-size: 100% 1rem;
-      z-index: 999999;
-    }
-  }
-}
