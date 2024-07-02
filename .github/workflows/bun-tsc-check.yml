@@ -1,0 +1,19 @@
+name: Bun TypeScript Check
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  type-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Bun
+        uses: jwalton/gh-bun-setup@v1
+
+      - name: Run bun tsc
+        run: bun tsc
