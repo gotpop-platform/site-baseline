@@ -1,38 +1,37 @@
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 import type { IconName } from "./Icon.types"
+import { readFileSync } from "fs"
+import { mkClass } from "@utils/mkClass"
 
 type IconProps = {
   iconName?: IconName
-  fill?: "1" | "0"
-  weight?: "400" | "500" | "600" | "700"
-  grad?: number
-  opsz?: number
+  type?: IconTypes
 }
 
-export const useName = import.meta.file
-  .split(".")
-  .shift()
-  ?.toLowerCase()
+enum IconTypes {
+  filled = "filled",
+  outline = "outline",
+  round = "round",
+  sharp = "sharp",
+  twoTone = "two-tone",
+}
 
 const Icon = ({
   iconName = "home",
-  fill = "1",
-  weight = "700",
-  grad = 0,
-  opsz = 48,
+  type = IconTypes.filled,
 }: IconProps) => {
   const { css } = useCSS({ meta: import.meta })
+  const theRoot = process.cwd()
+  const thePath = `${theRoot}/src/components/Icon/svg/${type}/${iconName}.svg`
+  const theSVG = readFileSync(thePath, "utf-8")
+
+  const cl = mkClass(import.meta.file)
 
   return (
-    <span
-      class={`${useName} ${useName}-${iconName}`}
-      style={`font-variation-settings: 'FILL' ${fill}, 'wght' ${weight}, 'GRAD' ${grad}, 'opsz' ${opsz};`}
-    >
+    <span class={`${cl} ${cl}-${iconName}`}>
       <style>{css}</style>
-      <span class="material-symbols-outlined">
-        {iconName}
-      </span>
+      {theSVG}
     </span>
   )
 }
