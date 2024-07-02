@@ -27,6 +27,7 @@
   .subdomains {
     display: flex;
     gap: 2rem;
+    margin-bottom: 2rem;
 
     a {
       background-color: #eee;

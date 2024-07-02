@@ -17,6 +17,10 @@ function Footer() {
     <footer class={useName}>
       <style>{css}</style>
       <div class="inner">
+        <h3>Home</h3>
+        <nav class="subdomains">
+          <a href={makePath("")}>Home</a>
+        </nav>
         <h3>Subdomains</h3>
         <Nav pages={[]} />
         <nav class="subdomains">

@@ -1,7 +1,5 @@
 @scope {
-  :scope {
-    .material-symbols-outlined {
-      font-size: inherit;
-    }
+  .material-symbols-outlined {
+    font-size: inherit;
   }
 }
