@@ -18,7 +18,7 @@ const indexPage = async () => {
       <GridFull>
         <Header pages={pages} />
         <Hero {...heroData} />
-        {/* <Points /> */}
+        <Points />
         <Articles articles={articles} />
         <Footer />
       </GridFull>

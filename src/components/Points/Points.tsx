@@ -26,7 +26,7 @@ const Points = ({
       <style>{styleOverride ? styleOverride : css}</style>
       <div class="inner">
         <div class="intro">
-          <Icon fill="0" iconName="4g_mobiledata" />
+          <Icon iconName="4g_mobiledata" />
           <h2 class="title">{title}</h2>
           <p>{content}</p>
         </div>
