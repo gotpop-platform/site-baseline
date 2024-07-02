@@ -45,8 +45,41 @@ export const handleGetPages = async (request: Request) => {
     })
   }
 
-  const module = await import(route.filePath)
-  const response = await module.default(route.query)
+  // const module = await import(route.filePath)
+  // const response = await module.default(route.query)
+
+  console.log(
+    "Attempting to import module from:",
+    route.filePath
+  )
+  const module = await import(route.filePath).catch((e) =>
+    console.error("Import failed:", e)
+  )
+  if (!module) {
+    return new Response("Module not found", { status: 404 })
+  }
+  console.log("Module imported successfully:", module)
+
+  if (typeof module.default !== "function") {
+    console.error(
+      "Default export is not a function:",
+      module.default
+    )
+    return new Response("Internal Server Error", {
+      status: 500,
+    })
+  }
+
+  const response = await module
+    .default(route.query)
+    .catch((e: any) =>
+      console.error("Error calling default export:", e)
+    )
+  if (!response) {
+    return new Response("Error generating response", {
+      status: 500,
+    })
+  }
 
   return new Response(response, {
     headers: { "Content-Type": "text/html" },
