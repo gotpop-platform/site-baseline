@@ -1,13 +1,15 @@
 /* Continue from the existing layers */
 @layer fonts, colours, vars, reset, typography, icons, animations, themeOverride;
 
-@import url(/assets/styles/fonts.css) layer(fonts);
-@import url(/assets/styles/colours.css) layer(colours);
-@import url(/assets/styles/vars.css) layer(vars);
-@import url(/assets/styles/reset.css) layer(reset);
-@import url(/assets/styles/typography.css) layer(typography);
-@import url(/assets/styles/icons.css) layer(icons);
-@import url(/assets/styles/animations.css) layer(animations);
+@import url(/assets/demo/styles/fonts.css) layer(fonts);
+@import url(/assets/demo/styles/colours.css) layer(colours);
+@import url(/assets/demo/styles/vars.css) layer(vars);
+@import url(/assets/demo/styles/reset.css) layer(reset);
+@import url(/assets/demo/styles/typography.css)
+layer(typography);
+@import url(/assets/demo/styles/icons.css) layer(icons);
+@import url(/assets/demo/styles/animations.css)
+layer(animations);
 
 ::selection {
   background: var(--accent);

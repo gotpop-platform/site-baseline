@@ -1,3 +1,4 @@
+import Icon from "@components/Icon"
 import {
   dataDemo,
   type GalleryItem,
@@ -40,10 +41,12 @@ function GalleryIntro({
       <p>{text}</p>
       <nav class="links">
         <a class="link" href={`/gallery/${prev}`}>
-          Prev
+          <Icon iconName="arrow_circle_left" />
+          <span>Prev</span>
         </a>
         <a class="link" href={`/gallery/${next}`}>
-          Next
+          <span>Next</span>
+          <Icon iconName="arrow_circle_right" />
         </a>
       </nav>
     </div>
