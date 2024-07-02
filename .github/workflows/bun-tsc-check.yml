@@ -16,4 +16,4 @@ jobs:
         uses: oven-sh/setup-bun@v1
 
       - name: Run bun tsc
-        run: bun tsc
+        run: bun run tsc
