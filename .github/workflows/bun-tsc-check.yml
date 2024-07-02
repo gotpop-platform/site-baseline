@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Bun
-        uses: jwalton/gh-bun-setup@v1
+        uses: oven-sh/setup-bun@v1
 
       - name: Run bun tsc
         run: bun tsc
