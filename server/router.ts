@@ -15,23 +15,36 @@ export const handleGetPages = async (request: Request) => {
   )
 
   const subdomainNames = await getSubdomainDirectories()
-  const isOrigin = subdomainNames.includes(fullSubdomain)
+  const isLocalhost =
+    baseDomain === "localhost" || baseDomain === "127.0.0.1"
 
-  // const isOrigin =
-  //   fullSubdomain === "" ||
-  //   fullSubdomain === "www" ||
-  //   fullSubdomain === "gotpop.co" ||
-  //   fullSubdomain === "gotpop" ||
-  //   fullSubdomain === "localhost"
+  const isSubdomain = subdomainNames.includes(
+    "/" + fullSubdomain
+  )
+  console.log("subdomainNames :", subdomainNames)
 
   console.log("baseDomain :", baseDomain)
-  console.log("Full subdomain:", fullSubdomain)
-  console.log("Is origin:", isOrigin)
+  console.log("fullSubdomain :", fullSubdomain)
+  console.log("isSubdomain :", isSubdomain + "\n")
 
-  const routerPath = isOrigin
-    ? "/src/pages"
-    : `/src/pages/subdomains/${fullSubdomain}`
+  const test = "gotpop.co"
 
+  const lastIndex = test.lastIndexOf(".")
+  const subdomainWithoutExtension = test.substring(
+    0,
+    lastIndex
+  )
+
+  console.log(
+    "subdomainWithoutExtension :",
+    subdomainWithoutExtension
+  )
+
+  const routerPath = isSubdomain
+    ? `/src/pages/subdomains/${fullSubdomain}`
+    : "/src/pages"
+
+  console.log("routerPath :", routerPath)
   const dir = process.cwd() + routerPath
 
   const router = new Bun.FileSystemRouter({
