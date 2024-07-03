@@ -1,6 +1,4 @@
 export function handleGetAssets(url: URL) {
-  console.log("url.pathname :", url.pathname)
-
   const pathRenamedToPublic = `./public${url.pathname}`
   const file = Bun.file(pathRenamedToPublic)
 

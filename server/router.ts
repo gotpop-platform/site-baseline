@@ -4,7 +4,6 @@ export const handleGetPages = async (request: Request) => {
   const url = new URL(request.url)
   const baseUrl = new URL(BASE)
 
-  // Extract the full subdomain (if any) by removing the base domain from the hostname
   const baseDomain = baseUrl.hostname.startsWith("www.")
     ? baseUrl.hostname.substring(4)
     : baseUrl.hostname
@@ -14,7 +13,6 @@ export const handleGetPages = async (request: Request) => {
     ""
   )
 
-  // Determine if the request is for the origin domain
   const isOrigin =
     fullSubdomain === "" ||
     fullSubdomain === "www" ||
@@ -22,10 +20,10 @@ export const handleGetPages = async (request: Request) => {
     fullSubdomain === "gotpop" ||
     fullSubdomain === "localhost"
 
+  console.log("baseDomain :", baseDomain)
   console.log("Full subdomain:", fullSubdomain)
   console.log("Is origin:", isOrigin)
 
-  // Adjust the router path based on whether the request is for the origin or a subdomain
   const routerPath = isOrigin
     ? "/src/pages"
     : `/src/pages/subdomains/${fullSubdomain}`
@@ -44,9 +42,6 @@ export const handleGetPages = async (request: Request) => {
       status: 404,
     })
   }
-
-  // const module = await import(route.filePath)
-  // const response = await module.default(route.query)
 
   console.log(
     "Attempting to import module from:",
@@ -75,6 +70,7 @@ export const handleGetPages = async (request: Request) => {
     .catch((e: any) =>
       console.error("Error calling default export:", e)
     )
+
   if (!response) {
     return new Response("Error generating response", {
       status: 500,
