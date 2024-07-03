@@ -9,12 +9,13 @@ const Head = ({
   title: string
   theme?: string
 }) => {
-  const { cssTheme } = useCSSTheme(theme)
+  // const { cssTheme } = useCSSTheme(theme)
   const { css } = useCSS({
     meta: import.meta,
     global: true,
   })
 
+  console.log("theme :", theme)
   return (
     <head>
       <meta charset="UTF-8" />
@@ -26,9 +27,9 @@ const Head = ({
       <link rel="icon" href="/assets/img/favicon.png" />
       <link
         rel="stylesheet"
-        href="/assets/styles/index.css"
+        href={theme ? theme : "/assets/styles/index.css"}
       />
-      <style>{theme ? cssTheme : css}</style>
+      {/* <style>{theme ? cssTheme : css}</style> */}
     </head>
   )
 }

@@ -9,7 +9,7 @@ export type Article = {
 
 export const articles: Article[] = [
   {
-    iconName: "zone_person_alert",
+    iconName: "home",
     style: "--theme: light; --grid-column: span 3",
     heading: "Lorem ipsum dolor",
     text: "Sit amet consectetur adipisicing elit. Earum corporis tempora dolor maiores aliquid accusamus est illum maxime, perferendis incidunt molestiae cumque ea, cum et sit ex, veritatis expedita repellendus.",
@@ -21,7 +21,7 @@ export const articles: Article[] = [
     text: "Sit amet consectetur adipisicing elit. Earum corporis tempora dolor maiores aliquid accusamus est illum maxime, perferendis incidunt molestiae cumque ea, cum et sit ex, veritatis expedita repellendus.",
   },
   {
-    iconName: "zone_person_alert",
+    iconName: "home",
     style: "--theme: light; --grid-column: span 3",
     heading: "Lorem ipsum dolor",
     text: "Sit amet consectetur adipisicing elit. Earum corporis tempora dolor maiores aliquid accusamus est illum maxime, perferendis incidunt molestiae cumque ea, cum et sit ex, veritatis expedita repellendus.",
@@ -33,7 +33,7 @@ export const articles: Article[] = [
     text: "Sit amet consectetur adipisicing elit. Earum corporis tempora dolor maiores aliquid accusamus est illum maxime, perferendis incidunt molestiae cumque ea, cum et sit ex, veritatis expedita repellendus.",
   },
   {
-    iconName: "zone_person_alert",
+    iconName: "home",
     style: "--theme: light; --grid-column: span 6",
     heading: "Lorem ipsum dolor",
     text: "Sit amet consectetur adipisicing elit. Earum corporis tempora dolor maiores aliquid accusamus est illum maxime, perferendis incidunt molestiae cumque ea, cum et sit ex, veritatis expedita repellendus.",

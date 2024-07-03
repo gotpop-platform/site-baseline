@@ -13,7 +13,7 @@ const AppTheme = ({
   children,
 }: AppThemeProps) => {
   const titleAsClass = title.toLowerCase().replace(" ", "-")
-  const subdomainPath = `src/themes/${subdomain}/styles/global.css`
+  const subdomainPath = `/themes/${subdomain}/styles/index.css`
 
   return (
     <html lang="en">
