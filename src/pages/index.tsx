@@ -19,7 +19,7 @@ const indexPage = async () => {
         <Header pages={pages} />
         <Hero {...heroData} />
         <Points />
-        <Articles articles={articles} />
+        <Articles {...{ articles }} />
         <Footer />
       </GridFull>
     </AppFull>

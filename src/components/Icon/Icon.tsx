@@ -9,7 +9,7 @@ type IconProps = {
   type?: IconTypes
 }
 
-enum IconTypes {
+export enum IconTypes {
   filled = "filled",
   outline = "outline",
   round = "round",

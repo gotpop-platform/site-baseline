@@ -1,4 +1,5 @@
 import Icon from "@components/Icon"
+import { IconTypes } from "@components/Icon/Icon"
 import {
   dataDemo,
   type GalleryItem,
@@ -41,12 +42,18 @@ function GalleryIntro({
       <p>{text}</p>
       <nav class="links">
         <a class="link" href={`/gallery/${prev}`}>
-          <Icon iconName="arrow_circle_left" />
-          <span>Prev</span>
+          <Icon
+            type={IconTypes.twoTone}
+            iconName="arrow_circle_left"
+          />
+          <span class="text">Prev</span>
         </a>
         <a class="link" href={`/gallery/${next}`}>
-          <span>Next</span>
-          <Icon iconName="arrow_circle_right" />
+          <span class="text">Next</span>
+          <Icon
+            type={IconTypes.twoTone}
+            iconName="arrow_circle_right"
+          />
         </a>
       </nav>
     </div>
