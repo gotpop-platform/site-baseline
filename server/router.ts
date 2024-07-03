@@ -1,3 +1,4 @@
+import { getSubdomainDirectories } from "./getSubdomainDirectoryNames"
 import { BASE } from "./serve"
 
 export const handleGetPages = async (request: Request) => {
@@ -13,12 +14,15 @@ export const handleGetPages = async (request: Request) => {
     ""
   )
 
-  const isOrigin =
-    fullSubdomain === "" ||
-    fullSubdomain === "www" ||
-    fullSubdomain === "gotpop.co" ||
-    fullSubdomain === "gotpop" ||
-    fullSubdomain === "localhost"
+  const subdomainNames = await getSubdomainDirectories()
+  const isOrigin = subdomainNames.includes(fullSubdomain)
+
+  // const isOrigin =
+  //   fullSubdomain === "" ||
+  //   fullSubdomain === "www" ||
+  //   fullSubdomain === "gotpop.co" ||
+  //   fullSubdomain === "gotpop" ||
+  //   fullSubdomain === "localhost"
 
   console.log("baseDomain :", baseDomain)
   console.log("Full subdomain:", fullSubdomain)
@@ -43,17 +47,13 @@ export const handleGetPages = async (request: Request) => {
     })
   }
 
-  console.log(
-    "Attempting to import module from:",
-    route.filePath
-  )
   const module = await import(route.filePath).catch((e) =>
     console.error("Import failed:", e)
   )
+
   if (!module) {
     return new Response("Module not found", { status: 404 })
   }
-  console.log("Module imported successfully:", module)
 
   if (typeof module.default !== "function") {
     console.error(
