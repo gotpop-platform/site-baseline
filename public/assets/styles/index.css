@@ -11,6 +11,7 @@
 
 ::selection {
   background: var(--accent);
+  color: var(--black);
 }
 
 * {

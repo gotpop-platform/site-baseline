@@ -7,7 +7,7 @@ function BaseLinePopOver({ popovertarget = "basegrid" }) {
 
   return (
     <div
-      cclass={mkClass(import.meta.file)}
+      class={mkClass(import.meta.file)}
       id={popovertarget}
       popover
     >

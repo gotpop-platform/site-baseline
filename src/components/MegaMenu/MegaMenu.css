@@ -6,6 +6,33 @@
     z-index: 1000;
     grid-template-rows: min-content 2rem;
     grid-column: box;
+    position: static;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+
+    &::backdrop {
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(1rem);
+    }
+
+    &:popover-open {
+      --opacity: 1;
+
+      display: grid;
+      min-width: 80vw;
+
+      .meganav {
+        grid-template-columns: repeat(
+          12,
+          [bro] minmax(1rem, 5rem)
+        );
+      }
+
+      @starting-style {
+        --opacity: 0;
+      }
+    }
 
     .inner {
       background-color: white;

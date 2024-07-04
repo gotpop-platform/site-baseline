@@ -8,8 +8,5 @@
       [col-end]
       1rem [box-end]
       minmax(1rem, 1fr) [full-width-end];
-
-    height: 100%;
-    scroll-behavior: smooth;
   }
 }

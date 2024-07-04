@@ -15,6 +15,12 @@ const pageIndex = async ({
   return (
     <AppTheme title={`Gallery | ${slug}`} subdomain="demo">
       <GridConfig>
+        <button
+          popovertarget="liambest"
+          style="display: grid; grid-column: box; position: fixed; top: 0; right: 0; z-index: 1000"
+        >
+          Open
+        </button>
         <MegaMenu />
         <Surface slug={slug} />
         <Footer />
