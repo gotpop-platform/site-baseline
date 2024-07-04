@@ -23,6 +23,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:focus-visible {
+      outline: 2px dashed var(--accent);
+      outline-offset: var(--outline-offset, -0.5em);
+    }
   }
 
   .mega {
