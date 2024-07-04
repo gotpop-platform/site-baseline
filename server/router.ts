@@ -1,51 +1,13 @@
-import { getSubdomainDirectories } from "./getSubdomainDirectoryNames"
+import {
+  getBaseDomain,
+  getRouterPath,
+  NOT_FOUND_RESPONSE,
+  importModule,
+  MODULE_NOT_FOUND_RESPONSE,
+  INTERNAL_SERVER_ERROR_RESPONSE,
+  ERROR_GENERATING_RESPONSE,
+} from "./routerHelpers"
 import { BASE } from "./serve"
-
-const NOT_FOUND_RESPONSE = new Response("Not Found", {
-  status: 404,
-})
-const MODULE_NOT_FOUND_RESPONSE = new Response(
-  "Module not found",
-  { status: 404 }
-)
-const INTERNAL_SERVER_ERROR_RESPONSE = new Response(
-  "Internal Server Error",
-  { status: 500 }
-)
-const ERROR_GENERATING_RESPONSE = new Response(
-  "Error generating response",
-  { status: 500 }
-)
-
-const getBaseDomain = (hostname: string): string => {
-  return hostname.startsWith("www.")
-    ? hostname.substring(4)
-    : hostname
-}
-
-const getRouterPath = async (
-  fullSubdomain: string,
-  baseDomain: string
-): Promise<string> => {
-  const subdomainNames = await getSubdomainDirectories()
-  const isSubdomain = subdomainNames.includes(
-    "/" + fullSubdomain
-  )
-  return isSubdomain
-    ? `/src/pages/subdomains/${fullSubdomain}`
-    : "/src/pages"
-}
-
-const importModule = async (
-  filePath: string
-): Promise<any> => {
-  try {
-    return await import(filePath)
-  } catch (e) {
-    console.error("Import failed:", e)
-    return null
-  }
-}
 
 export const handleGetPages = async (
   request: Request
@@ -91,7 +53,7 @@ export const handleGetPages = async (
 
     const response = await module
       .default(route.query)
-      .catch((e: any) => {
+      .catch((e: Error) => {
         console.error("Error calling default export:", e)
         return null
       })
@@ -105,6 +67,7 @@ export const handleGetPages = async (
     })
   } catch (e) {
     console.error("Unexpected error:", e)
+
     return INTERNAL_SERVER_ERROR_RESPONSE
   }
 }
