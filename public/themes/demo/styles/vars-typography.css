@@ -1,0 +1,17 @@
+:root {
+  --font-family-primary: "Playfair Display",
+    "Times New Roman", Times, serif;
+  --font-family-secondary: "Inter", sans-serif;
+
+  --font-size-sm: clamp(0.7rem, 0.35vw + 0.61rem, 0.89rem);
+  --font-size-base: clamp(
+    0.88rem,
+    0.57vw + 0.73rem,
+    1.19rem
+  );
+  --font-size-md: clamp(1.09rem, 0.89vw + 0.87rem, 1.58rem);
+  --font-size-lg: clamp(1.37rem, 1.35vw + 1.03rem, 2.11rem);
+  --font-size-xl: clamp(1.71rem, 2.01vw + 1.21rem, 2.81rem);
+  --font-size-xxl: clamp(2.14rem, 2.93vw + 1.4rem, 3.75rem);
+  --font-size-xxxl: clamp(2.67rem, 4.23vw + 1.61rem, 5rem);
+}

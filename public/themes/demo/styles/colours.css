@@ -1,6 +1,8 @@
 :root {
+  /* Oklab */
   --white: oklch(1 0 0);
   --black: oklch(0 0 0);
+  /* Primary */
   --success: oklch(0.75 0.3 148.61);
   --success-100: oklch(from var(--success) 100% 5% h);
   --success-200: oklch(from var(--success) 90% 5% h);
@@ -12,6 +14,7 @@
   --success-800: oklch(from var(--success) 30% 5% h);
   --success-900: oklch(from var(--success) 20% 5% h);
   --success-1000: oklch(from var(--success) 10% 5% h);
+  /* Warning */
   --warning: oklch(0.8 0.19 99.45);
   --warning-100: oklch(from var(--warning) 100% 5% h);
   --warning-200: oklch(from var(--warning) 90% 5% h);
@@ -35,6 +38,7 @@
   --error-800: oklch(from var(--error) 30% 5% h);
   --error-900: oklch(from var(--error) 20% 5% h);
   --error-1000: oklch(from var(--error) 10% 5% h);
+  /* Gray */
   --gray: oklch(0.48 0.24 261.35);
   --gray-100: oklch(from var(--gray) 100% 5% h);
   --gray-200: oklch(from var(--gray) 90% 5% h);
@@ -46,6 +50,7 @@
   --gray-800: oklch(from var(--gray) 30% 5% h);
   --gray-900: oklch(from var(--gray) 20% 5% h);
   --gray-1000: oklch(from var(--gray) 10% 5% h);
+  /* Slate */
   --slate: oklch(0.48 0.24 261.35);
   --slate-100: oklch(from var(--slate) 100% 5% h);
   --slate-200: oklch(from var(--slate) 90% 5% h);
