@@ -13,7 +13,7 @@
   .inner {
     grid-column: col;
     display: grid;
-    grid-template-columns: subgrid;
     gap: 1rem;
+    grid-template-columns: subgrid;
   }
 }

@@ -4,13 +4,9 @@
 
 html {
   font-size: 16px;
-  font-family: "Inter", sans-serif, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: var(--font-family);
   line-height: 1.5;
   color: var(--text-color);
-  background-color: var(--background-color);
 }
 
 h1,
@@ -34,20 +30,19 @@ p {
 h1 {
   font-weight: 1000;
   font-size: var(--font-size-xxxl);
-  font-family: "Playfair Display", "Times New Roman", Times,
-    serif;
+  font-family: var(--font-family-headings);
 }
 
 h2 {
-  font-weight: 800;
-  font-size: var(--font-size-xxl);
+  font-family: var(--font-family-headings);
   font-feature-settings: "liga", "dlig";
+  font-size: var(--font-size-xxl);
   font-style: oblique 0deg 10deg;
-  font-family: "Playfair Display", "Times New Roman", Times,
-    serif;
+  font-weight: 800;
 }
 
 h3 {
+  font-family: var(--font-family-headings);
   font-size: var(--font-size-xl);
   font-weight: 600;
 }

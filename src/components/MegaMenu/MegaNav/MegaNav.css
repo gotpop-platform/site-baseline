@@ -38,8 +38,10 @@
     --opacity: 0;
 
     border: none;
+    background-color: transparent;
     inset: auto 0 calc(-10rem + anchor(bottom)) 0;
     grid-template-columns: var(--cols);
+    grid-template-columns: var(--master-grid);
     margin: 0 auto;
     opacity: var(--opacity);
     padding: 0;

@@ -1,6 +1,10 @@
 @scope {
   & {
     display: grid;
+    /* grid-template-columns:
+      [col-start] repeat(auto-fit, [bro] minmax(1rem, 5rem))
+      [col-end]; */
+
     grid-template-columns:
       [full-width-start left-start] minmax(1rem, 1fr)
       [box-start left-end] 1rem

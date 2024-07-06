@@ -1,0 +1,32 @@
+@scope {
+  & {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: box;
+    grid-template-rows: min-content 2rem;
+
+    @container style(--is-desktop: true) {
+      display: none;
+    }
+
+    .inner {
+      display: grid;
+      grid-column: box;
+      grid-row: 1;
+      grid-template-columns: subgrid;
+      padding: 1rem;
+      background-color: var(--slate-200);
+      border-radius: 0 0 1rem 1rem;
+    }
+
+    button {
+      background-color: var(--slate-300);
+      border-radius: 0.5rem;
+      inset: 1rem auto auto 1rem;
+      padding: 1rem;
+      grid-column: box;
+      cursor: pointer;
+      border: none;
+    }
+  }
+}

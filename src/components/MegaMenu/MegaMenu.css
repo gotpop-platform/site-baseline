@@ -1,5 +1,5 @@
 @scope {
-  :scope {
+  & {
     display: grid;
     grid-template-columns: subgrid;
     view-transition-name: header;
@@ -11,22 +11,36 @@
     border: none;
     padding: 0;
 
+    @container style(--is-desktop: false) {
+      display: none;
+    }
+
     &::backdrop {
       background-color: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(1rem);
+      backdrop-filter: blur(0.4rem);
     }
 
     &:popover-open {
       --opacity: 1;
 
       display: grid;
-      min-width: 80vw;
+      overflow: clip;
+      grid-template-columns: var(--master-grid);
 
-      .meganav {
-        grid-template-columns: repeat(
-          12,
-          [bro] minmax(1rem, 5rem)
-        );
+      .content {
+        grid-column: bro 2 / bro 12;
+      }
+
+      .mega {
+        inset: auto 0 calc(-22rem + anchor(bottom)) 0;
+      }
+
+      .inner {
+        border-radius: 2rem;
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        grid-column: bro 2 / bro 12;
       }
 
       @starting-style {

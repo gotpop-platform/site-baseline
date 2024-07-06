@@ -1,0 +1,6 @@
+:root {
+  --master-grid: [full-width-start left-start]
+    minmax(1rem, 1fr) [box-start left-end] 1rem [col-start]
+    repeat(12, [bro] minmax(1rem, 5rem)) [col-end] 1rem
+    [box-end] minmax(1rem, 1fr) [full-width-end];
+}

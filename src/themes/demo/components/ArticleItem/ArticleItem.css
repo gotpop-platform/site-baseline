@@ -2,9 +2,13 @@
   & {
     background-color: var(--slate-200);
     border-radius: 0.5rem;
-    grid-column: span 6;
+    grid-column: span 12;
     grid-row: span 1;
     padding: 2rem;
+
+    @container style(--is-desktop: true) {
+      grid-column: span 6;
+    }
 
     h3 {
       font-size: 44px;
@@ -19,7 +23,7 @@
       padding-top: calc(1rem - 1cap);
 
       &:last-child {
-        margin-bottom: none;
+        margin-bottom: 0;
       }
     }
   }

@@ -1,6 +1,7 @@
 import Footer from "@components/Footer"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/MegaMenu"
+import MobileMenuTrigger from "@components/MobileMenuTrigger"
 import AppTheme from "@layouts/app-theme"
 import h from "@utils/jsxFactory"
 import Surface from "src/themes/demo/components/Surface"
@@ -15,6 +16,7 @@ const pageGalleryItem = async ({
   return (
     <AppTheme title={`Gallery | ${slug}`} subdomain="demo">
       <GridConfig>
+        <MobileMenuTrigger />
         <MegaMenu />
         <Surface slug={slug} />
         <Footer />
