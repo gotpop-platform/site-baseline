@@ -3,8 +3,9 @@
   & {
     --grid-template-columns: subgrid;
     --inner-border-radius: 0 0 1rem 1rem;
+    --display: grid;
 
-    display: grid;
+    display: var(--display);
     grid-template-columns: var(--grid-template-columns);
     view-transition-name: header;
     grid-template-rows: min-content 2rem;
@@ -12,9 +13,10 @@
     background-color: transparent;
     padding: 0;
     overflow: clip;
+    position: static;
 
     @container style(--is-desktop: false) {
-      display: none;
+      --display: none;
     }
 
     &::backdrop {
@@ -26,8 +28,7 @@
       --opacity: 1;
       --grid-template-columns: var(--master-grid);
       --inner-border-radius: 2rem;
-
-      display: grid;
+      --display: grid;
 
       @starting-style {
         --opacity: 0;
