@@ -2,6 +2,7 @@
 @scope {
   & {
     --grid-template-columns: subgrid;
+    --inner-border-radius: 0 0 1rem 1rem;
 
     display: grid;
     grid-template-columns: var(--grid-template-columns);
@@ -27,6 +28,7 @@
     &:popover-open {
       --opacity: 1;
       --grid-template-columns: var(--master-grid);
+      --inner-border-radius: 2rem;
 
       display: grid;
 
@@ -41,7 +43,6 @@
       }
 
       .inner {
-        border-radius: 2rem;
         padding: 4rem;
         display: flex;
         flex-direction: column;
@@ -55,8 +56,8 @@
   }
 
   .inner {
-    background-color: white;
-    border-radius: 0 0 1rem 1rem;
+    background-color: var(--white);
+    border-radius: var(--inner-border-radius);
     display: grid;
     grid-column: box;
     grid-row: 1;
