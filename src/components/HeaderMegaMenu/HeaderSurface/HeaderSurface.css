@@ -1,0 +1,29 @@
+/* .headersurface */
+@scope {
+  & {
+    --padding-bottom: 1rem;
+    --border-radius: 0 0 1rem 1rem;
+
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    display: grid;
+    grid-column: box;
+    grid-row: 1;
+    grid-template-columns: subgrid;
+    padding: 1rem 1rem var(--padding-bottom) 1rem;
+    transition: padding 0.3s ease;
+
+    @container style(--is-desktop: false) {
+      --border-radius: 2rem;
+
+      padding: 4rem;
+      display: flex;
+      flex-direction: column;
+      grid-column: bro 2 / bro 12;
+    }
+
+    &:has(:popover-open) {
+      --padding-bottom: 10rem;
+    }
+  }
+}

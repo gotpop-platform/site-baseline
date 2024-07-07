@@ -39,7 +39,7 @@
   .submenu {
     --display-animation: display 0.3s allow-discrete;
     --opacity: 0;
-    --submenu-content-grid-column: col;
+    --display: none;
 
     border: none;
     background-color: transparent;
@@ -50,18 +50,15 @@
     padding: 0;
     transition: opacity 0.3s 0.2s, var(--display-animation);
     min-height: 8rem;
+    display: var(--display);
+
+    @container style(--is-desktop: false) {
+      inset: auto 0 calc(-9rem + anchor(bottom)) 0;
+    }
 
     &:popover-open {
       --opacity: 1;
-      --submenu-content-grid-column: bro 3 / bro 11;
-
-      display: grid;
-
-      /* .content {
-        @container style(--is-desktop: false) {
-          grid-column: ;
-        }
-      } */
+      --display: grid;
 
       @starting-style {
         --opacity: 0;

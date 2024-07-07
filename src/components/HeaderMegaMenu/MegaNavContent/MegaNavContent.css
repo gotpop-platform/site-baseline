@@ -1,12 +1,18 @@
 @scope {
   & {
+    --grid-column: bro 3 / bro 11;
+
     background-color: var(--slate-200);
     border-radius: 0 0 0.5rem 0.5rem;
     display: grid;
     gap: 1rem;
-    grid-column: var(--submenu-content-grid-column);
+    grid-column: var(--grid-column);
     grid-template-columns: subgrid;
     padding: 1rem;
+
+    @container style(--is-desktop: true) {
+      --grid-column: col;
+    }
   }
 
   ul {

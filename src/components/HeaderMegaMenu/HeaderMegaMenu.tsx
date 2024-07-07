@@ -2,6 +2,7 @@ import Logo from "@components/Logo"
 import h from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
+import HeaderMegaMenuInner from "./HeaderSurface"
 import MegaNav from "./MegaNav"
 
 type HeaderMegaMenuProps = {
@@ -22,10 +23,10 @@ const HeaderMegaMenu = ({
       class={mkClass(import.meta.file)}
     >
       <style>{css}</style>
-      <div class="inner">
+      <HeaderMegaMenuInner>
         <Logo />
         <MegaNav />
-      </div>
+      </HeaderMegaMenuInner>
     </header>
   )
 }
