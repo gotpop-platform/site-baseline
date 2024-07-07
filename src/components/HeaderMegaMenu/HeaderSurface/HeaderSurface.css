@@ -1,29 +1,31 @@
 /* .headersurface */
 @scope {
   & {
-    --padding-bottom: 1rem;
     --border-radius: 0 0 1rem 1rem;
+    --padding: 1rem;
+    --padding-bottom: 1rem;
+    --grid-column: box;
 
     background-color: var(--white);
     border-radius: var(--border-radius);
     display: grid;
-    grid-column: box;
+    grid-column: var(--grid-column);
     grid-row: 1;
     grid-template-columns: subgrid;
-    padding: 1rem 1rem var(--padding-bottom) 1rem;
-    transition: padding 0.3s ease;
+    padding-block: var(--padding) var(--padding-bottom);
+    transition: padding-inline 0.3s ease;
 
     @container style(--is-desktop: false) {
       --border-radius: 2rem;
-
-      padding: 4rem;
-      display: flex;
-      flex-direction: column;
-      grid-column: bro 2 / bro 12;
+      --padding: 4rem;
+      --padding-bottom: var(--padding);
+      --grid-column: col;
     }
 
     &:has(:popover-open) {
-      --padding-bottom: 10rem;
+      @container style(--is-desktop: true) {
+        --padding-bottom: 10rem;
+      }
     }
   }
 }

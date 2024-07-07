@@ -1,68 +1,17 @@
 /* .meganav */
 @scope {
   & {
-    border-radius: 0 0 2em 2em;
+    --grid-column: bro 3 / bro 11;
+
     display: grid;
     gap: 1rem;
-    grid-column: 6 / span 8;
+    grid-column: var(--grid-column);
     grid-template-columns: subgrid;
     padding: 1rem 0;
-  }
+    grid-template-rows: min-content min-content;
 
-  .trigger-sub-menu {
-    --menu-button-margin-bottom: 0rem;
-
-    background-color: var(--gray-200);
-    border-radius: 0.5em;
-    border: none;
-    color: var(--slate-900);
-    cursor: pointer;
-    display: flex;
-    font-size: 1rem;
-    grid-column: span 2;
-    height: 3rem;
-    justify-content: center;
-    margin-block-end: var(--menu-button-margin-bottom);
-    padding: 0.5rem 1rem;
-    text-align: center;
-    transition: margin-bottom 0.2s, background-color 0.2s,
-      color 0.2s;
-
-    /* Animate the sibling to make space for the popover on mobile */
-    &:has(+ .submenu:popover-open) {
-      @container style(--is-desktop: false) {
-        --menu-button-margin-bottom: 10rem;
-      }
-    }
-  }
-
-  .submenu {
-    --display-animation: display 0.3s allow-discrete;
-    --opacity: 0;
-    --display: none;
-
-    border: none;
-    background-color: transparent;
-    inset: auto 0 calc(-10rem + anchor(bottom)) 0;
-    grid-template-columns: var(--master-grid);
-    margin: 0 auto;
-    opacity: var(--opacity);
-    padding: 0;
-    transition: opacity 0.3s 0.2s, var(--display-animation);
-    min-height: 8rem;
-    display: var(--display);
-
-    @container style(--is-desktop: false) {
-      inset: auto 0 calc(-9rem + anchor(bottom)) 0;
-    }
-
-    &:popover-open {
-      --opacity: 1;
-      --display: grid;
-
-      @starting-style {
-        --opacity: 0;
-      }
+    @container style(--is-desktop: true) {
+      --grid-column: 6 / span 8;
     }
   }
 }

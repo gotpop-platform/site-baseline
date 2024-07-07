@@ -1,0 +1,32 @@
+@scope {
+  & {
+    --display-animation: display 0.3s allow-discrete;
+    --opacity: 0;
+    --display: none;
+    --submenu-offset: -10rem;
+    --anchor: calc(var(--submenu-offset) + anchor(bottom));
+
+    background-color: transparent;
+    inset: auto 0 var(--anchor) 0;
+    grid-template-columns: var(--master-grid);
+    margin: 0 auto;
+    opacity: var(--opacity);
+    padding: 0;
+    transition: opacity 0.3s 0.2s, var(--display-animation);
+    min-height: 8rem;
+    display: var(--display);
+
+    @container style(--is-desktop: false) {
+      --submenu-offset: -9rem;
+    }
+
+    &:popover-open {
+      --opacity: 1;
+      --display: grid;
+
+      @starting-style {
+        --opacity: 0;
+      }
+    }
+  }
+}

@@ -12,6 +12,6 @@
     "editor.codeActionsOnSave": {
       "source.fixAll": "always"
     },
-    "github.copilot.editor.enableAutoCompletions": false
+    "github.copilot.editor.enableAutoCompletions": true
   }
 }

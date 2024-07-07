@@ -2,20 +2,22 @@
 @scope {
   & {
     --grid-template-columns: subgrid;
-    --display: grid;
+    --display: none;
+    --grid-template-rows: min-content;
 
-    display: var(--display);
-    grid-template-columns: var(--grid-template-columns);
-    view-transition-name: header;
-    grid-column: box;
     background-color: transparent;
-    padding: 0;
+    display: var(--display);
+    grid-column: box;
+    grid-template-columns: var(--grid-template-columns);
+    grid-template-rows: var(--grid-template-rows);
     overflow: clip;
+    padding: 0;
     position: static;
+    view-transition-name: header;
 
-    @container style(--is-desktop: false) {
-      --display: none;
-      grid-template-rows: min-content 2rem;
+    @container style(--is-desktop: true) {
+      --display: grid;
+      --grid-template-rows: min-content 2rem;
     }
 
     &::backdrop {

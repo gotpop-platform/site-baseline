@@ -1,10 +1,17 @@
 @scope {
-  :scope {
+  & {
+    --grid-column: 1 / -1;
+
     display: flex;
     padding: 0.3em 0 0.3em 1.5em;
-    grid-column: span 4;
+    grid-column: var(--grid-column);
     gap: 0.5em;
     align-items: center;
+    justify-content: center;
+
+    @container style(--is-desktop: true) {
+      --grid-column: span 4;
+    }
 
     svg {
       max-width: 3em;
