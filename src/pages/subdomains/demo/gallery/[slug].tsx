@@ -1,6 +1,6 @@
 import Footer from "@components/Footer"
 import GridConfig from "@components/GridConfig"
-import MegaMenu from "@components/MegaMenu"
+import MegaMenu from "@components/HeaderMegaMenu"
 import MobileMenuTrigger from "@components/MobileMenuTrigger"
 import AppTheme from "@layouts/app-theme"
 import h from "@utils/jsxFactory"

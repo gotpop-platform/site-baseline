@@ -4,7 +4,7 @@
     border-radius: 0 0 0.5rem 0.5rem;
     display: grid;
     gap: 1rem;
-    grid-column: col;
+    grid-column: var(--submenu-content-grid-column);
     grid-template-columns: subgrid;
     padding: 1rem;
   }

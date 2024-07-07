@@ -1,7 +1,5 @@
-import Footer from "@components/Footer"
 import GridConfig from "@components/GridConfig"
-import MegaMenu from "@components/MegaMenu"
-import { useCSSTheme } from "@hooks/useCSSTheme"
+import MegaMenu from "@components/HeaderMegaMenu"
 import AppFull from "@layouts/app-full"
 import h from "@utils/jsxFactory"
 

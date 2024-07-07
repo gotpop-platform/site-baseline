@@ -4,14 +4,20 @@ import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
 import MegaNav from "./MegaNav"
 
-type MegaMenuProps = { title?: string; children?: string }
+type HeaderMegaMenuProps = {
+  title?: string
+  children?: string
+}
 
-const MegaMenu = ({ title, children }: MegaMenuProps) => {
+const HeaderMegaMenu = ({
+  title,
+  children,
+}: HeaderMegaMenuProps) => {
   const { css } = useCSS({ meta: import.meta })
 
   return (
     <header
-      id="megaMenu"
+      id="headerMegaMenu"
       popover="auto"
       class={mkClass(import.meta.file)}
     >
@@ -24,4 +30,4 @@ const MegaMenu = ({ title, children }: MegaMenuProps) => {
   )
 }
 
-export default MegaMenu
+export default HeaderMegaMenu

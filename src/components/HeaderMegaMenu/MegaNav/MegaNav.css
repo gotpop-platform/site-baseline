@@ -39,6 +39,7 @@
   .submenu {
     --display-animation: display 0.3s allow-discrete;
     --opacity: 0;
+    --submenu-content-grid-column: col;
 
     border: none;
     background-color: transparent;
@@ -52,14 +53,15 @@
 
     &:popover-open {
       --opacity: 1;
+      --submenu-content-grid-column: bro 3 / bro 11;
 
       display: grid;
 
-      .content {
+      /* .content {
         @container style(--is-desktop: false) {
-          grid-column: bro 3 / bro 11;
+          grid-column: ;
         }
-      }
+      } */
 
       @starting-style {
         --opacity: 0;

@@ -34,12 +34,6 @@
         --opacity: 0;
       }
 
-      .content {
-        @container style(--is-desktop: false) {
-          grid-column: bro 2 / bro 12;
-        }
-      }
-
       .submenu {
         inset: auto 0 calc(-9rem + anchor(bottom)) 0;
       }
@@ -68,11 +62,3 @@
     }
   }
 }
-
-/* .inner {
-  background-color: pink;
-
-  .surface & {
-    background-color: greenyellow;
-  }
-} */
