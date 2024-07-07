@@ -7,12 +7,9 @@
     display: grid;
     grid-template-columns: var(--grid-template-columns);
     view-transition-name: header;
-    z-index: 1000;
     grid-template-rows: min-content 2rem;
     grid-column: box;
-    position: static;
     background-color: transparent;
-    border: none;
     padding: 0;
     overflow: clip;
 
@@ -32,6 +29,10 @@
 
       display: grid;
 
+      @starting-style {
+        --opacity: 0;
+      }
+
       .content {
         @container style(--is-desktop: false) {
           grid-column: bro 2 / bro 12;
@@ -47,10 +48,6 @@
         display: flex;
         flex-direction: column;
         grid-column: bro 2 / bro 12;
-      }
-
-      @starting-style {
-        --opacity: 0;
       }
     }
   }
