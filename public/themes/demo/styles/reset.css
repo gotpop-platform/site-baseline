@@ -25,6 +25,10 @@ canvas {
   block-size: auto;
 }
 
+[popover]:popover-open {
+  border: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

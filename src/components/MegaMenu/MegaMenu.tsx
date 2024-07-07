@@ -11,7 +11,7 @@ const MegaMenu = ({ title, children }: MegaMenuProps) => {
 
   return (
     <header
-      id="liambest"
+      id="megaMenu"
       popover="auto"
       class={mkClass(import.meta.file)}
     >

@@ -1,7 +1,10 @@
+/* .megamenu */
 @scope {
   & {
+    --grid-template-columns: subgrid;
+
     display: grid;
-    grid-template-columns: subgrid;
+    grid-template-columns: var(--grid-template-columns);
     view-transition-name: header;
     z-index: 1000;
     grid-template-rows: min-content 2rem;
@@ -10,6 +13,7 @@
     background-color: transparent;
     border: none;
     padding: 0;
+    overflow: clip;
 
     @container style(--is-desktop: false) {
       display: none;
@@ -22,17 +26,18 @@
 
     &:popover-open {
       --opacity: 1;
+      --grid-template-columns: var(--master-grid);
 
       display: grid;
-      overflow: clip;
-      grid-template-columns: var(--master-grid);
 
       .content {
-        grid-column: bro 2 / bro 12;
+        @container style(--is-desktop: false) {
+          grid-column: bro 2 / bro 12;
+        }
       }
 
-      .mega {
-        inset: auto 0 calc(-22rem + anchor(bottom)) 0;
+      .submenu {
+        inset: auto 0 calc(-9rem + anchor(bottom)) 0;
       }
 
       .inner {
@@ -47,21 +52,28 @@
         --opacity: 0;
       }
     }
+  }
 
-    .inner {
-      background-color: white;
-      border-radius: 0 0 1rem 1rem;
-      display: grid;
-      grid-column: box;
-      grid-row: 1;
-      grid-template-columns: subgrid;
-      padding: 1rem;
-      transition: padding 0.3s 0.3s ease;
+  .inner {
+    background-color: white;
+    border-radius: 0 0 1rem 1rem;
+    display: grid;
+    grid-column: box;
+    grid-row: 1;
+    grid-template-columns: subgrid;
+    padding: 1rem;
+    transition: padding 0.3s ease;
 
-      &:has(.mega:popover-open) {
-        padding-bottom: 10rem;
-        transition: padding 0.3s ease;
-      }
+    &:has(:popover-open) {
+      padding-bottom: 10rem;
     }
   }
 }
+
+/* .inner {
+  background-color: pink;
+
+  .surface & {
+    background-color: greenyellow;
+  }
+} */

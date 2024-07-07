@@ -9,7 +9,7 @@ function MobileMenuTrigger() {
     <div class={mkClass(import.meta.file)}>
       <style>{css}</style>
       <div class="inner">
-        <button popovertarget="liambest">Open!</button>
+        <button popovertarget="megaMenu">Open!</button>
       </div>
     </div>
   )

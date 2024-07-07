@@ -1,0 +1,28 @@
+@scope {
+  & {
+    background-color: var(--slate-200);
+    border-radius: 0 0 0.5rem 0.5rem;
+    display: grid;
+    gap: 1rem;
+    grid-column: col;
+    grid-template-columns: subgrid;
+    padding: 1rem;
+  }
+
+  ul {
+    padding: 0;
+    grid-column: bro 1 / span 4;
+
+    li {
+      list-style-type: none;
+
+      a {
+        background: #eee;
+        padding: 0.2rem 0.5rem;
+        margin-bottom: 0.5rem;
+        border-radius: 0.5rem;
+        display: inline-flex;
+      }
+    }
+  }
+}
