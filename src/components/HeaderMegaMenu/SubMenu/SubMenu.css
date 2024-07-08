@@ -3,7 +3,7 @@
     --display-animation: display 0.3s allow-discrete;
     --opacity: 0;
     --display: none;
-    --submenu-offset: -10rem;
+    --submenu-offset: -11rem;
     --anchor: calc(var(--submenu-offset) + anchor(bottom));
 
     background-color: transparent;
