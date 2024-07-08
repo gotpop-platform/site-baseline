@@ -1,6 +1,6 @@
 @scope {
   & {
-    --grid-column: 1 / -1;
+    --grid-column: bro 3 / bro 11;
 
     display: flex;
     grid-column: var(--grid-column);
@@ -10,6 +10,8 @@
     padding: 1rem;
     transition: background-color 0.2s;
     border-radius: 0.5em;
+    text-decoration-thickness: 0.07lh;
+    text-underline-offset: 0.17lh;
 
     &:hover {
       cursor: pointer;
@@ -21,7 +23,7 @@
     }
 
     svg {
-      max-width: 3em;
+      max-width: 3.5em;
     }
 
     .icon {
