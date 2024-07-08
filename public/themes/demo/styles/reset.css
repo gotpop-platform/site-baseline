@@ -27,10 +27,10 @@ canvas {
 
 [popover] {
   border: none;
+}
 
-  &:popover-open {
-    border: none;
-  }
+a[class]:visited {
+  color: inherit;
 }
 
 @media (prefers-reduced-motion: reduce) {
