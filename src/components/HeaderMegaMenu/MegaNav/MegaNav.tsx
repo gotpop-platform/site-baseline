@@ -13,6 +13,7 @@ const MegaNav = () => {
     { position: "1", textButton: "Products" },
     { position: "2", textButton: "About" },
     { position: "3", textButton: "Services" },
+    { position: "4", textButton: "Blog" },
   ]
 
   const navItems = data.map((item) => (
