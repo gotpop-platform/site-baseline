@@ -5,6 +5,7 @@
     --padding: 1rem;
     --padding-bottom: 1rem;
     --grid-column: box;
+    --transition: padding-bottom 0.2s 0.3s ease;
 
     background-color: var(--white);
     border-radius: var(--border-radius);
@@ -13,7 +14,7 @@
     grid-row: 1;
     grid-template-columns: subgrid;
     padding-block: var(--padding) var(--padding-bottom);
-    transition: padding-inline 0.3s ease;
+    transition: var(--transition);
 
     @container style(--is-desktop: false) {
       --border-radius: 2rem;
@@ -24,7 +25,8 @@
 
     &:has(:popover-open) {
       @container style(--is-desktop: true) {
-        --padding-bottom: 10rem;
+        --padding-bottom: 11rem;
+        --transition: padding-bottom 0.3s ease;
       }
     }
   }
