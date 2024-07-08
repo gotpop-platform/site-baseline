@@ -1,3 +1,4 @@
+import BaseLinePopOver from "@components/BaseLinePopOver"
 import Nav from "@components/Nav"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
@@ -26,6 +27,16 @@ function Footer() {
         <nav class="subdomains">
           <a href={makePath("demo")}>Demo</a>
           <a href={makePath("singleton")}>Singleton</a>
+        </nav>
+        <h3>Pop</h3>
+        <nav class="subdomains">
+          <button
+            class="trigger-sub-menu"
+            popovertarget="basegrid"
+          >
+            Grid
+          </button>
+          <BaseLinePopOver />
         </nav>
       </div>
     </footer>

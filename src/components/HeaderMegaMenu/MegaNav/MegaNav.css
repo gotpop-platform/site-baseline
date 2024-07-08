@@ -8,7 +8,6 @@
     grid-column: var(--grid-column);
     grid-template-columns: subgrid;
     padding: 1rem 0;
-    grid-template-rows: min-content min-content;
 
     @container style(--is-desktop: true) {
       --grid-column: 6 / span 8;

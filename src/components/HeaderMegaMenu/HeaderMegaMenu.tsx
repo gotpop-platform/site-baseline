@@ -1,8 +1,8 @@
-import Logo from "@components/Logo"
 import h from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
 import HeaderMegaMenuInner from "./HeaderSurface"
+import LogoMegaMenu from "./LogoMegaMenu"
 import MegaNav from "./MegaNav"
 
 type HeaderMegaMenuProps = {
@@ -24,7 +24,7 @@ const HeaderMegaMenu = ({
     >
       <style>{css}</style>
       <HeaderMegaMenuInner>
-        <Logo />
+        <LogoMegaMenu />
         <MegaNav />
       </HeaderMegaMenuInner>
     </header>

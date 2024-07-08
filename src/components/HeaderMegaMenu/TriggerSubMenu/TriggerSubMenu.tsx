@@ -18,7 +18,7 @@ const TriggerSubMenu = ({
       popovertarget={`menu-items-${position}`}
     >
       <style>{css}</style>
-      {textButton}
+      <span>{textButton}</span>
     </button>
   )
 }

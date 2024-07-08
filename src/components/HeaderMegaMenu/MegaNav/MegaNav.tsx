@@ -1,4 +1,3 @@
-import BaseLinePopOver from "@components/BaseLinePopOver"
 import Fragment from "@components/Fragment"
 import { useCSS } from "@hooks/useCSS"
 import h from "@utils/jsxFactory"
@@ -32,13 +31,6 @@ const MegaNav = () => {
     <nav class={mkClass(import.meta.file)}>
       <style>{css}</style>
       {navItems}
-      <button
-        class="trigger-sub-menu"
-        popovertarget="basegrid"
-      >
-        Grid
-      </button>
-      <BaseLinePopOver />
     </nav>
   )
 }

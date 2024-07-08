@@ -3,7 +3,11 @@ html {
   background-color: var(--slate-600);
 }
 
-button &:focus-visible {
-  outline: 2px dashed var(--accent);
-  outline-offset: var(--outline-offset, -0.5em);
+button,
+a {
+  &:focus-visible,
+  &:focus {
+    outline: 2px dashed var(--accent);
+    outline-offset: var(--outline-offset, -0.5em);
+  }
 }

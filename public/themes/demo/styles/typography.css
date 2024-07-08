@@ -73,3 +73,8 @@ p {
   line-height: 1.4em;
   letter-spacing: 0.015em;
 }
+
+button {
+  text-box-edge: cap alphabetic;
+  text-box-trim: both;
+}

@@ -10,14 +10,19 @@
     display: flex;
     font-size: 1rem;
     grid-column: span 8;
-
-    height: 3rem;
     justify-content: center;
     margin-block-end: var(--menu-button-margin-bottom);
-    padding: 0.5rem 1rem;
+    padding: 1rem;
     text-align: center;
+    align-items: center;
     transition: margin-bottom 0.2s, background-color 0.2s,
       color 0.2s;
+
+    span {
+      text-box-edge: cap alphabetic;
+      text-box-trim: both;
+      font-size: 15px;
+    }
 
     @container style(--is-desktop: true) {
       grid-column: span 2;

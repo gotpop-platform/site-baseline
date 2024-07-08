@@ -1,0 +1,40 @@
+@scope {
+  & {
+    --grid-column: 1 / -1;
+
+    display: flex;
+    grid-column: var(--grid-column);
+    gap: 0.5em;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    transition: background-color 0.2s;
+    border-radius: 0.5em;
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--gray-200);
+    }
+
+    @container style(--is-desktop: true) {
+      --grid-column: 2 / span 3;
+    }
+
+    svg {
+      max-width: 3em;
+    }
+
+    .icon {
+      font-size: 2em;
+      color: var(--slate-900);
+    }
+
+    h1 {
+      font-size: 1.3rem;
+      margin: 0 0 0.1em 0;
+      color: var(--slate-900);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+}
