@@ -3,7 +3,7 @@
     --grid-column: bro 3 / bro 11;
 
     background-color: var(--slate-200);
-    border-radius: 0 0 0.5rem 0.5rem;
+    border-radius: 0.5rem;
     display: grid;
     gap: 1rem;
     grid-column: var(--grid-column);
