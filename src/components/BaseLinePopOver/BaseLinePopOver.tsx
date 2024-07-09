@@ -9,7 +9,7 @@ function BaseLinePopOver({ popovertarget = "basegrid" }) {
     <div
       class={mkClass(import.meta.file)}
       id={popovertarget}
-      popover
+      popover="auto"
     >
       <style>{css}</style>
       <h4>Baseline</h4>
