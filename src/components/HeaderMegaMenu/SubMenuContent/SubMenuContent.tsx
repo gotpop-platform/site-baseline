@@ -7,7 +7,7 @@ type SubmenuItem = {
   link: string
 }
 
-const MegaNavContent = ({
+const SubMenuContent = ({
   submenuItems,
 }: {
   submenuItems: SubmenuItem[]
@@ -28,4 +28,4 @@ const MegaNavContent = ({
   )
 }
 
-export default MegaNavContent
+export default SubMenuContent
