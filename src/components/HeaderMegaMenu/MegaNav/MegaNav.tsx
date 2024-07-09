@@ -1,6 +1,6 @@
 import Fragment from "@components/Fragment"
-import MegaNavContent from "../MegaNavContent"
 import SubMenu from "../SubMenu"
+import SubMenuContent from "../SubMenuContent"
 import TriggerSubMenu from "../TriggerSubMenu"
 import h from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
@@ -18,7 +18,7 @@ export const MegaNav = () => {
           textButton={textButton}
         />
         <SubMenu position={position}>
-          <MegaNavContent submenuItems={submenuItems} />
+          <SubMenuContent submenuItems={submenuItems} />
         </SubMenu>
       </Fragment>
     )
