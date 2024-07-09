@@ -1,7 +1,10 @@
 @scope {
   & {
     --menu-button-margin-bottom: 0rem;
+    --transition: margin-bottom 0.2s 0.3s,
+      background-color 0.2s;
 
+    align-items: center;
     background-color: var(--gray-200);
     border-radius: 0.5em;
     border: none;
@@ -14,9 +17,7 @@
     margin-block-end: var(--menu-button-margin-bottom);
     padding: 1rem;
     text-align: center;
-    align-items: center;
-    transition: margin-bottom 0.2s, background-color 0.2s,
-      color 0.2s;
+    transition: var(--transition);
 
     span {
       text-box-edge: cap alphabetic;
@@ -28,10 +29,12 @@
       grid-column: span 2;
     }
 
-    /* Animate the sibling to make space for the popover on mobile */
+    /* Animate the previous sibling to make space for the popover on mobile */
     &:has(+ .submenu:popover-open) {
       @container style(--is-desktop: false) {
         --menu-button-margin-bottom: 10rem;
+        --transition: margin-bottom 0.2s,
+          background-color 0.2s;
       }
     }
   }

@@ -17,7 +17,7 @@
     display: var(--display);
 
     @container style(--is-desktop: false) {
-      --submenu-offset: -9rem;
+      --submenu-offset: -10rem;
     }
 
     &:popover-open {
