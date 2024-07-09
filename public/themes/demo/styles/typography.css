@@ -65,7 +65,7 @@ a:not([class]) {
   text-underline-offset: 0.25em;
   text-decoration-thickness: 0.125em;
   text-decoration-color: var(--accent);
-  transition: color 0.2s ease-in-out;
+  transition: color 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
 p {
