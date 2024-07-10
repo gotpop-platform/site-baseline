@@ -20,7 +20,10 @@
       --border-radius: 2rem;
       --padding: 4rem;
       --padding-bottom: var(--padding);
-      --grid-column: col;
+      --grid-column: col 2 / span 10;
+
+      margin-inline: 2rem;
+      grid-template-columns: var(--master-grid);
     }
 
     &:has(:popover-open) {

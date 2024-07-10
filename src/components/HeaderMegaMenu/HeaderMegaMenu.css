@@ -1,50 +1,6 @@
 /* .megamenu */
-@scope {
-  & {
-    --display-animation: display 0.3s allow-discrete;
-    --display-header: none;
-    --grid-template-columns: subgrid;
-    --grid-template-rows: min-content;
-    --opacity: 0;
 
-    background-color: transparent;
-    display: var(--display-header);
-    grid-column: box;
-    grid-template-columns: var(--grid-template-columns);
-    grid-template-rows: var(--grid-template-rows);
-    overflow: clip;
-    padding: 0;
-    position: static;
-    view-transition-name: header;
-    opacity: 1;
-    transition: opacity 0.3s, display 0.3s allow-discrete;
-    display: none;
 
-    /* @container style(--is-desktop: false) {
-      --opacity: 0;
-    } */
-
-    @container style(--is-desktop: true) {
-      --display-header: grid;
-      --grid-template-rows: min-content 2rem;
-    }
-
-    &::backdrop {
-      background-color: rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(0.4rem);
-    }
-
-    &:popover-open {
-      opacity: 1;
-      --opacity: 1;
-      --grid-template-columns: var(--master-grid);
-      --display-header: grid;
-      display: grid;
-
-      @starting-style {
-        opacity: 0;
-        --opacity: 0;
-      }
-    }
-  }
-}
+/* * {
+    border: 5px red solid;
+} */
