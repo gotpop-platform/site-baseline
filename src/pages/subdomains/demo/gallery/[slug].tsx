@@ -1,25 +1,23 @@
 import AppTheme from "@layouts/app-theme"
-import ArticleItem from "src/themes/demo/components/ArticleItem"
 import Footer from "@components/Footer"
 import GalleryIntro from "src/themes/demo/components/GalleryIntro"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
 import MobileMenuTrigger from "@components/MobileMenuTrigger"
 import Surface from "src/themes/demo/components/Surface"
-import { articlesData } from "src/themes/demo/data/articlesData"
 import h from "@utils/jsxFactory"
 
 type PageProps = {
   slug: string
 }
 
-export const Articles = () => (
-  <div class="inner">
-    {articlesData.map((article) => (
-      <ArticleItem {...article} />
-    ))}
-  </div>
-)
+// export const Articles = () => (
+//   <div class="inner">
+//     {articlesData.map((article) => (
+//       <ArticleItem {...article} />
+//     ))}
+//   </div>
+// )
 
 const pageGalleryItem = async ({
   slug,
@@ -31,7 +29,7 @@ const pageGalleryItem = async ({
         <MegaMenu />
         <Surface>
           <GalleryIntro slug={slug} />
-          <Articles />
+          {/* <Articles /> */}
         </Surface>
         <Footer />
       </GridConfig>

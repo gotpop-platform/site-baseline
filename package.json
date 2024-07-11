@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"scripts": {
 		"dev": "bun --watch server/serve.ts",
-		"start": "bun server/serve.ts"
+		"start": "bun server/serve.ts",
+		"tsc": "tsc"
 	},
 	"peerDependencies": {
 		"@types/bun": "latest",
