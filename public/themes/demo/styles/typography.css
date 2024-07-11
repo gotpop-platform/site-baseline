@@ -59,13 +59,14 @@ h6 {
   font-size: var(--font-size-base);
 }
 
-a:not([class]) {
+/* a:not([class]) { */
+a {
   color: inherit;
-  text-decoration: none;
-  text-underline-offset: 0.25em;
-  text-decoration-thickness: 0.125em;
+  text-underline-offset: 0.3em;
+  text-decoration-thickness: 0.14em;
   text-decoration-color: var(--accent);
-  transition: color 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  transition: color 0.2s
+    cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
 p {

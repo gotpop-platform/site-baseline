@@ -19,19 +19,19 @@ export const navData = [
   },
   {
     position: "2",
-    textButton: "About",
+    textButton: "Articles",
     submenuItems: [
       {
-        title: "Submenu Item 4",
-        link: "/submenu-item-4",
+        title: "Articles Item 1",
+        link: "/articles/article-1",
       },
       {
-        title: "Submenu Item 5",
-        link: "/submenu-item-5",
+        title: "Articles Item 2",
+        link: "/articles/article-2",
       },
       {
-        title: "Submenu Item 6",
-        link: "/submenu-item-6",
+        title: "Articles Item 3",
+        link: "/articles/article-3",
       },
     ],
   },

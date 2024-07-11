@@ -5,6 +5,18 @@
     grid-column: span 12;
     grid-row: span 1;
     padding: 2rem;
+    transition: background-color 0.2s
+      cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    /* view-transition-name: article; */
+
+    &:first-child {
+      grid-column: span 12;
+      view-transition-name: var(--transition-article);
+    }
+
+    &:has(:hover) {
+      background-color: var(--slate-300);
+    }
 
     @container style(--is-desktop: true) {
       grid-column: span 6;
