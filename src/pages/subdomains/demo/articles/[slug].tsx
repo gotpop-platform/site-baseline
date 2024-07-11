@@ -12,29 +12,33 @@ type PageProps = {
   slug: string
 }
 
-export const Articles = () => (
-  <div class="inner">
-    {articlesData.map((article) => (
-      <ArticleItem {...article} />
-    ))}
-  </div>
-)
-
-const pageGalleryItem = async ({
+const pageArticleItem = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
+  const slugPage = "/articles/" + slug
+  const varStr = "--transition-article: article-"
+  const articlesArr = Array.from(articlesData.entries())
+
+  const articleItem = articlesArr.map(
+    ([key, article], index) => {
+      const { href } = article
+
+      return href === slugPage ? (
+        <ArticleItem
+          {...article}
+          style={varStr + (index + 1)}
+        />
+      ) : null
+    }
+  )
+
   return (
     <AppTheme title={`Gallery | ${slug}`} subdomain="demo">
       <GridConfig>
         <MobileMenuTrigger />
         <MegaMenu />
         <Surface>
-          <div class="inner">
-            <ArticleItem
-              {...articlesData[0]}
-              style={"--transition-article: article-" + "1"}
-            />
-          </div>
+          <div class="inner">{articleItem}</div>
         </Surface>
         <Footer />
       </GridConfig>
@@ -42,4 +46,4 @@ const pageGalleryItem = async ({
   )
 }
 
-export default pageGalleryItem
+export default pageArticleItem

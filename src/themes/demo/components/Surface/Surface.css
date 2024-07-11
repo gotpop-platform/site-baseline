@@ -7,7 +7,9 @@
     padding-block: 1rem;
     border-radius: 1rem;
     row-gap: 1rem;
-    view-transition-name: box;
+    /* view-transition-name: surface; */
+    min-height: 90dvh;
+    /* overflow: clip; */
   }
 
   .inner {

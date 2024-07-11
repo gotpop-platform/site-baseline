@@ -1,29 +1,38 @@
+import Icon from "@components/Icon"
+import { IconTypes } from "@components/Icon/Icon"
 import h from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
 
-interface ArticleItemProps extends Record<string, any> {
+interface ArticleItemProps {
   title: string
   content: string
   href: string
+  style?: string
 }
 
 function ArticleItem({
   title,
   content,
   href,
-  ...rest
+  style,
 }: ArticleItemProps): JSX.Element {
   const { css } = useCSS({ meta: import.meta })
 
   return (
     <article
-      className={mkClass(import.meta.file)}
-      {...rest}
+      class={mkClass(import.meta.file)}
+      style={style}
     >
       <style>{css}</style>
       <a href={href}>
-        <h3>{title}</h3>
+        <h3>
+          <span>{title}</span>
+          <Icon
+            type={IconTypes.outlined}
+            iconName="add_alert"
+          />
+        </h3>
       </a>
       <p>{content}</p>
     </article>

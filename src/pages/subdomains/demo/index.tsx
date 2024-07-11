@@ -1,7 +1,6 @@
 import AppTheme from "@layouts/app-theme"
 import ArticleItem from "src/themes/demo/components/ArticleItem"
 import Footer from "@components/Footer"
-import GalleryIntro from "src/themes/demo/components/GalleryIntro"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
 import MobileMenuTrigger from "@components/MobileMenuTrigger"
@@ -13,16 +12,18 @@ type PageProps = {
   slug: string
 }
 
+const varStr = "--transition-article: article-"
+
 export const Articles = () => (
   <div class="inner">
-    {articlesData.map((article, index) => (
-      <ArticleItem
-        {...article}
-        style={
-          "--transition-article: article-" + (index + 1)
-        }
-      />
-    ))}
+    {Array.from(articlesData.entries()).map(
+      ([key, article], index) => (
+        <ArticleItem
+          {...article}
+          style={varStr + (index + 1)}
+        />
+      )
+    )}
   </div>
 )
 
@@ -30,12 +31,11 @@ const pageIndex = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
   return (
-    <AppTheme title={`Gallery | ${slug}`} subdomain="demo">
+    <AppTheme title={`GotPop | Home`} subdomain="demo">
       <GridConfig>
         <MobileMenuTrigger />
         <MegaMenu />
         <Surface>
-          <GalleryIntro slug={slug} />
           <Articles />
         </Surface>
         <Footer />

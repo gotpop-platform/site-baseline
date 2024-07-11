@@ -7,11 +7,22 @@
     padding: 2rem;
     transition: background-color 0.2s
       cubic-bezier(0.45, 0.05, 0.55, 0.95);
-    /* view-transition-name: article; */
+    view-transition-name: var(--transition-article);
 
-    &:first-child {
+    &:first-child,
+    &:last-child {
       grid-column: span 12;
-      view-transition-name: var(--transition-article);
+    }
+
+    .icon svg {
+      fill: var(--slate-500);
+      height: 30rem;
+      width: 30rem;
+      float: right;
+      shape-outside: circle(50%);
+      clip-path: circle(50%);
+      /* margin: 1rem; */
+      display: none;
     }
 
     &:has(:hover) {
@@ -33,6 +44,21 @@
       line-height: 32px;
       opacity: 0.6;
       padding-top: calc(1rem - 1cap);
+      /* columns: 2 20rem; */
+
+      &::first-line {
+        font-variant: small-caps;
+        font-weight: bold;
+        /* font-size: 1.25rem; */
+        text-transform: uppercase;
+      }
+
+      &:first-letter {
+        initial-letter: 2 2;
+        font-family: var(--font-family-headings);
+        margin-right: 0.5lh;
+        font-weight: bold;
+      }
 
       &:last-child {
         margin-bottom: 0;

@@ -15,6 +15,7 @@
     grid-template-columns: subgrid;
     padding-block: var(--padding) var(--padding-bottom);
     transition: var(--transition);
+    min-height: 7rem;
 
     @container style(--is-desktop: false) {
       --border-radius: 2rem;

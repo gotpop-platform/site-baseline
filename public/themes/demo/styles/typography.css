@@ -15,6 +15,7 @@ h3,
 h4,
 h5,
 h6,
+h3 span,
 p {
   text-box-edge: cap alphabetic;
   text-box-trim: both;
@@ -70,7 +71,7 @@ a {
 }
 
 p {
-  max-width: 500px;
+  /* max-width: 500px; */
   line-height: 1.4em;
   letter-spacing: 0.015em;
 }
@@ -78,4 +79,8 @@ p {
 button {
   text-box-edge: cap alphabetic;
   text-box-trim: both;
+}
+
+blockquote {
+  hanging-punctuation: first last;
 }

@@ -1,8 +1,8 @@
-import h from "@utils/jsxFactory"
-import { useCSS } from "src/hooks/useCSS"
 import type { IconName } from "./Icon.types"
-import { readFileSync } from "fs"
+import h from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
+import { readFileSync } from "fs"
+import { useCSS } from "src/hooks/useCSS"
 
 type IconProps = {
   iconName?: IconName
@@ -11,7 +11,7 @@ type IconProps = {
 
 export enum IconTypes {
   filled = "filled",
-  outline = "outline",
+  outlined = "outlined",
   round = "round",
   sharp = "sharp",
   twoTone = "two-tone",
