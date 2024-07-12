@@ -21,6 +21,15 @@ const Head = ({
         rel="stylesheet"
         href={theme ? theme : baseStylePath}
       />
+      <script type="speculationrules">
+        {`{
+  "prerender": [
+    {
+      "urls": ["articles/article-1", "articles/article-2",  "articles/article-3", "articles/article-4", "articles/article-5",  "articles/article-6"]
+    }
+  ]
+}`}
+      </script>
       <style>
         {`
 @view-transition {
