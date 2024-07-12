@@ -1,3 +1,7 @@
+@view-transition {
+  navigation: auto;
+}
+
 @layer fonts, colours, vars-typography, vars-layout, vars, reset, media, typography, animations, transitions, global;
 
 @import url(./fonts.css) layer(fonts);

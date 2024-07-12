@@ -31,6 +31,7 @@ a {
   transition: display 0.4s allow-discrete,
     overlay 0.4s allow-discrete, opacity 0.4s,
     translate 0.4s;
+
   @container style(--is-desktop: true) {
     display: grid;
     --display-header: grid;
