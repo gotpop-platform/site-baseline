@@ -26,7 +26,13 @@ const pageArticleItem = async ({
       return href === slugPage ? (
         <ArticleItem
           {...article}
-          style={varStr + (index + 1)}
+          style={
+            "view-transition-name: article-" +
+            (index + 1) +
+            "; " +
+            varStr +
+            (index + 1)
+          }
         />
       ) : null
     }
