@@ -39,8 +39,7 @@ a {
     translate: unset;
   }
 
-  &::
-  backdrop {
+  &::backdrop {
     transition: display 0.4s allow-discrete,
       overlay 0.4s allow-discrete, opacity 0.4s,
       translate 0.4s;
@@ -50,13 +49,11 @@ a {
     mask: radial-gradient(circle, transparent, black 70%);
   }
 
-  &:
-  popover-open {
+  &:popover-open {
     opacity: 1;
     translate: 0 0;
 
-    &::
-  backdrop {
+    &::backdrop {
       opacity: 1;
     }
   }
@@ -65,8 +62,7 @@ a {
       translate: 0 5rem;
     }
 
-    &:
-  popover-open,
+    &:popover-open,
     &:popover-open::backdrop {
       opacity: 0;
     }
