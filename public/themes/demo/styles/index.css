@@ -1,5 +1,6 @@
 @layer transitions, fonts, colours, vars-typography, vars-layout, vars, reset, media, typography, animations, global;
 
+@import url(./view-transitions.css) layer(transitions);
 @import url(./fonts.css) layer(fonts);
 @import url(./colours.css) layer(colours);
 @import url(./vars.css) layer(vars);
@@ -9,5 +10,8 @@
 @import url(./media-queries.css) layer(media);
 @import url(./typography.css) layer(typography);
 @import url(./animations.css) layer(animations);
-@import url(./view-transitions.css) layer(transitions);
 @import url(./global.css) layer(global);
+
+@view-transition {
+  navigation: auto;
+}
