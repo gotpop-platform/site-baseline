@@ -1,6 +1,4 @@
-import { useCSSTheme } from "@hooks/useCSSTheme"
 import h from "@utils/jsxFactory"
-import { useCSS } from "src/hooks/useCSS"
 
 const Head = ({
   title,
@@ -23,6 +21,14 @@ const Head = ({
         rel="stylesheet"
         href={theme ? theme : baseStylePath}
       />
+      <style>
+        {`
+@view-transition {
+  navigation: auto;
+}
+
+        `}
+      </style>
     </head>
   )
 }
