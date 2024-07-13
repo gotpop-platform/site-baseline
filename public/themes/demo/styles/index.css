@@ -11,7 +11,3 @@
 @import url(./typography.css) layer(typography);
 @import url(./animations.css) layer(animations);
 @import url(./global.css) layer(global);
-
-@view-transition {
-  navigation: auto;
-}
