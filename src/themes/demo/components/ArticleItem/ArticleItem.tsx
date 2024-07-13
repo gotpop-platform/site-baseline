@@ -25,12 +25,12 @@ function ArticleItem({
       style={style}
     >
       <style>{css}</style>
-      <a href={href}>
+      <a class="link-header" href={href}>
         <h3>
           <span>{title}</span>
           <Icon
             type={IconTypes.outlined}
-            iconName="add_alert"
+            iconName="add_circle_outline"
           />
         </h3>
       </a>
