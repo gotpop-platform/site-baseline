@@ -12,15 +12,25 @@
     &:first-child,
     &:last-child {
       grid-column: span 12;
+
+      .icon svg {
+        display: block;
+      }
+    }
+
+    .icon {
+      float: right;
+      shape-outside: circle(50% at -20% 50%);
+      /* shape-outside: ellipse(130px 140px at 20% 20%); */
+      clip-path: circle(50%);
+      overflow: clip;
     }
 
     .icon svg {
       fill: var(--slate-500);
-      height: 30rem;
-      width: 30rem;
-      float: right;
-      shape-outside: circle(50%);
-      clip-path: circle(50%);
+      height: 25rem;
+      width: 25rem;
+
       display: none;
 
       opacity: 0.2;
