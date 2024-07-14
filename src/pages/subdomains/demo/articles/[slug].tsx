@@ -1,5 +1,5 @@
 import AppTheme from "@layouts/app-theme"
-import ArticleItem from "src/themes/demo/components/ArticleItem"
+import ArticlePage from "src/themes/demo/components/ArticlePage"
 import Footer from "@components/Footer"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
@@ -12,19 +12,19 @@ type PageProps = {
   slug: string
 }
 
-const pageArticleItem = async ({
+const pageArticlePage = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
   const slugPage = "/articles/" + slug
   const varStr = "--transition-article: article-"
   const articlesArr = Array.from(articlesData.entries())
 
-  const articleItem = articlesArr.map(
+  const articlePage = articlesArr.map(
     ([key, article], index) => {
       const { href } = article
 
       return href === slugPage ? (
-        <ArticleItem
+        <ArticlePage
           {...article}
           style={
             "view-transition-name: article-" +
@@ -44,7 +44,7 @@ const pageArticleItem = async ({
         <MobileMenuTrigger />
         <MegaMenu />
         <Surface>
-          <div class="inner">{articleItem}</div>
+          <div class="inner">{articlePage}</div>
         </Surface>
         <Footer />
       </GridConfig>
@@ -52,4 +52,4 @@ const pageArticleItem = async ({
   )
 }
 
-export default pageArticleItem
+export default pageArticlePage

@@ -1,0 +1,45 @@
+@scope {
+  & {
+    background-color: var(--slate-200);
+    border-radius: 0.5rem;
+    grid-column: span 12;
+    grid-row: span 1;
+    padding: 2rem;
+    transition: background-color 0.2s
+      cubic-bezier(0.45, 0.05, 0.55, 0.95);
+
+    .icon {
+      float: right;
+      shape-outside: circle(20% at 76% 21%);
+      height: 100%;
+      width: 100%;
+
+      svg {
+        fill: var(--slate-500);
+        height: 25rem;
+        width: 25rem;
+        float: right;
+        opacity: 0.2;
+      }
+    }
+
+    h3 {
+      font-size: 44px;
+      line-height: 4rem;
+      margin: 0 0 2rem 0;
+      opacity: 0.8;
+    }
+
+    p {
+      line-height: 32px;
+      opacity: 0.6;
+      padding-top: calc(1rem - 1cap);
+      max-width: 100%;
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

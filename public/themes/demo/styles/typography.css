@@ -74,7 +74,7 @@ a:not([class]) {
 }
 
 p {
-  max-width: 50ch;
+  /* max-width: 50ch; */
   line-height: 1.4em;
   letter-spacing: 0.015em;
   text-align: pretty;

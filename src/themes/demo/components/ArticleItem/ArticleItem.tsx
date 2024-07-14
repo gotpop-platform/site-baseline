@@ -1,5 +1,3 @@
-import Icon from "@components/Icon"
-import { IconTypes } from "@components/Icon/Icon"
 import h from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
@@ -28,10 +26,6 @@ function ArticleItem({
       <a class="link-header" href={href}>
         <h3>
           <span>{title}</span>
-          <Icon
-            type={IconTypes.outlined}
-            iconName="add_circle_outline"
-          />
         </h3>
       </a>
       <p>{content}</p>
