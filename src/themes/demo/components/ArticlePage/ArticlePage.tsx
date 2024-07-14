@@ -56,6 +56,20 @@ function ArticleItem({
         omnis. Ipsa labore libero iusto explicabo doloribus
         consectetur quas.
       </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Molestias accusamus voluptas, sapiente odit
+        quas eos nostrum iste veniam illum cupiditate at
+        omnis. Ipsa labore libero iusto explicabo doloribus
+        consectetur quas.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Molestias accusamus voluptas, sapiente odit
+        quas eos nostrum iste veniam illum cupiditate at
+        omnis. Ipsa labore libero iusto explicabo doloribus
+        consectetur quas.
+      </p>
     </article>
   )
 }
