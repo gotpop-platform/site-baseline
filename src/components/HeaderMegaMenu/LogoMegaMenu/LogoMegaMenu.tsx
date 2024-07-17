@@ -27,7 +27,7 @@ const LogoMegaMenu = () => {
           fill="currentColor"
         ></path>
       </svg>
-      <h1>Singleton</h1>
+      <span>Singleton</span>
     </a>
   )
 }

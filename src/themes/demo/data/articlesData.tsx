@@ -1,8 +1,13 @@
-type ArticleItem = {
+type SectionItem = {
+  title: string
+  content: string[]
+}
+
+export type ArticleItem = {
   title: string
   href: string
   blurb: string
-  content: string
+  section: SectionItem[]
 }
 
 const articlesArray = [
@@ -12,8 +17,22 @@ const articlesArray = [
     icon: "arrow_circle_left",
     blurb:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+    section: [
+      {
+        title: "Lorem ipsum",
+        content: [
+          "Lorem!, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+        ],
+      },
+      {
+        title: "Lorem ipsum",
+        content: [
+          "Lorem!, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+          "Lorem!, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+          "Lorem!, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+        ],
+      },
+    ],
   },
   {
     title: "Laborum distinctio",
@@ -21,8 +40,20 @@ const articlesArray = [
     icon: "arrow_circle_left",
     blurb:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+    section: [
+      {
+        title: "Lorem ipsum",
+        content: [
+          "Lorem!, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+        ],
+      },
+      {
+        title: "Lorem ipsum",
+        content: [
+          "Lorem!, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+        ],
+      },
+    ],
   },
   {
     title: "Saepe veritatis laborum",
@@ -30,8 +61,20 @@ const articlesArray = [
     icon: "arrow_circle_left",
     blurb:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+    section: [
+      {
+        title: "Lorem ipsum",
+        content: [
+          "Lorem!, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+        ],
+      },
+      {
+        title: "Lorem ipsum",
+        content: [
+          "Lorem!, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+        ],
+      },
+    ],
   },
   {
     title: "Amet consectetur",
@@ -39,8 +82,20 @@ const articlesArray = [
     icon: "arrow_circle_left",
     blurb:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+    section: [
+      {
+        title: "Lorem ipsum",
+        content: [
+          "Lorem!, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+        ],
+      },
+      {
+        title: "Lorem ipsum",
+        content: [
+          "Lorem!, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+        ],
+      },
+    ],
   },
   {
     title: "Eritatis laborum",
@@ -48,8 +103,20 @@ const articlesArray = [
     icon: "arrow_circle_left",
     blurb:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+    section: [
+      {
+        title: "Lorem ipsum",
+        content: [
+          "Lorem!, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+        ],
+      },
+      {
+        title: "Lorem ipsum",
+        content: [
+          "Lorem!, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+        ],
+      },
+    ],
   },
   {
     title: "Eritatis laborum",
@@ -57,15 +124,27 @@ const articlesArray = [
     icon: "arrow_circle_left",
     blurb:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
-    content:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+    section: [
+      {
+        title: "Lorem ipsum",
+        content: [
+          "Lorem!, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+        ],
+      },
+      {
+        title: "Lorem ipsum",
+        content: [
+          "Lorem!, ipsum dolor sit amet consectetur adipisicing elit. Sunt consectetur, provident perferendis cum repellat ea vero nostrum quis doloribus, saepe veritatis praesentium laborum distinctio deserunt debitis illo? Labore, ea voluptas?",
+        ],
+      },
+    ],
   },
 ]
 
 const articlesData = new Map<string, ArticleItem>()
 
-articlesArray.forEach((article) => {
+articlesArray.forEach((article) =>
   articlesData.set(article.href, article)
-})
+)
 
 export { articlesData }

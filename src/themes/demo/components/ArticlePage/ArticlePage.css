@@ -22,24 +22,5 @@
         opacity: 0.2;
       }
     }
-
-    h3 {
-      font-size: 44px;
-      line-height: 4rem;
-      margin: 0 0 2rem 0;
-      opacity: 0.8;
-    }
-
-    p {
-      line-height: 32px;
-      opacity: 0.6;
-      padding-top: calc(1rem - 1cap);
-      max-width: 100%;
-      margin-bottom: 2rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
   }
 }

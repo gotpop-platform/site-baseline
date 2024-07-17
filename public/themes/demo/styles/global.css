@@ -3,14 +3,6 @@ html {
   background-color: var(--slate-600);
 }
 
-button,
-a {
-  &:focus-visible {
-    outline: 2px dashed var(--accent);
-    outline-offset: var(--outline-offset, -0.5em);
-  }
-}
-
 .header-mega-menu {
   --display-animation: display 0.3s allow-discrete;
   --display-header: none;

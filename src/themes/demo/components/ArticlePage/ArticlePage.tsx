@@ -1,23 +1,40 @@
+import type { ArticleItem } from "../../data/articlesData"
+import Fragment from "@components/Fragment"
+import { Heading } from "@components/Heading"
 import Icon from "@components/Icon"
 import { IconTypes } from "@components/Icon/Icon"
 import h from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
 
-interface ArticleItemProps {
-  title: string
-  content: string
-  href: string
-  style?: string
-}
-
-function ArticleItem({
+function ArticlePage({
   title,
-  content,
-  href,
+  section,
   style,
-}: ArticleItemProps): JSX.Element {
+}: ArticleItem & { style: string }): JSX.Element {
   const { css } = useCSS({ meta: import.meta })
+
+  const pageContent = section.map(
+    ({ title, content }, index) => {
+      const paragraphs = content.map((paragraph) => (
+        <p>{paragraph}</p>
+      ))
+
+      return (
+        <Fragment>
+          {
+            <Heading
+              level={index === 0 ? 1 : 2}
+              index={index}
+            >
+              {title}
+            </Heading>
+          }
+          {paragraphs}
+        </Fragment>
+      )
+    }
+  )
 
   return (
     <article
@@ -29,49 +46,9 @@ function ArticleItem({
         type={IconTypes.outlined}
         iconName="add_circle_outline"
       />
-      <a class="link-header" href={href}>
-        <h3>
-          <span>{title}</span>
-        </h3>
-      </a>
-      <p>{content}</p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Molestias accusamus voluptas, sapiente odit
-        quas eos nostrum iste veniam illum cupiditate at
-        omnis. Ipsa labore libero iusto explicabo doloribus
-        consectetur quas.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Molestias accusamus voluptas, sapiente odit
-        quas eos nostrum iste veniam illum cupiditate at
-        omnis. Ipsa labore libero iusto explicabo doloribus
-        consectetur quas.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Molestias accusamus voluptas, sapiente odit
-        quas eos nostrum iste veniam illum cupiditate at
-        omnis. Ipsa labore libero iusto explicabo doloribus
-        consectetur quas.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Molestias accusamus voluptas, sapiente odit
-        quas eos nostrum iste veniam illum cupiditate at
-        omnis. Ipsa labore libero iusto explicabo doloribus
-        consectetur quas.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Molestias accusamus voluptas, sapiente odit
-        quas eos nostrum iste veniam illum cupiditate at
-        omnis. Ipsa labore libero iusto explicabo doloribus
-        consectetur quas.
-      </p>
+      {pageContent}
     </article>
   )
 }
 
-export default ArticleItem
+export default ArticlePage
