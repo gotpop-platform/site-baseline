@@ -6,8 +6,6 @@
     background-color: white;
     padding-block: 1rem;
     border-radius: 1rem;
-    row-gap: 1rem;
-    min-height: 90dvh;
   }
 
   .inner {

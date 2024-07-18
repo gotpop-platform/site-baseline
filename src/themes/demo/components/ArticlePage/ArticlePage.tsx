@@ -1,8 +1,6 @@
 import type { ArticleItem } from "../../data/articlesData"
 import Fragment from "@components/Fragment"
 import { Heading } from "@components/Heading"
-import Icon from "@components/Icon"
-import { IconTypes } from "@components/Icon/Icon"
 import h from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
@@ -42,10 +40,10 @@ function ArticlePage({
       style={style}
     >
       <style>{css}</style>
-      <Icon
+      {/* <Icon
         type={IconTypes.outlined}
         iconName="add_circle_outline"
-      />
+      /> */}
       {pageContent}
     </article>
   )

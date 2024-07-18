@@ -3,10 +3,7 @@
     background-color: var(--slate-200);
     border-radius: 0.5rem;
     grid-column: span 12;
-    grid-row: span 1;
     padding: 2rem;
-    transition: background-color 0.2s
-      cubic-bezier(0.45, 0.05, 0.55, 0.95);
 
     .icon {
       float: right;
