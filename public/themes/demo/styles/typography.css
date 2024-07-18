@@ -113,3 +113,17 @@ button {
     outline-offset: var(--outline-offset, -0.5em);
   }
 }
+
+h3 {
+  font-size: 44px;
+  line-height: 4rem;
+}
+
+p {
+  line-height: 32px;
+  padding-top: calc(1rem - 1cap);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

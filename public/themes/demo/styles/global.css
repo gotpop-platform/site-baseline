@@ -50,6 +50,7 @@ html {
       opacity: 1;
     }
   }
+
   @starting-style {
     &:popover-open {
       translate: 0 5rem;
