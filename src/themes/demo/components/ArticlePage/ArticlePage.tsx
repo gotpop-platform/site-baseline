@@ -6,7 +6,6 @@ import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
 
 function ArticlePage({
-  title,
   section,
   style,
 }: ArticleItem & { style: string }): JSX.Element {
@@ -14,21 +13,18 @@ function ArticlePage({
 
   const pageContent = section.map(
     ({ title, content }, index) => {
-      const paragraphs = content.map((paragraph) => (
-        <p>{paragraph}</p>
-      ))
+      const level = index === 0 ? 1 : 2
 
       return (
         <Fragment>
           {
-            <Heading
-              level={index === 0 ? 1 : 2}
-              index={index}
-            >
+            <Heading level={level} index={index}>
               {title}
             </Heading>
           }
-          {paragraphs}
+          {content.map((p) => (
+            <p>{p}</p>
+          ))}
         </Fragment>
       )
     }
@@ -40,10 +36,6 @@ function ArticlePage({
       style={style}
     >
       <style>{css}</style>
-      {/* <Icon
-        type={IconTypes.outlined}
-        iconName="add_circle_outline"
-      /> */}
       {pageContent}
     </article>
   )

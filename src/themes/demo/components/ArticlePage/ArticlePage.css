@@ -4,20 +4,5 @@
     border-radius: 0.5rem;
     grid-column: span 12;
     padding: 2rem;
-
-    .icon {
-      float: right;
-      shape-outside: circle(20% at 76% 21%);
-      height: 100%;
-      width: 100%;
-
-      svg {
-        fill: var(--slate-500);
-        height: 25rem;
-        width: 25rem;
-        float: right;
-        opacity: 0.2;
-      }
-    }
   }
 }
