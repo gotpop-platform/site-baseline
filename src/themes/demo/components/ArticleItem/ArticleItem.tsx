@@ -4,14 +4,14 @@ import { useCSS } from "src/hooks/useCSS"
 
 interface ArticleItemProps {
   title: string
-  content?: string
+  blurb: string
   href: string
   style?: string
 }
 
 function ArticleItem({
   title,
-  content,
+  blurb,
   href,
   style,
 }: ArticleItemProps): JSX.Element {
@@ -28,7 +28,7 @@ function ArticleItem({
           <span>{title}</span>
         </h3>
       </a>
-      <p>{content}</p>
+      <p>{blurb}</p>
     </article>
   )
 }
