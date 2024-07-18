@@ -4,7 +4,7 @@ import { useCSS } from "src/hooks/useCSS"
 
 interface ArticleItemProps {
   title: string
-  content: string
+  content?: string
   href: string
   style?: string
 }
