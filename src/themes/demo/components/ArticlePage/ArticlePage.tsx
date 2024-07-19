@@ -7,8 +7,13 @@ import { useCSS } from "src/hooks/useCSS"
 export function ArticlePage({
   section,
   style,
-}: ArticleItem & { style: string }): JSX.Element {
+  slug,
+}: ArticleItem & {
+  style: string
+  slug: string
+}): JSX.Element {
   const { css } = useCSS({ meta: import.meta })
+  const idSlug = "heading-" + slug + "-"
 
   return (
     <article
@@ -16,7 +21,20 @@ export function ArticlePage({
       style={style}
     >
       <style>{css}</style>
-      {pageContent(section)}
+      <aside>
+        <h4>Table of contents</h4>
+
+        <nav>
+          <ul>
+            {section.map(({ title }, index) => (
+              <li>
+                <a href={"#" + idSlug + index}>{title}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </aside>
+      {pageContent(section, idSlug)}
     </article>
   )
 }

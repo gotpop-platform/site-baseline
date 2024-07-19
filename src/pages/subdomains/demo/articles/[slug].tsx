@@ -26,6 +26,7 @@ const pageArticlePage = async ({
       return href === slugPage ? (
         <ArticlePage
           {...article}
+          slug={slug}
           style={
             "view-transition-name: article-" +
             (index + 1) +
