@@ -57,13 +57,14 @@ p {
   letter-spacing: 0.015em;
   /* line-height: 1.4em; */
   line-height: 32px;
-  margin-block: 0 2rem;
+  /* margin-block: 0 2rem; */
   max-width: 90ch;
   color: var(--gray-700);
   padding-top: calc(1rem - 1cap);
-  text-align: pretty;
+  text-wrap: pretty;
 
-  &:last-child {
+  &:
+  last-child {
     margin-bottom: 0;
   }
 }

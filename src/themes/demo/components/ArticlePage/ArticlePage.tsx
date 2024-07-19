@@ -1,4 +1,5 @@
 import type { ArticleItem } from "../../data/articlesData"
+import Fragment from "@components/Fragment"
 import h from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { pageContent } from "./ArticlePageContent"
@@ -16,25 +17,25 @@ export function ArticlePage({
   const idSlug = "heading-" + slug + "-"
 
   return (
-    <article
-      class={mkClass(import.meta.file)}
-      style={style}
-    >
-      <style>{css}</style>
+    <Fragment>
       <aside>
-        <h4>Table of contents</h4>
-
         <nav>
-          <ul>
+          <ol>
             {section.map(({ title }, index) => (
               <li>
                 <a href={"#" + idSlug + index}>{title}</a>
               </li>
             ))}
-          </ul>
+          </ol>
         </nav>
       </aside>
-      {pageContent(section, idSlug)}
-    </article>
+      <article
+        class={mkClass(import.meta.file)}
+        style={style}
+      >
+        <style>{css}</style>
+        {pageContent(section, idSlug)}
+      </article>
+    </Fragment>
   )
 }
