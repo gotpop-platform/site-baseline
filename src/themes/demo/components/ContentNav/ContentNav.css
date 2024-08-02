@@ -1,0 +1,29 @@
+@scope {
+  & {
+    background-color: var(--slate-300);
+    border-radius: 0.5rem;
+    grid-column: span 3;
+    float: right;
+    padding: 2rem;
+    position: sticky;
+    top: 1rem;
+    align-items: start;
+  }
+
+  ol {
+    list-style-type: decimal;
+    list-style-type: upper-roman;
+    margin: 0;
+    list-style-type: decimal-leading-zero;
+    counter-reset: listCounter;
+    padding-left: 1em;
+  }
+
+  li {
+    counter-increment: listCounter;
+
+    &::marker {
+      content: counter(listCounter, upper-roman) ": ";
+    }
+  }
+}

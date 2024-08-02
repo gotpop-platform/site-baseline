@@ -1,17 +1,17 @@
 @scope {
   & {
-    grid-column: box;
-    display: grid;
-    grid-template-columns: subgrid;
     background-color: white;
-    padding-block: 1rem;
     border-radius: 1rem;
+    display: grid;
+    grid-column: box;
+    grid-template-columns: subgrid;
+    padding-block: 1rem;
   }
 
   .inner {
-    grid-column: col;
     display: grid;
     gap: 1rem;
+    grid-column: col;
     grid-template-columns: subgrid;
   }
 }

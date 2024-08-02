@@ -1,51 +1,8 @@
 @scope {
-  & {
+  .article-page {
     background-color: var(--slate-200);
     border-radius: 0.5rem;
-    grid-column: 5 / span 8;
+    grid-column: 4 / span 9;
     padding: 2rem;
   }
-
-  aside {
-    background-color: var(--slate-100);
-    border-radius: 0.5rem;
-    /* grid-column: span 3; */
-    float: right;
-    padding: 2rem;
-  }
-
-  p:not(:first-of-type) {
-    text-indent: 3rem;
-  }
-
-  /* p:not(:last-of-type) {
-    margin-bottom: 0;
-  } */
-
-  ol {
-    list-style-type: decimal;
-    list-style-type: upper-roman;
-    /* margin-left: 2rem; */
-    list-style-type: decimal-leading-zero;
-  }
-
-  ol {
-    counter-reset: listCounter;
-    padding-left: 5em;
-  }
-
-  li {
-    counter-increment: listCounter;
-    display: flex;
-    gap: 1rem;
-  }
-
-  li::marker {
-    content: counter(listCounter, upper-roman) ":";
-  }
-
-  /* li::after {
-    content: "[" counter(listCounter, decimal-leading-zero)
-      "] == [" counter(listCounter, upper-roman) "]";
-  } */
 }

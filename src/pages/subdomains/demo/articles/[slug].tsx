@@ -44,9 +44,7 @@ const pageArticlePage = async ({
       <GridConfig>
         <MobileMenuTrigger />
         <MegaMenu />
-        <Surface>
-          <div class="inner">{articlePage}</div>
-        </Surface>
+        <Surface>{articlePage}</Surface>
         <Footer />
       </GridConfig>
     </AppTheme>

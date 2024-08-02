@@ -1,6 +1,6 @@
 :root {
   /* Oklab */
-  --white: oklch(1 0 0);
+  --white: oklch(0.8 0.02 264.6);
   --black: oklch(0 0 0);
   /* Primary */
   --success: oklch(0.75 0.3 148.61);

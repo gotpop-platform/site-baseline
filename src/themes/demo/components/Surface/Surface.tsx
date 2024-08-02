@@ -11,7 +11,7 @@ function Surface({
   return (
     <main class={useName}>
       <style>{css}</style>
-      {children}
+      <div class="inner">{children}</div>
     </main>
   )
 }
