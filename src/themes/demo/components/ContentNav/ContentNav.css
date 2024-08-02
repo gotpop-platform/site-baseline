@@ -1,13 +1,14 @@
 @scope {
   & {
+    align-self: start;
     background-color: var(--slate-300);
     border-radius: 0.5rem;
-    grid-column: span 3;
     float: right;
+    grid-column: span 3;
     padding: 2rem;
     position: sticky;
+    text-align: right;
     top: 1rem;
-    align-items: start;
   }
 
   ol {
