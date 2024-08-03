@@ -25,7 +25,7 @@ export function ArticlePage({
         class={mkClass(import.meta.file)}
         style={style}
       >
-        {pageContent(section, idSlug)}
+        {pageContent(section)}
       </section>
     </Fragment>
   )

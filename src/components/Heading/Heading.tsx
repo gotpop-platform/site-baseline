@@ -1,4 +1,5 @@
 import h from "@utils/jsxFactory"
+import { mkId } from "@utils/mkId"
 
 export const Heading = ({
   children,
@@ -9,20 +10,15 @@ export const Heading = ({
   level: number
   index: number
 }): JSX.Element | null => {
-  if (!children) return null
-
   const validLevels = [1, 2, 3, 4, 5, 6]
   const validatedLevel = validLevels.includes(level)
     ? level
-    : 1
-  const HeadingTag = `h${validatedLevel}`
-  const i = index + 1
-  const text = children
-    .toString()
-    .toLowerCase()
-    .replaceAll(" ", "-")
+    : null
 
-  const id = text + "-" + i
+  if (!children || !validatedLevel) return null
+
+  const HeadingTag = `h${validatedLevel}`
+  const id = mkId(children.toString(), index)
 
   return (
     <a href={"#" + id}>
