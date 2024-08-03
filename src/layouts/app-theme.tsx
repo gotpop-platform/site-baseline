@@ -12,14 +12,17 @@ const AppTheme = ({
   subdomain,
   children,
 }: AppThemeProps) => {
-  const titleAsClass = title.toLowerCase().replace(" ", "-")
   const subdomainPath = `/themes/${subdomain}/styles/index.css`
+  const doc = "<!DOCTYPE html>"
 
   return (
-    <html lang="en">
-      <Head title={title} theme={subdomainPath} />
-      <body class={`body ${titleAsClass}`}>{children}</body>
-    </html>
+    doc +
+    (
+      <html lang="en">
+        <Head title={title} theme={subdomainPath} />
+        <body class="body">{children}</body>
+      </html>
+    )
   )
 }
 

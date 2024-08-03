@@ -1,7 +1,7 @@
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
-function Surface({
+export function Surface({
   children,
 }: {
   children?: string | JSX.Element | (string | JSX.Element)[]
@@ -15,5 +15,3 @@ function Surface({
     </main>
   )
 }
-
-export default Surface

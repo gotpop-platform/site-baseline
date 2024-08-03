@@ -1,1 +1,1 @@
-export { default } from "./GalleryIntro"
+export * from "./GalleryIntro"

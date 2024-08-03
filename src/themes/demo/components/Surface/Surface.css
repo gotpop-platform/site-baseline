@@ -6,6 +6,10 @@
     grid-column: box;
     grid-template-columns: subgrid;
     padding-block: 1rem;
+
+    &:has(+ .surface) {
+      margin-block-end: 2rem;
+    }
   }
 
   .inner {

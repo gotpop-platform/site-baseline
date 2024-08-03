@@ -1,3 +1,4 @@
+import { articlesData } from "../../data/articlesData"
 import h from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
@@ -33,4 +34,12 @@ function ArticleItem({
   )
 }
 
-export default ArticleItem
+export const ArticleItems = () =>
+  Array.from(articlesData.entries()).map(
+    ([key, article], i) => (
+      <ArticleItem
+        {...article}
+        style={"--transition-article: article-" + (i + 1)}
+      />
+    )
+  )

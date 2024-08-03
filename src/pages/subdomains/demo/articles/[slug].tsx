@@ -4,7 +4,7 @@ import Footer from "@components/Footer"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
 import MobileMenuTrigger from "@components/MobileMenuTrigger"
-import Surface from "src/themes/demo/components/Surface"
+import { Surface } from "src/themes/demo/components/Surface"
 import { articlesData } from "src/themes/demo/data/articlesData"
 import h from "@utils/jsxFactory"
 
@@ -27,12 +27,7 @@ const pageArticlePage = async ({
         <ArticlePage
           {...article}
           slug={slug}
-          style={
-            // "view-transition-name: article-" +
-            // (index + 1) +
-            // "; " +
-            varStr + (index + 1)
-          }
+          style={varStr + (index + 1)}
         />
       ) : null
     }
