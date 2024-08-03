@@ -7,7 +7,7 @@ export const Heading = ({
   index,
 }: {
   children?: JSX.Element
-  level: number
+  level: 1 | 2 | 3 | 4 | 5 | 6
   index: number
 }): JSX.Element | null => {
   const validLevels = [1, 2, 3, 4, 5, 6]
