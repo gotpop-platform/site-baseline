@@ -4,21 +4,29 @@ export const Heading = ({
   children,
   level,
   index,
-  headingId,
 }: {
   children?: JSX.Element
   level: number
   index: number
-  headingId: string
-}): JSX.Element => {
-  const HeadingTag = `h${level}`
-  const id = "heading-" + (index + 1)
+}): JSX.Element | null => {
+  if (!children) return null
+
+  const validLevels = [1, 2, 3, 4, 5, 6]
+  const validatedLevel = validLevels.includes(level)
+    ? level
+    : 1
+  const HeadingTag = `h${validatedLevel}`
+  const i = index + 1
+  const text = children
+    .toString()
+    .toLowerCase()
+    .replaceAll(" ", "-")
+
+  const id = text + "-" + i
 
   return (
-    <a href={"#" + headingId + index}>
-      <HeadingTag id={headingId + index}>
-        {children}
-      </HeadingTag>
+    <a href={"#" + id}>
+      <HeadingTag id={id}>{children}</HeadingTag>
     </a>
   )
 }

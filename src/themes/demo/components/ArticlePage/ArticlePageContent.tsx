@@ -5,16 +5,11 @@ import h from "@utils/jsxFactory"
 const level = (index: number) => (index === 0 ? 1 : 2)
 
 export const pageContent = (
-  section: { title: string; content: string[] }[],
-  idSlug: string
-) => {
-  return section.map(({ title, content }, index) => (
+  section: { title: string; content: string[] }[]
+) =>
+  section.map(({ title, content }, index) => (
     <Fragment>
-      <Heading
-        headingId={idSlug}
-        level={level(index)}
-        index={index}
-      >
+      <Heading level={level(index)} index={index}>
         {title}
       </Heading>
       {content.map((p) => (
@@ -22,4 +17,3 @@ export const pageContent = (
       ))}
     </Fragment>
   ))
-}
