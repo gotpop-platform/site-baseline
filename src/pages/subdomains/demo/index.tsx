@@ -21,11 +21,10 @@ export const Articles = () => (
         <ArticleItem
           {...article}
           style={
-            "view-transition-name: article-" +
-            (index + 1) +
-            "; " +
-            varStr +
-            (index + 1)
+            // "view-transition-name: article-" +
+            // (index + 1) +
+            // "; " +
+            varStr + (index + 1)
           }
         />
       )
