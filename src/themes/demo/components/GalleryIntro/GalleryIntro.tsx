@@ -27,7 +27,7 @@ export function findPrevAndNext(slug: string): GalleryItem {
   }
 }
 
-function GalleryIntro({
+export function GalleryIntro({
   slug,
 }: {
   slug: string
@@ -59,5 +59,3 @@ function GalleryIntro({
     </div>
   )
 }
-
-export default GalleryIntro

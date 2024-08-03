@@ -3,7 +3,7 @@ import Footer from "@components/Footer"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
 import MobileMenuTrigger from "@components/MobileMenuTrigger"
-import Surface from "src/themes/demo/components/Surface"
+import { Surface } from "src/themes/demo/components/Surface"
 import h from "@utils/jsxFactory"
 
 type PageProps = {
