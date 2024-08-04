@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  background-color: var(--slate-600);
+  background-color: var(--warning-100);
 }
 
 .header-mega-menu {
