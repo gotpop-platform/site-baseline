@@ -1,4 +1,3 @@
-import Footer from "@components/Footer"
 import Head from "@components/Head"
 import h from "@utils/jsxFactory"
 
@@ -7,17 +6,20 @@ interface AppProps {
   title: string
 }
 
-const App = ({ title, children }: AppProps) => {
+const App = ({
+  title,
+  children,
+}: AppProps) => {
+  const doc = "<!DOCTYPE html>"
+
   return (
-    <html lang="en">
-      <Head title={title} />
-      <body class="body">
-        <div class="site">
-          {children}
-          <Footer />
-        </div>
-      </body>
-    </html>
+    doc +
+    (
+      <html lang="en">
+        <Head title={title} />
+        <body class="body">{children}</body>
+      </html>
+    )
   )
 }
 
