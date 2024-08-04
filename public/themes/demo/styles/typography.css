@@ -57,7 +57,6 @@ p {
   letter-spacing: 0.015em;
   /* line-height: 1.4em; */
   line-height: 32px;
-  margin-block: 0 2rem;
   max-width: 90ch;
   color: var(--gray-700);
   padding-top: calc(1rem - 1cap);
@@ -65,6 +64,13 @@ p {
 
   &:last-child {
     margin-bottom: 0;
+  }
+  &:has(+ p) {
+    margin-block-end: 2rem;
+  }
+
+  &:has(+ a > :is(h1, h2, h3, h4, h5, h6)) {
+    margin-block-end: 4rem;
   }
 }
 
