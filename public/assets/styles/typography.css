@@ -1,12 +1,10 @@
+::selection {
+  background: var(--accent);
+}
+
 html {
-  font-size: 16px;
-  font-family: "Inter", sans-serif, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  line-height: 1.5;
+  font-family: var(--font-family);
   color: var(--text-color);
-  background-color: var(--background-color);
 }
 
 h1,
@@ -15,33 +13,27 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+:where(h1, h2, h3, h4, h5, h6) span {
   text-box-edge: cap alphabetic;
   text-box-trim: both;
-  margin-block-start: 0rem;
-  margin-block-end: 1rem;
-  margin-inline-start: 0rem;
-  margin-inline-end: 0rem;
+}
 
-  &:last-child {
-    margin-block-end: 0rem;
-  }
+:where(h1, h2, h3, h4, h5, h6) {
+  display: inline-block;
+  font-family: var(--font-family-headings);
+  margin-block: 0;
+  scroll-margin-top: 4rem;
+  text-wrap: balance;
 }
 
 h1 {
   font-weight: 1000;
   font-size: var(--font-size-xxxl);
-  font-family: "Playfair Display", "Times New Roman", Times,
-    serif;
 }
 
 h2 {
-  font-weight: 800;
   font-size: var(--font-size-xxl);
-  font-feature-settings: "liga", "dlig";
-  font-style: oblique 0deg 10deg;
-  font-family: "Playfair Display", "Times New Roman", Times,
-    serif;
 }
 
 h3 {
@@ -61,13 +53,87 @@ h6 {
   font-size: var(--font-size-base);
 }
 
+p {
+  letter-spacing: 0.015em;
+  /* line-height: 1.4em; */
+  line-height: 32px;
+  max-width: 90ch;
+  color: var(--gray-700);
+  padding-top: calc(1rem - 1cap);
+  text-wrap: pretty;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &:has(+ p) {
+    margin-block-end: 2rem;
+  }
+
+  &:has(+ a > :is(h1, h2, h3, h4, h5, h6)) {
+    margin-block-end: 4rem;
+  }
+}
+
 a {
   color: inherit;
   text-decoration: none;
+
+  > :is(h1, h2, h3, h4, h5, h6) {
+    margin-block-end: 0;
+  }
+
+  &:not([class]) {
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 0.14em;
+    text-decoration-color: var(--accent);
+    transition: color 0.2s
+      cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  }
+
+  &:has(h1, h2, h3, h4, h5, h6) {
+    display: inline-block;
+    margin-block-end: 2rem;
+
+    &:focus-visible {
+      outline: 2px dashed var(--accent);
+      outline-offset: 1.5em;
+    }
+  }
+}
+
+button {
+  text-box-edge: cap alphabetic;
+  text-box-trim: both;
+}
+
+blockquote {
+  hanging-punctuation: first last;
+}
+
+h3 {
+  font-size: 44px;
+  line-height: 4rem;
+  margin: 0 0 2rem 0;
+  opacity: 0.8;
+}
+
+button {
+  &:focus-visible {
+    outline: 2px dashed var(--accent);
+    outline-offset: var(--outline-offset, -0.5em);
+  }
+}
+
+h3 {
+  font-size: 44px;
+  line-height: 4rem;
 }
 
 p {
-  max-width: 500px;
-  line-height: 1.4em;
-  letter-spacing: 0.015em;
+  line-height: 32px;
+  padding-top: calc(1rem - 1cap);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

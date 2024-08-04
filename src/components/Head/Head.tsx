@@ -19,7 +19,7 @@ const Head = ({
       <link rel="icon" href="/assets/img/favicon.png" />
       <link
         rel="stylesheet"
-        href={theme ? theme : baseStylePath}
+        href={baseStylePath}
       />
       <script type="speculationrules">
         {`{

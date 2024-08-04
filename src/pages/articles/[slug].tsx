@@ -1,11 +1,11 @@
 import AppTheme from "@layouts/app-theme"
-import { ArticlePage } from "src/themes/demo/components/ArticlePage"
+import { ArticlePage } from "@components/ArticlePage"
 import Footer from "@components/Footer"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
 import MobileMenuTrigger from "@components/MobileMenuTrigger"
-import { Surface } from "src/themes/demo/components/Surface"
-import { articlesData } from "src/themes/demo/data/articlesData"
+import { Surface } from "@components/Surface"
+import { articlesData } from "@data/articlesData"
 import h from "@utils/jsxFactory"
 
 type PageProps = {

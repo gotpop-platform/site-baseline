@@ -1,29 +1,31 @@
-import Articles from "@components/Articles"
-import { articles } from "@components/Articles/Articles.async"
+import AppTheme from "@layouts/app-theme"
+import { ArticleItems } from "@components/ArticleItem"
 import Footer from "@components/Footer"
-import GridFull from "@components/GridFull"
-import Header from "@components/Header"
-import Hero from "@components/Hero"
-import Points from "@components/Points"
-import { heroData } from "@data/data.hero"
-import AppFull from "@layouts/app-full"
-import { getPages } from "@utils/getPages"
+import GridConfig from "@components/GridConfig"
+import { HeroItem } from "@components/HeroItem"
+import MegaMenu from "@components/HeaderMegaMenu"
+import MobileMenuTrigger from "@components/MobileMenuTrigger"
+import { Surface } from "@components/Surface"
 import h from "@utils/jsxFactory"
 
-const indexPage = async () => {
-  const pages = await getPages()
-
-  return (
-    <AppFull title="Home">
-      <GridFull>
-        <Header pages={pages} />
-        <Hero {...heroData} />
-        <Points />
-        <Articles {...{ articles }} />
-        <Footer />
-      </GridFull>
-    </AppFull>
-  )
+type PageProps = {
+  slug: string
 }
 
-export default indexPage
+const pageIndex = async ({
+  slug,
+}: PageProps): Promise<JSX.Element> => (
+  <AppTheme title={`GotPop | Home`} subdomain="demo">
+    <GridConfig>
+      <MobileMenuTrigger />
+      <MegaMenu />
+      <HeroItem />
+      <Surface>
+        <ArticleItems />
+      </Surface>
+      <Footer />
+    </GridConfig>
+  </AppTheme>
+)
+
+export default pageIndex

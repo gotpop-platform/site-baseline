@@ -1,10 +1,10 @@
 import AppTheme from "@layouts/app-theme"
 import Footer from "@components/Footer"
-import { GalleryIntro } from "src/themes/demo/components/GalleryIntro"
+import { GalleryIntro } from "@components/GalleryIntro"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
 import MobileMenuTrigger from "@components/MobileMenuTrigger"
-import { Surface } from "@themes/demo/components/Surface"
+import { Surface } from "@components/Surface"
 import h from "@utils/jsxFactory"
 
 type PageProps = {

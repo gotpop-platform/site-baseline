@@ -1,25 +1,16 @@
 import AppTheme from "@layouts/app-theme"
 import Footer from "@components/Footer"
-import { GalleryIntro } from "@themes/demo/components/GalleryIntro"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
 import MobileMenuTrigger from "@components/MobileMenuTrigger"
-import { Surface } from "@themes/demo/components/Surface"
+import { Surface } from "@components/Surface"
 import h from "@utils/jsxFactory"
 
 type PageProps = {
   slug: string
 }
 
-// export const Articles = () => (
-//   <div class="inner">
-//     {articlesData.map((article) => (
-//       <ArticleItem {...article} />
-//     ))}
-//   </div>
-// )
-
-const pageGalleryItem = async ({
+const pageArticles = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
   return (
@@ -28,8 +19,7 @@ const pageGalleryItem = async ({
         <MobileMenuTrigger />
         <MegaMenu />
         <Surface>
-          <GalleryIntro slug={slug} />
-          {/* <Articles /> */}
+          <h1>Articles hub</h1>
         </Surface>
         <Footer />
       </GridConfig>
@@ -37,4 +27,4 @@ const pageGalleryItem = async ({
   )
 }
 
-export default pageGalleryItem
+export default pageArticles

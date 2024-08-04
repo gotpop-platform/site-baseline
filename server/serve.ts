@@ -1,8 +1,8 @@
 import { handleGetAssets } from "./handleAssets"
-import { log } from "./logging"
 import { handleGetPages } from "./router"
+import { log } from "./logging"
 
-const PORT = 9000
+const PORT = 2000
 export const BASE = process.env.BASE_SITE_URL ?? ""
 
 async function serve(request: Request) {

@@ -3,7 +3,7 @@ import { IconTypes } from "@components/Icon/Icon"
 import {
   dataDemo,
   type GalleryItem,
-} from "@pages/subdomains/demo/demo.data"
+} from "@pages/demo.data"
 import h from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"

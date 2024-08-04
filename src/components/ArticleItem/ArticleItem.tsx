@@ -1,4 +1,4 @@
-import { articlesData } from "../../data/articlesData"
+import { articlesData } from "@data/articlesData"
 import h from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"

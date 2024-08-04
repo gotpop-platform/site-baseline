@@ -2,7 +2,7 @@ import { Surface } from "../Surface"
 import h from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
-export function Hero(): JSX.Element {
+export function HeroItem(): JSX.Element {
   const { css } = useCSS({ meta: import.meta })
 
   return (
