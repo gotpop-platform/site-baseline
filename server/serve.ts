@@ -8,8 +8,7 @@ export const BASE = process.env.BASE_SITE_URL ?? ""
 async function serve(request: Request) {
   const url = new URL(request.url)
   const isAssets =
-    url.pathname.startsWith("/assets") ||
-    url.pathname.startsWith("/themes")
+    url.pathname.startsWith("/assets") 
 
   if (isAssets) {
     return handleGetAssets(url)

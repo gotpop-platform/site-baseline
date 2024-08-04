@@ -24,21 +24,6 @@ export const getBaseDomain = (hostname: string): string => {
     : hostname
 }
 
-export const getRouterPath = async (
-  fullSubdomain: string,
-  baseDomain: string
-): Promise<string> => {
-  // const subdomainNames = await getSubdomainDirectories()
-  // const isSubdomain = subdomainNames.includes(
-  //   "/" + fullSubdomain
-  // )
-  // return isSubdomain
-  //   ? `/src/pages/subdomains/${fullSubdomain}`
-  //   : "/src/pages"
-
-  return "/src/pages"
-}
-
 export const importModule = async (
   filePath: string
 ): Promise<any> => {

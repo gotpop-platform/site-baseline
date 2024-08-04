@@ -4,8 +4,7 @@ import {
   MODULE_NOT_FOUND_RESPONSE,
   NOT_FOUND_RESPONSE,
   getBaseDomain,
-  getRouterPath,
-  importModule,
+  importModule
 } from "./routerHelpers"
 
 import { BASE } from "./serve"
@@ -17,19 +16,10 @@ export const handleGetPages = async (
     const url = new URL(request.url)
     const baseUrl = new URL(BASE)
     const baseDomain = getBaseDomain(baseUrl.hostname)
-    const fullSubdomain = url.hostname.replace(
-      `.${baseDomain}`,
-      ""
-    )
-    const routerPath = await getRouterPath(
-      fullSubdomain,
-      baseDomain
-    )
-    const dir = process.cwd() + routerPath
 
     const router = new Bun.FileSystemRouter({
       style: "nextjs",
-      dir,
+      dir : process.cwd() + '/src/pages',
     })
 
     const route = router.match(request)
