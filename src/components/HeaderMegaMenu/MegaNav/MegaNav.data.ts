@@ -1,24 +1,6 @@
 export const navData = [
   {
     position: "1",
-    textButton: "Products",
-    submenuItems: [
-      {
-        title: "Submenu Item 1",
-        link: "/submenu-item-1",
-      },
-      {
-        title: "Submenu Item 2",
-        link: "/submenu-item-2",
-      },
-      {
-        title: "Submenu Item 3",
-        link: "/submenu-item-3",
-      },
-    ],
-  },
-  {
-    position: "2",
     textButton: "Articles",
     submenuItems: [
       {
@@ -33,11 +15,41 @@ export const navData = [
         title: "Articles Item 3",
         link: "/articles/article-3",
       },
+      {
+        title: "Articles Item 4",
+        link: "/articles/article-4",
+      },
+      {
+        title: "Articles Item 5",
+        link: "/articles/article-5",
+      },
+      {
+        title: "Articles Item 6",
+        link: "/articles/article-6",
+      },
+    ],
+  },
+  {
+    position: "2",
+    textButton: "Gallery",
+    submenuItems: [
+      {
+        title: "Submenu Item 1",
+        link: "gallery/item-4",
+      },
+      {
+        title: "Submenu Item 2",
+        link: "gallery/item-4",
+      },
+      {
+        title: "Submenu Item 3",
+        link: "gallery/item-4",
+      },
     ],
   },
   {
     position: "3",
-    textButton: "Services",
+    textButton: "About",
     submenuItems: [
       {
         title: "Submenu Item 7",
