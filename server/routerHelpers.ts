@@ -1,4 +1,3 @@
-import { getSubdomainDirectories } from "./getSubdomainDirectoryNames"
 
 export const NOT_FOUND_RESPONSE = new Response(
   "Not Found",
@@ -29,13 +28,15 @@ export const getRouterPath = async (
   fullSubdomain: string,
   baseDomain: string
 ): Promise<string> => {
-  const subdomainNames = await getSubdomainDirectories()
-  const isSubdomain = subdomainNames.includes(
-    "/" + fullSubdomain
-  )
-  return isSubdomain
-    ? `/src/pages/subdomains/${fullSubdomain}`
-    : "/src/pages"
+  // const subdomainNames = await getSubdomainDirectories()
+  // const isSubdomain = subdomainNames.includes(
+  //   "/" + fullSubdomain
+  // )
+  // return isSubdomain
+  //   ? `/src/pages/subdomains/${fullSubdomain}`
+  //   : "/src/pages"
+
+  return "/src/pages"
 }
 
 export const importModule = async (
