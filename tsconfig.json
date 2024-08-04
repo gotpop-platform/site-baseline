@@ -20,7 +20,7 @@
 
     /* JSX */
     "jsx": "react",
-    "jsxFactory": "h",
+    "jsxFactory": "jsxFactory",
     "jsxFragmentFactory": "Fragment",
 
     /* Paths */
@@ -34,7 +34,6 @@
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
       "@types/*": ["src/types/*"],
-      "@themes/*": ["src/themes/*"],
       "@utils/*": ["src/utils/*"]
     }
   }

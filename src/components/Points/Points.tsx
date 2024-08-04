@@ -1,8 +1,8 @@
 import Icon from "@components/Icon"
-import { articles } from "./Points.data"
-import h from "@utils/jsxFactory"
+import jsxFactory from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 import Point from "./Point/Point"
+import { articles } from "./Points.data"
 
 type PointsProps = {
   title?: string

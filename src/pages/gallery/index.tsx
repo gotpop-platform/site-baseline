@@ -5,7 +5,7 @@ import MegaMenu from "@components/HeaderMegaMenu"
 import MobileMenuTrigger from "@components/MobileMenuTrigger"
 import { Surface } from "@components/Surface"
 import AppTheme from "@layouts/app"
-import h from "@utils/jsxFactory"
+import jsxFactory from "@utils/jsxFactory"
 
 type PageProps = {
   slug: string

@@ -1,6 +1,6 @@
-import PopOverImage from "@components/PopOverImage"
-import h from "@utils/jsxFactory"
-import { useCSS } from "src/hooks/useCSS"
+import PopOverImage from "@components/PopOverImage";
+import jsxFactory from "@utils/jsxFactory";
+import { useCSS } from "src/hooks/useCSS";
 
 type GalleryProps = { title: string; content: string }
 

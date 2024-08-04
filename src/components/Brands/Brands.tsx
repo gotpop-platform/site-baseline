@@ -1,6 +1,6 @@
-import h from "@utils/jsxFactory"
-import { useCSS } from "src/hooks/useCSS"
-import { brandsData, type Brand } from "./Brands.data"
+import jsxFactory from "@utils/jsxFactory";
+import { useCSS } from "src/hooks/useCSS";
+import { brandsData, type Brand } from "./Brands.data";
 
 type BrandsProps = { title?: string; text?: string }
 

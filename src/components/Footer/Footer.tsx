@@ -1,6 +1,6 @@
 import BaseLinePopOver from "@components/BaseLinePopOver"
 import Nav from "@components/Nav"
-import h from "@utils/jsxFactory"
+import jsxFactory from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
 export const makePath = (subdomain: null | string) => {

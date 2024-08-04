@@ -1,6 +1,6 @@
-import Button from "@components/Button"
-import h from "@utils/jsxFactory"
-import { useCSS } from "src/hooks/useCSS"
+import Button from "@components/Button";
+import jsxFactory from "@utils/jsxFactory";
+import { useCSS } from "src/hooks/useCSS";
 
 type ArticleProps = { title: string; content: string }
 

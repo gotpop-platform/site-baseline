@@ -1,6 +1,6 @@
-import h from "@utils/jsxFactory"
-import { mkClass } from "@utils/mkClass"
 import { useCSS } from "@hooks/useCSS"
+import jsxFactory from "@utils/jsxFactory"
+import { mkClass } from "@utils/mkClass"
 
 type SubmenuItem = {
   title: string

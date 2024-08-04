@@ -1,10 +1,10 @@
+import Fragment from "@components/Fragment"
+import jsxFactory from "@utils/jsxFactory"
+import { mkClass } from "@utils/mkClass"
+import { useCSS } from "src/hooks/useCSS"
 import type { ArticleItem } from "../../data/articlesData"
 import { ContentNav } from "../ContentNav"
-import Fragment from "@components/Fragment"
-import h from "@utils/jsxFactory"
-import { mkClass } from "@utils/mkClass"
 import { pageContent } from "./ArticlePageContent"
-import { useCSS } from "src/hooks/useCSS"
 
 export function ArticlePage({
   section,

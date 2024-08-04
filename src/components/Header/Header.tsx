@@ -1,6 +1,6 @@
 import Logo from "@components/Logo"
 import Nav from "@components/Nav"
-import h from "@utils/jsxFactory"
+import jsxFactory from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
 const Header = ({ pages }: { pages: string[] }) => {

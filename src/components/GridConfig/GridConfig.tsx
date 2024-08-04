@@ -1,6 +1,6 @@
-import h from "@utils/jsxFactory"
-import { mkClass } from "@utils/mkClass"
-import { useCSS } from "src/hooks/useCSS"
+import jsxFactory from "@utils/jsxFactory";
+import { mkClass } from "@utils/mkClass";
+import { useCSS } from "src/hooks/useCSS";
 
 type GridConfigProps = { title?: string; children?: string }
 

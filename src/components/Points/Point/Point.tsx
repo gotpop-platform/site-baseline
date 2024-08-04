@@ -1,5 +1,5 @@
 import Icon from "@components/Icon"
-import h from "@utils/jsxFactory"
+import jsxFactory from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 import type { Article } from "../Points.data"
 

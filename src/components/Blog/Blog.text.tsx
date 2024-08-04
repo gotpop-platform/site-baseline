@@ -5,7 +5,7 @@ import {
   textContent,
 } from "./Blog.data"
 
-import h from "@utils/jsxFactory"
+import jsxFactory from "@utils/jsxFactory"
 
 export const Intro = ({
   title,

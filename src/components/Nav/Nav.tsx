@@ -1,5 +1,5 @@
 import NavItem from "@components/NavItem"
-import h from "@utils/jsxFactory"
+import jsxFactory from "@utils/jsxFactory"
 import path from "path"
 import { useCSS } from "src/hooks/useCSS"
 

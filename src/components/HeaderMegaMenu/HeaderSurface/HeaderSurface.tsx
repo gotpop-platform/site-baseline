@@ -1,5 +1,5 @@
 import { useCSS } from "@hooks/useCSS"
-import h from "@utils/jsxFactory"
+import jsxFactory from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 
 const HeaderSurface = ({

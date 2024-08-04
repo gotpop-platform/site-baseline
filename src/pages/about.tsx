@@ -4,7 +4,7 @@ import Grid from "@components/Grid"
 import Header from "@components/Header"
 import AppFull from "@layouts/app"
 import { getPages } from "@utils/getPages"
-import h from "@utils/jsxFactory"
+import jsxFactory from "@utils/jsxFactory"
 
 const aboutPage = async () => {
   const pages = await getPages()

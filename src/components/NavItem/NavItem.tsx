@@ -1,5 +1,5 @@
-import h from "@utils/jsxFactory"
-import { useCSS } from "src/hooks/useCSS"
+import jsxFactory from "@utils/jsxFactory";
+import { useCSS } from "src/hooks/useCSS";
 
 type NavItemProps = { href: string; text: string }
 

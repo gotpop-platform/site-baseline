@@ -1,5 +1,5 @@
 import Head from "@components/Head"
-import h from "@utils/jsxFactory"
+import jsxFactory from "@utils/jsxFactory"
 
 interface AppProps {
   children?: string | JSX.Element | JSX.Element[]

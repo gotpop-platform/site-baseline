@@ -1,4 +1,4 @@
-function h(
+function jsxFactory(
   type: string | Function,
   props = {},
   ...children: any
@@ -48,4 +48,4 @@ function h(
   }
 }
 
-export default h
+export default jsxFactory

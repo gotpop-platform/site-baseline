@@ -1,4 +1,4 @@
-import h from "@utils/jsxFactory"
+import jsxFactory from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
 

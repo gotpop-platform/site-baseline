@@ -7,7 +7,7 @@ import {
   IconSpotify,
 } from "./IconsSVG"
 
-import h from "@utils/jsxFactory"
+import jsxFactory from "@utils/jsxFactory"
 
 export type Brand = {
   name: string
