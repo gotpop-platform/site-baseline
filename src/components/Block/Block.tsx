@@ -14,7 +14,7 @@ const Block = ({ children: grandChildren, tag }: BlockProps) => {
 
   const children = [<style>{css}</style>, <Grid>{grandChildren}</Grid>]
 
-  const generatedTag = h(tag, { class: useName }, ...children)
+  const generatedTag = jsxFactory(tag, { class: useName }, ...children)
 
   return generatedTag
 }
