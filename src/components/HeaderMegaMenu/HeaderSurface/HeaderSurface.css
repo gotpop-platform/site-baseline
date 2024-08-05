@@ -16,6 +16,7 @@
     padding-block: var(--padding) var(--padding-bottom);
     transition: var(--transition);
     min-height: 7rem;
+    /* overflow: visible; */
 
     @container style(--is-desktop: false) {
       --border-radius: 2rem;

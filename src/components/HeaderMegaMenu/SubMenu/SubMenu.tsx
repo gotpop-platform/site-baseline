@@ -1,5 +1,5 @@
-import { useCSS } from "@hooks/useCSS"
 import jsxFactory from "@utils/jsxFactory"
+import { useCSS } from "@hooks/useCSS"
 
 const SubMenu = ({
   children,
@@ -14,7 +14,6 @@ const SubMenu = ({
     <div
       class="submenu"
       id={`menu-items-${position}`}
-      popover="auto"
       anchor={`menu-toggle-${position}`}
     >
       <style>{css}</style>

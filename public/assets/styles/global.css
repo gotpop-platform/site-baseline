@@ -1,6 +1,7 @@
 html {
   scroll-behavior: smooth;
   background-color: var(--warning-100);
+  overflow: hidden auto;
 }
 
 .header-mega-menu {
@@ -14,7 +15,7 @@ html {
   grid-column: box;
   grid-template-columns: var(--grid-template-columns);
   grid-template-rows: var(--grid-template-rows);
-  overflow: clip;
+  overflow: visible;
   padding: 0;
   position: static;
   /* view-transition-name: header; */
@@ -61,4 +62,63 @@ html {
       opacity: 0;
     }
   }
+}
+
+.submenu {
+  --display-animation: display 0.3s allow-discrete;
+  --opacity: 0;
+  --display: none;
+  --submenu-offset: -100%;
+  --anchor: calc(
+    var(--submenu-offset) + anchor(bottom center)
+  );
+
+  background-color: transparent;
+  /* inset-area: bottom; */
+  padding: 0;
+  transition: opacity 0.3s 0.2s, var(--display-animation);
+  position: absolute;
+  display: none;
+
+  /* bottom: anchor(top); */
+  margin-bottom: 10px;
+  margin-top: 0;
+
+  inset-area: span-right bottom;
+  inset-area: bottom;
+  position-try-options: --bottom;
+
+  &:nth-of-type(4) {
+    /* display: flex; */
+    inset-area: span-left bottom;
+    position-anchor: --myAnchor;
+
+  }
+
+  @container style(--is-desktop: false) {
+    --submenu-offset: -10rem;
+  }
+}
+
+button:focus + .submenu,
+button:hover + .submenu {
+  /* --opacity: 1;
+  --display: grid;
+  
+  @starting-style {
+    --opacity: 0;
+    } */
+
+  display: flex;
+  opacity: 1;
+}
+
+@position-try --bottom {
+  inset-area: span-left bottom;
+
+  margin-top: 100px;
+}
+
+.mega-nav .trigger-sub-menu {
+  anchor-name: --myAnchor;
 }

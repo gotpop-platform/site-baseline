@@ -15,7 +15,7 @@ const TriggerSubMenu = ({
     <button
       class={mkClass(import.meta.file)}
       id={`menu-toggle-${position}`}
-      popovertarget={`menu-items-${position}`}
+      // popovertarget={`menu-items-${position}`}
     >
       <style>{css}</style>
       <span>{textButton}</span>

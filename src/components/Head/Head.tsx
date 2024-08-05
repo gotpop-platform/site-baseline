@@ -21,7 +21,7 @@ const Head = ({
         rel="stylesheet"
         href={baseStylePath}
       />
-      <script type="speculationrules">
+      {/* <script type="speculationrules">
         {`{
             "prerender": [
               {
@@ -37,14 +37,14 @@ const Head = ({
               }
             ]
         }`}
-      </script>
-      <style>
+      </script> */}
+      {/* <style>
         {`
           @view-transition {
             navigation: auto;
           }
         `}
-      </style>
+      </style> */}
     </head>
   )
 }

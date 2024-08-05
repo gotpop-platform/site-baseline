@@ -8,6 +8,7 @@
     grid-column: var(--grid-column);
     grid-template-columns: subgrid;
     padding: 1rem 0;
+    position: relative;
 
     @container style(--is-desktop: true) {
       --grid-column: 6 / span 8;
