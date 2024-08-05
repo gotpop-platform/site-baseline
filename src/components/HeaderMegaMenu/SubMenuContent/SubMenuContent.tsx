@@ -1,6 +1,6 @@
-import { useCSS } from "@hooks/useCSS"
 import jsxFactory from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
+import { useCSS } from "@hooks/useCSS"
 
 type SubmenuItem = {
   title: string
@@ -9,8 +9,12 @@ type SubmenuItem = {
 
 const SubMenuContent = ({
   submenuItems,
+  position,
+  textButton
 }: {
   submenuItems: SubmenuItem[]
+  position: string
+  textButton: string
 }) => {
   const { css } = useCSS({ meta: import.meta })
 
