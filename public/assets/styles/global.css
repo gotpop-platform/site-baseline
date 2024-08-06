@@ -15,7 +15,6 @@ html {
   grid-column: box;
   grid-template-columns: var(--grid-template-columns);
   grid-template-rows: var(--grid-template-rows);
-  overflow: visible;
   padding: 0;
   position: static;
   /* view-transition-name: header; */
