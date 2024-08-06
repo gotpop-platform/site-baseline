@@ -1,6 +1,6 @@
 html {
   scroll-behavior: smooth;
-  background-color: var(--warning-100);
+  background-color: var(--warning-600);
   overflow: hidden auto;
 }
 
