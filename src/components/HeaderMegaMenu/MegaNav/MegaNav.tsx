@@ -1,4 +1,4 @@
-import SubMenu from "../SubMenu"
+import { MenuItem } from "../MenuItem"
 import SubMenuContent from "../SubMenuContent"
 import jsxFactory from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
@@ -10,9 +10,9 @@ export const MegaNav = () => {
 
   const navItems = navData.map(
     ({ position, textButton, submenuItems }) => (
-        <SubMenu position={position} textButton={textButton}>
+        <MenuItem position={position} textButton={textButton}>
           <SubMenuContent submenuItems={submenuItems} position={position} textButton={textButton} />
-        </SubMenu>
+        </MenuItem>
     )
   )
 

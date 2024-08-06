@@ -1,6 +1,6 @@
-import { useCSS } from "@hooks/useCSS"
 import jsxFactory from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
+import { useCSS } from "@hooks/useCSS"
 
 const TriggerSubMenu = ({
   position,
@@ -12,14 +12,14 @@ const TriggerSubMenu = ({
   const { css } = useCSS({ meta: import.meta })
 
   return (
-    <button
+    <a
+      href="#"
       class={mkClass(import.meta.file)}
       id={`menu-toggle-${position}`}
-      // popovertarget={`menu-items-${position}`}
     >
       <style>{css}</style>
       <span>{textButton}</span>
-    </button>
+    </a>
   )
 }
 

@@ -5,39 +5,38 @@
     --display: none;
 
     grid-column: span 2;
-    
+
     .trigger-sub-menu {
-        anchor-name: var(--myVar);
-        width: 100%;
-        height: 100%;
-        display: flex;
-    }
-    
-    &:last-child .sub-menu-content {
-        inset-area: span-left bottom;
-      }
-
-
-    button:focus + .sub-menu-content,
-    button:hover + .sub-menu-content {
-      opacity: 1;
+      anchor-name: var(--menuItemAnchor);
+      width: 100%;
+      height: 100%;
       display: flex;
+    }
+
+   &:focus-within .sub-menu-content,
+   &:hover .sub-menu-content {
+      --opacity: 1;
+      --display: flex;
 
       @starting-style {
-        opacity: 0;
+        --opacity: 0;
       }
     }
 
     .sub-menu-content {
-      display: none;
+      display: var(--display);
       inset-area: center bottom;
       min-width: 400px;
       opacity: var(--opacity);
-      position-anchor: var(--myVar);
+      position-anchor: var(--menuItemAnchor);
       position: absolute;
-      opacity: 0;
+      opacity: var(--opacity);
       transition: opacity 0.4s, var(--display-animation);
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+
+      .menu-item:last-child & {
+        inset-area: span-left bottom;
+      }
 
       &:hover {
         opacity: 1;

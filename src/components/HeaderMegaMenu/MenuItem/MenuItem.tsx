@@ -2,7 +2,7 @@ import TriggerSubMenu from "../TriggerSubMenu"
 import jsxFactory from "@utils/jsxFactory"
 import { useCSS } from "@hooks/useCSS"
 
-const SubMenu = ({
+export const MenuItem = ({
   children,
   position,
   textButton,
@@ -15,10 +15,9 @@ const SubMenu = ({
 
   return (
     <div
-      class="submenu"
+      class="menu-item"
       id={`menu-items-${position}`}
-      // anchor={`menu-toggle-${position}`}
-      style={`--myVar: --list-item-${position}`}
+      style={`--menuItemAnchor: --list-item-${position}`}
     >
       <style>{css}</style>
       <TriggerSubMenu
@@ -30,4 +29,3 @@ const SubMenu = ({
   )
 }
 
-export default SubMenu
