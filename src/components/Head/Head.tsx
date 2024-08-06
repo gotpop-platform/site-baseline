@@ -10,6 +10,11 @@ const Head = ({ title }: { title: string }) => {
         name="viewport"
         content="width=device-width, initial-scale=1.0"
       />
+      <meta
+        name="keywords"
+        content="HTML, CSS, JavaScript"
+      />
+      <meta name="author" content="GotPop"></meta>
       <title>{title}</title>
       <link rel="icon" href="/assets/img/favicon.png" />
       <link rel="stylesheet" href={baseStylePath} />
