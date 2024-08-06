@@ -1,5 +1,7 @@
 # Baseline & Animation
 
+This is a demo of baseline type & animation
+
 To install dependencies:
 
 ```bash
