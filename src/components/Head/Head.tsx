@@ -1,13 +1,8 @@
 import jsxFactory from "@utils/jsxFactory"
 
-const Head = ({
-  title,
-  theme = "",
-}: {
-  title: string
-  theme?: string
-}) => {
+const Head = ({ title }: { title: string }) => {
   const baseStylePath = "/assets/styles/index.css"
+
   return (
     <head>
       <meta charset="UTF-8" />
@@ -17,11 +12,8 @@ const Head = ({
       />
       <title>{title}</title>
       <link rel="icon" href="/assets/img/favicon.png" />
-      <link
-        rel="stylesheet"
-        href={baseStylePath}
-      />
-      {/* <script type="speculationrules">
+      <link rel="stylesheet" href={baseStylePath} />
+      <script type="speculationrules">
         {`{
             "prerender": [
               {
@@ -37,14 +29,7 @@ const Head = ({
               }
             ]
         }`}
-      </script> */}
-      {/* <style>
-        {`
-          @view-transition {
-            navigation: auto;
-          }
-        `}
-      </style> */}
+      </script>
     </head>
   )
 }
