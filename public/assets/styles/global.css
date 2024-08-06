@@ -10,16 +10,21 @@ html {
   --grid-template-columns: subgrid;
   --grid-template-rows: min-content;
   --opacity: 0;
-  background-color: transparent;
+
   /* display: var(--display-header); */
+  /* view-transition-name: header; */
+  background-color: transparent;
   grid-column: box;
   grid-template-columns: var(--grid-template-columns);
   grid-template-rows: var(--grid-template-rows);
-  padding: 0;
-  position: static;
-  /* view-transition-name: header; */
   opacity: 0;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+  position: static;
   translate: 0 5rem;
+  z-index: 1000;
+
   transition: display 0.4s allow-discrete,
     overlay 0.4s allow-discrete, opacity 0.4s,
     translate 0.4s;
@@ -62,4 +67,3 @@ html {
     }
   }
 }
-
