@@ -8,7 +8,7 @@ export function HeroItem(): JSX.Element {
   return (
     <Surface>
       <style>{css}</style>
-      <h1>Typography & Animation</h1>
+      <h1>Typography & Animation!!!!!!!</h1>
       <p>
         Welcome to GotPop! This is a demo site for the
         GotPop theme.
