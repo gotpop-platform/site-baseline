@@ -1,4 +1,4 @@
-# Singleton
+# Baseline & Animation
 
 To install dependencies:
 
