@@ -2,6 +2,7 @@ export const navData = [
   {
     position: "1",
     textButton: "Articles",
+    href: "/articles",
     submenuItems: [
       {
         title: "Articles Item 1",
@@ -32,6 +33,7 @@ export const navData = [
   {
     position: "2",
     textButton: "Gallery",
+    href: "/gallery",
     submenuItems: [
       {
         title: "Submenu Item 1",
@@ -50,6 +52,7 @@ export const navData = [
   {
     position: "3",
     textButton: "About",
+    href: "/about",
     submenuItems: [
       {
         title: "Submenu Item 7",
@@ -68,6 +71,7 @@ export const navData = [
   {
     position: "4",
     textButton: "Blog",
+    href: "/blog",
     submenuItems: [
       {
         title: "Submenu Item 10",

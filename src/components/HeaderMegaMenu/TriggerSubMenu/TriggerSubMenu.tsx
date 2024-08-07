@@ -5,15 +5,17 @@ import { useCSS } from "@hooks/useCSS"
 const TriggerSubMenu = ({
   position,
   textButton,
+  href,
 }: {
   position?: string
   textButton?: string
+  href?: string
 }) => {
   const { css } = useCSS({ meta: import.meta })
 
   return (
     <a
-      href="#"
+      href={href}
       class={mkClass(import.meta.file)}
       id={`menu-toggle-${position}`}
     >
