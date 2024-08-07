@@ -4,57 +4,89 @@
     --opacity: 0;
     --display: none;
 
-    grid-column: span 2;
+    grid-column: span 8;
     display: flex;
     anchor-name: var(--menuItemAnchor);
+
+    flex-direction: column;
+
+    gap: 1rem;
+
+    @container style(--is-desktop: true) {
+      grid-column: span 2;
+      flex-direction: row;
+    }
+  }
+
+  .menu-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  .pill {
+    display: flex;
     background-color: var(--grey-200);
     border-radius: 0.5rem;
     overflow: clip;
+    flex: 1 1 100%;
+  }
 
-    .menu-link {
-      width: 100%;
-      height: 100%;
-      display: flex;
-    }
+  .menu-toggle {
+    display: flex;
+    background-color: var(--grey-300);
+    border: none;
+    padding: 0 1rem;
+    cursor: pointer;
+  }
 
-    .menu-toggle {
-      display: flex;
-      background-color: var(--grey-300);
-      border: none;
-      padding: 0 1rem;
-      cursor: pointer;
-    }
-
-    .menu-link:hover ~ .sub-menu-content,
-    &:focus-within:not(:has(.menu-link:focus))
-      .sub-menu-content {
-      --opacity: 1;
-      --display: flex;
-
-      @starting-style {
-        --opacity: 0;
-      }
-    }
-
+  .menu-link:hover ~ .sub-menu-content,
+  &:focus-within:not(:has(.menu-link:focus))
     .sub-menu-content {
-      display: var(--display);
-      inset-area: center bottom;
+    --opacity: 1;
+    --display: block;
+    height: calc-size(auto);
+
+    @starting-style {
+      --opacity: 0;
+      height: 0;
+    }
+  }
+
+  :has(.menu-toggle:active) + .sub-menu-content {
+    --opacity: 1;
+    --display: block;
+    height: calc-size(auto);
+
+    @starting-style {
+      --opacity: 0;
+      height: 0;
+    }
+  }
+
+  .sub-menu-content {
+    display: var(--display);
+    opacity: var(--opacity);
+    transition: opacity 0.4s, height 0.4s,
+      var(--display-animation);
+    flex: 1 1 100%;
+    height: 0;
+
+    @container style(--is-desktop: true) {
       min-width: 400px;
-      opacity: var(--opacity);
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+      inset-area: center bottom;
       position-anchor: var(--menuItemAnchor);
       position: absolute;
-      opacity: var(--opacity);
-      transition: opacity 0.4s, var(--display-animation);
-      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+    }
 
-      li:last-child & {
-        inset-area: span-left bottom;
-      }
+    li:last-child & {
+      inset-area: span-left bottom;
+    }
 
-      &:hover {
-        opacity: 1;
-        display: flex;
-      }
+    &:hover {
+      opacity: 1;
+      display: block;
     }
   }
 }

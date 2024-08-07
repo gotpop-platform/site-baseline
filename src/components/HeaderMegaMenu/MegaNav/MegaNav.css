@@ -12,10 +12,6 @@
 
     ul {
       display: contents;
-
-      li {
-        display: contents;
-      }
     }
 
     @container style(--is-desktop: true) {
