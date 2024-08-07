@@ -27,7 +27,7 @@ export const MegaNav = () => {
   return (
     <nav class={mkClass(import.meta.file)}>
       <style>{css}</style>
-      {navItems}
+      <ul>{navItems}</ul>
     </nav>
   )
 }

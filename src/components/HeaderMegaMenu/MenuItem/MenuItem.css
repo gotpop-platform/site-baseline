@@ -5,16 +5,18 @@
     --display: none;
 
     grid-column: span 2;
+    display: flex;
+    gap: 1rem;
+    anchor-name: var(--menuItemAnchor);
 
     .trigger-sub-menu {
-      anchor-name: var(--menuItemAnchor);
       width: 100%;
       height: 100%;
       display: flex;
     }
 
-   &:focus-within .sub-menu-content,
-   &:hover .sub-menu-content {
+    &:focus-within .sub-menu-content,
+    &:hover .sub-menu-content {
       --opacity: 1;
       --display: flex;
 
@@ -34,7 +36,7 @@
       transition: opacity 0.4s, var(--display-animation);
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
 
-      .menu-item:last-child & {
+      li:last-child .menu-item & {
         inset-area: span-left bottom;
       }
 
