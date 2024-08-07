@@ -10,6 +10,14 @@
     padding: 1rem 0;
     position: relative;
 
+    ul {
+      display: contents;
+
+      li {
+        display: contents;
+      }
+    }
+
     @container style(--is-desktop: true) {
       --grid-column: 6 / span 8;
     }
