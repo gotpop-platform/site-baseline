@@ -6,10 +6,12 @@ export const MenuItem = ({
   children,
   position,
   textButton,
+  href,
 }: {
   children?: JSX.Element
   position: string
   textButton: string
+  href: string
 }) => {
   const { css } = useCSS({ meta: import.meta })
 
@@ -21,11 +23,11 @@ export const MenuItem = ({
     >
       <style>{css}</style>
       <TriggerSubMenu
-          position={position}
-          textButton={textButton}
-        />
+        position={position}
+        textButton={textButton}
+        href={href}
+      />
       {children}
     </div>
   )
 }
-
