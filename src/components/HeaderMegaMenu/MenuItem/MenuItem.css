@@ -47,7 +47,7 @@
       transition: opacity 0.4s, var(--display-animation);
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
 
-      li:last-child .menu-item & {
+      li:last-child & {
         inset-area: span-left bottom;
       }
 
