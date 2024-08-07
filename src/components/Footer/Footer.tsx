@@ -31,7 +31,7 @@ function Footer() {
         <h3>Pop</h3>
         <nav class="subdomains">
           <button
-            class="trigger-sub-menu"
+            class="menu-link"
             popovertarget="basegrid"
           >
             Grid

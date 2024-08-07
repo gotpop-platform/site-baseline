@@ -1,6 +1,5 @@
 import Fragment from "@components/Fragment"
 import jsxFactory from "@utils/jsxFactory"
-import { mkClass } from "@utils/mkClass"
 import { useCSS } from "@hooks/useCSS"
 
 const TriggerSubMenu = ({
@@ -18,13 +17,14 @@ const TriggerSubMenu = ({
     <Fragment>
       <a
         href={href}
-        class={mkClass(import.meta.file)}
+        class="menu-link"
         id={`menu-toggle-${position}`}
       >
         <style>{css}</style>
         <span>{textButton}</span>
       </a>
       <button
+        class="menu-toggle"
         aria-haspopup="true"
         aria-label="Open submenu"
       />
