@@ -10,12 +10,8 @@
     padding: 1rem 0;
     position: relative;
 
-    ul {
+    > ul {
       display: contents;
-
-      li {
-        display: contents;
-      }
     }
 
     @container style(--is-desktop: true) {

@@ -16,20 +16,20 @@ export const MenuItem = ({
   const { css } = useCSS({ meta: import.meta })
 
   return (
-    <li>
-      <div
-        class="menu-item"
-        id={`menu-items-${position}`}
-        style={`--menuItemAnchor: --list-item-${position}`}
-      >
-        <style>{css}</style>
+    <li
+      class="menu-item"
+      id={`menu-items-${position}`}
+      style={`--menuItemAnchor: --list-item-${position}`}
+    >
+      <style>{css}</style>
+      <div class="pill">
         <TriggerSubMenu
           position={position}
           textButton={textButton}
           href={href}
         />
-        {children}
       </div>
+      {children}
     </li>
   )
 }
