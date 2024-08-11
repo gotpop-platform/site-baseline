@@ -64,6 +64,15 @@
     --display: none;
     --height: 0;
 
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: var(--grey-800);
+      border-radius: 0.5rem;
+      z-index: 3;
+    }
+
     display: var(--display);
     height: var(--height);
     opacity: var(--opacity);
