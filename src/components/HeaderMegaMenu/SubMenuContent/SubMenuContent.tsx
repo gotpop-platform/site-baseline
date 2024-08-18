@@ -10,7 +10,7 @@ type SubmenuItem = {
 const SubMenuContent = ({
   submenuItems,
   position,
-  textButton
+  textButton,
 }: {
   submenuItems: SubmenuItem[]
   position: string
@@ -25,7 +25,11 @@ const SubMenuContent = ({
   ))
 
   return (
-    <div class={mkClass(import.meta.file)}>
+    <div
+      id={"sub-menu-" + position}
+      popover="auto"
+      class={mkClass(import.meta.file)}
+    >
       <style>{css}</style>
       <ul>{items}</ul>
     </div>

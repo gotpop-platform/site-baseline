@@ -16,7 +16,6 @@
     padding-block: var(--padding) var(--padding-bottom);
     transition: var(--transition);
     min-height: 7rem;
-    /* overflow: visible; */
 
     @container style(--is-desktop: false) {
       --border-radius: 2rem;
@@ -26,13 +25,6 @@
 
       margin-inline: 2rem;
       grid-template-columns: var(--master-grid);
-    }
-
-    &:has(:popover-open) {
-      @container style(--is-desktop: true) {
-        --padding-bottom: 11rem;
-        --transition: padding-bottom 0.3s ease;
-      }
     }
   }
 }
