@@ -12,6 +12,10 @@
     "editor.codeActionsOnSave": {
       "source.fixAll": "always"
     },
-    "github.copilot.editor.enableAutoCompletions": true
+    "github.copilot.editor.enableAutoCompletions": true,
+    "emmet.includeLanguages": {
+      "javascriptreact": "html",
+      "typescriptreact": "html"
+    }
   }
 }

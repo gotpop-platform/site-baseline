@@ -24,6 +24,7 @@ const TriggerSubMenu = ({
         <span>{textButton}</span>
       </a>
       <button
+        popovertarget={`sub-menu-${position}`}
         class="menu-toggle"
         aria-haspopup="true"
         aria-label="Open submenu"

@@ -11,6 +11,8 @@
     transition: var(--transition);
     /* margin-bottom: 2rem; */
 
+    /* position: relative; */
+
     h1 {
       font-size: 2rem;
       margin-bottom: 1rem;

@@ -1,3 +1,19 @@
 {
-    "window.title": "${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}[Branch: master]"
+  "window.title": "${activeEditorShort}${separator}${rootName}${separator}${profileName}${separator}[Branch: master]",
+  "emmet.syntaxProfiles": {
+    "javascript": {
+      "jsx": {
+        "class": "class"
+      }
+    },
+    "typescript": {
+      "jsx": {
+        "class": "class"
+      }
+    }
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  }
 }
