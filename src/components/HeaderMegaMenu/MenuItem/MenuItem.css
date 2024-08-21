@@ -36,32 +36,6 @@
     cursor: pointer;
   }
 
-  /* .menu-link:hover ~ .sub-menu-content,
-  &:focus-within:not(:has(.menu-link:focus))
-    .sub-menu-content {
-    --opacity: 1;
-    --display: block;
-    --height: calc-size(auto);
-    --pill-triangle-display: block;
-
-    @starting-style {
-      --opacity: 0;
-      --height: 0;
-    }
-  }
-
-  :has(.menu-toggle:active) + .sub-menu-content {
-    --opacity: 1;
-    --display: block;
-    --height: calc-size(auto);
-    --pill-triangle-display: block;
-
-    @starting-style {
-      --opacity: 0;
-      --height: 0;
-    }
-  } */
-
   .sub-menu-content {
     --display-animation: display 0.4s allow-discrete;
     --display: none;
@@ -74,15 +48,15 @@
       var(--display-animation);
     margin: unset;
 
+    top: calc(anchor(bottom) + 1rem);
     position-anchor: var(--menuItemAnchor);
+    position-area: center bottom;
     position-try: --lefty;
 
-    top: calc(anchor(bottom) + 1rem);
-    left: calc(anchor(left) - 13%);
-    /* justify-self: center; */
+    /* left: calc(anchor(left) - 13%); */
 
     &:popover-open {
-      --display: inline-block;
+      --display: grid;
       --height: calc-size(auto);
       --opacity: 1;
       --pill-triangle-display: block;
@@ -94,7 +68,7 @@
     }
 
     @media (min-width: 400px) {
-      /* min-width: 400px; */
+      min-width: 500px;
       box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
     }
   }
@@ -103,4 +77,8 @@
 @position-try --lefty {
   left: auto;
   right: anchor(right);
+  /* top: calc(anchor(bottom) + 1rem); */
+  position-area: none;
+  /* justify-self: unset; */
+  /* inset: auto anchor(right) auto auto; */
 }
