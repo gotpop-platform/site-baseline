@@ -53,20 +53,7 @@ export const navData = [
     position: "3",
     textButton: "About",
     href: "/about",
-    submenuItems: [
-      {
-        title: "Submenu Item 7",
-        link: "/submenu-item-7",
-      },
-      {
-        title: "Submenu Item 8",
-        link: "/submenu-item-8",
-      },
-      {
-        title: "Submenu Item 9",
-        link: "/submenu-item-9",
-      },
-    ],
+    submenuItems: null,
   },
   {
     position: "4",

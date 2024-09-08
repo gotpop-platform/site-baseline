@@ -4,6 +4,8 @@
     format("woff2");
 }
 
+/* https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/ */
+
 /* light theme */
 @font-palette-values --kung-fury {
   font-family: "Monaspace";

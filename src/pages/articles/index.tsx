@@ -1,4 +1,5 @@
 import AppTheme from "@layouts/app"
+import { ArticleItems } from "@components/ArticleItem"
 import Footer from "@components/Footer"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
@@ -19,7 +20,7 @@ const pageArticles = async ({
         <MobileMenuTrigger />
         <MegaMenu />
         <Surface>
-          <h1>Articles hub</h1>
+          <ArticleItems />
         </Surface>
         <Footer />
       </GridConfig>

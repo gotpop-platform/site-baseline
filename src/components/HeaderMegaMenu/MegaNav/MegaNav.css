@@ -1,7 +1,8 @@
 /* .meganav */
 @scope {
   & {
-    --grid-column: bro 3 / bro 11;
+    /* --grid-column: bro 3 / bro 11; */
+    --grid-column: 6 / span 8;
 
     display: grid;
     gap: 1rem;

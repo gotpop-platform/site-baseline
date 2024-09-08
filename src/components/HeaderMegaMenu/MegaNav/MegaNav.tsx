@@ -9,19 +9,26 @@ export const MegaNav = () => {
   const { css } = useCSS({ meta: import.meta })
 
   const navItems = navData.map(
-    ({ href, position, textButton, submenuItems }) => (
-      <MenuItem
-        position={position}
-        textButton={textButton}
-        href={href}
-      >
-        <SubMenuContent
-          submenuItems={submenuItems}
+    ({ href, position, textButton, submenuItems }) => {
+      console.log("submenuItems :", submenuItems)
+
+      return (
+        <MenuItem
           position={position}
           textButton={textButton}
-        />
-      </MenuItem>
-    )
+          href={href}
+          subMenuItems={submenuItems}
+        >
+          {submenuItems && (
+            <SubMenuContent
+              submenuItems={submenuItems}
+              position={position}
+              textButton={textButton}
+            />
+          )}
+        </MenuItem>
+      )
+    }
   )
 
   return (
