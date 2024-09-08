@@ -14,12 +14,15 @@ export const MegaNav = () => {
         position={position}
         textButton={textButton}
         href={href}
+        subMenuItems={submenuItems}
       >
-        <SubMenuContent
-          submenuItems={submenuItems}
-          position={position}
-          textButton={textButton}
-        />
+        {submenuItems && (
+          <SubMenuContent
+            submenuItems={submenuItems}
+            position={position}
+            textButton={textButton}
+          />
+        )}
       </MenuItem>
     )
   )

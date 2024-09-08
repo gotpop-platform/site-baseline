@@ -1,7 +1,10 @@
 @scope {
   & {
-    --grid-column: bro 3 / bro 11;
+    /* --grid-column: bro 3 / bro 11; */
 
+    --grid-column: 2 / span 3;
+
+    color: black;
     display: flex;
     grid-column: var(--grid-column);
     gap: 0.5em;

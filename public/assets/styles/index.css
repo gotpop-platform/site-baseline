@@ -1,4 +1,4 @@
-@layer transitions, fonts, colours, vars-typography, vars-layout, vars, reset, media, typography, animations, global;
+@layer transitions, fonts, colours, vars-typography, vars-layout, vars, reset, media, typography, animations, global, syntax;
 
 @import url(./view-transitions.css) layer(transitions);
 @import url(./fonts.css) layer(fonts);
@@ -11,3 +11,4 @@
 @import url(./typography.css) layer(typography);
 @import url(./animations.css) layer(animations);
 @import url(./global.css) layer(global);
+@import url(./syntax-highlight.css) layer(syntax);

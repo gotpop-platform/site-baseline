@@ -6,10 +6,15 @@ const TriggerSubMenu = ({
   position,
   textButton,
   href,
+  subMenuItems,
 }: {
   position?: string
   textButton?: string
   href?: string
+  subMenuItems?: Array<{
+    title: string
+    link: string
+  }> | null
 }) => {
   const { css } = useCSS({ meta: import.meta })
 
@@ -23,12 +28,14 @@ const TriggerSubMenu = ({
         <style>{css}</style>
         <span>{textButton}</span>
       </a>
-      <button
-        popovertarget={`sub-menu-${position}`}
-        class="menu-toggle"
-        aria-haspopup="true"
-        aria-label="Open submenu"
-      />
+      {subMenuItems && (
+        <button
+          popovertarget={`sub-menu-${position}`}
+          class="menu-toggle"
+          aria-haspopup="true"
+          aria-label="Open submenu"
+        />
+      )}
     </Fragment>
   )
 }

@@ -7,11 +7,16 @@ export const MenuItem = ({
   position,
   textButton,
   href,
+  subMenuItems,
 }: {
   children?: JSX.Element
   position: string
   textButton: string
   href: string
+  subMenuItems: Array<{
+    title: string
+    link: string
+  }> | null
 }) => {
   const { css } = useCSS({ meta: import.meta })
 
@@ -27,6 +32,7 @@ export const MenuItem = ({
           position={position}
           textButton={textButton}
           href={href}
+          subMenuItems={subMenuItems}
         />
       </div>
       {children}

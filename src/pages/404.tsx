@@ -1,5 +1,4 @@
 import AppTheme from "@layouts/app"
-import { ArticleItems } from "@components/ArticleItem"
 import Footer from "@components/Footer"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
@@ -7,20 +6,20 @@ import MobileMenuTrigger from "@components/MobileMenuTrigger"
 import { Surface } from "@components/Surface"
 import jsxFactory from "@utils/jsxFactory"
 
-type PageProps = {
-  slug: string
-}
-
-const pageArticles = async ({
-  slug,
-}: PageProps): Promise<JSX.Element> => {
+const NotFoundPage = async () => {
   return (
-    <AppTheme title={`Gallery | ${slug}`}>
+    <AppTheme title="Page Not Found">
       <GridConfig>
         <MobileMenuTrigger />
         <MegaMenu />
         <Surface>
-          <ArticleItems />
+          <section class="not-found">
+            <h1>404 - Page Not Found</h1>
+            <p>
+              Sorry, the page you are looking for does not
+              exist.
+            </p>
+          </section>
         </Surface>
         <Footer />
       </GridConfig>
@@ -28,4 +27,4 @@ const pageArticles = async ({
   )
 }
 
-export default pageArticles
+export default NotFoundPage
