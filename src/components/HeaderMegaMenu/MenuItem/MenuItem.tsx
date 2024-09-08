@@ -19,7 +19,6 @@ export const MenuItem = ({
   }> | null
 }) => {
   const { css } = useCSS({ meta: import.meta })
-  console.log("subMenuItems :", subMenuItems)
 
   return (
     <li
