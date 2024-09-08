@@ -1,13 +1,11 @@
+import { BASE, router } from "./serve"
 import {
-  ERROR_GENERATING_RESPONSE,
   INTERNAL_SERVER_ERROR_RESPONSE,
   MODULE_NOT_FOUND_RESPONSE,
   NOT_FOUND_RESPONSE,
   getBaseDomain,
-  importModule
+  importModule,
 } from "./routerHelpers"
-
-import { BASE } from "./serve"
 
 export const handleGetPages = async (
   request: Request
@@ -16,11 +14,6 @@ export const handleGetPages = async (
     const url = new URL(request.url)
     const baseUrl = new URL(BASE)
     const baseDomain = getBaseDomain(baseUrl.hostname)
-
-    const router = new Bun.FileSystemRouter({
-      style: "nextjs",
-      dir : process.cwd() + '/src/pages',
-    })
 
     const route = router.match(request)
 
@@ -50,8 +43,17 @@ export const handleGetPages = async (
       })
 
     if (!response) {
-      return ERROR_GENERATING_RESPONSE
+      return new Response(null, {
+        status: 302,
+        headers: {
+          Location: "/404",
+        },
+      })
     }
+
+    // if (!response) {
+    //   return ERROR_GENERATING_RESPONSE
+    // }
 
     return new Response(response, {
       headers: { "Content-Type": "text/html" },

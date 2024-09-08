@@ -46,6 +46,10 @@ const parseMarkdownFile = (
   metadata: Record<string, string>
   content: string
 } => {
+  if (!filePath) {
+    throw new Error(`File not found: ${filePath}`)
+  }
+
   // Read the Markdown file
   const markdownContent = readFileSync(filePath, "utf-8")
 
@@ -77,3 +81,6 @@ const parseMarkdownFile = (
 
 // Export the functions
 export { parseMarkdown, parseMarkdownFile }
+function existsSync(filePath: string) {
+  throw new Error("Function not implemented.")
+}
