@@ -1,5 +1,6 @@
 import AppTheme from "@layouts/app"
 import Footer from "@components/Footer"
+import { Glob } from "bun"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
 import MobileMenuTrigger from "@components/MobileMenuTrigger"
@@ -12,16 +13,25 @@ type PageProps = {
   slug: string
 }
 
-const filePath = join(import.meta.dir, "test.md")
-console.log("filePath :", filePath)
-
-// Parse the Markdown file
-const { metadata, content: htmlContent } =
-  parseMarkdownFile(filePath)
-
 const pageBlog = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
+  const glob = new Glob("**/*.md")
+  const markdownFiles: string[] = []
+
+  for await (const file of glob.scan(import.meta.dir)) {
+    markdownFiles.push(file)
+  }
+
+  const parsedFiles = markdownFiles.map((filePath) => {
+    const fullFilePath = join(import.meta.dir, filePath)
+
+    const { metadata, content } =
+      parseMarkdownFile(fullFilePath)
+
+    return { filePath, metadata, content }
+  })
+
   return (
     <AppTheme title={`Gallery | ${slug}`}>
       <GridConfig>
@@ -29,11 +39,19 @@ const pageBlog = async ({
         <MegaMenu />
         <Surface>
           <section class="blog">
-            <h1>{metadata.title}</h1>
-            <p>
-              By {metadata.author} on {metadata.date}
-            </p>
-            {htmlContent}
+            <a href="/blog/animations33">Create New Blog</a>
+            <ul>
+              {parsedFiles.map(
+                ({ metadata, filePath }, index) => (
+                  <li key={index}>
+                    <a href={`blog/${metadata.slug}`}>
+                      {metadata.title} by {metadata.author}{" "}
+                      on {metadata.date}
+                    </a>
+                  </li>
+                )
+              )}
+            </ul>
           </section>
         </Surface>
         <Footer />
