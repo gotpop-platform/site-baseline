@@ -1,48 +1,44 @@
 import AppTheme from "@layouts/app"
-import { ArticlePage } from "@components/ArticlePage"
 import Footer from "@components/Footer"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
 import MobileMenuTrigger from "@components/MobileMenuTrigger"
 import { Surface } from "@components/Surface"
-import { articlesData } from "@data/articlesData"
+import { join } from "path"
 import jsxFactory from "@utils/jsxFactory"
+import { parseMarkdownFile } from "@utils/markdown"
 
 type PageProps = {
   slug: string
 }
 
-const pageArticlePage = async ({
+const pageBlog = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const slugPage = "/articles/" + slug
-  const varStr = "--transition-article: article-"
-  const articlesArr = Array.from(articlesData.entries())
+  const filePath = join(import.meta.dir, `${slug}.md`)
+  console.log("filePath :", filePath)
 
-  const articlePage = articlesArr.map(
-    ([key, article], index) => {
-      const { href } = article
-
-      return href === slugPage ? (
-        <ArticlePage
-          {...article}
-          slug={slug}
-          style={varStr + (index + 1)}
-        />
-      ) : null
-    }
-  )
+  const { metadata, content: htmlContent } =
+    parseMarkdownFile(filePath)
 
   return (
-    <AppTheme title={`Article | ${slug}`}>
+    <AppTheme title={`Gallery | ${slug}`}>
       <GridConfig>
         <MobileMenuTrigger />
         <MegaMenu />
-        <Surface>{articlePage}</Surface>
+        <Surface>
+          <section class="blog">
+            <h1>{metadata.title}</h1>
+            <p>
+              By {metadata.author} on {metadata.date}
+            </p>
+            {htmlContent}
+          </section>
+        </Surface>
         <Footer />
       </GridConfig>
     </AppTheme>
   )
 }
 
-export default pageArticlePage
+export default pageBlog

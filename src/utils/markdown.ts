@@ -1,8 +1,7 @@
-import { join } from "path"
 import { readFileSync } from "fs"
 
 // Custom Markdown parser function
-const parseMarkdown = (markdown: string) => {
+const parseMarkdown = (markdown: string): string => {
   // Convert headers
   markdown = markdown.replace(
     /^### (.*$)/gim,
@@ -40,14 +39,41 @@ const parseMarkdown = (markdown: string) => {
   return markdown.trim()
 }
 
-// Path to the Markdown file
-const filePath = join("src/markdown/test.md")
+// Function to read and parse a Markdown file
+const parseMarkdownFile = (
+  filePath: string
+): {
+  metadata: Record<string, string>
+  content: string
+} => {
+  // Read the Markdown file
+  const markdownContent = readFileSync(filePath, "utf-8")
 
-// Read the Markdown file
-const markdownContent = readFileSync(filePath, "utf-8")
+  // Extract metadata
+  const metadataMatch = markdownContent.match(
+    /^---\n([\s\S]*?)\n---/
+  )
+  let metadata: Record<string, string> = {}
+  let content = markdownContent
 
-// Parse the Markdown content
-const htmlContent = parseMarkdown(markdownContent)
+  if (metadataMatch) {
+    const metadataLines = metadataMatch[1].split("\n")
+    metadataLines.forEach((line) => {
+      const [key, value] = line
+        .split(":")
+        .map((part) => part.trim())
+      if (key && value) {
+        metadata[key] = value.replace(/^"|"$/g, "") // Remove surrounding quotes if any
+      }
+    })
+    content = markdownContent.slice(metadataMatch[0].length)
+  }
 
-// Export the parsed content
-export { htmlContent }
+  // Parse the Markdown content
+  const htmlContent = parseMarkdown(content)
+
+  return { metadata, content: htmlContent }
+}
+
+// Export the functions
+export { parseMarkdown, parseMarkdownFile }
