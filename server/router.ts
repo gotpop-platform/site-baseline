@@ -42,14 +42,14 @@ export const handleGetPages = async (
         return null
       })
 
-    if (!response) {
-      return new Response(null, {
-        status: 302,
-        headers: {
-          Location: "/404",
-        },
-      })
-    }
+    // if (!response) {
+    //   return new Response(null, {
+    //     status: 302,
+    //     headers: {
+    //       Location: "/404",
+    //     },
+    //   })
+    // }
 
     // if (!response) {
     //   return ERROR_GENERATING_RESPONSE

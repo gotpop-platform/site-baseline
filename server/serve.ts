@@ -12,7 +12,15 @@ export const router = new Bun.FileSystemRouter({
 
 async function serve(request: Request) {
   const url = new URL(request.url)
+  console.log("url :", url.href)
   const isAssets = url.pathname.startsWith("/assets")
+  const isMarkdown = url.pathname.endsWith(".md")
+
+  // if (isMarkdown) {
+  //   return null
+  // }
+
+  // console.log("isAssets :", isAssets)
 
   if (isAssets) {
     return handleGetAssets(url)
@@ -34,13 +42,14 @@ function startServer() {
 
           return serve(request)
         } else {
+          return serve(request)
           // No match found, return a 404 response
-          return new Response(null, {
-            status: 302,
-            headers: {
-              Location: "/404",
-            },
-          })
+          // return new Response(null, {
+          //   status: 302,
+          //   headers: {
+          //     Location: "/404",
+          //   },
+          // })
         }
       },
     })

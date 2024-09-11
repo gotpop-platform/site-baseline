@@ -111,6 +111,3 @@ const parseMarkdownFile = (
 
 // Export the functions
 export { parseMarkdown, parseMarkdownFile }
-function existsSync(filePath: string) {
-  throw new Error("Function not implemented.")
-}
