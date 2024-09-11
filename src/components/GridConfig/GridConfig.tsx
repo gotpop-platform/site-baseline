@@ -1,17 +1,26 @@
-import jsxFactory from "@utils/jsxFactory";
-import { mkClass } from "@utils/mkClass";
-import { useCSS } from "src/hooks/useCSS";
+import cn from "@utils/classnames"
+import jsxFactory from "@utils/jsxFactory"
+import { mkClass } from "@utils/mkClass"
+import { useCSS } from "src/hooks/useCSS"
 
-type GridConfigProps = { title?: string; children?: string }
+type GridConfigProps = {
+  isRoot?: boolean
+  children?: string
+}
 
 const GridConfig = ({
-  title,
+  isRoot = false,
   children,
 }: GridConfigProps) => {
   const { css } = useCSS({ meta: import.meta })
+  const mk = mkClass(import.meta.file)
 
   return (
-    <div class={mkClass(import.meta.file)}>
+    <div
+      class={cn(mk, {
+        liam: isRoot,
+      })}
+    >
       <style>{css}</style>
       {children}
     </div>
