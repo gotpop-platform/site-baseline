@@ -19,12 +19,14 @@ const pageBlog = async ({
   const glob = new Glob("**/*.md")
   const markdownFiles: string[] = []
 
-  for await (const file of glob.scan(import.meta.dir)) {
+  const contentDir = join(process.cwd(), "src/content/blog")
+
+  for await (const file of glob.scan(contentDir)) {
     markdownFiles.push(file)
   }
 
   const parsedFiles = markdownFiles.map((filePath) => {
-    const fullFilePath = join(import.meta.dir, filePath)
+    const fullFilePath = join(contentDir, filePath)
 
     const { metadata, content } =
       parseMarkdownFile(fullFilePath)
@@ -44,10 +46,15 @@ const pageBlog = async ({
               {parsedFiles.map(
                 ({ metadata, filePath }, index) => (
                   <li key={index}>
-                    <a href={`blog/${metadata.slug}`}>
-                      {metadata.title} by {metadata.author}{" "}
-                      on {metadata.date}
-                    </a>
+                    <article>
+                      <a href={`blog/${metadata.slug}`}>
+                        <h1>{metadata.title}</h1>
+                        <p>
+                          by {metadata.author} on{" "}
+                          {metadata.date}
+                        </p>
+                      </a>
+                    </article>
                   </li>
                 )
               )}

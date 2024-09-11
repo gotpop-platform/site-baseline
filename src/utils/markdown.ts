@@ -2,13 +2,43 @@ import { readFileSync } from "fs"
 
 // Custom Markdown parser function
 const parseMarkdown = (markdown: string): string => {
-  // Convert headers
+  let h1Counter = 0
+  let h2Counter = 0
+  let h3Counter = 0
+
+  // Convert headers with unique IDs
   markdown = markdown.replace(
     /^### (.*$)/gim,
-    "<h3>$1</h3>"
+    (_, header) => {
+      const id = h3Counter++
+      return `<a href='#h3-${id}'><h3 id="h3-${id}">${header}</h3></a>`
+    }
   )
-  markdown = markdown.replace(/^## (.*$)/gim, "<h2>$1</h2>")
-  markdown = markdown.replace(/^# (.*$)/gim, "<h1>$1</h1>")
+  markdown = markdown.replace(
+    /^## (.*$)/gim,
+    (_, header) => {
+      const id = h2Counter++
+      return `<a href='#h2-${id}'><h2 id="h2-${id}">${header}</h2></a>`
+    }
+  )
+  markdown = markdown.replace(
+    /^# (.*$)/gim,
+    (_, header) => {
+      const id = h1Counter++
+      return `<a href='#h1-${id}'><h1 id="h1-${id}">${header}</h1></a>`
+    }
+  )
+
+  markdown = markdown.replace(
+    /^## (.*$)/gim,
+    (_, header) =>
+      `<h2 id="h2-${h2Counter++}">${header}</h2>`
+  )
+  markdown = markdown.replace(
+    /^# (.*$)/gim,
+    (_, header) =>
+      `<h1 id="h1-${h1Counter++}">${header}</h1>`
+  )
 
   // Convert bold
   markdown = markdown.replace(
@@ -81,6 +111,3 @@ const parseMarkdownFile = (
 
 // Export the functions
 export { parseMarkdown, parseMarkdownFile }
-function existsSync(filePath: string) {
-  throw new Error("Function not implemented.")
-}

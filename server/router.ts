@@ -1,7 +1,6 @@
 import { BASE, router } from "./serve"
 import {
   INTERNAL_SERVER_ERROR_RESPONSE,
-  MODULE_NOT_FOUND_RESPONSE,
   NOT_FOUND_RESPONSE,
   getBaseDomain,
   importModule,
@@ -24,7 +23,7 @@ export const handleGetPages = async (
     const module = await importModule(route.filePath)
 
     if (!module) {
-      return MODULE_NOT_FOUND_RESPONSE
+      return NOT_FOUND_RESPONSE
     }
 
     if (typeof module.default !== "function") {
@@ -39,21 +38,13 @@ export const handleGetPages = async (
       .default(route.query)
       .catch((e: Error) => {
         console.error("Error calling default export:", e)
+
         return null
       })
 
     if (!response) {
-      return new Response(null, {
-        status: 302,
-        headers: {
-          Location: "/404",
-        },
-      })
+      return NOT_FOUND_RESPONSE
     }
-
-    // if (!response) {
-    //   return ERROR_GENERATING_RESPONSE
-    // }
 
     return new Response(response, {
       headers: { "Content-Type": "text/html" },

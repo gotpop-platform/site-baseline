@@ -15,8 +15,7 @@ type PageProps = {
 const pageBlog = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const filePath = join(import.meta.dir, `${slug}.md`)
-  console.log("filePath :", filePath)
+  const filePath = join("src/content/blog", `${slug}.md`)
 
   const { metadata, content: htmlContent } =
     parseMarkdownFile(filePath)

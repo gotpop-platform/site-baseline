@@ -1,14 +1,10 @@
+export const NOT_FOUND_RESPONSE = new Response(null, {
+  status: 302,
+  headers: {
+    Location: "/404",
+  },
+})
 
-export const NOT_FOUND_RESPONSE = new Response(
-  "Not Found",
-  {
-    status: 404,
-  }
-)
-export const MODULE_NOT_FOUND_RESPONSE = new Response(
-  "Module not found",
-  { status: 404 }
-)
 export const INTERNAL_SERVER_ERROR_RESPONSE = new Response(
   "Internal Server Error",
   { status: 500 }
