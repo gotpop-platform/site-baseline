@@ -36,7 +36,7 @@ const pageBlog = async ({
 
   return (
     <AppTheme title={`Gallery | ${slug}`}>
-      <GridConfig>
+      <GridConfig isRoot>
         <MobileMenuTrigger />
         <MegaMenu />
         <Surface>

@@ -1,9 +1,11 @@
 @scope {
   & {
     display: grid;
-    /* grid-template-columns:
-      [col-start] repeat(auto-fit, [bro] minmax(1rem, 5rem))
-      [col-end]; */
+
+    &.root-grid {
+      min-height: 100dvh;
+      grid-template-rows: auto 1fr auto;
+    }
 
     grid-template-columns:
       [full-width-start left-start] minmax(1rem, 1fr)

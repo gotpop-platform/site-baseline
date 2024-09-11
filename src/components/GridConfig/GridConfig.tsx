@@ -1,4 +1,4 @@
-import cn from "@utils/classnames"
+import { classNames as cn } from "@utils/classnames"
 import jsxFactory from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
@@ -18,7 +18,7 @@ const GridConfig = ({
   return (
     <div
       class={cn(mk, {
-        liam: isRoot,
+        "root-grid": isRoot,
       })}
     >
       <style>{css}</style>

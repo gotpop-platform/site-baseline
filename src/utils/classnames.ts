@@ -1,7 +1,5 @@
-// Shameless rip off of classnames package
-
 type Value = string | boolean | undefined | null
-type Mapping = Record<string, any>
+type Mapping = string | { [key: string]: boolean }
 interface ArgumentArray extends Array<Argument> {}
 interface ReadonlyArgumentArray
   extends ReadonlyArray<Argument> {}
@@ -13,13 +11,11 @@ type Argument =
 
 const hasOwn = {}.hasOwnProperty
 
-export default function classNames(
-  ...args: ArgumentArray
-): string {
+export function classNames(...args: ArgumentArray): string {
   let classes = ""
 
-  for (let i = 0; i < arguments.length; i++) {
-    const arg = arguments[i]
+  for (let i = 0; i < args.length; i++) {
+    const arg = args[i]
     if (arg) {
       classes = appendClass(classes, parseValue(arg))
     }
@@ -28,7 +24,7 @@ export default function classNames(
   return classes
 }
 
-function parseValue(arg: any) {
+function parseValue(arg: Argument): string {
   if (typeof arg === "string") {
     return arg
   }
@@ -38,25 +34,30 @@ function parseValue(arg: any) {
   }
 
   if (Array.isArray(arg)) {
-    return classNames.apply(arg)
+    return classNames.apply(null, arg)
   }
 
   if (
-    arg.toString !== Object.prototype.toString &&
-    !arg.toString.toString().includes("[native code]")
+    arg?.toString !== Object.prototype.toString &&
+    !arg?.toString.toString().includes("[native code]")
   ) {
-    return arg.toString()
+    return arg?.toString() || ""
   }
 
   let classes = ""
 
-  for (const key in arg) {
-    if (hasOwn.call(arg, key) && arg[key]) {
-      classes = appendClass(classes, key)
+  if (isMapping(arg)) {
+    for (const key in arg) {
+      if (hasOwn.call(arg, key) && arg[key]) {
+        classes = appendClass(classes, key)
+      }
     }
   }
-
   return classes
+}
+
+function isMapping(arg: any): arg is Mapping {
+  return typeof arg === "object" && !Array.isArray(arg)
 }
 
 function appendClass(value: string, newClass: string) {
