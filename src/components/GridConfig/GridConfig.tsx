@@ -8,16 +8,16 @@ type GridConfigProps = {
   children?: string
 }
 
-const GridConfig = ({
+export const GridConfig = ({
   isRoot = false,
   children,
 }: GridConfigProps) => {
   const { css } = useCSS({ meta: import.meta })
-  const mk = mkClass(import.meta.file)
+  const cl = mkClass(import.meta.file)
 
   return (
     <div
-      class={cn(mk, {
+      class={cn(cl, {
         "root-grid": isRoot,
       })}
     >
@@ -26,5 +26,3 @@ const GridConfig = ({
     </div>
   )
 }
-
-export default GridConfig
