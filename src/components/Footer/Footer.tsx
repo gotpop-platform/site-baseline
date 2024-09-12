@@ -1,5 +1,4 @@
 import BaseLinePopOver from "@components/BaseLinePopOver"
-import Nav from "@components/Nav"
 import jsxFactory from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
@@ -18,7 +17,7 @@ export function Footer() {
     <footer class={useName}>
       <style>{css}</style>
       <div class="inner">
-        <h3>Home</h3>
+        {/* <h3>Home</h3>
         <nav class="subdomains">
           <a href={makePath("")}>Home</a>
         </nav>
@@ -28,7 +27,7 @@ export function Footer() {
           <a href={makePath("demo")}>Demo</a>
           <a href={makePath("singleton")}>Singleton</a>
         </nav>
-        <h3>Pop</h3>
+        <h3>Pop</h3> */}
         <nav class="subdomains">
           <button
             class="menu-link"

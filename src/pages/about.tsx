@@ -1,21 +1,28 @@
 import { AppTheme } from "@layouts/app"
-import Blog from "@components/Blog"
 import { Footer } from "@components/Footer"
-import Grid from "@components/Grid"
-import Header from "@components/Header"
-import { getPages } from "@utils/getPages"
+import { GridConfig } from "@components/GridConfig"
+import { HeaderMegaMenu } from "@components/HeaderMegaMenu"
+import { MobileMenuTrigger } from "@components/MobileMenuTrigger"
+import { Surface } from "@components/Surface"
 import jsxFactory from "@utils/jsxFactory"
 
-const aboutPage = async () => {
-  const pages = await getPages()
+type PageProps = {
+  slug: string
+}
 
+const aboutPage = async ({
+  slug,
+}: PageProps): Promise<JSX.Element> => {
   return (
-    <AppTheme title="About">
-      <Grid>
-        <Header pages={pages} />
-        <Blog />
+    <AppTheme title={`Baseline | ${slug}`}>
+      <GridConfig isRoot>
+        <MobileMenuTrigger />
+        <HeaderMegaMenu />
+        <Surface>
+          <h1>About page</h1>
+        </Surface>
         <Footer />
-      </Grid>
+      </GridConfig>
     </AppTheme>
   )
 }
