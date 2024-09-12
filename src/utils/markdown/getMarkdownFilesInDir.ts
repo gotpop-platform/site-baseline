@@ -33,19 +33,30 @@ export const markdownFiles = async (
   return markdownFiles
 }
 
-export const markdownFilesInDir = async (dir: string) => {
-  const awaitFiles = await markdownFiles(dir)
+export const markdownFilesInDir = async (
+  dir: string
+): Promise<ParsedFile[]> => {
+  const awaitFiles: string[] = await markdownFiles(dir)
 
-  const parsedFiles = await Promise.all(
-    awaitFiles.map(async (filePath) => {
-      const path = filePath.replace(/\.md$/, "")
-      const { metadata, content } = await parseMarkdownFile(
-        dir,
-        path
-      )
+  const parsedFiles: ParsedFile[] = await Promise.all(
+    awaitFiles.map(
+      async (filePath): Promise<ParsedFile> => {
+        const path = filePath.replace(/\.md$/, "")
+        const { metadata, content } = parseMarkdownFile(
+          dir,
+          path
+        )
 
-      return { metadata, content }
-    })
+        const typedMetadata: MetaData = {
+          title: metadata.title,
+          slug: metadata.slug,
+          author: metadata.author,
+          date: metadata.date,
+        }
+
+        return { metadata: typedMetadata, content }
+      }
+    )
   )
 
   return parsedFiles
