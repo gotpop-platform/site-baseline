@@ -29,7 +29,14 @@ function jsxFactory(
     })
   } else {
     const mapProps = Object.entries(props || {})
-      .map(([key, value]) => `${key}="${value}"`)
+      .map(([key, value]) => {
+        // Handle prop punning
+        if (typeof value === "boolean") {
+          return value ? key : ""
+        }
+        return `${key}="${value}"`
+      })
+      .filter(Boolean)
       .join(" ")
 
     const childArr = children.flat(Infinity).join("")
