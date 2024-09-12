@@ -1,7 +1,7 @@
 import AppTheme from "@layouts/app"
 import Footer from "@components/Footer"
 import { GridConfig } from "@components/GridConfig"
-import MegaMenu from "@components/HeaderMegaMenu"
+import { HeaderMegaMenu } from "@components/HeaderMegaMenu"
 import { MobileMenuTrigger } from "@components/MobileMenuTrigger"
 import { Surface } from "@components/Surface"
 import { join } from "path"
@@ -24,7 +24,7 @@ const pageBlog = async ({
     <AppTheme title={`Gallery | ${slug}`}>
       <GridConfig>
         <MobileMenuTrigger />
-        <MegaMenu />
+        <HeaderMegaMenu />
         <Surface>
           <section class="blog">
             <h1>{metadata.title}</h1>

@@ -2,7 +2,7 @@ import AppTheme from "@layouts/app"
 import Footer from "@components/Footer"
 import { GalleryIntro } from "@components/GalleryIntro"
 import { GridConfig } from "@components/GridConfig"
-import MegaMenu from "@components/HeaderMegaMenu"
+import { HeaderMegaMenu } from "@components/HeaderMegaMenu"
 import { MobileMenuTrigger } from "@components/MobileMenuTrigger"
 import { Surface } from "@components/Surface"
 import jsxFactory from "@utils/jsxFactory"
@@ -18,7 +18,7 @@ const pageGalleryItem = async ({
     <AppTheme title={`Gallery | ${slug}`}>
       <GridConfig>
         <MobileMenuTrigger />
-        <MegaMenu />
+        <HeaderMegaMenu />
         <Surface>
           <GalleryIntro slug={slug} />
           {/* <Articles /> */}

@@ -2,7 +2,7 @@ import AppTheme from "@layouts/app"
 import { ArticlePage } from "@components/ArticlePage"
 import Footer from "@components/Footer"
 import { GridConfig } from "@components/GridConfig"
-import MegaMenu from "@components/HeaderMegaMenu"
+import { HeaderMegaMenu } from "@components/HeaderMegaMenu"
 import { MobileMenuTrigger } from "@components/MobileMenuTrigger"
 import { Surface } from "@components/Surface"
 import { articlesData } from "@data/articlesData"
@@ -37,7 +37,7 @@ const pageArticlePage = async ({
     <AppTheme title={`Article | ${slug}`}>
       <GridConfig>
         <MobileMenuTrigger />
-        <MegaMenu />
+        <HeaderMegaMenu />
         <Surface>{articlePage}</Surface>
         <Footer />
       </GridConfig>
