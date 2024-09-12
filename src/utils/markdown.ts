@@ -1,3 +1,4 @@
+import { join } from "path"
 import { readFileSync } from "fs"
 
 // Custom Markdown parser function
@@ -71,11 +72,19 @@ const parseMarkdown = (markdown: string): string => {
 
 // Function to read and parse a Markdown file
 const parseMarkdownFile = (
-  filePath: string
+  directoryPath: string,
+  fileName: string
 ): {
   metadata: Record<string, string>
   content: string
 } => {
+  const filePath = join(
+    "src",
+    "content",
+    directoryPath,
+    `${fileName}.md`
+  )
+
   if (!filePath) {
     throw new Error(`File not found: ${filePath}`)
   }

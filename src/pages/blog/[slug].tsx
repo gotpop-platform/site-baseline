@@ -4,7 +4,6 @@ import { GridConfig } from "@components/GridConfig"
 import { HeaderMegaMenu } from "@components/HeaderMegaMenu"
 import { MobileMenuTrigger } from "@components/MobileMenuTrigger"
 import { Surface } from "@components/Surface"
-import { join } from "path"
 import jsxFactory from "@utils/jsxFactory"
 import { parseMarkdownFile } from "@utils/markdown"
 
@@ -15,22 +14,36 @@ type PageProps = {
 const pageBlog = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const filePath = join("src/content/blog", `${slug}.md`)
+  const {
+    metadata: { date, title, author },
+    content: htmlContent,
+  } = parseMarkdownFile("blog", slug)
 
-  const { metadata, content: htmlContent } =
-    parseMarkdownFile(filePath)
+  // Convert date string to Date object
+  const dateObject = new Date(date)
+
+  // Format the date for display
+  const formattedDate = dateObject.toLocaleDateString(
+    "en-GB",
+    {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    }
+  )
 
   return (
-    <AppTheme title={`Gallery | ${slug}`}>
+    <AppTheme title={`Baseline | ${title}`}>
       <GridConfig>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface>
           <section class="blog">
-            <h1>{metadata.title}</h1>
-            <p>
-              By {metadata.author} on {metadata.date}
-            </p>
+            <h1>{title}</h1>
+            <aside>
+              By <address>{author}</address> on{" "}
+              <time dateTime={date}>{formattedDate}</time>
+            </aside>
             {htmlContent}
           </section>
         </Surface>

@@ -16,7 +16,7 @@ const pageGalleryItem = async ({
 }: PageProps): Promise<JSX.Element> => {
   return (
     <AppTheme title={`Gallery | ${slug}`}>
-      <GridConfig>
+      <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface>
