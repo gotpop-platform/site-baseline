@@ -8,12 +8,9 @@ import {
 } from "components"
 
 import { AppTheme } from "@layouts/app"
+import type { PageProps } from "../../types/pageProps"
 import { articlesData } from "@data/articlesData"
 import jsxFactory from "@utils/jsxFactory"
-
-type PageProps = {
-  slug: string
-}
 
 const pageArticlePage = async ({
   slug,

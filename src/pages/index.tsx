@@ -5,12 +5,9 @@ import { GridConfig } from "@components/GridConfig"
 import { HeaderMegaMenu } from "@components/HeaderMegaMenu"
 import { HeroItem } from "@components/HeroItem"
 import { MobileMenuTrigger } from "@components/MobileMenuTrigger"
+import type { PageProps } from "../types/pageProps"
 import { Surface } from "@components/Surface"
 import jsxFactory from "@utils/jsxFactory"
-
-type PageProps = {
-  slug: string
-}
 
 const pageIndex = async ({
   slug,

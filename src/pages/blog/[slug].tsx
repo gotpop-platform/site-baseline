@@ -7,12 +7,9 @@ import {
 } from "components"
 
 import { AppTheme } from "@layouts/app"
+import type { PageProps } from "../../types/pageProps"
 import jsxFactory from "@utils/jsxFactory"
 import { parseMarkdownFile } from "@utils/markdown"
-
-type PageProps = {
-  slug: string
-}
 
 export const formattedDate = (
   date: string | number | Date

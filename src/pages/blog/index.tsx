@@ -7,12 +7,9 @@ import {
 } from "components"
 
 import { AppTheme } from "@layouts/app"
+import type { PageProps } from "../../types/pageProps"
 import jsxFactory from "@utils/jsxFactory"
 import { markdownFilesInDir } from "@utils/markdown/getMarkdownFilesInDir"
-
-type PageProps = {
-  slug: string
-}
 
 type MetaData = {
   slug: string

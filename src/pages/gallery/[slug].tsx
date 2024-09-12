@@ -8,11 +8,8 @@ import {
 } from "components"
 
 import { AppTheme } from "@layouts/app"
+import type { PageProps } from "../../types/pageProps"
 import jsxFactory from "@utils/jsxFactory"
-
-type PageProps = {
-  slug: string
-}
 
 const pageGalleryItem = async ({
   slug,

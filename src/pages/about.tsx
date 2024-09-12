@@ -3,12 +3,9 @@ import { Footer } from "@components/Footer"
 import { GridConfig } from "@components/GridConfig"
 import { HeaderMegaMenu } from "@components/HeaderMegaMenu"
 import { MobileMenuTrigger } from "@components/MobileMenuTrigger"
+import type { PageProps } from "../types/pageProps"
 import { Surface } from "@components/Surface"
 import jsxFactory from "@utils/jsxFactory"
-
-type PageProps = {
-  slug: string
-}
 
 const aboutPage = async ({
   slug,
