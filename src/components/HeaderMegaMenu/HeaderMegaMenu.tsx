@@ -1,16 +1,16 @@
-import jsxFactory from "@utils/jsxFactory"
-import { mkClass } from "@utils/mkClass"
-import { useCSS } from "src/hooks/useCSS"
 import HeaderMegaMenuInner from "./HeaderSurface"
 import LogoMegaMenu from "./LogoMegaMenu"
 import MegaNav from "./MegaNav"
+import jsxFactory from "@utils/jsxFactory"
+import { mkClass } from "@utils/mkClass"
+import { useCSS } from "src/hooks/useCSS"
 
 type HeaderMegaMenuProps = {
   title?: string
   children?: string
 }
 
-const HeaderMegaMenu = ({
+export const HeaderMegaMenu = ({
   title,
   children,
 }: HeaderMegaMenuProps) => {
@@ -30,5 +30,3 @@ const HeaderMegaMenu = ({
     </header>
   )
 }
-
-export default HeaderMegaMenu
