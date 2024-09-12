@@ -20,17 +20,17 @@ const pageArticlePage = async ({
   const articlesArr = Array.from(articlesData.entries())
 
   const articlePage = articlesArr.map(
-    ([key, article], index) => {
-      const { href } = article
-
-      return href === slugPage ? (
+    ([key, { href, section, title, blurb }], index) =>
+      href === slugPage && (
         <ArticlePage
-          {...article}
+          section={section}
+          blurb={blurb}
+          title={title}
           slug={slug}
           style={varStr + (index + 1)}
+          href={href}
         />
-      ) : null
-    }
+      )
   )
 
   return (
