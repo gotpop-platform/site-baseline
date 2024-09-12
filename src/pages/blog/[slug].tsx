@@ -19,10 +19,7 @@ const pageBlog = async ({
     content: htmlContent,
   } = parseMarkdownFile("blog", slug)
 
-  // Convert date string to Date object
   const dateObject = new Date(date)
-
-  // Format the date for display
   const formattedDate = dateObject.toLocaleDateString(
     "en-GB",
     {
