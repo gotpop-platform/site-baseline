@@ -1,4 +1,4 @@
-import AppTheme from "@layouts/app"
+import { AppTheme } from "@layouts/app"
 import { Footer } from "@components/Footer"
 import { GalleryIntro } from "@components/GalleryIntro"
 import { GridConfig } from "@components/GridConfig"

@@ -1,4 +1,4 @@
-import AppFull from "@layouts/app"
+import { AppTheme } from "@layouts/app"
 import Blog from "@components/Blog"
 import { Footer } from "@components/Footer"
 import Grid from "@components/Grid"
@@ -10,13 +10,13 @@ const aboutPage = async () => {
   const pages = await getPages()
 
   return (
-    <AppFull title="About">
+    <AppTheme title="About">
       <Grid>
         <Header pages={pages} />
         <Blog />
         <Footer />
       </Grid>
-    </AppFull>
+    </AppTheme>
   )
 }
 

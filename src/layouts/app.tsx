@@ -6,10 +6,7 @@ interface AppProps {
   title: string
 }
 
-const App = ({
-  title,
-  children,
-}: AppProps) => {
+export const AppTheme = ({ title, children }: AppProps) => {
   const doc = "<!DOCTYPE html>"
 
   return (
@@ -22,5 +19,3 @@ const App = ({
     )
   )
 }
-
-export default App
