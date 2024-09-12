@@ -1,11 +1,11 @@
+import AppTheme from "@layouts/app"
 import { ArticlePage } from "@components/ArticlePage"
 import Footer from "@components/Footer"
-import GridConfig from "@components/GridConfig"
+import { GridConfig } from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
-import MobileMenuTrigger from "@components/MobileMenuTrigger"
+import { MobileMenuTrigger } from "@components/MobileMenuTrigger"
 import { Surface } from "@components/Surface"
 import { articlesData } from "@data/articlesData"
-import AppTheme from "@layouts/app"
 import jsxFactory from "@utils/jsxFactory"
 
 type PageProps = {
@@ -34,7 +34,7 @@ const pageArticlePage = async ({
   )
 
   return (
-    <AppTheme title={`Article | ${slug}`} >
+    <AppTheme title={`Article | ${slug}`}>
       <GridConfig>
         <MobileMenuTrigger />
         <MegaMenu />

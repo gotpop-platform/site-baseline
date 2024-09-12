@@ -1,7 +1,7 @@
 import AppTheme from "@layouts/app"
 import Footer from "@components/Footer"
 import { Glob } from "bun"
-import GridConfig from "@components/GridConfig"
+import { GridConfig } from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
 import { MobileMenuTrigger } from "@components/MobileMenuTrigger"
 import { Surface } from "@components/Surface"
