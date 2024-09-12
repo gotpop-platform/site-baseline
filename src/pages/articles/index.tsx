@@ -1,6 +1,6 @@
 import AppTheme from "@layouts/app"
 import { ArticleItems } from "@components/ArticleItem"
-import Footer from "@components/Footer"
+import { Footer } from "@components/Footer"
 import { GridConfig } from "@components/GridConfig"
 import { HeaderMegaMenu } from "@components/HeaderMegaMenu"
 import { MobileMenuTrigger } from "@components/MobileMenuTrigger"

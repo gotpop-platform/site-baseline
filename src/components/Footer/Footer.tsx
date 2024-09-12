@@ -11,7 +11,7 @@ export const makePath = (subdomain: null | string) => {
   return `${PROTOCOL}://${subdomainStr}${DOMAIN}${portStr}/`
 }
 
-function Footer() {
+export function Footer() {
   const { css, useName } = useCSS({ meta: import.meta })
 
   return (
@@ -42,5 +42,3 @@ function Footer() {
     </footer>
   )
 }
-
-export default Footer

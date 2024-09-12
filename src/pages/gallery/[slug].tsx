@@ -1,5 +1,5 @@
 import AppTheme from "@layouts/app"
-import Footer from "@components/Footer"
+import { Footer } from "@components/Footer"
 import { GalleryIntro } from "@components/GalleryIntro"
 import { GridConfig } from "@components/GridConfig"
 import { HeaderMegaMenu } from "@components/HeaderMegaMenu"
