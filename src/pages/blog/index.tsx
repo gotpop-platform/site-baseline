@@ -3,7 +3,7 @@ import Footer from "@components/Footer"
 import { Glob } from "bun"
 import GridConfig from "@components/GridConfig"
 import MegaMenu from "@components/HeaderMegaMenu"
-import MobileMenuTrigger from "@components/MobileMenuTrigger"
+import { MobileMenuTrigger } from "@components/MobileMenuTrigger"
 import { Surface } from "@components/Surface"
 import { join } from "path"
 import jsxFactory from "@utils/jsxFactory"
@@ -11,6 +11,13 @@ import { parseMarkdownFile } from "@utils/markdown"
 
 type PageProps = {
   slug: string
+}
+
+type MetaData = {
+  slug: string
+  title: string
+  author: string
+  date: string
 }
 
 const pageBlog = async ({
@@ -31,35 +38,43 @@ const pageBlog = async ({
     const { metadata, content } =
       parseMarkdownFile(fullFilePath)
 
-    return { filePath, metadata, content }
+    return { metadata, content }
   })
 
+  const BlogArticle = ({
+    title,
+    slug,
+    author,
+    date,
+  }: MetaData) => (
+    <article>
+      <a href={`blog/${slug}`}>
+        <h1>{title}</h1>
+        <p>
+          by {author} on {date}
+        </p>
+      </a>
+    </article>
+  )
+
+  const articles = parsedFiles.map(
+    ({ metadata: { title, slug, author, date } }) => (
+      <BlogArticle
+        title={title}
+        slug={slug}
+        author={author}
+        date={date}
+      />
+    )
+  )
+
   return (
-    <AppTheme title={`Gallery | ${slug}`}>
+    <AppTheme title="Baseline | Blog">
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <MegaMenu />
         <Surface>
-          <section class="blog">
-            <a href="/blog/animations33">Create New Blog</a>
-            <ul>
-              {parsedFiles.map(
-                ({ metadata, filePath }, index) => (
-                  <li key={index}>
-                    <article>
-                      <a href={`blog/${metadata.slug}`}>
-                        <h1>{metadata.title}</h1>
-                        <p>
-                          by {metadata.author} on{" "}
-                          {metadata.date}
-                        </p>
-                      </a>
-                    </article>
-                  </li>
-                )
-              )}
-            </ul>
-          </section>
+          <section class="blog">{articles}</section>
         </Surface>
         <Footer />
       </GridConfig>
