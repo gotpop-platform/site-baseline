@@ -5,6 +5,7 @@ export * from "./Footer"
 export * from "./GalleryIntro"
 export * from "./GridConfig"
 export * from "./HeaderMegaMenu"
+export * from "./HeroItem"
 export * from "./MobileMenuTrigger"
 export * from "./Surface"
 

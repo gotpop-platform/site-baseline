@@ -1,12 +1,15 @@
+import {
+  ArticleItems,
+  Footer,
+  GridConfig,
+  HeaderMegaMenu,
+  HeroItem,
+  MobileMenuTrigger,
+  Surface,
+} from "components"
+
 import { AppTheme } from "@layouts/app"
-import { ArticleItems } from "@components/ArticleItem"
-import { Footer } from "@components/Footer"
-import { GridConfig } from "@components/GridConfig"
-import { HeaderMegaMenu } from "@components/HeaderMegaMenu"
-import { HeroItem } from "@components/HeroItem"
-import { MobileMenuTrigger } from "@components/MobileMenuTrigger"
 import type { PageProps } from "../types/pageProps"
-import { Surface } from "@components/Surface"
 import jsxFactory from "@utils/jsxFactory"
 
 const pageIndex = async ({
