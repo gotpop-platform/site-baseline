@@ -1,9 +1,12 @@
+import {
+  Footer,
+  GridConfig,
+  HeaderMegaMenu,
+  MobileMenuTrigger,
+  Surface,
+} from "components"
+
 import { AppTheme } from "@layouts/app"
-import { Footer } from "@components/Footer"
-import { GridConfig } from "@components/GridConfig"
-import { HeaderMegaMenu } from "@components/HeaderMegaMenu"
-import { MobileMenuTrigger } from "@components/MobileMenuTrigger"
-import { Surface } from "@components/Surface"
 import jsxFactory from "@utils/jsxFactory"
 import { markdownFilesInDir } from "@utils/markdown/getMarkdownFilesInDir"
 

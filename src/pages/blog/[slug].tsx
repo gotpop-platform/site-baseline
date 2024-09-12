@@ -1,15 +1,27 @@
+import {
+  Footer,
+  GridConfig,
+  HeaderMegaMenu,
+  MobileMenuTrigger,
+  Surface,
+} from "components"
+
 import { AppTheme } from "@layouts/app"
-import { Footer } from "@components/Footer"
-import { GridConfig } from "@components/GridConfig"
-import { HeaderMegaMenu } from "@components/HeaderMegaMenu"
-import { MobileMenuTrigger } from "@components/MobileMenuTrigger"
-import { Surface } from "@components/Surface"
 import jsxFactory from "@utils/jsxFactory"
 import { parseMarkdownFile } from "@utils/markdown"
 
 type PageProps = {
   slug: string
 }
+
+export const formattedDate = (
+  date: string | number | Date
+) =>
+  new Date(date).toLocaleDateString("en-GB", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  })
 
 const pageBlog = async ({
   slug,
@@ -18,16 +30,6 @@ const pageBlog = async ({
     metadata: { date, title, author },
     content: htmlContent,
   } = parseMarkdownFile("blog", slug)
-
-  const dateObject = new Date(date)
-  const formattedDate = dateObject.toLocaleDateString(
-    "en-GB",
-    {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    }
-  )
 
   return (
     <AppTheme title={`Baseline | ${title}`}>
@@ -38,7 +40,9 @@ const pageBlog = async ({
           <section class="blog">
             <h1>{title}</h1>
             <aside>
-              By <address>{author}</address> on{" "}
+              <span>By</span>
+              <address>{author}</address>
+              <span>on</span>
               <time dateTime={date}>{formattedDate}</time>
             </aside>
             {htmlContent}
