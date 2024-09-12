@@ -7,7 +7,7 @@ type SubmenuItem = {
   link: string
 }
 
-const SubMenuContent = ({
+export const SubMenuContent = ({
   submenuItems,
   position,
   textButton,
@@ -35,5 +35,3 @@ const SubMenuContent = ({
     </div>
   )
 }
-
-export default SubMenuContent

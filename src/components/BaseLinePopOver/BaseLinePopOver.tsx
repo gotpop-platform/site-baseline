@@ -2,7 +2,9 @@ import jsxFactory from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
 
-function BaseLinePopOver({ popovertarget = "basegrid" }) {
+export function BaseLinePopOver({
+  popovertarget = "basegrid",
+}) {
   const { css } = useCSS({ meta: import.meta })
 
   return (
@@ -25,5 +27,3 @@ function BaseLinePopOver({ popovertarget = "basegrid" }) {
     </div>
   )
 }
-
-export default BaseLinePopOver

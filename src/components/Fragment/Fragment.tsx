@@ -1,4 +1,4 @@
-const Fragment = ({
+export const Fragment = ({
   children,
 }: {
   children?: JSX.Element
@@ -8,5 +8,3 @@ const Fragment = ({
   }
   return null
 }
-
-export default Fragment

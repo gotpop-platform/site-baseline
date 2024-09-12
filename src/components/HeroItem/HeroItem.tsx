@@ -1,4 +1,4 @@
-import Anchor from "@components/Anchor"
+import { Anchor } from "@components/Anchor"
 import { Surface } from "../Surface"
 import jsxFactory from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"

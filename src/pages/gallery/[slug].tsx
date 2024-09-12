@@ -1,10 +1,13 @@
+import {
+  Footer,
+  GalleryIntro,
+  GridConfig,
+  HeaderMegaMenu,
+  MobileMenuTrigger,
+  Surface,
+} from "components"
+
 import { AppTheme } from "@layouts/app"
-import { Footer } from "@components/Footer"
-import { GalleryIntro } from "@components/GalleryIntro"
-import { GridConfig } from "@components/GridConfig"
-import { HeaderMegaMenu } from "@components/HeaderMegaMenu"
-import { MobileMenuTrigger } from "@components/MobileMenuTrigger"
-import { Surface } from "@components/Surface"
 import jsxFactory from "@utils/jsxFactory"
 
 type PageProps = {
@@ -15,13 +18,12 @@ const pageGalleryItem = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
   return (
-    <AppTheme title={`Gallery | ${slug}`}>
+    <AppTheme title={`Baseline | ${slug}`}>
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface>
           <GalleryIntro slug={slug} />
-          {/* <Articles /> */}
         </Surface>
         <Footer />
       </GridConfig>

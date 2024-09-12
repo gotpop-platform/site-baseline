@@ -1,1 +1,1 @@
-export { default } from "./MegaNav"
+export * from "./MegaNav"

@@ -1,9 +1,6 @@
-import Icon from "@components/Icon"
+import { Icon } from "@components/Icon"
 import { IconTypes } from "@components/Icon/Icon"
-import {
-  dataDemo,
-  type GalleryItem,
-} from "@data/demo.data"
+import { dataDemo, type GalleryItem } from "@data/demo.data"
 import { useCSS } from "@hooks/useCSS"
 import jsxFactory from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"

@@ -1,9 +1,9 @@
-import Icon from "@components/Icon"
+import type { Article } from "../Points.data"
+import { Icon } from "@components/Icon"
 import jsxFactory from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
-import type { Article } from "../Points.data"
 
-const Point = ({
+export const Point = ({
   iconName,
   heading,
   text,
@@ -22,5 +22,3 @@ const Point = ({
     </article>
   )
 }
-
-export default Point

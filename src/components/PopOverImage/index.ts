@@ -1,1 +1,1 @@
-export { default } from "./PopOverImage"
+export * from "./PopOverImage"

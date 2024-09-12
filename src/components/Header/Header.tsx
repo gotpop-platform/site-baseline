@@ -1,5 +1,5 @@
-import Logo from "@components/Logo"
-import Nav from "@components/Nav"
+import { Logo } from "@components/Logo"
+import { Nav } from "@components/Nav"
 import jsxFactory from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 

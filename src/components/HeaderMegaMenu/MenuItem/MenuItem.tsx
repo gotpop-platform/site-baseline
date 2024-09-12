@@ -1,4 +1,4 @@
-import TriggerSubMenu from "../TriggerSubMenu"
+import { TriggerSubMenu } from "../TriggerSubMenu"
 import jsxFactory from "@utils/jsxFactory"
 import { useCSS } from "@hooks/useCSS"
 

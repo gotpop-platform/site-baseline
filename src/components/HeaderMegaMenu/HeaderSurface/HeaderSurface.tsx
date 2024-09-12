@@ -1,8 +1,8 @@
-import { useCSS } from "@hooks/useCSS"
 import jsxFactory from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
+import { useCSS } from "@hooks/useCSS"
 
-const HeaderSurface = ({
+export const HeaderSurface = ({
   children,
 }: {
   children?: string
@@ -16,5 +16,3 @@ const HeaderSurface = ({
     </div>
   )
 }
-
-export default HeaderSurface

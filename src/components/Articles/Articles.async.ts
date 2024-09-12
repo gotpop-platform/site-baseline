@@ -1,5 +1,5 @@
 import Article from "@components/Article/Article"
-import Gallery from "@components/Gallery"
+import { Gallery } from "@components/Gallery"
 import { arr } from "@data/data"
 
 const buildArticles = async () => {

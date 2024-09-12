@@ -1,4 +1,4 @@
-import BaseLinePopOver from "@components/BaseLinePopOver"
+import { BaseLinePopOver } from "components"
 import jsxFactory from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 

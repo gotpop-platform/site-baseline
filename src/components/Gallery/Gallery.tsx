@@ -1,6 +1,6 @@
-import PopOverImage from "@components/PopOverImage";
-import jsxFactory from "@utils/jsxFactory";
-import { useCSS } from "src/hooks/useCSS";
+import { PopOverImage } from "@components/PopOverImage"
+import jsxFactory from "@utils/jsxFactory"
+import { useCSS } from "src/hooks/useCSS"
 
 type GalleryProps = { title: string; content: string }
 
@@ -9,7 +9,7 @@ export const useName = import.meta.file
   .shift()
   ?.toLowerCase()
 
-const Gallery = async ({
+export const Gallery = async ({
   title,
   content,
 }: GalleryProps) => {
@@ -39,5 +39,3 @@ const Gallery = async ({
     </section>
   )
 }
-
-export default Gallery

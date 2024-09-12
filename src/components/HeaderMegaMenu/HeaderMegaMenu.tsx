@@ -1,6 +1,6 @@
-import HeaderMegaMenuInner from "./HeaderSurface"
-import LogoMegaMenu from "./LogoMegaMenu"
-import MegaNav from "./MegaNav"
+import { HeaderSurface } from "./HeaderSurface"
+import { LogoMegaMenu } from "./LogoMegaMenu"
+import { MegaNav } from "./MegaNav"
 import jsxFactory from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
@@ -23,10 +23,10 @@ export const HeaderMegaMenu = ({
       class={mkClass(import.meta.file)}
     >
       <style>{css}</style>
-      <HeaderMegaMenuInner>
+      <HeaderSurface>
         <LogoMegaMenu />
         <MegaNav />
-      </HeaderMegaMenuInner>
+      </HeaderSurface>
     </header>
   )
 }

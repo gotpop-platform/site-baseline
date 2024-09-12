@@ -6,7 +6,7 @@ type AnchorProps = {
   children?: string | JSX.Element | JSX.Element[]
 }
 
-const Anchor = ({ href, children }: AnchorProps) => {
+export const Anchor = ({ href, children }: AnchorProps) => {
   const { css, useName } = useCSS({ meta: import.meta })
 
   return (
@@ -65,5 +65,3 @@ const Anchor = ({ href, children }: AnchorProps) => {
     </div>
   )
 }
-
-export default Anchor

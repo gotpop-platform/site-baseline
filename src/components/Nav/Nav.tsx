@@ -1,11 +1,13 @@
-import NavItem from "@components/NavItem"
+import { NavItem } from "@components/NavItem"
 import jsxFactory from "@utils/jsxFactory"
 import path from "path"
 import { useCSS } from "src/hooks/useCSS"
 
 type Props = { pages: string[] }
 
-const Nav = ({ pages }: Props): JSX.Element | null => {
+export const Nav = ({
+  pages,
+}: Props): JSX.Element | null => {
   const { css, useName } = useCSS({ meta: import.meta })
 
   const navItems = pages
@@ -30,5 +32,3 @@ const Nav = ({ pages }: Props): JSX.Element | null => {
     </nav>
   )
 }
-
-export default Nav

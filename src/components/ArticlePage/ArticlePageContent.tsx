@@ -1,4 +1,4 @@
-import Fragment from "@components/Fragment"
+import { Fragment } from "@components/Fragment"
 import { Heading } from "@components/Heading"
 import jsxFactory from "@utils/jsxFactory"
 

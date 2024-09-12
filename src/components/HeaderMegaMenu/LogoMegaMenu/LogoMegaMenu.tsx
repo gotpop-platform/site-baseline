@@ -2,7 +2,7 @@ import jsxFactory from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
 
-const LogoMegaMenu = () => {
+export const LogoMegaMenu = () => {
   const { css } = useCSS({ meta: import.meta })
 
   return (
@@ -31,5 +31,3 @@ const LogoMegaMenu = () => {
     </a>
   )
 }
-
-export default LogoMegaMenu
