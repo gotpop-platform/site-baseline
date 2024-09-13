@@ -1,15 +1,12 @@
 import Head from "@components/Head"
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 
 interface AppProps {
   children?: string | JSX.Element | JSX.Element[]
   title: string
 }
 
-const App = ({
-  title,
-  children,
-}: AppProps) => {
+export const AppTheme = ({ title, children }: AppProps) => {
   const doc = "<!DOCTYPE html>"
 
   return (
@@ -22,5 +19,3 @@ const App = ({
     )
   )
 }
-
-export default App

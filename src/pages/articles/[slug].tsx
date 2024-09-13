@@ -1,16 +1,16 @@
-import { ArticlePage } from "@components/ArticlePage"
-import Footer from "@components/Footer"
-import GridConfig from "@components/GridConfig"
-import MegaMenu from "@components/HeaderMegaMenu"
-import MobileMenuTrigger from "@components/MobileMenuTrigger"
-import { Surface } from "@components/Surface"
-import { articlesData } from "@data/articlesData"
-import AppTheme from "@layouts/app"
-import jsxFactory from "@utils/jsxFactory"
+import {
+  ArticlePage,
+  Footer,
+  GridConfig,
+  HeaderMegaMenu,
+  MobileMenuTrigger,
+  Surface,
+} from "components"
 
-type PageProps = {
-  slug: string
-}
+import { AppTheme } from "@layouts/app"
+import type { PageProps } from "../../types/pageProps"
+import { articlesData } from "@data/articlesData"
+import { jsxFactory } from "utils"
 
 const pageArticlePage = async ({
   slug,
@@ -20,24 +20,24 @@ const pageArticlePage = async ({
   const articlesArr = Array.from(articlesData.entries())
 
   const articlePage = articlesArr.map(
-    ([key, article], index) => {
-      const { href } = article
-
-      return href === slugPage ? (
+    ([key, { href, section, title, blurb }], index) =>
+      href === slugPage ? (
         <ArticlePage
-          {...article}
+          section={section}
+          blurb={blurb}
+          title={title}
           slug={slug}
           style={varStr + (index + 1)}
+          href={href}
         />
       ) : null
-    }
   )
 
   return (
-    <AppTheme title={`Article | ${slug}`} >
+    <AppTheme title={`Article | ${slug}`}>
       <GridConfig>
         <MobileMenuTrigger />
-        <MegaMenu />
+        <HeaderMegaMenu />
         <Surface>{articlePage}</Surface>
         <Footer />
       </GridConfig>

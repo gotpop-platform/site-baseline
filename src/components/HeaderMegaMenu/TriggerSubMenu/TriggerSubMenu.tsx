@@ -1,8 +1,8 @@
-import Fragment from "@components/Fragment"
-import jsxFactory from "@utils/jsxFactory"
+import { Fragment } from "@components/Fragment"
+import { jsxFactory } from "utils"
 import { useCSS } from "@hooks/useCSS"
 
-const TriggerSubMenu = ({
+export const TriggerSubMenu = ({
   position,
   textButton,
   href,
@@ -39,5 +39,3 @@ const TriggerSubMenu = ({
     </Fragment>
   )
 }
-
-export default TriggerSubMenu

@@ -1,24 +1,24 @@
-import { ArticleItems } from "@components/ArticleItem"
-import Footer from "@components/Footer"
-import GridConfig from "@components/GridConfig"
-import MegaMenu from "@components/HeaderMegaMenu"
-import { HeroItem } from "@components/HeroItem"
-import MobileMenuTrigger from "@components/MobileMenuTrigger"
-import { Surface } from "@components/Surface"
-import AppTheme from "@layouts/app"
-import jsxFactory from "@utils/jsxFactory"
+import {
+  ArticleItems,
+  Footer,
+  GridConfig,
+  HeaderMegaMenu,
+  HeroItem,
+  MobileMenuTrigger,
+  Surface,
+} from "components"
 
-type PageProps = {
-  slug: string
-}
+import { AppTheme } from "@layouts/app"
+import type { PageProps } from "../types/pageProps"
+import { jsxFactory } from "utils"
 
 const pageIndex = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => (
-  <AppTheme title={`GotPop | Home`} >
+  <AppTheme title={`GotPop | Home`}>
     <GridConfig>
       <MobileMenuTrigger />
-      <MegaMenu />
+      <HeaderMegaMenu />
       <HeroItem />
       <Surface>
         <ArticleItems />

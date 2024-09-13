@@ -1,1 +1,1 @@
-export { default } from "./LogoMegaMenu"
+export * from "./LogoMegaMenu"

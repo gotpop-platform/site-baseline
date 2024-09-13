@@ -1,8 +1,8 @@
 declare global {
-    namespace JSX {
-        interface Element { }
-        interface IntrinsicElements {
-            [elemName: string]: any
-        }
+  namespace JSX {
+    interface Element {}
+    interface IntrinsicElements {
+      [elemName: string]: any
     }
+  }
 }

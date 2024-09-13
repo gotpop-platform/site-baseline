@@ -1,17 +1,20 @@
-import AppTheme from "@layouts/app"
-import Footer from "@components/Footer"
-import GridConfig from "@components/GridConfig"
-import MegaMenu from "@components/HeaderMegaMenu"
-import MobileMenuTrigger from "@components/MobileMenuTrigger"
-import { Surface } from "@components/Surface"
-import jsxFactory from "@utils/jsxFactory"
+import {
+  Footer,
+  GridConfig,
+  HeaderMegaMenu,
+  MobileMenuTrigger,
+  Surface,
+} from "components"
+
+import { AppTheme } from "@layouts/app"
+import { jsxFactory } from "utils"
 
 const NotFoundPage = async () => {
   return (
     <AppTheme title="Page Not Found">
       <GridConfig>
         <MobileMenuTrigger />
-        <MegaMenu />
+        <HeaderMegaMenu />
         <Surface>
           <section class="not-found">
             <h1>404 - Page Not Found</h1>

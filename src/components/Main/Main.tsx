@@ -1,4 +1,4 @@
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 
 interface MainProps {
   children?: any

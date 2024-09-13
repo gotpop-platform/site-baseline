@@ -1,8 +1,8 @@
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
 
-function MobileMenuTrigger() {
+export function MobileMenuTrigger() {
   const { css } = useCSS({ meta: import.meta })
 
   return (
@@ -16,5 +16,3 @@ function MobileMenuTrigger() {
     </div>
   )
 }
-
-export default MobileMenuTrigger

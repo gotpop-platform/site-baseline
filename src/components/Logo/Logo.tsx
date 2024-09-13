@@ -1,4 +1,4 @@
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 import { useCSS } from "src/hooks/useCSS"
 
 export const useName = import.meta.file
@@ -6,7 +6,7 @@ export const useName = import.meta.file
   .shift()
   ?.toLowerCase()
 
-const Logo = () => {
+export const Logo = () => {
   const { css } = useCSS({ meta: import.meta })
 
   return (
@@ -35,5 +35,3 @@ const Logo = () => {
     </a>
   )
 }
-
-export default Logo

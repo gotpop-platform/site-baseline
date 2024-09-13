@@ -1,5 +1,5 @@
-import TriggerSubMenu from "../TriggerSubMenu"
-import jsxFactory from "@utils/jsxFactory"
+import { TriggerSubMenu } from "../TriggerSubMenu"
+import { jsxFactory } from "utils"
 import { useCSS } from "@hooks/useCSS"
 
 export const MenuItem = ({

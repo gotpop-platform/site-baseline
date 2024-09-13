@@ -28,13 +28,16 @@
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
+      "components": ["src/components"],
       "@data/*": ["src/data/*"],
       "@hooks/*": ["src/hooks/*"],
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
       "@types/*": ["src/types/*"],
-      "@utils/*": ["src/utils/*"]
-    }
+      "@utils/*": ["src/utils/*"],
+      "utils": ["src/utils"]
+    },
+    "typeRoots": ["./node_modules/@types", "./src/types"]
   }
 }

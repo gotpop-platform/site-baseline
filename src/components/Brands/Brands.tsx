@@ -1,6 +1,6 @@
-import jsxFactory from "@utils/jsxFactory";
-import { useCSS } from "src/hooks/useCSS";
-import { brandsData, type Brand } from "./Brands.data";
+import { useCSS } from "src/hooks/useCSS"
+import { jsxFactory } from "utils"
+import { brandsData, type Brand } from "./Brands.data"
 
 type BrandsProps = { title?: string; text?: string }
 
@@ -22,7 +22,7 @@ const BrandItem = ({ classData, icon, tooltip }: Brand) => {
   )
 }
 
-const Brands = ({ title, text }: BrandsProps) => {
+export const Brands = ({ title, text }: BrandsProps) => {
   const { css, useName } = useCSS({ meta: import.meta })
 
   const icons = brandsData.map((brand) => (
@@ -41,5 +41,3 @@ const Brands = ({ title, text }: BrandsProps) => {
     </aside>
   )
 }
-
-export default Brands

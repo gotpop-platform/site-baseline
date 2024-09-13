@@ -1,6 +1,6 @@
-import Brands from "@components/Brands";
-import jsxFactory from "@utils/jsxFactory";
-import { useCSS } from "src/hooks/useCSS";
+import { Brands } from "@components/Brands"
+import { jsxFactory } from "utils"
+import { useCSS } from "src/hooks/useCSS"
 
 type HeroProps = { title: string; text: string }
 

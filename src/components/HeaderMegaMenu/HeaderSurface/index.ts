@@ -1,1 +1,1 @@
-export { default } from "./HeaderSurface"
+export * from "./HeaderSurface"

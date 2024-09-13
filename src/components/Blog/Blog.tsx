@@ -1,4 +1,3 @@
-import { introParagraph, introTitle } from "./Blog.data"
 import {
   Banner,
   Intro,
@@ -7,8 +6,9 @@ import {
   OurStory2,
   Vision,
 } from "./Blog.text"
+import { introParagraph, introTitle } from "./Blog.data"
 
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 import { useCSS } from "src/hooks/useCSS"
 
 type BlogProps = { title?: string; children?: string }

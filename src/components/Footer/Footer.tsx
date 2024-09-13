@@ -1,6 +1,5 @@
-import BaseLinePopOver from "@components/BaseLinePopOver"
-import Nav from "@components/Nav"
-import jsxFactory from "@utils/jsxFactory"
+import { BaseLinePopOver } from "components"
+import { jsxFactory } from "utils"
 import { useCSS } from "src/hooks/useCSS"
 
 export const makePath = (subdomain: null | string) => {
@@ -11,14 +10,14 @@ export const makePath = (subdomain: null | string) => {
   return `${PROTOCOL}://${subdomainStr}${DOMAIN}${portStr}/`
 }
 
-function Footer() {
+export function Footer() {
   const { css, useName } = useCSS({ meta: import.meta })
 
   return (
     <footer class={useName}>
       <style>{css}</style>
       <div class="inner">
-        <h3>Home</h3>
+        {/* <h3>Home</h3>
         <nav class="subdomains">
           <a href={makePath("")}>Home</a>
         </nav>
@@ -28,7 +27,7 @@ function Footer() {
           <a href={makePath("demo")}>Demo</a>
           <a href={makePath("singleton")}>Singleton</a>
         </nav>
-        <h3>Pop</h3>
+        <h3>Pop</h3> */}
         <nav class="subdomains">
           <button
             class="menu-link"
@@ -42,5 +41,3 @@ function Footer() {
     </footer>
   )
 }
-
-export default Footer

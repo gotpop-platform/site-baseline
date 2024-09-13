@@ -1,1 +1,1 @@
-export { default } from "./GridMenu"
+export * from "./GridMenu"

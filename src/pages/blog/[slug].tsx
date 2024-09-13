@@ -1,36 +1,45 @@
-import AppTheme from "@layouts/app"
-import Footer from "@components/Footer"
-import GridConfig from "@components/GridConfig"
-import MegaMenu from "@components/HeaderMegaMenu"
-import MobileMenuTrigger from "@components/MobileMenuTrigger"
-import { Surface } from "@components/Surface"
-import { join } from "path"
-import jsxFactory from "@utils/jsxFactory"
-import { parseMarkdownFile } from "@utils/markdown"
+import {
+  Footer,
+  GridConfig,
+  HeaderMegaMenu,
+  MobileMenuTrigger,
+  Surface,
+} from "components"
+import {
+  formattedDate,
+  jsxFactory,
+  parseMarkdownFile,
+} from "utils"
 
-type PageProps = {
-  slug: string
-}
+import { AppTheme } from "@layouts/app"
+import type { PageProps } from "../../types/pageProps"
 
 const pageBlog = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const filePath = join("src/content/blog", `${slug}.md`)
-
-  const { metadata, content: htmlContent } =
-    parseMarkdownFile(filePath)
+  const {
+    metadata: { date, title, author },
+    content: htmlContent,
+  } = parseMarkdownFile("blog", slug)
 
   return (
-    <AppTheme title={`Gallery | ${slug}`}>
+    <AppTheme title={`Baseline | ${title}`}>
       <GridConfig>
         <MobileMenuTrigger />
-        <MegaMenu />
+        <HeaderMegaMenu />
         <Surface>
           <section class="blog">
-            <h1>{metadata.title}</h1>
-            <p>
-              By {metadata.author} on {metadata.date}
-            </p>
+            <h1>{title}</h1>
+            <aside>
+              <small>
+                <span>By</span>
+                <address>{author}</address>
+                <span>on</span>
+              </small>
+              <time dateTime={date}>
+                {formattedDate(date)}
+              </time>
+            </aside>
             {htmlContent}
           </section>
         </Surface>

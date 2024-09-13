@@ -1,4 +1,4 @@
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 import { useCSS } from "src/hooks/useCSS"
 
 type PopOverImageProps = {
@@ -8,7 +8,7 @@ type PopOverImageProps = {
   height?: number
 }
 
-const PopOverImage = async ({
+export const PopOverImage = async ({
   title,
   text,
   width = 500,
@@ -38,4 +38,4 @@ const PopOverImage = async ({
   )
 }
 
-export default PopOverImage
+PopOverImage

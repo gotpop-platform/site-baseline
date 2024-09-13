@@ -1,4 +1,4 @@
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 import { mkId } from "@utils/mkId"
 import { useCSS } from "src/hooks/useCSS"
 

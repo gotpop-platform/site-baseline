@@ -1,4 +1,4 @@
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "@hooks/useCSS"
 
@@ -7,7 +7,7 @@ type SubmenuItem = {
   link: string
 }
 
-const SubMenuContent = ({
+export const SubMenuContent = ({
   submenuItems,
   position,
   textButton,
@@ -35,5 +35,3 @@ const SubMenuContent = ({
     </div>
   )
 }
-
-export default SubMenuContent

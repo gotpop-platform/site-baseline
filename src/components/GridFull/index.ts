@@ -1,1 +1,1 @@
-export { default } from "./GridFull"
+export * from "./GridFull"

@@ -1,4 +1,4 @@
-function jsxFactory(
+export function jsxFactory(
   type: string | Function,
   props = {},
   ...children: any
@@ -29,7 +29,14 @@ function jsxFactory(
     })
   } else {
     const mapProps = Object.entries(props || {})
-      .map(([key, value]) => `${key}="${value}"`)
+      .map(([key, value]) => {
+        // Handle prop punning
+        if (typeof value === "boolean") {
+          return value ? key : ""
+        }
+        return `${key}="${value}"`
+      })
+      .filter(Boolean)
       .join(" ")
 
     const childArr = children.flat(Infinity).join("")
@@ -47,5 +54,3 @@ function jsxFactory(
     return element
   }
 }
-
-export default jsxFactory

@@ -1,8 +1,8 @@
-import jsxFactory from "@utils/jsxFactory"
+import type { IconName } from "./Icon.types"
+import { jsxFactory } from "utils"
 import { mkClass } from "@utils/mkClass"
 import { readFileSync } from "fs"
 import { useCSS } from "src/hooks/useCSS"
-import type { IconName } from "./Icon.types"
 
 type IconProps = {
   iconName?: IconName
@@ -17,7 +17,7 @@ export enum IconTypes {
   twoTone = "two-tone",
 }
 
-const Icon = ({
+export const Icon = ({
   iconName = "home",
   type = IconTypes.filled,
 }: IconProps) => {
@@ -42,5 +42,3 @@ const Icon = ({
     </span>
   )
 }
-
-export default Icon

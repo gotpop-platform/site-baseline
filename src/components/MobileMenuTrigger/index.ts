@@ -1,1 +1,1 @@
-export { default } from "./MobileMenuTrigger"
+export * from "./MobileMenuTrigger"

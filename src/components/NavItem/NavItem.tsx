@@ -1,5 +1,5 @@
-import jsxFactory from "@utils/jsxFactory";
-import { useCSS } from "src/hooks/useCSS";
+import { jsxFactory } from "utils"
+import { useCSS } from "src/hooks/useCSS"
 
 type NavItemProps = { href: string; text: string }
 
@@ -8,7 +8,7 @@ export const useName = import.meta.file
   .shift()
   ?.toLowerCase()
 
-const NavItem = ({ href, text }: NavItemProps) => {
+export const NavItem = ({ href, text }: NavItemProps) => {
   const { css } = useCSS({ meta: import.meta })
 
   return (
@@ -18,5 +18,3 @@ const NavItem = ({ href, text }: NavItemProps) => {
     </a>
   )
 }
-
-export default NavItem

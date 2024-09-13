@@ -1,1 +1,1 @@
-export { default } from "./GridConfig"
+export * from "./GridConfig"

@@ -1,6 +1,6 @@
-import Anchor from "@components/Anchor"
+import { Anchor } from "@components/Anchor"
 import { Surface } from "../Surface"
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 import { useCSS } from "src/hooks/useCSS"
 
 export function HeroItem(): JSX.Element {
