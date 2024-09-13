@@ -12,7 +12,7 @@ import {
 } from "utils"
 
 import { AppTheme } from "@layouts/app"
-import type { PageProps } from "../../types/pageProps"
+import type { PageProps } from "types"
 
 const BlogArticle = ({
   title,

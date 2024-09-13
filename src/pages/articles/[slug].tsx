@@ -8,7 +8,7 @@ import {
 } from "components"
 
 import { AppTheme } from "@layouts/app"
-import type { PageProps } from "../../types/pageProps"
+import type { PageProps } from "types"
 import { articlesData } from "@data/articlesData"
 import { jsxFactory } from "utils"
 

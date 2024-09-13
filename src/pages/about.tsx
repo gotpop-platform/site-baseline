@@ -7,7 +7,7 @@ import {
 } from "components"
 
 import { AppTheme } from "@layouts/app"
-import type { PageProps } from "../types/pageProps"
+import type { PageProps } from "types"
 import { jsxFactory } from "utils"
 
 const aboutPage = async ({
