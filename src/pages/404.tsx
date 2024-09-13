@@ -6,7 +6,7 @@ import {
   Surface,
 } from "components"
 
-import { AppTheme } from "@layouts/app"
+import { AppTheme } from "layouts"
 import { jsxFactory } from "utils"
 
 const NotFoundPage = async () => {

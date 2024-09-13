@@ -7,7 +7,7 @@ import {
   Surface,
 } from "components"
 
-import { AppTheme } from "@layouts/app"
+import { AppTheme } from "layouts"
 import type { PageProps } from "types"
 import { jsxFactory } from "utils"
 
