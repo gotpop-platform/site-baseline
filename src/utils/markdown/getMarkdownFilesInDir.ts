@@ -1,18 +1,11 @@
+import type {
+  MarkdownFile,
+  MetaData,
+} from "./markdown.types"
+
 import { Glob } from "bun"
 import { join } from "path"
 import { parseMarkdownFile } from "./markdown"
-
-interface MetaData {
-  title: string
-  slug: string
-  author: string
-  date: string
-}
-
-interface ParsedFile {
-  metadata: MetaData
-  content: string
-}
 
 export const findMarkdownFiles = async (
   file: string
@@ -35,11 +28,11 @@ export const findMarkdownFiles = async (
 
 export const markdownFilesInDir = async (
   dir: string
-): Promise<ParsedFile[]> => {
+): Promise<MarkdownFile[]> => {
   const foundFiles: string[] = await findMarkdownFiles(dir)
 
   const mapFiles = foundFiles.map(
-    async (filePath): Promise<ParsedFile> => {
+    async (filePath): Promise<MarkdownFile> => {
       const path = filePath.replace(/\.md$/, "")
       const { metadata, content } = parseMarkdownFile(
         dir,
@@ -57,7 +50,7 @@ export const markdownFilesInDir = async (
     }
   )
 
-  const parsedFiles: ParsedFile[] = await Promise.all(
+  const parsedFiles: MarkdownFile[] = await Promise.all(
     mapFiles
   )
 

@@ -5,18 +5,14 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
+import {
+  jsxFactory,
+  markdownFilesInDir,
+  type MetaData,
+} from "utils"
 
 import { AppTheme } from "@layouts/app"
 import type { PageProps } from "../../types/pageProps"
-import { jsxFactory } from "utils"
-import { markdownFilesInDir } from "@utils/markdown/getMarkdownFilesInDir"
-
-type MetaData = {
-  slug: string
-  title: string
-  author: string
-  date: string
-}
 
 const BlogArticle = ({
   title,
