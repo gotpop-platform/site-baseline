@@ -1,6 +1,6 @@
 import type { Article } from "../Points.data"
 import { Icon } from "@components/Icon"
-import { jsxFactory } from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 import { useCSS } from "src/hooks/useCSS"
 
 export const Point = ({

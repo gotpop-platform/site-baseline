@@ -8,7 +8,7 @@ import {
 
 import { AppTheme } from "@layouts/app"
 import type { PageProps } from "../../types/pageProps"
-import { jsxFactory } from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 import { markdownFilesInDir } from "@utils/markdown/getMarkdownFilesInDir"
 
 type MetaData = {

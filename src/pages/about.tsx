@@ -8,7 +8,7 @@ import {
 
 import { AppTheme } from "@layouts/app"
 import type { PageProps } from "../types/pageProps"
-import { jsxFactory } from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 
 const aboutPage = async ({
   slug,

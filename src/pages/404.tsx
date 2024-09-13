@@ -7,7 +7,7 @@ import {
 } from "components"
 
 import { AppTheme } from "@layouts/app"
-import { jsxFactory } from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 
 const NotFoundPage = async () => {
   return (

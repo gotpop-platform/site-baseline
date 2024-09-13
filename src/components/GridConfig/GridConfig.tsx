@@ -1,5 +1,5 @@
 import { classNames as cn } from "@utils/classnames"
-import { jsxFactory } from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
 

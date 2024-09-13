@@ -1,5 +1,5 @@
-import { jsxFactory } from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
+import { jsxFactory } from "utils"
 import { brandsData, type Brand } from "./Brands.data"
 
 type BrandsProps = { title?: string; text?: string }

@@ -1,5 +1,5 @@
 import type { IconName } from "./Icon.types"
-import { jsxFactory } from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 import { mkClass } from "@utils/mkClass"
 import { readFileSync } from "fs"
 import { useCSS } from "src/hooks/useCSS"

@@ -1,4 +1,4 @@
-import { jsxFactory } from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 
 const Head = ({ title }: { title: string }) => {
   const baseStylePath = "/assets/styles/index.css"

@@ -1,7 +1,7 @@
 import type { ArticleItem } from "../../data/articlesData"
 import { ContentNav } from "../ContentNav"
 import { Fragment } from "@components/Fragment"
-import { jsxFactory } from "@utils/jsxFactory"
+import { jsxFactory } from "utils"
 import { mkClass } from "@utils/mkClass"
 import { pageContent } from "./ArticlePageContent"
 import { useCSS } from "src/hooks/useCSS"

@@ -1,5 +1,5 @@
 // import Header from "@components/Header"
-// import { jsxFactory } from "@utils/jsxFactory"
+// import { jsxFactory } from "utils"
 // import { useCSS } from "src/hooks/useCSS"
 
 // type CircleProps = { title: string; text: string }
