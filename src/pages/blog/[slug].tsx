@@ -5,20 +5,11 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
+import { formattedDate, parseMarkdownFile } from "utils"
 
 import { AppTheme } from "@layouts/app"
 import type { PageProps } from "../../types/pageProps"
 import jsxFactory from "@utils/jsxFactory"
-import { parseMarkdownFile } from "@utils/markdown"
-
-export const formattedDate = (
-  date: string | number | Date
-) =>
-  new Date(date).toLocaleDateString("en-GB", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  })
 
 const pageBlog = async ({
   slug,
@@ -37,10 +28,14 @@ const pageBlog = async ({
           <section class="blog">
             <h1>{title}</h1>
             <aside>
-              <span>By</span>
-              <address>{author}</address>
-              <span>on</span>
-              <time dateTime={date}>{formattedDate}</time>
+              <small>
+                <span>By</span>
+                <address>{author}</address>
+                <span>on</span>
+              </small>
+              <time dateTime={date}>
+                {formattedDate(date)}
+              </time>
             </aside>
             {htmlContent}
           </section>

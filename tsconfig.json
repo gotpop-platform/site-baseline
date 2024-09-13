@@ -35,7 +35,8 @@
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
       "@types/*": ["src/types/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "utils": ["src/utils"]
     },
     "typeRoots": ["./node_modules/@types", "./src/types"]
   }
