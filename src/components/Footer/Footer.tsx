@@ -1,5 +1,5 @@
 import { BaseLinePopOver } from "components"
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
 export const makePath = (subdomain: null | string) => {

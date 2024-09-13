@@ -1,4 +1,4 @@
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "@utils/jsxFactory"
 import { mkId } from "@utils/mkId"
 
 export const Heading = ({

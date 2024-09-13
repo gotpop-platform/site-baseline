@@ -1,4 +1,4 @@
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 import { brandsData, type Brand } from "./Brands.data"
 

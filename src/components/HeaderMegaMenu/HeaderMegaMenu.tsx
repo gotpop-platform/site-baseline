@@ -1,7 +1,7 @@
 import { HeaderSurface } from "./HeaderSurface"
 import { LogoMegaMenu } from "./LogoMegaMenu"
 import { MegaNav } from "./MegaNav"
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { useCSS } from "src/hooks/useCSS"
 

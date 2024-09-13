@@ -1,4 +1,4 @@
-function jsxFactory(
+export function jsxFactory(
   type: string | Function,
   props = {},
   ...children: any
@@ -54,5 +54,3 @@ function jsxFactory(
     return element
   }
 }
-
-export default jsxFactory

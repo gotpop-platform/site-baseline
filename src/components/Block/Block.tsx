@@ -1,5 +1,5 @@
 import { Grid } from "@components/Grid"
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "@utils/jsxFactory"
 import { useCSS } from "src/hooks/useCSS"
 
 type BlockProps = {

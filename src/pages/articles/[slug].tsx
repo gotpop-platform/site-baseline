@@ -10,7 +10,7 @@ import {
 import { AppTheme } from "@layouts/app"
 import type { PageProps } from "../../types/pageProps"
 import { articlesData } from "@data/articlesData"
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "@utils/jsxFactory"
 
 const pageArticlePage = async ({
   slug,
@@ -21,7 +21,7 @@ const pageArticlePage = async ({
 
   const articlePage = articlesArr.map(
     ([key, { href, section, title, blurb }], index) =>
-      href === slugPage && (
+      href === slugPage ? (
         <ArticlePage
           section={section}
           blurb={blurb}
@@ -30,7 +30,7 @@ const pageArticlePage = async ({
           style={varStr + (index + 1)}
           href={href}
         />
-      )
+      ) : null
   )
 
   return (

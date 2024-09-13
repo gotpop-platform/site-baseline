@@ -5,11 +5,14 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
-import { formattedDate, parseMarkdownFile } from "utils"
+import {
+  formattedDate,
+  jsxFactory,
+  parseMarkdownFile,
+} from "utils"
 
 import { AppTheme } from "@layouts/app"
 import type { PageProps } from "../../types/pageProps"
-import jsxFactory from "@utils/jsxFactory"
 
 const pageBlog = async ({
   slug,

@@ -1,6 +1,6 @@
 import { MenuItem } from "../MenuItem"
 import { SubMenuContent } from "../SubMenuContent"
-import jsxFactory from "@utils/jsxFactory"
+import { jsxFactory } from "@utils/jsxFactory"
 import { mkClass } from "@utils/mkClass"
 import { navData } from "./MegaNav.data"
 import { useCSS } from "@hooks/useCSS"
