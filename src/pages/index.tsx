@@ -9,12 +9,9 @@ import {
 } from "components"
 
 import { AppTheme } from "layouts"
-import type { PageProps } from "types"
 import { jsxFactory } from "utils"
 
-const pageIndex = async ({
-  slug,
-}: PageProps): Promise<JSX.Element> => (
+const pageIndex = async (): Promise<JSX.Element> => (
   <AppTheme title={`GotPop | Home`}>
     <GridConfig>
       <MobileMenuTrigger />
