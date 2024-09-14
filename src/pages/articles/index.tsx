@@ -1,5 +1,4 @@
 import {
-  ArticleItems,
   Footer,
   GridConfig,
   HeaderMegaMenu,
@@ -22,7 +21,7 @@ const BlogArticle = ({
   date,
 }: MetaData) => (
   <article>
-    <a href={`blog/${slug}`}>
+    <a href={`articles/${slug}`}>
       <h1>{title}</h1>
       <p>
         by {author} on {date}
@@ -36,18 +35,24 @@ const pageArticles = async ({
 }: PageProps): Promise<JSX.Element> => {
   const parsedFiles = await markdownFilesInDir("articles")
 
-  const articles = parsedFiles.map(
+  const listArticles = parsedFiles.map(
     ({ metadata: { title, slug, author, date } }) => (
-      <ArticleItem title={title} slug={slug} date={date} />
+      <BlogArticle
+        title={title}
+        slug={slug}
+        author={author}
+        date={date}
+      />
     )
   )
+
   return (
-    <AppTheme title={`Articles | ${slug}`}>
+    <AppTheme title="Baseline | Articles">
       <GridConfig>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface>
-          <ArticleItems />
+          <section>{listArticles}</section>
         </Surface>
         <Footer />
       </GridConfig>

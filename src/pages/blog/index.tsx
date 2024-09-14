@@ -35,7 +35,7 @@ const pageBlog = async ({
 }: PageProps): Promise<JSX.Element> => {
   const parsedFiles = await markdownFilesInDir("blog")
 
-  const articles = parsedFiles.map(
+  const listBlog = parsedFiles.map(
     ({ metadata: { title, slug, author, date } }) => (
       <BlogArticle
         title={title}
@@ -52,7 +52,7 @@ const pageBlog = async ({
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface>
-          <section class="blog">{articles}</section>
+          <section class="blog">{listBlog}</section>
         </Surface>
         <Footer />
       </GridConfig>

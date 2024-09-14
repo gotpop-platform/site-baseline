@@ -12,7 +12,7 @@ import { jsxFactory } from "utils"
 const NotFoundPage = async () => {
   return (
     <AppTheme title="Page Not Found">
-      <GridConfig>
+      <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface>
