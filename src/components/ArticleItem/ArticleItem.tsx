@@ -10,7 +10,7 @@ interface ArticleItemProps {
   style?: string
 }
 
-function ArticleItem({
+export function ArticleItem({
   title,
   blurb,
   href,
