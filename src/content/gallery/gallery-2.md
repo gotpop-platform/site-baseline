@@ -1,8 +1,9 @@
 ---
-title: "Animations"
-author: "John Doe"
-date: "2023-10-01"
-slug: "animations"
+id: 2
+slug: "item-2"
+name: "Item 2"
+prev: "item-1"
+next: "item-3"
 ---
 
 # Header 1
