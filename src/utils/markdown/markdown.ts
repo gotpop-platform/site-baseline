@@ -15,7 +15,6 @@ const parseMarkdownFile = (
   content: string
   toc: Toc[]
 } => {
-  console.log("directoryPath :", directoryPath)
   const filePath = constructFilePath(
     directoryPath,
     fileName
