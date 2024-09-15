@@ -1,5 +1,5 @@
-import { handleGetAssets } from "./handleAssets"
-import { handleGetPages } from "./router"
+import { handleGetAssets } from "./router/handleAssets"
+import { handleGetPages } from "./router/router"
 import { log } from "./logging"
 
 const PORT = 2000

@@ -1,5 +1,4 @@
-import { jsxFactory } from "utils"
-import { useCSS } from "src/hooks/useCSS"
+import { jsxFactory, useCSS } from "utils"
 
 export function Surface({
   children,

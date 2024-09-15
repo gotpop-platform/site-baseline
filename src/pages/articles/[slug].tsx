@@ -1,44 +1,68 @@
 import {
-  ArticlePage,
   Footer,
   GridConfig,
   HeaderMegaMenu,
   MobileMenuTrigger,
   Surface,
 } from "components"
+import {
+  jsxFactory,
+  parseMarkdownFile,
+  styleNames as style,
+} from "utils"
 
-import { AppTheme } from "@layouts/app"
-import type { PageProps } from "../../types/pageProps"
-import { articlesData } from "@data/articlesData"
-import { jsxFactory } from "utils"
+import { AppTheme } from "@components/layouts"
+import type { PageProps } from "types"
 
 const pageArticlePage = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const slugPage = "/articles/" + slug
-  const varStr = "--transition-article: article-"
-  const articlesArr = Array.from(articlesData.entries())
+  const {
+    metadata: { date, title, author },
+    content: htmlContent,
+    toc,
+  } = parseMarkdownFile("articles", slug)
 
-  const articlePage = articlesArr.map(
-    ([key, { href, section, title, blurb }], index) =>
-      href === slugPage ? (
-        <ArticlePage
-          section={section}
-          blurb={blurb}
-          title={title}
-          slug={slug}
-          style={varStr + (index + 1)}
-          href={href}
-        />
-      ) : null
+  // console.log("toc :", toc)
+
+  const toccy = (
+    <nav>
+      <ul>
+        {toc.map(({ id, text }) => (
+          <li>
+            <a href={"#" + id}>{text}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   )
 
+  const styles = {
+    "--liam": "10px",
+    gridColumn: "1 / span 2",
+    backgroundColor: "white",
+    padding: "20px",
+    fontSize: "16px",
+  }
+
+  const stylesContent = {
+    "--transition-article": slug,
+    "view-transition-name": slug,
+    gridColumn: "3 / span 10",
+    backgroundColor: "yellow",
+  }
+
   return (
-    <AppTheme title={`Article | ${slug}`}>
-      <GridConfig>
+    <AppTheme title={`Baseline | ${slug}`}>
+      <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>{articlePage}</Surface>
+        <Surface>
+          <aside style={style(styles)}>{toccy}</aside>
+          <div style={style(stylesContent)}>
+            {htmlContent}
+          </div>
+        </Surface>
         <Footer />
       </GridConfig>
     </AppTheme>

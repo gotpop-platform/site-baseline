@@ -11,8 +11,8 @@ import {
   parseMarkdownFile,
 } from "utils"
 
-import { AppTheme } from "@layouts/app"
-import type { PageProps } from "../../types/pageProps"
+import { AppTheme } from "@components/layouts"
+import type { PageProps } from "types"
 
 const pageBlog = async ({
   slug,

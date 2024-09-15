@@ -31,10 +31,12 @@
       "components": ["src/components"],
       "@data/*": ["src/data/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@layouts/*": ["src/layouts/*"],
+      "@layouts/*": ["src/components/layouts/*"],
+      "layouts": ["src/components/layouts"],
       "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
       "@types/*": ["src/types/*"],
+      "types": ["src/types"],
       "@utils/*": ["src/utils/*"],
       "utils": ["src/utils"]
     },

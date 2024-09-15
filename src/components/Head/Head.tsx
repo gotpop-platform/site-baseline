@@ -18,8 +18,9 @@ const Head = ({ title }: { title: string }) => {
       <title>{title}</title>
       <link rel="icon" href="/assets/img/favicon.png" />
       <link rel="stylesheet" href={baseStylePath} />
-      <script type="speculationrules">
-        {`{
+      {process.env.NODE_ENV === "production" ? (
+        <script type="speculationrules">
+          {`{
             "prerender": [
               {
                 "urls": [
@@ -34,7 +35,8 @@ const Head = ({ title }: { title: string }) => {
               }
             ]
         }`}
-      </script>
+        </script>
+      ) : null}
     </head>
   )
 }

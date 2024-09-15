@@ -1,7 +1,12 @@
-import { articlesData } from "@data/articlesData"
-import { jsxFactory } from "utils"
-import { mkClass } from "@utils/mkClass"
-import { useCSS } from "src/hooks/useCSS"
+import {
+  jsxFactory,
+  mkClass,
+  mkUrl,
+  styleNames as style,
+  type MarkdownFile,
+} from "utils"
+
+import { useCSS } from "utils"
 
 interface ArticleItemProps {
   title: string
@@ -10,7 +15,7 @@ interface ArticleItemProps {
   style?: string
 }
 
-function ArticleItem({
+export function ArticleItem({
   title,
   blurb,
   href,
@@ -34,12 +39,31 @@ function ArticleItem({
   )
 }
 
-export const ArticleItems = () =>
-  Array.from(articlesData.entries()).map(
-    ([key, article], i) => (
-      <ArticleItem
-        {...article}
-        style={"--transition-article: article-" + (i + 1)}
-      />
-    )
+export const ListArticles = ({
+  parsedFiles,
+}: {
+  parsedFiles: MarkdownFile[]
+}): JSX.Element => {
+  const listArticles = parsedFiles.map(
+    (
+      { metadata: { title, slug, description } },
+      i
+    ): JSX.IntrinsicElements["article"] => {
+      const relative = `articles/${slug}`
+
+      const stylesContent = {
+        "--transition-article": slug,
+      }
+
+      return (
+        <ArticleItem
+          title={title}
+          blurb={description}
+          href={mkUrl(relative)}
+          style={style(stylesContent)}
+        />
+      )
+    }
   )
+  return listArticles
+}

@@ -6,8 +6,8 @@ import {
   Surface,
 } from "components"
 
-import { AppTheme } from "@layouts/app"
-import type { PageProps } from "../types/pageProps"
+import { AppTheme } from "@components/layouts"
+import type { PageProps } from "types"
 import { jsxFactory } from "utils"
 
 const aboutPage = async ({

@@ -1,11 +1,8 @@
-type Metadata = {
-  metadata: Record<string, string>
-  content: string
-}
+import type { MarkdownFile } from "./markdown.types"
 
 export const extractMetadata = (
   markdownContent: string
-): Metadata => {
+): MarkdownFile => {
   const metadataMatch = markdownContent.match(
     /^---\n([\s\S]*?)\n---/
   )

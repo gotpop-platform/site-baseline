@@ -5,25 +5,21 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
+import {
+  jsxFactory,
+  markdownFilesInDir,
+  type MetaData,
+} from "utils"
 
-import { AppTheme } from "@layouts/app"
-import type { PageProps } from "../../types/pageProps"
-import { jsxFactory } from "utils"
-import { markdownFilesInDir } from "@utils/markdown/getMarkdownFilesInDir"
-
-type MetaData = {
-  slug: string
-  title: string
-  author: string
-  date: string
-}
+import { AppTheme } from "@components/layouts"
+import type { PageProps } from "types"
 
 const BlogArticle = ({
   title,
   slug,
   author,
   date,
-}: MetaData) => (
+}: Omit<MetaData, "description">) => (
   <article>
     <a href={`blog/${slug}`}>
       <h1>{title}</h1>
@@ -39,7 +35,7 @@ const pageBlog = async ({
 }: PageProps): Promise<JSX.Element> => {
   const parsedFiles = await markdownFilesInDir("blog")
 
-  const articles = parsedFiles.map(
+  const listBlog = parsedFiles.map(
     ({ metadata: { title, slug, author, date } }) => (
       <BlogArticle
         title={title}
@@ -56,7 +52,7 @@ const pageBlog = async ({
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface>
-          <section class="blog">{articles}</section>
+          <section class="blog">{listBlog}</section>
         </Surface>
         <Footer />
       </GridConfig>

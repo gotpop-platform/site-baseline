@@ -1,6 +1,6 @@
+import { jsxFactory, useCSS } from "utils"
+
 import { Fragment } from "@components/Fragment"
-import { jsxFactory } from "utils"
-import { useCSS } from "@hooks/useCSS"
 
 export const TriggerSubMenu = ({
   position,

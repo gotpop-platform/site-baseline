@@ -1,31 +1,34 @@
 import {
-  ArticleItems,
   Footer,
   GridConfig,
   HeaderMegaMenu,
   HeroItem,
+  ListArticles,
   MobileMenuTrigger,
   Surface,
 } from "components"
+import { jsxFactory, markdownFilesInDir } from "utils"
 
-import { AppTheme } from "@layouts/app"
-import type { PageProps } from "../types/pageProps"
-import { jsxFactory } from "utils"
+import { AppTheme } from "@components/layouts"
 
-const pageIndex = async ({
-  slug,
-}: PageProps): Promise<JSX.Element> => (
-  <AppTheme title={`GotPop | Home`}>
-    <GridConfig>
-      <MobileMenuTrigger />
-      <HeaderMegaMenu />
-      <HeroItem />
-      <Surface>
-        <ArticleItems />
-      </Surface>
-      <Footer />
-    </GridConfig>
-  </AppTheme>
-)
+const pageIndex = async (): Promise<JSX.Element> => {
+  const parsedFiles = await markdownFilesInDir("articles")
+
+  return (
+    <AppTheme title="Baseline | Home">
+      <GridConfig>
+        <MobileMenuTrigger />
+        <HeaderMegaMenu />
+        <HeroItem />
+        <Surface>
+          <section class="inner">
+            <ListArticles parsedFiles={parsedFiles} />
+          </section>
+        </Surface>
+        <Footer />
+      </GridConfig>
+    </AppTheme>
+  )
+}
 
 export default pageIndex

@@ -1,6 +1,6 @@
-import { jsxFactory } from "utils"
+import { jsxFactory, useCSS } from "utils"
+
 import { mkClass } from "@utils/mkClass"
-import { useCSS } from "src/hooks/useCSS"
 
 export function MobileMenuTrigger() {
   const { css } = useCSS({ meta: import.meta })

@@ -3,6 +3,7 @@ import {
   readFileContent,
 } from "./handleFile"
 
+import type { Toc } from "./markdown.types"
 import { extractMetadata } from "./metaData"
 import { parseMarkdown } from "./parseMarkdown"
 
@@ -12,17 +13,19 @@ const parseMarkdownFile = (
 ): {
   metadata: Record<string, string>
   content: string
+  toc: Toc[]
 } => {
   const filePath = constructFilePath(
     directoryPath,
     fileName
   )
+  // console.log("filePath :", filePath)
   const markdownContent = readFileContent(filePath)
   const { metadata, content } =
     extractMetadata(markdownContent)
-  const htmlContent = parseMarkdown(content)
+  const { html, toc } = parseMarkdown(content)
 
-  return { metadata, content: htmlContent }
+  return { metadata, content: html, toc }
 }
 
 export { parseMarkdown, parseMarkdownFile }

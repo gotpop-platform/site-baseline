@@ -1,5 +1,4 @@
 export * from "./ArticleItem"
-export * from "./ArticlePage"
 export * from "./BaseLinePopOver"
 export * from "./Footer"
 export * from "./GalleryIntro"
@@ -8,7 +7,3 @@ export * from "./HeaderMegaMenu"
 export * from "./HeroItem"
 export * from "./MobileMenuTrigger"
 export * from "./Surface"
-
-// export * from "./GalleryItem"
-// export * from "./GalleryItemGrid"
-// export * from "./GalleryItemGridItem"

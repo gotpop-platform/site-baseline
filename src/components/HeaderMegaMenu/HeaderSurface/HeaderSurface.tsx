@@ -1,6 +1,6 @@
-import { jsxFactory } from "utils"
+import { jsxFactory, useCSS } from "utils"
+
 import { mkClass } from "@utils/mkClass"
-import { useCSS } from "@hooks/useCSS"
 
 export const HeaderSurface = ({
   children,

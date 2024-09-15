@@ -6,13 +6,13 @@ import {
   Surface,
 } from "components"
 
-import { AppTheme } from "@layouts/app"
+import { AppTheme } from "@components/layouts"
 import { jsxFactory } from "utils"
 
 const NotFoundPage = async () => {
   return (
     <AppTheme title="Page Not Found">
-      <GridConfig>
+      <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface>

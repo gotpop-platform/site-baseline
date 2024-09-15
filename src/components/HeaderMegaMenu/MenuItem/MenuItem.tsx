@@ -1,6 +1,6 @@
+import { jsxFactory, useCSS } from "utils"
+
 import { TriggerSubMenu } from "../TriggerSubMenu"
-import { jsxFactory } from "utils"
-import { useCSS } from "@hooks/useCSS"
 
 export const MenuItem = ({
   children,

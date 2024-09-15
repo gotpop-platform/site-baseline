@@ -1,9 +1,0 @@
-@scope {
-  .article-page {
-    background-color: var(--slate-200);
-    border-radius: 0.5rem;
-    grid-column: 4 / span 9;
-    padding: 2rem;
-    view-transition-name: var(--transition-article);
-  }
-}
