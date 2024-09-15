@@ -12,7 +12,7 @@ import {
   type MetaData,
 } from "utils"
 
-import { AppTheme } from "layouts"
+import { AppTheme } from "@components/layouts"
 import type { PageProps } from "types"
 
 const BlogArticle = ({

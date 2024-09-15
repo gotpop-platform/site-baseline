@@ -8,7 +8,7 @@ import {
 } from "components"
 import { jsxFactory, parseMarkdownFile } from "utils"
 
-import { AppTheme } from "layouts"
+import { AppTheme } from "@components/layouts"
 import type { PageProps } from "types"
 
 const pageGalleryItem = async ({

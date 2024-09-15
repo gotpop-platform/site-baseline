@@ -9,7 +9,7 @@ import {
 } from "components"
 import { jsxFactory, markdownFilesInDir } from "utils"
 
-import { AppTheme } from "layouts"
+import { AppTheme } from "@components/layouts"
 
 const pageIndex = async (): Promise<JSX.Element> => {
   const parsedFiles = await markdownFilesInDir("articles")
