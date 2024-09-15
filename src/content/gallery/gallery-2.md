@@ -1,9 +1,10 @@
 ---
 id: 2
-slug: "item-2"
-name: "Item 2"
-prev: "item-1"
-next: "item-3"
+title: "Gallery 2"
+slug: "gallery-2"
+name: "gallery 2"
+prev: "gallery-1"
+next: "gallery-3"
 ---
 
 # Header 1
