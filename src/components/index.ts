@@ -1,5 +1,5 @@
 export * from "./ArticleItem"
-export * from "./ArticlePage"
+// export * from "./ArticlePage"
 export * from "./BaseLinePopOver"
 export * from "./Footer"
 export * from "./GalleryIntro"

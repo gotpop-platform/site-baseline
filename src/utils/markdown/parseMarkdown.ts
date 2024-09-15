@@ -4,6 +4,7 @@ export const parseMarkdown = (
   markdown: string
 ): {
   html: string
+  toc: Toc[]
 } => {
   // Convert headers with unique IDs
   let h1Counter = 0

@@ -15,5 +15,5 @@ export type Toc = {
 export type MarkdownFile = {
   metadata: Record<string, string> | MetaData
   content: string
-  toc: Toc[]
+  toc?: Toc[]
 }
