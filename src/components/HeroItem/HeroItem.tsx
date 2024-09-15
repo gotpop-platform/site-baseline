@@ -1,7 +1,7 @@
+import { jsxFactory, useCSS } from "utils"
+
 import { Anchor } from "@components/Anchor"
 import { Surface } from "../Surface"
-import { jsxFactory } from "utils"
-import { useCSS } from "src/hooks/useCSS"
 
 export function HeroItem(): JSX.Element {
   const { css } = useCSS({ meta: import.meta })

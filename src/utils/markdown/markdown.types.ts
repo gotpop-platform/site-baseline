@@ -4,6 +4,9 @@ export type MetaData = {
   author?: string
   date?: string
   description: string
+  prev?: string
+  next?: string
+  id?: string
 }
 
 export type Toc = {

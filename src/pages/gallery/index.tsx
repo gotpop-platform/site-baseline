@@ -9,6 +9,7 @@ import {
   jsxFactory,
   markdownFilesInDir,
   styleNames,
+  type MetaData,
 } from "utils"
 
 import { AppTheme } from "layouts"

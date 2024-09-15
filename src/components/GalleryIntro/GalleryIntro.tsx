@@ -3,7 +3,7 @@ import { IconTypes } from "@components/Icon/Icon"
 import { jsxFactory } from "utils"
 import { mkClass } from "@utils/mkClass"
 // import { dataDemo, type GalleryItem } from "@data/demo.data"
-import { useCSS } from "@hooks/useCSS"
+import { useCSS } from "utils"
 
 // export function findPrevAndNext(slug: string) {
 //   // const item = dataDemo.get(slug)

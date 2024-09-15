@@ -1,8 +1,8 @@
+import { jsxFactory, useCSS } from "utils"
+
 import type { IconName } from "./Icon.types"
-import { jsxFactory } from "utils"
 import { mkClass } from "@utils/mkClass"
 import { readFileSync } from "fs"
-import { useCSS } from "src/hooks/useCSS"
 
 type IconProps = {
   iconName?: IconName

@@ -6,7 +6,7 @@ import {
   type MarkdownFile,
 } from "utils"
 
-import { useCSS } from "src/hooks/useCSS"
+import { useCSS } from "utils"
 
 interface ArticleItemProps {
   title: string
