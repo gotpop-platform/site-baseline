@@ -45,6 +45,9 @@ export const markdownFilesInDir = async (
         author: metadata.author,
         description: metadata.description,
         date: metadata.date,
+        prev: metadata.prev,
+        next: metadata.next,
+        id: metadata.id,
       }
 
       return { metadata: typedMetadata, content }

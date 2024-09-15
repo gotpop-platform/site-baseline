@@ -6,21 +6,28 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
+import { jsxFactory, parseMarkdownFile } from "utils"
 
 import { AppTheme } from "layouts"
 import type { PageProps } from "types"
-import { jsxFactory } from "utils"
 
 const pageGalleryItem = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
+  const { metadata, content: htmlContent } =
+    parseMarkdownFile("gallery", slug)
+
   return (
     <AppTheme title={`Baseline | ${slug}`}>
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface>
-          <GalleryIntro slug={slug} />
+          <GalleryIntro
+            slug={slug}
+            metadata={metadata}
+            htmlContent={htmlContent}
+          />
         </Surface>
         <Footer />
       </GridConfig>

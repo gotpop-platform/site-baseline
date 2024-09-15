@@ -1,26 +1,58 @@
 import {
   Footer,
-  GalleryIntro,
   GridConfig,
   HeaderMegaMenu,
   MobileMenuTrigger,
   Surface,
 } from "components"
+import {
+  jsxFactory,
+  markdownFilesInDir,
+  styleNames,
+} from "utils"
 
 import { AppTheme } from "layouts"
 import type { PageProps } from "types"
-import { jsxFactory } from "utils"
+
+const BlogArticle = ({
+  title,
+  slug,
+}: Omit<MetaData, "description">) => (
+  <article>
+    <a href={`gallery/${slug}`}>
+      <h1>{title}</h1>
+    </a>
+  </article>
+)
 
 const pageGallery = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
+  const parsedFiles = await markdownFilesInDir("gallery")
+  // console.log("parsedFiles :", parsedFiles)
+
+  const listBlog = parsedFiles.map(
+    ({ metadata: { title, slug } }) => (
+      <BlogArticle title={title} slug={slug} />
+    )
+  )
+
   return (
     <AppTheme title={`Gallery | ${slug}`}>
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface>
-          <GalleryIntro slug={slug} />
+          <section
+            style={styleNames({
+              display: "grid",
+              gridTemplateColumns:
+                "repeat(auto-fill, minmax(200px, 1fr))",
+              gap: "1rem",
+            })}
+          >
+            {listBlog}
+          </section>
         </Surface>
         <Footer />
       </GridConfig>

@@ -15,10 +15,12 @@ const parseMarkdownFile = (
   content: string
   toc: Toc[]
 } => {
+  console.log("directoryPath :", directoryPath)
   const filePath = constructFilePath(
     directoryPath,
     fileName
   )
+  // console.log("filePath :", filePath)
   const markdownContent = readFileContent(filePath)
   const { metadata, content } =
     extractMetadata(markdownContent)
