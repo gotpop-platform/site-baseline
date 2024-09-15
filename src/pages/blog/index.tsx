@@ -19,7 +19,7 @@ const BlogArticle = ({
   slug,
   author,
   date,
-}: MetaData) => (
+}: Omit<MetaData, "description">) => (
   <article>
     <a href={`blog/${slug}`}>
       <h1>{title}</h1>

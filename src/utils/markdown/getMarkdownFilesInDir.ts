@@ -43,6 +43,7 @@ export const markdownFilesInDir = async (
         title: metadata.title,
         slug: metadata.slug,
         author: metadata.author,
+        description: metadata.description,
         date: metadata.date,
       }
 

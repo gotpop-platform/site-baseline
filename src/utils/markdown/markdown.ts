@@ -5,6 +5,7 @@ import {
 
 import { extractMetadata } from "./metaData"
 import { parseMarkdown } from "./parseMarkdown"
+import { toc } from "./types"
 
 const parseMarkdownFile = (
   directoryPath: string,
@@ -12,6 +13,7 @@ const parseMarkdownFile = (
 ): {
   metadata: Record<string, string>
   content: string
+  toc: toc[]
 } => {
   const filePath = constructFilePath(
     directoryPath,
@@ -20,9 +22,9 @@ const parseMarkdownFile = (
   const markdownContent = readFileContent(filePath)
   const { metadata, content } =
     extractMetadata(markdownContent)
-  const htmlContent = parseMarkdown(content)
+  const { html, toc } = parseMarkdown(content)
 
-  return { metadata, content: htmlContent }
+  return { metadata, content: html, toc }
 }
 
 export { parseMarkdown, parseMarkdownFile }
