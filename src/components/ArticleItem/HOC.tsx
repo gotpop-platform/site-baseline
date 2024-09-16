@@ -1,46 +1,55 @@
-import { jsxFactory, mkUrl, style } from "utils"
-
-import { ArticleItem } from "./ArticleItem"
 import { Fragment } from "../Fragment"
+import { jsxFactory } from "utils"
 
-interface ArticleData {
-  metadata: {
-    title: string
-    blurb: string
-    href: string
-    description: string
-  }
+// Define a generic type for data items
+export interface DataItem<T> {
+  metadata: T
 }
 
-interface WithArticleItemsProps {
-  data: ArticleData[]
-  layout: () => { [key: string]: string | number }[]
+// Define a generic type for the component props
+type ComponentType<P> = (props: P) => JSX.Element
+
+// Define a generic interface for the HOC props
+interface WithItemsProps<T, P> {
+  data: DataItem<T>[]
+  layout: (
+    item: DataItem<T>
+  ) => { [key: string]: string | number }[]
+  componentProps: (item: DataItem<T>) => P
 }
 
-function withArticleItems(Component) {
+interface ExtendedProps extends Record<string, any> {
+  layout: (
+    item: DataItem<any>
+  ) => { [key: string]: string | number }[]
+}
+
+// Define the HOC function with generic types
+export function withItems<T, P extends ExtendedProps>(
+  Component: ComponentType<P>
+) {
   return function WrappedComponent({
     data,
-    layout,
-  }: WithArticleItemsProps) {
+    componentProps,
+  }: // componentProps,
+  WithItemsProps<T, P>) {
     return (
       <Fragment>
         {data.map((item, index) => {
-          console.log("item :", item)
+          //   console.log("layout :", layout)
+          //   console.log("componentProps :", componentProps)
+          const newLayout = componentProps(item).layout
+          console.log("newLayout :", newLayout)
 
-          return (
-            <Component
-              title={item.metadata.title}
-              blurb={item.metadata.description}
-              href={mkUrl("articles/" + item.metadata.slug)}
-              style={style(layout(item)[index])}
-            />
-          )
+          const props = {
+            item,
+            ...componentProps(item),
+            layout: newLayout(item)[index],
+          }
+
+          return <Component key={index} {...props} />
         })}
       </Fragment>
     )
   }
 }
-
-const ArticleList = withArticleItems(ArticleItem)
-
-export default ArticleList

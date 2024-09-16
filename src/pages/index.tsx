@@ -1,12 +1,19 @@
 import {
   AppTheme,
+  ArticleItem,
   Footer,
   GridConfig,
   HeaderMegaMenu,
   HeroItem,
   MobileMenuTrigger,
   Surface,
+  type ArticleItemProps,
 } from "components"
+import {
+  withItems,
+  type DataItem,
+} from "src/components/ArticleItem/HOC"
+import { stylesLayout } from "src/layouts"
 import {
   jsxFactory,
   markdownFilesInDir,
@@ -14,37 +21,30 @@ import {
   title,
 } from "utils"
 
-import ArticleList from "src/components/ArticleItem/HOC"
+// Define the metadata interface
+interface ArticleMetadata {
+  title: string
+  description: string
+  slug: string
+  layout: () => { [key: string]: string | number }[]
+}
+
+// Define the component props function
+const articleComponentProps = (
+  item: DataItem<ArticleMetadata>
+) => ({
+  item: item,
+  layout: stylesLayout,
+})
+
+// Use the HOC
+const ArticleList = withItems<
+  ArticleMetadata,
+  ArticleItemProps
+>(ArticleItem)
 
 const pageIndex = async (): Promise<JSX.Element> => {
   const parsedFiles = await markdownFilesInDir("articles")
-
-  const stylesLayout = (item: any) => [
-    {
-      "--grid-column": "span 12",
-      "--transition-article": item.metadata.slug,
-    },
-    {
-      "--grid-column": "span 6",
-      "--transition-article": item.metadata.slug,
-    },
-    {
-      "--grid-column": "span 6",
-      "--transition-article": item.metadata.slug,
-    },
-    {
-      "--grid-column": "span 6",
-      "--transition-article": item.metadata.slug,
-    },
-    {
-      "--grid-column": "span 6",
-      "--transition-article": item.metadata.slug,
-    },
-    {
-      "--grid-column": "span 12",
-      "--transition-article": item.metadata.slug,
-    },
-  ]
 
   return (
     <AppTheme title={title("Home")}>
@@ -62,7 +62,7 @@ const pageIndex = async (): Promise<JSX.Element> => {
           <Surface hasInner>
             <ArticleList
               data={parsedFiles}
-              layout={stylesLayout}
+              componentProps={articleComponentProps}
             />
           </Surface>
         </main>

@@ -1,34 +1,49 @@
-import { jsxFactory, mkClass } from "utils"
+import {
+  jsxFactory,
+  mkClass,
+  styleNames,
+  useCSS,
+} from "utils"
 
-import { useCSS } from "utils"
-
-interface ArticleItemProps {
+type Metadata = {
   title: string
   blurb: string
   href: string
   style?: string
+  slug: string
+  description: string
+}
+
+type Layout = { [key: string]: string | number }
+
+export interface ArticleItemProps {
+  item: {
+    metadata: Metadata
+  }
+  layout: Layout
 }
 
 export function ArticleItem({
-  title,
-  blurb,
-  href,
-  style,
+  item,
+  layout,
 }: ArticleItemProps): JSX.Element {
+  const {
+    metadata: { title, description, slug, style },
+  } = item
   const { css } = useCSS({ meta: import.meta })
 
   return (
     <article
       class={mkClass(import.meta.file)}
-      style={style}
+      style={styleNames(layout)}
     >
       <style>{css}</style>
-      <a class="link-header" href={href}>
+      <a class="link-header" href={slug}>
         <h3>
           <span>{title}</span>
         </h3>
       </a>
-      <p>{blurb}</p>
+      <p>{description}</p>
     </article>
   )
 }
