@@ -1,4 +1,5 @@
 import {
+  AppTheme,
   Footer,
   GridConfig,
   HeaderMegaMenu,
@@ -6,22 +7,26 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
-import { jsxFactory, markdownFilesInDir } from "utils"
+import {
+  jsxFactory,
+  markdownFilesInDir,
+  title,
+} from "utils"
 
-import { AppTheme } from "components"
+import type { PageProps } from "types"
 
-const pageArticles = async (): Promise<JSX.Element> => {
-  const parsedFiles = await markdownFilesInDir("articles")
+const pageArticles = async ({
+  slug,
+}: PageProps): Promise<JSX.Element> => {
+  const parsedFiles = await markdownFilesInDir(slug)
 
   return (
-    <AppTheme title="Baseline | Articles">
+    <AppTheme title={title(slug)}>
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface isMain>
-          <section class="inner">
-            <ListArticles parsedFiles={parsedFiles} />
-          </section>
+        <Surface isMain hasInner>
+          <ListArticles parsedFiles={parsedFiles} />
         </Surface>
         <Footer />
       </GridConfig>

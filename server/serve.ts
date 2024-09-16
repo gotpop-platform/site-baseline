@@ -18,6 +18,8 @@ async function serve(request: Request) {
     return handleGetAssets(url)
   }
 
+  // console.log("request :", request)
+
   return handleGetPages(request)
 }
 

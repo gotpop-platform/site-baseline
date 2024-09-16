@@ -34,8 +34,12 @@ export const handleGetPages = async (
       return INTERNAL_SERVER_ERROR_RESPONSE
     }
 
+    const slug = route.query.slug
+      ? route.query.slug
+      : route.pathname
+
     const response = await module
-      .default(route.query)
+      .default({ slug })
       .catch((e: Error) => {
         console.error("Error calling default export:", e)
 

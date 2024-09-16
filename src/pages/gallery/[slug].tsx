@@ -1,4 +1,5 @@
 import {
+  AppTheme,
   Footer,
   GalleryIntro,
   GridConfig,
@@ -6,11 +7,9 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
-import { jsxFactory, parseMarkdownFile } from "utils"
+import { jsxFactory, parseMarkdownFile, title } from "utils"
 
-import { AppTheme } from "components"
 import type { PageProps } from "types"
-import { title } from "utils"
 
 const pageGalleryItem = async ({
   slug,

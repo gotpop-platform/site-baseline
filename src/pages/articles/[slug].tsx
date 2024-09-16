@@ -1,4 +1,5 @@
 import {
+  AppTheme,
   Footer,
   GridConfig,
   HeaderMegaMenu,
@@ -9,16 +10,16 @@ import {
   jsxFactory,
   parseMarkdownFile,
   styleNames as style,
+  title,
 } from "utils"
 
-import { AppTheme } from "components"
 import type { PageProps } from "types"
 
 const pageArticlePage = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
   const {
-    metadata: { date, title, author },
+    metadata: { date, author },
     content: htmlContent,
     toc,
   } = parseMarkdownFile("articles", slug)
@@ -51,7 +52,7 @@ const pageArticlePage = async ({
   }
 
   return (
-    <AppTheme title={`Baseline | ${slug}`}>
+    <AppTheme title={title(slug)}>
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />

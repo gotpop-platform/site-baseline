@@ -11,4 +11,4 @@ const toSentenceCase = (str: string) => {
 export const title = (title = "") =>
   SITE_NAME +
   " | " +
-  toSentenceCase(title.trim().replace(/-/g, " "))
+  toSentenceCase(title.trim().replace(/[-\/]/g, " "))

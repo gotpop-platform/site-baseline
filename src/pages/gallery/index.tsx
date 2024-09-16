@@ -9,6 +9,7 @@ import {
   jsxFactory,
   markdownFilesInDir,
   styleNames,
+  title,
   type MetaData,
 } from "utils"
 
@@ -31,6 +32,7 @@ const pageGallery = async ({
 }: PageProps): Promise<JSX.Element> => {
   const parsedFiles = await markdownFilesInDir("gallery")
   // console.log("parsedFiles :", parsedFiles)
+  console.log("slug :", slug)
 
   const listBlog = parsedFiles.map(
     ({ metadata: { title, slug } }) => (
@@ -39,7 +41,7 @@ const pageGallery = async ({
   )
 
   return (
-    <AppTheme title={`Gallery | ${slug}`}>
+    <AppTheme title={title(slug)}>
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
