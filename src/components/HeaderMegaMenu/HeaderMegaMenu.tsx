@@ -3,7 +3,7 @@ import { jsxFactory, useCSS } from "utils"
 import { HeaderSurface } from "./HeaderSurface"
 import { LogoMegaMenu } from "./LogoMegaMenu"
 import { MegaNav } from "./MegaNav"
-import { mkClass } from "@utils/mkClass"
+import { mkClass } from "utils"
 
 type HeaderMegaMenuProps = {
   title?: string

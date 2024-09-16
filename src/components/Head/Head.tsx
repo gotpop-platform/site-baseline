@@ -1,6 +1,6 @@
 import { jsxFactory } from "utils"
 
-const Head = ({ title }: { title: string }) => {
+export const Head = ({ title }: { title: string }) => {
   const baseStylePath = "/assets/styles/index.css"
 
   return (
@@ -40,5 +40,3 @@ const Head = ({ title }: { title: string }) => {
     </head>
   )
 }
-
-export default Head

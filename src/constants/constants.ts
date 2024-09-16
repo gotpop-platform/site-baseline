@@ -6,4 +6,4 @@ export const DATE_FORMAT_OPTIONS = {
 }
 
 export const API_BASE_URL = "https://api.example.com"
-export const SITE_NAME = "My Awesome Site"
+export const SITE_NAME = "Baseline"

@@ -1,9 +1,7 @@
-import { Icon } from "@components/Icon"
-import { IconTypes } from "@components/Icon/Icon"
-import { jsxFactory } from "utils"
-import { mkClass } from "@utils/mkClass"
+import { Icon, IconTypes } from "components"
+import { jsxFactory, mkClass, useCSS } from "utils"
+
 // import { dataDemo, type GalleryItem } from "@data/demo.data"
-import { useCSS } from "utils"
 
 // export function findPrevAndNext(slug: string) {
 //   // const item = dataDemo.get(slug)

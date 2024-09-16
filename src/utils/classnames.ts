@@ -24,6 +24,8 @@ export function classNames(...args: ArgumentArray): string {
   return classes
 }
 
+export const cn = classNames
+
 function parseValue(arg: Argument): string {
   if (typeof arg === "string") {
     return arg

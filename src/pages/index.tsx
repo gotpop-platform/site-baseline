@@ -1,4 +1,5 @@
 import {
+  AppTheme,
   Footer,
   GridConfig,
   HeaderMegaMenu,
@@ -10,21 +11,20 @@ import {
 import {
   jsxFactory,
   markdownFilesInDir,
-  styleNames,
+  style,
+  title,
 } from "utils"
-
-import { AppTheme } from "components"
 
 const pageIndex = async (): Promise<JSX.Element> => {
   const parsedFiles = await markdownFilesInDir("articles")
 
   return (
-    <AppTheme title="Baseline | Home">
+    <AppTheme title={title("Home")}>
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <main
-          style={styleNames({
+          style={style({
             display: "grid",
             gridColumn: "box",
             gridTemplateColumns: "subgrid",

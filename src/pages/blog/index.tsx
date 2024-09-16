@@ -33,6 +33,7 @@ const BlogArticle = ({
 const pageBlog = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
+  console.log("slug :", slug)
   const parsedFiles = await markdownFilesInDir("blog")
 
   const listBlog = parsedFiles.map(

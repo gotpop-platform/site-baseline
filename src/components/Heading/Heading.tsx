@@ -1,5 +1,4 @@
-import { jsxFactory } from "utils"
-import { mkId } from "@utils/mkId"
+import { jsxFactory, mkId } from "utils"
 
 export const Heading = ({
   children,

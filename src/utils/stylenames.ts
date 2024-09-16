@@ -10,3 +10,5 @@ export function styleNames(styles: {
     })
     .join(" ")
 }
+
+export const style = styleNames

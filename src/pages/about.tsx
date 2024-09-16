@@ -6,15 +6,16 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
+import { jsxFactory, title } from "utils"
 
 import type { PageProps } from "types"
-import { jsxFactory } from "utils"
 
 const aboutPage = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
+  console.log("slug :", slug)
   return (
-    <AppTheme title={`Baseline | ${slug}`}>
+    <AppTheme title={title(slug)}>
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />

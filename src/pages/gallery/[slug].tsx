@@ -10,6 +10,7 @@ import { jsxFactory, parseMarkdownFile } from "utils"
 
 import { AppTheme } from "components"
 import type { PageProps } from "types"
+import { title } from "utils"
 
 const pageGalleryItem = async ({
   slug,
@@ -18,7 +19,7 @@ const pageGalleryItem = async ({
     parseMarkdownFile("gallery", slug)
 
   return (
-    <AppTheme title={`Baseline | ${slug}`}>
+    <AppTheme title={title(slug)}>
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />

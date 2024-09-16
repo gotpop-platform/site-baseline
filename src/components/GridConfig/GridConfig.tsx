@@ -1,7 +1,4 @@
-import { jsxFactory, useCSS } from "utils"
-
-import { classNames as cn } from "@utils/classnames"
-import { mkClass } from "@utils/mkClass"
+import { cn, jsxFactory, mkClass, useCSS } from "utils"
 
 type GridConfigProps = {
   isRoot?: boolean
