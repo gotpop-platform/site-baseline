@@ -1,4 +1,5 @@
 import {
+  AppTheme,
   Footer,
   GridConfig,
   HeaderMegaMenu,
@@ -13,13 +14,13 @@ import {
   type MetaData,
 } from "utils"
 
-import { AppTheme } from "components"
 import type { PageProps } from "types"
 
 const BlogArticle = ({
-  title,
-  slug,
-}: Omit<MetaData, "description">) => (
+  metadata: { title, slug },
+}: {
+  metadata: MetaData | Record<string, string>
+}) => (
   <article>
     <a href={`gallery/${slug}`}>
       <h1>{title}</h1>
@@ -30,15 +31,11 @@ const BlogArticle = ({
 const pageGallery = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const parsedFiles = await markdownFilesInDir("gallery")
-  // console.log("parsedFiles :", parsedFiles)
-  console.log("slug :", slug)
+  const parsedFiles = await markdownFilesInDir(slug)
 
-  const listBlog = parsedFiles.map(
-    ({ metadata: { title, slug } }) => (
-      <BlogArticle title={title} slug={slug} />
-    )
-  )
+  const listBlog = parsedFiles.map(({ metadata }) => (
+    <BlogArticle metadata={metadata} />
+  ))
 
   return (
     <AppTheme title={title(slug)}>
