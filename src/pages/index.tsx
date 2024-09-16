@@ -13,7 +13,7 @@ import {
   styleNames,
 } from "utils"
 
-import { AppTheme } from "@components/layouts"
+import { AppTheme } from "components"
 
 const pageIndex = async (): Promise<JSX.Element> => {
   const parsedFiles = await markdownFilesInDir("articles")

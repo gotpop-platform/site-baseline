@@ -1,4 +1,5 @@
 import {
+  AppTheme,
   Footer,
   GridConfig,
   HeaderMegaMenu,
@@ -6,7 +7,6 @@ import {
   Surface,
 } from "components"
 
-import { AppTheme } from "@components/layouts"
 import type { PageProps } from "types"
 import { jsxFactory } from "utils"
 
@@ -18,7 +18,7 @@ const aboutPage = async ({
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface isMain>
+        <Surface isMain hasInner>
           <h1>About page</h1>
         </Surface>
         <Footer />

@@ -8,7 +8,7 @@ import {
 } from "components"
 import { jsxFactory, markdownFilesInDir } from "utils"
 
-import { AppTheme } from "@components/layouts"
+import { AppTheme } from "components"
 
 const pageArticles = async (): Promise<JSX.Element> => {
   const parsedFiles = await markdownFilesInDir("articles")

@@ -11,7 +11,7 @@ import {
   styleNames as style,
 } from "utils"
 
-import { AppTheme } from "@components/layouts"
+import { AppTheme } from "components"
 import type { PageProps } from "types"
 
 const pageArticlePage = async ({
