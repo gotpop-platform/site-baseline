@@ -1,4 +1,5 @@
 import {
+  AppTheme,
   Footer,
   GridConfig,
   HeaderMegaMenu,
@@ -8,19 +9,23 @@ import {
 import {
   jsxFactory,
   markdownFilesInDir,
+  style,
+  title,
   type MetaData,
 } from "utils"
 
-import { AppTheme } from "components"
 import type { PageProps } from "types"
 
 const BlogArticle = ({
-  title,
-  slug,
-  author,
-  date,
-}: Omit<MetaData, "description">) => (
-  <article>
+  metadata: { title, author, date, slug },
+}: {
+  metadata: MetaData | Record<string, string>
+}) => (
+  <article
+    style={style({
+      gridColumn: "1 / span 12",
+    })}
+  >
     <a href={`blog/${slug}`}>
       <h1>{title}</h1>
       <p>
@@ -33,27 +38,19 @@ const BlogArticle = ({
 const pageBlog = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  console.log("slug :", slug)
-  const parsedFiles = await markdownFilesInDir("blog")
+  const parsedFiles = await markdownFilesInDir(slug)
 
-  const listBlog = parsedFiles.map(
-    ({ metadata: { title, slug, author, date } }) => (
-      <BlogArticle
-        title={title}
-        slug={slug}
-        author={author}
-        date={date}
-      />
-    )
-  )
+  const listBlog = parsedFiles.map(({ metadata }) => (
+    <BlogArticle metadata={metadata} />
+  ))
 
   return (
-    <AppTheme title="Baseline | Blog">
+    <AppTheme title={title(slug)}>
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface isMain>
-          <section class="blog">{listBlog}</section>
+        <Surface isMain hasInner>
+          {listBlog}
         </Surface>
         <Footer />
       </GridConfig>

@@ -18,7 +18,6 @@ import type { PageProps } from "types"
 const pageBlog = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  console.log("slug :", slug)
   const {
     metadata: { date, title: pageTitle, author },
     content: htmlContent,
