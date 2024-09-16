@@ -1,10 +1,4 @@
-import {
-  jsxFactory,
-  mkClass,
-  mkUrl,
-  styleNames as style,
-  type MarkdownFile,
-} from "utils"
+import { jsxFactory, mkClass } from "utils"
 
 import { useCSS } from "utils"
 
@@ -37,33 +31,4 @@ export function ArticleItem({
       <p>{blurb}</p>
     </article>
   )
-}
-
-export const ListArticles = ({
-  parsedFiles,
-}: {
-  parsedFiles: MarkdownFile[]
-}): JSX.Element => {
-  const listArticles = parsedFiles.map(
-    (
-      { metadata: { title, slug, description } },
-      i
-    ): JSX.IntrinsicElements["article"] => {
-      const relative = `articles/${slug}`
-
-      const stylesContent = {
-        "--transition-article": slug,
-      }
-
-      return (
-        <ArticleItem
-          title={title}
-          blurb={description}
-          href={mkUrl(relative)}
-          style={style(stylesContent)}
-        />
-      )
-    }
-  )
-  return listArticles
 }

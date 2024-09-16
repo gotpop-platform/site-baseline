@@ -5,23 +5,23 @@
 
     background-color: var(--slate-200);
     border-radius: 0.5rem;
-    grid-column: span 12;
+    grid-column: var(--grid-column);
     grid-row: span 1;
     padding: 2rem;
     transition: var(--transition);
     view-transition-name: var(--transition-article);
 
-    &:first-child,
+    /* &:first-child,
     &:last-child {
       grid-column: span 12;
-    }
+    } */
 
     &:has(:hover) {
       background-color: var(--slate-300);
     }
 
-    @container style(--is-desktop: true) {
+    /* @container style(--is-desktop: true) {
       grid-column: span 6;
-    }
+    } */
   }
 }

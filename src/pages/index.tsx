@@ -4,7 +4,6 @@ import {
   GridConfig,
   HeaderMegaMenu,
   HeroItem,
-  ListArticles,
   MobileMenuTrigger,
   Surface,
 } from "components"
@@ -15,8 +14,37 @@ import {
   title,
 } from "utils"
 
+import ArticleList from "src/components/ArticleItem/HOC"
+
 const pageIndex = async (): Promise<JSX.Element> => {
   const parsedFiles = await markdownFilesInDir("articles")
+
+  const stylesLayout = (item: any) => [
+    {
+      "--grid-column": "span 12",
+      "--transition-article": item.metadata.slug,
+    },
+    {
+      "--grid-column": "span 6",
+      "--transition-article": item.metadata.slug,
+    },
+    {
+      "--grid-column": "span 6",
+      "--transition-article": item.metadata.slug,
+    },
+    {
+      "--grid-column": "span 6",
+      "--transition-article": item.metadata.slug,
+    },
+    {
+      "--grid-column": "span 6",
+      "--transition-article": item.metadata.slug,
+    },
+    {
+      "--grid-column": "span 12",
+      "--transition-article": item.metadata.slug,
+    },
+  ]
 
   return (
     <AppTheme title={title("Home")}>
@@ -32,7 +60,10 @@ const pageIndex = async (): Promise<JSX.Element> => {
         >
           <HeroItem />
           <Surface hasInner>
-            <ListArticles parsedFiles={parsedFiles} />
+            <ArticleList
+              data={parsedFiles}
+              layout={stylesLayout}
+            />
           </Surface>
         </main>
         <Footer />

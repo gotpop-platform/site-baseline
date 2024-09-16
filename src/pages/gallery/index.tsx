@@ -9,7 +9,7 @@ import {
 import {
   jsxFactory,
   markdownFilesInDir,
-  styleNames,
+  style,
   title,
   type MetaData,
 } from "utils"
@@ -44,7 +44,7 @@ const pageGallery = async ({
         <HeaderMegaMenu />
         <Surface isMain>
           <section
-            style={styleNames({
+            style={style({
               display: "grid",
               gridTemplateColumns:
                 "repeat(auto-fill, minmax(200px, 1fr))",
