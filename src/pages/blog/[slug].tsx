@@ -27,7 +27,7 @@ const pageBlog = async ({
       <GridConfig>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
+        <Surface isMain>
           <section class="blog">
             <h1>{title}</h1>
             <aside>

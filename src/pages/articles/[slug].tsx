@@ -23,8 +23,6 @@ const pageArticlePage = async ({
     toc,
   } = parseMarkdownFile("articles", slug)
 
-  // console.log("toc :", toc)
-
   const toccy = (
     <nav>
       <ul>
@@ -57,7 +55,7 @@ const pageArticlePage = async ({
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
+        <Surface isMain hasInner>
           <aside style={style(styles)}>{toccy}</aside>
           <div style={style(stylesContent)}>
             {htmlContent}

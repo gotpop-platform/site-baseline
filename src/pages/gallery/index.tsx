@@ -43,7 +43,7 @@ const pageGallery = async ({
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
+        <Surface isMain>
           <section
             style={styleNames({
               display: "grid",

@@ -18,7 +18,7 @@ const pageArticles = async (): Promise<JSX.Element> => {
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
+        <Surface isMain>
           <section class="inner">
             <ListArticles parsedFiles={parsedFiles} />
           </section>

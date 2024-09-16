@@ -51,7 +51,7 @@ const pageBlog = async ({
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
+        <Surface isMain>
           <section class="blog">{listBlog}</section>
         </Surface>
         <Footer />

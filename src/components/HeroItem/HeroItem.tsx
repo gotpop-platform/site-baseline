@@ -7,7 +7,7 @@ export function HeroItem(): JSX.Element {
   const { css } = useCSS({ meta: import.meta })
 
   return (
-    <Surface>
+    <Surface hasInner>
       <style>{css}</style>
       <h1>Typography & Animation!!!!!!!</h1>
       <p>

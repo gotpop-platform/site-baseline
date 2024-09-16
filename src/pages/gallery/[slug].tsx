@@ -22,7 +22,7 @@ const pageGalleryItem = async ({
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
+        <Surface isMain>
           <GalleryIntro
             slug={slug}
             metadata={metadata}

@@ -15,7 +15,7 @@ const NotFoundPage = async () => {
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
+        <Surface isMain>
           <section class="not-found">
             <h1>404 - Page Not Found</h1>
             <p>

@@ -7,7 +7,11 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
-import { jsxFactory, markdownFilesInDir } from "utils"
+import {
+  jsxFactory,
+  markdownFilesInDir,
+  styleNames,
+} from "utils"
 
 import { AppTheme } from "@components/layouts"
 
@@ -16,15 +20,21 @@ const pageIndex = async (): Promise<JSX.Element> => {
 
   return (
     <AppTheme title="Baseline | Home">
-      <GridConfig>
+      <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <HeroItem />
-        <Surface>
-          <section class="inner">
+        <main
+          style={styleNames({
+            display: "grid",
+            gridColumn: "box",
+            gridTemplateColumns: "subgrid",
+          })}
+        >
+          <HeroItem />
+          <Surface hasInner>
             <ListArticles parsedFiles={parsedFiles} />
-          </section>
-        </Surface>
+          </Surface>
+        </main>
         <Footer />
       </GridConfig>
     </AppTheme>

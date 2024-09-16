@@ -18,7 +18,7 @@ const aboutPage = async ({
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
+        <Surface isMain>
           <h1>About page</h1>
         </Surface>
         <Footer />
