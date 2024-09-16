@@ -1,6 +1,8 @@
-import type { Layout } from "src/components/ArticleItem"
+import type { MarkdownFile } from "utils"
 
-export const stylesLayout = (item: any): Layout[] => [
+export const stylesLayout = (
+  item: MarkdownFile
+): { [key: string]: string | number }[] => [
   {
     "--grid-column": "span 12",
     "--transition-article": item.metadata.slug,

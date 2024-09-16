@@ -6,12 +6,13 @@ import {
   HeaderMegaMenu,
   MobileMenuTrigger,
   Surface,
-  type ArticleItemProps,
 } from "components"
 import {
   jsxFactory,
   markdownFilesInDir,
   title,
+  type ArticleItemProps2,
+  type MarkdownFile,
 } from "utils"
 
 import {
@@ -21,32 +22,25 @@ import {
 import { stylesLayout } from "src/layouts"
 import type { PageProps } from "types"
 
-// Define the metadata interface
-interface ArticleMetadata {
-  title: string
-  description: string
-  slug: string
-  layout: () => { [key: string]: string | number }[]
-}
-
-// Define the component props function
-const articleComponentProps = (
-  item: DataItem<ArticleMetadata>
-) => ({
+const componentProps = (
+  item: DataItem<MarkdownFile>
+): ArticleItemProps2 => ({
   item: item,
-  layout: stylesLayout,
+  layout: stylesLayout(item),
 })
 
-// Use the HOC
+// Update the ArticleList type
 const ArticleList = withItems<
-  ArticleMetadata,
-  ArticleItemProps
+  DataItem<MarkdownFile>,
+  ArticleItemProps2
 >(ArticleItem)
 
 const pageArticles = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const parsedFiles = await markdownFilesInDir(slug)
+  const parsedFiles: DataItem<MarkdownFile>[] =
+    await markdownFilesInDir(slug)
+  console.log("parsedFiles :", parsedFiles)
 
   return (
     <AppTheme title={title(slug)}>
@@ -56,7 +50,7 @@ const pageArticles = async ({
         <Surface isMain hasInner>
           <ArticleList
             data={parsedFiles}
-            componentProps={articleComponentProps}
+            componentProps={componentProps}
           />
         </Surface>
         <Footer />
