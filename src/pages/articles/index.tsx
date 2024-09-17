@@ -14,20 +14,20 @@ import {
   jsxFactory,
   markdownFilesInDir,
   title,
-  type ArticleItemWithStyleArrayProps,
+  type ArticleArrayProps,
   type MarkdownFile,
 } from "utils"
 
 const componentProps = (
   item: MarkdownFile
-): ArticleItemWithStyleArrayProps => ({
+): ArticleArrayProps => ({
   item,
   layout: stylesLayout(item),
 })
 
 const ArticleList = withItems<
   MarkdownFile,
-  ArticleItemWithStyleArrayProps
+  ArticleArrayProps
 >(ArticleItem)
 
 const pageArticles = async ({

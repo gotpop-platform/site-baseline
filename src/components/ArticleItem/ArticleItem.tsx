@@ -3,13 +3,13 @@ import {
   mkClass,
   styleNames,
   useCSS,
-  type ArticleItemProps,
+  type ArticleProps,
 } from "utils"
 
 export function ArticleItem({
   item,
   layout,
-}: ArticleItemProps): JSX.Element {
+}: ArticleProps): JSX.Element {
   const {
     metadata: { title, description, slug },
   } = item

@@ -21,12 +21,12 @@ export type MarkdownFile = {
   toc?: Toc[]
 }
 
-export type ArticleItemProps = {
+export type ArticleProps = {
   item: MarkdownFile
   layout: styleObj
 }
 
-export type ArticleItemWithStyleArrayProps = {
+export type ArticleArrayProps = {
   item: MarkdownFile
   layout: styleObj[]
 }

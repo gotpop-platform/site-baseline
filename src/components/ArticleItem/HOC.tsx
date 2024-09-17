@@ -8,7 +8,6 @@ import { Fragment } from "../Fragment"
 interface DataItem<T> {
   metadata: MetaData
   content: string
-  toc?: { level: number; id: string; text: string }[]
 }
 
 type ComponentType<P> = (props: P) => JSX.Element
