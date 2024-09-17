@@ -15,19 +15,19 @@ export type Toc = {
   text: string
 }
 
-export type MarkdownFile = {
+export type MarkdownFileProps = {
   metadata: MetaData
   content: string
   toc?: Toc[]
 }
 
 export type ArticleProps = {
-  item: MarkdownFile
+  item: MarkdownFileProps
   layout: styleObj
 }
 
 export type ArticleArrayProps = {
-  item: MarkdownFile
+  item: MarkdownFileProps
   layout: styleObj[]
 }
 

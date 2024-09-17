@@ -15,25 +15,25 @@ import {
   markdownFilesInDir,
   title,
   type ArticleArrayProps,
-  type MarkdownFile,
+  type MarkdownFileProps,
 } from "utils"
 
 const componentProps = (
-  item: MarkdownFile
+  item: MarkdownFileProps
 ): ArticleArrayProps => ({
   item,
   layout: stylesLayout(item),
 })
 
 const ArticleList = withItems<
-  MarkdownFile,
+  MarkdownFileProps,
   ArticleArrayProps
 >(ArticleItem)
 
 const pageArticles = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const parsedFiles: MarkdownFile[] =
+  const parsedFiles: MarkdownFileProps[] =
     await markdownFilesInDir(slug)
 
   return (

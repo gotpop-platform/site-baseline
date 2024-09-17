@@ -1,5 +1,5 @@
 import type {
-  MarkdownFile,
+  MarkdownFileProps,
   MetaData,
 } from "./markdown.types"
 
@@ -28,11 +28,11 @@ export const findMarkdownFiles = async (
 
 export const markdownFilesInDir = async (
   dir: string
-): Promise<MarkdownFile[]> => {
+): Promise<MarkdownFileProps[]> => {
   const foundFiles: string[] = await findMarkdownFiles(dir)
 
   const mapFiles = foundFiles.map(
-    async (filePath): Promise<MarkdownFile> => {
+    async (filePath): Promise<MarkdownFileProps> => {
       const path = filePath.replace(/\.md$/, "")
       const { metadata, content } = parseMarkdownFile(
         dir,
@@ -54,9 +54,8 @@ export const markdownFilesInDir = async (
     }
   )
 
-  const parsedFiles: MarkdownFile[] = await Promise.all(
-    mapFiles
-  )
+  const parsedFiles: MarkdownFileProps[] =
+    await Promise.all(mapFiles)
 
   return parsedFiles
 }

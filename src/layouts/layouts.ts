@@ -1,7 +1,7 @@
-import type { MarkdownFile } from "utils"
+import type { MarkdownFileProps } from "utils"
 
 export const stylesLayout = (
-  item: MarkdownFile
+  item: MarkdownFileProps
 ): { [key: string]: string | number }[] => [
   {
     "--grid-column": "span 12",
