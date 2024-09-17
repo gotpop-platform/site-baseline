@@ -1,7 +1,7 @@
 import {
   jsxFactory,
   type MetaData,
-  type styleObj,
+  type StyleObj,
 } from "utils"
 import { Fragment } from "../Fragment"
 
@@ -19,12 +19,12 @@ interface WithItemsProps<T, P> {
 
 type Obj<T> = {
   item: T
-  layout: styleObj[]
+  layout: StyleObj[]
 }
 
 export function withItems<T, P extends Obj<T>>(
   Component: ComponentType<
-    Omit<P, "layout"> & { layout: styleObj }
+    Omit<P, "layout"> & { layout: StyleObj }
   >
 ) {
   return function WrappedComponent({
