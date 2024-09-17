@@ -25,5 +25,13 @@ export const extractMetadata = (
     content = markdownContent.slice(metadataMatch[0].length)
   }
 
-  return { metadata, content }
+  return {
+    metadata: {
+      slug: metadata.slug || "",
+      title: metadata.title || "",
+      description: metadata.description || "",
+      ...metadata,
+    },
+    content,
+  }
 }

@@ -1,5 +1,3 @@
-import type { DataItem } from "src/components/ArticleItem/HOC"
-
 export type MetaData = {
   slug: string
   title: string
@@ -24,13 +22,13 @@ export type MarkdownFile = {
 }
 
 export type ArticleItemProps = {
-  item: DataItem<MarkdownFile>
-  layout: { [key: string]: string | number }
+  item: MarkdownFile
+  layout: styleObj
 }
 
 export type ArticleItemProps2 = {
-  item: DataItem<MarkdownFile>
-  layout:
-    | { [key: string]: string | number }[]
-    | { [key: string]: string | number }
+  item: MarkdownFile
+  layout: styleObj[]
 }
+
+export type styleObj = { [key: string]: string | number }

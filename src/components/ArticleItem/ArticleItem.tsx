@@ -1,7 +1,7 @@
 import {
   jsxFactory,
   mkClass,
-  style,
+  styleNames,
   useCSS,
   type ArticleItemProps,
 } from "utils"
@@ -18,7 +18,7 @@ export function ArticleItem({
   return (
     <article
       className={mkClass(import.meta.file)}
-      style={style(layout)}
+      style={styleNames(layout)}
     >
       <style>{css}</style>
       <a className="link-header" href={slug}>
