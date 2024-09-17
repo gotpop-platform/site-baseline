@@ -26,7 +26,7 @@ export type ArticleItemProps = {
   layout: styleObj
 }
 
-export type ArticleItemProps2 = {
+export type ArticleItemWithStyleArrayProps = {
   item: MarkdownFile
   layout: styleObj[]
 }

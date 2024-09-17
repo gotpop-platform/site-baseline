@@ -8,7 +8,10 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
-import type { ArticleItemProps2, MarkdownFile } from "utils"
+import type {
+  ArticleItemWithStyleArrayProps,
+  MarkdownFile,
+} from "utils"
 import {
   jsxFactory,
   markdownFilesInDir,
@@ -21,7 +24,7 @@ import { stylesLayout } from "src/layouts"
 
 const componentProps = (
   item: MarkdownFile
-): ArticleItemProps2 => ({
+): ArticleItemWithStyleArrayProps => ({
   item,
   layout: stylesLayout(item),
 })
@@ -29,7 +32,7 @@ const componentProps = (
 // Update the ArticleList type
 const ArticleList = withItems<
   MarkdownFile,
-  ArticleItemProps2
+  ArticleItemWithStyleArrayProps
 >(ArticleItem)
 
 const pageIndex = async (): Promise<JSX.Element> => {

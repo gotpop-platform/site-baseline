@@ -7,28 +7,27 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
+import { withItems } from "src/components/ArticleItem/HOC"
+import { stylesLayout } from "src/layouts"
+import type { PageProps } from "types"
 import {
   jsxFactory,
   markdownFilesInDir,
   title,
-  type ArticleItemProps2,
+  type ArticleItemWithStyleArrayProps,
   type MarkdownFile,
 } from "utils"
 
-import { withItems } from "src/components/ArticleItem/HOC"
-import { stylesLayout } from "src/layouts"
-import type { PageProps } from "types"
-
 const componentProps = (
   item: MarkdownFile
-): ArticleItemProps2 => ({
-  item: item,
+): ArticleItemWithStyleArrayProps => ({
+  item,
   layout: stylesLayout(item),
 })
 
 const ArticleList = withItems<
   MarkdownFile,
-  ArticleItemProps2
+  ArticleItemWithStyleArrayProps
 >(ArticleItem)
 
 const pageArticles = async ({
@@ -36,7 +35,6 @@ const pageArticles = async ({
 }: PageProps): Promise<JSX.Element> => {
   const parsedFiles: MarkdownFile[] =
     await markdownFilesInDir(slug)
-  console.log("parsedFiles :", parsedFiles)
 
   return (
     <AppTheme title={title(slug)}>

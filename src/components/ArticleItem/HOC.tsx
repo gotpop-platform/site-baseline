@@ -18,13 +18,12 @@ interface WithItemsProps<T, P> {
   componentProps: (item: DataItem<T>) => P
 }
 
-export function withItems<
-  T,
-  P extends {
-    item: T
-    layout: styleObj[]
-  }
->(
+type Obj<T> = {
+  item: T
+  layout: styleObj[]
+}
+
+export function withItems<T, P extends Obj<T>>(
   Component: ComponentType<
     Omit<P, "layout"> & { layout: styleObj }
   >
@@ -33,21 +32,14 @@ export function withItems<
     data,
     componentProps,
   }: WithItemsProps<T, P>) {
-    return (
-      <Fragment>
-        {data.map((item, index) => {
-          const props = componentProps(item)
-          const layout =
-            props.layout[index % props.layout.length]
-          return (
-            <Component
-              key={index}
-              {...props}
-              layout={layout}
-            />
-          )
-        })}
-      </Fragment>
-    )
+    const listOfComponents = data.map((item, index) => {
+      const props = componentProps(item)
+      const layout =
+        props.layout[index % props.layout.length]
+
+      return <Component {...props} layout={layout} />
+    })
+
+    return <Fragment>{listOfComponents}</Fragment>
   }
 }
