@@ -23,12 +23,14 @@ export type MarkdownFileProps = {
 
 export type ArticleProps = {
   item: MarkdownFileProps
-  layout: StyleObj
+  layout: StyleObjProps
 }
 
 export type ArticleArrayProps = {
   item: MarkdownFileProps
-  layout: StyleObj[]
+  layout: StyleObjProps[]
 }
 
-export type StyleObj = { [key: string]: string | number }
+export type StyleObjProps = {
+  [key: string]: string | number
+}

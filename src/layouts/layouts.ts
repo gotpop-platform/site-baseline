@@ -1,8 +1,11 @@
-import type { MarkdownFileProps } from "utils"
+import type {
+  MarkdownFileProps,
+  StyleObjProps,
+} from "utils"
 
 export const stylesLayout = (
   markdownFile: MarkdownFileProps
-): { [key: string]: string | number }[] => [
+): StyleObjProps[] => [
   {
     "--grid-column": "span 12",
     "--transition-article": markdownFile.metadata.slug,
