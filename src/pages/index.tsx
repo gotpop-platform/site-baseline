@@ -29,14 +29,13 @@ const componentProps = (
   layout: stylesLayout(item),
 })
 
-// Update the ArticleList type
 const ArticleList = withItems<
   MarkdownFileProps,
   ArticleArrayProps
 >(ArticleItem)
 
 const pageIndex = async (): Promise<JSX.Element> => {
-  const parsedFiles: MarkdownFileProps[] =
+  const parsedMardownFiles: MarkdownFileProps[] =
     await markdownFilesInDir("articles")
 
   return (
@@ -54,7 +53,7 @@ const pageIndex = async (): Promise<JSX.Element> => {
           <HeroItem />
           <Surface hasInner>
             <ArticleList
-              data={parsedFiles}
+              data={parsedMardownFiles}
               componentProps={componentProps}
             />
           </Surface>
