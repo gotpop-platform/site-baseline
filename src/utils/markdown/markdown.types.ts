@@ -21,7 +21,7 @@ export type MarkdownFileProps = {
   toc?: Toc[]
 }
 
-export type ArticleProps = {
+export type ArticleComponentProps = {
   item: MarkdownFileProps
   layout: StyleObjProps
 }

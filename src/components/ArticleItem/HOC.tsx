@@ -1,20 +1,13 @@
-import {
-  jsxFactory,
-  type MetaData,
-  type StyleObjProps,
-} from "utils"
+import { jsxFactory, type StyleObjProps } from "utils"
 import { Fragment } from "../Fragment"
 
-interface DataItem<T> {
-  metadata: MetaData
-  content: string
-}
-
-type ComponentType<P> = (props: P) => JSX.Element
+type ComponentType<P> = (
+  props: P & { layout: StyleObjProps }
+) => JSX.Element
 
 interface WithItemsProps<T, P> {
-  data: DataItem<T>[]
-  componentProps: (item: DataItem<T>) => P
+  data: T[]
+  componentProps: (item: T) => P
 }
 
 type Obj<T> = {
@@ -23,9 +16,7 @@ type Obj<T> = {
 }
 
 export function withItems<T, P extends Obj<T>>(
-  Component: ComponentType<
-    Omit<P, "layout"> & { layout: StyleObjProps }
-  >
+  Component: ComponentType<P>
 ) {
   return function WrappedComponent({
     data,
