@@ -7,7 +7,7 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
-import { withItems } from "src/components/ArticleItem/HOC"
+import { withItems } from "generics"
 import { stylesLayout } from "src/layouts"
 import type { PageProps } from "types"
 import {
@@ -15,25 +15,14 @@ import {
   markdownFilesInDir,
   title,
   type MarkdownFileProps,
-  type StyleObjProps
 } from "utils"
 
-const componentProps = (
-  markdownFile: MarkdownFileProps
-) => ({
-  markdownFile,
-  layout: stylesLayout(markdownFile),
-})
-
-const ArticleList = withItems<
-  MarkdownFileProps, 
-  StyleObjProps | StyleObjProps[]
->(ArticleItem)
+const ArticleList = withItems(ArticleItem)
 
 const pageArticles = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const parsedFiles: MarkdownFileProps[] =
+  const markdownItems: MarkdownFileProps[] =
     await markdownFilesInDir(slug)
 
   return (
@@ -43,9 +32,9 @@ const pageArticles = async ({
         <HeaderMegaMenu />
         <Surface isMain hasInner>
           <ArticleList
-            markdownItems={parsedFiles}
-            componentProps={componentProps} 
-             />
+            markdownItems={markdownItems}
+            layout={stylesLayout}
+          />
         </Surface>
         <Footer />
       </GridConfig>

@@ -3,8 +3,7 @@ import {
   mkClass,
   style,
   useCSS,
-  type ArticleComponentProps,
-  type StyleObjProps
+  type ArticleComponentProps
 } from "utils";
 
 export function ArticleItem({
@@ -15,12 +14,11 @@ export function ArticleItem({
     metadata: { title, description, slug },
   } = markdownFile
   const { css } = useCSS({ meta: import.meta })
-  console.log('layout :', layout);
 
   return (
     <article
       className={mkClass(import.meta.file)}
-      style={style(layout as StyleObjProps)}
+      style={style(layout)}
     >
       <style>{css}</style>
       <a className="link-header" href={slug}>

@@ -27,5 +27,5 @@ export type StyleObjProps = {
 
 export type ArticleComponentProps = {
   markdownFile: MarkdownFileProps
-  layout: StyleObjProps | StyleObjProps[]
+  layout: StyleObjProps
 }
