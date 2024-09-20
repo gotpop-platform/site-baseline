@@ -8,10 +8,6 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
-import type {
-  ArticleArrayProps,
-  MarkdownFileProps,
-} from "utils"
 import {
   jsxFactory,
   markdownFilesInDir,
@@ -21,18 +17,18 @@ import {
 
 import { withItems } from "src/components/ArticleItem/HOC"
 import { stylesLayout } from "src/layouts"
+import type {
+  MarkdownFileProps,
+} from "utils"
 
 const componentProps = (
-  item: MarkdownFileProps
-): ArticleArrayProps => ({
-  item,
-  layout: stylesLayout(item),
+  markdownFile: MarkdownFileProps
+) => ({
+  markdownFile,
+  layout: stylesLayout(markdownFile),
 })
 
-const ArticleList = withItems<
-  MarkdownFileProps,
-  ArticleArrayProps
->(ArticleItem)
+const ArticleList = withItems<MarkdownFileProps>(ArticleItem)
 
 const pageIndex = async (): Promise<JSX.Element> => {
   const parsedMardownFiles: MarkdownFileProps[] =

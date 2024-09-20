@@ -7,12 +7,12 @@ import {
 } from "utils"
 
 export function ArticleItem({
-  item,
+  markdownFile,
   layout,
 }: ArticleComponentProps): JSX.Element {
   const {
     metadata: { title, description, slug },
-  } = item
+  } = markdownFile
   const { css } = useCSS({ meta: import.meta })
 
   return (

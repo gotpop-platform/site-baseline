@@ -14,21 +14,17 @@ import {
   jsxFactory,
   markdownFilesInDir,
   title,
-  type ArticleArrayProps,
-  type MarkdownFileProps,
+  type MarkdownFileProps
 } from "utils"
 
 const componentProps = (
-  item: MarkdownFileProps
-): ArticleArrayProps => ({
-  item,
-  layout: stylesLayout(item),
+  markdownFile: MarkdownFileProps
+) => ({
+  markdownFile,
+  layout: stylesLayout(markdownFile),
 })
 
-const ArticleList = withItems<
-  MarkdownFileProps,
-  ArticleArrayProps
->(ArticleItem)
+const ArticleList = withItems<MarkdownFileProps>(ArticleItem)
 
 const pageArticles = async ({
   slug,
@@ -44,8 +40,8 @@ const pageArticles = async ({
         <Surface isMain hasInner>
           <ArticleList
             data={parsedFiles}
-            componentProps={componentProps}
-          />
+            componentProps={componentProps} 
+             />
         </Surface>
         <Footer />
       </GridConfig>

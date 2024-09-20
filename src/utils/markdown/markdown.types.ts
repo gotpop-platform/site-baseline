@@ -21,16 +21,18 @@ export type MarkdownFileProps = {
   toc?: Toc[]
 }
 
-export type ArticleComponentProps = {
-  item: MarkdownFileProps
-  layout: StyleObjProps
-}
-
-export type ArticleArrayProps = {
-  item: MarkdownFileProps
-  layout: StyleObjProps[]
-}
-
 export type StyleObjProps = {
   [key: string]: string | number
 }
+
+
+export type ArticleComponentProps = {
+  markdownFile: MarkdownFileProps
+  layout: StyleObjProps
+}
+
+// export type ArticleArrayProps = {
+//   item: MarkdownFileProps
+//   layout: StyleObjProps[]
+// }
+
