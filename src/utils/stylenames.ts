@@ -1,6 +1,6 @@
-export function styleNames(styles?: {
-  [key: string]: string | number
-}): string {
+import type { StyleObjProps } from "utils";
+
+export function styleNames(styles: StyleObjProps) {
   if (!styles || Object.keys(styles).length === 0) {
     return '';
   }

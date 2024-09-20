@@ -14,7 +14,8 @@ import {
   jsxFactory,
   markdownFilesInDir,
   title,
-  type MarkdownFileProps
+  type MarkdownFileProps,
+  type StyleObjProps
 } from "utils"
 
 const componentProps = (
@@ -24,7 +25,10 @@ const componentProps = (
   layout: stylesLayout(markdownFile),
 })
 
-const ArticleList = withItems<MarkdownFileProps>(ArticleItem)
+const ArticleList = withItems<
+  MarkdownFileProps, 
+  StyleObjProps | StyleObjProps[]
+>(ArticleItem)
 
 const pageArticles = async ({
   slug,

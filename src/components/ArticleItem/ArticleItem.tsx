@@ -1,10 +1,11 @@
 import {
   jsxFactory,
   mkClass,
-  styleNames,
+  style,
   useCSS,
   type ArticleComponentProps,
-} from "utils"
+  type StyleObjProps
+} from "utils";
 
 export function ArticleItem({
   markdownFile,
@@ -14,11 +15,12 @@ export function ArticleItem({
     metadata: { title, description, slug },
   } = markdownFile
   const { css } = useCSS({ meta: import.meta })
+  console.log('layout :', layout);
 
   return (
     <article
       className={mkClass(import.meta.file)}
-      style={styleNames(layout)}
+      style={style(layout as StyleObjProps)}
     >
       <style>{css}</style>
       <a className="link-header" href={slug}>

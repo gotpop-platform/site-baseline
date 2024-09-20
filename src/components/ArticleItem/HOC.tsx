@@ -1,34 +1,34 @@
 import { jsxFactory, type StyleObjProps } from "utils"
 import { Fragment } from "../Fragment"
 
-type ComponentProps<T> = {
+type ComponentProps<T, L> = {
   markdownFile: T
-  layout: StyleObjProps | StyleObjProps[]
+  layout: L
 }
 
-type WithItemsProps<T> = {
+type WithItemsProps<T, L> = {
   data: T[]
-  componentProps: (item: T) => Omit<ComponentProps<T>, 'layout'>
+  componentProps: (item: T) => {
+    markdownFile: T
+    layout: L
+  }
 }
 
-export function withItems<T>(
-  Component: (props: ComponentProps<T>) => JSX.Element
+export function withItems<T, L extends StyleObjProps | StyleObjProps[]>(
+  Component: (props: ComponentProps<T, L>) => JSX.Element
 ) {
   return function WrappedComponent({
     data,
     componentProps,
-  }: WithItemsProps<T>) {
+  }: WithItemsProps<T, L>) {
     const listOfComponents = data.map((item, index) => {
       const props = componentProps(item)
-      console.log('props1 :', props);
-      // console.log('props :', props.layout);
-      // const layout = props.layout[index % props.layout.length]
 
       const layout = Array.isArray(props.layout) 
-      ? props.layout[index % props.layout.length]
-      : props.layout
+        ? props.layout[index % props.layout.length]
+        : props.layout
 
-      return <Component {...props} item={item} layout={layout} />
+      return <Component {...props} markdownFile={item} layout={layout as L} />
     })
 
     return <Fragment>{listOfComponents}</Fragment>

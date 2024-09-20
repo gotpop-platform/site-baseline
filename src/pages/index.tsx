@@ -13,13 +13,13 @@ import {
   markdownFilesInDir,
   style,
   title,
+  type MarkdownFileProps,
+  type StyleObjProps
 } from "utils"
 
 import { withItems } from "src/components/ArticleItem/HOC"
 import { stylesLayout } from "src/layouts"
-import type {
-  MarkdownFileProps,
-} from "utils"
+
 
 const componentProps = (
   markdownFile: MarkdownFileProps
@@ -28,7 +28,7 @@ const componentProps = (
   layout: stylesLayout(markdownFile),
 })
 
-const ArticleList = withItems<MarkdownFileProps>(ArticleItem)
+const ArticleList = withItems<MarkdownFileProps, StyleObjProps | StyleObjProps[]>(ArticleItem)
 
 const pageIndex = async (): Promise<JSX.Element> => {
   const parsedMardownFiles: MarkdownFileProps[] =
