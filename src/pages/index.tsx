@@ -16,20 +16,13 @@ import {
   type MarkdownFileProps
 } from "utils"
 
-import { withItems } from "src/components/ArticleItem/HOC"
+import { withItems } from "generics"
 import { stylesLayout } from "src/layouts"
-
-// const componentProps = (
-//   markdownFile: MarkdownFileProps
-// ) => ({
-//   markdownFile,
-//   layout: stylesLayout(markdownFile),
-// })
 
 const ArticleList = withItems(ArticleItem)
 
 const pageIndex = async (): Promise<JSX.Element> => {
-  const parsedMardownFiles: MarkdownFileProps[] =
+  const markdownItems: MarkdownFileProps[] =
     await markdownFilesInDir("articles")
 
   return (
@@ -47,9 +40,8 @@ const pageIndex = async (): Promise<JSX.Element> => {
           <HeroItem />
           <Surface hasInner>
             <ArticleList
-              markdownItems={parsedMardownFiles}
+              markdownItems={markdownItems}
               layout={stylesLayout}
-              // componentProps={componentProps}
             />
           </Surface>
         </main>
