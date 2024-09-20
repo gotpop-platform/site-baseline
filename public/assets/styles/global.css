@@ -2,6 +2,7 @@ html {
   scroll-behavior: smooth;
   background-color: var(--warning-600);
   overflow: hidden auto;
+  interpolate-size: allow-keywords;
 }
 
 .header-mega-menu {
