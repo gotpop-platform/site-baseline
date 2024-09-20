@@ -20,7 +20,6 @@ import {
 import { withItems } from "src/components/ArticleItem/HOC"
 import { stylesLayout } from "src/layouts"
 
-
 const componentProps = (
   markdownFile: MarkdownFileProps
 ) => ({
@@ -49,7 +48,7 @@ const pageIndex = async (): Promise<JSX.Element> => {
           <HeroItem />
           <Surface hasInner>
             <ArticleList
-              data={parsedMardownFiles}
+              markdownItems={parsedMardownFiles}
               componentProps={componentProps}
             />
           </Surface>

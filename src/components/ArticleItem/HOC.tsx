@@ -7,31 +7,37 @@ type ComponentProps<T, L> = {
 }
 
 type WithItemsProps<T, L> = {
-  data: T[]
+  markdownItems: T[]
   componentProps: (item: T) => {
     markdownFile: T
     layout: L
   }
 }
 
-export function withItems<T, L extends StyleObjProps | StyleObjProps[]>(
-  Component: (props: ComponentProps<T, L>) => JSX.Element
-) {
+export function withItems<
+  T,
+  L extends StyleObjProps | StyleObjProps[]
+>(Component: (props: ComponentProps<T, L>) => JSX.Element) {
   return function WrappedComponent({
-    data,
+    markdownItems,
     componentProps,
   }: WithItemsProps<T, L>) {
-    const listOfComponents = data.map((item, index) => {
-      const props = componentProps(item)
+    const listOfComponents = markdownItems.map((markdownItem, index) => {
+      const { layout, ...otherProps } = componentProps(markdownItem)
+      
+      const finalLayout = Array.isArray(layout)
+        ? layout[index % layout.length]
+        : layout
 
-      const layout = Array.isArray(props.layout) 
-        ? props.layout[index % props.layout.length]
-        : props.layout
-
-      return <Component {...props} markdownFile={item} layout={layout as L} />
+      return (
+        <Component
+          {...otherProps}
+          markdownFile={markdownItem}
+          layout={finalLayout as L}
+        />
+      )
     })
 
     return <Fragment>{listOfComponents}</Fragment>
   }
 }
-

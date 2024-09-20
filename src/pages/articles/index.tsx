@@ -43,7 +43,7 @@ const pageArticles = async ({
         <HeaderMegaMenu />
         <Surface isMain hasInner>
           <ArticleList
-            data={parsedFiles}
+            markdownItems={parsedFiles}
             componentProps={componentProps} 
              />
         </Surface>
