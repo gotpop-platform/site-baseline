@@ -4,6 +4,7 @@ export function Surface({
   children,
   isMain = false,
   hasInner = false,
+  ...rest
 }: {
   children?: string | JSX.Element | (string | JSX.Element)[]
   isMain?: boolean
@@ -14,7 +15,7 @@ export function Surface({
   const Wrapper = isMain ? "main" : "section"
 
   return (
-    <Wrapper class={useName}>
+    <Wrapper class={useName} {...rest}>
       <style>{css}</style>
       {hasInner ? (
         <div class="inner">{children}</div>

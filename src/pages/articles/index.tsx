@@ -29,7 +29,7 @@ const pageArticles = async ({
       <GridConfig isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface isMain hasInner>
+        <Surface isMain>
           <ArticleList
             markdownItems={markdownItems}
             layout={stylesLayout}

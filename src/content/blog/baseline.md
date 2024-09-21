@@ -1,8 +1,8 @@
 ---
-title: "Sample Blog Post"
+title: "Baseline"
 author: "John Doe"
 date: "2023-10-01"
-slug: "blog/test"
+slug: "blog/baseline"
 ---
 
 # Header 1

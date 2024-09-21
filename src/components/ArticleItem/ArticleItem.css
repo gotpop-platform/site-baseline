@@ -2,19 +2,16 @@
   & {
     --transition: background-color 0.2s
       cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    --padding: 2rem;
+    --border-radius: 0.5rem;
 
     background-color: var(--slate-200);
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     grid-column: var(--grid-column);
-    grid-row: span 1;
-    padding: 2rem;
+    grid-row: var(--grid-row);
+    padding: var(--padding);
     transition: var(--transition);
     view-transition-name: var(--transition-article);
-
-    /* &:first-child,
-    &:last-child {
-      grid-column: span 12;
-    } */
 
     &:has(:hover) {
       background-color: var(--slate-300);

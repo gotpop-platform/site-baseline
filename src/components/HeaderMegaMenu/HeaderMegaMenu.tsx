@@ -1,9 +1,9 @@
 import { jsxFactory, useCSS } from "utils"
 
+import { mkClass } from "utils"
 import { HeaderSurface } from "./HeaderSurface"
 import { LogoMegaMenu } from "./LogoMegaMenu"
 import { MegaNav } from "./MegaNav"
-import { mkClass } from "utils"
 
 type HeaderMegaMenuProps = {
   title?: string
@@ -13,6 +13,7 @@ type HeaderMegaMenuProps = {
 export const HeaderMegaMenu = ({
   title,
   children,
+  ...rest
 }: HeaderMegaMenuProps) => {
   const { css } = useCSS({ meta: import.meta })
 
@@ -21,6 +22,7 @@ export const HeaderMegaMenu = ({
       id="headerMegaMenu"
       popover="auto"
       class={mkClass(import.meta.file)}
+      {...rest}
     >
       <style>{css}</style>
       <HeaderSurface>

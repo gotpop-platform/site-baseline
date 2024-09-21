@@ -24,8 +24,3 @@ export type MarkdownFileProps = {
 export type StyleObjProps = {
   [key: string]: string | number
 }
-
-export type ArticleComponentProps = {
-  markdownFile: MarkdownFileProps
-  layout: StyleObjProps
-}

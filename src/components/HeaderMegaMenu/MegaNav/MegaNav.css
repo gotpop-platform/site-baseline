@@ -2,7 +2,7 @@
 @scope {
   & {
     /* --grid-column: bro 3 / bro 11; */
-    --grid-column: 6 / span 8;
+    --grid-column: 10 / span 26;
 
     display: grid;
     gap: 1rem;
@@ -15,8 +15,8 @@
       display: contents;
     }
 
-    @container style(--is-desktop: true) {
+    /* @container style(--is-desktop: true) {
       --grid-column: 6 / span 8;
-    }
+    } */
   }
 }

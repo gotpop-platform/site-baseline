@@ -1,0 +1,24 @@
+@scope {
+  & {
+    --gutter: 0;
+    --gutter-columns: 0.5rem 0.5rem;
+    --repeat-columns: var(--gutter-columns) minmax(0, 120px);
+
+    display: grid;
+    column-gap: var(--gutter);
+    grid-template-columns:
+      [full-start] minmax(2rem, 1fr)
+      [center-start] repeat(
+        12,
+        [col-start] var(--repeat-columns) [col-end]
+      )
+      var(--gutter-columns)
+      [center-end] minmax(2rem, 1fr)
+      [full-end];
+
+    &.root-grid {
+      min-height: 100dvh;
+      grid-template-rows: auto 1fr auto;
+    }
+  }
+}

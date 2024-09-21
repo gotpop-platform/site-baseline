@@ -1,8 +1,8 @@
 ---
-title: "Sample Blog Post"
+title: "Grid"
 author: "John Doe"
 date: "2023-10-01"
-slug: "blog/test"
+slug: "blog/grid"
 ---
 
 # Header 1
