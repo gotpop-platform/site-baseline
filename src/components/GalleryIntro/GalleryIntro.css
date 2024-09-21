@@ -34,7 +34,7 @@
 
     .text {
       text-box-edge: cap alphabetic;
-      text-box-trim: both;
+      text-box-trim: trim-both;
       font-weight: 500;
     }
 
