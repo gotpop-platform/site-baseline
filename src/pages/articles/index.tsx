@@ -7,23 +7,22 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
-import { withItems } from "generics"
-import { stylesLayout } from "src/layouts"
-import type { PageProps } from "types"
 import {
   jsxFactory,
   markdownFilesInDir,
   title,
-  type MarkdownFileProps,
 } from "utils"
+
+import { withItems } from "generics"
+import { stylesLayout } from "src/layouts"
+import type { PageProps } from "types"
 
 const ArticleList = withItems(ArticleItem)
 
 const pageArticles = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const markdownItems: MarkdownFileProps[] =
-    await markdownFilesInDir(slug)
+  const markdownItems = await markdownFilesInDir(slug)
 
   return (
     <AppTheme title={title(slug)}>

@@ -1,5 +1,6 @@
 import {
   AppTheme,
+  ArticleItem,
   Footer,
   GridConfig,
   HeaderMegaMenu,
@@ -9,40 +10,19 @@ import {
 import {
   jsxFactory,
   markdownFilesInDir,
-  style,
   title,
-  type MetaData,
 } from "utils"
 
+import { withItems } from "generics"
+import { stylesLayout } from "src/layouts"
 import type { PageProps } from "types"
 
-const BlogArticle = ({
-  metadata: { title, author, date, slug },
-}: {
-  metadata: MetaData | Record<string, string>
-}) => (
-  <article
-    style={style({
-      gridColumn: "1 / span 12",
-    })}
-  >
-    <a href={`blog/${slug}`}>
-      <h1>{title}</h1>
-      <p>
-        by {author} on {date}
-      </p>
-    </a>
-  </article>
-)
+const ArticleList = withItems(ArticleItem)
 
 const pageBlog = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const parsedFiles = await markdownFilesInDir(slug)
-
-  const listBlog = parsedFiles.map(({ metadata }) => (
-    <BlogArticle metadata={metadata} />
-  ))
+  const markdownItems = await markdownFilesInDir(slug)
 
   return (
     <AppTheme title={title(slug)}>
@@ -50,7 +30,10 @@ const pageBlog = async ({
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface isMain hasInner>
-          {listBlog}
+          <ArticleList
+            markdownItems={markdownItems}
+            layout={stylesLayout}
+          />
         </Surface>
         <Footer />
       </GridConfig>

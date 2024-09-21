@@ -8,12 +8,13 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
+
 import {
   jsxFactory,
   markdownFilesInDir,
   style,
   title,
-  type MarkdownFileProps
+  type MarkdownFileProps,
 } from "utils"
 
 import { withItems } from "generics"

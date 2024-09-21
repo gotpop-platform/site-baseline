@@ -13,7 +13,6 @@ import type { PageProps } from "types"
 const aboutPage = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  console.log("slug :", slug)
   return (
     <AppTheme title={title(slug)}>
       <GridConfig isRoot>
