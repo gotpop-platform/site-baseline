@@ -2,7 +2,7 @@ import {
   AppTheme,
   ArticleItem,
   Footer,
-  GridConfig,
+  GridGap,
   HeaderMegaMenu,
   MobileMenuTrigger,
   Surface,
@@ -10,6 +10,7 @@ import {
 import {
   jsxFactory,
   markdownFilesInDir,
+  style,
   title,
 } from "utils"
 
@@ -26,17 +27,32 @@ const pageGallery = async ({
 
   return (
     <AppTheme title={title(slug)}>
-      <GridConfig isRoot>
+      <GridGap isRoot>
         <MobileMenuTrigger />
-        <HeaderMegaMenu />
-        <Surface isMain hasInner>
+        <HeaderMegaMenu
+          style={style({
+            gridColumn: "center",
+            "--grid-column": "center",
+          })}
+        />
+        <Surface
+          isMain
+          style={style({
+            gridColumn: "center",
+          })}
+        >
           <ArticleList
             markdownItems={markdownItems}
             layout={stylesLayout}
           />
         </Surface>
-        <Footer />
-      </GridConfig>
+        <Footer
+          style={style({
+            gridColumn: "center",
+            "--grid-column": "center",
+          })}
+        />
+      </GridGap>
     </AppTheme>
   )
 }

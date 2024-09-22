@@ -2,7 +2,7 @@
 title: "Article 3"
 author: "John Doe"
 date: "2023-10-01"
-slug: "article-3"
+slug: "articles/article-3"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl in lacinia aliquam, nulla nunc tincidunt nunc, id tincidunt mi nisl a nunc. Nulla facilisi. Sed auctor, nunc nec ultrices aliquet, nisl nunc tincidunt nunc, id tincidunt mi nisl a nunc. Nulla facilisi."
 ---
 

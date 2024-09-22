@@ -9,6 +9,7 @@ export function Surface({
   children?: string | JSX.Element | (string | JSX.Element)[]
   isMain?: boolean
   hasInner?: boolean
+  [key: string]: any
 }): JSX.Element {
   const { css, useName } = useCSS({ meta: import.meta })
 

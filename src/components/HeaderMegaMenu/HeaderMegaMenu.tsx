@@ -8,6 +8,7 @@ import { MegaNav } from "./MegaNav"
 type HeaderMegaMenuProps = {
   title?: string
   children?: string
+  [key: string]: any
 }
 
 export const HeaderMegaMenu = ({

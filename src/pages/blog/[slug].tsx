@@ -1,7 +1,7 @@
 import {
   AppTheme,
   Footer,
-  GridConfig,
+  GridGap,
   HeaderMegaMenu,
   MobileMenuTrigger,
   Surface,
@@ -10,6 +10,7 @@ import {
   formattedDate,
   jsxFactory,
   parseMarkdownFile,
+  style,
   title,
 } from "utils"
 
@@ -25,10 +26,20 @@ const pageBlog = async ({
 
   return (
     <AppTheme title={title(pageTitle)}>
-      <GridConfig>
+      <GridGap isRoot>
         <MobileMenuTrigger />
-        <HeaderMegaMenu />
-        <Surface isMain>
+        <HeaderMegaMenu
+          style={style({
+            gridColumn: "center",
+            "--grid-column": "center",
+          })}
+        />
+        <Surface
+          isMain
+          style={style({
+            gridColumn: "center",
+          })}
+        >
           <section class="blog">
             <h1>{pageTitle}</h1>
             <aside>
@@ -44,8 +55,13 @@ const pageBlog = async ({
             {htmlContent}
           </section>
         </Surface>
-        <Footer />
-      </GridConfig>
+        <Footer
+          style={style({
+            gridColumn: "center",
+            "--grid-column": "center",
+          })}
+        />
+      </GridGap>
     </AppTheme>
   )
 }

@@ -2,7 +2,7 @@ import {
   AppTheme,
   ArticleItem,
   Footer,
-  GridConfig,
+  GridGap,
   HeaderMegaMenu,
   HeroItem,
   MobileMenuTrigger,
@@ -28,26 +28,45 @@ const pageIndex = async (): Promise<JSX.Element> => {
 
   return (
     <AppTheme title={title("Home")}>
-      <GridConfig isRoot>
+      <GridGap isRoot>
         <MobileMenuTrigger />
-        <HeaderMegaMenu />
+        <HeaderMegaMenu
+          style={style({
+            gridColumn: "center",
+            "--grid-column": "center",
+          })}
+        />
         <main
           style={style({
             display: "grid",
-            gridColumn: "box",
+            gridColumn: "center",
+            "--grid-column": "center",
             gridTemplateColumns: "subgrid",
           })}
         >
-          <HeroItem />
-          <Surface hasInner>
+          <HeroItem
+            style={style({
+              gridColumn: "center",
+            })}
+          />
+          <Surface
+            style={style({
+              gridColumn: "center",
+            })}
+          >
             <ArticleList
               markdownItems={markdownItems}
               layout={stylesLayout}
             />
           </Surface>
         </main>
-        <Footer />
-      </GridConfig>
+        <Footer
+          style={style({
+            gridColumn: "center",
+            "--grid-column": "center",
+          })}
+        />
+      </GridGap>
     </AppTheme>
   )
 }

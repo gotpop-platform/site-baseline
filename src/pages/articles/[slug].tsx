@@ -1,7 +1,7 @@
 import {
   AppTheme,
   Footer,
-  GridConfig,
+  GridGap,
   HeaderMegaMenu,
   MobileMenuTrigger,
   Surface,
@@ -38,8 +38,9 @@ const pageArticlePage = async ({
 
   const styles = {
     "--liam": "10px",
-    gridColumn: "1 / span 2",
-    backgroundColor: "white",
+    gridColumn: "3 / span 10",
+    gridRow: "2",
+    backgroundColor: "cyan",
     padding: "20px",
     fontSize: "16px",
   }
@@ -47,23 +48,39 @@ const pageArticlePage = async ({
   const stylesContent = {
     "--transition-article": slug,
     "view-transition-name": slug,
-    gridColumn: "3 / span 10",
+    gridRow: "2",
+    gridColumn: "10 /  -3",
     backgroundColor: "yellow",
   }
 
   return (
     <AppTheme title={title(slug)}>
-      <GridConfig isRoot>
+      <GridGap isRoot>
         <MobileMenuTrigger />
-        <HeaderMegaMenu />
-        <Surface isMain hasInner>
+        <HeaderMegaMenu
+          style={style({
+            gridColumn: "center",
+            "--grid-column": "center",
+          })}
+        />
+        <Surface
+          isMain
+          style={style({
+            gridColumn: "center",
+          })}
+        >
           <aside style={style(styles)}>{toccy}</aside>
           <div style={style(stylesContent)}>
             {htmlContent}
           </div>
         </Surface>
-        <Footer />
-      </GridConfig>
+        <Footer
+          style={style({
+            gridColumn: "center",
+            "--grid-column": "center",
+          })}
+        />
+      </GridGap>
     </AppTheme>
   )
 }
