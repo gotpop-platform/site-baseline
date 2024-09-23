@@ -33,6 +33,7 @@
     &.root-grid {
       min-height: 100dvh;
       grid-template-rows: auto 1fr auto;
+      /* grid-template-rows: auto 2rem 1fr 6rem auto; */
     }
   }
 }
