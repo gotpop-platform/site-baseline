@@ -1,9 +1,11 @@
 @scope {
   & {
+    --grid-column: center;
+
     display: grid;
     grid-auto-rows: 7rem min-content;
     grid-template-columns: subgrid;
-    grid-column: full-width;
+    grid-column: var(--grid-column);
   }
 
   .inner {

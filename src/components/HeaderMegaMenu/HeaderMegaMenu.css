@@ -1,1 +1,68 @@
 /* .megamenu */
+@scope {
+  & {
+    --display-animation: display 0.3s allow-discrete;
+    --display-header: none;
+    --grid-template-columns: subgrid;
+    --grid-template-rows: min-content;
+    --opacity: 0;
+
+    --grid-column: center;
+
+    /* display: var(--display-header); */
+    /* view-transition-name: header; */
+    background-color: transparent;
+    grid-column: var(--grid-column);
+    grid-template-columns: var(--grid-template-columns);
+    grid-template-rows: var(--grid-template-rows);
+    opacity: 0;
+    overflow: visible;
+    padding: 0;
+    position: relative;
+    position: static;
+    translate: 0 5rem;
+    z-index: 1000;
+
+    transition: display 0.4s allow-discrete,
+      overlay 0.4s allow-discrete, opacity 0.4s,
+      translate 0.4s;
+
+    @container style(--is-desktop: true) {
+      display: grid;
+      --display-header: grid;
+      --grid-template-rows: min-content 2rem;
+      opacity: 1;
+      translate: unset;
+    }
+
+    &::backdrop {
+      transition: display 0.4s allow-discrete,
+        overlay 0.4s allow-discrete, opacity 0.4s,
+        translate 0.4s;
+      opacity: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(0.1rem);
+      mask: radial-gradient(circle, transparent, black 70%);
+    }
+
+    &:popover-open {
+      opacity: 1;
+      translate: 0 0;
+
+      &::backdrop {
+        opacity: 1;
+      }
+    }
+
+    @starting-style {
+      &:popover-open {
+        translate: 0 5rem;
+      }
+
+      &:popover-open,
+      &:popover-open::backdrop {
+        opacity: 0;
+      }
+    }
+  }
+}

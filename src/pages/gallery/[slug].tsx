@@ -28,7 +28,6 @@ const pageGalleryItem = async ({
         <MobileMenuTrigger />
         <HeaderMegaMenu
           style={style({
-            gridColumn: "center",
             "--grid-column": "center",
           })}
         />

@@ -15,16 +15,25 @@ import {
 
 import type { PageProps } from "types"
 
-const pageArticlePage = async ({
-  slug,
-}: PageProps): Promise<JSX.Element> => {
-  const {
-    metadata: { date, author },
-    content: htmlContent,
-    toc,
-  } = parseMarkdownFile("articles", slug)
+const styles = {
+  gridColumn: "1 / span 7",
+  backgroundColor: "cyan",
+  padding: "20px",
+  fontSize: "16px",
+}
 
-  const toccy = (
+const stylesContent = (slug: string) => ({
+  "--transition-article": slug,
+  gridColumn: "10 /  -1",
+  backgroundColor: "yellow",
+})
+
+const TableOfContents = ({
+  toc,
+}: {
+  toc: { id: string; text: string }[]
+}) => (
+  <aside style={style(styles)}>
     <nav>
       <ul>
         {toc.map(({ id, text }) => (
@@ -34,52 +43,30 @@ const pageArticlePage = async ({
         ))}
       </ul>
     </nav>
-  )
+  </aside>
+)
 
-  const styles = {
-    "--liam": "10px",
-    gridColumn: "3 / span 10",
-    gridRow: "2",
-    backgroundColor: "cyan",
-    padding: "20px",
-    fontSize: "16px",
-  }
-
-  const stylesContent = {
-    "--transition-article": slug,
-    "view-transition-name": slug,
-    gridRow: "2",
-    gridColumn: "10 /  -3",
-    backgroundColor: "yellow",
-  }
+const pageArticlePage = async ({
+  slug,
+}: PageProps): Promise<JSX.Element> => {
+  const {
+    metadata: { date, author },
+    content: htmlContent,
+    toc,
+  } = parseMarkdownFile("articles", slug)
 
   return (
     <AppTheme title={title(slug)}>
       <GridGap isRoot>
         <MobileMenuTrigger />
-        <HeaderMegaMenu
-          style={style({
-            gridColumn: "center",
-            "--grid-column": "center",
-          })}
-        />
-        <Surface
-          isMain
-          style={style({
-            gridColumn: "center",
-          })}
-        >
-          <aside style={style(styles)}>{toccy}</aside>
-          <div style={style(stylesContent)}>
+        <HeaderMegaMenu />
+        <Surface isMain hasInner>
+          <TableOfContents toc={toc} />
+          <div style={style(stylesContent(slug))}>
             {htmlContent}
           </div>
         </Surface>
-        <Footer
-          style={style({
-            gridColumn: "center",
-            "--grid-column": "center",
-          })}
-        />
+        <Footer />
       </GridGap>
     </AppTheme>
   )

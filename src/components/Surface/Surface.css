@@ -1,17 +1,19 @@
+/* @scope { */
+/* @scope (&) { */
 @scope {
   & {
+    --grid-column: center;
+
     background-color: white;
     border-radius: 1rem;
     display: grid;
-    grid-column: box;
+    grid-column: var(--grid-column);
     grid-template-columns: subgrid;
-    /* padding: 1rem;
-    gap: 1rem; */
-    grid-auto-rows: 1rem 1fr 1rem;
-
     grid-template-rows: 1rem repeat(3, 1fr 1rem);
 
-    /* grid-template-rows: 1rem 1fr 1rem 1fr 1rem; */
+    &:has(.inner) {
+      grid-template-rows: 1rem 1fr 1rem;
+    }
 
     &:has(+ .surface) {
       margin-block-end: 2rem;
@@ -20,9 +22,12 @@
 
   .inner {
     display: grid;
-    gap: 1rem;
     grid-column: 3 / -3;
-    grid-template-columns: subgrid;
     grid-row: 2;
+
+    &:has(div:nth-child(2)) {
+      border: 1px solid red;
+      grid-template-columns: subgrid;
+    }
   }
 }

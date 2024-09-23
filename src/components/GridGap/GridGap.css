@@ -1,11 +1,25 @@
 @scope {
-  & {
-    --gutter: 0;
-    --gutter-columns: 0.5rem 0.5rem;
-    --repeat-columns: var(--gutter-columns) minmax(0, 120px);
+  @property --local-gutter {
+    syntax: "<length>";
+    initial-value: 0;
+    inherits: false;
+  }
 
+  @property --gutter-columns {
+    syntax: "*";
+    initial-value: 0.5rem 0.5rem;
+    inherits: false;
+  }
+
+  @property --repeat-columns {
+    syntax: "*";
+    initial-value: 0.5rem 0.5rem minmax(0, 120px);
+    inherits: false;
+  }
+
+  :scope {
     display: grid;
-    column-gap: var(--gutter);
+    column-gap: var(--local-gutter);
     grid-template-columns:
       [full-start] minmax(2rem, 1fr)
       [center-start] repeat(

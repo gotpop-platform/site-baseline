@@ -36,6 +36,7 @@ const pageBlog = async ({
         />
         <Surface
           isMain
+          hasInner
           style={style({
             gridColumn: "center",
           })}
