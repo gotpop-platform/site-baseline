@@ -9,7 +9,8 @@
     display: grid;
     grid-column: var(--grid-column);
     grid-template-columns: subgrid;
-    grid-template-rows: 1rem repeat(3, 1fr 1rem);
+    /* grid-template-rows: 1rem repeat(3, 1fr 1rem); */
+    grid-template-rows: 1rem 1fr 1rem;
 
     &:has(.inner) {
       grid-template-rows: 1rem 1fr 1rem;
@@ -25,8 +26,7 @@
     grid-column: 3 / -3;
     grid-row: 2;
 
-    &:has(div:nth-child(2)) {
-      border: 1px solid red;
+    &:has(:nth-child(2)) {
       grid-template-columns: subgrid;
     }
   }

@@ -1,0 +1,32 @@
+@scope {
+  & {
+    --gutter: 24px;
+    --padding: 20px;
+
+    display: grid;
+
+    min-height: 100dvh;
+
+    grid-template-columns:
+  /**
+   * The inner track should be 1448px wide (a bit smaller than mabook 14") and we want 12 columns to align with the design system.
+   * We're also creating a bleeding edge track so we can span elements to the edge of the screen when necessary.
+   * The size of the fullscreen track needs to be equal to the total padding we want on the side of the centered content minus whatever gutter is set.
+   */
+      [full-start] minmax(
+        calc(var(--padding) - var(--gutter)),
+        1fr
+      )
+      /* 1448 / 12 = 120.6666666667 */
+      [center-start] repeat(
+        12,
+        [col-start] minmax(0, 120.6666666667px) [col-end]
+      )
+      [center-end] minmax(
+        calc(var(--padding) - var(--gutter)),
+        1fr
+      )
+      [full-end];
+    column-gap: var(--gutter);
+  }
+}
