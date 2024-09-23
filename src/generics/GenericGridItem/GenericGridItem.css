@@ -1,0 +1,9 @@
+@scope {
+    & {
+        grid-column: var(--grid-column);
+        grid-row: var(--grid-row);
+        background-color: var(--background-color);
+        border-radius: var(--border-radius);
+        padding: var(--padding);
+    }
+}
