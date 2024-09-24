@@ -1,6 +1,13 @@
 import { jsxFactory, style, useCSS } from "utils";
 
-export function GenerateElement({ item }) {
+interface Item {
+  type: any;
+  styles: any;
+  props: any;
+  component: any;
+}
+
+export function GenerateElement({ item }: { item: Item }) {
   const { type, styles, props, component } = item
 
   const DynamicComponentWrapper = type
@@ -20,16 +27,3 @@ export function GenerateElement({ item }) {
   )
 }
 
-export const PageItems = ({
-  config,
-}: {
-  config: Array<{
-    type: string
-    styles: Record<string, string>
-    component: string
-  }>
-}) => {
-  return config.map((item, index) => (
-    <GenerateElement item={item} />
-  ))
-}

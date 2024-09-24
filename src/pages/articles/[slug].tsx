@@ -6,13 +6,9 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
-import {
-  jsxFactory,
-  parseMarkdownFile,
-  title
-} from "utils"
+import { jsxFactory, parseMarkdownFile, title } from "utils"
 
-import { PageItems } from "src/generics/GenericGridItem"
+import { GenerateElement } from "src/generics/GenericGridItem"
 import { layoutPages } from "src/layouts"
 import type { PageProps } from "types"
 
@@ -25,15 +21,17 @@ const pageArticlePage = async ({
     toc,
   } = parseMarkdownFile("articles", slug)
 
+  const config = layoutPages({ metadata, htmlContent, toc })
+
   return (
     <AppTheme title={title(slug)}>
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface isMain>
-          <PageItems
-            config={layoutPages({ metadata, htmlContent, toc })}
-          />
+          {config.map((item) => (
+            <GenerateElement item={item} />
+          ))}
         </Surface>
         <Footer />
       </GridGap>
