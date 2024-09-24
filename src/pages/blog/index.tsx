@@ -7,6 +7,7 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
+import { layoutBlog, layoutSurfaceMain } from "src/layouts"
 import {
   jsxFactory,
   markdownFilesInDir,
@@ -14,7 +15,6 @@ import {
 } from "utils"
 
 import { withItems } from "generics"
-import { layoutBlog } from "src/layouts"
 import type { PageProps } from "types"
 
 const ArticleList = withItems(ArticleItem)
@@ -29,7 +29,7 @@ const pageBlog = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface isMain>
+        <Surface isMain style={layoutSurfaceMain}>
           <ArticleList
             markdownItems={markdownItems}
             layout={layoutBlog}
