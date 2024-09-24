@@ -63,8 +63,17 @@ export const parseMarkdown = (
     "<pre><code>$1</code></pre>"
   )
 
-  // Convert line breaks
-  markdown = markdown.replace(/\n/g, "<br>")
+  // Convert plain text to paragraphs
+  markdown = markdown.replace(
+    /(^|\n)([^<>\n]+)(?=\n|$)/g,
+    (_, start, text) => {
+      const trimmedText = text.trim()
+      if (trimmedText) {
+        return `${start}<p>${trimmedText}</p>`
+      }
+      return start
+    }
+  )
 
   return { html: markdown.trim(), toc }
 }
