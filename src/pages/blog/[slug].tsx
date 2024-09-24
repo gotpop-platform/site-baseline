@@ -15,6 +15,23 @@ import {
 
 import type { PageProps } from "types"
 
+const Metadata = ({
+  date,
+  author,
+}: {
+  date: string
+  author: string
+}) => (
+  <aside>
+    <small>
+      <span>By</span>
+      <address>{author}</address>
+      <span>on</span>
+    </small>
+    <time dateTime={date}>{formattedDate(date)}</time>
+  </aside>
+)
+
 const pageBlog = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
@@ -29,20 +46,9 @@ const pageBlog = async ({
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface isMain hasInner>
-          <section class="blog">
-            <h1>{pageTitle}</h1>
-            <aside>
-              <small>
-                <span>By</span>
-                <address>{author}</address>
-                <span>on</span>
-              </small>
-              <time dateTime={date}>
-                {formattedDate(date)}
-              </time>
-            </aside>
-            {htmlContent}
-          </section>
+          <h1>{pageTitle}</h1>
+          <Metadata date={date} author={author} />
+          {htmlContent}
         </Surface>
         <Footer />
       </GridGap>
