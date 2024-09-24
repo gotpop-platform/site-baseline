@@ -1,7 +1,6 @@
 import { jsxFactory, useCSS } from "utils"
 
 import { Anchor } from "components"
-import { Surface } from "../Surface"
 
 export function HeroItem({
   children,
@@ -17,7 +16,7 @@ export function HeroItem({
   const { css } = useCSS({ meta: import.meta })
 
   return (
-    <Surface hasInner class="hero-item" {...rest}>
+    <div class="hero-item" {...rest}>
       <style>{css}</style>
       <h1>Typography & Animation!!!!!!!</h1>
       <p>
@@ -25,6 +24,6 @@ export function HeroItem({
         GotPop theme.
         <Anchor href="/about">Learn more</Anchor>
       </p>
-    </Surface>
+    </div>
   )
 }

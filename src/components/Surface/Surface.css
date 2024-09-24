@@ -1,29 +1,32 @@
-
 @property --grid-column {
   syntax: "*";
   initial-value: center;
   inherits: false;
 }
-@scope  {
+
+@scope {
   & {
-    background-color: white;
-    border-radius: 1rem;
+    --grid-template-rows: 1rem 1fr 1rem;
+    --background-colour: white;
+    --border-radius: 1rem;
+
+    background-color: var(--background-colour);
+    border-radius: var(--border-radius);
     display: grid;
     grid-column: var(--grid-column);
     grid-template-columns: subgrid;
-    /* grid-template-rows: 1rem repeat(3, 1fr 1rem); */
-    grid-template-rows: 1rem 1fr 1rem;
+    grid-template-rows: var(--grid-template-rows);
 
-    &:has(.inner) {
+    /* &:has(.inner) {
       grid-template-rows: 1rem 1fr 1rem;
-    }
+    } */
 
-    &:has(+ .surface) {
+    /* &:has(+ .surface) {
       margin-block-end: 2rem;
-    }
+    } */
   }
 
-  .inner {
+  /* .inner {
     display: grid;
     grid-column: 3 / -3;
     grid-row: 2;
@@ -31,5 +34,5 @@
     &:has(:nth-child(2)) {
       grid-template-columns: subgrid;
     }
-  }
+  } */
 }

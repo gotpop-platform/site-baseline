@@ -1,17 +1,15 @@
-import { jsxFactory } from "utils"
+import { jsxFactory, useCSS } from "utils"
 
 interface MainProps {
   children?: any
 }
 
-const Main = ({ children }: MainProps) => {
+export const Main = ({ children }: MainProps) => {
+  const { css, useName } = useCSS({ meta: import.meta })
   return (
     <main class="main">
-      <section class="section">
-        <article class="article">{children}</article>
-      </section>
+      <style>{css}</style>
+      {children}
     </main>
   )
 }
-
-export default Main

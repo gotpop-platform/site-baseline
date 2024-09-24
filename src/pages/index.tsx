@@ -5,6 +5,8 @@ import {
   GridGap,
   HeaderMegaMenu,
   HeroItem,
+  layoutSurfaceHero,
+  layoutSurfaceMain,
   MobileMenuTrigger,
   Surface,
 } from "components"
@@ -12,12 +14,12 @@ import {
 import {
   jsxFactory,
   markdownFilesInDir,
-  style,
   title,
   type MarkdownFileProps,
 } from "utils"
 
 import { withItems } from "generics"
+import { Main } from "src/components/Main"
 import { stylesLayout } from "src/layouts"
 
 const ArticleList = withItems(ArticleItem)
@@ -31,22 +33,17 @@ const pageIndex = async (): Promise<JSX.Element> => {
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <main
-          style={style({
-            display: "grid",
-            gridColumn: "center",
-            "--grid-column": "center",
-            gridTemplateColumns: "subgrid",
-          })}
-        >
-          <HeroItem />
-          <Surface>
+        <Main>
+          <Surface style={layoutSurfaceHero}>
+            <HeroItem />
+          </Surface>
+          <Surface style={layoutSurfaceMain}>
             <ArticleList
               markdownItems={markdownItems}
               layout={stylesLayout}
             />
           </Surface>
-        </main>
+        </Main>
         <Footer />
       </GridGap>
     </AppTheme>
