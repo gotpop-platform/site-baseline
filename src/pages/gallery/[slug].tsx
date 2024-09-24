@@ -7,12 +7,7 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
-import {
-  jsxFactory,
-  parseMarkdownFile,
-  style,
-  title,
-} from "utils"
+import { jsxFactory, parseMarkdownFile, title } from "utils"
 
 import type { PageProps } from "types"
 
@@ -26,32 +21,15 @@ const pageGalleryItem = async ({
     <AppTheme title={title(slug)}>
       <GridGap isRoot>
         <MobileMenuTrigger />
-        <HeaderMegaMenu
-          style={style({
-            "--grid-column": "center",
-          })}
-        />
-        <Surface
-          isMain
-          style={style({
-            gridColumn: "center",
-          })}
-        >
+        <HeaderMegaMenu />
+        <Surface isMain>
           <GalleryIntro
-            style={style({
-              gridColumn: "center",
-            })}
             slug={slug}
             metadata={metadata}
             htmlContent={htmlContent}
           />
         </Surface>
-        <Footer
-          style={style({
-            gridColumn: "center",
-            "--grid-column": "center",
-          })}
-        />
+        <Footer />
       </GridGap>
     </AppTheme>
   )

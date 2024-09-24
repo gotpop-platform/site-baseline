@@ -24,7 +24,7 @@ export function ArticleItem({
 
   return (
     <article
-      className={mkClass(import.meta.file)}
+      class={mkClass(import.meta.file)}
       style={style(layout)}
     >
       <style>{css}</style>

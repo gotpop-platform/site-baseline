@@ -1,9 +1,11 @@
-/* @scope { */
-/* @scope (&) { */
-@scope {
-  & {
-    --grid-column: center;
 
+@property --grid-column {
+  syntax: "*";
+  initial-value: center;
+  inherits: false;
+}
+@scope  {
+  & {
     background-color: white;
     border-radius: 1rem;
     display: grid;

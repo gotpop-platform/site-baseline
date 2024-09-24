@@ -10,7 +10,6 @@ import {
   formattedDate,
   jsxFactory,
   parseMarkdownFile,
-  style,
   title,
 } from "utils"
 
@@ -28,19 +27,8 @@ const pageBlog = async ({
     <AppTheme title={title(pageTitle)}>
       <GridGap isRoot>
         <MobileMenuTrigger />
-        <HeaderMegaMenu
-          style={style({
-            gridColumn: "center",
-            "--grid-column": "center",
-          })}
-        />
-        <Surface
-          isMain
-          hasInner
-          style={style({
-            gridColumn: "center",
-          })}
-        >
+        <HeaderMegaMenu />
+        <Surface isMain hasInner>
           <section class="blog">
             <h1>{pageTitle}</h1>
             <aside>
@@ -56,12 +44,7 @@ const pageBlog = async ({
             {htmlContent}
           </section>
         </Surface>
-        <Footer
-          style={style({
-            gridColumn: "center",
-            "--grid-column": "center",
-          })}
-        />
+        <Footer />
       </GridGap>
     </AppTheme>
   )

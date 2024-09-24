@@ -10,7 +10,6 @@ import {
 import {
   jsxFactory,
   markdownFilesInDir,
-  style,
   title,
 } from "utils"
 
@@ -29,29 +28,14 @@ const pageGallery = async ({
     <AppTheme title={title(slug)}>
       <GridGap isRoot>
         <MobileMenuTrigger />
-        <HeaderMegaMenu
-          style={style({
-            gridColumn: "center",
-            "--grid-column": "center",
-          })}
-        />
-        <Surface
-          isMain
-          style={style({
-            gridColumn: "center",
-          })}
-        >
+        <HeaderMegaMenu />
+        <Surface isMain>
           <ArticleList
             markdownItems={markdownItems}
             layout={stylesLayout}
           />
         </Surface>
-        <Footer
-          style={style({
-            gridColumn: "center",
-            "--grid-column": "center",
-          })}
-        />
+        <Footer />
       </GridGap>
     </AppTheme>
   )

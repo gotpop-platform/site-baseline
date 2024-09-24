@@ -30,12 +30,7 @@ const pageIndex = async (): Promise<JSX.Element> => {
     <AppTheme title={title("Home")}>
       <GridGap isRoot>
         <MobileMenuTrigger />
-        <HeaderMegaMenu
-          style={style({
-            gridColumn: "center",
-            "--grid-column": "center",
-          })}
-        />
+        <HeaderMegaMenu />
         <main
           style={style({
             display: "grid",
@@ -44,28 +39,15 @@ const pageIndex = async (): Promise<JSX.Element> => {
             gridTemplateColumns: "subgrid",
           })}
         >
-          <HeroItem
-            style={style({
-              gridColumn: "center",
-            })}
-          />
-          <Surface
-            style={style({
-              gridColumn: "center",
-            })}
-          >
+          <HeroItem />
+          <Surface>
             <ArticleList
               markdownItems={markdownItems}
               layout={stylesLayout}
             />
           </Surface>
         </main>
-        <Footer
-          style={style({
-            gridColumn: "center",
-            "--grid-column": "center",
-          })}
-        />
+        <Footer />
       </GridGap>
     </AppTheme>
   )

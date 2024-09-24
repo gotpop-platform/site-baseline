@@ -1,7 +1,7 @@
 import {
   AppTheme,
   Footer,
-  GridConfig,
+  GridGap,
   HeaderMegaMenu,
   MobileMenuTrigger,
   Surface,
@@ -11,7 +11,7 @@ import { jsxFactory, style, title } from "utils"
 const NotFoundPage = async () => {
   return (
     <AppTheme title={title("Page Not Found")}>
-      <GridConfig isRoot>
+      <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface isMain hasInner>
@@ -29,7 +29,7 @@ const NotFoundPage = async () => {
           </section>
         </Surface>
         <Footer />
-      </GridConfig>
+      </GridGap>
     </AppTheme>
   )
 }

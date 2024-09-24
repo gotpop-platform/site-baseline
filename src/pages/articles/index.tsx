@@ -7,15 +7,14 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
-import { stylesLayout } from "src/layouts"
 import {
   jsxFactory,
   markdownFilesInDir,
-  style,
   title,
 } from "utils"
 
 import { withItems } from "generics"
+import { stylesLayout } from "src/layouts"
 import type { PageProps } from "types"
 
 const ArticleList = withItems(ArticleItem)
@@ -29,29 +28,14 @@ const pageArticles = async ({
     <AppTheme title={title(slug)}>
       <GridGap isRoot>
         <MobileMenuTrigger />
-        <HeaderMegaMenu
-          style={style({
-            gridColumn: "center",
-            "--grid-column": "center",
-          })}
-        />
-        <Surface
-          isMain
-          style={style({
-            gridColumn: "center",
-          })}
-        >
+        <HeaderMegaMenu />
+        <Surface isMain>
           <ArticleList
             markdownItems={markdownItems}
             layout={stylesLayout}
           />
         </Surface>
-        <Footer
-          style={style({
-            gridColumn: "center",
-            "--grid-column": "center",
-          })}
-        />
+        <Footer />
       </GridGap>
     </AppTheme>
   )
