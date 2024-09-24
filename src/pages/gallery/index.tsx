@@ -15,7 +15,7 @@ import {
 import {
   layoutSurfaceMain,
   stylesLayout,
-} from "src/layouts"
+} from "src/variables"
 
 import type { PageProps } from "types"
 import { withItems } from "generics"

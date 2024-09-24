@@ -3,43 +3,23 @@ import {
   Footer,
   GridGap,
   HeaderMegaMenu,
+  Heading,
   MobileMenuTrigger,
   Surface,
 } from "components"
-import {
-  formattedDate,
-  jsxFactory,
-  parseMarkdownFile,
-  title,
-} from "utils"
+import { jsxFactory, parseMarkdownFile, title } from "utils"
 
-import { GenerateElement } from "src/generics/GenericGridItem"
+import { GenerateElement } from "generics"
+import { Metadata } from "src/components/Metadata"
 import type { PageProps } from "types"
-import { stylesBlog } from "src/layouts/layoutBlog"
-
-const Metadata = ({
-  date,
-  author,
-}: {
-  date: string
-  author: string
-}) => (
-  <aside>
-    <small>
-      <span>By</span>
-      <address>{author}</address>
-      <span>on</span>
-    </small>
-    <time dateTime={date}>{formattedDate(date)}</time>
-  </aside>
-)
+import { stylesBlog } from "variables"
 
 const pageBlog = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
   const {
     metadata: { date, title: pageTitle, author },
-    content: htmlContent,
+    content,
   } = parseMarkdownFile("blog", slug)
 
   return (
@@ -52,9 +32,9 @@ const pageBlog = async ({
             tag="section"
             styles={stylesBlog}
           >
-            <h1>{pageTitle}</h1>
+            <Heading>{pageTitle}</Heading>
             <Metadata date={date} author={author} />
-            {htmlContent}
+            {content}
           </GenerateElement>
         </Surface>
         <Footer />

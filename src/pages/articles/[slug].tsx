@@ -5,25 +5,24 @@ import {
   HeaderMegaMenu,
   MobileMenuTrigger,
   Surface,
+  TableOfContents,
 } from "components"
 import { jsxFactory, parseMarkdownFile, title } from "utils"
 import {
   layoutArticlesSlugContent,
   layoutArticlesSlugToc,
-} from "src/layouts"
+} from "variables"
 
-import { GenerateElement } from "src/generics/GenericGridItem"
+import { GenerateElement } from "generics"
 import type { PageProps } from "types"
-import { TableOfContents } from "src/components/TableOfContents"
 
 const pageArticlePage = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const {
-    metadata,
-    content: htmlContent,
-    toc,
-  } = parseMarkdownFile("articles", slug)
+  const { content, toc } = parseMarkdownFile(
+    "articles",
+    slug
+  )
 
   return (
     <AppTheme title={title(slug)}>
@@ -41,7 +40,7 @@ const pageArticlePage = async ({
             tag="section"
             styles={layoutArticlesSlugContent}
           >
-            {htmlContent}
+            {content}
           </GenerateElement>
         </Surface>
         <Footer />

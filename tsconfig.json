@@ -28,7 +28,8 @@
     "paths": {
       "components": ["src/components"],
       "layouts": ["src/components/layouts"],
-      "@pages/*": ["src/pages/*"],
+      "variables": ["src/variables"],
+      "pages": ["src/pages"],
       "generics": ["src/generics"],
       "types": ["src/types"],
       "utils": ["src/utils"]

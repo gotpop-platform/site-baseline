@@ -11,7 +11,7 @@ import { jsxFactory, title } from "utils"
 import { GenerateElement } from "src/generics/GenericGridItem"
 import { Heading } from "src/components/Heading"
 import type { PageProps } from "types"
-import { stylesBlog } from "src/layouts/layoutBlog"
+import { stylesBlog } from "src/variables/layoutBlog"
 
 const aboutPage = async ({
   slug,

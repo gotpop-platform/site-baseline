@@ -18,7 +18,11 @@ import {
 
 import { withItems } from "generics"
 import { Main } from "src/components/Main"
-import { layoutSurfaceHero, layoutSurfaceMain, stylesLayout } from "src/layouts"
+import {
+  layoutSurfaceHero,
+  layoutSurfaceMain,
+  stylesLayout,
+} from "src/variables"
 
 const ArticleList = withItems(ArticleItem)
 

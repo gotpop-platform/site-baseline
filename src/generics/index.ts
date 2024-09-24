@@ -1,1 +1,2 @@
-export * from './ComponentArray';
+export * from "./ComponentArray"
+export * from "./GenericGridItem"

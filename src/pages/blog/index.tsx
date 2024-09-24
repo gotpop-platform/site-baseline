@@ -7,15 +7,18 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
-import { layoutBlog, layoutSurfaceMain } from "src/layouts"
 import {
   jsxFactory,
   markdownFilesInDir,
   title,
 } from "utils"
+import {
+  layoutBlog,
+  layoutSurfaceMain,
+} from "src/variables"
 
-import { withItems } from "generics"
 import type { PageProps } from "types"
+import { withItems } from "generics"
 
 const ArticleList = withItems(ArticleItem)
 
