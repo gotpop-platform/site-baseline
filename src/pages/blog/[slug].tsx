@@ -13,7 +13,9 @@ import {
   title,
 } from "utils"
 
+import { GenerateElement } from "src/generics/GenericGridItem"
 import type { PageProps } from "types"
+import { stylesBlog } from "src/layouts/layoutBlog"
 
 const Metadata = ({
   date,
@@ -45,10 +47,15 @@ const pageBlog = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface isMain hasInner>
-          <h1>{pageTitle}</h1>
-          <Metadata date={date} author={author} />
-          {htmlContent}
+        <Surface isMain>
+          <GenerateElement
+            tag="section"
+            styles={stylesBlog}
+          >
+            <h1>{pageTitle}</h1>
+            <Metadata date={date} author={author} />
+            {htmlContent}
+          </GenerateElement>
         </Surface>
         <Footer />
       </GridGap>

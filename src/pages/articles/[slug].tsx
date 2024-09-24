@@ -7,10 +7,14 @@ import {
   Surface,
 } from "components"
 import { jsxFactory, parseMarkdownFile, title } from "utils"
+import {
+  layoutArticlesSlugContent,
+  layoutArticlesSlugToc,
+} from "src/layouts"
 
 import { GenerateElement } from "src/generics/GenericGridItem"
-import { layoutPages } from "src/layouts"
 import type { PageProps } from "types"
+import { TableOfContents } from "src/components/TableOfContents"
 
 const pageArticlePage = async ({
   slug,
@@ -21,17 +25,24 @@ const pageArticlePage = async ({
     toc,
   } = parseMarkdownFile("articles", slug)
 
-  const config = layoutPages({ metadata, htmlContent, toc })
-
   return (
     <AppTheme title={title(slug)}>
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface isMain>
-          {config.map((item) => (
-            <GenerateElement item={item} />
-          ))}
+          <GenerateElement
+            tag="aside"
+            styles={layoutArticlesSlugToc}
+          >
+            <TableOfContents toc={toc} />
+          </GenerateElement>
+          <GenerateElement
+            tag="section"
+            styles={layoutArticlesSlugContent}
+          >
+            {htmlContent}
+          </GenerateElement>
         </Surface>
         <Footer />
       </GridGap>

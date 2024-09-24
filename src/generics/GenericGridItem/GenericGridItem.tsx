@@ -1,29 +1,23 @@
-import { jsxFactory, style, useCSS } from "utils";
+import { jsxFactory, style, useCSS } from "utils"
 
-interface Item {
-  type: any;
-  styles: any;
-  props: any;
-  component: any;
+type GenerateElementProps = {
+  tag: string
+  styles: { [key: string]: string }
+  children?: string
 }
 
-export function GenerateElement({ item }: { item: Item }) {
-  const { type, styles, props, component } = item
-
-  const DynamicComponentWrapper = type
-
-  const Component = component
-
+export function GenerateElement({
+  tag,
+  styles,
+  children,
+}: GenerateElementProps) {
   const { css } = useCSS({ meta: import.meta })
+  const DynamicHTMLTag = tag
 
   return (
-    <DynamicComponentWrapper
-      class="dynamic-element"
-      style={style(styles)}
-    >
-          <style>{css}</style>
-      <Component {...props} />
-    </DynamicComponentWrapper>
+    <DynamicHTMLTag style={style(styles)}>
+      <style>{css}</style>
+      {children}
+    </DynamicHTMLTag>
   )
 }
-
