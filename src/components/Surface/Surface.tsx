@@ -18,11 +18,7 @@ export function Surface({
   return (
     <Wrapper class={useName} {...rest}>
       <style>{css}</style>
-      {hasInner ? (
-        <div class="inner">{children}</div>
-      ) : (
-        children
-      )}
+      {children}
     </Wrapper>
   )
 }

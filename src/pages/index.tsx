@@ -5,8 +5,6 @@ import {
   GridGap,
   HeaderMegaMenu,
   HeroItem,
-  layoutSurfaceHero,
-  layoutSurfaceMain,
   MobileMenuTrigger,
   Surface,
 } from "components"
@@ -20,7 +18,7 @@ import {
 
 import { withItems } from "generics"
 import { Main } from "src/components/Main"
-import { stylesLayout } from "src/layouts"
+import { layoutSurfaceHero, layoutSurfaceMain, stylesLayout } from "src/layouts"
 
 const ArticleList = withItems(ArticleItem)
 

@@ -27,7 +27,7 @@ export const layoutPages = (props: any) => [
     type: "aside",
     styles: {
       "--background-color": "lightblue",
-      "--padding": "1rem",
+      "--padding": "2rem",
       "--grid-column": "3 / 7",
       "--grid-row": "2",
       "--border-radius": "0.5rem  0 0 0.5rem",
@@ -41,7 +41,7 @@ export const layoutPages = (props: any) => [
     type: "section",
     styles: {
       "--background-color": "lightblue",
-      "--padding": "1rem",
+      "--padding": "4rem",
       "--grid-column": "9 / 37",
       "--grid-row": "2",
       "--border-radius": "0 0.5rem 0.5rem 0",

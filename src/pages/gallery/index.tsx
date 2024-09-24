@@ -12,10 +12,13 @@ import {
   markdownFilesInDir,
   title,
 } from "utils"
+import {
+  layoutSurfaceMain,
+  stylesLayout,
+} from "src/layouts"
 
-import { withItems } from "generics"
-import { stylesLayout } from "src/layouts"
 import type { PageProps } from "types"
+import { withItems } from "generics"
 
 const ArticleList = withItems(ArticleItem)
 
@@ -29,7 +32,7 @@ const pageGallery = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface isMain>
+        <Surface isMain style={layoutSurfaceMain}>
           <ArticleList
             markdownItems={markdownItems}
             layout={stylesLayout}

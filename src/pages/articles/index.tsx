@@ -6,16 +6,18 @@ import {
   HeaderMegaMenu,
   MobileMenuTrigger,
   Surface,
-  layoutSurfaceMain,
 } from "components"
 import {
   jsxFactory,
   markdownFilesInDir,
   title,
 } from "utils"
+import {
+  layoutSurfaceMain,
+  stylesLayout,
+} from "src/layouts"
 
 import type { PageProps } from "types"
-import { stylesLayout } from "src/layouts"
 import { withItems } from "generics"
 
 const ArticleList = withItems(ArticleItem)
