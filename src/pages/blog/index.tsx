@@ -12,10 +12,7 @@ import {
   markdownFilesInDir,
   title,
 } from "utils"
-import {
-  layoutBlog,
-  layoutSurfaceMain,
-} from "src/variables"
+import { layoutBlog, layoutSurfaceMain } from "variables"
 
 import type { PageProps } from "types"
 import { withItems } from "generics"

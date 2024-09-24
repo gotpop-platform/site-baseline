@@ -3,15 +3,15 @@ import {
   Footer,
   GridGap,
   HeaderMegaMenu,
+  Heading,
   MobileMenuTrigger,
   Surface,
 } from "components"
 import { jsxFactory, title } from "utils"
 
-import { GenerateElement } from "src/generics/GenericGridItem"
-import { Heading } from "src/components/Heading"
+import { GenerateElement } from "generics"
 import type { PageProps } from "types"
-import { stylesBlog } from "src/variables/layoutBlog"
+import { stylesBlog } from "variables"
 
 const aboutPage = async ({
   slug,
@@ -23,9 +23,7 @@ const aboutPage = async ({
         <HeaderMegaMenu />
         <Surface isMain>
           <GenerateElement tag="div" styles={stylesBlog}>
-            <Heading level={1} index={1}>
-              About
-            </Heading>
+            <Heading>About</Heading>
           </GenerateElement>
         </Surface>
         <Footer />

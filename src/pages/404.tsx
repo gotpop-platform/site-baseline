@@ -6,7 +6,10 @@ import {
   MobileMenuTrigger,
   Surface,
 } from "components"
-import { jsxFactory, style, title } from "utils"
+import { jsxFactory, title } from "utils"
+
+import { GenerateElement } from "generics"
+import { stylesBlog } from "variables"
 
 const NotFoundPage = async () => {
   return (
@@ -15,18 +18,16 @@ const NotFoundPage = async () => {
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Surface isMain hasInner>
-          <section
-            class="not-found"
-            style={style({
-              gridColumn: "1 / span 12",
-            })}
+          <GenerateElement
+            tag="section"
+            styles={stylesBlog}
           >
             <h1>404 - Page Not Found</h1>
             <p>
               Sorry, the page you are looking for does not
               exist.
             </p>
-          </section>
+          </GenerateElement>
         </Surface>
         <Footer />
       </GridGap>
