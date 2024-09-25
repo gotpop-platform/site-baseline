@@ -13,7 +13,7 @@ import {
   title,
 } from "utils"
 import {
-  layoutSurfaceMain,
+  styleSurfaceMain,
   stylesLayout,
 } from "src/variables"
 
@@ -31,7 +31,7 @@ const pageArticles = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Tag tag="main" styles={layoutSurfaceMain}>
+        <Tag tag="main" styles={styleSurfaceMain}>
           <ArticleList
             markdownItems={markdownItems}
             layout={stylesLayout}

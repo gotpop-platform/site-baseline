@@ -12,7 +12,7 @@ import {
   markdownFilesInDir,
   title,
 } from "utils"
-import { layoutBlog, layoutSurfaceMain } from "variables"
+import { layoutBlog, styleSurfaceMain } from "variables"
 
 import type { PageProps } from "types"
 
@@ -28,7 +28,7 @@ const pageBlog = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Tag tag="main" styles={layoutSurfaceMain}>
+        <Tag tag="main" styles={styleSurfaceMain}>
           <ArticleList
             markdownItems={markdownItems}
             layout={layoutBlog}

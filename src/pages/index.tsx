@@ -14,10 +14,10 @@ import {
   title,
 } from "utils"
 import {
-  layoutSurfaceHero,
-  layoutSurfaceMain,
+  styleHero,
+  styleMain,
+  styleSurfaceMain,
   stylesLayout,
-  stylesMain,
 } from "variables"
 
 const ArticleList = withItems(ArticleItem)
@@ -30,11 +30,11 @@ const pageIndex = async (): Promise<JSX.Element> => {
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Tag tag="main" styles={stylesMain}>
-          <Tag tag="section" styles={layoutSurfaceHero}>
+        <Tag tag="main" styles={styleMain}>
+          <Tag tag="section" styles={styleHero}>
             <HeroItem />
           </Tag>
-          <Tag tag="section" styles={layoutSurfaceMain}>
+          <Tag tag="section" styles={styleSurfaceMain}>
             <ArticleList
               markdownItems={markdownItems}
               layout={stylesLayout}
