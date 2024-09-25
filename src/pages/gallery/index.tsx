@@ -5,20 +5,19 @@ import {
   GridGap,
   HeaderMegaMenu,
   MobileMenuTrigger,
-  Surface,
 } from "components"
+import { GenerateElement, withItems } from "generics"
 import {
   jsxFactory,
   markdownFilesInDir,
   title,
 } from "utils"
 import {
-  layoutSurfaceMain,
+  layoutArticlesSlugSurface,
   stylesLayout,
 } from "src/variables"
 
 import type { PageProps } from "types"
-import { withItems } from "generics"
 
 const ArticleList = withItems(ArticleItem)
 
@@ -32,12 +31,15 @@ const pageGallery = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface isMain style={layoutSurfaceMain}>
+        <GenerateElement
+          tag="main"
+          styles={layoutArticlesSlugSurface}
+        >
           <ArticleList
             markdownItems={markdownItems}
             layout={stylesLayout}
           />
-        </Surface>
+        </GenerateElement>
         <Footer />
       </GridGap>
     </AppTheme>

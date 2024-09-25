@@ -4,12 +4,12 @@ import {
   GridGap,
   HeaderMegaMenu,
   MobileMenuTrigger,
-  Surface,
   TableOfContents,
 } from "components"
 import { jsxFactory, parseMarkdownFile, title } from "utils"
 import {
   layoutArticlesSlugContent,
+  layoutArticlesSlugSurface,
   layoutArticlesSlugToc,
 } from "variables"
 
@@ -29,7 +29,10 @@ const pageArticlePage = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface isMain>
+        <GenerateElement
+          tag="main"
+          styles={layoutArticlesSlugSurface}
+        >
           <GenerateElement
             tag="aside"
             styles={layoutArticlesSlugToc}
@@ -42,7 +45,7 @@ const pageArticlePage = async ({
           >
             {content}
           </GenerateElement>
-        </Surface>
+        </GenerateElement>
         <Footer />
       </GridGap>
     </AppTheme>

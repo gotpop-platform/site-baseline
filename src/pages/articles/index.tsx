@@ -5,8 +5,8 @@ import {
   GridGap,
   HeaderMegaMenu,
   MobileMenuTrigger,
-  Surface,
 } from "components"
+import { GenerateElement, withItems } from "generics"
 import {
   jsxFactory,
   markdownFilesInDir,
@@ -18,7 +18,6 @@ import {
 } from "src/variables"
 
 import type { PageProps } from "types"
-import { withItems } from "generics"
 
 const ArticleList = withItems(ArticleItem)
 
@@ -32,12 +31,15 @@ const pageArticles = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface isMain style={layoutSurfaceMain}>
+        <GenerateElement
+          tag="main"
+          styles={layoutSurfaceMain}
+        >
           <ArticleList
             markdownItems={markdownItems}
             layout={stylesLayout}
           />
-        </Surface>
+        </GenerateElement>
         <Footer />
       </GridGap>
     </AppTheme>

@@ -4,12 +4,14 @@ import {
   GridGap,
   HeaderMegaMenu,
   MobileMenuTrigger,
-  Surface,
 } from "components"
 import { jsxFactory, title } from "utils"
+import {
+  layoutArticlesSlugSurface,
+  stylesBlog,
+} from "variables"
 
 import { GenerateElement } from "generics"
-import { stylesBlog } from "variables"
 
 const NotFoundPage = async () => {
   return (
@@ -17,7 +19,10 @@ const NotFoundPage = async () => {
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface isMain hasInner>
+        <GenerateElement
+          tag="main"
+          styles={layoutArticlesSlugSurface}
+        >
           <GenerateElement
             tag="section"
             styles={stylesBlog}
@@ -28,7 +33,7 @@ const NotFoundPage = async () => {
               exist.
             </p>
           </GenerateElement>
-        </Surface>
+        </GenerateElement>
         <Footer />
       </GridGap>
     </AppTheme>

@@ -5,14 +5,13 @@ import {
   HeaderMegaMenu,
   Heading,
   MobileMenuTrigger,
-  Surface,
 } from "components"
 import { jsxFactory, parseMarkdownFile, title } from "utils"
+import { stylesBlog, stylesBlogInner } from "variables"
 
 import { GenerateElement } from "generics"
 import { Metadata } from "src/components/Metadata"
 import type { PageProps } from "types"
-import { stylesBlog } from "variables"
 
 const pageBlog = async ({
   slug,
@@ -27,16 +26,16 @@ const pageBlog = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface isMain>
+        <GenerateElement tag="section" styles={stylesBlog}>
           <GenerateElement
             tag="section"
-            styles={stylesBlog}
+            styles={stylesBlogInner}
           >
             <Heading>{pageTitle}</Heading>
             <Metadata date={date} author={author} />
             {content}
           </GenerateElement>
-        </Surface>
+        </GenerateElement>
         <Footer />
       </GridGap>
     </AppTheme>
