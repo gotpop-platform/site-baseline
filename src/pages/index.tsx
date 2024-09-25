@@ -7,7 +7,7 @@ import {
   HeroItem,
   MobileMenuTrigger,
 } from "components"
-import { GenerateElement, withItems } from "generics"
+import { Tag, withItems } from "generics"
 import {
   jsxFactory,
   markdownFilesInDir,
@@ -30,23 +30,17 @@ const pageIndex = async (): Promise<JSX.Element> => {
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <GenerateElement tag="main" styles={stylesMain}>
-          <GenerateElement
-            tag="section"
-            styles={layoutSurfaceHero}
-          >
+        <Tag tag="main" styles={stylesMain}>
+          <Tag tag="section" styles={layoutSurfaceHero}>
             <HeroItem />
-          </GenerateElement>
-          <GenerateElement
-            tag="section"
-            styles={layoutSurfaceMain}
-          >
+          </Tag>
+          <Tag tag="section" styles={layoutSurfaceMain}>
             <ArticleList
               markdownItems={markdownItems}
               layout={stylesLayout}
             />
-          </GenerateElement>
-        </GenerateElement>
+          </Tag>
+        </Tag>
         <Footer />
       </GridGap>
     </AppTheme>

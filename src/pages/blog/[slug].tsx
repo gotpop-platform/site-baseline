@@ -9,9 +9,9 @@ import {
 import { jsxFactory, parseMarkdownFile, title } from "utils"
 import { stylesBlog, stylesBlogInner } from "variables"
 
-import { GenerateElement } from "generics"
 import { Metadata } from "src/components/Metadata"
 import type { PageProps } from "types"
+import { Tag } from "generics"
 
 const pageBlog = async ({
   slug,
@@ -26,16 +26,13 @@ const pageBlog = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <GenerateElement tag="section" styles={stylesBlog}>
-          <GenerateElement
-            tag="section"
-            styles={stylesBlogInner}
-          >
+        <Tag tag="section" styles={stylesBlog}>
+          <Tag tag="section" styles={stylesBlogInner}>
             <Heading>{pageTitle}</Heading>
             <Metadata date={date} author={author} />
             {content}
-          </GenerateElement>
-        </GenerateElement>
+          </Tag>
+        </Tag>
         <Footer />
       </GridGap>
     </AppTheme>

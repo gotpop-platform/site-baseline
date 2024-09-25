@@ -8,8 +8,8 @@ import {
 } from "components"
 import { jsxFactory, parseMarkdownFile, title } from "utils"
 
-import { GenerateElement } from "generics"
 import type { PageProps } from "types"
+import { Tag } from "generics"
 import { layoutArticlesSlugSurface } from "variables"
 
 const pageGalleryItem = async ({
@@ -23,16 +23,13 @@ const pageGalleryItem = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <GenerateElement
-          tag="main"
-          styles={layoutArticlesSlugSurface}
-        >
+        <Tag tag="main" styles={layoutArticlesSlugSurface}>
           <GalleryIntro
             slug={slug}
             metadata={metadata}
             htmlContent={htmlContent}
           />
-        </GenerateElement>
+        </Tag>
         <Footer />
       </GridGap>
     </AppTheme>

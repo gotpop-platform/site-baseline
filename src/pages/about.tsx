@@ -12,8 +12,8 @@ import {
   stylesBlog,
 } from "variables"
 
-import { GenerateElement } from "generics"
 import type { PageProps } from "types"
+import { Tag } from "generics"
 
 const aboutPage = async ({
   slug,
@@ -23,14 +23,11 @@ const aboutPage = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <GenerateElement
-          tag="main"
-          styles={layoutArticlesSlugSurface}
-        >
-          <GenerateElement tag="div" styles={stylesBlog}>
+        <Tag tag="main" styles={layoutArticlesSlugSurface}>
+          <Tag tag="div" styles={stylesBlog}>
             <Heading>About</Heading>
-          </GenerateElement>
-        </GenerateElement>
+          </Tag>
+        </Tag>
         <Footer />
       </GridGap>
     </AppTheme>

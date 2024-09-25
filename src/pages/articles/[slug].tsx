@@ -13,8 +13,8 @@ import {
   layoutArticlesSlugToc,
 } from "variables"
 
-import { GenerateElement } from "generics"
 import type { PageProps } from "types"
+import { Tag } from "generics"
 
 const pageArticlePage = async ({
   slug,
@@ -29,23 +29,17 @@ const pageArticlePage = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <GenerateElement
-          tag="main"
-          styles={layoutArticlesSlugSurface}
-        >
-          <GenerateElement
-            tag="aside"
-            styles={layoutArticlesSlugToc}
-          >
+        <Tag tag="main" styles={layoutArticlesSlugSurface}>
+          <Tag tag="aside" styles={layoutArticlesSlugToc}>
             <TableOfContents toc={toc} />
-          </GenerateElement>
-          <GenerateElement
+          </Tag>
+          <Tag
             tag="section"
             styles={layoutArticlesSlugContent}
           >
             {content}
-          </GenerateElement>
-        </GenerateElement>
+          </Tag>
+        </Tag>
         <Footer />
       </GridGap>
     </AppTheme>

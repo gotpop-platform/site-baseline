@@ -6,7 +6,7 @@ import {
   HeaderMegaMenu,
   MobileMenuTrigger,
 } from "components"
-import { GenerateElement, withItems } from "generics"
+import { Tag, withItems } from "generics"
 import {
   jsxFactory,
   markdownFilesInDir,
@@ -31,15 +31,12 @@ const pageArticles = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <GenerateElement
-          tag="main"
-          styles={layoutSurfaceMain}
-        >
+        <Tag tag="main" styles={layoutSurfaceMain}>
           <ArticleList
             markdownItems={markdownItems}
             layout={stylesLayout}
           />
-        </GenerateElement>
+        </Tag>
         <Footer />
       </GridGap>
     </AppTheme>
