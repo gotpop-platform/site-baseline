@@ -19,7 +19,7 @@ import { Tag } from "generics"
 const pageArticlePage = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const { content, toc } = parseMarkdownFile(
+  const { content, toc, metadata } = parseMarkdownFile(
     "articles",
     slug
   )
@@ -35,7 +35,9 @@ const pageArticlePage = async ({
           </Tag>
           <Tag
             tag="section"
-            styles={layoutArticlesSlugContent}
+            styles={layoutArticlesSlugContent(
+              metadata.slug
+            )}
           >
             {content}
           </Tag>

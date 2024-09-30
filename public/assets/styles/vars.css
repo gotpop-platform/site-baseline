@@ -10,6 +10,17 @@
   --radius-xl: 5rem;
 }
 
+@property --grid-row {
+  syntax: "*";
+  inherits: false;
+  initial-value: auto;
+}
+@property --grid-template-columns {
+  syntax: "*";
+  inherits: false;
+  initial-value: subgrid;
+}
+
 @property --row-gap {
   syntax: "<length>";
   inherits: false;

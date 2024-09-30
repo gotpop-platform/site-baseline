@@ -8,8 +8,8 @@ import {
 } from "components"
 import { jsxFactory, title } from "utils"
 import {
-  layoutArticlesSlugSurface,
-  stylesBlog,
+  stylesAbout,
+  stylesAboutContainer,
 } from "variables"
 
 import type { PageProps } from "types"
@@ -23,8 +23,8 @@ const aboutPage = async ({
       <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Tag tag="main" styles={layoutArticlesSlugSurface}>
-          <Tag tag="div" styles={stylesBlog}>
+        <Tag tag="main" styles={stylesAboutContainer}>
+          <Tag tag="div" styles={stylesAbout}>
             <Heading>About</Heading>
           </Tag>
         </Tag>

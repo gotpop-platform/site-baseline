@@ -1,16 +1,17 @@
 import { readFileSync } from "fs"
-import { styleVars } from "utils"
+import { styleVars, type StyleObjProps } from "utils"
 
 interface UseCSSOptions {
   meta: ImportMeta
-  styles: { [key: string]: string }
+  styles?: StyleObjProps
 }
 
 export function useCSS({ meta, styles }: UseCSSOptions) {
   const { file, dir } = meta
   const theFile = file.split(".").shift()
   const thePath = `${dir}/${theFile}.css`
-  const theStyle = styleVars(styles)
+
+  const theStyle = styles ? styleVars(styles) : ""
   const cssFile = readFileSync(thePath, "utf-8")
 
   const theStyleScoped = `
