@@ -1,26 +1,28 @@
 import { readFileSync } from "fs"
+import { style } from "utils"
 
 interface UseCSSOptions {
   meta: ImportMeta
-  global?: boolean
+  styles: { [key: string]: string }
 }
 
-export function useCSS({
-  meta,
-  global = false,
-}: UseCSSOptions) {
-  // console.log("meta :", meta.file)
+export function useCSS({ meta, styles }: UseCSSOptions) {
   const { file, dir } = meta
   const theFile = file.split(".").shift()
-  // console.log("theFile :", theFile)
-  const theRoot = process.cwd()
+  const thePath = `${dir}/${theFile}.css`
+  const theStyle = style(styles)
+  const cssFile = readFileSync(thePath, "utf-8")
 
-  const thePath = global
-    ? `${theRoot}/src/styles/global.css`
-    : `${dir}/${theFile}.css`
+  const theStyleScoped = `
+      @scope{
+         :scope {
+          ${theStyle}
+         }
+        }`
 
-  // console.log("thePath :", thePath)
-  const css = readFileSync(thePath, "utf-8")
+  const css = styles
+    ? `${theStyleScoped}\n${cssFile}`
+    : cssFile
 
   const useName = theFile?.toLowerCase()
 

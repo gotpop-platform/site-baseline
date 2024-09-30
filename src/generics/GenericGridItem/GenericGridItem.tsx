@@ -1,4 +1,4 @@
-import { jsxFactory, style, useCSS } from "utils"
+import { jsxFactory, useCSS } from "utils"
 
 type TagProps = {
   tag: string
@@ -7,11 +7,11 @@ type TagProps = {
 }
 
 export function Tag({ tag, styles, children }: TagProps) {
-  const { css } = useCSS({ meta: import.meta })
+  const { css } = useCSS({ meta: import.meta, styles })
   const DynamicHTMLTag = tag
 
   return (
-    <DynamicHTMLTag style={style(styles)}>
+    <DynamicHTMLTag>
       <style>{css}</style>
       {children}
     </DynamicHTMLTag>
