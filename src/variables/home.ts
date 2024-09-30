@@ -1,10 +1,10 @@
 import { surfaceStyles } from "./base"
 
 export const styleMain = {
-  display: "grid",
-  "grid-column": "center",
-  "grid-template-columns": "subgrid",
-  "row-gap": "2rem",
+  "--display": "grid",
+  "--grid-column": "center",
+  "--grid-template-columns": "subgrid",
+  "--row-gap": "2rem",
 }
 
 export const styleHero = {

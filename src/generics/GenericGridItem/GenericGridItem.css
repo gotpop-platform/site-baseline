@@ -4,9 +4,10 @@
     grid-row: var(--grid-row);
     background-color: var(--background-colour);
     border-radius: var(--border-radius);
-    padding: var(--padding, 0);
-    display: var(--display, grid);
+    padding: var(--padding);
+    display: var(--display);
     grid-template-columns: subgrid;
     grid-template-rows: var(--grid-template-rows);
+    row-gap: var(--row-gap);
   }
 }

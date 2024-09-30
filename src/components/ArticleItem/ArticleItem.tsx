@@ -2,7 +2,6 @@ import {
   jsxFactory,
   mkClass,
   mkUrl,
-  style,
   useCSS,
   type MarkdownFileProps,
   type StyleObjProps,
@@ -17,16 +16,16 @@ export function ArticleItem({
   markdownFile,
   layout,
 }: ArticleComponentProps): JSX.Element {
-  const { css } = useCSS({ meta: import.meta })
+  const { css } = useCSS({
+    meta: import.meta,
+    styles: layout,
+  })
   const {
     metadata: { title, description, slug },
   } = markdownFile
 
   return (
-    <article
-      class={mkClass(import.meta.file)}
-      style={style(layout)}
-    >
+    <article class={mkClass(import.meta.file)}>
       <style>{css}</style>
       <a className="link-header" href={mkUrl(slug)}>
         <h3>
