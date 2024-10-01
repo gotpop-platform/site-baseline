@@ -8,7 +8,8 @@ export const layoutArticlesSlugSurface = {
 export const layoutArticlesSlugToc = {
   "--background-colour": "lightblue",
   "--padding": "2rem",
-  "--grid-column": "3 / 7",
+  // "--grid-column": "3 / 7",
+  "--grid-column": "1 col-start / 2 col-end",
   "--grid-row": "2",
   "--border-radius": "0.5rem  0 0 0.5rem",
 }
@@ -17,7 +18,8 @@ export const layoutArticlesSlugContent = (id: string) => ({
   "--background-colour": "lightblue",
   "--display": "block",
   "--padding": "4rem",
-  "--grid-column": "9 / 37",
+  "--grid-column": "3 col-start / -1 col-end",
+  // "--grid-column": "col / span col",
   "--grid-row": "2",
   "--border-radius": "0 0.5rem 0.5rem 0",
   "--transition-article": id,
