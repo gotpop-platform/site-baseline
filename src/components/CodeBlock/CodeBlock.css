@@ -1,51 +1,17 @@
 @scope {
-  & {
+  pre {
+    min-width: 0;
+    overflow-x: auto;
+    padding: 2ch;
+  }
+
+  code {
+    font-family: "Monaspace", monospace;
+    font-palette: --kung-fury;
+    font-size: 1.25em;
+    background: var(--slate-700);
     padding: 2rem;
-    border-radius: 0.5rem;
-    grid-column: 3 / -3;
-    grid-row: 2;
-    background-color: var(--slate-300);
-    view-transition-name: slider;
-    min-height: 10rem;
-
-    h2 {
-      margin-bottom: 2rem;
-      font-size: 69px;
-
-      + p {
-        padding-top: calc(1rem - 1cap);
-        line-height: 2rem;
-        margin-bottom: 2rem;
-      }
-    }
-  }
-
-  .links {
+    border-radius: 0.25em;
     display: flex;
-    gap: 1rem;
-  }
-
-  .link {
-    background-color: #eee;
-    border-radius: 0.5rem;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-    .text {
-      text-box-edge: cap alphabetic;
-      text-box-trim: trim-both;
-      font-weight: 500;
-    }
-
-    .icon svg {
-      width: 2rem;
-      height: 2rem;
-
-      path {
-        fill: var(--slate-500);
-      }
-    }
   }
 }

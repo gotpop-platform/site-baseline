@@ -1,8 +1,14 @@
 @scope {
   & {
-    display: grid;
-    grid-column: center;
-    grid-template-columns: subgrid;
-    row-gap: 2rem;
+    /* display: flex; */
+
+    small {
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    time {
+      display: block;
+    }
   }
 }

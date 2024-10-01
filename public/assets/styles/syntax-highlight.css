@@ -1,49 +1,34 @@
+/* https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/ */
+
 @font-face {
   font-family: "Monaspace";
   src: url("https://assets.codepen.io/2585/MonaspaceKrypton-SyntaxHighlighter-Regular.woff2")
     format("woff2");
 }
 
-/* https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/ */
-
-/* light theme */
+/* 0 curlies and tags */
+/* 1 ? */
+/* 2 function */
+/* 3 ? */
+/* 4 () */
+/* 5 property name */
+/* 6 ? */
+/* 7 numbers */
 @font-palette-values --kung-fury {
   font-family: "Monaspace";
-  override-colors: 0 hsl(225 100% 40%),
-    /* curlies and tags */ 1 hsl(250 100% 80%),
-    /* ? */ 2 hsl(225 100% 40%),
-    /* function */ 3 hsl(225 100% 40%),
-    /* ? */ 4 hsl(270 50% 40%), /* () */ 5 hsl(210 40% 2%),
-    /* property name */ 6 hsl(210 10% 30%),
-    /* ? */ 7 hsl(327 100% 54%) /* numbers */;
+  override-colors: 0 hsl(225 100% 40%), 1 hsl(250 100% 80%),
+    2 hsl(225 100% 40%), 3 hsl(225 100% 40%),
+    4 hsl(270 50% 40%), 5 hsl(210 40% 2%),
+    6 hsl(210 10% 30%), 7 hsl(327 100% 54%);
 }
 
 @media (prefers-color-scheme: dark) {
   @font-palette-values --kung-fury {
     font-family: "Monaspace";
     override-colors: 0 hsl(188 100% 75%),
-      /* curlies and tags */ 1 hsl(250 100% 80%),
-      /* ? */ 2 hsl(188 100% 75%),
-      /* function */ 3 hsl(188 100% 75%),
-      /* ? */ 4 hsl(250 100% 80%),
-      /* () */ 5 hsl(210 40% 98%),
-      /* property name */ 6 hsl(210 40% 80%),
-      /* ? */ 7 hsl(300 100% 80%) /* numbers */;
+      1 hsl(250 100% 80%), 2 hsl(188 100% 75%),
+      3 hsl(188 100% 75%), 4 hsl(250 100% 80%),
+      5 hsl(210 40% 98%), 6 hsl(210 40% 80%),
+      7 hsl(300 100% 80%);
   }
-}
-
-code {
-  font-family: "Monaspace", monospace;
-  font-palette: --kung-fury;
-  font-size: 1.25em;
-  background: hsl(0 0% 20%);
-  padding: 2rem;
-  border-radius: 0.25em;
-  display: flex;
-}
-
-pre {
-  min-width: 0;
-  overflow-x: auto;
-  padding: 2ch;
 }

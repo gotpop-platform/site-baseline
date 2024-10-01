@@ -1,25 +1,17 @@
 import { jsxFactory, mkClass, useCSS } from "utils"
 
 export function CodeBlock({
-  slug,
-  metadata,
-  htmlContent,
-  ...rest
+  children,
 }: {
-  slug: string
-  metadata: any
-  htmlContent: string
-  [key: string]: any
+  children?: string
 }): JSX.Element {
-  const { css, useName } = useCSS({ meta: import.meta })
+  const { css } = useCSS({ meta: import.meta })
 
   return (
     <div class={mkClass(import.meta.file)}>
       <style>{css}</style>
       <pre>
-        <code>
-          <h1>code</h1>
-        </code>
+        <code>{children}</code>
       </pre>
     </div>
   )

@@ -1,3 +1,5 @@
+import { CodeBlock } from "src/components/CodeBlock"
+import { jsxFactory } from "utils"
 import type { Toc } from "./markdown.types"
 
 export const parseMarkdown = (
@@ -57,10 +59,14 @@ export const parseMarkdown = (
     '<a href="$2">$1</a>'
   )
 
-  // Convert code blocks
+  // Extract code blocks
+  const codeBlocks: any[] = []
   markdown = markdown.replace(
     /```([^`]+)```/g,
-    "<pre><code>$1</code></pre>"
+    (match, code) => {
+      codeBlocks.push(code)
+      return `__CODE_BLOCK_${codeBlocks.length - 1}__`
+    }
   )
 
   // Convert plain text to paragraphs
@@ -72,6 +78,18 @@ export const parseMarkdown = (
         return `${start}<p>${trimmedText}</p>`
       }
       return start
+    }
+  )
+
+  // Reinsert code blocks
+  const componentToVariable = (index: number) => {
+    return <CodeBlock>{codeBlocks[index]}</CodeBlock>
+  }
+
+  markdown = markdown.replace(
+    /__CODE_BLOCK_(\d+)__/g,
+    (_, index) => {
+      return componentToVariable(index).toString()
     }
   )
 
