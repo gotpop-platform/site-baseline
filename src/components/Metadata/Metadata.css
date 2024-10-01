@@ -1,7 +1,5 @@
 @scope {
   & {
-    /* display: flex; */
-
     small {
       display: flex;
       gap: 0.25rem;
