@@ -7,5 +7,18 @@ export const mkUrl = (relative: string | URL) => {
   if (!baseUrl) {
     throw new Error("Base URL is not defined")
   }
-  return new URL(relative, baseUrl).href
+
+  // Ensure baseUrl includes protocol
+  const formattedBaseUrl = baseUrl.startsWith("http")
+    ? baseUrl
+    : `https://${baseUrl}`
+
+  // Ensure relative URL is correctly formatted
+  const formattedRelative = relative
+    .toString()
+    .startsWith("/")
+    ? relative
+    : `/${relative}`
+
+  return new URL(formattedRelative, formattedBaseUrl).href
 }
