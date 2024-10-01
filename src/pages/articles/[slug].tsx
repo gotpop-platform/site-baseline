@@ -35,9 +35,7 @@ const pageArticlePage = async ({
           </Tag>
           <Tag
             tag="section"
-            styles={layoutArticlesSlugContent(
-              metadata.slug
-            )}
+            styles={layoutArticlesSlugContent(metadata.id)}
           >
             {content}
           </Tag>

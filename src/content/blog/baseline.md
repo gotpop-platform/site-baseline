@@ -1,5 +1,6 @@
 ---
 title: "Baseline"
+id: "baseline"
 author: "John Doe"
 date: "2023-10-01"
 slug: "blog/baseline"

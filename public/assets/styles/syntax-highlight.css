@@ -35,35 +35,15 @@
 code {
   font-family: "Monaspace", monospace;
   font-palette: --kung-fury;
+  font-size: 1.25em;
+  background: hsl(0 0% 20%);
+  padding: 2rem;
+  border-radius: 0.25em;
+  display: flex;
 }
 
 pre {
   min-width: 0;
   overflow-x: auto;
   padding: 2ch;
-}
-
-@layer support {
-  html {
-    color-scheme: dark light;
-  }
-
-  body {
-    font-family: system-ui, sans-serif;
-  }
-}
-
-.blog {
-  width: 100%;
-  grid-column: 1 / -1;
-  background: hsl(0 0% 55%);
-  padding: 4rem;
-}
-
-code {
-  font-size: 1.25em;
-  background: hsl(0 0% 20%);
-  padding: 2rem;
-  border-radius: 0.25em;
-  display: flex;
 }

@@ -1,5 +1,6 @@
 ---
 title: "Grid"
+id: "grid"
 author: "John Doe"
 date: "2023-10-01"
 slug: "blog/grid"

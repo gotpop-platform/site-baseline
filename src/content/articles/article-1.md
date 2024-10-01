@@ -1,5 +1,6 @@
 ---
 title: "Article 1"
+id: "article1"
 author: "John Doe"
 date: "2023-10-01"
 slug: "articles/article-1"

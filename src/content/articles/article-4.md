@@ -1,5 +1,6 @@
 ---
 title: "Article 4"
+id: "article4"
 author: "John Doe"
 date: "2023-10-01"
 slug: "articles/article-4"
@@ -41,4 +42,3 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl in la
 _Italic text_
 
 [Link](https://example.com)
-

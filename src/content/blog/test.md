@@ -1,5 +1,6 @@
 ---
 title: "Sample Blog Post"
+id: "test"
 author: "John Doe"
 date: "2023-10-01"
 slug: "blog/test"

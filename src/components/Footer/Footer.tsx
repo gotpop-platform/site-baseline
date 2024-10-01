@@ -14,7 +14,7 @@ export function Footer({ ...rest }) {
   const { css, useName } = useCSS({ meta: import.meta })
 
   return (
-    <footer class={useName} {...rest}>
+    <footer class={useName}>
       <style>{css}</style>
       <div class="inner">
         {/* <h3>Home</h3>

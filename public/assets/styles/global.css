@@ -1,6 +1,7 @@
 html {
-  scroll-behavior: smooth;
   background-color: var(--warning-600);
-  overflow: hidden auto;
+  color-scheme: dark light;
   interpolate-size: allow-keywords;
+  overflow: hidden auto;
+  scroll-behavior: smooth;
 }

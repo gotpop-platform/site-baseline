@@ -1,5 +1,6 @@
 ---
 title: "Animations"
+id: "animations"
 author: "John Doe"
 date: "2023-10-01"
 slug: "blog/animations"

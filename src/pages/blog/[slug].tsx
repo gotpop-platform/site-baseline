@@ -17,7 +17,7 @@ const pageBlog = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
   const {
-    metadata: { date, title: pageTitle, author },
+    metadata: { date, title: pageTitle, author, id },
     content,
   } = parseMarkdownFile("blog", slug)
 
@@ -27,7 +27,7 @@ const pageBlog = async ({
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Tag tag="section" styles={stylesBlog}>
-          <Tag tag="section" styles={stylesBlogInner}>
+          <Tag tag="section" styles={stylesBlogInner(id)}>
             <Heading>{pageTitle}</Heading>
             <Metadata date={date} author={author} />
             {content}
