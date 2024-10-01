@@ -1,62 +1,41 @@
 import {
+  AppTheme,
+  ArticleItem,
   Footer,
-  GridConfig,
+  GridGap,
   HeaderMegaMenu,
   MobileMenuTrigger,
-  Surface,
 } from "components"
+import { Tag, withItems } from "generics"
 import {
   jsxFactory,
   markdownFilesInDir,
-  styleNames,
-  type MetaData,
+  title,
 } from "utils"
+import { stylesGallery, stylesLayout } from "variables"
 
-import { AppTheme } from "@components/layouts"
 import type { PageProps } from "types"
 
-const BlogArticle = ({
-  title,
-  slug,
-}: Omit<MetaData, "description">) => (
-  <article>
-    <a href={`gallery/${slug}`}>
-      <h1>{title}</h1>
-    </a>
-  </article>
-)
+const ArticleList = withItems(ArticleItem)
 
 const pageGallery = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const parsedFiles = await markdownFilesInDir("gallery")
-  // console.log("parsedFiles :", parsedFiles)
-
-  const listBlog = parsedFiles.map(
-    ({ metadata: { title, slug } }) => (
-      <BlogArticle title={title} slug={slug} />
-    )
-  )
+  const markdownItems = await markdownFilesInDir(slug)
 
   return (
-    <AppTheme title={`Gallery | ${slug}`}>
-      <GridConfig isRoot>
+    <AppTheme title={title(slug)}>
+      <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
-          <section
-            style={styleNames({
-              display: "grid",
-              gridTemplateColumns:
-                "repeat(auto-fill, minmax(200px, 1fr))",
-              gap: "1rem",
-            })}
-          >
-            {listBlog}
-          </section>
-        </Surface>
+        <Tag tag="main" styles={stylesGallery}>
+          <ArticleList
+            markdownItems={markdownItems}
+            layout={stylesLayout}
+          />
+        </Tag>
         <Footer />
-      </GridConfig>
+      </GridGap>
     </AppTheme>
   )
 }

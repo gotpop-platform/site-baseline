@@ -26,18 +26,12 @@
     /* Paths */
     "baseUrl": ".", // This must be specified if "paths" is specified
     "paths": {
-      "@assets/*": ["src/assets/*"],
-      "@components/*": ["src/components/*"],
       "components": ["src/components"],
-      "@data/*": ["src/data/*"],
-      "@hooks/*": ["src/hooks/*"],
-      "@layouts/*": ["src/components/layouts/*"],
       "layouts": ["src/components/layouts"],
-      "@pages/*": ["src/pages/*"],
-      "@styles/*": ["src/styles/*"],
-      "@types/*": ["src/types/*"],
+      "variables": ["src/variables"],
+      "pages": ["src/pages"],
+      "generics": ["src/generics"],
       "types": ["src/types"],
-      "@utils/*": ["src/utils/*"],
       "utils": ["src/utils"]
     },
     "typeRoots": ["./node_modules/@types", "./src/types"]

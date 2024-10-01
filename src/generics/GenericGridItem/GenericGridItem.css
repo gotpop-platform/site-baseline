@@ -1,0 +1,14 @@
+@scope {
+  & {
+    grid-column: var(--grid-column);
+    grid-row: var(--grid-row);
+    background-color: var(--background-colour);
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    display: var(--display);
+    grid-template-columns: var(--grid-template-columns);
+    grid-template-rows: var(--grid-template-rows);
+    row-gap: var(--row-gap);
+    view-transition-name: var(--transition-article);
+  }
+}

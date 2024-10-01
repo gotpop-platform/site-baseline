@@ -1,0 +1,12 @@
+@scope {
+  & {
+    small {
+      display: flex;
+      gap: 0.25rem;
+    }
+
+    time {
+      display: block;
+    }
+  }
+}

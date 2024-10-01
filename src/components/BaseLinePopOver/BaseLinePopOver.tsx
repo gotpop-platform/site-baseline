@@ -1,6 +1,4 @@
-import { jsxFactory, useCSS } from "utils"
-
-import { mkClass } from "@utils/mkClass"
+import { jsxFactory, mkClass, useCSS } from "utils"
 
 export function BaseLinePopOver({
   popovertarget = "basegrid",

@@ -1,0 +1,6 @@
+@scope {
+  & {
+    --padding: 2rem;
+    width: max-content;
+  }
+}

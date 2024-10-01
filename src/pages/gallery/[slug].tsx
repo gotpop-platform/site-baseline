@@ -1,15 +1,16 @@
 import {
+  AppTheme,
   Footer,
   GalleryIntro,
-  GridConfig,
+  GridGap,
   HeaderMegaMenu,
   MobileMenuTrigger,
-  Surface,
 } from "components"
-import { jsxFactory, parseMarkdownFile } from "utils"
+import { jsxFactory, parseMarkdownFile, title } from "utils"
 
-import { AppTheme } from "@components/layouts"
 import type { PageProps } from "types"
+import { Tag } from "generics"
+import { layoutArticlesSlugSurface } from "variables"
 
 const pageGalleryItem = async ({
   slug,
@@ -18,19 +19,19 @@ const pageGalleryItem = async ({
     parseMarkdownFile("gallery", slug)
 
   return (
-    <AppTheme title={`Baseline | ${slug}`}>
-      <GridConfig isRoot>
+    <AppTheme title={title(slug)}>
+      <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
+        <Tag tag="main" styles={layoutArticlesSlugSurface}>
           <GalleryIntro
             slug={slug}
             metadata={metadata}
             htmlContent={htmlContent}
           />
-        </Surface>
+        </Tag>
         <Footer />
-      </GridConfig>
+      </GridGap>
     </AppTheme>
   )
 }

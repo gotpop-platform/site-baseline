@@ -2,7 +2,7 @@ import { jsxFactory, useCSS } from "utils"
 
 import { MenuItem } from "../MenuItem"
 import { SubMenuContent } from "../SubMenuContent"
-import { mkClass } from "@utils/mkClass"
+import { mkClass } from "utils"
 import { navData } from "./MegaNav.data"
 
 export const MegaNav = () => {

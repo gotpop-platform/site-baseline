@@ -1,19 +1,17 @@
-import { jsxFactory } from "utils"
-import { mkId } from "@utils/mkId"
+import { jsxFactory, mkId } from "utils"
 
 export const Heading = ({
   children,
-  level,
-  index,
+  level = 1,
+  index = 0,
 }: {
   children?: JSX.Element
-  level: 1 | 2 | 3 | 4 | 5 | 6
-  index: number
+  level?: 1 | 2 | 3 | 4 | 5 | 6
+  index?: number
 }): JSX.Element | null => {
   const validLevels = [1, 2, 3, 4, 5, 6]
-  const validatedLevel = validLevels.includes(level)
-    ? level
-    : null
+  const validatedLevel =
+    level && validLevels.includes(level) ? level : null
 
   if (!children || !validatedLevel) return null
 

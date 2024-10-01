@@ -1,30 +1,44 @@
 import {
+  AppTheme,
+  ArticleItem,
   Footer,
-  GridConfig,
+  GridGap,
   HeaderMegaMenu,
-  ListArticles,
   MobileMenuTrigger,
-  Surface,
 } from "components"
-import { jsxFactory, markdownFilesInDir } from "utils"
+import { Tag, withItems } from "generics"
+import {
+  jsxFactory,
+  markdownFilesInDir,
+  title,
+} from "utils"
+import {
+  styleSurfaceMain,
+  stylesLayout,
+} from "src/variables"
 
-import { AppTheme } from "@components/layouts"
+import type { PageProps } from "types"
 
-const pageArticles = async (): Promise<JSX.Element> => {
-  const parsedFiles = await markdownFilesInDir("articles")
+const ArticleList = withItems(ArticleItem)
+
+const pageArticles = async ({
+  slug,
+}: PageProps): Promise<JSX.Element> => {
+  const markdownItems = await markdownFilesInDir(slug)
 
   return (
-    <AppTheme title="Baseline | Articles">
-      <GridConfig isRoot>
+    <AppTheme title={title(slug)}>
+      <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
-          <section class="inner">
-            <ListArticles parsedFiles={parsedFiles} />
-          </section>
-        </Surface>
+        <Tag tag="main" styles={styleSurfaceMain}>
+          <ArticleList
+            markdownItems={markdownItems}
+            layout={stylesLayout}
+          />
+        </Tag>
         <Footer />
-      </GridConfig>
+      </GridGap>
     </AppTheme>
   )
 }

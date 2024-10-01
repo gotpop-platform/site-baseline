@@ -1,31 +1,35 @@
 import {
+  AppTheme,
   Footer,
-  GridConfig,
+  GridGap,
   HeaderMegaMenu,
   MobileMenuTrigger,
-  Surface,
 } from "components"
+import { jsxFactory, title } from "utils"
+import {
+  layoutArticlesSlugSurface,
+  stylesBlog,
+} from "variables"
 
-import { AppTheme } from "@components/layouts"
-import { jsxFactory } from "utils"
+import { Tag } from "generics"
 
 const NotFoundPage = async () => {
   return (
-    <AppTheme title="Page Not Found">
-      <GridConfig isRoot>
+    <AppTheme title={title("Page Not Found")}>
+      <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
-          <section class="not-found">
+        <Tag tag="main" styles={layoutArticlesSlugSurface}>
+          <Tag tag="section" styles={stylesBlog}>
             <h1>404 - Page Not Found</h1>
             <p>
               Sorry, the page you are looking for does not
               exist.
             </p>
-          </section>
-        </Surface>
+          </Tag>
+        </Tag>
         <Footer />
-      </GridConfig>
+      </GridGap>
     </AppTheme>
   )
 }

@@ -1,8 +1,9 @@
 ---
 title: "Animations"
+id: "animations"
 author: "John Doe"
 date: "2023-10-01"
-slug: "animations"
+slug: "blog/animations"
 ---
 
 # Header 1

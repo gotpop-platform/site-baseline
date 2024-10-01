@@ -1,50 +1,40 @@
 import {
+  AppTheme,
   Footer,
-  GridConfig,
+  GridGap,
   HeaderMegaMenu,
+  Heading,
   MobileMenuTrigger,
-  Surface,
 } from "components"
-import {
-  formattedDate,
-  jsxFactory,
-  parseMarkdownFile,
-} from "utils"
+import { jsxFactory, parseMarkdownFile, title } from "utils"
+import { stylesBlog, stylesBlogInner } from "variables"
 
-import { AppTheme } from "@components/layouts"
+import { Metadata } from "src/components/Metadata"
 import type { PageProps } from "types"
+import { Tag } from "generics"
 
 const pageBlog = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
   const {
-    metadata: { date, title, author },
-    content: htmlContent,
+    metadata: { date, title: pageTitle, author, id },
+    content,
   } = parseMarkdownFile("blog", slug)
 
   return (
-    <AppTheme title={`Baseline | ${title}`}>
-      <GridConfig>
+    <AppTheme title={title(pageTitle)}>
+      <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
-          <section class="blog">
-            <h1>{title}</h1>
-            <aside>
-              <small>
-                <span>By</span>
-                <address>{author}</address>
-                <span>on</span>
-              </small>
-              <time dateTime={date}>
-                {formattedDate(date)}
-              </time>
-            </aside>
-            {htmlContent}
-          </section>
-        </Surface>
+        <Tag tag="section" styles={stylesBlog}>
+          <Tag tag="section" styles={stylesBlogInner(id)}>
+            <Heading>{pageTitle}</Heading>
+            <Metadata date={date} author={author} />
+            {content}
+          </Tag>
+        </Tag>
         <Footer />
-      </GridConfig>
+      </GridGap>
     </AppTheme>
   )
 }

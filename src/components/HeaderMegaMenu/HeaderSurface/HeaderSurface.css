@@ -4,7 +4,6 @@
     --border-radius: 0 0 1rem 1rem;
     --padding: 1rem;
     --padding-bottom: 1rem;
-    --grid-column: box;
     --transition: padding-bottom 0.2s 0.3s ease;
 
     background-color: var(--white);

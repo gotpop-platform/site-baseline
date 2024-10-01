@@ -1,70 +1,47 @@
 import {
+  AppTheme,
   Footer,
-  GridConfig,
+  GridGap,
   HeaderMegaMenu,
   MobileMenuTrigger,
-  Surface,
+  TableOfContents,
 } from "components"
+import { jsxFactory, parseMarkdownFile, title } from "utils"
 import {
-  jsxFactory,
-  parseMarkdownFile,
-  styleNames as style,
-} from "utils"
+  layoutArticlesSlugContent,
+  layoutArticlesSlugSurface,
+  layoutArticlesSlugToc,
+} from "variables"
 
-import { AppTheme } from "@components/layouts"
 import type { PageProps } from "types"
+import { Tag } from "generics"
 
 const pageArticlePage = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
-  const {
-    metadata: { date, title, author },
-    content: htmlContent,
-    toc,
-  } = parseMarkdownFile("articles", slug)
-
-  // console.log("toc :", toc)
-
-  const toccy = (
-    <nav>
-      <ul>
-        {toc.map(({ id, text }) => (
-          <li>
-            <a href={"#" + id}>{text}</a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+  const { content, toc, metadata } = parseMarkdownFile(
+    "articles",
+    slug
   )
 
-  const styles = {
-    "--liam": "10px",
-    gridColumn: "1 / span 2",
-    backgroundColor: "white",
-    padding: "20px",
-    fontSize: "16px",
-  }
-
-  const stylesContent = {
-    "--transition-article": slug,
-    "view-transition-name": slug,
-    gridColumn: "3 / span 10",
-    backgroundColor: "yellow",
-  }
-
   return (
-    <AppTheme title={`Baseline | ${slug}`}>
-      <GridConfig isRoot>
+    <AppTheme title={title(slug)}>
+      <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
-          <aside style={style(styles)}>{toccy}</aside>
-          <div style={style(stylesContent)}>
-            {htmlContent}
-          </div>
-        </Surface>
+        <Tag tag="main" styles={layoutArticlesSlugSurface}>
+          <Tag tag="aside" styles={layoutArticlesSlugToc}>
+            <TableOfContents toc={toc} />
+          </Tag>
+          <Tag
+            tag="section"
+            styles={layoutArticlesSlugContent(metadata.id)}
+          >
+            {content}
+          </Tag>
+        </Tag>
         <Footer />
-      </GridConfig>
+      </GridGap>
     </AppTheme>
   )
 }

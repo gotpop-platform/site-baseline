@@ -19,7 +19,7 @@ const parseMarkdownFile = (
     directoryPath,
     fileName
   )
-  // console.log("filePath :", filePath)
+
   const markdownContent = readFileContent(filePath)
   const { metadata, content } =
     extractMetadata(markdownContent)

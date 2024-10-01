@@ -15,8 +15,12 @@ export type Toc = {
   text: string
 }
 
-export type MarkdownFile = {
-  metadata: Record<string, string> | MetaData
+export type MarkdownFileProps = {
+  metadata: MetaData
   content: string
   toc?: Toc[]
+}
+
+export type StyleObjProps = {
+  [key: string]: string | number
 }

@@ -1,13 +1,12 @@
 /* .meganav */
 @scope {
   & {
-    /* --grid-column: bro 3 / bro 11; */
-    --grid-column: 6 / span 8;
+    --grid-column: 15 / span 22;
 
     display: grid;
-    gap: 1rem;
     grid-column: var(--grid-column);
     grid-template-columns: subgrid;
+    grid-auto-flow: dense;
     padding: 1rem 0;
     position: relative;
 
@@ -15,8 +14,8 @@
       display: contents;
     }
 
-    @container style(--is-desktop: true) {
+    /* @container style(--is-desktop: true) {
       --grid-column: 6 / span 8;
-    }
+    } */
   }
 }

@@ -10,7 +10,7 @@ export const makePath = (subdomain: null | string) => {
   return `${PROTOCOL}://${subdomainStr}${DOMAIN}${portStr}/`
 }
 
-export function Footer() {
+export function Footer({ ...rest }) {
   const { css, useName } = useCSS({ meta: import.meta })
 
   return (

@@ -1,4 +1,4 @@
-import Head from "@components/Head"
+import { Head } from "components"
 import { jsxFactory } from "utils"
 
 interface AppProps {

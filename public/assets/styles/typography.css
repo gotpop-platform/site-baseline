@@ -16,11 +16,11 @@ h6,
 p,
 :where(h1, h2, h3, h4, h5, h6) span {
   text-box-edge: cap alphabetic;
-  text-box-trim: both;
+  text-box-trim: trim-both;
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-  display: inline-block;
+  display: inline;
   font-family: var(--font-family-headings);
   margin-block: 0;
   scroll-margin-top: 4rem;
@@ -103,7 +103,7 @@ a {
 
 button {
   text-box-edge: cap alphabetic;
-  text-box-trim: both;
+  text-box-trim: trim-both;
 }
 
 blockquote {

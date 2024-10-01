@@ -2,68 +2,37 @@ import {
   jsxFactory,
   mkClass,
   mkUrl,
-  styleNames as style,
-  type MarkdownFile,
+  useCSS,
+  type MarkdownFileProps,
+  type StyleObjProps,
 } from "utils"
 
-import { useCSS } from "utils"
-
-interface ArticleItemProps {
-  title: string
-  blurb: string
-  href: string
-  style?: string
+type ArticleComponentProps = {
+  markdownFile: MarkdownFileProps
+  layout: StyleObjProps
 }
 
 export function ArticleItem({
-  title,
-  blurb,
-  href,
-  style,
-}: ArticleItemProps): JSX.Element {
-  const { css } = useCSS({ meta: import.meta })
+  markdownFile,
+  layout,
+}: ArticleComponentProps): JSX.Element {
+  const { css } = useCSS({
+    meta: import.meta,
+    styles: layout,
+  })
+  const {
+    metadata: { title, description, slug },
+  } = markdownFile
 
   return (
-    <article
-      class={mkClass(import.meta.file)}
-      style={style}
-    >
+    <article class={mkClass(import.meta.file)}>
       <style>{css}</style>
-      <a class="link-header" href={href}>
+      <a className="link-header" href={mkUrl(slug)}>
         <h3>
           <span>{title}</span>
         </h3>
       </a>
-      <p>{blurb}</p>
+      <p>{description}</p>
     </article>
   )
-}
-
-export const ListArticles = ({
-  parsedFiles,
-}: {
-  parsedFiles: MarkdownFile[]
-}): JSX.Element => {
-  const listArticles = parsedFiles.map(
-    (
-      { metadata: { title, slug, description } },
-      i
-    ): JSX.IntrinsicElements["article"] => {
-      const relative = `articles/${slug}`
-
-      const stylesContent = {
-        "--transition-article": slug,
-      }
-
-      return (
-        <ArticleItem
-          title={title}
-          blurb={description}
-          href={mkUrl(relative)}
-          style={style(stylesContent)}
-        />
-      )
-    }
-  )
-  return listArticles
 }

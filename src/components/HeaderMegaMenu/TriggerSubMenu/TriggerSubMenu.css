@@ -21,7 +21,7 @@
 
     span {
       text-box-edge: cap alphabetic;
-      text-box-trim: both;
+      text-box-trim: trim-both;
       font-size: 15px;
     }
 

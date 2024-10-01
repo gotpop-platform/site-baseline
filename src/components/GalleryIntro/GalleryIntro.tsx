@@ -1,9 +1,7 @@
-import { Icon } from "@components/Icon"
-import { IconTypes } from "@components/Icon/Icon"
-import { jsxFactory } from "utils"
-import { mkClass } from "@utils/mkClass"
+import { Icon, IconTypes } from "components"
+import { jsxFactory, mkClass, useCSS } from "utils"
+
 // import { dataDemo, type GalleryItem } from "@data/demo.data"
-import { useCSS } from "utils"
 
 // export function findPrevAndNext(slug: string) {
 //   // const item = dataDemo.get(slug)
@@ -29,27 +27,29 @@ export function GalleryIntro({
   slug,
   metadata,
   htmlContent,
+  ...rest
 }: {
   slug: string
   metadata: any
   htmlContent: string
+  [key: string]: any
 }): JSX.Element {
   const { css, useName } = useCSS({ meta: import.meta })
 
   return (
-    <div class={mkClass(import.meta.file)}>
+    <div class={mkClass(import.meta.file)} {...rest}>
       <style>{css}</style>
       <h2>{metadata.title}</h2>
       <section>{htmlContent}</section>
       <nav class="links">
-        <a class="link" href={`/gallery/${metadata.prev}`}>
+        <a class="link" href={metadata.prev}>
           <Icon
             type={IconTypes.twoTone}
             iconName="arrow_circle_left"
           />
           <span class="text">Prev</span>
         </a>
-        <a class="link" href={`/gallery/${metadata.next}`}>
+        <a class="link" href={metadata.next}>
           <span class="text">Next</span>
           <Icon
             type={IconTypes.twoTone}

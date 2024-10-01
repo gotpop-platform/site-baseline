@@ -2,7 +2,8 @@
   & {
     padding: 2rem;
     border-radius: 0.5rem;
-    grid-column: bro 1 / span 12;
+    grid-column: 3 / -3;
+    grid-row: 2;
     background-color: var(--slate-300);
     view-transition-name: slider;
     min-height: 10rem;
@@ -34,7 +35,7 @@
 
     .text {
       text-box-edge: cap alphabetic;
-      text-box-trim: both;
+      text-box-trim: trim-both;
       font-weight: 500;
     }
 

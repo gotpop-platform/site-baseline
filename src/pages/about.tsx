@@ -1,28 +1,35 @@
 import {
+  AppTheme,
   Footer,
-  GridConfig,
+  GridGap,
   HeaderMegaMenu,
+  Heading,
   MobileMenuTrigger,
-  Surface,
 } from "components"
+import { jsxFactory, title } from "utils"
+import {
+  stylesAbout,
+  stylesAboutContainer,
+} from "variables"
 
-import { AppTheme } from "@components/layouts"
 import type { PageProps } from "types"
-import { jsxFactory } from "utils"
+import { Tag } from "generics"
 
 const aboutPage = async ({
   slug,
 }: PageProps): Promise<JSX.Element> => {
   return (
-    <AppTheme title={`Baseline | ${slug}`}>
-      <GridConfig isRoot>
+    <AppTheme title={title(slug)}>
+      <GridGap isRoot>
         <MobileMenuTrigger />
         <HeaderMegaMenu />
-        <Surface>
-          <h1>About page</h1>
-        </Surface>
+        <Tag tag="main" styles={stylesAboutContainer}>
+          <Tag tag="div" styles={stylesAbout}>
+            <Heading>About</Heading>
+          </Tag>
+        </Tag>
         <Footer />
-      </GridConfig>
+      </GridGap>
     </AppTheme>
   )
 }
