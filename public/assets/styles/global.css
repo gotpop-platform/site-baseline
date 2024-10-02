@@ -1,11 +1,13 @@
+@view-transition {
+  navigation: auto;
+}
+
 html {
   --is-desktop: false;
 
   background-color: var(--warning-600);
   color-scheme: dark light;
   interpolate-size: allow-keywords;
-  overflow: hidden auto;
-  scroll-behavior: smooth;
 
   @media (width >= 768px) {
     --is-desktop: true;
@@ -14,4 +16,25 @@ html {
   &::selection {
     background-color: var(--accent);
   }
+
+  &::view-transition-old(slider) {
+    animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+      600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+  }
+
+  &::view-transition-new(slider) {
+    animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both
+        fade-in,
+      600ms cubic-bezier(0.4, 0, 0.2, 1) both
+        slide-from-right;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  margin: unset;
+  color: var(--text-color);
+  font-family: var(--font-family);
+  overflow: hidden auto;
+  scroll-behavior: smooth;
 }

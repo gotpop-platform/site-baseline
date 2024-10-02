@@ -1,15 +1,3 @@
-:root {
-  --accent: hwb(321 6% 24%);
-
-  --spacing-base: 1rem;
-  --spacing-lg: calc(var(--spacing) * 2);
-  --spacing-xl: calc(var(--spacing) * 3);
-
-  --radius: 0.8rem;
-  --radius-lg: 1.5rem;
-  --radius-xl: 5rem;
-}
-
 @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
@@ -53,7 +41,7 @@
 
 @property --gutter-columns {
   syntax: "*";
-  initial-value: 0.5rem 0.5rem;
+  initial-value: 0.5rem;
   inherits: false;
 }
 

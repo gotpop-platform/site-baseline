@@ -6,10 +6,13 @@
       [full-start] minmax(2rem, 1fr)
       [center-start] repeat(
         12,
-        [gutter-start] 0.5rem 0.5rem [gutter-end col-start]
+        [gutter-start] var(--gutter-columns)
+          var(--gutter-columns) [gutter-end col-start]
           minmax(0, 120px) [col-end]
       )
-      [gutter-start] var(--gutter-columns)
+      [gutter-start] var(--gutter-columns) var(
+        --gutter-columns
+      )
       [center-end gutter-end] minmax(2rem, 1fr)
       [full-end];
 
