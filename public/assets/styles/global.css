@@ -1,7 +1,17 @@
 html {
+  --is-desktop: false;
+
   background-color: var(--warning-600);
   color-scheme: dark light;
   interpolate-size: allow-keywords;
   overflow: hidden auto;
   scroll-behavior: smooth;
+
+  @media (width >= 768px) {
+    --is-desktop: true;
+  }
+
+  &::selection {
+    background-color: var(--accent);
+  }
 }

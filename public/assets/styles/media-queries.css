@@ -1,7 +1,0 @@
-:root {
-  --is-desktop: false;
-
-  @media (width >= 768px) {
-    --is-desktop: true;
-  }
-}
