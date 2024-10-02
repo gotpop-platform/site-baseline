@@ -6,7 +6,7 @@ html {
   --is-desktop: false;
 
   background-color: var(--warning-600);
-  color-scheme: dark light;
+  color-scheme: only light;
   interpolate-size: allow-keywords;
 
   @media (width >= 768px) {
