@@ -1,7 +1,7 @@
-@layer fonts, base, properties, reset, typography, animations, global;
+@layer fonts, vars, properties, reset, typography, animations, global;
 
 @import url(./fonts.css) layer(fonts);
-@import url(./vars-base.css) layer(base);
+@import url(./vars.css) layer(vars);
 @import url(./properties.css) layer(properties);
 @import url(./reset.css) layer(reset);
 @import url(./typography.css) layer(typography);
