@@ -1,4 +1,3 @@
-/* latin */
 @font-face {
   font-family: "Playfair Display";
   font-style: normal;
@@ -13,7 +12,6 @@
   font-feature-settings: "liga", "dlig";
 }
 
-/* latin */
 @font-face {
   font-family: "Playfair Display";
   font-style: italic;
@@ -27,7 +25,6 @@
     U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* latin */
 @font-face {
   font-family: "Inter";
   font-style: oblique 0deg 10deg;
@@ -40,30 +37,8 @@
     U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
-/* https://blog.glyphdrawing.club/font-with-built-in-syntax-highlighting/ */
-
 @font-face {
   font-family: "Monaspace";
-  src: url("https://assets.codepen.io/2585/MonaspaceKrypton-SyntaxHighlighter-Regular.woff2")
+  src: url(/assets/fonts/monaspace/Monaspace.woff2)
     format("woff2");
-}
-
-code {
-  --color-curlies-and-tags: hsl(225 100% 40%);
-  --color-1: hsl(138, 100%, 80%);
-  --color-function: hsl(225 100% 40%);
-  --color-3: hsl(225 100% 40%);
-  --color-parentheses: hsl(270 50% 40%);
-  --color-property-name: hsl(210 40% 2%);
-  --color-6: hsl(0, 100%, 50%);
-  --color-numbers: hsl(327 100% 54%);
-}
-
-@font-palette-values --kung-fury {
-  font-family: "Monaspace";
-  override-colors: 0 var(--color-curlies-and-tags),
-    1 var(--color-1), 2 var(--color-function),
-    3 var(--color-3), 4 var(--color-parentheses),
-    5 var(--color-property-name), 6 var(--color-6),
-    7 var(--color-numbers);
 }
