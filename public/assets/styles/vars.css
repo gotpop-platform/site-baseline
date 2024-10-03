@@ -112,4 +112,5 @@
   /* Layout */
   --grid-column-centre: center;
   --grid-column-full: full;
+  --grid-column-span: var(--grid-column-span);
 }

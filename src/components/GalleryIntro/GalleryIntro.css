@@ -1,37 +1,26 @@
 @scope {
   & {
-    padding: 2rem;
-    border-radius: 0.5rem;
-    grid-column: 3 / -3;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    grid-column: var(--grid-column-span);
     grid-row: 2;
     background-color: var(--slate-300);
     view-transition-name: slider;
     min-height: 10rem;
-
-    h2 {
-      margin-bottom: 2rem;
-      font-size: 69px;
-
-      + p {
-        padding-top: calc(1rem - 1cap);
-        line-height: 2rem;
-        margin-bottom: 2rem;
-      }
-    }
   }
 
   .links {
     display: flex;
-    gap: 1rem;
+    gap: var(--spacing-lg);
   }
 
   .link {
-    background-color: #eee;
-    border-radius: 0.5rem;
-    padding: 1rem 2rem;
-    display: flex;
     align-items: center;
-    gap: 1rem;
+    background-color: var(--slate-200);
+    border-radius: var(--radius-md);
+    display: flex;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
 
     .text {
       text-box-edge: cap alphabetic;

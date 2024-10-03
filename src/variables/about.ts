@@ -9,7 +9,7 @@ export const stylesAbout = {
   "--background-colour": "lightblue",
   "--padding": "2rem",
   "--grid-row": "2",
-  "--grid-column": "3 / -3",
+  "--grid-column": "var(--grid-column-span)",
   "--border-radius": "var(--radius-sm)",
   "--display": "block",
 }

@@ -8,7 +8,7 @@ export const stylesBlog = {
 export const stylesBlogInner = (id: string) => ({
   "--background-colour": "var(--slate-400)",
   "--padding": "var(--spacing-lg)",
-  "--grid-column": "3 / -3",
+  "--grid-column": "var(--grid-column-span)",
   "--grid-row": "2",
   "--display": "block",
   "--border-radius": "var(--radius-sm)",

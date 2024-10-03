@@ -1,26 +1,13 @@
 @scope {
   & {
-    --transition: background-color 0.2s
-      cubic-bezier(0.45, 0.05, 0.55, 0.95);
-
     background-color: var(--slate-200);
-    border-radius: 0.5rem;
-    grid-column: 3 / -3;
+    border-radius: var(--radius-lg);
+    grid-column: var(--grid-column-span);
     grid-row: 2;
-    padding: 2rem;
-    transition: var(--transition);
-    /* margin-bottom: 2rem; */
-
-    /* position: relative; */
+    padding: var(--spacing-lg);
 
     h1 {
-      grid-column: span 12;
       font-size: var(--font-scaled-lg);
-      padding-top: calc(2rem - 1cap);
-    }
-
-    p {
-      grid-column: span 12;
     }
   }
 }

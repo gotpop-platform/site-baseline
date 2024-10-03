@@ -1,6 +1,6 @@
 @scope {
   & {
-    --local-grid-column: 3 / -3;
+    --local-grid-column: var(--grid-column-span);
 
     background-color: var(--slate-200);
     border-radius: var(--border-radius);
