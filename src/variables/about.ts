@@ -7,8 +7,9 @@ export const stylesAboutContainer = {
 
 export const stylesAbout = {
   "--background-colour": "lightblue",
-  "--padding": "4rem",
+  "--padding": "2rem",
   "--grid-row": "2",
   "--grid-column": "3 / -3",
   "--border-radius": "0.5rem",
+  "--display": "block",
 }

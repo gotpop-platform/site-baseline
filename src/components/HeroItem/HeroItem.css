@@ -14,13 +14,12 @@
     /* position: relative; */
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
       grid-column: span 12;
+      font-size: var(--font-scaled-lg);
+      padding-top: calc(2rem - 1cap);
     }
 
     p {
-      font-size: 1.25rem;
       grid-column: span 12;
     }
   }
