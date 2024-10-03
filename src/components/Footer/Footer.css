@@ -1,41 +1,20 @@
 @scope {
   & {
-    --grid-column: center;
-
     display: grid;
     grid-auto-rows: 7rem min-content;
     grid-template-columns: subgrid;
-    grid-column: var(--grid-column);
+    grid-column: var(--grid-column-centre);
   }
 
   .inner {
     align-items: center;
     background-color: #fff;
-    border-radius: 4rem 4rem 0 0;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
     display: flex;
     flex-direction: column;
-    grid-column: var(--grid-column);
+    grid-column: var(--grid-column-centre);
     grid-row: 2;
     justify-content: center;
-    padding: 1rem;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-
-  h3 {
-    margin-bottom: 2rem;
-    font-size: 1rem;
-  }
-
-  .subdomains {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
-
-    a {
-      background-color: #eee;
-      border-radius: 1rem;
-      padding: 1rem 2rem;
-    }
+    padding: var(--spacing-md) var(--spacing-lg);
   }
 }

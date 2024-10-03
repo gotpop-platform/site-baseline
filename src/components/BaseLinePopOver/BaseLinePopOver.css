@@ -1,13 +1,9 @@
 @scope {
   & {
-    --bg: linear-gradient(
-      to bottom,
-      #0ff 0,
-      transparent 1px
-    );
+    --bg: linear-gradient(to bottom, #0ff 0, transparent 1px);
 
     background-color: var(--slate-300);
-    border-radius: 0.5rem;
+    border-radius: var(--radius-lg);
     inset: 1rem auto auto 1rem;
     padding: 1rem;
     border: 5px solid var(--slate-900);
