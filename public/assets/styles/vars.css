@@ -54,6 +54,7 @@
   --grey-800: oklch(from var(--grey-base) 30% 5% h);
   --grey-900: oklch(from var(--grey-base) 20% 5% h);
   --grey-1000: oklch(from var(--grey-base) 10% 5% h);
+
   /* Slate */
   --slate-base: oklch(0.48 0.24 261.35);
   --slate-100: oklch(from var(--slate-base) 100% 5% h);
@@ -90,6 +91,14 @@
 
   /* Theming */
   --accent: var(--warning-base);
+  --colour-bg-site: var(--grey-500);
+  --root-font-size: clamp(12px, 1.5vw, 1.1rem);
+  --color-scheme: only light;
+
+  /* Scrollbar */
+  --scrollbar-width: thin;
+  --scrollbar-gutter: stable both-edges;
+  --scrollbar-color: var(--slate-300) var(--slate-700);
 
   /* Spacing */
   --spacing-base: 1rem;
@@ -104,4 +113,22 @@
   --radius-md: 0.4rem;
   --radius-lg: 1.5rem;
   --radius-xl: 5rem;
+
+  /* Tranitions */
+  --transition: background-color 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+  --transition-color: color 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+
+  /* Animations */
+  --animation-fadeout: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out;
+  --animation-fadein: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in;
+  --animation-slide-to-right: 600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+  --animation-slide-to-left: 600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+
+  /* Layout */
+  --grid-column-centre: center;
+  --grid-column-full: full;
+  --grid-column-span: 3 / -3;
+
+  /* Actions */
+  --is-desktop: false;
 }

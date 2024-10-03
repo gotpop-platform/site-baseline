@@ -2,7 +2,7 @@
   & {
     small {
       display: flex;
-      gap: 0.25rem;
+      gap: var(--spacing-sm);
     }
 
     time {

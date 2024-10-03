@@ -1,13 +1,10 @@
 @scope {
   & {
-    --transition: background-color 0.2s
-      cubic-bezier(0.45, 0.05, 0.55, 0.95);
-    --padding: 2rem;
-    --border-radius: 0.5rem;
+    --local-grid-column: var(--grid-column-span);
 
     background-color: var(--slate-200);
     border-radius: var(--border-radius);
-    grid-column: var(--grid-column);
+    grid-column: var(--local-grid-column);
     grid-row: var(--grid-row);
     padding: var(--padding);
     transition: var(--transition);
@@ -17,8 +14,8 @@
       background-color: var(--slate-300);
     }
 
-    /* @container style(--is-desktop: true) {
-      grid-column: span 6;
-    } */
+    @container style(--is-desktop: true) {
+      --local-grid-column: var(--grid-column);
+    }
   }
 }
