@@ -93,12 +93,15 @@
 
   /* Spacing */
   --spacing-base: 1rem;
-  --spacing-lg: calc(var(--spacing) * 2);
-  --spacing-xl: calc(var(--spacing) * 3);
+  --spacing-sm: calc(var(--spacing-base) * 0.5);
+  --spacing-md: calc(var(--spacing-base) * 2);
+  --spacing-lg: calc(var(--spacing-base) * 3);
+  --spacing-xl: calc(var(--spacing-base) * 4);
 
   /* Radius */
   --radius-base: 0.8rem;
   --radius-sm: 0.4rem;
+  --radius-md: 0.4rem;
   --radius-lg: 1.5rem;
   --radius-xl: 5rem;
 }
