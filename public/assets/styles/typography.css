@@ -54,7 +54,7 @@ p {
   letter-spacing: 0.015em;
   line-height: 2rem;
   max-width: 90ch;
-  color: var(--gray-700);
+  color: var(--grey-700);
   padding-top: calc(1rem - 1cap);
   text-wrap: pretty;
   font-size: var(--font-scaled-base);
