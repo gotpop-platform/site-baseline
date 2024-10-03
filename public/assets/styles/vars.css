@@ -1,58 +1,107 @@
 :root {
-  --accent: hwb(321 6% 24%);
+  /* Oklab colours */
+  --white: oklch(1 0 0);
+  --black: oklch(0 0 0);
 
-  --spacing: 1rem;
-  --spacing-lg: calc(var(--spacing) * 2);
-  --spacing-xl: calc(var(--spacing) * 3);
+  /* Primary */
+  --success-base: oklch(0.75 0.3 148.61);
+  --success-100: oklch(from var(--success-base) 100% 5% h);
+  --success-200: oklch(from var(--success-base) 90% 5% h);
+  --success-300: oklch(from var(--success-base) 80% 5% h);
+  --success-400: oklch(from var(--success-base) 70% 5% h);
+  --success-500: oklch(from var(--success-base) 60% 5% h);
+  --success-600: oklch(from var(--success-base) 50% 5% h);
+  --success-700: oklch(from var(--success-base) 40% 5% h);
+  --success-800: oklch(from var(--success-base) 30% 5% h);
+  --success-900: oklch(from var(--success-base) 20% 5% h);
+  --success-1000: oklch(from var(--success-base) 10% 5% h);
 
-  --radius: 0.8rem;
+  /* Warning */
+  --warning-base: oklch(0.8 0.19 99.45);
+  --warning-100: oklch(from var(--warning-base) 100% 5% h);
+  --warning-200: oklch(from var(--warning-base) 90% 5% h);
+  --warning-300: oklch(from var(--warning-base) 80% 5% h);
+  --warning-400: oklch(from var(--warning-base) 70% 5% h);
+  --warning-500: oklch(from var(--warning-base) 60% 5% h);
+  --warning-600: oklch(from var(--warning-base) 50% 5% h);
+  --warning-700: oklch(from var(--warning-base) 40% 5% h);
+  --warning-800: oklch(from var(--warning-base) 30% 5% h);
+  --warning-900: oklch(from var(--warning-base) 20% 5% h);
+  --warning-1000: oklch(from var(--warning-base) 10% 5% h);
+
+  /* Error */
+  --error-base: oklch(0.58 0.26 16.73);
+  --error-100: oklch(from var(--error-base) 100% 5% h);
+  --error-200: oklch(from var(--error-base) 90% 5% h);
+  --error-300: oklch(from var(--error-base) 80% 5% h);
+  --error-400: oklch(from var(--error-base) 70% 5% h);
+  --error-500: oklch(from var(--error-base) 60% 5% h);
+  --error-600: oklch(from var(--error-base) 50% 5% h);
+  --error-700: oklch(from var(--error-base) 40% 5% h);
+  --error-800: oklch(from var(--error-base) 30% 5% h);
+  --error-900: oklch(from var(--error-base) 20% 5% h);
+  --error-1000: oklch(from var(--error-base) 10% 5% h);
+
+  /* Grey */
+  --grey-base: oklch(0.48 0.24 261.35);
+  --grey-100: oklch(from var(--grey-base) 100% 5% h);
+  --grey-200: oklch(from var(--grey-base) 90% 5% h);
+  --grey-300: oklch(from var(--grey-base) 80% 5% h);
+  --grey-400: oklch(from var(--grey-base) 70% 5% h);
+  --grey-500: oklch(from var(--grey-base) 60% 5% h);
+  --grey-600: oklch(from var(--grey-base) 50% 5% h);
+  --grey-700: oklch(from var(--grey-base) 40% 5% h);
+  --grey-800: oklch(from var(--grey-base) 30% 5% h);
+  --grey-900: oklch(from var(--grey-base) 20% 5% h);
+  --grey-1000: oklch(from var(--grey-base) 10% 5% h);
+  /* Slate */
+  --slate-base: oklch(0.48 0.24 261.35);
+  --slate-100: oklch(from var(--slate-base) 100% 5% h);
+  --slate-200: oklch(from var(--slate-base) 90% 5% h);
+  --slate-300: oklch(from var(--slate-base) 80% 5% h);
+  --slate-400: oklch(from var(--slate-base) 70% 5% h);
+  --slate-500: oklch(from var(--slate-base) 60% 5% h);
+  --slate-600: oklch(from var(--slate-base) 50% 5% h);
+  --slate-700: oklch(from var(--slate-base) 40% 5% h);
+  --slate-800: oklch(from var(--slate-base) 30% 5% h);
+  --slate-900: oklch(from var(--slate-base) 20% 5% h);
+  --slate-1000: oklch(from var(--slate-base) 10% 5% h);
+
+  /* Font stack */
+  --font-stack-serif: "Times New Roman", Times, serif;
+  --font-stack-sans-serif: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+  /* Fonts main */
+  --font-family-heading: "Playfair Display", var(--font-stack-serif);
+  --font-family-base: "Inter", var(--font-stack-sans-serif);
+
+  /* Font scale */
+  --font-scaled-size: 1rem;
+  --font-scaled-sm: calc(var(--font-scaled-size) * pow(1.5, -1));
+  --font-scaled-base: calc(var(--font-scaled-size) * pow(1.5, 0));
+  --font-scaled-md: calc(var(--font-scaled-size) * pow(1.5, 1));
+  --font-scaled-lg: calc(var(--font-scaled-size) * pow(1.5, 2));
+  --font-scaled-xl: calc(var(--font-scaled-size) * pow(1.5, 3));
+  --font-scaled-xxl: calc(var(--font-scaled-size) * pow(1.5, 4));
+
+  /* Font colour */
+  --heading-colour: var(--grey-1000);
+  --body-colour: var(--grey-800);
+
+  /* Theming */
+  --accent: var(--warning-base);
+
+  /* Spacing */
+  --spacing-base: 1rem;
+  --spacing-sm: calc(var(--spacing-base) * 0.5);
+  --spacing-md: calc(var(--spacing-base) * 2);
+  --spacing-lg: calc(var(--spacing-base) * 3);
+  --spacing-xl: calc(var(--spacing-base) * 4);
+
+  /* Radius */
+  --radius-base: 0.8rem;
+  --radius-sm: 0.4rem;
+  --radius-md: 0.4rem;
   --radius-lg: 1.5rem;
   --radius-xl: 5rem;
-}
-
-@property --grid-row {
-  syntax: "*";
-  inherits: false;
-  initial-value: auto;
-}
-@property --grid-template-columns {
-  syntax: "*";
-  inherits: false;
-  initial-value: subgrid;
-}
-
-@property --row-gap {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0;
-}
-
-@property --display {
-  syntax: "grid | flex | block | inline | inline-block | inline-flex | none";
-  inherits: false;
-  initial-value: grid;
-}
-
-@property --padding {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0;
-}
-
-@property --local-gutter {
-  syntax: "<length>";
-  initial-value: 0;
-  inherits: false;
-}
-
-@property --gutter-columns {
-  syntax: "*";
-  initial-value: 0.5rem 0.5rem;
-  inherits: false;
-}
-
-@property --repeat-columns {
-  syntax: "*";
-  initial-value: 0.5rem 0.5rem minmax(0, 120px);
-  inherits: false;
 }

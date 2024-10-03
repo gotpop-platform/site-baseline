@@ -6,16 +6,19 @@
       [full-start] minmax(2rem, 1fr)
       [center-start] repeat(
         12,
-        [col-start] var(--repeat-columns) [col-end]
+        [gutter-start] var(--gutter-columns)
+          var(--gutter-columns) [gutter-end col-start]
+          minmax(0, 120px) [col-end]
       )
-      var(--gutter-columns)
-      [center-end] minmax(2rem, 1fr)
+      [gutter-start] var(--gutter-columns) var(
+        --gutter-columns
+      )
+      [center-end gutter-end] minmax(2rem, 1fr)
       [full-end];
 
     &.root-grid {
       min-height: 100dvh;
       grid-template-rows: auto 1fr auto;
-      /* grid-template-rows: auto 2rem 1fr 6rem auto; */
     }
   }
 }

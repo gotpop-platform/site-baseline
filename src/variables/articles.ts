@@ -1,24 +1,25 @@
 export const layoutArticlesSlugSurface = {
-  "--background-colour": "white",
+  "--background-colour": "var(--white)",
   "--grid-column": "center",
   "--grid-template-rows": "1rem 1fr 1rem",
-  "--border-radius": "0.5rem",
+  "--border-radius": "var(--radius-sm)",
 }
 
 export const layoutArticlesSlugToc = {
-  "--background-colour": "lightblue",
-  "--padding": "2rem",
-  "--grid-column": "3 / 7",
+  "--background-colour": "var(--grey-300)",
+  "--display": "block",
+  "--padding": "var(--spacing-sm)",
+  "--grid-column": "1 col-start / 2 col-end",
   "--grid-row": "2",
-  "--border-radius": "0.5rem  0 0 0.5rem",
+  "--border-radius": "var(--radius-md) 0 0 var(--radius-md)",
 }
 
 export const layoutArticlesSlugContent = (id: string) => ({
-  "--background-colour": "lightblue",
+  "--background-colour": "var(--grey-400)",
   "--display": "block",
-  "--padding": "4rem",
-  "--grid-column": "9 / 37",
+  "--padding": "var(--spacing-lg)",
+  "--grid-column": "3 col-start / -1 col-end",
   "--grid-row": "2",
-  "--border-radius": "0 0.5rem 0.5rem 0",
+  "--border-radius": "0 var(--radius-md) var(--radius-md) 0",
   "--transition-article": id,
 })

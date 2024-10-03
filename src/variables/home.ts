@@ -4,7 +4,7 @@ export const styleMain = {
   "--display": "grid",
   "--grid-column": "center",
   "--grid-template-columns": "subgrid",
-  "--row-gap": "2rem",
+  "--row-gap": "var(--spacing-md)",
 }
 
 export const styleHero = {
