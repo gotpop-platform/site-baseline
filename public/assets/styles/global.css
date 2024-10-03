@@ -37,7 +37,6 @@ html {
   scrollbar-color: var(--slate-300) var(--slate-700);
   scrollbar-gutter: stable both-edges;
   scrollbar-width: thin;
-
   font-size: var(--root-font-size);
 
   @media (width >= 768px) {
@@ -50,10 +49,8 @@ html {
   }
 
   &::view-transition-new(slider) {
-    animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both
-        fade-in,
-      600ms cubic-bezier(0.4, 0, 0.2, 1) both
-        slide-from-right;
+    animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+      600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
   }
 }
 
