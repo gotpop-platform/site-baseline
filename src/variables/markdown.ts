@@ -46,30 +46,36 @@ export const stylesLayout = ({ metadata }: MarkdownFileProps): StyleObjProps[] =
 
 export const layoutBlog = ({ metadata }: MarkdownFileProps): StyleObjProps[] => [
   {
+    ...style,
     "--grid-column": "3 / span 13",
     "--grid-row": "2",
     "--transition-article": metadata.id ?? "",
   },
   {
+    ...style,
     "--grid-column": "18 / 37",
     "--grid-row": "2",
     "--transition-article": metadata.id ?? "",
   },
   {
+    ...style,
     "--grid-column": "3/ 37",
     "--grid-row": "4 / span 1",
     "--transition-article": metadata.id ?? "",
   },
   {
+    ...style,
     "--grid-column": "3/ 37",
     "--grid-row": "6 / span 1",
     "--transition-article": metadata.id ?? "",
   },
   {
+    ...style,
     "--grid-column": "span 6",
     "--transition-article": metadata.id ?? "",
   },
   {
+    ...style,
     "--grid-column": "span 12",
     "--transition-article": metadata.id ?? "",
   },
