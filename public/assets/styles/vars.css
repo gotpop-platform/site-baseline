@@ -1,7 +1,8 @@
 :root {
-  /* Oklab */
+  /* Oklab colours */
   --white: oklch(1 0 0);
   --black: oklch(0 0 0);
+
   /* Primary */
   --success-base: oklch(0.75 0.3 148.61);
   --success-100: oklch(from var(--success-base) 100% 5% h);
@@ -14,6 +15,7 @@
   --success-800: oklch(from var(--success-base) 30% 5% h);
   --success-900: oklch(from var(--success-base) 20% 5% h);
   --success-1000: oklch(from var(--success-base) 10% 5% h);
+
   /* Warning */
   --warning-base: oklch(0.8 0.19 99.45);
   --warning-100: oklch(from var(--warning-base) 100% 5% h);
@@ -26,6 +28,7 @@
   --warning-800: oklch(from var(--warning-base) 30% 5% h);
   --warning-900: oklch(from var(--warning-base) 20% 5% h);
   --warning-1000: oklch(from var(--warning-base) 10% 5% h);
+
   /* Error */
   --error-base: oklch(0.58 0.26 16.73);
   --error-100: oklch(from var(--error-base) 100% 5% h);
@@ -38,6 +41,7 @@
   --error-800: oklch(from var(--error-base) 30% 5% h);
   --error-900: oklch(from var(--error-base) 20% 5% h);
   --error-1000: oklch(from var(--error-base) 10% 5% h);
+
   /* Grey */
   --grey-base: oklch(0.48 0.24 261.35);
   --grey-100: oklch(from var(--grey-base) 100% 5% h);
@@ -62,12 +66,12 @@
   --slate-800: oklch(from var(--slate-base) 30% 5% h);
   --slate-900: oklch(from var(--slate-base) 20% 5% h);
   --slate-1000: oklch(from var(--slate-base) 10% 5% h);
-  /* Typography */
 
   /* Font stack */
   --font-stack-serif: "Times New Roman", Times, serif;
   --font-stack-sans-serif: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  /* Fonts */
+
+  /* Fonts main */
   --font-family-heading: "Playfair Display", var(--font-stack-serif);
   --font-family-base: "Inter", var(--font-stack-sans-serif);
 
@@ -81,8 +85,8 @@
   --font-scaled-xxl: calc(var(--font-scaled-size) * pow(1.5, 4));
 
   /* Font colour */
-  --heading-color: var(--grey-1000);
-  --body-color: var(--grey-800);
+  --heading-colour: var(--grey-1000);
+  --body-colour: var(--grey-800);
 
   /* Theming */
   --accent: var(--warning-base);

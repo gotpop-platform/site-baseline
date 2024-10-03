@@ -1,9 +1,9 @@
-@layer fonts, vars, properties, reset, typography, animations, global;
+@layer fonts, vars, properties, reset, typography, keyframes, global;
 
 @import url(./fonts.css) layer(fonts);
 @import url(./vars.css) layer(vars);
 @import url(./properties.css) layer(properties);
 @import url(./reset.css) layer(reset);
 @import url(./typography.css) layer(typography);
-@import url(./animations.css) layer(animations);
+@import url(./keyframes.css) layer(keyframes);
 @import url(./global.css) layer(global);
