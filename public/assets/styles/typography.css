@@ -63,6 +63,7 @@ p {
   &:last-child {
     margin-bottom: 0;
   }
+
   &:has(+ p) {
     margin-block-end: 2rem;
   }

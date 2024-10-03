@@ -54,6 +54,7 @@
   --grey-800: oklch(from var(--grey-base) 30% 5% h);
   --grey-900: oklch(from var(--grey-base) 20% 5% h);
   --grey-1000: oklch(from var(--grey-base) 10% 5% h);
+
   /* Slate */
   --slate-base: oklch(0.48 0.24 261.35);
   --slate-100: oklch(from var(--slate-base) 100% 5% h);
