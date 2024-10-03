@@ -3,65 +3,65 @@
   --white: oklch(1 0 0);
   --black: oklch(0 0 0);
   /* Primary */
-  --success: oklch(0.75 0.3 148.61);
-  --success-100: oklch(from var(--success) 100% 5% h);
-  --success-200: oklch(from var(--success) 90% 5% h);
-  --success-300: oklch(from var(--success) 80% 5% h);
-  --success-400: oklch(from var(--success) 70% 5% h);
-  --success-500: oklch(from var(--success) 60% 5% h);
-  --success-600: oklch(from var(--success) 50% 5% h);
-  --success-700: oklch(from var(--success) 40% 5% h);
-  --success-800: oklch(from var(--success) 30% 5% h);
-  --success-900: oklch(from var(--success) 20% 5% h);
-  --success-1000: oklch(from var(--success) 10% 5% h);
+  --success-base: oklch(0.75 0.3 148.61);
+  --success-100: oklch(from var(--success-base) 100% 5% h);
+  --success-200: oklch(from var(--success-base) 90% 5% h);
+  --success-300: oklch(from var(--success-base) 80% 5% h);
+  --success-400: oklch(from var(--success-base) 70% 5% h);
+  --success-500: oklch(from var(--success-base) 60% 5% h);
+  --success-600: oklch(from var(--success-base) 50% 5% h);
+  --success-700: oklch(from var(--success-base) 40% 5% h);
+  --success-800: oklch(from var(--success-base) 30% 5% h);
+  --success-900: oklch(from var(--success-base) 20% 5% h);
+  --success-1000: oklch(from var(--success-base) 10% 5% h);
   /* Warning */
-  --warning: oklch(0.8 0.19 99.45);
-  --warning-100: oklch(from var(--warning) 100% 5% h);
-  --warning-200: oklch(from var(--warning) 90% 5% h);
-  --warning-300: oklch(from var(--warning) 80% 5% h);
-  --warning-400: oklch(from var(--warning) 70% 5% h);
-  --warning-500: oklch(from var(--warning) 60% 5% h);
-  --warning-600: oklch(from var(--warning) 50% 5% h);
-  --warning-700: oklch(from var(--warning) 40% 5% h);
-  --warning-800: oklch(from var(--warning) 30% 5% h);
-  --warning-900: oklch(from var(--warning) 20% 5% h);
-  --warning-1000: oklch(from var(--warning) 10% 5% h);
+  --warning-base: oklch(0.8 0.19 99.45);
+  --warning-100: oklch(from var(--warning-base) 100% 5% h);
+  --warning-200: oklch(from var(--warning-base) 90% 5% h);
+  --warning-300: oklch(from var(--warning-base) 80% 5% h);
+  --warning-400: oklch(from var(--warning-base) 70% 5% h);
+  --warning-500: oklch(from var(--warning-base) 60% 5% h);
+  --warning-600: oklch(from var(--warning-base) 50% 5% h);
+  --warning-700: oklch(from var(--warning-base) 40% 5% h);
+  --warning-800: oklch(from var(--warning-base) 30% 5% h);
+  --warning-900: oklch(from var(--warning-base) 20% 5% h);
+  --warning-1000: oklch(from var(--warning-base) 10% 5% h);
   /* Error */
-  --error: oklch(0.58 0.26 16.73);
-  --error-100: oklch(from var(--error) 100% 5% h);
-  --error-200: oklch(from var(--error) 90% 5% h);
-  --error-300: oklch(from var(--error) 80% 5% h);
-  --error-400: oklch(from var(--error) 70% 5% h);
-  --error-500: oklch(from var(--error) 60% 5% h);
-  --error-600: oklch(from var(--error) 50% 5% h);
-  --error-700: oklch(from var(--error) 40% 5% h);
-  --error-800: oklch(from var(--error) 30% 5% h);
-  --error-900: oklch(from var(--error) 20% 5% h);
-  --error-1000: oklch(from var(--error) 10% 5% h);
+  --error-base: oklch(0.58 0.26 16.73);
+  --error-100: oklch(from var(--error-base) 100% 5% h);
+  --error-200: oklch(from var(--error-base) 90% 5% h);
+  --error-300: oklch(from var(--error-base) 80% 5% h);
+  --error-400: oklch(from var(--error-base) 70% 5% h);
+  --error-500: oklch(from var(--error-base) 60% 5% h);
+  --error-600: oklch(from var(--error-base) 50% 5% h);
+  --error-700: oklch(from var(--error-base) 40% 5% h);
+  --error-800: oklch(from var(--error-base) 30% 5% h);
+  --error-900: oklch(from var(--error-base) 20% 5% h);
+  --error-1000: oklch(from var(--error-base) 10% 5% h);
   /* Grey */
-  --grey: oklch(0.48 0.24 261.35);
-  --grey-100: oklch(from var(--grey) 100% 5% h);
-  --grey-200: oklch(from var(--grey) 90% 5% h);
-  --grey-300: oklch(from var(--grey) 80% 5% h);
-  --grey-400: oklch(from var(--grey) 70% 5% h);
-  --grey-500: oklch(from var(--grey) 60% 5% h);
-  --grey-600: oklch(from var(--grey) 50% 5% h);
-  --grey-700: oklch(from var(--grey) 40% 5% h);
-  --grey-800: oklch(from var(--grey) 30% 5% h);
-  --grey-900: oklch(from var(--grey) 20% 5% h);
-  --grey-1000: oklch(from var(--grey) 10% 5% h);
+  --grey-base: oklch(0.48 0.24 261.35);
+  --grey-100: oklch(from var(--grey-base) 100% 5% h);
+  --grey-200: oklch(from var(--grey-base) 90% 5% h);
+  --grey-300: oklch(from var(--grey-base) 80% 5% h);
+  --grey-400: oklch(from var(--grey-base) 70% 5% h);
+  --grey-500: oklch(from var(--grey-base) 60% 5% h);
+  --grey-600: oklch(from var(--grey-base) 50% 5% h);
+  --grey-700: oklch(from var(--grey-base) 40% 5% h);
+  --grey-800: oklch(from var(--grey-base) 30% 5% h);
+  --grey-900: oklch(from var(--grey-base) 20% 5% h);
+  --grey-1000: oklch(from var(--grey-base) 10% 5% h);
   /* Slate */
-  --slate: oklch(0.48 0.24 261.35);
-  --slate-100: oklch(from var(--slate) 100% 5% h);
-  --slate-200: oklch(from var(--slate) 90% 5% h);
-  --slate-300: oklch(from var(--slate) 80% 5% h);
-  --slate-400: oklch(from var(--slate) 70% 5% h);
-  --slate-500: oklch(from var(--slate) 60% 5% h);
-  --slate-600: oklch(from var(--slate) 50% 5% h);
-  --slate-700: oklch(from var(--slate) 40% 5% h);
-  --slate-800: oklch(from var(--slate) 30% 5% h);
-  --slate-900: oklch(from var(--slate) 20% 5% h);
-  --slate-1000: oklch(from var(--slate) 10% 5% h);
+  --slate-base: oklch(0.48 0.24 261.35);
+  --slate-100: oklch(from var(--slate-base) 100% 5% h);
+  --slate-200: oklch(from var(--slate-base) 90% 5% h);
+  --slate-300: oklch(from var(--slate-base) 80% 5% h);
+  --slate-400: oklch(from var(--slate-base) 70% 5% h);
+  --slate-500: oklch(from var(--slate-base) 60% 5% h);
+  --slate-600: oklch(from var(--slate-base) 50% 5% h);
+  --slate-700: oklch(from var(--slate-base) 40% 5% h);
+  --slate-800: oklch(from var(--slate-base) 30% 5% h);
+  --slate-900: oklch(from var(--slate-base) 20% 5% h);
+  --slate-1000: oklch(from var(--slate-base) 10% 5% h);
   /* Typography */
 
   /* Font stack */
@@ -85,7 +85,7 @@
   --body-color: var(--grey-800);
 
   /* Theming */
-  --accent: hwb(321 6% 24%);
+  --accent: var(--warning-base);
 
   /* Spacing */
   --spacing-base: 1rem;
