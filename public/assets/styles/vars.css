@@ -73,7 +73,6 @@
   --font-family-base: "Inter", var(--font-stack-sans-serif);
 
   /* Font scale */
-  /* --font-scaled-size: clamp(20px, 1.5vw, 1.6rem); */
   --font-scaled-size: 1rem;
   --font-scaled-sm: calc(
     var(--font-scaled-size) * pow(1.5, -1)
