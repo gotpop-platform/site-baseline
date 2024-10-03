@@ -28,15 +28,12 @@
 }
 
 html {
-  --is-desktop: false;
-  --root-font-size: clamp(12px, 1.5vw, 1.1rem);
-
-  background-color: var(--warning-600);
-  color-scheme: only light;
+  background-color: var(--colour-bg-site);
+  color-scheme: var(--color-scheme);
   interpolate-size: allow-keywords;
-  scrollbar-color: var(--slate-300) var(--slate-700);
-  scrollbar-gutter: stable both-edges;
-  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color);
+  scrollbar-gutter: var(--scrollbar-gutter);
+  scrollbar-width: var(--scrollbar-width);
   font-size: var(--root-font-size);
 
   @media (width >= 768px) {
@@ -44,20 +41,18 @@ html {
   }
 
   &::view-transition-old(slider) {
-    animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
-      600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+    animation: var(--animation-fadeout), var(--animation-slide-to-left);
   }
 
   &::view-transition-new(slider) {
-    animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
-      600ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+    animation: var(--animation-fadein), var(--animation-slide-to-right);
   }
 }
 
 body {
   -webkit-font-smoothing: antialiased;
   margin: unset;
-  color: var(--text-color);
+  color: var(--body-colour);
   font-family: var(--font-family-base);
   overflow: hidden auto;
   scroll-behavior: smooth;

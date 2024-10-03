@@ -19,10 +19,10 @@ h5,
 h6 {
   color: var(--heading-colour);
   font-family: var(--font-family-heading);
-  margin-block: 0;
-  scroll-margin-top: 4rem;
+  margin-block: unset;
+  scroll-margin-top: var(--spacing-lg);
   text-wrap: balance;
-  padding-top: calc(2rem - 1cap);
+  padding-top: calc(var(--spacing-md) - 1cap);
 }
 
 h1 {
@@ -32,6 +32,7 @@ h1 {
 
 h2 {
   font-size: var(--font-scaled-xl);
+  font-weight: 700;
 }
 
 h3 {
@@ -57,7 +58,7 @@ p {
   letter-spacing: 0.015em;
   line-height: 2rem;
   max-width: 90ch;
-  padding-top: calc(1rem - 1cap);
+  padding-top: calc(var(--spacing-base) - 1cap);
   text-wrap: pretty;
 
   &:last-child {
@@ -65,11 +66,11 @@ p {
   }
 
   &:has(+ p) {
-    margin-block-end: 2rem;
+    margin-block-end: var(--spacing-md);
   }
 
   &:has(+ a > :is(h1, h2, h3, h4, h5, h6)) {
-    margin-block-end: 4rem;
+    margin-block-end: var(--spacing-xl);
   }
 }
 
@@ -89,12 +90,12 @@ a {
     text-underline-offset: 0.3em;
     text-decoration-thickness: 0.14em;
     text-decoration-color: var(--accent);
-    transition: color 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    transition: var(--transition-color);
   }
 
   &:has(h1, h2, h3, h4, h5, h6) {
-    display: inline-block;
-    margin-block-end: 2rem;
+    display: inline-flex;
+    margin-block-end: var(--spacing-md);
 
     &:focus-visible {
       outline: 2px dashed var(--accent);
