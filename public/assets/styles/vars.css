@@ -109,11 +109,11 @@
   --spacing-xl: calc(var(--spacing-base) * 4);
 
   /* Radius */
-  --radius-base: 0.8rem;
-  --radius-sm: 0.4rem;
-  --radius-md: 0.4rem;
-  --radius-lg: 1.5rem;
-  --radius-xl: 5rem;
+  --radius-base: 0.5rem;
+  --radius-sm: calc(var(--radius-base) * pow(1.5, -1));
+  --radius-md: calc(var(--radius-base) * pow(1.5, 0));
+  --radius-lg: calc(var(--radius-base) * pow(1.5, 1));
+  --radius-xl: calc(var(--radius-base) * pow(1.5, 2));
 
   /* Tranitions */
   --transition: background-color 0.2s cubic-bezier(0.45, 0.05, 0.55, 0.95);

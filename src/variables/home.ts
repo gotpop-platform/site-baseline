@@ -5,7 +5,7 @@ export const styleMain = {
   "--grid-column": "center",
   "--grid-template-columns": "subgrid",
   "--grid-row": "main",
-  "--grid-template-rows": "min-content 1rem repeat(3, min-content)",
+  "--grid-template-rows": "min-content var(--spacing-md) repeat(3, min-content)",
   // "--row-gap": "var(--spacing-md)",
   "--background-colour": "var(--transparent)",
   "--border-radius": "var(--radius-md)",

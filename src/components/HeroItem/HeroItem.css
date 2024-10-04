@@ -2,7 +2,7 @@
   & {
     background-color: var(--white);
     border-radius: var(--radius-lg);
-    grid-column: var(--grid-column-span);
+    grid-column: var(--grid-column-centre);
     grid-row: 1;
     padding: var(--spacing-lg);
 
