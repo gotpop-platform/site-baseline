@@ -35,7 +35,7 @@
 }
 
 @property --padding {
-  syntax: "<length>";
+  syntax: "<length>+";
   inherits: false;
   initial-value: 0;
 }
