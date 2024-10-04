@@ -1,5 +1,6 @@
 import { jsxFactory, useCSS } from "utils"
 
+import { SITE_NAME } from "src/constants"
 import { mkClass } from "utils"
 
 export const LogoMegaMenu = () => {
@@ -27,7 +28,7 @@ export const LogoMegaMenu = () => {
           fill="currentColor"
         ></path>
       </svg>
-      <span>Singleton</span>
+      <span>{SITE_NAME}</span>
     </a>
   )
 }

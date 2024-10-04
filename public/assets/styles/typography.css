@@ -57,6 +57,7 @@ p {
   font-size: var(--font-scaled-base);
   letter-spacing: 0.015em;
   line-height: 2rem;
+  margin-block-start: unset;
   max-width: 90ch;
   padding-top: calc(var(--spacing-base) - 1cap);
   text-wrap: pretty;

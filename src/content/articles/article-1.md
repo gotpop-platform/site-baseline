@@ -1,5 +1,5 @@
 ---
-title: "Article 1"
+title: "View Transitions API"
 id: "article1"
 author: "John Doe"
 date: "2023-10-01"

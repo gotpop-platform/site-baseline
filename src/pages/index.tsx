@@ -8,17 +8,8 @@ import {
   MobileMenuTrigger,
 } from "components"
 import { Tag, withItems } from "generics"
-import {
-  jsxFactory,
-  markdownFilesInDir,
-  title,
-} from "utils"
-import {
-  styleHero,
-  styleMain,
-  styleSurfaceMain,
-  stylesLayout,
-} from "variables"
+import { jsxFactory, markdownFilesInDir, title } from "utils"
+import { styleMain, stylesLayout } from "variables"
 
 const ArticleList = withItems(ArticleItem)
 
@@ -31,15 +22,8 @@ const pageIndex = async (): Promise<JSX.Element> => {
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Tag tag="main" styles={styleMain}>
-          <Tag tag="section" styles={styleHero}>
-            <HeroItem />
-          </Tag>
-          <Tag tag="section" styles={styleSurfaceMain}>
-            <ArticleList
-              markdownItems={markdownItems}
-              layout={stylesLayout}
-            />
-          </Tag>
+          <HeroItem />
+          <ArticleList markdownItems={markdownItems} layout={stylesLayout} />
         </Tag>
         <Footer />
       </GridGap>

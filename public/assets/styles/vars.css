@@ -2,6 +2,7 @@
   /* Oklab colours */
   --white: oklch(1 0 0);
   --black: oklch(0 0 0);
+  --transparent: oklch(0 0 0 / 0);
 
   /* Primary */
   --success-base: oklch(0.75 0.3 148.61);
@@ -91,7 +92,7 @@
 
   /* Theming */
   --accent: var(--warning-base);
-  --colour-bg-site: var(--grey-500);
+  --colour-bg-site: var(--grey-300);
   --root-font-size: clamp(12px, 1.5vw, 1.1rem);
   --color-scheme: only light;
 

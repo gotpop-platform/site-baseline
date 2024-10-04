@@ -8,6 +8,7 @@
 
     h1 {
       font-size: var(--font-scaled-lg);
+      margin-block-end: var(--spacing-md);
     }
   }
 }

@@ -1,5 +1,5 @@
 ---
-title: "Article 2"
+title: "CSS Stylesheets"
 id: "article2"
 author: "John Doe"
 date: "2023-10-01"
