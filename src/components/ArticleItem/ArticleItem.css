@@ -11,7 +11,7 @@
     view-transition-name: var(--transition-article);
 
     &:has(a:hover) {
-      background-color: var(--slate-300);
+      background-color: oklch(from var(--background-colour) 90% c h);
     }
 
     @container style(--is-desktop: true) {

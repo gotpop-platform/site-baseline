@@ -38,6 +38,7 @@ h2 {
 h3 {
   font-size: var(--font-scaled-lg);
   font-weight: 600;
+  line-height: 3rem;
 }
 
 h4 {

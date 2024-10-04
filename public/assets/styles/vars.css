@@ -44,17 +44,17 @@
   --error-1000: oklch(from var(--error-base) 10% 5% h);
 
   /* Grey */
-  --grey-base: oklch(0.48 0.24 261.35);
-  --grey-100: oklch(from var(--grey-base) 100% 5% h);
-  --grey-200: oklch(from var(--grey-base) 90% 5% h);
-  --grey-300: oklch(from var(--grey-base) 80% 5% h);
-  --grey-400: oklch(from var(--grey-base) 70% 5% h);
-  --grey-500: oklch(from var(--grey-base) 60% 5% h);
-  --grey-600: oklch(from var(--grey-base) 50% 5% h);
-  --grey-700: oklch(from var(--grey-base) 40% 5% h);
-  --grey-800: oklch(from var(--grey-base) 30% 5% h);
-  --grey-900: oklch(from var(--grey-base) 20% 5% h);
-  --grey-1000: oklch(from var(--grey-base) 10% 5% h);
+  --grey-base: oklch(1 0 0);
+  --grey-100: oklch(from var(--grey-base) 95% c h);
+  --grey-200: oklch(from var(--grey-base) 90% c h);
+  --grey-300: oklch(from var(--grey-base) 85% c h);
+  --grey-400: oklch(from var(--grey-base) 80% c h);
+  --grey-500: oklch(from var(--grey-base) 75% c h);
+  --grey-600: oklch(from var(--grey-base) 70% c h);
+  --grey-700: oklch(from var(--grey-base) 65% c h);
+  --grey-800: oklch(from var(--grey-base) 60% c h);
+  --grey-900: oklch(from var(--grey-base) 55% c h);
+  --grey-1000: oklch(from var(--grey-base) 50% c h);
 
   /* Slate */
   --slate-base: oklch(0.48 0.24 261.35);
@@ -87,12 +87,12 @@
   --font-scaled-xxl: calc(var(--font-scaled-size) * pow(1.5, 4));
 
   /* Font colour */
-  --heading-colour: var(--grey-1000);
-  --body-colour: var(--grey-800);
+  --heading-colour: var(--black);
+  --body-colour: var(--black);
 
   /* Theming */
   --accent: var(--warning-base);
-  --colour-bg-site: var(--grey-300);
+  --colour-bg-site: var(--grey-800);
   --root-font-size: clamp(12px, 1.5vw, 1.1rem);
   --color-scheme: only light;
 

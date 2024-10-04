@@ -1,8 +1,8 @@
 @scope {
   & {
     display: grid;
-    grid-auto-rows: 7rem min-content;
     grid-template-columns: subgrid;
+    grid-row: footer;
     grid-column: var(--grid-column-centre);
   }
 
@@ -13,7 +13,6 @@
     display: flex;
     flex-direction: column;
     grid-column: var(--grid-column-centre);
-    grid-row: 2;
     justify-content: center;
     padding: var(--spacing-md) var(--spacing-lg);
   }

@@ -1,5 +1,5 @@
 ---
-title: "Baseline Grid"
+title: "Baseline grid works over multiple lines when using a long title"
 id: "article6"
 author: "John Doe"
 date: "2023-10-01"

@@ -1,12 +1,4 @@
-import {
-  AppTheme,
-  ArticleItem,
-  Footer,
-  GridGap,
-  HeaderMegaMenu,
-  HeroItem,
-  MobileMenuTrigger,
-} from "components"
+import { AppTheme, ArticleItem, Footer, GridGap, HeaderMegaMenu, HeroItem } from "components"
 import { Tag, withItems } from "generics"
 import { jsxFactory, markdownFilesInDir, title } from "utils"
 import { styleMain, stylesLayout } from "variables"
@@ -19,7 +11,7 @@ const pageIndex = async (): Promise<JSX.Element> => {
   return (
     <AppTheme title={title("Home")}>
       <GridGap isRoot>
-        <MobileMenuTrigger />
+        {/* <MobileMenuTrigger /> */}
         <HeaderMegaMenu />
         <Tag tag="main" styles={styleMain}>
           <HeroItem />

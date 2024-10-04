@@ -23,21 +23,19 @@
     translate: 0 5rem;
     z-index: 1000;
 
-    transition: display 0.4s allow-discrete,
-      overlay 0.4s allow-discrete, opacity 0.4s,
+    transition: display 0.4s allow-discrete, overlay 0.4s allow-discrete, opacity 0.4s,
       translate 0.4s;
 
     @container style(--is-desktop: true) {
       display: grid;
       --display-header: grid;
-      --grid-template-rows: min-content 2rem;
+      --grid-template-rows: min-content;
       opacity: 1;
       translate: unset;
     }
 
     &::backdrop {
-      transition: display 0.4s allow-discrete,
-        overlay 0.4s allow-discrete, opacity 0.4s,
+      transition: display 0.4s allow-discrete, overlay 0.4s allow-discrete, opacity 0.4s,
         translate 0.4s;
       opacity: 0;
       background: rgba(0, 0, 0, 0.7);

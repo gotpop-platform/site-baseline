@@ -15,7 +15,7 @@
 
     &.root-grid {
       min-height: 100dvh;
-      grid-template-rows: auto 1fr auto;
+      grid-template-rows: [header-start] auto [header-end] 1rem [main-start] 1fr [main-end] 1rem [footer-start] auto [footer-end];
     }
   }
 }
