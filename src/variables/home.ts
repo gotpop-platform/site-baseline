@@ -25,6 +25,7 @@ export const styleSurfaceMain = {
 
 export const styleArticlesSurfaceMain = {
   ...surfaceStyles,
+  "--grid-row": "main",
   "--grid-template-rows": "repeat(3, min-content)",
   "--background-colour": "var(--transparent)",
 }

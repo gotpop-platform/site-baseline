@@ -4,11 +4,18 @@
   inherits: false;
 }
 
+@property --background-colour {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: transparent;
+}
+
 @property --grid-row {
   syntax: "*";
   inherits: false;
   initial-value: auto;
 }
+
 @property --grid-template-columns {
   syntax: "*";
   inherits: false;

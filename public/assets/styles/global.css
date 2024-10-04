@@ -12,7 +12,7 @@
 
 :target {
   background-color: var(--error);
-  border: 2px solid black;
+  border-bottom: 2px solid var(--white);
 }
 
 ::selection {

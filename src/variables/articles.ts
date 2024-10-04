@@ -3,6 +3,7 @@ export const layoutArticlesSlugSurface = {
   "--grid-column": "center",
   "--grid-template-rows": "1rem 1fr 1rem",
   "--border-radius": "var(--radius-sm)",
+  "--grid-row": "main",
 }
 
 export const layoutArticlesSlugToc = {

@@ -3,6 +3,7 @@ export const stylesAboutContainer = {
   "--grid-column": "center",
   "--border-radius": "var(--radius-lg)",
   "--grid-template-rows": "1rem 1fr 1rem",
+  "--grid-row": "main",
 }
 
 export const stylesAbout = {
