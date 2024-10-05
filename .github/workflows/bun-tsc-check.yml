@@ -15,6 +15,12 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
 
+      - name: Configure bunfig.toml
+        run: |
+          echo '[install]' > bunfig.toml
+          echo 'registry = "https://npm.pkg.github.com"' >> bunfig.toml
+          echo 'token = "${{ secrets.GITHUB_TOKEN }}"' >> bunfig.toml
+
       - name: Bun install
         run: bun install
 
