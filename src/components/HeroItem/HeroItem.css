@@ -1,13 +1,14 @@
 @scope {
   & {
-    background-color: var(--slate-200);
+    background-color: var(--white);
     border-radius: var(--radius-lg);
-    grid-column: var(--grid-column-span);
-    grid-row: 2;
+    grid-column: var(--grid-column-centre);
+    grid-row: 1;
     padding: var(--spacing-lg);
 
     h1 {
       font-size: var(--font-scaled-lg);
+      margin-block-end: var(--spacing-md);
     }
   }
 }

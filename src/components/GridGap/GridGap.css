@@ -6,19 +6,18 @@
       [full-start] minmax(2rem, 1fr)
       [center-start] repeat(
         12,
-        [gutter-start] var(--gutter-columns)
-          var(--gutter-columns) [gutter-end col-start]
-          minmax(0, 120px) [col-end]
+        [gutter-start] var(--gutter-columns) var(--gutter-columns) [gutter-end col-start]
+          minmax(0, 100px) [col-end]
       )
-      [gutter-start] var(--gutter-columns) var(
-        --gutter-columns
-      )
+      [gutter-start] var(--gutter-columns) var(--gutter-columns)
       [center-end gutter-end] minmax(2rem, 1fr)
       [full-end];
 
     &.root-grid {
       min-height: 100dvh;
-      grid-template-rows: auto 1fr auto;
+      grid-template-rows: [header-start] auto [header-end] var(--spacing-md) [main-start] 1fr [main-end] var(
+          --spacing-xl
+        ) [footer-start] auto [footer-end];
     }
   }
 }

@@ -1,5 +1,6 @@
 @scope {
   & {
-    width: max-content;
+    position: sticky;
+    top: var(--spacing-xl);
   }
 }

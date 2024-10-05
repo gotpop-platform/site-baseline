@@ -10,6 +10,11 @@
   outline-color: var(--accent);
 }
 
+:target {
+  background-color: var(--error);
+  border-bottom: 2px solid var(--white);
+}
+
 ::selection {
   background-color: var(--accent);
 }
@@ -30,11 +35,12 @@
 html {
   background-color: var(--colour-bg-site);
   color-scheme: var(--color-scheme);
+  font-size: var(--root-font-size);
   interpolate-size: allow-keywords;
+  scroll-behavior: smooth;
   scrollbar-color: var(--scrollbar-color);
   scrollbar-gutter: var(--scrollbar-gutter);
   scrollbar-width: var(--scrollbar-width);
-  font-size: var(--root-font-size);
 
   @media (width >= 768px) {
     --is-desktop: true;
@@ -55,5 +61,4 @@ body {
   color: var(--body-colour);
   font-family: var(--font-family-base);
   overflow: hidden auto;
-  scroll-behavior: smooth;
 }

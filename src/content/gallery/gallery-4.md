@@ -5,6 +5,7 @@ slug: "/gallery/gallery-4"
 name: "gallery 4"
 prev: "/gallery/gallery-3"
 next: "/gallery/gallery-1"
+description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl in lacinia aliquam, nulla nunc tincidunt nunc, id tincidunt mi nisl a nunc. Nulla facilisi. Sed auctor, nunc nec ultrices aliquet, nisl nunc tincidunt nunc, id tincidunt mi nisl a nunc. Nulla facilisi."
 ---
 
 # Header 1

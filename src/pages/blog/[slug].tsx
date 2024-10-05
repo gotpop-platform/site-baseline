@@ -1,11 +1,4 @@
-import {
-  AppTheme,
-  Footer,
-  GridGap,
-  HeaderMegaMenu,
-  Heading,
-  MobileMenuTrigger,
-} from "components"
+import { AppTheme, Footer, GridGap, HeaderMegaMenu, Heading } from "components"
 import { jsxFactory, parseMarkdownFile, title } from "utils"
 import { stylesBlog, stylesBlogInner } from "variables"
 
@@ -13,9 +6,7 @@ import { Metadata } from "src/components/Metadata"
 import type { PageProps } from "types"
 import { Tag } from "generics"
 
-const pageBlog = async ({
-  slug,
-}: PageProps): Promise<JSX.Element> => {
+const pageBlog = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const {
     metadata: { date, title: pageTitle, author, id },
     content,
@@ -24,7 +15,7 @@ const pageBlog = async ({
   return (
     <AppTheme title={title(pageTitle)}>
       <GridGap isRoot>
-        <MobileMenuTrigger />
+        {/* <MobileMenuTrigger /> */}
         <HeaderMegaMenu />
         <Tag tag="section" styles={stylesBlog}>
           <Tag tag="section" styles={stylesBlogInner(id)}>

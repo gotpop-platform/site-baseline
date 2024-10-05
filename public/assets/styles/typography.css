@@ -38,6 +38,7 @@ h2 {
 h3 {
   font-size: var(--font-scaled-lg);
   font-weight: 600;
+  line-height: 3rem;
 }
 
 h4 {
@@ -57,7 +58,8 @@ p {
   font-size: var(--font-scaled-base);
   letter-spacing: 0.015em;
   line-height: 2rem;
-  max-width: 90ch;
+  margin-block-start: unset;
+  max-width: 60ch;
   padding-top: calc(var(--spacing-base) - 1cap);
   text-wrap: pretty;
 
@@ -101,6 +103,14 @@ a {
       outline: 2px dashed var(--accent);
       outline-offset: 1.5em;
     }
+  }
+
+  &:has(h1) {
+    margin-block-end: var(--spacing-xl);
+  }
+
+  &:has(h2) {
+    margin-block-end: var(--spacing-lg);
   }
 }
 
