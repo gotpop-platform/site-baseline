@@ -1,10 +1,6 @@
-import { jsxFactory, useCSS } from "utils"
+import { jsxFactory, useCSS } from "@gotpop-platform/utils"
 
-export const TableOfContents = ({
-  toc,
-}: {
-  toc?: { id: string; text: string }[]
-}) => {
+export const TableOfContents = ({ toc }: { toc?: { id: string; text: string }[] }) => {
   const { css, useName } = useCSS({ meta: import.meta })
 
   return (

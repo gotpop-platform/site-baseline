@@ -1,10 +1,11 @@
+import { jsxFactory, parseMarkdownFile, title } from "@gotpop-platform/utils"
 import { AppTheme, Footer, GridGap, HeaderMegaMenu, Heading } from "components"
-import { jsxFactory, parseMarkdownFile, title } from "utils"
 import { stylesBlog, stylesBlogInner } from "variables"
 
-import { Metadata } from "src/components/Metadata"
-import type { PageProps } from "types"
 import { Tag } from "generics"
+import { Metadata } from "src/components/Metadata"
+import { SITE_NAME } from "src/constants"
+import type { PageProps } from "types"
 
 const pageBlog = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const {
@@ -13,7 +14,7 @@ const pageBlog = async ({ slug }: PageProps): Promise<JSX.Element> => {
   } = parseMarkdownFile("blog", slug)
 
   return (
-    <AppTheme title={title(pageTitle)}>
+    <AppTheme title={title(pageTitle, SITE_NAME)}>
       <GridGap isRoot>
         {/* <MobileMenuTrigger /> */}
         <HeaderMegaMenu />

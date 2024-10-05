@@ -1,14 +1,11 @@
-import { cn, jsxFactory, mkClass, useCSS } from "utils"
+import { cn, jsxFactory, mkClass, useCSS } from "@gotpop-platform/utils"
 
 type GridGapProps = {
   isRoot?: boolean
   children?: string
 }
 
-export const GridGap = ({
-  isRoot = false,
-  children,
-}: GridGapProps) => {
+export const GridGap = ({ isRoot = false, children }: GridGapProps) => {
   const { css } = useCSS({ meta: import.meta })
   const cl = mkClass(import.meta.file)
 

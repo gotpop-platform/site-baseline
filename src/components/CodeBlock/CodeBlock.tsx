@@ -1,10 +1,6 @@
-import { jsxFactory, mkClass, useCSS } from "utils"
+import { jsxFactory, mkClass, useCSS } from "@gotpop-platform/utils"
 
-export function CodeBlock({
-  children,
-}: {
-  children?: string
-}): JSX.Element {
+export function CodeBlock({ children }: { children?: string }): JSX.Element {
   const { css } = useCSS({ meta: import.meta })
 
   return (

@@ -1,18 +1,19 @@
 {
-	"name": "minimax",
-	"module": "server/index.ts ",
-	"type": "module",
-	"license": "MIT",
-	"scripts": {
-		"dev": "bun --watch server/serve.ts",
-		"start": "bun server/serve.ts",
-		"tsc": "tsc"
-	},
-	"peerDependencies": {
-		"@types/bun": "latest",
-		"typescript": "^5.0.0"
-	},
-	"dependencies": {
-		"bun": "^1.0.23"
-	}
+  "name": "minimax",
+  "module": "server/index.ts ",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "bun --watch server/serve.ts",
+    "start": "bun server/serve.ts",
+    "tsc": "tsc"
+  },
+  "peerDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@gotpop-platform/utils": "1.0.7",
+    "bun": "^1.0.23"
+  }
 }

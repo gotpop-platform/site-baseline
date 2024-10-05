@@ -1,6 +1,6 @@
-import { jsxFactory, useCSS } from "utils"
+import { jsxFactory, useCSS } from "@gotpop-platform/utils"
 
-import { mkClass } from "utils"
+import { mkClass } from "@gotpop-platform/utils"
 
 type SubmenuItem = {
   title: string
@@ -25,11 +25,7 @@ export const SubMenuContent = ({
   ))
 
   return (
-    <div
-      id={"sub-menu-" + position}
-      popover="auto"
-      class={mkClass(import.meta.file)}
-    >
+    <div id={"sub-menu-" + position} popover="auto" class={mkClass(import.meta.file)}>
       <style>{css}</style>
       <ul>{items}</ul>
     </div>

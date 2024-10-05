@@ -1,4 +1,4 @@
-import { jsxFactory } from "utils"
+import { jsxFactory } from "@gotpop-platform/utils"
 
 export const Head = ({ title }: { title: string }) => {
   const baseStylePath = "/assets/styles/index.css"
@@ -6,14 +6,8 @@ export const Head = ({ title }: { title: string }) => {
   return (
     <head>
       <meta charset="UTF-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-      />
-      <meta
-        name="keywords"
-        content="HTML, CSS, JavaScript"
-      />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="keywords" content="HTML, CSS, JavaScript" />
       <meta name="author" content="GotPop"></meta>
       <title>{title}</title>
       <link rel="icon" href="/assets/img/favicon.png" />

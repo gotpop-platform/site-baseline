@@ -1,5 +1,5 @@
+import { jsxFactory } from "@gotpop-platform/utils"
 import { Head } from "components"
-import { jsxFactory } from "utils"
 
 interface AppProps {
   children?: string | JSX.Element | JSX.Element[]

@@ -1,4 +1,4 @@
-import { jsxFactory, useCSS } from "utils"
+import { jsxFactory, useCSS } from "@gotpop-platform/utils"
 
 import { TriggerSubMenu } from "../TriggerSubMenu"
 

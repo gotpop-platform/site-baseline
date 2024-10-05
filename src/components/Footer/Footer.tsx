@@ -1,4 +1,4 @@
-import { jsxFactory, useCSS } from "utils"
+import { jsxFactory, useCSS } from "@gotpop-platform/utils"
 
 import { BaseLinePopOver } from "components"
 
@@ -29,10 +29,7 @@ export function Footer({ ...rest }) {
         </nav>
         <h3>Pop</h3> */}
         <nav class="subdomains">
-          <button
-            class="menu-link"
-            popovertarget="basegrid"
-          >
+          <button class="menu-link" popovertarget="basegrid">
             Grid
           </button>
           <BaseLinePopOver />
