@@ -104,6 +104,14 @@ a {
       outline-offset: 1.5em;
     }
   }
+
+  &:has(h1) {
+    margin-block-end: var(--spacing-xl);
+  }
+
+  &:has(h2) {
+    margin-block-end: var(--spacing-lg);
+  }
 }
 
 blockquote {
