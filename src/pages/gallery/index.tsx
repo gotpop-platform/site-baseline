@@ -7,20 +7,14 @@ import {
   MobileMenuTrigger,
 } from "components"
 import { Tag, withItems } from "generics"
-import {
-  jsxFactory,
-  markdownFilesInDir,
-  title,
-} from "utils"
-import { stylesGallery, stylesLayout } from "variables"
+import { jsxFactory, markdownFilesInDir, title } from "utils"
+import { stylesGallery, stylesGalleryLayout } from "variables"
 
 import type { PageProps } from "types"
 
 const ArticleList = withItems(ArticleItem)
 
-const pageGallery = async ({
-  slug,
-}: PageProps): Promise<JSX.Element> => {
+const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const markdownItems = await markdownFilesInDir(slug)
 
   return (
@@ -29,10 +23,7 @@ const pageGallery = async ({
         <MobileMenuTrigger />
         <HeaderMegaMenu />
         <Tag tag="main" styles={stylesGallery}>
-          <ArticleList
-            markdownItems={markdownItems}
-            layout={stylesLayout}
-          />
+          <ArticleList markdownItems={markdownItems} layout={stylesGalleryLayout} />
         </Tag>
         <Footer />
       </GridGap>
