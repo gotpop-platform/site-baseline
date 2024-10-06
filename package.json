@@ -7,10 +7,5 @@
     "dev": "bun --watch server/serve.ts",
     "start": "bun server/serve.ts",
     "tsc": "tsc"
-  },
-  "peerDependencies": {
-    "@types/bun": "latest",
-    "typescript": "^5.0.0",
-    "bun": "latest"
   }
 }
