@@ -8,9 +8,8 @@
     "start": "bun server/serve.ts",
     "tsc": "tsc"
   },
-  "peerDependencies": {
-    "@types/bun": "latest",
-    "typescript": "^5.0.0",
-    "bun": "latest"
+  "dependencies": {
+    "@types/bun": "^1.1.10",
+    "@types/node": "^22.7.4"
   }
 }
