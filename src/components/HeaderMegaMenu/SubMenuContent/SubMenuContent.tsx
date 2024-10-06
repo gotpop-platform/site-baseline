@@ -1,6 +1,6 @@
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { mkClass } from "@gotpop-platform/utils"
-import { useCSS } from "@gotpop-platform/utils"
+import { mkClass, useCSS } from "utils"
+
+import { jsxFactory } from "utils"
 
 type SubmenuItem = {
   title: string

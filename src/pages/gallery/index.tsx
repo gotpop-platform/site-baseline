@@ -7,12 +7,12 @@ import {
   MobileMenuTrigger,
 } from "components"
 import { Tag, withItems } from "generics"
-import { markdownFilesInDir, title } from "@gotpop-platform/utils"
+import { markdownFilesInDir, title } from "utils"
 import { stylesGallery, stylesGalleryLayout } from "variables"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { jsxFactory } from "utils"
 
 const ArticleList = withItems(ArticleItem)
 

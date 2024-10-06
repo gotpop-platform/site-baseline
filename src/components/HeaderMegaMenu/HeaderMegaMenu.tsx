@@ -1,9 +1,9 @@
+import { mkClass, useCSS } from "utils"
+
 import { HeaderSurface } from "./HeaderSurface"
 import { LogoMegaMenu } from "./LogoMegaMenu"
 import { MegaNav } from "./MegaNav"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { mkClass } from "@gotpop-platform/utils"
-import { useCSS } from "@gotpop-platform/utils"
+import { jsxFactory } from "utils"
 
 type HeaderMegaMenuProps = {
   title?: string

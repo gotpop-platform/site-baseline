@@ -1,8 +1,8 @@
+import { mkClass, useCSS } from "utils"
+
 import type { IconName } from "./Icon.types"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { mkClass } from "@gotpop-platform/utils"
+import { jsxFactory } from "utils"
 import { readFileSync } from "fs"
-import { useCSS } from "@gotpop-platform/utils"
 
 type IconProps = {
   iconName?: IconName

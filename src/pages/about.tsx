@@ -1,11 +1,10 @@
 import { AppTheme, Footer, GridGap, HeaderMegaMenu, Heading, MobileMenuTrigger } from "components"
+import { jsxFactory, title } from "utils"
 import { stylesAbout, stylesAboutContainer } from "variables"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { Tag } from "generics"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { title } from "@gotpop-platform/utils"
 
 const aboutPage = async ({ slug }: PageProps): Promise<JSX.Element> => {
   return (

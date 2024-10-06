@@ -1,4 +1,4 @@
-import { formattedDate, jsxFactory, mkClass, useCSS } from "@gotpop-platform/utils"
+import { formattedDate, jsxFactory, mkClass, useCSS } from "utils"
 
 export const Metadata = ({ date, author }: { date: string; author: string }) => {
   const { css } = useCSS({ meta: import.meta })

@@ -1,6 +1,6 @@
-import { mkClass, useCSS } from "@gotpop-platform/utils"
+import { mkClass, useCSS } from "utils"
 
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { jsxFactory } from "utils"
 
 export function BaseLinePopOver({ popovertarget = "basegrid" }) {
   const { css } = useCSS({ meta: import.meta })

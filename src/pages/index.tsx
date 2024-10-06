@@ -1,10 +1,10 @@
 import { AppTheme, ArticleItem, Footer, GridGap, HeaderMegaMenu, HeroItem } from "components"
 import { Tag, withItems } from "generics"
-import { markdownFilesInDir, title } from "@gotpop-platform/utils"
+import { markdownFilesInDir, title } from "utils"
 import { styleMain, stylesLayout } from "variables"
 
 import { SITE_NAME } from "src/constants"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { jsxFactory } from "utils"
 
 const ArticleList = withItems(ArticleItem)
 

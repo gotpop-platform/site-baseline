@@ -1,5 +1,4 @@
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { useCSS } from "@gotpop-platform/utils"
+import { jsxFactory, useCSS } from "utils"
 
 type ButtonProps = {
   href: string

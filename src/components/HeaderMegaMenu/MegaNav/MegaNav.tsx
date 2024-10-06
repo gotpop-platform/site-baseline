@@ -1,9 +1,9 @@
+import { mkClass, useCSS } from "utils"
+
 import { MenuItem } from "../MenuItem"
 import { SubMenuContent } from "../SubMenuContent"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { mkClass } from "@gotpop-platform/utils"
+import { jsxFactory } from "utils"
 import { navData } from "./MegaNav.data"
-import { useCSS } from "@gotpop-platform/utils"
 
 export const MegaNav = () => {
   const { css } = useCSS({ meta: import.meta })
