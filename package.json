@@ -9,8 +9,6 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@gotpop-platform/package-jsx-factory": "^1.0.1",
-    "@gotpop-platform/utils": "1.0.7",
     "@types/bun": "latest",
     "bun": "^1.0.23",
     "typescript": "^5.0.0"
