@@ -7,7 +7,7 @@ import {
   MobileMenuTrigger,
 } from "components"
 import { Tag, withItems } from "generics"
-import { markdownFilesInDir, title } from "@gotpop-platform/utils"
+import { markdownFilesInDir, title } from "utils"
 import { stylesGallery, stylesGalleryLayout } from "variables"
 
 import type { PageProps } from "types"

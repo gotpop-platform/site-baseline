@@ -1,4 +1,4 @@
-import { mkClass, useCSS } from "@gotpop-platform/utils"
+import { mkClass, useCSS } from "utils"
 
 import { SITE_NAME } from "src/constants"
 import { jsxFactory } from "utils"

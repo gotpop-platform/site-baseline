@@ -1,5 +1,5 @@
 import { AppTheme, Footer, GridGap, HeaderMegaMenu, Heading } from "components"
-import { parseMarkdownFile, title } from "@gotpop-platform/utils"
+import { parseMarkdownFile, title } from "utils"
 import { stylesBlog, stylesBlogInner } from "variables"
 
 import { Metadata } from "src/components/Metadata"

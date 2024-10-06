@@ -1,4 +1,4 @@
-import { mkClass, useCSS } from "@gotpop-platform/utils"
+import { mkClass, useCSS } from "utils"
 
 import type { IconName } from "./Icon.types"
 import { jsxFactory } from "utils"

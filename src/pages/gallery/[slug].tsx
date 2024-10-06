@@ -6,7 +6,7 @@ import {
   HeaderMegaMenu,
   MobileMenuTrigger,
 } from "components"
-import { parseMarkdownFile, title } from "@gotpop-platform/utils"
+import { parseMarkdownFile, title } from "utils"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"

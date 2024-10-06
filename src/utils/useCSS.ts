@@ -1,5 +1,5 @@
-import { styleVars, type StyleObjProps } from "@gotpop-platform/utils"
 import { readFileSync } from "fs"
+import { styleVars, type StyleObjProps } from "utils"
 
 interface UseCSSOptions {
   meta: ImportMeta

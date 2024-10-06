@@ -8,7 +8,7 @@ import {
 } from "components"
 import { Tag, withItems } from "generics"
 import { layoutBlog, stylesBlogSurfaceMain } from "variables"
-import { markdownFilesInDir, title } from "@gotpop-platform/utils"
+import { markdownFilesInDir, title } from "utils"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"

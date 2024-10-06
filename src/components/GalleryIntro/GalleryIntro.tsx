@@ -1,5 +1,5 @@
 import { Icon, IconTypes } from "components"
-import { mkClass, useCSS } from "@gotpop-platform/utils"
+import { mkClass, useCSS } from "utils"
 
 import { jsxFactory } from "utils"
 

@@ -1,4 +1,4 @@
-import type { StyleObjProps } from "@gotpop-platform/utils"
+import type { StyleObjProps } from "utils"
 
 export function styleNames(styles: StyleObjProps) {
   if (!styles || Object.keys(styles).length === 0) {

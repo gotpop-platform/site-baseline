@@ -1,4 +1,4 @@
-import { mkClass, useCSS } from "@gotpop-platform/utils"
+import { mkClass, useCSS } from "utils"
 
 import { HeaderSurface } from "./HeaderSurface"
 import { LogoMegaMenu } from "./LogoMegaMenu"

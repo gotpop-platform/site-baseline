@@ -1,6 +1,6 @@
+import { jsxFactory, useCSS } from "utils"
+
 import { BaseLinePopOver } from "components"
-import { jsxFactory } from "utils"
-import { useCSS } from "@gotpop-platform/utils"
 
 export const makePath = (subdomain: null | string) => {
   const { PROTOCOL, DOMAIN, LOCAL_PORT } = process.env

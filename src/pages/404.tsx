@@ -1,10 +1,9 @@
 import { AppTheme, Footer, GridGap, HeaderMegaMenu, MobileMenuTrigger } from "components"
+import { jsxFactory, title } from "utils"
 import { layoutArticlesSlugSurface, stylesBlog } from "variables"
 
 import { SITE_NAME } from "src/constants"
 import { Tag } from "generics"
-import { jsxFactory } from "utils"
-import { title } from "@gotpop-platform/utils"
 
 const NotFoundPage = async () => {
   return (
