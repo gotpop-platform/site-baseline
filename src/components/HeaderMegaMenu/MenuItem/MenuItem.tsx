@@ -1,5 +1,5 @@
 import { TriggerSubMenu } from "../TriggerSubMenu"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { jsxFactory } from "utils"
 import { useCSS } from "@gotpop-platform/utils"
 
 export const MenuItem = ({

@@ -6,7 +6,7 @@ import {
   type StyleObjProps,
 } from "@gotpop-platform/utils"
 
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { jsxFactory } from "utils"
 
 type ArticleComponentProps = {
   markdownFile: MarkdownFileProps

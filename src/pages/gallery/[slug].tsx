@@ -11,7 +11,7 @@ import { parseMarkdownFile, title } from "@gotpop-platform/utils"
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { Tag } from "generics"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { jsxFactory } from "utils"
 import { layoutArticlesSlugSurface } from "variables"
 
 const pageGalleryItem = async ({ slug }: PageProps): Promise<JSX.Element> => {

@@ -1,5 +1,5 @@
 import { Fragment } from "components"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { jsxFactory } from "utils"
 import { useCSS } from "@gotpop-platform/utils"
 
 export const TriggerSubMenu = ({
@@ -19,7 +19,7 @@ export const TriggerSubMenu = ({
   const { css } = useCSS({ meta: import.meta })
 
   return (
-    <Fragment>
+    <div>
       <a href={href} class="menu-link" id={`menu-toggle-${position}`}>
         <style>{css}</style>
         <span>{textButton}</span>
@@ -32,6 +32,6 @@ export const TriggerSubMenu = ({
           aria-label="Open submenu"
         />
       )}
-    </Fragment>
+    </div>
   )
 }

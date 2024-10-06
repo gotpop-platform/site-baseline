@@ -1,4 +1,4 @@
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { jsxFactory } from "utils"
 import { mkId } from "@gotpop-platform/utils"
 
 export const Heading = ({

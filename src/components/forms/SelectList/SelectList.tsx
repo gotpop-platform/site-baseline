@@ -1,4 +1,4 @@
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { jsxFactory } from "utils"
 import { useCSS } from "@gotpop-platform/utils"
 
 type SelectListProps = {
