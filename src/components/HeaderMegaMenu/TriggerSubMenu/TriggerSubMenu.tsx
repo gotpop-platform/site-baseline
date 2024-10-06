@@ -19,7 +19,7 @@ export const TriggerSubMenu = ({
   const { css } = useCSS({ meta: import.meta })
 
   return (
-    <div>
+    <Fragment>
       <a href={href} class="menu-link" id={`menu-toggle-${position}`}>
         <style>{css}</style>
         <span>{textButton}</span>
@@ -32,6 +32,6 @@ export const TriggerSubMenu = ({
           aria-label="Open submenu"
         />
       )}
-    </div>
+    </Fragment>
   )
 }
