@@ -1,6 +1,6 @@
-import { jsxFactory, useCSS } from "@gotpop-platform/utils"
-
 import { Fragment } from "components"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { useCSS } from "@gotpop-platform/utils"
 
 export const TriggerSubMenu = ({
   position,

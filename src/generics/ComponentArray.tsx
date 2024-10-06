@@ -1,4 +1,5 @@
-import { jsxFactory, type MarkdownFileProps, type StyleObjProps } from "@gotpop-platform/utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { type MarkdownFileProps, type StyleObjProps } from "@gotpop-platform/utils"
 import { Fragment } from "components"
 
 type ComponentProps = {

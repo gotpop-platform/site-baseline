@@ -1,4 +1,4 @@
-import { jsxFactory } from "@gotpop-platform/utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 export const Head = ({ title }: { title: string }) => {
   const baseStylePath = "/assets/styles/index.css"

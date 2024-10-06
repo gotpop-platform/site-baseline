@@ -1,4 +1,6 @@
-import { cn, jsxFactory, mkClass, useCSS } from "@gotpop-platform/utils"
+import { cn, mkClass, useCSS } from "@gotpop-platform/utils"
+
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 type GridGapProps = {
   isRoot?: boolean

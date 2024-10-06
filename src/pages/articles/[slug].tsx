@@ -1,4 +1,3 @@
-import { jsxFactory, parseMarkdownFile, title } from "@gotpop-platform/utils"
 import {
   AppTheme,
   Footer,
@@ -12,10 +11,12 @@ import {
   layoutArticlesSlugSurface,
   layoutArticlesSlugToc,
 } from "variables"
+import { parseMarkdownFile, title } from "@gotpop-platform/utils"
 
-import { Tag } from "generics"
-import { SITE_NAME } from "src/constants"
 import type { PageProps } from "types"
+import { SITE_NAME } from "src/constants"
+import { Tag } from "generics"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 const pageArticlePage = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const { content, toc, metadata } = parseMarkdownFile("articles", slug)

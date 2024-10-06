@@ -1,11 +1,12 @@
 import {
-  jsxFactory,
   mkClass,
   mkUrl,
   useCSS,
   type MarkdownFileProps,
   type StyleObjProps,
 } from "@gotpop-platform/utils"
+
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 type ArticleComponentProps = {
   markdownFile: MarkdownFileProps

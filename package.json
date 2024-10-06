@@ -8,12 +8,11 @@
     "start": "bun server/serve.ts",
     "tsc": "tsc"
   },
-  "peerDependencies": {
-    "@types/bun": "latest",
-    "typescript": "^5.0.0"
-  },
   "dependencies": {
+    "@gotpop-platform/package-jsx-factory": "^1.0.1",
     "@gotpop-platform/utils": "1.0.7",
-    "bun": "^1.0.23"
+    "@types/bun": "latest",
+    "bun": "^1.0.23",
+    "typescript": "^5.0.0"
   }
 }
