@@ -1,13 +1,11 @@
-import { jsxFactory, useCSS } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { useCSS } from "@gotpop-platform/utils"
 
 type SelectListProps = {
   SelectListName?: string
 }
 
-export const useName = import.meta.file
-  .split(".")
-  .shift()
-  ?.toLowerCase()
+export const useName = import.meta.file.split(".").shift()?.toLowerCase()
 
 const SelectList = () => {
   const { css } = useCSS({ meta: import.meta })

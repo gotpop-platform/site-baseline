@@ -1,4 +1,5 @@
-import { jsxFactory, useCSS } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { useCSS } from "@gotpop-platform/utils"
 
 export function HeroItem({
   children,
@@ -17,10 +18,7 @@ export function HeroItem({
     <div class="hero-item" {...rest}>
       <style>{css}</style>
       <h1>Typography & Animation</h1>
-      <p>
-        Welcome to GotPop! This is a demo site for the
-        GotPop theme.
-      </p>
+      <p>Welcome to GotPop! This is a demo site for the GotPop theme.</p>
     </div>
   )
 }

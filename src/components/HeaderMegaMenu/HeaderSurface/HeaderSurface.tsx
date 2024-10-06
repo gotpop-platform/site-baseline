@@ -1,12 +1,8 @@
-import { jsxFactory, useCSS } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { mkClass } from "@gotpop-platform/utils"
+import { useCSS } from "@gotpop-platform/utils"
 
-import { mkClass } from "utils"
-
-export const HeaderSurface = ({
-  children,
-}: {
-  children?: string
-}) => {
+export const HeaderSurface = ({ children }: { children?: string }) => {
   const { css } = useCSS({ meta: import.meta })
 
   return (

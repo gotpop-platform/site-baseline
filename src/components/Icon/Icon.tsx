@@ -1,8 +1,8 @@
-import { jsxFactory, useCSS } from "utils"
-
 import type { IconName } from "./Icon.types"
-import { mkClass } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { mkClass } from "@gotpop-platform/utils"
 import { readFileSync } from "fs"
+import { useCSS } from "@gotpop-platform/utils"
 
 type IconProps = {
   iconName?: IconName
@@ -17,10 +17,7 @@ export enum IconTypes {
   twoTone = "two-tone",
 }
 
-export const Icon = ({
-  iconName = "home",
-  type = IconTypes.filled,
-}: IconProps) => {
+export const Icon = ({ iconName = "home", type = IconTypes.filled }: IconProps) => {
   const { css } = useCSS({ meta: import.meta })
   const theRoot = process.cwd()
   const thePath = `${theRoot}/src/components/Icon/svg/${type}/${iconName}.svg`

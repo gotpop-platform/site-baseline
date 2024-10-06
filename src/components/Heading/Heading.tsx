@@ -1,4 +1,5 @@
-import { jsxFactory, mkId } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { mkId } from "@gotpop-platform/utils"
 
 export const Heading = ({
   children,
@@ -10,8 +11,7 @@ export const Heading = ({
   index?: number
 }): JSX.Element | null => {
   const validLevels = [1, 2, 3, 4, 5, 6]
-  const validatedLevel =
-    level && validLevels.includes(level) ? level : null
+  const validatedLevel = level && validLevels.includes(level) ? level : null
 
   if (!children || !validatedLevel) return null
 

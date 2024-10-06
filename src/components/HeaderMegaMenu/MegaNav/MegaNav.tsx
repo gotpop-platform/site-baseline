@@ -1,31 +1,20 @@
-import { jsxFactory, useCSS } from "utils"
-
 import { MenuItem } from "../MenuItem"
 import { SubMenuContent } from "../SubMenuContent"
-import { mkClass } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { mkClass } from "@gotpop-platform/utils"
 import { navData } from "./MegaNav.data"
+import { useCSS } from "@gotpop-platform/utils"
 
 export const MegaNav = () => {
   const { css } = useCSS({ meta: import.meta })
 
-  const navItems = navData.map(
-    ({ href, position, textButton, submenuItems }) => (
-      <MenuItem
-        position={position}
-        textButton={textButton}
-        href={href}
-        subMenuItems={submenuItems}
-      >
-        {submenuItems && (
-          <SubMenuContent
-            submenuItems={submenuItems}
-            position={position}
-            textButton={textButton}
-          />
-        )}
-      </MenuItem>
-    )
-  )
+  const navItems = navData.map(({ href, position, textButton, submenuItems }) => (
+    <MenuItem position={position} textButton={textButton} href={href} subMenuItems={submenuItems}>
+      {submenuItems && (
+        <SubMenuContent submenuItems={submenuItems} position={position} textButton={textButton} />
+      )}
+    </MenuItem>
+  ))
 
   return (
     <nav class={mkClass(import.meta.file)}>

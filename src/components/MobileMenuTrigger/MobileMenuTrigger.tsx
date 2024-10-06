@@ -1,6 +1,6 @@
-import { jsxFactory, useCSS } from "utils"
-
-import { mkClass } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { mkClass } from "@gotpop-platform/utils"
+import { useCSS } from "@gotpop-platform/utils"
 
 export function MobileMenuTrigger() {
   const { css } = useCSS({ meta: import.meta })
@@ -9,9 +9,7 @@ export function MobileMenuTrigger() {
     <div class={mkClass(import.meta.file)}>
       <style>{css}</style>
       <div class="inner">
-        <button popovertarget="headerMegaMenu">
-          Open!
-        </button>
+        <button popovertarget="headerMegaMenu">Open!</button>
       </div>
     </div>
   )

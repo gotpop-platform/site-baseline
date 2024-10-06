@@ -1,5 +1,7 @@
 import { Icon, IconTypes } from "components"
-import { jsxFactory, mkClass, useCSS } from "utils"
+import { mkClass, useCSS } from "@gotpop-platform/utils"
+
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 export function GalleryIntro({
   slug,

@@ -1,6 +1,6 @@
-import { jsxFactory, useCSS } from "utils"
-
 import { BaseLinePopOver } from "components"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { useCSS } from "@gotpop-platform/utils"
 
 export const makePath = (subdomain: null | string) => {
   const { PROTOCOL, DOMAIN, LOCAL_PORT } = process.env
@@ -29,10 +29,7 @@ export function Footer({ ...rest }) {
         </nav>
         <h3>Pop</h3> */}
         <nav class="subdomains">
-          <button
-            class="menu-link"
-            popovertarget="basegrid"
-          >
+          <button class="menu-link" popovertarget="basegrid">
             Grid
           </button>
           <BaseLinePopOver />

@@ -1,21 +1,19 @@
 import {
-  jsxFactory,
   mkClass,
   mkUrl,
   useCSS,
   type MarkdownFileProps,
   type StyleObjProps,
-} from "utils"
+} from "@gotpop-platform/utils"
+
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 type ArticleComponentProps = {
   markdownFile: MarkdownFileProps
   layout: StyleObjProps
 }
 
-export function ArticleItem({
-  markdownFile,
-  layout,
-}: ArticleComponentProps): JSX.Element {
+export function ArticleItem({ markdownFile, layout }: ArticleComponentProps): JSX.Element {
   const { css } = useCSS({
     meta: import.meta,
     styles: layout,

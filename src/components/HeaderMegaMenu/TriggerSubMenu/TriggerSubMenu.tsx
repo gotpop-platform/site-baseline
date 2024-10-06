@@ -1,6 +1,6 @@
-import { jsxFactory, useCSS } from "utils"
-
 import { Fragment } from "components"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { useCSS } from "@gotpop-platform/utils"
 
 export const TriggerSubMenu = ({
   position,
@@ -20,11 +20,7 @@ export const TriggerSubMenu = ({
 
   return (
     <Fragment>
-      <a
-        href={href}
-        class="menu-link"
-        id={`menu-toggle-${position}`}
-      >
+      <a href={href} class="menu-link" id={`menu-toggle-${position}`}>
         <style>{css}</style>
         <span>{textButton}</span>
       </a>

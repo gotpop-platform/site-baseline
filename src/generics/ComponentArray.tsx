@@ -1,15 +1,10 @@
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { type MarkdownFileProps, type StyleObjProps } from "@gotpop-platform/utils"
 import { Fragment } from "components"
-import {
-  jsxFactory,
-  type MarkdownFileProps,
-  type StyleObjProps,
-} from "utils"
 
 type ComponentProps = {
   markdownItems: MarkdownFileProps[]
-  layout: (
-    markdownItem: MarkdownFileProps
-  ) => StyleObjProps[]
+  layout: (markdownItem: MarkdownFileProps) => StyleObjProps[]
 }
 
 type WrappedProps = {
@@ -17,20 +12,12 @@ type WrappedProps = {
   layout: StyleObjProps
 }
 
-export function withItems(
-  Component: (props: WrappedProps) => JSX.Element
-) {
-  return function WrappedComponent({
-    markdownItems,
-    layout,
-  }: ComponentProps) {
+export function withItems(Component: (props: WrappedProps) => JSX.Element) {
+  return function WrappedComponent({ markdownItems, layout }: ComponentProps) {
     return (
       <Fragment>
         {markdownItems.map((markdownItem, index) => (
-          <Component
-            markdownFile={markdownItem}
-            layout={layout(markdownItem)[index]}
-          />
+          <Component markdownFile={markdownItem} layout={layout(markdownItem)[index]} />
         ))}
       </Fragment>
     )
