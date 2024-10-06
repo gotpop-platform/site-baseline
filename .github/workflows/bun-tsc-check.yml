@@ -15,10 +15,9 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
 
-      - name: Set up .env file
-        run: echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" > .env
-
       - name: Bun install
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: bun install
 
       - name: Run bun tsc
