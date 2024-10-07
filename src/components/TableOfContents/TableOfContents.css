@@ -1,6 +1,0 @@
-@scope {
-  & {
-    position: sticky;
-    top: var(--spacing-xl);
-  }
-}
