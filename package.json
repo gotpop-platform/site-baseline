@@ -17,6 +17,10 @@
     "typescript": "^5.6.2"
   },
   "dependencies": {
-    "@gotpop-platform/package-jsx-factory": "^1.0.4"
+    "@gotpop-platform/package-components": "1.0.1",
+    "@gotpop-platform/package-icons": "^1.0.0",
+    "@gotpop-platform/package-jsx-factory": "^1.0.4",
+    "@gotpop-platform/package-markdown": "^1.0.2",
+    "@gotpop-platform/package-utilities": "1.0.14"
   }
 }

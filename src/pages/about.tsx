@@ -1,4 +1,11 @@
-import { AppTheme, Footer, GridGap, HeaderMegaMenu, Heading, MobileMenuTrigger } from "components"
+import {
+  AppTheme,
+  Footer,
+  GridGap,
+  HeaderMegaMenu,
+  Heading,
+  MobileMenuTrigger,
+} from "@gotpop-platform/package-components"
 import { stylesAbout, stylesAboutContainer } from "variables"
 
 import type { PageProps } from "types"
