@@ -5,7 +5,7 @@ import {
   HeaderMegaMenu,
   MobileMenuTrigger,
   TableOfContents,
-} from "components"
+} from "@gotpop-platform/package-components"
 import {
   layoutArticlesSlugContent,
   layoutArticlesSlugSurface,

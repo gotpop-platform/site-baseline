@@ -1,4 +1,11 @@
-import { AppTheme, ArticleItem, Footer, GridGap, HeaderMegaMenu, HeroItem } from "components"
+import {
+  AppTheme,
+  ArticleItem,
+  Footer,
+  GridGap,
+  HeaderMegaMenu,
+  HeroItem,
+} from "@gotpop-platform/package-components"
 import { Tag, withItems } from "generics"
 import { markdownFilesInDir, title } from "utils"
 import { styleMain, stylesLayout } from "variables"

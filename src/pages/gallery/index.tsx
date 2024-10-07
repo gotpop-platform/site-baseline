@@ -5,7 +5,7 @@ import {
   GridGap,
   HeaderMegaMenu,
   MobileMenuTrigger,
-} from "components"
+} from "@gotpop-platform/package-components"
 import { Tag, withItems } from "generics"
 import { stylesGallery, stylesGalleryLayout } from "variables"
 

@@ -5,7 +5,7 @@ import {
   GridGap,
   HeaderMegaMenu,
   MobileMenuTrigger,
-} from "components"
+} from "@gotpop-platform/package-components"
 import { parseMarkdownFile, title } from "utils"
 
 import type { PageProps } from "types"
