@@ -11,12 +11,13 @@ import {
   layoutArticlesSlugSurface,
   layoutArticlesSlugToc,
 } from "variables"
-import { parseMarkdownFile, title } from "utils"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { Tag } from "generics"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { parseMarkdownFile } from "@gotpop-platform/package-markdown"
+import { title } from "@gotpop-platform/package-utilities"
 
 const pageArticlePage = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const { content, toc, metadata } = parseMarkdownFile("articles", slug)

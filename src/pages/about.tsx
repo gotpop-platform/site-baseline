@@ -12,7 +12,7 @@ import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { Tag } from "generics"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { title } from "utils"
+import { title } from "@gotpop-platform/package-utilities"
 
 const aboutPage = async ({ slug }: PageProps): Promise<JSX.Element> => {
   return (

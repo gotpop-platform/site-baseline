@@ -8,11 +8,12 @@ import {
 } from "@gotpop-platform/package-components"
 import { Tag, withItems } from "generics"
 import { layoutBlog, stylesBlogSurfaceMain } from "variables"
-import { markdownFilesInDir, title } from "utils"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { markdownFilesInDir } from "@gotpop-platform/package-markdown"
+import { title } from "@gotpop-platform/package-utilities"
 
 const ArticleList = withItems(ArticleItem)
 

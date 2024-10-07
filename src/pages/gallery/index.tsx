@@ -13,7 +13,7 @@ import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { markdownFilesInDir } from "@gotpop-platform/package-markdown"
-import { title } from "utils"
+import { title } from "@gotpop-platform/package-utilities"
 
 const ArticleList = withItems(ArticleItem)
 

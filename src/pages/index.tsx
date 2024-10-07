@@ -7,11 +7,12 @@ import {
   HeroItem,
 } from "@gotpop-platform/package-components"
 import { Tag, withItems } from "generics"
-import { markdownFilesInDir, title } from "utils"
 import { styleMain, stylesLayout } from "variables"
 
 import { SITE_NAME } from "src/constants"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { markdownFilesInDir } from "@gotpop-platform/package-markdown"
+import { title } from "@gotpop-platform/package-utilities"
 
 const ArticleList = withItems(ArticleItem)
 

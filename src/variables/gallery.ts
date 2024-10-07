@@ -1,4 +1,4 @@
-import type { MarkdownFileProps, StyleObjProps } from "utils"
+import type { MarkdownFileProps, StyleObjProps } from "@gotpop-platform/package-markdown"
 
 export const stylesGallery = {
   "--background-colour": "var(--transparent)",
