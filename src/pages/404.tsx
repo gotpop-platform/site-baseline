@@ -1,4 +1,10 @@
-import { AppTheme, Footer, GridGap, HeaderMegaMenu, MobileMenuTrigger } from "components"
+import {
+  AppTheme,
+  Footer,
+  GridGap,
+  HeaderMegaMenu,
+  MobileMenuTrigger,
+} from "@gotpop-platform/package-components"
 import { layoutArticlesSlugSurface, stylesBlog } from "variables"
 
 import { SITE_NAME } from "src/constants"

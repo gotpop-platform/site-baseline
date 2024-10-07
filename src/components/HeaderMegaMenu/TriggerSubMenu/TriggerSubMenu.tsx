@@ -1,4 +1,4 @@
-import { Fragment } from "components"
+import { Fragment } from "@gotpop-platform/package-components"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { useCSS } from "utils"
 

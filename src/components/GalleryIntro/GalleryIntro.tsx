@@ -1,4 +1,4 @@
-import { Icon, IconTypes } from "components"
+import { Icon, IconTypes } from "@gotpop-platform/package-components"
 import { mkClass, useCSS } from "utils"
 
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
