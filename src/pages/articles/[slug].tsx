@@ -16,7 +16,7 @@ import { parseMarkdownFile, title } from "utils"
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { Tag } from "generics"
-import { jsxFactory } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 const pageArticlePage = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const { content, toc, metadata } = parseMarkdownFile("articles", slug)

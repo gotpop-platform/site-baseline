@@ -12,7 +12,7 @@ import { styleArticlesSurfaceMain, stylesArticlesLayout } from "variables"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
-import { jsxFactory } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 const ArticleList = withItems(ArticleItem)
 
