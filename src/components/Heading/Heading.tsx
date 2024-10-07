@@ -1,4 +1,5 @@
-import { jsxFactory, mkId } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { mkId } from "utils"
 
 export const Heading = ({
   children,

@@ -1,7 +1,7 @@
 import { mkClass, useCSS } from "utils"
 
 import type { IconName } from "./Icon.types"
-import { jsxFactory } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { readFileSync } from "fs"
 
 type IconProps = {

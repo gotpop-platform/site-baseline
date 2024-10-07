@@ -4,7 +4,7 @@ import { markdownFilesInDir, title } from "utils"
 import { styleMain, stylesLayout } from "variables"
 
 import { SITE_NAME } from "src/constants"
-import { jsxFactory } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 const ArticleList = withItems(ArticleItem)
 

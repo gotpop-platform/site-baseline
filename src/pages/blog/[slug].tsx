@@ -6,7 +6,7 @@ import { Metadata } from "src/components/Metadata"
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { Tag } from "generics"
-import { jsxFactory } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 const pageBlog = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const {

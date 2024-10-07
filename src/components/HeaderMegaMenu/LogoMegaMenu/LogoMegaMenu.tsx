@@ -1,7 +1,7 @@
 import { mkClass, useCSS } from "utils"
 
 import { SITE_NAME } from "src/constants"
-import { jsxFactory } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 export const LogoMegaMenu = () => {
   const { css } = useCSS({ meta: import.meta })

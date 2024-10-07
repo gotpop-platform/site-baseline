@@ -2,7 +2,7 @@ import { mkClass, useCSS } from "utils"
 
 import { MenuItem } from "../MenuItem"
 import { SubMenuContent } from "../SubMenuContent"
-import { jsxFactory } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { navData } from "./MegaNav.data"
 
 export const MegaNav = () => {

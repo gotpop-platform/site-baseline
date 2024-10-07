@@ -1,6 +1,6 @@
 import { CodeBlock } from "src/components/CodeBlock"
 import type { Toc } from "./markdown.types"
-import { jsxFactory } from "utils"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 export const parseMarkdown = (
   markdown: string
