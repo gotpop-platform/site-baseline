@@ -1,5 +1,5 @@
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { useCSS } from "utils"
+import { useCSS } from "@gotpop-platform/package-utilities"
 
 type TagProps = {
   tag: string

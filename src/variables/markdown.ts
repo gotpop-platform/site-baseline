@@ -1,4 +1,4 @@
-import type { MarkdownFileProps, StyleObjProps } from "utils"
+import type { MarkdownFileProps, StyleObjProps } from "@gotpop-platform/package-markdown"
 
 const style = {
   "--padding": "var(--spacing-md)",
