@@ -22,7 +22,6 @@ const pageIndex = async (): Promise<JSX.Element> => {
   return (
     <AppTheme title={title("Home", SITE_NAME)}>
       <GridGap isRoot>
-        {/* <MobileMenuTrigger /> */}
         <HeaderMegaMenu />
         <Tag tag="main" styles={styleMain}>
           <HeroItem />

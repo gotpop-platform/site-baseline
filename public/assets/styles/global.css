@@ -32,6 +32,18 @@
   color: var(--accent);
 }
 
+:root {
+  --si: 10rem;
+  --c1: hsla(180, 33%, 30%, 0.123);
+  --c2: #ffffff;
+  --num: 10;
+  --_g: #0000 90deg, var(--c1) 0;
+  --background-graph: conic-gradient(from 90deg at 2px 2px, var(--_g)),
+    conic-gradient(from 90deg at 1px 1px, var(--_g)), var(--c2);
+  --background-graph-size: var(--si) var(--si),
+    calc(var(--si) / var(--num)) calc(var(--si) / var(--num));
+}
+
 html {
   background-color: var(--colour-bg-site);
   color-scheme: var(--color-scheme);
@@ -61,4 +73,15 @@ body {
   color: var(--body-colour);
   font-family: var(--font-family-base);
   overflow: hidden auto;
+}
+
+.grid-gap main {
+  background: var(--background-graph);
+  background-size: var(--background-graph-size);
+  background-color: var(--white) !important;
+  /* background-position: center top; */
+
+  .article-item {
+    background-color: var(--transparent) !important;
+  }
 }

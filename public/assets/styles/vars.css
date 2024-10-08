@@ -93,7 +93,7 @@
   /* Theming */
   --accent: var(--warning-base);
   --colour-bg-site: var(--grey-800);
-  --root-font-size: clamp(12px, 1.5vw, 1.1rem);
+  --root-font-size: clamp(12px, 1.5vw, 18px);
   --color-scheme: only light;
 
   /* Scrollbar */
