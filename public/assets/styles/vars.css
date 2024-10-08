@@ -92,7 +92,7 @@
 
   /* Theming */
   --accent: var(--warning-base);
-  --colour-bg-site: var(--grey-800);
+  --colour-bg-site: var(--grey-100);
   --root-font-size: clamp(12px, 1.5vw, 18px);
   --color-scheme: only light;
 
