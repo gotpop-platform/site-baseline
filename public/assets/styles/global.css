@@ -33,15 +33,17 @@
 }
 
 :root {
-  --si: 10rem;
+  --si: 20rem;
   --c1: hsla(180, 33%, 30%, 0.123);
   --c2: #ffffff;
-  --num: 10;
+  --num: 20;
   --_g: #0000 90deg, var(--c1) 0;
-  --background-graph: conic-gradient(from 90deg at 2px 2px, var(--_g)),
+  --background-graph: conic-gradient(from 90deg at 1px 1px, var(--_g)), var(--c2);
+  --background-graph-size: calc(var(--si) / var(--num)) calc(var(--si) / var(--num));
+  /* --background-graph: conic-gradient(from 90deg at 2px 2px, var(--_g)),
     conic-gradient(from 90deg at 1px 1px, var(--_g)), var(--c2);
   --background-graph-size: var(--si) var(--si),
-    calc(var(--si) / var(--num)) calc(var(--si) / var(--num));
+    calc(var(--si) / var(--num)) calc(var(--si) / var(--num)); */
 }
 
 html {
@@ -85,7 +87,7 @@ body {
     background: var(--background-graph);
     background-size: var(--background-graph-size);
     background-color: var(--white) !important;
-    background-position: right 1px top -1rem;
+    background-position: right 0 top 0rem;
   }
   &::after {
     content: "";
@@ -96,18 +98,50 @@ body {
     background: var(--background-graph);
     background-size: var(--background-graph-size);
     background-color: var(--white) !important;
-    background-position: left 1px top -1rem;
+    background-position: left 0 top 0rem;
   }
 
-  main {
-    background: var(--background-graph);
-    background-size: var(--background-graph-size);
-    background-color: var(--white) !important;
-    /* background-position: center top; */
-    background-position: left round(50%, 1rem) top;
+  /* main {
+    gap: 1rem;
+  } */
+}
 
-    .article-item {
-      background-color: var(--transparent) !important;
-    }
+.graph {
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+  grid-row: 1 / -1;
+  grid-column: 2 / -2;
+  display: grid;
+
+  background: var(--background-graph);
+  background-size: var(--background-graph-size);
+  background-color: var(--white) !important;
+  background-position: left 0 top 0rem;
+  /* background-position: center top; */
+  /* background-position: left round(50%, 1rem) top; */
+}
+
+.header-mega-menu {
+  .header-surface {
+    background-color: oklch(0.9 0 0 / 0.3) !important;
+    backdrop-filter: blur(1px);
+    border-radius: 0 !important;
   }
+}
+.article-item {
+  background-color: oklch(0.9 0 0 / 0.3) !important;
+  backdrop-filter: blur(1px);
+  border-radius: 0 !important;
+}
+
+.hero-item {
+  background-color: oklch(0.9 0 0 / 0.3) !important;
+  backdrop-filter: blur(1px);
+  border-radius: 0 !important;
+}
+
+.pill {
+  background-color: oklch(0.9 0 0 / 0.3) !important;
+  backdrop-filter: blur(1px);
+  border-radius: 0 !important;
 }
