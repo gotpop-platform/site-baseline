@@ -27,7 +27,7 @@ export const LogoMegaMenu = () => {
           fill="currentColor"
         ></path>
       </svg>
-      <span>Site Name</span>
+      <span>Baseline</span>
     </a>
   )
 }

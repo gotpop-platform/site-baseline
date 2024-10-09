@@ -35,8 +35,8 @@
       color: var(--slate-900);
     }
 
-    h1 {
-      font-size: 1.3rem;
+    span {
+      font-size: 1rem;
       margin: 0 0 0.1em 0;
       color: var(--slate-900);
       font-weight: 700;

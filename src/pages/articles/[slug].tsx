@@ -29,10 +29,10 @@ const pageArticlePage = async ({ slug }: PageProps): Promise<JSX.Element> => {
           <MobileMenuTrigger />
           <HeaderMegaMenu />
           <Tag tag="main" styles={layoutArticlesSlugSurface}>
-            <Tag tag="aside" styles={layoutArticlesSlugToc}>
+            <Tag tag="aside" class="article-aside" styles={layoutArticlesSlugToc}>
               <TableOfContents toc={toc} />
             </Tag>
-            <Tag tag="section" styles={layoutArticlesSlugContent(metadata.id)}>
+            <Tag tag="section" class="article-body" styles={layoutArticlesSlugContent(metadata.id)}>
               {content}
             </Tag>
           </Tag>

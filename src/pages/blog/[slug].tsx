@@ -22,7 +22,7 @@ const pageBlog = async ({ slug }: PageProps): Promise<JSX.Element> => {
           {/* <MobileMenuTrigger /> */}
           <HeaderMegaMenu />
           <Tag tag="section" styles={stylesBlog}>
-            <Tag tag="section" styles={stylesBlogInner(id)}>
+            <Tag tag="section" class="section-blog" styles={stylesBlogInner(id)}>
               <Heading>{pageTitle}</Heading>
               <Metadata date={date} author={author} />
               {content}
