@@ -25,17 +25,19 @@ const pageArticlePage = async ({ slug }: PageProps): Promise<JSX.Element> => {
   return (
     <AppTheme title={title(slug, SITE_NAME)}>
       <GridGap isRoot>
-        <MobileMenuTrigger />
-        <HeaderMegaMenu />
-        <Tag tag="main" styles={layoutArticlesSlugSurface}>
-          <Tag tag="aside" styles={layoutArticlesSlugToc}>
-            <TableOfContents toc={toc} />
+        <div class="graph">
+          <MobileMenuTrigger />
+          <HeaderMegaMenu />
+          <Tag tag="main" styles={layoutArticlesSlugSurface}>
+            <Tag tag="aside" styles={layoutArticlesSlugToc}>
+              <TableOfContents toc={toc} />
+            </Tag>
+            <Tag tag="section" styles={layoutArticlesSlugContent(metadata.id)}>
+              {content}
+            </Tag>
           </Tag>
-          <Tag tag="section" styles={layoutArticlesSlugContent(metadata.id)}>
-            {content}
-          </Tag>
-        </Tag>
-        <Footer />
+          <Footer />
+        </div>
       </GridGap>
     </AppTheme>
   )

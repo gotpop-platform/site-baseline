@@ -21,12 +21,14 @@ const pageGalleryItem = async ({ slug }: PageProps): Promise<JSX.Element> => {
   return (
     <AppTheme title={title(slug, SITE_NAME)}>
       <GridGap isRoot>
-        <MobileMenuTrigger />
-        <HeaderMegaMenu />
-        <Tag tag="main" styles={layoutArticlesSlugSurface}>
-          <GalleryIntro slug={slug} metadata={metadata} htmlContent={htmlContent} />
-        </Tag>
-        <Footer />
+        <div class="graph">
+          <MobileMenuTrigger />
+          <HeaderMegaMenu />
+          <Tag tag="main" styles={layoutArticlesSlugSurface}>
+            <GalleryIntro slug={slug} metadata={metadata} htmlContent={htmlContent} />
+          </Tag>
+          <Footer />
+        </div>
       </GridGap>
     </AppTheme>
   )
