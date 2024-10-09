@@ -1,0 +1,41 @@
+@scope {
+  & {
+    --menu-button-margin-bottom: 0rem;
+    --transition: margin-bottom 0.2s 0.3s,
+      background-color 0.2s;
+
+    align-items: center;
+    background-color: var(--gray-200);
+    border-radius: 0.5em;
+    border: none;
+    color: var(--slate-900);
+    cursor: pointer;
+    display: flex;
+    font-size: 1rem;
+    grid-column: span 8;
+    justify-content: center;
+    margin-block-end: var(--menu-button-margin-bottom);
+    padding: 1rem;
+    text-align: center;
+    transition: var(--transition);
+
+    span {
+      text-box-edge: cap alphabetic;
+      text-box-trim: trim-both;
+      font-size: 15px;
+    }
+
+    @container style(--is-desktop: true) {
+      grid-column: span 2;
+    }
+
+    /* Animate the previous sibling to make space for the popover on mobile */
+    &:has(+ .submenu:popover-open) {
+      @container style(--is-desktop: false) {
+        --menu-button-margin-bottom: 10rem;
+        --transition: margin-bottom 0.2s,
+          background-color 0.2s;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+/* .headersurface */
+@scope {
+  & {
+    --border-radius: 0 0 1rem 1rem;
+    --padding: 1rem;
+    --padding-bottom: 1rem;
+    --transition: padding-bottom 0.2s 0.3s ease;
+
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    display: grid;
+    grid-column: var(--grid-column);
+    grid-row: 1;
+    grid-template-columns: subgrid;
+    padding-block: var(--padding) var(--padding-bottom);
+    transition: var(--transition);
+    min-height: 7rem;
+
+    @container style(--is-desktop: false) {
+      --border-radius: 2rem;
+      --padding: 4rem;
+      --padding-bottom: var(--padding);
+      --grid-column: col 2 / span 10;
+
+      margin-inline: 2rem;
+      grid-template-columns: var(--master-grid);
+    }
+  }
+}

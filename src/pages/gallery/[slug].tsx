@@ -3,7 +3,6 @@ import {
   Footer,
   GalleryIntro,
   GridGap,
-  HeaderMegaMenu,
   MobileMenuTrigger,
 } from "@gotpop-platform/package-components"
 
@@ -14,6 +13,7 @@ import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { layoutArticlesSlugSurface } from "variables"
 import { parseMarkdownFile } from "@gotpop-platform/package-markdown"
 import { title } from "@gotpop-platform/package-utilities"
+import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 
 const pageGalleryItem = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const { metadata, content: htmlContent } = parseMarkdownFile("gallery", slug)

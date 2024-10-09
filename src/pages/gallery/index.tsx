@@ -3,7 +3,6 @@ import {
   ArticleItem,
   Footer,
   GridGap,
-  HeaderMegaMenu,
   MobileMenuTrigger,
 } from "@gotpop-platform/package-components"
 import { Tag, withItems } from "generics"
@@ -14,6 +13,7 @@ import { SITE_NAME } from "src/constants"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { markdownFilesInDir } from "@gotpop-platform/package-markdown"
 import { title } from "@gotpop-platform/package-utilities"
+import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 
 const ArticleList = withItems(ArticleItem)
 
