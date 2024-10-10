@@ -2,31 +2,31 @@ export const navData = [
   {
     position: "1",
     textButton: "Features",
-    href: "/articles",
+    href: "/features",
     submenuItems: [
       {
-        title: "Articles Item 1",
-        link: "/articles/article-1",
+        title: "Features Item 1",
+        link: "/features/article-1",
       },
       {
-        title: "Articles Item 2",
-        link: "/articles/article-2",
+        title: "Features Item 2",
+        link: "/features/article-2",
       },
       {
-        title: "Articles Item 3",
-        link: "/articles/article-3",
+        title: "Features Item 3",
+        link: "/features/article-3",
       },
       {
-        title: "Articles Item 4",
-        link: "/articles/article-4",
+        title: "Features Item 4",
+        link: "/features/article-4",
       },
       {
-        title: "Articles Item 5",
-        link: "/articles/article-5",
+        title: "Features Item 5",
+        link: "/features/article-5",
       },
       {
-        title: "Articles Item 6",
-        link: "/articles/article-6",
+        title: "Features Item 6",
+        link: "/features/article-6",
       },
     ],
   },

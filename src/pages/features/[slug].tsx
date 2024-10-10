@@ -20,7 +20,7 @@ import { title } from "@gotpop-platform/package-utilities"
 import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 
 const pageArticlePage = async ({ slug }: PageProps): Promise<JSX.Element> => {
-  const { content, toc, metadata } = parseMarkdownFile("articles", slug)
+  const { content, toc, metadata } = parseMarkdownFile("features", slug)
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>

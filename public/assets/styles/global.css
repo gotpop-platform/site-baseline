@@ -163,3 +163,8 @@ body {
   backdrop-filter: blur(1px);
   border-radius: 0 !important;
 }
+
+.hero-box {
+  filter: grayscale(0.5);
+  opacity: 0.5;
+}

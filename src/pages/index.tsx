@@ -12,7 +12,7 @@ import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 const ArticleList = withItems(ArticleItem)
 
 const pageIndex = async (): Promise<JSX.Element> => {
-  const markdownItems = await markdownFilesInDir("articles")
+  const markdownItems = await markdownFilesInDir("features")
 
   return (
     <AppTheme title={title("Home", SITE_NAME)}>
