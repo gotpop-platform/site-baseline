@@ -5,7 +5,8 @@ export const styleMain = {
   "--grid-column": "center",
   "--grid-template-columns": "subgrid",
   "--grid-row": "main",
-  "--grid-template-rows": "min-content var(--spacing-md) repeat(3, min-content)",
+  "--grid-template-rows":
+    "min-content var(--spacing-md) min-content 1rem min-content 1rem min-content",
   // "--row-gap": "var(--spacing-md)",
   "--background-colour": "var(--transparent)",
   "--border-radius": "var(--radius-md)",
@@ -26,6 +27,6 @@ export const styleSurfaceMain = {
 export const styleArticlesSurfaceMain = {
   ...surfaceStyles,
   "--grid-row": "main",
-  "--grid-template-rows": "repeat(3, min-content)",
+  "--grid-template-rows": "min-content 1rem min-content 1rem min-content",
   "--background-colour": "var(--transparent)",
 }

@@ -3,7 +3,6 @@ import {
   Footer,
   GalleryIntro,
   GridGap,
-  HeaderMegaMenu,
   MobileMenuTrigger,
 } from "@gotpop-platform/package-components"
 
@@ -14,19 +13,22 @@ import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { layoutArticlesSlugSurface } from "variables"
 import { parseMarkdownFile } from "@gotpop-platform/package-markdown"
 import { title } from "@gotpop-platform/package-utilities"
+import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 
 const pageGalleryItem = async ({ slug }: PageProps): Promise<JSX.Element> => {
-  const { metadata, content: htmlContent } = parseMarkdownFile("gallery", slug)
+  const { metadata, content: htmlContent } = parseMarkdownFile("docs", slug)
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>
       <GridGap isRoot>
-        <MobileMenuTrigger />
-        <HeaderMegaMenu />
-        <Tag tag="main" styles={layoutArticlesSlugSurface}>
-          <GalleryIntro slug={slug} metadata={metadata} htmlContent={htmlContent} />
-        </Tag>
-        <Footer />
+        <div class="graph">
+          <MobileMenuTrigger />
+          <HeaderMegaMenu />
+          <Tag tag="main" styles={layoutArticlesSlugSurface}>
+            <GalleryIntro slug={slug} metadata={metadata} htmlContent={htmlContent} />
+          </Tag>
+          <Footer />
+        </div>
       </GridGap>
     </AppTheme>
   )

@@ -34,5 +34,6 @@
       "utils": ["src/utils"]
     },
     "typeRoots": ["./node_modules/@types", "./src/types"]
-  }
+  },
+  "include": ["src", "node_modules/@gotpop-platform/package-components"]
 }
