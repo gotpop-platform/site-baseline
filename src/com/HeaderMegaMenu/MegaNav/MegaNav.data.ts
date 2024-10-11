@@ -33,7 +33,7 @@ export const navData = [
   {
     position: "2",
     textButton: "Docs",
-    href: "/gallery",
+    href: "/docs",
     submenuItems: [
       {
         title: "Submenu Item 1",
@@ -48,12 +48,6 @@ export const navData = [
         link: "gallery/item-4",
       },
     ],
-  },
-  {
-    position: "3",
-    textButton: "Github",
-    href: "/about",
-    submenuItems: null,
   },
   {
     position: "4",
@@ -73,5 +67,11 @@ export const navData = [
         link: "/submenu-item-12",
       },
     ],
+  },
+  {
+    position: "3",
+    textButton: "Github",
+    href: "/about",
+    submenuItems: null,
   },
 ]
