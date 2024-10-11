@@ -50,7 +50,7 @@ export const navData = [
     ],
   },
   {
-    position: "4",
+    position: "3",
     textButton: "Components",
     href: "/blog",
     submenuItems: [
@@ -69,9 +69,9 @@ export const navData = [
     ],
   },
   {
-    position: "3",
+    position: "4",
     textButton: "Github",
-    href: "/about",
+    href: "https://github.com/gotpop-platform/site-baseline",
     submenuItems: null,
   },
 ]
