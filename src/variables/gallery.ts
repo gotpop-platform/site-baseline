@@ -17,6 +17,15 @@ export const stylesDocsBody = {
   "--display": "block",
 }
 
+export const stylesDocsNav = {
+  "--background-colour": "var(--transparent)",
+  "--border-radius": "unset",
+  "--grid-column": "1 / span 12",
+  "--grid-row": "1",
+  "--padding": "var(--spacing-md)",
+  "--display": "block",
+}
+
 const style = {
   "--padding": "var(--spacing-md)",
 }
@@ -27,7 +36,7 @@ export const stylesDocsLayout = ({ metadata }: MarkdownFileProps): StyleObjProps
     "--background-colour": "var(--grey-100)",
     "--border-radius": "var(--radius-lg) 0 0 0",
     "--grid-column": "1 / span 12",
-    "--grid-row": "1",
+    "--grid-row": "2",
     "--transition-article": metadata.id ?? "",
   },
   {
@@ -35,7 +44,7 @@ export const stylesDocsLayout = ({ metadata }: MarkdownFileProps): StyleObjProps
     "--background-colour": "var(--grey-200)",
     "--border-radius": "0 var(--radius-lg) 0 0",
     "--grid-column": "1 / span 12",
-    "--grid-row": "2",
+    "--grid-row": "3",
     "--transition-article": metadata.id ?? "",
   },
   {
@@ -43,7 +52,7 @@ export const stylesDocsLayout = ({ metadata }: MarkdownFileProps): StyleObjProps
     "--background-colour": "var(--grey-300)",
     "--border-radius": "0",
     "--grid-column": "1 / span 12",
-    "--grid-row": "3",
+    "--grid-row": "4",
     "--transition-article": metadata.id ?? "",
   },
   {
@@ -51,7 +60,7 @@ export const stylesDocsLayout = ({ metadata }: MarkdownFileProps): StyleObjProps
     "--background-colour": "var(--grey-400)",
     "--border-radius": "0",
     "--grid-column": "1 / span 12",
-    "--grid-row": "4",
+    "--grid-row": "5",
     "--transition-article": metadata.id ?? "",
   },
   {
@@ -59,7 +68,7 @@ export const stylesDocsLayout = ({ metadata }: MarkdownFileProps): StyleObjProps
     "--background-colour": "var(--grey-500)",
     "--border-radius": "0 0 0 var(--radius-lg) ",
     "--grid-column": "1 / span 12",
-    "--grid-row": "5",
+    "--grid-row": "6",
     "--transition-article": metadata.id ?? "",
   },
   {
@@ -67,7 +76,7 @@ export const stylesDocsLayout = ({ metadata }: MarkdownFileProps): StyleObjProps
     "--background-colour": "var(--grey-600)",
     "--border-radius": "0 0 var(--radius-lg) 0",
     "--grid-column": "1 / span 12",
-    "--grid-row": "5",
+    "--grid-row": "7",
     "--transition-article": metadata.id ?? "",
   },
 ]

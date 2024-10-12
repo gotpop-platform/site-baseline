@@ -1,5 +1,5 @@
 ---
-title: "Baseline grid works over multiple lines when using a long title"
+title: "Zero plugins or build tools"
 id: "article6"
 author: "John Doe"
 date: "2023-10-01"
