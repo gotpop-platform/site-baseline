@@ -1,10 +1,10 @@
 ---
-id: 1
-title: "Gallery 1"
-slug: "/gallery/gallery-1"
-name: "gallery 1"
-prev: "/gallery/gallery-4"
-next: "/gallery/gallery-2"
+id: 2
+title: "Doc 2"
+slug: "/docs/doc-2"
+name: "doc 2"
+prev: "/docs/doc-1"
+next: "/docs/doc-3"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl in lacinia aliquam, nulla nunc tincidunt nunc, id tincidunt mi nisl a nunc. Nulla facilisi. Sed auctor, nunc nec ultrices aliquet, nisl nunc tincidunt nunc, id tincidunt mi nisl a nunc. Nulla facilisi."
 ---
 

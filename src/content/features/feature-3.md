@@ -1,5 +1,5 @@
 ---
-title: "Style Queries"
+title: "Web standards first"
 id: "article3"
 author: "John Doe"
 date: "2023-10-01"
