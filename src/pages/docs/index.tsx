@@ -31,7 +31,7 @@ const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
           <Tag tag="main" styles={stylesDocs}>
             <Tag tag="aside" class="docs-nav" styles={stylesDocsNav}>
               <Fragment>
-                <details open>
+                <details name="menu" open>
                   <summary>
                     <a href="/">Welcome to Learn CSS!</a>
                   </summary>
@@ -43,7 +43,7 @@ const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
                   </p>
                 </details>
 
-                <details>
+                <details name="menu">
                   <summary>Box Model</summary>
                   <p>
                     Everything displayed by CSS is a box. Understanding how the CSS Box Model works
@@ -54,7 +54,7 @@ const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
                   </p>
                 </details>
 
-                <details>
+                <details name="menu">
                   <summary>Selectors</summary>
                   <p>
                     To apply CSS to an element you need to select it. CSS provides you with a number
@@ -65,7 +65,7 @@ const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
                   </p>
                 </details>
 
-                <details>
+                <details name="menu">
                   <summary>…</summary>
                   <p>
                     <em>
