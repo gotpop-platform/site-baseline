@@ -32,7 +32,9 @@ const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
             <Tag tag="aside" class="docs-nav" styles={stylesDocsNav}>
               <Fragment>
                 <details open>
-                  <summary>Welcome to Learn CSS!</summary>
+                  <summary>
+                    <a href="/">Welcome to Learn CSS!</a>
+                  </summary>
                   <p>
                     An evergreen CSS course and reference to level up your web styling expertise.
                   </p>
