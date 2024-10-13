@@ -15,7 +15,7 @@
     "@gotpop-platform/package-components": "1.0.11",
     "@gotpop-platform/package-icons": "^1.0.0",
     "@gotpop-platform/package-jsx-factory": "1.0.8",
-    "@gotpop-platform/package-markdown": "1.0.3",
+    "@gotpop-platform/package-markdown": "^1.0.7",
     "@gotpop-platform/package-utilities": "1.0.14"
   }
 }

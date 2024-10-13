@@ -11,7 +11,7 @@ import { stylesDocs, stylesDocsBody, stylesDocsLayout, stylesDocsNav } from "var
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { markdownFilesInDir } from "@gotpop-platform/package-markdown"
+import { markdownFilesInDir, parseMarkdownFile } from "@gotpop-platform/package-markdown"
 import { title } from "@gotpop-platform/package-utilities"
 import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 import { MenuSide } from "src/com/MenuSide"
@@ -21,7 +21,7 @@ import { MenuSide } from "src/com/MenuSide"
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
 const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
-  const markdownItems = await markdownFilesInDir(slug)
+  const { content } = parseMarkdownFile("docs", "getting-started")
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>
@@ -37,10 +37,7 @@ const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
             </Tag>
             {/* <ArticleList markdownItems={markdownItems} layout={stylesDocsLayout} /> */}
             <Tag tag="section" class="docs-body" styles={stylesDocsBody}>
-              <Fragment>
-                <h1>Getting started</h1>
-                <p>This is the second section.</p>
-              </Fragment>
+              <Fragment>{content}</Fragment>
             </Tag>
           </Tag>
           <Footer />
