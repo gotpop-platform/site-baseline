@@ -76,6 +76,7 @@
   /* Fonts main */
   --font-family-heading: "Playfair Display", var(--font-stack-serif);
   --font-family-base: "Inter", var(--font-stack-sans-serif);
+  --font-familiy-code: "Monaspace", monospace;
 
   /* Font scale */
   --font-scaled-size: 1rem;

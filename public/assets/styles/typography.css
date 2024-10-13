@@ -6,6 +6,8 @@ h5,
 h6,
 p,
 button,
+code,
+pre,
 :is(h1, h2, h3, h4, h5, h6) span {
   text-box-edge: cap alphabetic;
   text-box-trim: trim-both;

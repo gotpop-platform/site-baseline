@@ -13,7 +13,7 @@ export const stylesDocsBody = {
   "--border-radius": "unset",
   "--grid-column": "15 / -1",
   "--grid-row": "1",
-  "--padding": "var(--spacing-md)",
+  "--padding": "var(--spacing-lg)",
   "--display": "block",
 }
 

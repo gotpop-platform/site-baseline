@@ -23,60 +23,49 @@ export function MenuSide({
             <summary>
               <a href="/">Getting started</a>
             </summary>
-            <p>
-              Everything displayed by CSS is a box. Understanding how the CSS Box Model works is
-              therefore a core foundation of CSS.
-            </p>
+            <div class="content">
+              <p>Installation</p>
+            </div>
           </details>
         </li>
         <li>
-          <details id="box-model">
-            <summary>Box Model</summary>
-            <ul>
-              <li>
-                <p>
-                  Everything displayed by CSS is a box. Understanding how the CSS Box Model works is
-                  therefore a core foundation of CSS.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a href="#">Read Article</a>
-                </p>
-              </li>
-            </ul>
+          <details id="workflow">
+            <summary>Workflow</summary>
+            <div class="content">
+              <ul>
+                <li>
+                  <p>
+                    Everything displayed by CSS is a box. Understanding how the CSS Box Model works
+                    is therefore a core foundation of CSS.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <a href="#">Read Article</a>
+                  </p>
+                </li>
+              </ul>
+            </div>
           </details>
         </li>
         <li>
           <details id="selectors">
-            <summary>Selectors</summary>
-            <ul>
-              <li>
-                <p>
-                  To apply CSS to an element you need to select it. CSS provides you with a number
-                  of different ways to do this, and you can explore them in this module.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a href="#">Read Article</a>
-                </p>
-              </li>
-            </ul>
-          </details>
-        </li>
-        <li>
-          <details id="more">
-            <summary>…</summary>
-            <ul>
-              <li>
-                <p>
-                  <em>
-                    (chapters 4 to 30 of this course have been omitted for demonstration purposes)
-                  </em>
-                </p>
-              </li>
-            </ul>
+            <summary>Tutorials</summary>
+            <div class="content">
+              <ul>
+                <li>
+                  <p>
+                    Everything displayed by CSS is a box. Understanding how the CSS Box Model works
+                    is therefore a core foundation of CSS.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <a href="#">Read Article</a>
+                  </p>
+                </li>
+              </ul>
+            </div>
           </details>
         </li>
       </ul>
