@@ -48,12 +48,22 @@
 /* 7  inside quotes, css properties, few chars */
 /* 8  few chars */
 
-@font-palette-values --kung-fury {
+@font-palette-values --bash {
   font-family: "Monaspace";
   override-colors: 0 hsl(225 100% 40%), 1 hsl(250 100% 80%), 2 hsl(225 100% 40%), 3 hsl(225 100% 40%), 4 hsl(270 50% 40%), 5 hsl(210 40% 2%), 6 hsl(210 10% 30%), 7 hsl(327 100% 54%); 8 hsl(120 100% 50%);
 }
 
-@font-palette-values --kung-fury2 {
+@font-palette-values --css {
+  font-family: "Monaspace";
+  override-colors: 0 red, 1 lightblue, 2 yellow, 3 purple,  4 green,  5 orange, 6 black,  7 hotpink, 8 lime ;
+}
+
+@font-palette-values --html {
+  font-family: "Monaspace";
+  override-colors: 0 red, 1 lightblue, 2 yellow, 3 purple,  4 green,  5 orange, 6 black,  7 hotpink, 8 lime ;
+}
+
+@font-palette-values --js {
   font-family: "Monaspace";
   override-colors: 0 red, 1 lightblue, 2 yellow, 3 purple,  4 green,  5 orange, 6 black,  7 hotpink, 8 lime ;
 }
