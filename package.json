@@ -4,7 +4,7 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "bun --watch server/serve.ts",
+    "dev": "bun --watch --inspect server/serve.ts",
     "start": "bun server/serve.ts",
     "tsc": "tsc"
   },
