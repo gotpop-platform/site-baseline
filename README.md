@@ -16,8 +16,8 @@ bun start
 
 # Environments
 
-[Live](https://baseline.gotpop.co)
-[Local](http://localhost:2000)
+| Live | [Live](https://baseline.gotpop.co)az |
+| Local | [Local](http://localhost:2000) |
 
 This project was created using `bun init` in bun v1.0.23. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
 

@@ -52,7 +52,7 @@ export const navData = [
   {
     position: "3",
     textButton: "Components",
-    href: "/blog",
+    href: "/components",
     submenuItems: [
       {
         title: "Submenu Item 10",

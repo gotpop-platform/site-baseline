@@ -17,7 +17,7 @@ import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 
 const ArticleList = withItems(ArticleItem)
 
-const pageBlog = async ({ slug }: PageProps): Promise<JSX.Element> => {
+const pageComponents = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const markdownItems = await markdownFilesInDir(slug)
 
   return (
@@ -36,4 +36,4 @@ const pageBlog = async ({ slug }: PageProps): Promise<JSX.Element> => {
   )
 }
 
-export default pageBlog
+export default pageComponents
