@@ -6,6 +6,6 @@ slug: "components/hero"
 description: "Hero"
 ---
 
-# Header 1
+# Button
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.

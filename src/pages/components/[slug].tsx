@@ -46,8 +46,8 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
             {/* <ArticleList markdownItems={markdownItems} layout={stylesDocsLayout} /> */}
             <Tag tag="section" class="docs-body" styles={stylesDocsBody}>
               <Fragment>
-                <CodeBlock>{escapedCode}</CodeBlock>
                 {content}
+                <CodeBlock>{escapedCode}</CodeBlock>
               </Fragment>
             </Tag>
           </Tag>
