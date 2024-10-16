@@ -2,7 +2,8 @@
 title: "Hero"
 author: "John Doe"
 date: "2023-10-01"
-slug: "/"
+slug: "components/hero"
+description: "Hero"
 ---
 
 # Header 1

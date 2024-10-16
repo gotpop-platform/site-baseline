@@ -13,7 +13,7 @@ const pageBlog = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const {
     metadata: { date, title: pageTitle, author, id },
     content,
-  } = parseMarkdownFile("blog", slug)
+  } = parseMarkdownFile("components", slug)
 
   return (
     <AppTheme title={title(pageTitle, SITE_NAME)}>
