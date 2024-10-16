@@ -14,12 +14,15 @@ To run:
 bun start
 ```
 
-# Environments
+## Environments
 
-| Environment | Link                               |
-| ----------- | ---------------------------------- |
-| Live        | [Live](https://baseline.gotpop.co) |
-| Local       | [Local](http://localhost:2000)     |
+| Environment | Link                                     |
+| ----------- | ---------------------------------------- |
+| Live        | [Live](https://baseline.gotpop.co)       |
+| Local       | [Local](http://localhost:2000)           |
+| Railway     | [Railway](https://railway.app/dashboard) |
+
+## Stack
 
 This project was created using `bun init` in bun v1.0.23. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
 
