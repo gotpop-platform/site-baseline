@@ -28,7 +28,7 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
       .replace(/'/g, "&#039;")
   }
 
-  const jsxCode = `<LiamButton ignore="true">Click me!!!!!!!!!</LiamButton>`
+  const jsxCode = `<Button ignore="true">Click me!!!!!!!!!</Button>`
   const escapedCode = escapeHtml(jsxCode)
 
   return (
