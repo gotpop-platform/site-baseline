@@ -16,11 +16,12 @@ bun start
 
 ## Environments
 
-| Environment | Link                                     |
-| ----------- | ---------------------------------------- |
-| Live        | [Live](https://baseline.gotpop.co)       |
-| Local       | [Local](http://localhost:2000)           |
-| Railway     | [Railway](https://railway.app/dashboard) |
+| Environment | Link                                      |
+| ----------- | ----------------------------------------- |
+| Live        | [Live](https://baseline.gotpop.co)        |
+| Local       | [Local](http://localhost:2000)            |
+| Railway     | [Railway](https://railway.app/dashboard)  |
+| Cloudflare  | [Cloudflare](https://dash.cloudflare.com) |
 
 ## Stack
 
