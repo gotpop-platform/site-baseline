@@ -1,11 +1,24 @@
+----
+section: header
+title: header
+slug: best-slug
+description: This is a description
+----
 ---
-title: "Hero"
-author: "John Doe"
-date: "2023-10-01"
-slug: "components/hero"
-description: "Hero"
+section: header
+title: header
 ---
-
-# Button
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+## Header Section
+Content for the header...
+---
+title: header
+section: main
+---
+## Main Section
+Content for the main area...
+---
+section: footer
+title: Liam
+---
+## Footer Section
+Content for the footer...
