@@ -6,7 +6,7 @@ import { SITE_NAME } from "src/constants"
 import { Tag } from "generics"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { CodeBlock, parseMarkdownFile } from "@gotpop-platform/package-markdown"
-import { title } from "@gotpop-platform/package-utilities"
+import { style, title } from "@gotpop-platform/package-utilities"
 import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 import { MenuSide } from "src/com/MenuSide"
 
@@ -15,8 +15,26 @@ const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const {
     metadata: { date, title: pageTitle, author, id },
-    content,
+    stuff,
   } = parseMarkdownFile("src/content/components", slug)
+
+  console.log("stuff :", stuff)
+  const finalContent = stuff?.map((item) => {
+    return (
+      <div
+        style={style({
+          padding: "1rem",
+          border: "1px solid #ccc",
+          margin: "1rem 0",
+          borderRadius: "5px",
+        })}
+      >
+        {item.html}
+      </div>
+    )
+  })
+
+  // console.log("finalContent :", finalContent)
 
   const { Button } = await import("@gotpop-platform/package-components")
   // const ButtonMarkdown = await import(
@@ -38,7 +56,7 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
             </Tag>
             <Tag tag="section" class="docs-body" styles={stylesDocsBody}>
               <Fragment>
-                {content}
+                {finalContent}
                 <CodeBlock language="html">{`<Button ignore="true">Click me???????????</Button>`}</CodeBlock>
                 <Button href="/">Click me!!!!!!!!!</Button>
               </Fragment>
