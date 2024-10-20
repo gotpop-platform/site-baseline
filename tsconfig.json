@@ -7,9 +7,13 @@
     "allowJs": true,
 
     /* Bundler mode */
-    "moduleResolution": "node",
+    // "moduleResolution": "node",
 
     "noEmit": true,
+
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
 
     /* Linting */
     "skipLibCheck": true,
@@ -25,6 +29,8 @@
     /* Paths */
     "baseUrl": ".", // This must be specified if "paths" is specified
     "paths": {
+      "@gotpop-platform/package-markdown": ["../../packages/package-markdown"],
+      "@gotpop-platform/package-components": ["../../packages/package-components"],
       "components": ["src/components"],
       "layouts": ["src/components/layouts"],
       "variables": ["src/variables"],
@@ -35,5 +41,5 @@
     },
     "typeRoots": ["./node_modules/@types", "./src/types"]
   },
-  "include": ["src", "node_modules/@gotpop-platform/package-components"]
+  "include": ["src", "node_modules/@gotpop-platform/package-components", "src/**/*", "global.d.ts"]
 }

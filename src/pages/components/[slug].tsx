@@ -9,7 +9,6 @@ import { CodeBlock, parseMarkdownFile } from "@gotpop-platform/package-markdown"
 import { title } from "@gotpop-platform/package-utilities"
 import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 import { MenuSide } from "src/com/MenuSide"
-import Button from "@gotpop-platform/package-components/src/components/forms/Button"
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
@@ -17,19 +16,13 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const {
     metadata: { date, title: pageTitle, author, id },
     content,
-  } = parseMarkdownFile("components", slug)
+  } = parseMarkdownFile("src/content/components", slug)
 
-  const escapeHtml = (unsafe: string) => {
-    return unsafe
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;")
-  }
-
-  const jsxCode = `<Button ignore="true">Click me!!!!!!!!!</Button>`
-  const escapedCode = escapeHtml(jsxCode)
+  const { Button } = await import("@gotpop-platform/package-components")
+  // const ButtonMarkdown = await import(
+  //   "@gotpop-platform/package-components/src/components/forms/Button/Button.md"
+  // )
+  // console.log("ButtonMarkdown :", ButtonMarkdown.default)
 
   return (
     <AppTheme title={title(pageTitle, SITE_NAME)}>
@@ -43,21 +36,14 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
                 <MenuSide />
               </Fragment>
             </Tag>
-            {/* <ArticleList markdownItems={markdownItems} layout={stylesDocsLayout} /> */}
             <Tag tag="section" class="docs-body" styles={stylesDocsBody}>
               <Fragment>
                 {content}
-                <CodeBlock>{escapedCode}</CodeBlock>
+                <CodeBlock language="html">{`<Button ignore="true">Click me???????????</Button>`}</CodeBlock>
+                <Button href="/">Click me!!!!!!!!!</Button>
               </Fragment>
             </Tag>
           </Tag>
-          {/* <Tag tag="section" styles={stylesBlog}>
-            <Tag tag="section" class="section-blog" styles={stylesBlogInner(id)}>
-              <Heading>{pageTitle}</Heading>
-              <Metadata date={date} author={author} />
-              {content}
-            </Tag>
-          </Tag> */}
           <Footer />
         </div>
       </GridGap>

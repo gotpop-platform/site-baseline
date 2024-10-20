@@ -18,7 +18,7 @@ import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 const ArticleList = withItems(ArticleItem)
 
 const pageComponents = async ({ slug }: PageProps): Promise<JSX.Element> => {
-  const markdownItems = await markdownFilesInDir(slug)
+  const markdownItems = await markdownFilesInDir("src/content/" + slug)
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>
