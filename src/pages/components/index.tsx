@@ -11,14 +11,14 @@ import { layoutBlog, stylesBlogSurfaceMain } from "variables"
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { markdownFilesInDir } from "@gotpop-platform/package-markdown"
+import { parseMarkdownFiles } from "@gotpop-platform/package-markdown"
 import { title } from "@gotpop-platform/package-utilities"
 import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 
 const ArticleList = withItems(ArticleItem)
 
 const pageComponents = async ({ slug }: PageProps): Promise<JSX.Element> => {
-  const markdownItems = await markdownFilesInDir(slug)
+  const markdownItems = await parseMarkdownFiles("src/content/" + slug)
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>

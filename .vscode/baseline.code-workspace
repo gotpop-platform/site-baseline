@@ -22,6 +22,11 @@
     "emmet.includeLanguages": {
       "javascriptreact": "html",
       "typescriptreact": "html"
+    },
+    "[markdown]": {
+      "editor.formatOnSave": false,
+      "editor.formatOnPaste": false,
+      "editor.formatOnType": false
     }
   }
 }

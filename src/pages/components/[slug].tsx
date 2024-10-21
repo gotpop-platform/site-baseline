@@ -6,30 +6,35 @@ import { SITE_NAME } from "src/constants"
 import { Tag } from "generics"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { CodeBlock, parseMarkdownFile } from "@gotpop-platform/package-markdown"
-import { title } from "@gotpop-platform/package-utilities"
+import { style, title } from "@gotpop-platform/package-utilities"
 import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 import { MenuSide } from "src/com/MenuSide"
-import Button from "@gotpop-platform/package-components/src/components/forms/Button"
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
 const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const {
-    metadata: { date, title: pageTitle, author, id },
-    content,
-  } = parseMarkdownFile("components", slug)
+    metadata: { title: pageTitle },
+    htmlArray,
+  } = parseMarkdownFile("src/content/components", slug)
 
-  const escapeHtml = (unsafe: string) => {
-    return unsafe
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;")
-  }
+  console.log("htmlArray :", htmlArray)
+  const finalContent = Array.from(htmlArray.entries()).map(([key, value], index) => {
+    return (
+      <div
+        style={style({
+          padding: "1rem",
+          border: "1px solid #ccc",
+          margin: "1rem 0",
+          borderRadius: "5px",
+        })}
+      >
+        {value.html}
+      </div>
+    )
+  })
 
-  const jsxCode = `<Button ignore="true">Click me!!!!!!!!!</Button>`
-  const escapedCode = escapeHtml(jsxCode)
+  const { Button } = await import("@gotpop-platform/package-components")
 
   return (
     <AppTheme title={title(pageTitle, SITE_NAME)}>
@@ -43,21 +48,14 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
                 <MenuSide />
               </Fragment>
             </Tag>
-            {/* <ArticleList markdownItems={markdownItems} layout={stylesDocsLayout} /> */}
             <Tag tag="section" class="docs-body" styles={stylesDocsBody}>
               <Fragment>
-                {content}
-                <CodeBlock>{escapedCode}</CodeBlock>
+                {finalContent}
+                <CodeBlock language="html">{`<Button ignore="true">Click me???????????</Button>`}</CodeBlock>
+                <Button href="/">Click me!!!!!!!!!</Button>
               </Fragment>
             </Tag>
           </Tag>
-          {/* <Tag tag="section" styles={stylesBlog}>
-            <Tag tag="section" class="section-blog" styles={stylesBlogInner(id)}>
-              <Heading>{pageTitle}</Heading>
-              <Metadata date={date} author={author} />
-              {content}
-            </Tag>
-          </Tag> */}
           <Footer />
         </div>
       </GridGap>
