@@ -1,7 +1,7 @@
 ----
 section: header
 title: header
-slug: best-slug
+slug: components/hero
 description: This is a description
 ----
 

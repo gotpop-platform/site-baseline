@@ -18,7 +18,7 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
     htmlArray,
   } = parseMarkdownFile("src/content/components", slug)
 
-  console.log("htmlArray :", htmlArray)
+  // console.log("htmlArray :", htmlArray)
   const finalContent = Array.from(htmlArray.entries()).map(([key, value], index) => {
     return (
       <div
