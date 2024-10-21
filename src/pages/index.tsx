@@ -13,6 +13,7 @@ const ArticleList = withItems(ArticleItem)
 
 const pageIndex = async (): Promise<JSX.Element> => {
   const markdownItems = await parseMarkdownFiles("src/content/features")
+  console.log("markdownItems :", markdownItems)
 
   return (
     <AppTheme title={title("Home", SITE_NAME)}>

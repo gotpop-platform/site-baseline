@@ -22,6 +22,7 @@ const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
 const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const { htmlArray } = parseMarkdownFile("src/content/docs", "getting-started")
+  console.log("htmlArray :", htmlArray)
   const mainHtml = htmlArray.get("main")
 
   return (
@@ -38,7 +39,7 @@ const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
             </Tag>
             {/* <ArticleList markdownItems={markdownItems} layout={stylesDocsLayout} /> */}
             <Tag tag="section" class="docs-body" styles={stylesDocsBody}>
-              <Fragment>{mainHtml}</Fragment>
+              <Fragment>{mainHtml.html}</Fragment>
             </Tag>
           </Tag>
           <Footer />
