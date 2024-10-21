@@ -14,12 +14,12 @@ const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
 const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const {
-    metadata: { date, title: pageTitle, author, id },
-    stuff,
+    metadata: { title: pageTitle },
+    htmlArray,
   } = parseMarkdownFile("src/content/components", slug)
 
-  console.log("stuff :", stuff)
-  const finalContent = stuff?.map((item) => {
+  console.log("htmlArray :", htmlArray)
+  const finalContent = Array.from(htmlArray.entries()).map(([key, value], index) => {
     return (
       <div
         style={style({
@@ -29,18 +29,12 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
           borderRadius: "5px",
         })}
       >
-        {item.html}
+        {value.html}
       </div>
     )
   })
 
-  // console.log("finalContent :", finalContent)
-
   const { Button } = await import("@gotpop-platform/package-components")
-  // const ButtonMarkdown = await import(
-  //   "@gotpop-platform/package-components/src/components/forms/Button/Button.md"
-  // )
-  // console.log("ButtonMarkdown :", ButtonMarkdown.default)
 
   return (
     <AppTheme title={title(pageTitle, SITE_NAME)}>
