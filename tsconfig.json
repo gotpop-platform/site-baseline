@@ -7,13 +7,9 @@
     "allowJs": true,
 
     /* Bundler mode */
-    // "moduleResolution": "node",
+    "moduleResolution": "node",
 
     "noEmit": true,
-
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
 
     /* Linting */
     "skipLibCheck": true,

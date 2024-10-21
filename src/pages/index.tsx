@@ -3,7 +3,7 @@ import { Tag, withItems } from "generics"
 import { styleMain, stylesLayout } from "variables"
 
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { markdownFilesInDir } from "@gotpop-platform/package-markdown"
+import { parseMarkdownFiles } from "@gotpop-platform/package-markdown"
 import { title } from "@gotpop-platform/package-utilities"
 import { HeroItem } from "src/com/HeroItem"
 import { SITE_NAME } from "src/constants"
@@ -12,7 +12,7 @@ import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 const ArticleList = withItems(ArticleItem)
 
 const pageIndex = async (): Promise<JSX.Element> => {
-  const markdownItems = await markdownFilesInDir("src/content/features")
+  const markdownItems = await parseMarkdownFiles("src/content/features")
 
   return (
     <AppTheme title={title("Home", SITE_NAME)}>
