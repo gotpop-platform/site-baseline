@@ -12,10 +12,10 @@
     "version": ">=0.1.0"
   },
   "dependencies": {
-    "@gotpop-platform/package-components": "^1.0.11",
-    "@gotpop-platform/package-icons": "^1.0.0",
-    "@gotpop-platform/package-jsx-factory": "^1.0.8",
-    "@gotpop-platform/package-markdown": "^1.0.10",
-    "@gotpop-platform/package-utilities": "^1.0.14"
+    "@gotpop-platform/package-components": "latest",
+    "@gotpop-platform/package-icons": "latest",
+    "@gotpop-platform/package-jsx-factory": "latest",
+    "@gotpop-platform/package-markdown": "latest",
+    "@gotpop-platform/package-utilities": "latest"
   }
 }
