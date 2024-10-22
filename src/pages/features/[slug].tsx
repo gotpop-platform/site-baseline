@@ -32,14 +32,14 @@ const pageArticlePage = async ({ slug }: PageProps): Promise<JSX.Element> => {
           <HeaderMegaMenu />
           <Tag tag="main" styles={layoutArticlesSlugSurface}>
             <Tag tag="aside" class="article-aside" styles={layoutArticlesSlugToc}>
-              <TableOfContents toc={mainHtml.toc} />
+              <TableOfContents toc={mainHtml?.toc} />
             </Tag>
             <Tag
               tag="section"
               class="article-body"
               styles={layoutArticlesSlugContent(metadata.id ?? "")}
             >
-              {mainHtml.html}
+              {mainHtml?.html}
             </Tag>
           </Tag>
           <Footer />

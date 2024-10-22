@@ -19,6 +19,7 @@ const pageGalleryItem = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const { htmlArray, metadata } = parseMarkdownFile("src/content/docs", slug)
 
   const mainHtml = htmlArray.get("main")
+  console.log("mainHtml :", mainHtml)
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>
@@ -27,7 +28,7 @@ const pageGalleryItem = async ({ slug }: PageProps): Promise<JSX.Element> => {
           <MobileMenuTrigger />
           <HeaderMegaMenu />
           <Tag tag="main" styles={layoutArticlesSlugSurface}>
-            <GalleryIntro slug={slug} metadata={metadata} htmlContent={mainHtml} />
+            <GalleryIntro slug={slug} metadata={metadata} htmlContent={mainHtml?.html ?? ""} />
           </Tag>
           <Footer />
         </div>

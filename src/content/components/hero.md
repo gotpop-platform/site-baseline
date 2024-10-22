@@ -1,26 +1,18 @@
-----
+---
 section: header
 title: header
 slug: components/hero
 description: This is a description
-----
-
 ---
-section: header
-title: header
----
+<!-- header -->
 # Header Section
 Content for the header...
----
-title: header
-section: main
----
+
+<!-- main -->
 ## Main Section
 Content for the main area...
----
-section: footer
-title: Liam
----
+
+<!-- footer -->
 ## Footer Section
 Content for the footer...
 ```css

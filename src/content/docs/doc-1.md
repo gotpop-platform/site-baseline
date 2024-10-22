@@ -1,4 +1,4 @@
-----
+---
 id: 1
 title: "Doc 1"
 slug: "/docs/doc-1"
@@ -6,11 +6,9 @@ name: "doc 1"
 prev: "/docs/doc-4"
 next: "/docs/doc-2"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl in lacinia aliquam, nulla nunc tincidunt nunc, id tincidunt mi nisl a nunc. Nulla facilisi. Sed auctor, nunc nec ultrices aliquet, nisl nunc tincidunt nunc, id tincidunt mi nisl a nunc. Nulla facilisi."
-----
+---
 
----
-section: main
----
+<!-- main -->
 # Header 1
 
 ## Header 2
