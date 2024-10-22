@@ -39,7 +39,7 @@ const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
             </Tag>
             {/* <ArticleList markdownItems={markdownItems} layout={stylesDocsLayout} /> */}
             <Tag tag="section" class="docs-body" styles={stylesDocsBody}>
-              <Fragment>{mainHtml.html}</Fragment>
+              <Fragment>{mainHtml?.html}</Fragment>
             </Tag>
           </Tag>
           <Footer />
