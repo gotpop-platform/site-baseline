@@ -1,14 +1,12 @@
-----
+---
 title: "Bun.js"
 id: "article5"
 author: "John Doe"
 date: "2023-10-01"
 slug: "features/feature-5"
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl in lacinia aliquam, nulla nunc tincidunt nunc, id tincidunt mi nisl a nunc. Nulla facilisi. Sed auctor, nunc nec ultrices aliquet, nisl nunc tincidunt nunc, id tincidunt mi nisl a nunc. Nulla facilisi."
-----
 ---
-section: main
----
+<!-- main -->
 # Bun.js
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl in lacinia aliquam, nulla nunc tincidunt nunc, id tincidunt mi nisl a nunc. Nulla facilisi. Sed auctor, nunc nec ultrices aliquet, nisl nunc tincidunt nunc, id tincidunt mi nisl a nunc. Nulla facilisi.

@@ -1,4 +1,4 @@
-----
+---
 id: 1
 title: "Getting started"
 slug: "/docs/getting-started"
@@ -6,10 +6,8 @@ name: "getting-started"
 prev: "/docs/doc-4"
 next: "/docs/doc-2"
 description: "Getting started is easy."
-----
 ---
-section: main
----
+<!-- main -->
 
 # Getting started
 
