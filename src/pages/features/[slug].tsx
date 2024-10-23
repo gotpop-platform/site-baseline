@@ -21,8 +21,7 @@ import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 
 const pageArticlePage = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const { htmlArray, metadata } = parseMarkdownFile("src/content/features", slug)
-
-  const mainHtml = htmlArray.get("main")
+  const { html, toc } = htmlArray.get("main") || {}
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>
@@ -32,14 +31,14 @@ const pageArticlePage = async ({ slug }: PageProps): Promise<JSX.Element> => {
           <HeaderMegaMenu />
           <Tag tag="main" styles={layoutArticlesSlugSurface}>
             <Tag tag="aside" class="article-aside" styles={layoutArticlesSlugToc}>
-              <TableOfContents toc={mainHtml?.toc} />
+              <TableOfContents toc={toc} />
             </Tag>
             <Tag
               tag="section"
               class="article-body"
               styles={layoutArticlesSlugContent(metadata.id ?? "")}
             >
-              {mainHtml?.html}
+              {html}
             </Tag>
           </Tag>
           <Footer />
