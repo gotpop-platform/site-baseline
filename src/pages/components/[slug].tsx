@@ -1,4 +1,11 @@
-import { AppTheme, Footer, GridGap, Heading, Metadata } from "@gotpop-platform/package-components"
+import {
+  AppTheme,
+  Button,
+  Footer,
+  GridGap,
+  Heading,
+  Metadata,
+} from "@gotpop-platform/package-components"
 import { stylesBlog, stylesBlogInner, stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
 
 import type { PageProps } from "types"
@@ -17,21 +24,40 @@ import { MenuSide } from "src/com/MenuSide"
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
 function parseBlockHtml(blockHtml: string = "", componentBlocks: ComponentBlocksType = new Map()) {
-  const parts = blockHtml.split(/(__CODE_BLOCK_\d+__)/g)
+  const codeBlockRegex = /(__CODE_BLOCK_\d+__|__SHORTCODE_\d+__)/g
+  const parts = blockHtml.split(codeBlockRegex)
 
   return parts.map((part, index) => {
-    const match = part.match(/__CODE_BLOCK_(\d+)__/)
+    const match = part.match(codeBlockRegex)
+    if (!match) return part
 
-    if (match) {
-      const blockKey = match[0]
-      console.log("blockKey :", blockKey)
-      if (componentBlocks?.has(blockKey)) {
-        const block = componentBlocks.get(blockKey)
-        if (block) {
-          return <CodeBlock language={block.language}>{block.code}</CodeBlock>
-        }
+    const blockKey = match[0] // This will be the full match like "__CODE_BLOCK_0__" or "__SHORTCODE_0__"
+    if (!componentBlocks?.has(blockKey)) return part
+
+    const block = componentBlocks.get(blockKey)
+    if (!block) return part
+
+    if (block.language) {
+      // Handle code blocks
+      return (
+        <CodeBlock key={index} language={block.language}>
+          {block.code}
+        </CodeBlock>
+      )
+    }
+
+    if (block.component) {
+      // Handle shortcodes
+      const Component = block.component === "Button" ? Button : null // Add more components as needed
+      if (Component) {
+        return (
+          <Component key={index} {...block.props}>
+            {block.children}
+          </Component>
+        )
       }
     }
+
     return part
   })
 }
@@ -41,9 +67,10 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
     metadata: { title: pageTitle },
     htmlArray,
   } = parseMarkdownFile("src/content/components", slug)
+  console.log("htmlArray :", htmlArray)
 
   const { html, componentBlocks } = htmlArray?.get("main") || {}
-  const { Button } = await import("@gotpop-platform/package-components")
+  // const { Button } = await import("@gotpop-platform/package-components")
   const finalContent = parseBlockHtml(html, componentBlocks)
 
   return (
@@ -69,8 +96,6 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
                 >
                   {finalContent}
                 </div>
-                <CodeBlock language="html">{`<Button ignore="true">Click me???????????</Button>`}</CodeBlock>
-                <Button href="/">Click me!!!!!!!!!</Button>
               </Fragment>
             </Tag>
           </Tag>
