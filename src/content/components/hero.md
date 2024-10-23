@@ -12,9 +12,6 @@ Content for the header...
 ## Main Section
 Content for the main area...
 
-<!-- footer -->
-## Footer Section
-Content for the footer...
 ```css
 @keyframes rounded-mask-reveal {
   from {
@@ -38,5 +35,10 @@ html {
   background: red;
 }
 ```
+
+<!-- footer -->
+## Footer Section
+Content for the footer...
+
 
 <Button ignore="true">Click me???????????</Button>

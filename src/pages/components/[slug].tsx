@@ -42,7 +42,7 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
     htmlArray,
   } = parseMarkdownFile("src/content/components", slug)
 
-  const { html, componentBlocks } = htmlArray?.get("footer") || {}
+  const { html, componentBlocks } = htmlArray?.get("main") || {}
   const { Button } = await import("@gotpop-platform/package-components")
   const finalContent = parseBlockHtml(html, componentBlocks)
 
