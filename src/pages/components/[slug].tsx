@@ -39,22 +39,19 @@ function parseBlockHtml(blockHtml: string = "", componentBlocks: ComponentBlocks
 
     if (block.language) {
       // Handle code blocks
-      return (
-        <CodeBlock key={index} language={block.language}>
-          {block.code}
-        </CodeBlock>
-      )
+      return <CodeBlock language={block.language}>{block.code}</CodeBlock>
     }
 
     if (block.component) {
       // Handle shortcodes
       const Component = block.component === "Button" ? Button : null // Add more components as needed
       if (Component) {
-        return (
-          <Component key={index} {...block.props}>
-            {block.children}
-          </Component>
-        )
+        const buttonProps = block.props as ButtonProps // Type assertion
+        if (typeof buttonProps === "object" && buttonProps !== null) {
+          return <Component {...buttonProps}>{block.children}</Component>
+        } else {
+          console.error("Expected block.props to be an object for Button component")
+        }
       }
     }
 
