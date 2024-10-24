@@ -13,6 +13,7 @@ Content for the header...
 Content for the main area...
 
 [<Button ignore="true">Click me!!</Button>]
+[<Heading>This is the best heading ever</Heading>]
 
 ```css
 @keyframes rounded-mask-reveal {

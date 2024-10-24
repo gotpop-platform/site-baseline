@@ -1,74 +1,90 @@
-import {
-  AppTheme,
-  Button,
-  Footer,
-  GridGap,
-  Heading,
-  Metadata,
-} from "@gotpop-platform/package-components"
-import { stylesBlog, stylesBlogInner, stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
+import { AppTheme, Footer, GridGap } from "@gotpop-platform/package-components"
+import { stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { Tag } from "generics"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import {
-  CodeBlock,
-  ComponentBlocksType,
-  parseMarkdownFile,
-} from "@gotpop-platform/package-markdown"
+import { CodeBlock, parseMarkdownFile } from "@gotpop-platform/package-markdown"
 import { style, title } from "@gotpop-platform/package-utilities"
 import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 import { MenuSide } from "src/com/MenuSide"
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
-function parseBlockHtml(blockHtml: string = "", componentBlocks: ComponentBlocksType = new Map()) {
+type ComponentBlock = {
+  language?: string
+  code?: string
+  component?: any
+  props?: Record<string, any>
+  children?: any
+}
+
+type ComponentBlocksType = Map<string, ComponentBlock> | undefined | null
+
+async function loadComponent(componentName: string) {
+  const components = {
+    Button: () => import("@gotpop-platform/package-components").then((mod) => mod.Button),
+    Heading: () => import("@gotpop-platform/package-components").then((mod) => mod.Heading),
+    // Add other components as needed
+  }
+
+  if (componentName in components) {
+    return components[componentName as keyof typeof components]()
+  }
+
+  throw new Error(`Component ${componentName} not found`)
+}
+
+async function parseBlockHtml(
+  blockHtml: string = "",
+  componentBlocks: ComponentBlocksType = new Map()
+) {
   const codeBlockRegex = /(__CODE_BLOCK_\d+__|__SHORTCODE_\d+__)/g
   const parts = blockHtml.split(codeBlockRegex)
 
-  return parts.map((part, index) => {
-    const match = part.match(codeBlockRegex)
-    if (!match) return part
+  const parsedParts = await Promise.all(
+    parts.map(async (part, index) => {
+      const match = part.match(codeBlockRegex)
+      if (!match) return part
 
-    const blockKey = match[0] // This will be the full match like "__CODE_BLOCK_0__" or "__SHORTCODE_0__"
-    if (!componentBlocks?.has(blockKey)) return part
+      const blockKey = match[0]
+      if (!componentBlocks?.has(blockKey)) return part
 
-    const block = componentBlocks.get(blockKey)
-    if (!block) return part
+      const block = componentBlocks.get(blockKey)
+      if (!block) return part
 
-    if (block.language) {
-      // Handle code blocks
-      return <CodeBlock language={block.language}>{block.code}</CodeBlock>
-    }
+      if (block.language) {
+        return <CodeBlock language={block.language}>{block.code}</CodeBlock>
+      }
 
-    if (block.component) {
-      // Handle shortcodes
-      const Component = block.component === "Button" ? Button : null // Add more components as needed
-      if (Component) {
-        const buttonProps = block.props as ButtonProps // Type assertion
-        if (typeof buttonProps === "object" && buttonProps !== null) {
-          return <Component {...buttonProps}>{block.children}</Component>
-        } else {
-          console.error("Expected block.props to be an object for Button component")
+      if (block.component) {
+        try {
+          const Component = await loadComponent(block.component)
+          const componentProps = block.props || {}
+          return <Component {...componentProps}>{block.children}</Component>
+        } catch (error) {
+          console.error(error)
+          return part
         }
       }
-    }
 
-    return part
-  })
+      return part
+    })
+  )
+
+  return parsedParts
 }
 
 const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
+  const PATH = "src/content/components"
   const {
     metadata: { title: pageTitle },
     htmlArray,
-  } = parseMarkdownFile("src/content/components", slug)
-  console.log("htmlArray :", htmlArray)
+  } = parseMarkdownFile(PATH, slug)
 
   const { html, componentBlocks } = htmlArray?.get("main") || {}
-  // const { Button } = await import("@gotpop-platform/package-components")
-  const finalContent = parseBlockHtml(html, componentBlocks)
+  const finalContent = await parseBlockHtml(html, componentBlocks)
 
   return (
     <AppTheme title={title(pageTitle, SITE_NAME)}>
