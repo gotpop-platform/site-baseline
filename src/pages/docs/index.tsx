@@ -21,9 +21,9 @@ import { MenuSide } from "src/com/MenuSide"
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
 const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
-  const { htmlArray } = parseMarkdownFile("src/content/docs", "getting-started")
-  console.log("htmlArray :", htmlArray)
-  const mainHtml = htmlArray.get("main")
+  const { htmlSectionsMap } = parseMarkdownFile("src/content/docs", "getting-started")
+  console.log("htmlSectionsMap :", htmlSectionsMap)
+  const mainHtml = htmlSectionsMap.get("main")
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>

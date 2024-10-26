@@ -30,14 +30,14 @@ const style = {
   "--padding": "var(--spacing-md)",
 }
 
-export const stylesDocsLayout = ({ metadata }: MarkdownFileProps): StyleObjProps[] => [
+export const stylesDocsLayout = ({ pageMetadata }: MarkdownFileProps): StyleObjProps[] => [
   {
     ...style,
     "--background-colour": "var(--grey-100)",
     "--border-radius": "var(--radius-lg) 0 0 0",
     "--grid-column": "1 / span 12",
     "--grid-row": "2",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -45,7 +45,7 @@ export const stylesDocsLayout = ({ metadata }: MarkdownFileProps): StyleObjProps
     "--border-radius": "0 var(--radius-lg) 0 0",
     "--grid-column": "1 / span 12",
     "--grid-row": "3",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -53,7 +53,7 @@ export const stylesDocsLayout = ({ metadata }: MarkdownFileProps): StyleObjProps
     "--border-radius": "0",
     "--grid-column": "1 / span 12",
     "--grid-row": "4",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -61,7 +61,7 @@ export const stylesDocsLayout = ({ metadata }: MarkdownFileProps): StyleObjProps
     "--border-radius": "0",
     "--grid-column": "1 / span 12",
     "--grid-row": "5",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -69,7 +69,7 @@ export const stylesDocsLayout = ({ metadata }: MarkdownFileProps): StyleObjProps
     "--border-radius": "0 0 0 var(--radius-lg) ",
     "--grid-column": "1 / span 12",
     "--grid-row": "6",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -77,6 +77,6 @@ export const stylesDocsLayout = ({ metadata }: MarkdownFileProps): StyleObjProps
     "--border-radius": "0 0 var(--radius-lg) 0",
     "--grid-column": "1 / span 12",
     "--grid-row": "7",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
 ]

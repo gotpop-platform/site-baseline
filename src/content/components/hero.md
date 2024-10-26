@@ -12,9 +12,9 @@ Content for the header...
 ## Main Section
 Content for the main area...
 
-<!-- footer -->
-## Footer Section
-Content for the footer...
+[<Button ignore="true">Click me!!</Button>]
+[<Heading>This is the best heading ever</Heading>]
+
 ```css
 @keyframes rounded-mask-reveal {
   from {
@@ -39,4 +39,10 @@ html {
 }
 ```
 
-<Button ignore="true">Click me???????????</Button>
+<!-- footer -->
+## Footer Section
+Content for the footer...
+
+
+
+

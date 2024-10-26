@@ -19,6 +19,7 @@ const ArticleList = withItems(ArticleItem)
 
 const pageComponents = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const markdownItems = await parseMarkdownFiles("src/content/" + slug)
+  console.log("markdownItems :", markdownItems)
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>
