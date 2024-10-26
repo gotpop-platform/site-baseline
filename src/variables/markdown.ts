@@ -4,14 +4,14 @@ const style = {
   "--padding": "var(--spacing-md)",
 }
 
-export const stylesLayout = ({ metadata }: MarkdownFileProps): StyleObjProps[] => [
+export const stylesLayout = ({ pageMetadata }: MarkdownFileProps): StyleObjProps[] => [
   {
     ...style,
     "--background-colour": "oklch(0.9 0 0 / 0.6)",
     "--border-radius": "var(--radius-lg) 0 0 0",
     "--grid-column": "1 / span 18",
     "--grid-row": "3",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -19,7 +19,7 @@ export const stylesLayout = ({ metadata }: MarkdownFileProps): StyleObjProps[] =
     "--border-radius": "0 var(--radius-lg) 0 0",
     "--grid-column": "21 / -1",
     "--grid-row": "3",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -27,7 +27,7 @@ export const stylesLayout = ({ metadata }: MarkdownFileProps): StyleObjProps[] =
     "--border-radius": "0",
     "--grid-column": "1 / span 15",
     "--grid-row": "5",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -35,7 +35,7 @@ export const stylesLayout = ({ metadata }: MarkdownFileProps): StyleObjProps[] =
     "--border-radius": "0",
     "--grid-column": "18 / -1",
     "--grid-row": "5",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -43,7 +43,7 @@ export const stylesLayout = ({ metadata }: MarkdownFileProps): StyleObjProps[] =
     "--border-radius": "0 0 0 var(--radius-lg) ",
     "--grid-column": "1 / span 21",
     "--grid-row": "9",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -51,18 +51,18 @@ export const stylesLayout = ({ metadata }: MarkdownFileProps): StyleObjProps[] =
     "--border-radius": "0 0 var(--radius-lg) 0",
     "--grid-column": "24 / -1",
     "--grid-row": "9",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
 ]
 
-export const stylesArticlesLayout = ({ metadata }: MarkdownFileProps): StyleObjProps[] => [
+export const stylesArticlesLayout = ({ pageMetadata }: MarkdownFileProps): StyleObjProps[] => [
   {
     ...style,
     "--background-colour": "var(--grey-100)",
     "--border-radius": "var(--radius-lg) 0 0 0",
     "--grid-column": "1 / span 15",
     "--grid-row": "1",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -70,7 +70,7 @@ export const stylesArticlesLayout = ({ metadata }: MarkdownFileProps): StyleObjP
     "--border-radius": "0 var(--radius-lg) 0 0",
     "--grid-column": "18 / -1",
     "--grid-row": "1",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -78,7 +78,7 @@ export const stylesArticlesLayout = ({ metadata }: MarkdownFileProps): StyleObjP
     "--border-radius": "0",
     "--grid-column": "1 / span 12",
     "--grid-row": "3",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -86,7 +86,7 @@ export const stylesArticlesLayout = ({ metadata }: MarkdownFileProps): StyleObjP
     "--border-radius": "0",
     "--grid-column": "15 / -1",
     "--grid-row": "3",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -94,7 +94,7 @@ export const stylesArticlesLayout = ({ metadata }: MarkdownFileProps): StyleObjP
     "--border-radius": "0 0 0 var(--radius-lg) ",
     "--grid-column": "1 / span 21",
     "--grid-row": "5",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
   {
     ...style,
@@ -102,6 +102,6 @@ export const stylesArticlesLayout = ({ metadata }: MarkdownFileProps): StyleObjP
     "--border-radius": "0 0 var(--radius-lg) 0",
     "--grid-column": "24 / -1",
     "--grid-row": "5",
-    "--transition-article": metadata.id ?? "",
+    "--transition-article": pageMetadata.id ?? "",
   },
 ]

@@ -30,7 +30,11 @@ export const stylesBlogSurfaceMain = {
   "--grid-row": "main",
 }
 
-export const layoutBlog = ({ pageMetadata }) => [
+interface PageMetadata {
+  id?: string
+}
+
+export const layoutBlog = ({ pageMetadata }: { pageMetadata: PageMetadata }) => [
   {
     ...style,
     "--background-colour": "var(--grey-100)",

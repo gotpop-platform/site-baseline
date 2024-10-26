@@ -16,10 +16,8 @@ import { title } from "@gotpop-platform/package-utilities"
 import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 
 const pageGalleryItem = async ({ slug }: PageProps): Promise<JSX.Element> => {
-  const { htmlSectionsMap, metadata } = parseMarkdownFile("src/content/docs", slug)
-
+  const { htmlSectionsMap, pageMetadata } = parseMarkdownFile("src/content/docs", slug)
   const mainHtml = htmlSectionsMap.get("main")
-  console.log("mainHtml :", mainHtml)
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>
@@ -28,7 +26,7 @@ const pageGalleryItem = async ({ slug }: PageProps): Promise<JSX.Element> => {
           <MobileMenuTrigger />
           <HeaderMegaMenu />
           <Tag tag="main" styles={layoutArticlesSlugSurface}>
-            <GalleryIntro slug={slug} metadata={metadata} htmlContent={mainHtml?.html ?? ""} />
+            <GalleryIntro slug={slug} metadata={pageMetadata} htmlContent={mainHtml?.html ?? ""} />
           </Tag>
           <Footer />
         </div>
