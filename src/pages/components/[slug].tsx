@@ -16,20 +16,24 @@ const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 type ComponentBlock = {
   language?: string
   code?: string
-  component?: any
+  component?: string
   props?: Record<string, any>
   children?: any
 }
 
 type ComponentBlocksType = Map<string, ComponentBlock> | undefined | null
 
-async function loadComponent(componentName: string) {
-  const components = {
-    Button: () => import("@gotpop-platform/package-components").then((mod) => mod.Button),
-    Heading: () => import("@gotpop-platform/package-components").then((mod) => mod.Heading),
-    // Add other components as needed
-  }
+type ComponentMap = {
+  [key: string]: () => Promise<any>
+}
 
+const components: ComponentMap = {
+  Button: () => import("@gotpop-platform/package-components").then((mod) => mod.Button),
+  Heading: () => import("@gotpop-platform/package-components").then((mod) => mod.Heading),
+  // Add other components as needed
+}
+
+async function loadComponent(componentName: string) {
   if (componentName in components) {
     return components[componentName as keyof typeof components]()
   }
@@ -83,8 +87,6 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
     pageMetadata: { title: pageTitle },
     htmlSectionsMap,
   } = parseMarkdownFile(PATH, slug)
-
-  console.log("htmlSectionsMap :", htmlSectionsMap)
 
   const { sectionHtml, sectionComponents } = htmlSectionsMap?.get("main") || {}
   const finalContent = await parseBlockHtml(sectionHtml, sectionComponents)
