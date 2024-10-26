@@ -9,7 +9,7 @@
     "tsc": "tsc"
   },
   "bun": {
-    "version": ">=0.1.0"
+    "version": ">=1.1.33"
   },
   "dependencies": {
     "@gotpop-platform/package-components": "latest",

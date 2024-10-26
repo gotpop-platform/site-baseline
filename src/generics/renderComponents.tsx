@@ -3,12 +3,14 @@ import { type SectionType } from "@gotpop-platform/package-markdown"
 
 type SectionRender = Pick<SectionType, "sectionHtml" | "sectionComponents">
 
+const PACKAGES = "@gotpop-platform/package-components"
+
 const componentsMapping: {
   [key: string]: () => Promise<any>
 } = {
-  Button: () => import("@gotpop-platform/package-components").then((mod) => mod.Button),
-  Heading: () => import("@gotpop-platform/package-components").then((mod) => mod.Heading),
-  CodeBlock: () => import("@gotpop-platform/package-components").then((mod) => mod.CodeBlock),
+  Button: () => import(PACKAGES).then((mod) => mod.Button),
+  Heading: () => import(PACKAGES).then((mod) => mod.Heading),
+  CodeBlock: () => import(PACKAGES).then((mod) => mod.CodeBlock),
 }
 
 async function loadComponent(componentName: string) {
