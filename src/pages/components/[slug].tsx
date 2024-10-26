@@ -39,7 +39,7 @@ async function loadComponent(componentName: string) {
 
 async function parseBlockHtml(
   blockHtml: string = "",
-  componentBlocks: ComponentBlocksType = new Map()
+  sectionComponents: ComponentBlocksType = new Map()
 ) {
   const codeBlockRegex = /(__CODE_BLOCK_\d+__|__SHORTCODE_\d+__)/g
   const parts = blockHtml.split(codeBlockRegex)
@@ -50,9 +50,9 @@ async function parseBlockHtml(
       if (!match) return part
 
       const blockKey = match[0]
-      if (!componentBlocks?.has(blockKey)) return part
+      if (!sectionComponents?.has(blockKey)) return part
 
-      const block = componentBlocks.get(blockKey)
+      const block = sectionComponents.get(blockKey)
       if (!block) return part
 
       if (block.language) {
@@ -86,8 +86,8 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
 
   console.log("htmlSectionsMap :", htmlSectionsMap)
 
-  const { html, componentBlocks } = htmlSectionsMap?.get("main") || {}
-  const finalContent = await parseBlockHtml(html, componentBlocks)
+  const { sectionHtml, sectionComponents } = htmlSectionsMap?.get("main") || {}
+  const finalContent = await parseBlockHtml(sectionHtml, sectionComponents)
 
   return (
     <AppTheme title={title(pageTitle, SITE_NAME)}>
