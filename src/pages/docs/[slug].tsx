@@ -16,9 +16,9 @@ import { title } from "@gotpop-platform/package-utilities"
 import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 
 const pageGalleryItem = async ({ slug }: PageProps): Promise<JSX.Element> => {
-  const { htmlArray, metadata } = parseMarkdownFile("src/content/docs", slug)
+  const { htmlSectionsMap, metadata } = parseMarkdownFile("src/content/docs", slug)
 
-  const mainHtml = htmlArray.get("main")
+  const mainHtml = htmlSectionsMap.get("main")
   console.log("mainHtml :", mainHtml)
 
   return (

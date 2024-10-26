@@ -5,10 +5,11 @@ import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { Tag } from "generics"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { CodeBlock, parseMarkdownFile } from "@gotpop-platform/package-markdown"
+import { parseMarkdownFile } from "@gotpop-platform/package-markdown"
 import { style, title } from "@gotpop-platform/package-utilities"
 import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
 import { MenuSide } from "src/com/MenuSide"
+import { CodeBlock } from "src/com/CodeBlock"
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
@@ -79,11 +80,13 @@ async function parseBlockHtml(
 const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const PATH = "src/content/components"
   const {
-    metadata: { title: pageTitle },
-    htmlArray,
+    pageMetadata: { title: pageTitle },
+    htmlSectionsMap,
   } = parseMarkdownFile(PATH, slug)
 
-  const { html, componentBlocks } = htmlArray?.get("main") || {}
+  console.log("htmlSectionsMap :", htmlSectionsMap)
+
+  const { html, componentBlocks } = htmlSectionsMap?.get("main") || {}
   const finalContent = await parseBlockHtml(html, componentBlocks)
 
   return (
