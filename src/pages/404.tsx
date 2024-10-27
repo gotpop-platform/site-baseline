@@ -2,6 +2,7 @@ import {
   AppTheme,
   Footer,
   GridGap,
+  HeaderMegaMenu,
   // MobileMenuTrigger,
 } from "@gotpop-platform/package-components"
 import { layoutArticlesSlugSurface, stylesBlog } from "variables"
@@ -17,7 +18,7 @@ const NotFoundPage = async () => {
       <GridGap isRoot>
         <div class="graph">
           {/* <MobileMenuTrigger /> */}
-          {/* <HeaderMegaMenu /> */}
+          <HeaderMegaMenu />
           <Tag tag="main" styles={layoutArticlesSlugSurface}>
             <Tag tag="section" styles={stylesBlog}>
               <h1>404 - Page Not Found</h1>
