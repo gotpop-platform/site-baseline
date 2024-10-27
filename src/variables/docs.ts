@@ -1,4 +1,5 @@
-import type { MarkdownFileProps, StyleObjProps } from "@gotpop-platform/package-markdown"
+import type { MarkdownFileProps } from "@gotpop-platform/package-markdown"
+import type { StyleProps } from "types"
 
 export const stylesDocs = {
   "--background-colour": "var(--transparent)",
@@ -30,7 +31,7 @@ const style = {
   "--padding": "var(--spacing-md)",
 }
 
-export const stylesDocsLayout = ({ pageMetadata }: MarkdownFileProps): StyleObjProps[] => [
+export const stylesDocsLayout = ({ pageMetadata }: { pageMetadata: StyleProps }): StyleProps[] => [
   {
     ...style,
     "--background-colour": "var(--grey-100)",

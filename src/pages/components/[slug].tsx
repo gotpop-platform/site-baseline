@@ -1,14 +1,19 @@
-import { AppTheme, Footer, GridGap } from "@gotpop-platform/package-components"
+import {
+  AppTheme,
+  Footer,
+  GridGap,
+  MenuSide,
+  HeaderMegaMenu,
+  renderComponents,
+  Tag,
+} from "@gotpop-platform/package-components"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
-import { renderComponents, Tag } from "generics"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { parseMarkdownFile } from "@gotpop-platform/package-markdown"
 import { style, title } from "@gotpop-platform/package-utilities"
-import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
-import { MenuSide } from "src/com/MenuSide"
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 

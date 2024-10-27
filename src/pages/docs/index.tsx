@@ -1,20 +1,20 @@
 import {
   AppTheme,
-  ArticleItem,
+  MenuSide,
   Footer,
   GridGap,
   MobileMenuTrigger,
+  HeaderMegaMenu,
+  Tag,
+  withItems,
 } from "@gotpop-platform/package-components"
-import { Tag, withItems } from "generics"
-import { stylesDocs, stylesDocsBody, stylesDocsLayout, stylesDocsNav } from "variables"
+import { stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { parseMarkdownFiles, parseMarkdownFile } from "@gotpop-platform/package-markdown"
+import { parseMarkdownFile } from "@gotpop-platform/package-markdown"
 import { title } from "@gotpop-platform/package-utilities"
-import { HeaderMegaMenu } from "src/com/HeaderMegaMenu"
-import { MenuSide } from "src/com/MenuSide"
 
 // const ArticleList = withItems(ArticleItem)
 

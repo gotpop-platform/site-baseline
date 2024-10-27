@@ -2,12 +2,13 @@ import {
   AppTheme,
   Footer,
   GridGap,
+  HeaderMegaMenu,
+  Tag,
   // MobileMenuTrigger,
 } from "@gotpop-platform/package-components"
 import { layoutArticlesSlugSurface, stylesBlog } from "variables"
 
 import { SITE_NAME } from "src/constants"
-import { Tag } from "generics"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
@@ -17,7 +18,7 @@ const NotFoundPage = async () => {
       <GridGap isRoot>
         <div class="graph">
           {/* <MobileMenuTrigger /> */}
-          {/* <HeaderMegaMenu /> */}
+          <HeaderMegaMenu />
           <Tag tag="main" styles={layoutArticlesSlugSurface}>
             <Tag tag="section" styles={stylesBlog}>
               <h1>404 - Page Not Found</h1>

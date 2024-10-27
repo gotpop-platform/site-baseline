@@ -1,6 +1,6 @@
 # Baseline & Animation
 
-This is a demo of baseline type & animation
+This is a demo of baseline types & animation
 
 To install dependencies:
 
