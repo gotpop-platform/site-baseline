@@ -1,8 +1,8 @@
 ---
-section: header
-title: header
-slug: components/hero
-description: This is a description
+section: main
+title: Button
+slug: components/button
+description: This is a button description
 ---
 <!-- header -->
 # Header Section

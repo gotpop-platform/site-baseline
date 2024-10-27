@@ -26,7 +26,6 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
 
   const { sectionHtml, sectionComponents } = htmlSectionsMap.get("main")
   const { finalContent } = await renderComponents({ sectionHtml, sectionComponents })
-  console.log("htmlSectionsMap :", htmlSectionsMap)
 
   return (
     <AppTheme title={title(pageTitle, SITE_NAME)}>
