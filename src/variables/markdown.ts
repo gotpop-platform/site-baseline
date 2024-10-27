@@ -1,10 +1,10 @@
-import type { MarkdownFileProps, StyleObjProps } from "@gotpop-platform/package-markdown"
+import type { StyleProps } from "types"
 
 const style = {
   "--padding": "var(--spacing-md)",
 }
 
-export const stylesLayout = ({ pageMetadata }: MarkdownFileProps): StyleObjProps[] => [
+export const stylesLayout = ({ pageMetadata }: { pageMetadata: StyleProps }): StyleProps[] => [
   {
     ...style,
     "--background-colour": "oklch(0.9 0 0 / 0.6)",
@@ -55,7 +55,11 @@ export const stylesLayout = ({ pageMetadata }: MarkdownFileProps): StyleObjProps
   },
 ]
 
-export const stylesArticlesLayout = ({ pageMetadata }: MarkdownFileProps): StyleObjProps[] => [
+export const stylesArticlesLayout = ({
+  pageMetadata,
+}: {
+  pageMetadata: StyleProps
+}): StyleProps[] => [
   {
     ...style,
     "--background-colour": "var(--grey-100)",

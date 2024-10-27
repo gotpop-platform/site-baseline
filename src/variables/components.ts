@@ -1,5 +1,5 @@
+import { StyleProps } from "types"
 import { surfaceStyles } from "./base"
-import type { MarkdownFileProps, StyleObjProps } from "@gotpop-platform/package-markdown"
 
 const style = {
   "--padding": "var(--spacing-md)",
@@ -7,10 +7,8 @@ const style = {
 
 export const stylesBlog = {
   "--background-colour": "var(--transparent)",
-  // "--border-radius": "var(--radius-sm)",
   "--grid-column": "var(--grid-column-centre)",
   "--grid-row": "main",
-  // "--grid-template-rows": "1rem 1fr 1rem",
 }
 
 export const stylesBlogInner = (id: string) => ({
@@ -30,11 +28,7 @@ export const stylesBlogSurfaceMain = {
   "--grid-row": "main",
 }
 
-interface PageMetadata {
-  id?: string
-}
-
-export const layoutBlog = ({ pageMetadata }: { pageMetadata: PageMetadata }) => [
+export const layoutBlog = ({ pageMetadata }: { pageMetadata: StyleProps }): StyleProps[] => [
   {
     ...style,
     "--background-colour": "var(--grey-100)",
