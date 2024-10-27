@@ -16,10 +16,10 @@
     "version": ">=1.1.33"
   },
   "dependencies": {
-    "@gotpop-platform/package-components": "latest",
-    "@gotpop-platform/package-icons": "latest",
-    "@gotpop-platform/package-jsx-factory": "latest",
-    "@gotpop-platform/package-markdown": "latest",
-    "@gotpop-platform/package-utilities": "latest"
+    "@gotpop-platform/package-components": "1.0.16",
+    "@gotpop-platform/package-icons": "^1.0.0",
+    "@gotpop-platform/package-jsx-factory": "^1.0.9",
+    "@gotpop-platform/package-markdown": "^1.0.17",
+    "@gotpop-platform/package-utilities": "^1.0.15"
   }
 }
