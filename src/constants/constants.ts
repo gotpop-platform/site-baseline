@@ -1,4 +1,5 @@
 // Define and export constants
+
 export const DATE_FORMAT_OPTIONS = {
   year: "numeric",
   month: "long",

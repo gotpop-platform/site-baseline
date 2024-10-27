@@ -8,6 +8,9 @@
     },
     {
       "path": "../../../packages/package-markdown"
+    },
+    {
+      "path": "../../../packages/package-utilities"
     }
   ],
   "settings": {
