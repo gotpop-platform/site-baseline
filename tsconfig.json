@@ -35,8 +35,8 @@
       "types": ["src/types"],
       "utils": ["src/utils"]
     },
-    "typeRoots": ["./src/types"]
+    "typeRoots": ["./src/types", "node_modules/@types"]
   },
-  "include": ["src", "src/**/*", "global.d.ts"],
+  "include": ["src", "src/**/*", "src/types/global.d.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

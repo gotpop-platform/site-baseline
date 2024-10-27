@@ -5,8 +5,9 @@ import {
   GridGap,
   MobileMenuTrigger,
   HeaderMegaMenu,
+  Tag,
+  withItems,
 } from "@gotpop-platform/package-components"
-import { Tag, withItems } from "generics"
 import { layoutBlog, stylesBlogSurfaceMain } from "variables"
 
 import type { PageProps } from "types"

@@ -5,9 +5,10 @@ import {
   GridGap,
   MobileMenuTrigger,
   HeaderMegaMenu,
+  Tag,
+  withItems,
 } from "@gotpop-platform/package-components"
-import { Tag, withItems } from "generics"
-import { stylesDocs, stylesDocsBody, stylesDocsLayout, stylesDocsNav } from "variables"
+import { stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"

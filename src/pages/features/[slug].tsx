@@ -5,6 +5,7 @@ import {
   MobileMenuTrigger,
   TableOfContents,
   HeaderMegaMenu,
+  Tag,
 } from "@gotpop-platform/package-components"
 import {
   layoutArticlesSlugContent,
@@ -14,7 +15,6 @@ import {
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
-import { Tag } from "generics"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { parseMarkdownFile } from "@gotpop-platform/package-markdown"
 import { title } from "@gotpop-platform/package-utilities"

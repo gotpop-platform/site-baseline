@@ -5,8 +5,9 @@ import {
   GridGap,
   HeroItem,
   HeaderMegaMenu,
+  Tag,
+  withItems,
 } from "@gotpop-platform/package-components"
-import { Tag, withItems } from "generics"
 import { styleMain, stylesLayout } from "variables"
 
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
