@@ -39,12 +39,6 @@ if (typeof registerPaint !== "undefined") {
           const color = this.adjustColorBrightness(baseColor, 1 - darknessFactor)
           const rgbaColor = this.rgbToRgba(color, opacity)
 
-          // if ((x = 0 && y == 0)) {
-          //   ctx.fillStyle = red
-          // } else {
-          //   ctx.fillStyle = rgbaColor
-          // }
-
           ctx.fillStyle = rgbaColor
           ctx.fillRect(xOffset + gap / 2, yOffset + gap / 2, tileSize - gap, tileSize - gap)
         }

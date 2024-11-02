@@ -1,10 +1,10 @@
 import {
   AppTheme,
-  MenuSide,
   Footer,
   GridGap,
-  MobileMenuTrigger,
   HeaderMegaMenu,
+  MenuSide,
+  MobileMenuTrigger,
   Tag,
   withItems,
 } from "@gotpop-platform/package-components"
@@ -22,7 +22,6 @@ const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
 const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const { htmlSectionsMap } = parseMarkdownFile("src/content/docs", "getting-started")
-  console.log("htmlSectionsMap :", htmlSectionsMap)
   const mainHtml = htmlSectionsMap.get("main")
 
   return (

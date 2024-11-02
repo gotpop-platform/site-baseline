@@ -1,18 +1,18 @@
 import {
   AppTheme,
   Footer,
-  MenuSide,
-  HeaderMegaMenu,
-  renderComponents,
-  Tag,
   GridFull,
+  HeaderMegaMenu,
+  MenuSide,
+  Tag,
+  renderComponents,
 } from "@gotpop-platform/package-components"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { contentMap } from "@gotpop-platform/package-markdown"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
@@ -21,8 +21,6 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const allContent = await contentMap()
   const { pageMetadata, htmlSectionsMap } = allContent.get("components").get(slug)
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
-
-  // console.log("Nested :", allContent.get("components").get("forms").get(slug))
 
   return (
     <AppTheme title={title(pageMetadata.title, SITE_NAME)}>
