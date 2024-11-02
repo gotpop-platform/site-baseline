@@ -3,22 +3,21 @@ import {
   ArticleItem,
   Footer,
   GridGap,
-  HeroItem,
   HeaderMegaMenu,
+  HeroItem,
   Tag,
   withItems,
 } from "@gotpop-platform/package-components"
 import { styleMain, stylesLayout } from "variables"
 
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { contentMap, parseMarkdownFiles } from "@gotpop-platform/package-markdown"
-import { title } from "@gotpop-platform/package-utilities"
 import { SITE_NAME } from "src/constants"
+import { allContent } from '../../server/serve'
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { title } from "@gotpop-platform/package-utilities"
 
 const ArticleList = withItems(ArticleItem)
 
 const pageIndex = async (): Promise<JSX.Element> => {
-  const allContent = await contentMap()
   const allForms = allContent.get("features")
 
   return (

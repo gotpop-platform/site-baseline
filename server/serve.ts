@@ -1,9 +1,11 @@
+import { contentMap } from "@gotpop-platform/package-markdown"
 import { handleGetAssets } from "./router/handleAssets"
 import { handleGetPages } from "./router/router"
 import { log } from "./logging"
 
 const PORT = 2000
 export const BASE = process.env.BASE_SITE_URL ?? ""
+export let allContent: Map<string, any>
 
 export const router = new Bun.FileSystemRouter({
   style: "nextjs",
@@ -21,8 +23,9 @@ async function serve(request: Request) {
   return handleGetPages(request)
 }
 
-function startServer() {
+async function startServer() {
   try {
+    allContent = await contentMap() // Cache the content map
     Bun.serve({
       hostname: "::",
       port: process.env.PORT ?? PORT,
