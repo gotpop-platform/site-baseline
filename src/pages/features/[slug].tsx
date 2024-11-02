@@ -6,6 +6,7 @@ import {
   TableOfContents,
   HeaderMegaMenu,
   Tag,
+  renderComponents,
 } from "@gotpop-platform/package-components"
 import {
   layoutArticlesSlugContent,
@@ -16,12 +17,14 @@ import {
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { parseMarkdownFile } from "@gotpop-platform/package-markdown"
+import { contentMap } from "@gotpop-platform/package-markdown"
 import { title } from "@gotpop-platform/package-utilities"
 
 const pageArticlePage = async ({ slug }: PageProps): Promise<JSX.Element> => {
-  const { pageMetadata, htmlSectionsMap } = parseMarkdownFile("src/content/features", slug)
-  const { sectionHtml, sectionTableOfContents } = htmlSectionsMap.get("main")
+  const allContent = await contentMap()
+  const { pageMetadata, htmlSectionsMap } = allContent.get("features").get(slug)
+  const { sectionTableOfContents } = htmlSectionsMap.get("main")
+  const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>
@@ -38,7 +41,7 @@ const pageArticlePage = async ({ slug }: PageProps): Promise<JSX.Element> => {
               class="article-body"
               styles={layoutArticlesSlugContent(pageMetadata.id)}
             >
-              {sectionHtml}
+              {finalContent}
             </Tag>
           </Tag>
           <Footer />

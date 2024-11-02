@@ -2,13 +2,13 @@ import {
   AppTheme,
   ArticleItem,
   Footer,
-  GridGap,
   MobileMenuTrigger,
   HeaderMegaMenu,
   Tag,
   withItems,
+  GridFull,
 } from "@gotpop-platform/package-components"
-import { styleArticlesSurfaceMain, stylesArticlesLayout } from "variables"
+import { layoutBlog, stylesBlogSurfaceMain } from "variables"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
@@ -18,24 +18,22 @@ import { title } from "@gotpop-platform/package-utilities"
 
 const ArticleList = withItems(ArticleItem)
 
-const pageArticles = async ({ slug }: PageProps): Promise<JSX.Element> => {
+const pageComponents = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const allContent = await contentMap()
-  const allForms = allContent.get("features")
+  const allForms = allContent.get("components").get("forms")
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>
-      <GridGap isRoot>
-        <div class="graph">
-          <MobileMenuTrigger />
-          <HeaderMegaMenu />
-          <Tag tag="main" styles={styleArticlesSurfaceMain}>
-            <ArticleList markdownItems={allForms} layout={stylesArticlesLayout} />
-          </Tag>
-          <Footer />
-        </div>
-      </GridGap>
+      <GridFull isRoot>
+        <MobileMenuTrigger />
+        <HeaderMegaMenu />
+        <Tag tag="main" styles={stylesBlogSurfaceMain}>
+          <ArticleList markdownItems={allForms} layout={layoutBlog} />
+        </Tag>
+        <Footer />
+      </GridFull>
     </AppTheme>
   )
 }
 
-export default pageArticles
+export default pageComponents
