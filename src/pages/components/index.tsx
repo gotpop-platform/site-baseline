@@ -8,11 +8,11 @@ import {
   Tag,
   withItems,
 } from "@gotpop-platform/package-components"
-import { contentMap, parseMarkdownFiles } from "@gotpop-platform/package-markdown"
 import { layoutBlog, stylesBlogSurfaceMain } from "variables"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
+import { contentMap } from "@gotpop-platform/package-markdown"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
