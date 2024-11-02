@@ -5,7 +5,7 @@ import { log } from "./logging"
 
 const PORT = 2000
 export const BASE = process.env.BASE_SITE_URL ?? ""
-let allContent: Map<string, any>
+export let allContent: Map<string, any>
 
 export const router = new Bun.FileSystemRouter({
   style: "nextjs",

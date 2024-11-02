@@ -11,14 +11,13 @@ import { stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
-import { contentMap } from "@gotpop-platform/package-markdown"
+import { allContent } from '../../../server/serve'
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
 const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
-  const allContent = await contentMap()
   const { pageMetadata, htmlSectionsMap } = allContent.get("components").get(slug)
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 

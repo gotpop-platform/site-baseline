@@ -9,11 +9,11 @@ import {
   Tag,
   withItems,
 } from "@gotpop-platform/package-components"
-import { stylesDocs, stylesDocsBody, stylesDocsLayout, stylesDocsNav } from "variables"
+import { stylesDocs, stylesDocsLayout, stylesDocsNav } from "variables"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
-import { contentMap } from "@gotpop-platform/package-markdown"
+import { allContent } from '../../../server/serve'
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
@@ -21,8 +21,8 @@ const ArticleList = withItems(ArticleItem)
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
+
 const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
-  const allContent = await contentMap()
   const allDocs = allContent.get("docs")
 
   return (

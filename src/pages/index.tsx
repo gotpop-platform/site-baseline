@@ -11,14 +11,13 @@ import {
 import { styleMain, stylesLayout } from "variables"
 
 import { SITE_NAME } from "src/constants"
-import { contentMap } from "@gotpop-platform/package-markdown"
+import { allContent } from '../../server/serve'
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
 const ArticleList = withItems(ArticleItem)
 
 const pageIndex = async (): Promise<JSX.Element> => {
-  const allContent = await contentMap()
   const allForms = allContent.get("features")
 
   return (
