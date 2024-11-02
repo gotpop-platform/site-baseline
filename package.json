@@ -15,6 +15,11 @@
   "bun": {
     "version": ">=1.1.33"
   },
+  "peerDependencies": {
+    "@types/bun": "^1.1.11",
+    "@types/node": "^22.7.4",
+    "typescript": "^4.9.5"
+  },
   "dependencies": {
     "@gotpop-platform/package-components": "latest",
     "@gotpop-platform/package-icons": "latest",
