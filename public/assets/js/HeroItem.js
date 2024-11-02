@@ -10,7 +10,6 @@ class CheckerboardPainter {
   }
 
   paint(ctx, geom, properties) {
-    console.log("ctx :", ctx)
     const size = parseFloat(properties.get("--checkerboard-size").toString())
     const spacing = parseFloat(properties.get("--checkerboard-spacing").toString())
     const colors = [
