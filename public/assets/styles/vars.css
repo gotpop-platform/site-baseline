@@ -99,7 +99,7 @@
 
   /* Scrollbar */
   --scrollbar-width: thin;
-  --scrollbar-gutter: stable both-edges;
+  /* --scrollbar-gutter: stable; */
   --scrollbar-color: var(--slate-300) var(--slate-700);
 
   /* Spacing */

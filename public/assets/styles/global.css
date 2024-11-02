@@ -53,8 +53,9 @@ html {
   interpolate-size: allow-keywords;
   scroll-behavior: smooth;
   scrollbar-color: var(--scrollbar-color);
-  scrollbar-gutter: var(--scrollbar-gutter);
-  scrollbar-width: var(--scrollbar-width);
+  /* scrollbar-gutter: var(--scrollbar-gutter); */
+  scrollbar-gutter: auto;
+  /* scrollbar-width: var(--scrollbar-width); */
 
   @media (width >= 768px) {
     --is-desktop: true;
@@ -101,24 +102,20 @@ body {
     background-position: left 0 top 0rem;
   }
 
-  /* main {
-    gap: 1rem;
-  } */
+  .graph {
+    background: var(--background-graph);
+    background-size: var(--background-graph-size);
+    background-color: var(--white) !important;
+    background-position: left 0 top 0rem;
+  }
 }
 
 .graph {
   grid-template-columns: subgrid;
   grid-template-rows: subgrid;
   grid-row: 1 / -1;
-  grid-column: 2 / -2;
+  grid-column: 1 / -1;
   display: grid;
-
-  background: var(--background-graph);
-  background-size: var(--background-graph-size);
-  background-color: var(--white) !important;
-  background-position: left 0 top 0rem;
-  /* background-position: center top; */
-  /* background-position: left round(50%, 1rem) top; */
 }
 
 .header-mega-menu {

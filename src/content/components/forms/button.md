@@ -1,17 +1,17 @@
 ---
 section: main
-title: Heading
-slug: components/heading
-description: This is a heading description
+title: Button
+slug: components/forms/button
+description: This is a button description
 ---
 <!-- main -->
-## Heading
-This is the documentation for the heading component.
-[<Heading>Heading</Heading>]
+## Button
+This is the documentation for the button component.
+[<Button ignore="true">Click me!!</Button>]
 
 
 ```html
-<Heading ignore="true">Heading</Heading>
+<Button ignore="true">Click me!!</Button>
 ```
 
 ```css

@@ -19,10 +19,8 @@ const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
 const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const allContent = await contentMap()
-  const { pageMetadata, htmlSectionsMap } = allContent.get("components").get(slug)
+  const { pageMetadata, htmlSectionsMap } = allContent.get("components").get("forms").get(slug)
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
-
-  // console.log("Nested :", allContent.get("components").get("forms").get(slug))
 
   return (
     <AppTheme title={title(pageMetadata.title, SITE_NAME)}>

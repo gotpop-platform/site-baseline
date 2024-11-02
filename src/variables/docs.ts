@@ -38,7 +38,7 @@ export const stylesDocsLayout = ({ pageMetadata }: { pageMetadata: StyleProps })
     "--border-radius": "var(--radius-lg) 0 0 0",
     "--grid-column": "1 / span 12",
     "--grid-row": "2",
-    "--transition-article": pageMetadata.id ?? "",
+    "--transition-article": pageMetadata?.id ?? "",
   },
   {
     ...style,
@@ -46,7 +46,7 @@ export const stylesDocsLayout = ({ pageMetadata }: { pageMetadata: StyleProps })
     "--border-radius": "0 var(--radius-lg) 0 0",
     "--grid-column": "1 / span 12",
     "--grid-row": "3",
-    "--transition-article": pageMetadata.id ?? "",
+    "--transition-article": pageMetadata?.id ?? "",
   },
   {
     ...style,
@@ -54,7 +54,7 @@ export const stylesDocsLayout = ({ pageMetadata }: { pageMetadata: StyleProps })
     "--border-radius": "0",
     "--grid-column": "1 / span 12",
     "--grid-row": "4",
-    "--transition-article": pageMetadata.id ?? "",
+    "--transition-article": pageMetadata?.id ?? "",
   },
   {
     ...style,
@@ -62,7 +62,7 @@ export const stylesDocsLayout = ({ pageMetadata }: { pageMetadata: StyleProps })
     "--border-radius": "0",
     "--grid-column": "1 / span 12",
     "--grid-row": "5",
-    "--transition-article": pageMetadata.id ?? "",
+    "--transition-article": pageMetadata?.id ?? "",
   },
   {
     ...style,
@@ -70,7 +70,7 @@ export const stylesDocsLayout = ({ pageMetadata }: { pageMetadata: StyleProps })
     "--border-radius": "0 0 0 var(--radius-lg) ",
     "--grid-column": "1 / span 12",
     "--grid-row": "6",
-    "--transition-article": pageMetadata.id ?? "",
+    "--transition-article": pageMetadata?.id ?? "",
   },
   {
     ...style,
@@ -78,6 +78,6 @@ export const stylesDocsLayout = ({ pageMetadata }: { pageMetadata: StyleProps })
     "--border-radius": "0 0 var(--radius-lg) 0",
     "--grid-column": "1 / span 12",
     "--grid-row": "7",
-    "--transition-article": pageMetadata.id ?? "",
+    "--transition-article": pageMetadata?.id ?? "",
   },
 ]
