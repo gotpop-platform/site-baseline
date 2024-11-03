@@ -34,7 +34,7 @@ const getPageMetadata = (map: Map<string, any>): Map<string, any> => {
 }
 
 const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
-  const { pageMetadata, htmlSectionsMap } = allContent.get("components").get("forms").get(slug)
+  const { pageMetadata, htmlSectionsMap } = allContent.get("components").get("blocks").get(slug)
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 
   const allPageMetadata = getPageMetadata(allContent.get("components"))

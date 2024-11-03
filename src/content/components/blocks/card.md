@@ -1,7 +1,7 @@
 ---
 section: main
 title: Card
-slug: components/card
+slug: components/blocks/card
 description: This is a button description
 ---
 <!-- main -->

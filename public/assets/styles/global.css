@@ -78,38 +78,6 @@ body {
   overflow: hidden auto;
 }
 
-.grid-gap {
-  &::before {
-    content: "";
-    display: block;
-    grid-column: 1 / 2;
-    grid-row: 1 / -1;
-    /* background-color: aqua; */
-    background: var(--background-graph);
-    background-size: var(--background-graph-size);
-    background-color: var(--white) !important;
-    background-position: right 0 top 0rem;
-  }
-  &::after {
-    content: "";
-    display: block;
-    grid-column: -1 / -2;
-    grid-row: 1 / -1;
-    /* background-color: aqua; */
-    background: var(--background-graph);
-    background-size: var(--background-graph-size);
-    background-color: var(--white) !important;
-    background-position: left 0 top 0rem;
-  }
-
-  .graph {
-    background: var(--background-graph);
-    background-size: var(--background-graph-size);
-    background-color: var(--white) !important;
-    background-position: left 0 top 0rem;
-  }
-}
-
 .graph {
   grid-template-columns: subgrid;
   grid-template-rows: subgrid;

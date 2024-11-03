@@ -1,7 +1,7 @@
 ---
 section: main
 title: Heading
-slug: components/heading
+slug: components/blocks/heading
 description: This is a heading description
 ---
 <!-- main -->
