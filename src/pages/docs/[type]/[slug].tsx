@@ -33,10 +33,11 @@ const getPageMetadata = (map: Map<string, any>): Map<string, any> => {
 
 const pageDocItem = async (query: Record<string, string>): Promise<JSX.Element> => {
   const { type, slug } = query
+
   const allDocs = allContent.get("docs")
   const allPageMetadata = getPageMetadata(allDocs)
 
-  const { htmlSectionsMap } = allDocs.get(type).get(slug)
+  const { htmlSectionsMap } = allDocs.get(type ?? "getting-started").get(slug ?? "getting-started")
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 
   return (
