@@ -8,17 +8,14 @@ import {
   MobileMenuTrigger,
   Tag,
   renderComponents,
-  withItems,
 } from "@gotpop-platform/package-components"
-import { stylesDocs, stylesDocsLayout, stylesDocsNav } from "variables"
+import { stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
 
 import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { allContent } from "../../../server/serve"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
-
-const ArticleList = withItems(ArticleItem)
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
@@ -38,9 +35,12 @@ const getPageMetadata = (map: Map<string, any>): Map<string, any> => {
   return result
 }
 
-const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
+const pageDocs = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const allDocs = allContent.get("docs")
   const allPageMetadata = getPageMetadata(allDocs)
+
+  const { htmlSectionsMap } = allDocs.get("getting-started").get("getting-started")
+  const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>
@@ -54,7 +54,9 @@ const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
                 <MenuSide allPageMetadata={allPageMetadata} />
               </Fragment>
             </Tag>
-            <ArticleList markdownItems={allDocs} layout={stylesDocsLayout} />
+            <Tag tag="section" class="docs-body" styles={stylesDocsBody}>
+              {finalContent}
+            </Tag>
           </Tag>
           <Footer />
         </div>
@@ -63,4 +65,4 @@ const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
   )
 }
 
-export default pageGallery
+export default pageDocs

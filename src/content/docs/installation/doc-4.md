@@ -1,10 +1,10 @@
 ---
 id: 4
-title: "Doc 4"
-slug: "/docs/doc-4"
-name: "doc 4"
-prev: "/docs/doc-3"
-next: "/docs/doc-1"
+title: Doc 4
+slug: docs/installation/doc-4
+name: doc 4
+prev: docs/doc-3
+next: docs/doc-1
 description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl in lacinia aliquam, nulla nunc tincidunt nunc, id tincidunt mi nisl a nunc. Nulla facilisi. Sed auctor, nunc nec ultrices aliquet, nisl nunc tincidunt nunc, id tincidunt mi nisl a nunc. Nulla facilisi."
 ---
 <!-- main -->

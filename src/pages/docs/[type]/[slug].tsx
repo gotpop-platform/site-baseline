@@ -10,9 +10,8 @@ import {
 } from "@gotpop-platform/package-components"
 import { layoutArticlesSlugSurface, stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
 
-import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
-import { allContent } from "../../../server/serve"
+import { allContent } from "../../../../server/serve"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
@@ -32,12 +31,12 @@ const getPageMetadata = (map: Map<string, any>): Map<string, any> => {
   return result
 }
 
-const pageDocItem = async ({ slug }: PageProps): Promise<JSX.Element> => {
-  console.log("slug :", slug)
+const pageDocItem = async (query: Record<string, string>): Promise<JSX.Element> => {
+  const { type, slug } = query
   const allDocs = allContent.get("docs")
   const allPageMetadata = getPageMetadata(allDocs)
 
-  const { htmlSectionsMap } = allDocs.get("getting-started").get(slug)
+  const { htmlSectionsMap } = allDocs.get(type).get(slug)
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 
   return (
