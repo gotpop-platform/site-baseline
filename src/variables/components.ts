@@ -1,4 +1,3 @@
-import { StyleProps } from "types"
 import { surfaceStyles } from "./base"
 
 const style = {
@@ -28,7 +27,7 @@ export const stylesBlogSurfaceMain = {
   "--grid-row": "main",
 }
 
-export const layoutBlog = (): StyleProps[] => [
+export const layoutBlog = (): Record<string, string | number>[] => [
   {
     ...style,
     "--background-colour": "var(--grey-100)",

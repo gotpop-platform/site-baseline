@@ -1,10 +1,8 @@
-import type { StyleProps } from "types"
-
 const style = {
   "--padding": "var(--spacing-md)",
 }
 
-export const stylesLayout = ({ pageMetadata }: { pageMetadata: StyleProps }): StyleProps[] => [
+export const stylesLayout = ({ pageMetadata }: { pageMetadata: Record<string, string> }): Record<string, string>[] => [
   {
     ...style,
     "--background-colour": "oklch(0.9 0 0 / 0.6)",
@@ -58,8 +56,8 @@ export const stylesLayout = ({ pageMetadata }: { pageMetadata: StyleProps }): St
 export const stylesArticlesLayout = ({
   pageMetadata,
 }: {
-  pageMetadata: StyleProps
-}): StyleProps[] => [
+  pageMetadata: Record<string, string>
+}): Record<string, string>[] => [
   {
     ...style,
     "--background-colour": "var(--grey-100)",
