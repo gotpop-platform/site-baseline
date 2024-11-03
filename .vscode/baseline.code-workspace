@@ -29,6 +29,8 @@
       "editor.formatOnSave": false,
       "editor.formatOnPaste": false,
       "editor.formatOnType": false
-    }
+    },
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden"
   }
 }
