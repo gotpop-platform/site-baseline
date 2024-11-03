@@ -3,22 +3,23 @@ import {
   ArticleItem,
   Footer,
   GridGap,
-  MobileMenuTrigger,
   HeaderMegaMenu,
+  MobileMenuTrigger,
   Tag,
   withItems,
 } from "@gotpop-platform/package-components"
+import { contentMap, parseMarkdownFiles } from "@gotpop-platform/package-markdown"
 import { styleArticlesSurfaceMain, stylesArticlesLayout } from "variables"
 
-import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { contentMap, parseMarkdownFiles } from "@gotpop-platform/package-markdown"
 import { title } from "@gotpop-platform/package-utilities"
 
 const ArticleList = withItems(ArticleItem)
 
-const pageArticles = async ({ slug }: PageProps): Promise<JSX.Element> => {
+const pageArticles = async (query: Record<string, string>): Promise<JSX.Element> => {
+  const { slug } = query
+
   const allContent = await contentMap()
   const allForms = allContent.get("features")
 

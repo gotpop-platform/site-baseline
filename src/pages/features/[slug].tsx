@@ -2,9 +2,9 @@ import {
   AppTheme,
   Footer,
   GridGap,
+  HeaderMegaMenu,
   MobileMenuTrigger,
   TableOfContents,
-  HeaderMegaMenu,
   Tag,
   renderComponents,
 } from "@gotpop-platform/package-components"
@@ -14,13 +14,13 @@ import {
   layoutArticlesSlugToc,
 } from "variables"
 
-import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { contentMap } from "@gotpop-platform/package-markdown"
+import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
-const pageArticlePage = async ({ slug }: PageProps): Promise<JSX.Element> => {
+const pageArticlePage = async (query: Record<string, string>): Promise<JSX.Element> => {
+  const { slug } = query
   const allContent = await contentMap()
   const { pageMetadata, htmlSectionsMap } = allContent.get("features").get(slug)
   const { sectionTableOfContents } = htmlSectionsMap.get("main")

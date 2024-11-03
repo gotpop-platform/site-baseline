@@ -1,6 +1,5 @@
 import {
   AppTheme,
-  ArticleItem,
   Footer,
   GridGap,
   HeaderMegaMenu,
@@ -8,19 +7,13 @@ import {
   MobileMenuTrigger,
   Tag,
   renderComponents,
-  withItems,
 } from "@gotpop-platform/package-components"
-import { stylesDocs, stylesDocsLayout, stylesDocsNav } from "variables"
+import { layoutArticlesSlugSurface, stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
 
-import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
-import { allContent } from "../../../server/serve"
+import { allContent } from "../../../../server/serve"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
-
-const ArticleList = withItems(ArticleItem)
-
-const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
 const getPageMetadata = (map: Map<string, any>): Map<string, any> => {
   const result = new Map<string, any>()
@@ -38,9 +31,14 @@ const getPageMetadata = (map: Map<string, any>): Map<string, any> => {
   return result
 }
 
-const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
+const pageDocItem = async (query: Record<string, string>): Promise<JSX.Element> => {
+  const { type, slug } = query
+
   const allDocs = allContent.get("docs")
   const allPageMetadata = getPageMetadata(allDocs)
+
+  const { htmlSectionsMap } = allDocs.get(type ?? "getting-started").get(slug ?? "getting-started")
+  const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>
@@ -50,11 +48,11 @@ const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
           <HeaderMegaMenu />
           <Tag tag="main" styles={stylesDocs}>
             <Tag tag="aside" class="docs-nav" styles={stylesDocsNav}>
-              <Fragment>
-                <MenuSide allPageMetadata={allPageMetadata} />
-              </Fragment>
+              <MenuSide allPageMetadata={allPageMetadata} />
             </Tag>
-            <ArticleList markdownItems={allDocs} layout={stylesDocsLayout} />
+            <Tag tag="section" class="docs-body" styles={stylesDocsBody}>
+              {finalContent}
+            </Tag>
           </Tag>
           <Footer />
         </div>
@@ -63,4 +61,4 @@ const pageGallery = async ({ slug }: PageProps): Promise<JSX.Element> => {
   )
 }
 
-export default pageGallery
+export default pageDocItem

@@ -9,7 +9,6 @@ import {
 } from "@gotpop-platform/package-components"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
 
-import type { PageProps } from "types"
 import { SITE_NAME } from "src/constants"
 import { allContent } from "../../../../server/serve"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
@@ -33,11 +32,19 @@ const getPageMetadata = (map: Map<string, any>): Map<string, any> => {
   return result
 }
 
-const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
-  const { pageMetadata, htmlSectionsMap } = allContent.get("components").get("forms").get(slug)
-  const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
+const pageComponents = async (query: Record<string, string>): Promise<JSX.Element> => {
+  const { type, slug } = query
+  console.log("query :", query)
 
-  const allPageMetadata = getPageMetadata(allContent.get("components"))
+  const allComponents = allContent.get("components")
+  console.log("allComponents :", allComponents)
+  const allPageMetadata = getPageMetadata(allComponents)
+
+  //  allComponents.get(type ?? "button")
+  console.log('allComponents.get(type ?? "button") :', allComponents.get(type ?? "button"))
+
+  const { pageMetadata, htmlSectionsMap } = allComponents.get(type ?? "forms").get(slug ?? "button")
+  const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 
   return (
     <AppTheme title={title(pageMetadata.title, SITE_NAME)}>
@@ -59,4 +66,4 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
   )
 }
 
-export default pageComponent
+export default pageComponents
