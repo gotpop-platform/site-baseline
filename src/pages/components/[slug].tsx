@@ -38,7 +38,6 @@ const pageComponent = async ({ slug }: PageProps): Promise<JSX.Element> => {
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 
   const allPageMetadata = getPageMetadata(allContent.get("components"))
-  console.log("allPageMetadata :", allPageMetadata)
 
   return (
     <AppTheme title={title(pageMetadata.title, SITE_NAME)}>

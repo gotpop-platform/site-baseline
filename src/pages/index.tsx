@@ -11,7 +11,7 @@ import {
 import { styleMain, stylesLayout } from "variables"
 
 import { SITE_NAME } from "src/constants"
-import { allContent } from '../../server/serve'
+import { allContent } from "../../server/serve"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
@@ -23,14 +23,12 @@ const pageIndex = async (): Promise<JSX.Element> => {
   return (
     <AppTheme title={title("Home", SITE_NAME)}>
       <GridGap isRoot>
-        <div class="graph">
-          <HeaderMegaMenu />
-          <Tag tag="main" styles={styleMain}>
-            <HeroItem />
-            <ArticleList markdownItems={allForms} layout={stylesLayout} />
-          </Tag>
-          <Footer />
-        </div>
+        <HeaderMegaMenu />
+        <Tag tag="main" styles={styleMain}>
+          <HeroItem />
+          <ArticleList markdownItems={allForms} layout={stylesLayout} />
+        </Tag>
+        <Footer />
       </GridGap>
     </AppTheme>
   )
