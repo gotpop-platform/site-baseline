@@ -1,4 +1,5 @@
 import { block } from "src/blocks/Home/Home"
+import { blockPageComponents } from "src/blocks/Components/Components"
 import { blockPageDocItem } from "src/blocks/Docs/Docs"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
@@ -15,13 +16,17 @@ const pageIndex = async (query: Record<string, string>): Promise<JSX.Element> =>
   // }
 
   // Handle home page
-  if (slug === "/") {
+  if (slug === "favicon.ico") {
     return block({ slug: "/" })
   }
 
-  // if (slug.startsWith("docs")) {
-  //   return blockPageDocItem(query)
-  // }
+  if (slug.startsWith("docs")) {
+    return blockPageDocItem(query)
+  }
+
+  if (slug.startsWith("components")) {
+    return blockPageComponents(query)
+  }
 
   return block(query)
 }

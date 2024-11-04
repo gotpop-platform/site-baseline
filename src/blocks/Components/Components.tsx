@@ -33,18 +33,46 @@ const getPageMetadata = (map: Map<string, any>): Map<string, any> => {
 }
 
 export const blockPageComponents = async (query: Record<string, string>): Promise<JSX.Element> => {
-  const { type, slug } = query
-  console.log("query :", query)
+  const { slug } = query
 
-  const allComponents = allContent.get("components")
-  console.log("allComponents :", allComponents)
-  const allPageMetadata = getPageMetadata(allComponents)
+  // Handle root level 'docs' path
+  const defaultPath = ["components", "forms", "button"]
+  const segments = slug === "components" ? defaultPath : slug?.split("/") || defaultPath
 
-  //  allComponents.get(type ?? "button")
-  console.log('allComponents.get(type ?? "button") :', allComponents.get(type ?? "button"))
+  const [root, ...rest] = segments
+  const docSlug = rest.pop() || "button"
+  const directories = rest
 
-  const { pageMetadata, htmlSectionsMap } = allComponents.get(type ?? "forms").get(slug ?? "button")
-  const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
+  const allDocs = allContent.get(root)
+  const allPageMetadata = getPageMetadata(allDocs)
+
+  let currentLevel = allDocs
+  for (const dir of directories) {
+    currentLevel = currentLevel?.get(dir)
+    if (!currentLevel) {
+      throw new Error(`Directory "${dir}" not found`)
+    }
+  }
+
+  const docItem = currentLevel.get(docSlug)
+  if (!docItem) {
+    throw new Error(`Document "${docSlug}" not found in path ${directories.join("/")}`)
+  }
+
+  console.log("docItem structure:", JSON.stringify(docItem, null, 2))
+
+  if (!docItem.htmlSectionsMap) {
+    throw new Error(`No htmlSectionsMap found for document "${docSlug}"`)
+  }
+
+  const { pageMetadata, htmlSectionsMap } = docItem
+  const mainContent = htmlSectionsMap.get("main")
+
+  if (!mainContent) {
+    throw new Error(`No main content found in htmlSectionsMap for "${docSlug}"`)
+  }
+
+  const { finalContent } = await renderComponents(mainContent)
 
   return (
     <AppTheme title={title(pageMetadata.title, SITE_NAME)}>

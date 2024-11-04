@@ -33,7 +33,7 @@ export const handleGetPages = async (
       )
       return INTERNAL_SERVER_ERROR_RESPONSE
     }
-    console.log('route.query :', route.query);
+    // console.log('route:', route);
     
     const response = await module
       .default(route.query)

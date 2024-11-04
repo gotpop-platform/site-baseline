@@ -8,12 +8,14 @@ import {
   Tag,
   renderComponents,
 } from "@gotpop-platform/package-components"
-import { layoutArticlesSlugSurface, stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
+import { stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
 
 import { SITE_NAME } from "src/constants"
 import { allContent } from "../../../server/serve"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
+
+// import { title } from "@gotpop-platform/package-utilities"
 
 const getPageMetadata = (map: Map<string, any>): Map<string, any> => {
   const result = new Map<string, any>()
@@ -32,13 +34,46 @@ const getPageMetadata = (map: Map<string, any>): Map<string, any> => {
 }
 
 export const blockPageDocItem = async (query: Record<string, string>): Promise<JSX.Element> => {
-  const { type, slug } = query
+  const { slug } = query
 
-  const allDocs = allContent.get("docs")
+  // Handle root level 'docs' path
+  const defaultPath = ["docs", "getting-started", "getting-started"]
+  const segments = slug === "docs" ? defaultPath : slug?.split("/") || defaultPath
+
+  const [root, ...rest] = segments
+  const docSlug = rest.pop() || "getting-started"
+  const directories = rest
+
+  const allDocs = allContent.get(root)
   const allPageMetadata = getPageMetadata(allDocs)
 
-  const { htmlSectionsMap } = allDocs.get(type ?? "getting-started").get(slug ?? "getting-started")
-  const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
+  let currentLevel = allDocs
+  for (const dir of directories) {
+    currentLevel = currentLevel?.get(dir)
+    if (!currentLevel) {
+      throw new Error(`Directory "${dir}" not found`)
+    }
+  }
+
+  const docItem = currentLevel.get(docSlug)
+  if (!docItem) {
+    throw new Error(`Document "${docSlug}" not found in path ${directories.join("/")}`)
+  }
+
+  console.log("docItem structure:", JSON.stringify(docItem, null, 2))
+
+  if (!docItem.htmlSectionsMap) {
+    throw new Error(`No htmlSectionsMap found for document "${docSlug}"`)
+  }
+
+  const { htmlSectionsMap } = docItem
+  const mainContent = htmlSectionsMap.get("main")
+
+  if (!mainContent) {
+    throw new Error(`No main content found in htmlSectionsMap for "${docSlug}"`)
+  }
+
+  const { finalContent } = await renderComponents(mainContent)
 
   return (
     <AppTheme title={title(slug, SITE_NAME)}>
