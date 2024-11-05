@@ -1,19 +1,14 @@
 import { block } from "src/blocks/Home/Home"
+import { blockNotFoundPage } from "src/blocks/NotFound/404"
 import { blockPageComponents } from "src/blocks/Components/Components"
 import { blockPageDocItem } from "src/blocks/Docs/Docs"
 import { blockPageFeaturePage } from "src/blocks/Features/FeaturesPage"
 import { blockPageFeaturesIndex } from "src/blocks/Features/FeaturesIndex"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 export const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
 const pageIndex = async (query: Record<string, string>): Promise<JSX.Element> => {
   const { slug } = query
-
-  // Handle home page
-  if (slug === "favicon.ico") {
-    return block({ slug: "/" })
-  }
 
   if (slug.startsWith("docs")) {
     return blockPageDocItem(query)
@@ -29,6 +24,10 @@ const pageIndex = async (query: Record<string, string>): Promise<JSX.Element> =>
     } else {
       return blockPageFeaturePage(query)
     }
+  }
+
+  if (slug === "404") {
+    return blockNotFoundPage(query)
   }
 
   return block(query)
