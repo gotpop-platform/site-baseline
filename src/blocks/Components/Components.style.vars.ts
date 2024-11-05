@@ -1,4 +1,4 @@
-import { surfaceStyles } from "./base"
+import { surfaceStyles } from "../Home"
 
 const style = {
   "--padding": "var(--spacing-md)",

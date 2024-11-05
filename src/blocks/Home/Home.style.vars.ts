@@ -1,4 +1,9 @@
-import { surfaceStyles } from "./base"
+export const surfaceStyles = {
+  "--grid-template-rows": "1rem 1fr 1rem",
+  "--grid-column": "center",
+  "--background-colour": "var(--slate-400)",
+  "--border-radius": "var(--radius-lg)",
+}
 
 export const styleMain = {
   "--display": "grid",
@@ -7,16 +12,9 @@ export const styleMain = {
   "--grid-row": "main",
   "--grid-template-rows":
     "min-content var(--spacing-md) min-content 1rem min-content 1rem min-content",
-  // "--row-gap": "var(--spacing-md)",
   "--background-colour": "var(--transparent)",
   "--border-radius": "var(--radius-md)",
 }
-
-// export const styleHero = {
-//   ...surfaceStyles,
-//   "--grid-row": "2",
-//   "--background-colour": "var(--transparent)",
-// }
 
 export const styleSurfaceMain = {
   ...surfaceStyles,

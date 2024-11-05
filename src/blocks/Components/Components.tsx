@@ -7,7 +7,7 @@ import {
   Tag,
   renderComponents,
 } from "@gotpop-platform/package-components"
-import { stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
+import { stylesDocs, stylesDocsBody, stylesDocsNav } from "../Docs/Docs.style.vars"
 
 import { SITE_NAME } from "src/constants"
 import { allContent } from "../../../server/serve"

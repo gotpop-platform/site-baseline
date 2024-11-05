@@ -8,11 +8,7 @@ import {
   Tag,
   renderComponents,
 } from "@gotpop-platform/package-components"
-import {
-  layoutArticlesSlugContent,
-  layoutArticlesSlugSurface,
-  layoutArticlesSlugToc,
-} from "variables"
+import { layoutArticlesSlugContent, layoutArticlesSlugSurface, layoutArticlesSlugToc } from "."
 
 import { SITE_NAME } from "src/constants"
 import { contentMap } from "@gotpop-platform/package-markdown"

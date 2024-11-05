@@ -8,7 +8,7 @@ import {
   Tag,
   withItems,
 } from "@gotpop-platform/package-components"
-import { styleMain, stylesLayout } from "variables"
+import { styleMain, stylesLayout } from "."
 
 import { SITE_NAME } from "src/constants"
 import { allContent } from "../../../server/serve"

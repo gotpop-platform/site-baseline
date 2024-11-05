@@ -1,9 +1,11 @@
-import { block } from "src/blocks/Home/Home"
-import { blockNotFoundPage } from "src/blocks/NotFound/404"
-import { blockPageComponents } from "src/blocks/Components/Components"
-import { blockPageDocItem } from "src/blocks/Docs/Docs"
-import { blockPageFeaturePage } from "src/blocks/Features/FeaturesPage"
-import { blockPageFeaturesIndex } from "src/blocks/Features/FeaturesIndex"
+import {
+  block,
+  blockNotFoundPage,
+  blockPageComponents,
+  blockPageDocItem,
+  blockPageFeaturePage,
+  blockPageFeaturesIndex,
+} from "blocks"
 
 export const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 

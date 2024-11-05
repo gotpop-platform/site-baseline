@@ -8,14 +8,12 @@ import {
   Tag,
   renderComponents,
 } from "@gotpop-platform/package-components"
-import { stylesDocs, stylesDocsBody, stylesDocsNav } from "variables"
+import { stylesDocs, stylesDocsBody, stylesDocsNav } from "."
 
 import { SITE_NAME } from "src/constants"
 import { allContent } from "../../../server/serve"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
-
-// import { title } from "@gotpop-platform/package-utilities"
 
 const getPageMetadata = (map: Map<string, any>): Map<string, any> => {
   const result = new Map<string, any>()

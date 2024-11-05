@@ -1,5 +1,5 @@
 import { AppTheme, Footer, GridGap, HeaderMegaMenu, Tag } from "@gotpop-platform/package-components"
-import { layoutArticlesSlugSurface, stylesBlog } from "variables"
+import { layoutArticlesSlugSurface, stylesBlog } from "blocks"
 
 import { SITE_NAME } from "src/constants"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
