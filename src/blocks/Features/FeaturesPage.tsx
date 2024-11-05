@@ -19,10 +19,12 @@ import { contentMap } from "@gotpop-platform/package-markdown"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
-export const blockPageArticlePage = async (query: Record<string, string>): Promise<JSX.Element> => {
+export const blockPageFeaturePage = async (query: Record<string, string>): Promise<JSX.Element> => {
   const { slug } = query
+  const [root, pageSlug] = slug.split("/")
+
   const allContent = await contentMap()
-  const { pageMetadata, htmlSectionsMap } = allContent.get("features").get(slug)
+  const { pageMetadata, htmlSectionsMap } = allContent.get(root).get(pageSlug)
   const { sectionTableOfContents } = htmlSectionsMap.get("main")
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 
