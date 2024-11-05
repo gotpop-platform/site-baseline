@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "bun --watch --inspect server/serve.ts",
     "start": "bun server/serve.ts",
+    "make": "bun run ./server/build/build.ts",
     "tsc": "tsc"
   },
   "prettier": {
@@ -13,7 +14,7 @@
     "semi": false
   },
   "bun": {
-    "version": ">=1.1.33"
+    "version": ">=1.1.34"
   },
   "peerDependencies": {
     "@types/bun": "^1.1.11",
