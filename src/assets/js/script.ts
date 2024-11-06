@@ -1,4 +1,4 @@
-function handleResize(entries) {
+function handleResize(entries: any) {
   for (let entry of entries) {
     const width = entry.contentRect.width
 

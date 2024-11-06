@@ -7,7 +7,7 @@ import {
   getBaseDomain,
   importModule,
 } from "./routerHelpers"
-import { inspect, styleText } from "node:util"
+import { inspect, styleText as sty } from "node:util"
 
 // type StyleArrayType =
 
@@ -38,6 +38,10 @@ export const handleGetPages = async (request: Request): Promise<Response> => {
     }
 
     // Customize the styles
+
+    const inStyles = Object.keys(util.inspect.styles)
+    const ins = util.inspect.styles
+    console.log("inStyles :", inStyles)
     util.inspect.styles.string = "green"
     util.inspect.styles.number = "blue"
     util.inspect.styles.boolean = "red"
@@ -57,11 +61,9 @@ export const handleGetPages = async (request: Request): Promise<Response> => {
     // Inspect the object with custom styles
     console.log(inspect(obj, { colors: true }))
 
-    const successMessage = styleText("green", "Success!")
-    console.log(successMessage)
+    console.log(sty("green", "Success!"))
 
-    const testMessage = styleText("bgMagenta", styleText("italic", "My italic underlined message"))
-    console.table(testMessage)
+    console.log(sty("bgMagenta", sty("italic", "My italic underlined message")))
 
     const response = await module.default(route.query).catch((e: Error) => {
       console.error("Error calling default export:", e)
