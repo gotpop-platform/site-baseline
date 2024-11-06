@@ -101,15 +101,16 @@ const createCopyFilesPlugin = (options: CopyFilesPluginOptions): BunPlugin => ({
 
 // Usage example
 await Bun.build({
-  entrypoints: ["src/assets/js/script.ts"],
+  entrypoints: ["src/assets/js/script.ts", "src/assets/js/worklets/grid.ts"],
   outdir: "dist",
   root: "./src",
   naming: "[dir]/[name]-[hash].[ext]",
+  experimentalCss: true,
   plugins: [
     createCopyFilesPlugin({
       inputDir: "src/assets",
       outputDir: "dist/assets",
-      directories: ["fonts", "img"],
+      directories: ["fonts", "img", "styles"],
       preserveStructure: true,
       verbose: true,
       onFile: async (src, dest) => {

@@ -1,4 +1,5 @@
-/* grid.js */
+/// <reference path="../../../types/houdini.d.ts" />
+
 if (typeof registerPaint !== "undefined") {
   class GridPainter {
     static get inputProperties() {
@@ -12,7 +13,19 @@ if (typeof registerPaint !== "undefined") {
       ]
     }
 
-    paint(ctx, geom, properties) {
+    paint(
+      ctx: {
+        beginPath: () => void
+        moveTo: (arg0: number, arg1: number) => void
+        lineTo: (arg0: number, arg1: number) => void
+        strokeStyle: any
+        stroke: () => void
+      },
+      geom: { width: number; height: number },
+      properties: {
+        get: (arg0: string) => { (): any; new (): any; toString: { (): string; new (): any } }
+      }
+    ) {
       const baseColor =
         properties.get("--grid-base-color").toString().trim() || "rgba(115, 92, 221, 0.4)"
 
@@ -55,7 +68,7 @@ if (typeof registerPaint !== "undefined") {
       }
     }
 
-    rgbToRgba(rgb, alpha) {
+    rgbToRgba(rgb: string, alpha: any) {
       const rgbValues = rgb.match(/\d+/g)
       if (rgbValues === null || rgbValues.length !== 3) {
         throw new Error("Invalid RGB color format")
@@ -64,7 +77,7 @@ if (typeof registerPaint !== "undefined") {
       return `rgba(${r}, ${g}, ${b}, ${alpha})`
     }
 
-    adjustColorBrightness(rgb, factor) {
+    adjustColorBrightness(rgb: string, factor: number) {
       const rgbValues = rgb.match(/\d+/g)
       if (rgbValues === null || rgbValues.length !== 3) {
         throw new Error("Invalid RGB color format")
