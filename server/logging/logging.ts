@@ -1,70 +1,87 @@
-import * as path from "path"
+import { inspect, styleText } from "util"
 
-import { colour, emoji } from "./logging.style"
+type ForegroundColors =
+  | "black"
+  | "blackBright"
+  | "blue"
+  | "blueBright"
+  | "cyan"
+  | "cyanBright"
+  | "gray"
+  | "green"
+  | "greenBright"
+  | "grey"
+  | "magenta"
+  | "magentaBright"
+  | "red"
+  | "redBright"
+  | "white"
+  | "whiteBright"
+  | "yellow"
+  | "yellowBright"
+// https://nodejs.org/docs/latest/api/util.html#background-colors
+type BackgroundColors =
+  | "bgBlack"
+  | "bgBlackBright"
+  | "bgBlue"
+  | "bgBlueBright"
+  | "bgCyan"
+  | "bgCyanBright"
+  | "bgGray"
+  | "bgGreen"
+  | "bgGreenBright"
+  | "bgGrey"
+  | "bgMagenta"
+  | "bgMagentaBright"
+  | "bgRed"
+  | "bgRedBright"
+  | "bgWhite"
+  | "bgWhiteBright"
+  | "bgYellow"
+  | "bgYellowBright"
+// https://nodejs.org/docs/latest/api/util.html#modifiers
+type Modifiers =
+  | "blink"
+  | "bold"
+  | "dim"
+  | "doubleunderline"
+  | "framed"
+  | "hidden"
+  | "inverse"
+  | "italic"
+  | "overlined"
+  | "reset"
+  | "strikethrough"
+  | "underline"
 
-const { red, dim, reset, green, bright, grey, italic, underscore } = colour
+type StyleType =
+  | ForegroundColors
+  | BackgroundColors
+  | Modifiers
+  | Array<ForegroundColors | BackgroundColors | Modifiers>
 
-const info = (msg: string) => console.info(msg)
-const warn = (msg: string) => console.warn(msg)
-const success = (msg: string) => console.log(green + msg)
+export const logObject = (obj: Record<string, string>) => {
+  const { styles } = inspect
 
-const error = (msg: string, error?: unknown) => {
-  console.error(red + msg + error)
+  styles.string = "green"
+  styles.number = "blue"
+  styles.boolean = "red"
+  styles.date = "magenta"
+  styles.null = "bgCyan"
+  styles.undefined = "bgYellow"
+
+  console.log(inspect(obj, { colors: true }))
 }
 
-const listening = (msg1: string, msg2: string) => {
-  let log = "\n" + green + italic + msg1 + reset + "\n"
-  log += underscore + msg2 + reset + " " + emoji.check + "\n"
+type LoggerType = Array<{ msg: string; styles: StyleType[] }>
 
-  console.log(log)
-}
-
-const watchStart = () => {
-  const log = bright + "Watching client files:\n" + reset
-
-  console.log(log)
-}
-
-const watching = (filePath: string) => {
-  const url = new URL(`file://${path.resolve(process.cwd(), filePath)}`)
-  const pathname = url.pathname
-  const filename = pathname.split("/").pop()
-
-  let log = grey + filename + reset + " " + emoji.watch
-
-  console.log(log)
-}
-
-const watchEnd = () => {
-  const log = bright + "\nPress Ctrl+C to stop\n" + reset
-
-  console.log(log)
-}
-
-const updated = (msg: string) => {
-  const theMsg = msg.replace("components/", "")
-
-  console.log(grey + theMsg + emoji.checkMark)
-}
-
-const closing = (msg: string) => {
-  let log = "\n" + dim + msg + dim + red + "  "
-  log += emoji.cross + reset + "\n"
-
-  console.error(log)
-}
-
-const log = {
-  closing,
-  error,
-  info,
-  listening,
-  success,
-  updated,
-  warn,
-  watching,
-  watchStart,
-  watchEnd,
-}
-
-export { log }
+export const logger = (...items: LoggerType) =>
+  console.log(
+    items
+      .map(({ msg, styles }, index) => {
+        const withNewlines =
+          (index === 0 ? "\n" : "") + msg + (index === items.length - 1 ? "\n" : "")
+        return styles.reduce((text, style) => styleText(style, text), withNewlines)
+      })
+      .join(" ")
+  )

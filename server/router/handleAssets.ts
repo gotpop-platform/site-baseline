@@ -1,5 +1,7 @@
+import { join } from "path"
+
 export function handleGetAssets(url: URL) {
-  const pathRenamedToPublic = `./public${url.pathname}`
+  const pathRenamedToPublic = join(process.cwd(), "public", url.pathname)
   const file = Bun.file(pathRenamedToPublic)
 
   const headers = {

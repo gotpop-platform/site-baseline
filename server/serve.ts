@@ -1,22 +1,27 @@
+import { PAGES_DIR, PORT, ROUTER_STYLE } from "src/constants"
+
 import { contentMap } from "@gotpop-platform/package-markdown"
 import { handleGetAssets } from "./router/handleAssets"
 import { handleGetPages } from "./router/router"
-import { log } from "./logging"
+import { logger } from "./logging"
 
-const PORT = 2000
+type ContentMap = Map<string, any>
+
 export const BASE = process.env.BASE_SITE_URL ?? ""
-export let allContent: Map<string, any>
+export let allContent: ContentMap
 
 export const router = new Bun.FileSystemRouter({
-  style: "nextjs",
-  dir: process.cwd() + "/src/pages",
+  style: ROUTER_STYLE,
+  dir: PAGES_DIR,
 })
 
-async function serve(request: Request) {
-  const url = new URL(request.url)
-  const isAssets = url.pathname.startsWith("/assets")
+const assetExtensions = new Set(["jpg", "jpeg", "png", "gif", "svg", "css", "js", "woff", "woff2"])
 
-  if (isAssets) {
+async function servePagesOrAssets(request: Request) {
+  const url = new URL(request.url)
+  const extension = url.pathname.split(".").pop()?.toLowerCase()
+
+  if (extension && assetExtensions.has(extension)) {
     return handleGetAssets(url)
   }
 
@@ -25,18 +30,23 @@ async function serve(request: Request) {
 
 async function startServer() {
   try {
-    allContent = await contentMap() // Cache the content map
+    // Cache the content map
+    allContent = await contentMap()
+
     Bun.serve({
       hostname: "::",
       port: process.env.PORT ?? PORT,
       async fetch(request) {
-        return serve(request)
+        return servePagesOrAssets(request)
       },
     })
 
-    log.listening("Listening on port:", `${PORT}`)
+    logger(
+      { msg: "Server started:", styles: ["green", "bold"] },
+      { msg: "http://localhost:2000", styles: ["dim"] }
+    )
   } catch (error) {
-    log.error("Failed to start server:", error)
+    logger({ msg: String(error), styles: ["bold", "red"] })
   }
 }
 
