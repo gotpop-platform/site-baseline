@@ -1,4 +1,4 @@
-import { createCopyFilesPlugin } from "../../plugins/copy-assets"
+import { createCopyFilesPlugin } from "@gotpop-platform/bun-plugin-copy-assets"
 
 await Bun.build({
   entrypoints: ["src/assets/js/script.ts", "src/assets/js/worklets/grid.ts"],

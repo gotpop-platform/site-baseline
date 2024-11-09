@@ -4,9 +4,9 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "bun --watch --inspect server/serve.ts",
-    "start": "bun server/serve.ts",
-    "make": "bun run ./server/build/build.ts",
+    "dev": "bun --watch --inspect serve.ts",
+    "start": "bun serve.ts",
+    "make": "bun build.ts",
     "tsc": "tsc"
   },
   "prettier": {

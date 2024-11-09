@@ -11,7 +11,7 @@ import { getPageMetadata, title } from "@gotpop-platform/package-utilities"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "../Docs/Docs.style.vars"
 
 import { SITE_NAME } from "src/constants"
-import { allContent } from "../../../server/serve"
+import { allContent } from "../../../serve"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null

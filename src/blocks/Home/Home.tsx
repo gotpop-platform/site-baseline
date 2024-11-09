@@ -11,7 +11,7 @@ import {
 import { styleMain, stylesLayout } from "."
 
 import { SITE_NAME } from "src/constants"
-import { allContent } from "../../../server/serve"
+import { allContent } from "../../../serve"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
