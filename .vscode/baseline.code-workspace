@@ -11,10 +11,19 @@
     },
     {
       "path": "../../../packages/package-utilities"
+    },
+    {
+      "path": "../../../packages/package-server"
+    },
+    {
+      "path": "../../../packages/bun-plugin-copy-assets"
+    },
+    {
+      "path": "../../../packages/package-logger"
     }
   ],
   "settings": {
-    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.colorTheme": "Moonlight II",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "editor.codeActionsOnSave": {
