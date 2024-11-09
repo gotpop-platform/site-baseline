@@ -27,7 +27,7 @@
     "@gotpop-platform/package-jsx-factory": "latest",
     "@gotpop-platform/package-logger": "1.0.10",
     "@gotpop-platform/package-markdown": "latest",
-    "@gotpop-platform/package-server": "1.0.3",
+    "@gotpop-platform/package-server": "1.0.4",
     "@gotpop-platform/package-utilities": "latest"
   }
 }
