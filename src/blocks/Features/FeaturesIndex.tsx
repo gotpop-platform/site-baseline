@@ -17,16 +17,17 @@ import { title } from "@gotpop-platform/package-utilities"
 
 const ArticleList = withItems(ArticleItem)
 
-export const blockPageFeaturesIndex = async (
-  query: Record<string, string>
-): Promise<JSX.Element> => {
-  const { slug } = query
+export const blockPageFeaturesIndex = async (data: {
+  query: { slug: any }
+  scriptPaths: Record<string, string>[]
+}): Promise<JSX.Element> => {
+  const { slug } = data.query
 
   const allContent = await contentMap()
   const allForms = allContent.get("features")
 
   return (
-    <AppTheme title={title(slug, SITE_NAME)}>
+    <AppTheme title={title(slug, SITE_NAME)} scriptPaths={data.scriptPaths}>
       <GridGap isRoot>
         <div class="graph">
           <MobileMenuTrigger />

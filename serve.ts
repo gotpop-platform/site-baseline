@@ -1,6 +1,7 @@
 import { PORT } from "src/constants"
 import { contentMap } from "@gotpop-platform/package-markdown"
 import { logger } from "@gotpop-platform/package-logger"
+import { scriptPaths } from "./build"
 import { servePagesOrAssets } from "@gotpop-platform/package-server"
 
 type ContentMap = Map<string, any>
@@ -17,7 +18,7 @@ async function startServer() {
       hostname: "::",
       port: process.env.PORT ?? PORT,
       async fetch(request) {
-        return servePagesOrAssets(request)
+        return servePagesOrAssets({ request, allContent, scriptPaths })
       },
     })
 

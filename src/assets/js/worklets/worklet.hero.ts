@@ -11,7 +11,14 @@ if (typeof registerPaint !== "undefined") {
       ]
     }
 
-    paint(ctx, geom, properties) {
+    paint(
+      ctx: {
+        fillStyle: string
+        fillRect: (arg0: number, arg1: number, arg2: number, arg3: number) => void
+      },
+      geom: { width: number; height: number },
+      properties: { get: (arg0: string) => string }
+    ) {
       const tileSize = parseInt(properties.get("--bytemare-tile-size")) || 20
       const gap = parseInt(properties.get("--bytemare-gap")) || 2
       const baseColor =
@@ -45,24 +52,30 @@ if (typeof registerPaint !== "undefined") {
       }
     }
 
-    rgbToRgba(rgb, alpha) {
+    rgbToRgba(rgb: string, alpha: number) {
       const rgbValues = rgb.match(/\d+/g)
+
       if (rgbValues === null || rgbValues.length !== 3) {
         throw new Error("Invalid RGB color format")
       }
+
       const [r, g, b] = rgbValues.map(Number)
+
       return `rgba(${r}, ${g}, ${b}, ${alpha})`
     }
 
-    adjustColorBrightness(rgb, factor) {
+    adjustColorBrightness(rgb: string, factor: number) {
       const rgbValues = rgb.match(/\d+/g)
+
       if (rgbValues === null || rgbValues.length !== 3) {
         throw new Error("Invalid RGB color format")
       }
+
       let [r, g, b] = rgbValues.map(Number)
       r = Math.max(0, Math.min(255, Math.round(r * factor)))
       g = Math.max(0, Math.min(255, Math.round(g * factor)))
       b = Math.max(0, Math.min(255, Math.round(b * factor)))
+
       return `rgb(${r}, ${g}, ${b})`
     }
   }

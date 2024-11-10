@@ -17,11 +17,17 @@ import { title } from "@gotpop-platform/package-utilities"
 
 const ArticleList = withItems(ArticleItem)
 
-export const block = (query: Record<string, string>) => {
+export const block = ({
+  query,
+  scriptPaths,
+}: {
+  query: Record<string, string>
+  scriptPaths: Record<string, string>[]
+}) => {
   const allForms = allContent.get("features")
 
   return (
-    <AppTheme title={title("Home", SITE_NAME)}>
+    <AppTheme title={title("Home", SITE_NAME)} scriptPaths={scriptPaths}>
       <GridGap isRoot>
         <HeaderMegaMenu />
         <Tag tag="main" styles={styleMain}>
