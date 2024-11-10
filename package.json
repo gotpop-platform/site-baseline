@@ -23,6 +23,7 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "@gotpop-platform/bun-plugin-copy-assets": "^1.0.3",
     "@gotpop-platform/package-components": "latest",
     "@gotpop-platform/package-icons": "latest",
     "@gotpop-platform/package-jsx-factory": "latest",
