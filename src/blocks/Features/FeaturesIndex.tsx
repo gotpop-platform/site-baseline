@@ -17,7 +17,10 @@ import { title } from "@gotpop-platform/package-utilities"
 
 const ArticleList = withItems(ArticleItem)
 
-export const blockPageFeaturesIndex = async (data): Promise<JSX.Element> => {
+export const blockPageFeaturesIndex = async (data: {
+  query: { slug: any }
+  scriptPaths: Record<string, string>[]
+}): Promise<JSX.Element> => {
   const { slug } = data.query
 
   const allContent = await contentMap()

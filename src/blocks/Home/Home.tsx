@@ -22,7 +22,7 @@ export const block = ({
   scriptPaths,
 }: {
   query: Record<string, string>
-  scriptPaths: Record<string, string>
+  scriptPaths: Record<string, string>[]
 }) => {
   const allForms = allContent.get("features")
 

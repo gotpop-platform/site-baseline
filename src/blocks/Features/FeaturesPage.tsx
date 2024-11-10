@@ -15,7 +15,10 @@ import { contentMap } from "@gotpop-platform/package-markdown"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
-export const blockPageFeaturePage = async (data): Promise<JSX.Element> => {
+export const blockPageFeaturePage = async (data: {
+  query: { slug: any }
+  scriptPaths: Record<string, string>[]
+}): Promise<JSX.Element> => {
   const { slug } = data.query
   const [root, pageSlug] = slug.split("/")
 

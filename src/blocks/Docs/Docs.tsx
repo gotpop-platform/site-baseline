@@ -15,7 +15,10 @@ import { SITE_NAME } from "src/constants"
 import { allContent } from "../../../serve"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
-export const blockPageDocItem = async (data): Promise<JSX.Element> => {
+export const blockPageDocItem = async (data: {
+  query: any
+  scriptPaths: Record<string, string>[]
+}): Promise<JSX.Element> => {
   const { slug } = data.query
   const defaultPath = ["docs", "getting-started", "getting-started"]
   const segments = slug === "docs" ? defaultPath : slug?.split("/") || defaultPath

@@ -34,10 +34,11 @@ const getRelativePaths = (buildResponse: BuildOutput) => {
     const rootPath = output.path.replace(baseDir, "/").replace(/^\//, "")
 
     // Get original entry point name
-    const entryPoint = output.path
-      .split("/")
-      .pop()
-      ?.replace(/-[a-z0-9]+\.js$/, ".ts")
+    const entryPoint =
+      output.path
+        .split("/")
+        .pop()
+        ?.replace(/-[a-z0-9]+\.js$/, ".ts") || ""
 
     // Determine type based on filename pattern
     const type = output.path.includes("worklet.") ? "worklet" : "script"
@@ -50,6 +51,6 @@ const getRelativePaths = (buildResponse: BuildOutput) => {
   })
 }
 
-export const scriptPaths = getRelativePaths(buildResponse)
+export const scriptPaths: Record<string, string>[] = getRelativePaths(buildResponse)
 
-// console.log("paths :", scriptPaths)
+console.log("paths :", scriptPaths)

@@ -7,7 +7,10 @@ import {
   blockPageFeaturesIndex,
 } from "blocks"
 
-const pageIndex = async (data): Promise<JSX.Element> => {
+const pageIndex = async (data: {
+  query: any
+  scriptPaths: Record<string, string>[]
+}): Promise<JSX.Element> => {
   const { slug } = data.query
 
   if (slug.startsWith("features")) {

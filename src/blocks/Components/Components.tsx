@@ -16,7 +16,10 @@ import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
-export const blockPageComponents = async (data): Promise<JSX.Element> => {
+export const blockPageComponents = async (data: {
+  query: { slug: any }
+  scriptPaths: Record<string, string>[]
+}): Promise<JSX.Element> => {
   const { slug } = data.query
   const defaultPath = ["components", "forms", "button"]
   const segments = slug === "components" ? defaultPath : slug?.split("/") || defaultPath
