@@ -15,8 +15,8 @@ import { SITE_NAME } from "src/constants"
 import { allContent } from "../../../serve"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
-export const blockPageDocItem = async (query: Record<string, string>): Promise<JSX.Element> => {
-  const { slug } = query
+export const blockPageDocItem = async (data): Promise<JSX.Element> => {
+  const { slug } = data.query
   const defaultPath = ["docs", "getting-started", "getting-started"]
   const segments = slug === "docs" ? defaultPath : slug?.split("/") || defaultPath
 
@@ -42,7 +42,7 @@ export const blockPageDocItem = async (query: Record<string, string>): Promise<J
   const { finalContent } = await renderComponents(mainContent)
 
   return (
-    <AppTheme title={title(slug, SITE_NAME)}>
+    <AppTheme title={title(slug, SITE_NAME)} scriptPaths={data.scriptPaths}>
       <GridGap isRoot>
         <div class="graph">
           <MobileMenuTrigger />

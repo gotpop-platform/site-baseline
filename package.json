@@ -7,6 +7,7 @@
     "dev": "bun --watch --inspect serve.ts",
     "start": "bun serve.ts",
     "make": "bun build.ts",
+    "predev": "bun make",
     "tsc": "tsc"
   },
   "prettier": {

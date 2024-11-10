@@ -15,8 +15,8 @@ import { contentMap } from "@gotpop-platform/package-markdown"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
-export const blockPageFeaturePage = async (query: Record<string, string>): Promise<JSX.Element> => {
-  const { slug } = query
+export const blockPageFeaturePage = async (data): Promise<JSX.Element> => {
+  const { slug } = data.query
   const [root, pageSlug] = slug.split("/")
 
   const allContent = await contentMap()
@@ -25,7 +25,7 @@ export const blockPageFeaturePage = async (query: Record<string, string>): Promi
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 
   return (
-    <AppTheme title={title(slug, SITE_NAME)}>
+    <AppTheme title={title(slug, SITE_NAME)} scriptPaths={data.scriptPaths}>
       <GridGap isRoot>
         <div class="graph">
           <MobileMenuTrigger />

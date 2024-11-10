@@ -16,8 +16,8 @@ import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
-export const blockPageComponents = async (query: Record<string, string>): Promise<JSX.Element> => {
-  const { slug } = query
+export const blockPageComponents = async (data): Promise<JSX.Element> => {
+  const { slug } = data.query
   const defaultPath = ["components", "forms", "button"]
   const segments = slug === "components" ? defaultPath : slug?.split("/") || defaultPath
 
@@ -42,7 +42,7 @@ export const blockPageComponents = async (query: Record<string, string>): Promis
   const { finalContent } = await renderComponents(mainContent)
 
   return (
-    <AppTheme title={title(pageMetadata.title, SITE_NAME)}>
+    <AppTheme title={title(slug, SITE_NAME)} scriptPaths={data.scriptPaths}>
       <GridFull isRoot>
         <HeaderMegaMenu />
         <Tag tag="main" styles={stylesDocs}>

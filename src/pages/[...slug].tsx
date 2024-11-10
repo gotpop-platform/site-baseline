@@ -7,32 +7,30 @@ import {
   blockPageFeaturesIndex,
 } from "blocks"
 
-export const Fragment = ({ children }: { children?: JSX.Element }) => children || null
-
-const pageIndex = async (query: Record<string, string>): Promise<JSX.Element> => {
-  const { slug } = query
-
-  if (slug.startsWith("docs")) {
-    return blockPageDocItem(query)
-  }
-
-  if (slug.startsWith("components")) {
-    return blockPageComponents(query)
-  }
+const pageIndex = async (data): Promise<JSX.Element> => {
+  const { slug } = data.query
 
   if (slug.startsWith("features")) {
     if (slug === "features") {
-      return blockPageFeaturesIndex(query)
+      return blockPageFeaturesIndex(data)
     } else {
-      return blockPageFeaturePage(query)
+      return blockPageFeaturePage(data)
     }
   }
 
-  if (slug === "404") {
-    return blockNotFoundPage(query)
+  if (slug.startsWith("docs")) {
+    return blockPageDocItem(data)
   }
 
-  return block(query)
+  if (slug.startsWith("components")) {
+    return blockPageComponents(data)
+  }
+
+  if (slug === "404") {
+    return blockNotFoundPage(data)
+  }
+
+  return block(data)
 }
 
 export default pageIndex
