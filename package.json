@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@gotpop-platform/bun-plugin-copy-assets": "^1.0.3",
-    "@gotpop-platform/package-components": "latest",
+    "@gotpop-platform/package-components": "^1.0.22",
     "@gotpop-platform/package-icons": "latest",
     "@gotpop-platform/package-jsx-factory": "latest",
     "@gotpop-platform/package-logger": "latest",
