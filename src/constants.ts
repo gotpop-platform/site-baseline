@@ -11,3 +11,30 @@ export const DATE_FORMAT_OPTIONS = {
   month: "long",
   day: "numeric",
 }
+
+export type DateFormatOptions = {
+  year: "numeric"
+  month: "long"
+  day: "numeric"
+}
+
+export const Constants = {
+  PAGES: {
+    DIR: process.cwd() + "/src/pages",
+  },
+  SERVER: {
+    PORT: 2000,
+    PUBLIC_DIR: "./public",
+    ROUTER_STYLE: "nextjs" as const,
+  },
+  APP: {
+    SITE_NAME: "Baseline",
+  },
+  FORMATS: {
+    DATE: {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    } satisfies DateFormatOptions,
+  },
+} as const
