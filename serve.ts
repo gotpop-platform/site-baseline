@@ -4,7 +4,7 @@ import { handleGetPages, handleStaticAssets } from "@gotpop-platform/package-ser
 
 import { contentMap } from "@gotpop-platform/package-markdown"
 import { logger } from "@gotpop-platform/package-logger"
-import { scriptPaths } from "./build"
+import { scriptPaths } from "build"
 
 type ContentMap = Map<string, any>
 
@@ -23,7 +23,6 @@ async function startServer() {
       async fetch(request) {
         const url = new URL(request.url)
 
-        // Handle static assets first
         if (url.pathname.startsWith("/assets/")) {
           const assetResponse = await handleStaticAssets({
             path: url.pathname,
@@ -33,7 +32,7 @@ async function startServer() {
           if (assetResponse) return assetResponse
         }
 
-        return handleGetPages<typeof Config>({ request, allContent, scriptPaths, Config })
+        return handleGetPages({ request, allContent, scriptPaths, Config })
       },
     })
 
