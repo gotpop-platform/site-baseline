@@ -18,7 +18,7 @@ export type DateFormatOptions = {
   day: "numeric"
 }
 
-export const Constants = {
+export const Config = {
   PAGES: {
     DIR: process.cwd() + "/src/pages",
   },

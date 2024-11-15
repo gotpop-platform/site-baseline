@@ -1,5 +1,5 @@
 // serve.ts
-import { PORT, PUBLIC_DIR } from "src/constants"
+import { Config, PORT, PUBLIC_DIR } from "src/constants"
 
 import { contentMap } from "@gotpop-platform/package-markdown"
 import { file } from "bun"
@@ -15,8 +15,10 @@ export let allContent: ContentMap
 
 async function handleStaticAssets(path: string) {
   const fullPath = join(process.cwd(), PUBLIC_DIR, path)
+
   try {
     const asset = file(fullPath)
+
     if (await asset.exists()) {
       return new Response(asset)
     }
@@ -39,12 +41,13 @@ async function startServer() {
         const url = new URL(request.url)
 
         // Handle static assets first
-        if (url.pathname.startsWith("/assets/") || url.pathname.startsWith("/styles/")) {
+        if (url.pathname.startsWith("/assets/")) {
           const assetResponse = await handleStaticAssets(url.pathname)
+
           if (assetResponse) return assetResponse
         }
 
-        return servePagesOrAssets({ request, allContent, scriptPaths })
+        return servePagesOrAssets<Config>({ request, allContent, scriptPaths, Config })
       },
     })
 
