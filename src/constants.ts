@@ -2,7 +2,7 @@
 
 export const PAGES_DIR = process.cwd() + "/src/pages"
 export const PORT = 2000
-export const PUBLIC_DIR = "./public"
+export const PUBLIC_DIR = "./dist"
 export const ROUTER_STYLE = "nextjs"
 export const SITE_NAME = "Baseline"
 
@@ -18,13 +18,13 @@ export type DateFormatOptions = {
   day: "numeric"
 }
 
-export const Constants = {
+export const Config = {
   PAGES: {
     DIR: process.cwd() + "/src/pages",
   },
   SERVER: {
     PORT: 2000,
-    PUBLIC_DIR: "./public",
+    PUBLIC_DIR: "./dist",
     ROUTER_STYLE: "nextjs" as const,
   },
   APP: {

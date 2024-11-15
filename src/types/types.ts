@@ -1,14 +1,14 @@
-import { Constants } from "src/constants"
+import { Config } from "src/constants"
 
 // types.ts
 export interface PageProps {
-  siteConfig: Pick<typeof Constants, "APP" | "FORMATS">
+  siteConfig: Pick<typeof Config, "APP" | "FORMATS">
 }
 
 // For truly global items like API endpoints, ports
 export const GlobalConfig = {
-  SERVER: Constants.SERVER,
-  PAGES: Constants.PAGES,
+  SERVER: Config.SERVER,
+  PAGES: Config.PAGES,
 }
 
 // // pages/index.tsx

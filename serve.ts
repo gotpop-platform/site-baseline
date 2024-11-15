@@ -1,8 +1,10 @@
-import { PORT } from "src/constants"
+// serve.ts
+import { Config, PORT } from "src/constants"
+import { handleGetPages, handleStaticAssets } from "@gotpop-platform/package-server"
+
 import { contentMap } from "@gotpop-platform/package-markdown"
 import { logger } from "@gotpop-platform/package-logger"
-import { scriptPaths } from "./build"
-import { servePagesOrAssets } from "@gotpop-platform/package-server"
+import { scriptPaths } from "build"
 
 type ContentMap = Map<string, any>
 
@@ -16,9 +18,21 @@ async function startServer() {
 
     Bun.serve({
       hostname: "::",
+      development: process.env.NODE_ENV === "development",
       port: process.env.PORT ?? PORT,
       async fetch(request) {
-        return servePagesOrAssets({ request, allContent, scriptPaths })
+        const url = new URL(request.url)
+
+        if (url.pathname.startsWith("/assets/")) {
+          const assetResponse = await handleStaticAssets({
+            path: url.pathname,
+            publicDir: Config.SERVER.PUBLIC_DIR,
+          })
+
+          if (assetResponse) return assetResponse
+        }
+
+        return handleGetPages({ request, allContent, scriptPaths, Config })
       },
     })
 
