@@ -20,6 +20,8 @@ export const blockPageComponents = async (data: {
   query: { slug: any }
   scriptPaths: Record<string, string>[]
 }): Promise<JSX.Element> => {
+  console.log("data :", data)
+
   const { slug } = data.query
   const defaultPath = ["components", "forms", "button"]
   const segments = slug === "components" ? defaultPath : slug?.split("/") || defaultPath

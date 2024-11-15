@@ -7,7 +7,7 @@ import {
   blockPageFeaturesIndex,
 } from "blocks"
 
-const pageIndex = async (data: {
+const pageCatch = async (data: {
   query: any
   scriptPaths: Record<string, string>[]
 }): Promise<JSX.Element> => {
@@ -36,4 +36,4 @@ const pageIndex = async (data: {
   return block(data)
 }
 
-export default pageIndex
+export default pageCatch

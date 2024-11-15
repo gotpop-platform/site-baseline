@@ -17,7 +17,8 @@ const buildResponse = await Bun.build({
       outputDir: "dist/assets",
       directories: ["fonts", "img", "styles"],
       preserveStructure: true,
-      verbose: true,
+      verbose: false,
+      silent: true,
       onFile: async (src, dest) => {
         console.log(`Processing: ${src}`)
       },
@@ -32,6 +33,7 @@ const getRelativePaths = (buildResponse: BuildOutput) => {
   return buildResponse.outputs.map((output) => {
     // Remove base directory path and leading slash
     const rootPath = output.path.replace(baseDir, "/").replace(/^\//, "")
+    // console.log("rootPath :", rootPath)
 
     // Get original entry point name
     const entryPoint =
@@ -53,4 +55,4 @@ const getRelativePaths = (buildResponse: BuildOutput) => {
 
 export const scriptPaths: Record<string, string>[] = getRelativePaths(buildResponse)
 
-console.log("paths :", scriptPaths)
+// console.log("paths :", scriptPaths)

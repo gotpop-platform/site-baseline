@@ -10,6 +10,8 @@ export const blockNotFoundPage = async (data: {
   query: any
   scriptPaths: Record<string, string>[]
 }) => {
+  console.log("query :", data.query)
+
   return (
     <AppTheme title={title("Page Not Found", SITE_NAME)} scriptPaths={scriptPaths}>
       <GridGap isRoot>
