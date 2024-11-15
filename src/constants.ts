@@ -24,7 +24,7 @@ export const Config = {
   },
   SERVER: {
     PORT: 2000,
-    dist_DIR: "./dist",
+    PUBLIC_DIR: "./dist",
     ROUTER_STYLE: "nextjs" as const,
   },
   APP: {

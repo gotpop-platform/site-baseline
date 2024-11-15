@@ -1,32 +1,15 @@
 // serve.ts
-import { Config, PORT, PUBLIC_DIR } from "src/constants"
+import { Config, PORT } from "src/constants"
+import { handleGetPages, handleStaticAssets } from "@gotpop-platform/package-server"
 
 import { contentMap } from "@gotpop-platform/package-markdown"
-import { file } from "bun"
-import { join } from "path"
 import { logger } from "@gotpop-platform/package-logger"
 import { scriptPaths } from "./build"
-import { servePagesOrAssets } from "@gotpop-platform/package-server"
 
 type ContentMap = Map<string, any>
 
 export const BASE = process.env.BASE_SITE_URL ?? ""
 export let allContent: ContentMap
-
-async function handleStaticAssets(path: string) {
-  const fullPath = join(process.cwd(), PUBLIC_DIR, path)
-
-  try {
-    const asset = file(fullPath)
-
-    if (await asset.exists()) {
-      return new Response(asset)
-    }
-  } catch (error) {
-    logger({ msg: `Asset not found: ${path}`, styles: ["red"] })
-  }
-  return null
-}
 
 async function startServer() {
   try {
@@ -42,12 +25,15 @@ async function startServer() {
 
         // Handle static assets first
         if (url.pathname.startsWith("/assets/")) {
-          const assetResponse = await handleStaticAssets(url.pathname)
+          const assetResponse = await handleStaticAssets({
+            path: url.pathname,
+            publicDir: Config.SERVER.PUBLIC_DIR,
+          })
 
           if (assetResponse) return assetResponse
         }
 
-        return servePagesOrAssets<typeof Config>({ request, allContent, scriptPaths, Config })
+        return handleGetPages<typeof Config>({ request, allContent, scriptPaths, Config })
       },
     })
 
