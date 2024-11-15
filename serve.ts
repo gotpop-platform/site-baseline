@@ -47,7 +47,7 @@ async function startServer() {
           if (assetResponse) return assetResponse
         }
 
-        return servePagesOrAssets<Config>({ request, allContent, scriptPaths, Config })
+        return servePagesOrAssets<typeof Config>({ request, allContent, scriptPaths, Config })
       },
     })
 
