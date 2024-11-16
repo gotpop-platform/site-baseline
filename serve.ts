@@ -5,22 +5,16 @@ import { contentMap } from "@gotpop-platform/package-markdown"
 import { logger } from "@gotpop-platform/package-logger"
 import { scriptPaths } from "./build"
 
-type ContentMap = Map<string, any>
-
-// const BASE = process.env.BASE_SITE_URL ?? ""
-let allContent: ContentMap
-
 async function startServer() {
   try {
-    // Cache the content map
-    allContent = await contentMap({ DIR_CONTENT: Config.SERVER.DIR_CONTENT })
-    // console.log("process.env.NODE_ENV :", process.env.NODE_ENV)
+    // Cache the content Map() for all markdown files
+    const allContent = await contentMap({ DIR_CONTENT: Config.SERVER.DIR_CONTENT })
 
     Bun.serve({
       hostname: "::",
       development: process.env.NODE_ENV === "development",
       port: Config.SERVER.PORT,
-      async fetch(request) {
+      async fetch(request: Request) {
         const url = new URL(request.url)
 
         if (url.pathname.startsWith("/assets/")) {
