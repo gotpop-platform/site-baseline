@@ -1,10 +1,10 @@
 // serve.ts
-import { Config, PORT } from "src/constants"
+import { Config, PORT } from "./src/constants"
 import { handleGetPages, handleStaticAssets } from "@gotpop-platform/package-server"
 
 import { contentMap } from "@gotpop-platform/package-markdown"
 import { logger } from "@gotpop-platform/package-logger"
-import { scriptPaths } from "build"
+import { scriptPaths } from "./build"
 
 type ContentMap = Map<string, any>
 
