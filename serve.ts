@@ -9,7 +9,7 @@ import { scriptPaths } from "build"
 type ContentMap = Map<string, any>
 
 export const BASE = process.env.BASE_SITE_URL ?? ""
-export let allContent: ContentMap
+let allContent: ContentMap
 
 async function startServer() {
   try {

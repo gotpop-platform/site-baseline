@@ -7,10 +7,9 @@ import {
   blockPageFeaturesIndex,
 } from "blocks"
 
-const pageCatch = async (data: {
-  query: any
-  scriptPaths: Record<string, string>[]
-}): Promise<JSX.Element> => {
+import { BlockDataProps } from "src/types/types"
+
+const pageCatch = async (data: BlockDataProps): Promise<JSX.Element> => {
   const { slug } = data.query
 
   if (slug.startsWith("features")) {

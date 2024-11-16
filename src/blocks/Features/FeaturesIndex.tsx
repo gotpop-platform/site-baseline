@@ -10,6 +10,7 @@ import {
 } from "@gotpop-platform/package-components"
 import { styleArticlesSurfaceMain, stylesArticlesLayout } from "../Home"
 
+import { BlockDataProps } from "src/types/types"
 import { SITE_NAME } from "src/constants"
 import { contentMap } from "@gotpop-platform/package-markdown"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
@@ -17,10 +18,7 @@ import { title } from "@gotpop-platform/package-utilities"
 
 const ArticleList = withItems(ArticleItem)
 
-export const blockPageFeaturesIndex = async (data: {
-  query: { slug: any }
-  scriptPaths: Record<string, string>[]
-}): Promise<JSX.Element> => {
+export const blockPageFeaturesIndex = async (data: BlockDataProps): Promise<JSX.Element> => {
   const { slug } = data.query
 
   const allContent = await contentMap()
