@@ -6,7 +6,7 @@
       "type": "shell",
       "command": "bun update --latest",
       "options": {
-        "cwd": "${workspaceFolder}" // Run from current file's directory
+        "cwd": "${workspaceFolder}"
       }
     },
     {
