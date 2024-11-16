@@ -20,7 +20,7 @@ export const blockPageFeaturePage = async (data: BlockDataProps): Promise<JSX.El
   const [root, pageSlug] = slug.split("/")
 
   const allContent = await contentMap()
-  const { pageMetadata, htmlSectionsMap } = allContent.get(root).get(pageSlug)
+  const { pageMetadata, htmlSectionsMap } = allContent.get("Features").get(pageSlug)
   const { sectionTableOfContents } = htmlSectionsMap.get("main")
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 

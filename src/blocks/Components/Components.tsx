@@ -24,7 +24,7 @@ export const blockPageComponents = async (data: BlockDataProps): Promise<JSX.Ele
   const docSlug = rest.pop() || "button"
   const directories = rest
 
-  const allDocs = data.allContent.get(root)
+  const allDocs = data.allContent.get("Components")
   const allPageMetadata = getPageMetadata(allDocs)
 
   let currentLevel = allDocs

@@ -17,7 +17,7 @@ import { title } from "@gotpop-platform/package-utilities"
 const ArticleList = withItems(ArticleItem)
 
 export const block = ({ query, allContent, scriptPaths, Config }: BlockDataProps) => {
-  const allForms = allContent.get("features")
+  const allForms = allContent.get("Features")
 
   return (
     <AppTheme title={title("Home", Config.APP.SITE_NAME)} scriptPaths={scriptPaths}>

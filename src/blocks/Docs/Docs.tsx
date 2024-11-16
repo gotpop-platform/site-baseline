@@ -23,7 +23,7 @@ export const blockPageDocItem = async (data: BlockDataProps): Promise<JSX.Elemen
   const docSlug = rest.pop() || "getting-started"
   const directories = rest
 
-  const allDocs = data.allContent.get(root)
+  const allDocs = data.allContent.get("Docs")
   const allPageMetadata = getPageMetadata(allDocs)
 
   let currentLevel = allDocs

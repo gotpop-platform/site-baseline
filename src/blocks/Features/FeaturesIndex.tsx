@@ -21,7 +21,7 @@ export const blockPageFeaturesIndex = async (data: BlockDataProps): Promise<JSX.
   const { slug } = data.query
 
   const allContent = await contentMap()
-  const allForms = allContent.get("features")
+  const allForms = allContent.get("Features")
 
   return (
     <AppTheme title={title(slug, data.Config.APP.SITE_NAME)} scriptPaths={data.scriptPaths}>
