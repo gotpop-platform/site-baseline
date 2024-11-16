@@ -11,7 +11,6 @@ import {
 import { layoutArticlesSlugContent, layoutArticlesSlugSurface, layoutArticlesSlugToc } from "."
 
 import { BlockDataProps } from "src/types/types"
-import { contentMap } from "@gotpop-platform/package-markdown"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
@@ -19,8 +18,7 @@ export const blockPageFeaturePage = async (data: BlockDataProps): Promise<JSX.El
   const { slug } = data.query
   const [root, pageSlug] = slug.split("/")
 
-  const allContent = await contentMap()
-  const { pageMetadata, htmlSectionsMap } = allContent.get("Features").get(pageSlug)
+  const { pageMetadata, htmlSectionsMap } = data.allContent.get("Features").get(pageSlug)
   const { sectionTableOfContents } = htmlSectionsMap.get("main")
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 

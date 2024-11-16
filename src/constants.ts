@@ -14,6 +14,7 @@ export const Config = {
     PORT: process.env.PORT ?? 2000,
     PUBLIC_DIR: "./dist",
     ROUTER_STYLE: "nextjs" as const,
+    DIR_CONTENT: process.cwd() + "/src/blocks",
   },
   APP: {
     SITE_NAME: "Baseline",

@@ -7,13 +7,14 @@ import { scriptPaths } from "./build"
 
 type ContentMap = Map<string, any>
 
-export const BASE = process.env.BASE_SITE_URL ?? ""
+// const BASE = process.env.BASE_SITE_URL ?? ""
 let allContent: ContentMap
 
 async function startServer() {
   try {
     // Cache the content map
-    allContent = await contentMap()
+    allContent = await contentMap({ DIR_CONTENT: Config.SERVER.DIR_CONTENT })
+    // console.log("process.env.NODE_ENV :", process.env.NODE_ENV)
 
     Bun.serve({
       hostname: "::",
