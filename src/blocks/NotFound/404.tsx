@@ -1,17 +1,14 @@
 import { AppTheme, Footer, GridGap, HeaderMegaMenu, Tag } from "@gotpop-platform/package-components"
 import { layoutArticlesSlugSurface, stylesBlog } from "blocks"
 
-import { SITE_NAME } from "src/constants"
+import { BlockDataProps } from "src/types/types"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { scriptPaths } from "build"
 import { title } from "@gotpop-platform/package-utilities"
 
-export const blockNotFoundPage = async (data: {
-  query: any
-  scriptPaths: Record<string, string>[]
-}) => {
+export const blockNotFoundPage = async (data: BlockDataProps) => {
   return (
-    <AppTheme title={title("Page Not Found", SITE_NAME)} scriptPaths={scriptPaths}>
+    <AppTheme title={title("Page Not Found", data.Config.APP.SITE_NAME)} scriptPaths={scriptPaths}>
       <GridGap isRoot>
         <div class="graph">
           {/* <MobileMenuTrigger /> */}

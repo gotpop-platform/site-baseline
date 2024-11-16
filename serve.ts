@@ -1,7 +1,6 @@
-// serve.ts
-import { Config, PORT } from "./src/constants"
 import { handleGetPages, handleStaticAssets } from "@gotpop-platform/package-server"
 
+import { Config } from "./src/constants"
 import { contentMap } from "@gotpop-platform/package-markdown"
 import { logger } from "@gotpop-platform/package-logger"
 import { scriptPaths } from "./build"
@@ -19,7 +18,7 @@ async function startServer() {
     Bun.serve({
       hostname: "::",
       development: process.env.NODE_ENV === "development",
-      port: process.env.PORT ?? PORT,
+      port: Config.SERVER.PORT,
       async fetch(request) {
         const url = new URL(request.url)
 

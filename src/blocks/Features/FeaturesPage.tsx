@@ -11,7 +11,6 @@ import {
 import { layoutArticlesSlugContent, layoutArticlesSlugSurface, layoutArticlesSlugToc } from "."
 
 import { BlockDataProps } from "src/types/types"
-import { SITE_NAME } from "src/constants"
 import { contentMap } from "@gotpop-platform/package-markdown"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
@@ -26,7 +25,7 @@ export const blockPageFeaturePage = async (data: BlockDataProps): Promise<JSX.El
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 
   return (
-    <AppTheme title={title(slug, SITE_NAME)} scriptPaths={data.scriptPaths}>
+    <AppTheme title={title(slug, data.Config.APP.SITE_NAME)} scriptPaths={data.scriptPaths}>
       <GridGap isRoot>
         <div class="graph">
           <MobileMenuTrigger />
