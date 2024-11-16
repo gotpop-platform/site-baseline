@@ -1,10 +1,7 @@
+import { BlockDataProps } from "src/types/types"
 import { block } from "blocks"
-// import { scriptPaths } from "build"
 
-const pageIndex = async (data: {
-  query: any
-  scriptPaths: Record<string, string>[]
-}): Promise<JSX.Element> => {
+const pageIndex = async (data: BlockDataProps): Promise<JSX.Element> => {
   const { slug } = data.query
 
   // // Handle home page

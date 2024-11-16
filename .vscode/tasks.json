@@ -1,0 +1,113 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Update all Bun packages",
+      "type": "shell",
+      "command": "bun update --latest",
+      "options": {
+        "cwd": "${workspaceFolder}" // Run from current file's directory
+      }
+    },
+    {
+      "label": "Publish Components",
+      "type": "shell",
+      "command": "bun pub",
+      "options": {
+        "cwd": "${workspaceFolder}/../../packages/package-components"
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Publish Markdown",
+      "type": "shell",
+      "command": "bun pub",
+      "options": {
+        "cwd": "${workspaceFolder}/../../packages/package-markdown"
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Publish Utilities",
+      "type": "shell",
+      "command": "bun pub",
+      "options": {
+        "cwd": "${workspaceFolder}/../../packages/package-utilities"
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Publish Server",
+      "type": "shell",
+      "command": "bun pub",
+      "options": {
+        "cwd": "${workspaceFolder}/../../packages/package-server"
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Publish Copy Assets Plugin",
+      "type": "shell",
+      "command": "bun pub",
+      "options": {
+        "cwd": "${workspaceFolder}/../../packages/bun-plugin-copy-assets"
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Publish Logger",
+      "type": "shell",
+      "command": "bun pub",
+      "options": {
+        "cwd": "${workspaceFolder}/../../packages/package-logger"
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Publish All Packages",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Publish Logger",
+        "Publish Utilities",
+        "Publish Components",
+        "Publish Markdown",
+        "Publish Server",
+        "Publish Copy Assets Plugin"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "panel": "shared"
+      }
+    }
+  ]
+}

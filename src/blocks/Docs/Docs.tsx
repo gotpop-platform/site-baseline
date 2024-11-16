@@ -11,14 +11,11 @@ import {
 import { getPageMetadata, title } from "@gotpop-platform/package-utilities"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "."
 
+import { BlockDataProps } from "src/types/types"
 import { SITE_NAME } from "src/constants"
-import { allContent } from "../../../serve"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
-export const blockPageDocItem = async (data: {
-  query: any
-  scriptPaths: Record<string, string>[]
-}): Promise<JSX.Element> => {
+export const blockPageDocItem = async (data: BlockDataProps): Promise<JSX.Element> => {
   const { slug } = data.query
   const defaultPath = ["docs", "getting-started", "getting-started"]
   const segments = slug === "docs" ? defaultPath : slug?.split("/") || defaultPath
@@ -27,7 +24,7 @@ export const blockPageDocItem = async (data: {
   const docSlug = rest.pop() || "getting-started"
   const directories = rest
 
-  const allDocs = allContent.get(root)
+  const allDocs = data.allContent.get(root)
   const allPageMetadata = getPageMetadata(allDocs)
 
   let currentLevel = allDocs

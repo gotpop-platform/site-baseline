@@ -10,20 +10,14 @@ import {
 } from "@gotpop-platform/package-components"
 import { styleMain, stylesLayout } from "."
 
+import { BlockDataProps } from "src/types/types"
 import { SITE_NAME } from "src/constants"
-import { allContent } from "../../../serve"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 import { title } from "@gotpop-platform/package-utilities"
 
 const ArticleList = withItems(ArticleItem)
 
-export const block = ({
-  query,
-  scriptPaths,
-}: {
-  query: Record<string, string>
-  scriptPaths: Record<string, string>[]
-}) => {
+export const block = ({ query, allContent, scriptPaths }: BlockDataProps) => {
   const allForms = allContent.get("features")
 
   return (

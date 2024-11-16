@@ -10,16 +10,13 @@ import {
 import { getPageMetadata, title } from "@gotpop-platform/package-utilities"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "../Docs/Docs.style.vars"
 
+import { BlockDataProps } from "src/types/types"
 import { SITE_NAME } from "src/constants"
-import { allContent } from "../../../serve"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
-export const blockPageComponents = async (data: {
-  query: { slug: any }
-  scriptPaths: Record<string, string>[]
-}): Promise<JSX.Element> => {
+export const blockPageComponents = async (data: BlockDataProps): Promise<JSX.Element> => {
   const { slug } = data.query
   const defaultPath = ["components", "forms", "button"]
   const segments = slug === "components" ? defaultPath : slug?.split("/") || defaultPath
@@ -28,12 +25,14 @@ export const blockPageComponents = async (data: {
   const docSlug = rest.pop() || "button"
   const directories = rest
 
-  const allDocs = allContent.get(root)
+  const allDocs = data.allContent.get(root)
   const allPageMetadata = getPageMetadata(allDocs)
 
   let currentLevel = allDocs
+
   for (const dir of directories) {
     currentLevel = currentLevel?.get(dir)
+
     if (!currentLevel) {
       throw new Error(`Directory "${dir}" not found`)
     }

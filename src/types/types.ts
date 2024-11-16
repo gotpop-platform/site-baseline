@@ -15,3 +15,9 @@ export const GlobalConfig = {
 // const Page = ({ siteConfig }: PageProps) => {
 //   return <h1>{siteConfig.APP.SITE_NAME}</h1>
 // }
+
+export type BlockDataProps = {
+  query: Record<string, string>
+  allContent: Map<string, any>
+  scriptPaths: Record<string, string>[]
+}
