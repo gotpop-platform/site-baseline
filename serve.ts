@@ -1,26 +1,20 @@
-// serve.ts
-import { Config, PORT } from "src/constants"
 import { handleGetPages, handleStaticAssets } from "@gotpop-platform/package-server"
 
+import { Config } from "./src/constants"
 import { contentMap } from "@gotpop-platform/package-markdown"
 import { logger } from "@gotpop-platform/package-logger"
-import { scriptPaths } from "build"
-
-type ContentMap = Map<string, any>
-
-export const BASE = process.env.BASE_SITE_URL ?? ""
-let allContent: ContentMap
+import { scriptPaths } from "./build"
 
 async function startServer() {
   try {
-    // Cache the content map
-    allContent = await contentMap()
+    // Cache the content Map() for all markdown files
+    const allContent = await contentMap({ DIR_CONTENT: Config.SERVER.DIR_CONTENT })
 
     Bun.serve({
       hostname: "::",
       development: process.env.NODE_ENV === "development",
-      port: process.env.PORT ?? PORT,
-      async fetch(request) {
+      port: Config.SERVER.PORT,
+      async fetch(request: Request) {
         const url = new URL(request.url)
 
         if (url.pathname.startsWith("/assets/")) {

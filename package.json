@@ -28,7 +28,7 @@
     "@gotpop-platform/package-icons": "^1.0.0",
     "@gotpop-platform/package-jsx-factory": "^1.0.9",
     "@gotpop-platform/package-logger": "^1.0.10",
-    "@gotpop-platform/package-markdown": "^1.0.20",
+    "@gotpop-platform/package-markdown": "^1.0.21",
     "@gotpop-platform/package-server": "1.0.91",
     "@gotpop-platform/package-utilities": "^1.0.18"
   }

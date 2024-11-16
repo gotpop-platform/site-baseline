@@ -12,7 +12,6 @@ import { getPageMetadata, title } from "@gotpop-platform/package-utilities"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "."
 
 import { BlockDataProps } from "src/types/types"
-import { SITE_NAME } from "src/constants"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
 
 export const blockPageDocItem = async (data: BlockDataProps): Promise<JSX.Element> => {
@@ -24,7 +23,7 @@ export const blockPageDocItem = async (data: BlockDataProps): Promise<JSX.Elemen
   const docSlug = rest.pop() || "getting-started"
   const directories = rest
 
-  const allDocs = data.allContent.get(root)
+  const allDocs = data.allContent.get("Docs")
   const allPageMetadata = getPageMetadata(allDocs)
 
   let currentLevel = allDocs
@@ -42,7 +41,7 @@ export const blockPageDocItem = async (data: BlockDataProps): Promise<JSX.Elemen
   const { finalContent } = await renderComponents(mainContent)
 
   return (
-    <AppTheme title={title(slug, SITE_NAME)} scriptPaths={data.scriptPaths}>
+    <AppTheme title={title(slug, data.Config.APP.SITE_NAME)} scriptPaths={data.scriptPaths}>
       <GridGap isRoot>
         <div class="graph">
           <MobileMenuTrigger />
