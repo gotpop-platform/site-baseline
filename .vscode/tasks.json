@@ -7,7 +7,8 @@
       "command": "bun update --latest",
       "options": {
         "cwd": "${workspaceFolder}"
-      }
+      },
+      "problemMatcher": []
     },
     {
       "label": "Publish Components",

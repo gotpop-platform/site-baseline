@@ -26,23 +26,18 @@ const buildResponse = await Bun.build({
   ],
 })
 
-// Get relative paths from build output
 const getRelativePaths = (buildResponse: BuildOutput) => {
   const baseDir = process.cwd() + "/dist"
 
   return buildResponse.outputs.map((output) => {
-    // Remove base directory path and leading slash
     const rootPath = output.path.replace(baseDir, "/").replace(/^\//, "")
-    // console.log("rootPath :", rootPath)
 
-    // Get original entry point name
     const entryPoint =
       output.path
         .split("/")
         .pop()
         ?.replace(/-[a-z0-9]+\.js$/, ".ts") || ""
 
-    // Determine type based on filename pattern
     const type = output.path.includes("worklet.") ? "worklet" : "script"
 
     return {
@@ -54,5 +49,3 @@ const getRelativePaths = (buildResponse: BuildOutput) => {
 }
 
 export const scriptPaths: Record<string, string>[] = getRelativePaths(buildResponse)
-
-// console.log("paths :", scriptPaths)
