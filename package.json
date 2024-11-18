@@ -4,9 +4,9 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "bun --watch --inspect serve.ts",
-    "start": "bun serve.ts",
-    "make": "bun build.ts",
+    "dev": "bun --watch --inspect server/serve.ts",
+    "start": "bun server/serve.ts",
+    "make": "bun server/build.ts",
     "predev": "bun make",
     "tsc": "tsc"
   },
@@ -23,12 +23,12 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "@gotpop-platform/bun-plugin-copy-assets": "^1.0.3",
+    "@gotpop-platform/bun-plugin-copy-assets": "^1.0.9",
     "@gotpop-platform/package-components": "^1.0.22",
     "@gotpop-platform/package-icons": "^1.0.0",
     "@gotpop-platform/package-jsx-factory": "^1.0.9",
-    "@gotpop-platform/package-logger": "^1.0.10",
-    "@gotpop-platform/package-markdown": "^1.0.21",
+    "@gotpop-platform/package-logger": "^1.0.12",
+    "@gotpop-platform/package-markdown": "^1.0.22",
     "@gotpop-platform/package-server": "1.0.91",
     "@gotpop-platform/package-utilities": "^1.0.18"
   }

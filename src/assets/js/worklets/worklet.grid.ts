@@ -1,4 +1,4 @@
-/// <reference path="../../../types/houdini.d.ts" />
+/// <reference path="../../../../global.d.ts" />
 
 if (typeof registerPaint !== "undefined") {
   class GridPainter {

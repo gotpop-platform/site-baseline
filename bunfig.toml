@@ -1,3 +1,5 @@
+preload = ["./server/markdownLoader.ts"]
+
 [install]
 registry = "https://registry.npmjs.org" # redeclare default!
 

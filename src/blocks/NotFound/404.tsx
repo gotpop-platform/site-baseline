@@ -3,7 +3,7 @@ import { layoutArticlesSlugSurface, stylesBlog } from "blocks"
 
 import { BlockDataProps } from "src/types/types"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { scriptPaths } from "build"
+import { scriptPaths } from "../../../server/build"
 import { title } from "@gotpop-platform/package-utilities"
 
 export const blockNotFoundPage = async (data: BlockDataProps) => {
