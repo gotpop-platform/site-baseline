@@ -1,4 +1,4 @@
-import { Config } from "src/constants"
+import { Config } from "src/config"
 
 // types.ts
 export interface PageProps {

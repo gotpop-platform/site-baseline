@@ -1,6 +1,6 @@
 import { handleGetPages, handleStaticAssets } from "@gotpop-platform/package-server"
 
-import { Config } from "../src/constants"
+import { Config } from "../src/config"
 import { contentMap } from "@gotpop-platform/package-markdown"
 import { logger } from "@gotpop-platform/package-logger"
 import { scriptPaths } from "./build"
