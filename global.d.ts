@@ -1,3 +1,4 @@
+// JSX types
 declare global {
   namespace JSX {
     interface Element {}
@@ -7,5 +8,4 @@ declare global {
   }
 }
 
-export { }
-
+export {}

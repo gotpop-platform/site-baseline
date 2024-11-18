@@ -8,7 +8,6 @@
 
     /* Bundler mode */
     "moduleResolution": "node",
-
     "noEmit": true,
 
     /* Linting */
