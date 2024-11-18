@@ -18,7 +18,7 @@ const buildResponse = await Bun.build({
       directories: ["fonts", "img", "styles"],
       preserveStructure: true,
       verbose: false,
-      silent: true,
+      silent: false,
       onFile: async (src, dest) => {
         console.log(`Processing: ${src}`)
       },
