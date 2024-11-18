@@ -1,4 +1,4 @@
-/// <reference path="../../../../global.d.ts" />
+/// <reference path="../../../../config/global.d.ts" />
 
 if (typeof registerPaint !== "undefined") {
   class GridPainter {
