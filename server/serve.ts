@@ -27,6 +27,7 @@ const server = Bun.serve({
     // WebSocket upgrade handling
     if (request.headers.get("upgrade") === "websocket") {
       const success = server.upgrade(request)
+
       if (success) return undefined
     }
 
@@ -38,6 +39,7 @@ const server = Bun.serve({
         path: url.pathname,
         publicDir: Config.SERVER.PUBLIC_DIR,
       })
+
       if (assetResponse) return assetResponse
     }
 
