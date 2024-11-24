@@ -37,7 +37,6 @@ export const blockPageFeaturePage = async (data: BlockDataProps): Promise<JSX.El
               class="article-body"
               styles={layoutArticlesSlugContent(pageMetadata.id)}
             >
-              <h1>Is this real?</h1>
               {finalContent}
             </Tag>
           </Tag>
