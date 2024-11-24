@@ -1,4 +1,4 @@
-import { BuildOutput } from "bun"
+import type { BuildOutput } from "bun"
 import { createCopyFilesPlugin } from "@gotpop-platform/bun-plugin-copy-assets"
 import { logger } from "@gotpop-platform/package-logger"
 
