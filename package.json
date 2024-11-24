@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@gotpop-platform/bun-plugin-copy-assets": "^1.0.9",
-    "@gotpop-platform/package-components": "^1.0.23",
+    "@gotpop-platform/package-components": "^1.0.24",
     "@gotpop-platform/package-icons": "^1.0.0",
     "@gotpop-platform/package-jsx-factory": "^1.0.9",
     "@gotpop-platform/package-logger": "^1.0.12",
