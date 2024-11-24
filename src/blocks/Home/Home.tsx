@@ -20,7 +20,7 @@ export const block = ({ query, allContent, scriptPaths, Config }: BlockDataProps
   const allForms = allContent.get("Features")
 
   return (
-    <AppTheme title={title("Home", Config.APP.SITE_NAME)} scriptPaths={scriptPaths}>
+    <AppTheme title={title("Home", Config.APP.SITE_NAME)} scriptPaths={scriptPaths} Config={Config}>
       <GridGap isRoot>
         <HeaderMegaMenu />
         <Tag tag="main" styles={styleMain}>

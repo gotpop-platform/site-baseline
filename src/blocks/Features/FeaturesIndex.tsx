@@ -22,7 +22,11 @@ export const blockPageFeaturesIndex = async (data: BlockDataProps): Promise<JSX.
   const allForms = data.allContent.get("Features")
 
   return (
-    <AppTheme title={title(slug, data.Config.APP.SITE_NAME)} scriptPaths={data.scriptPaths}>
+    <AppTheme
+      title={title(slug, data.Config.APP.SITE_NAME)}
+      scriptPaths={data.scriptPaths}
+      Config={data.Config}
+    >
       <GridGap isRoot>
         <div class="graph">
           <MobileMenuTrigger />

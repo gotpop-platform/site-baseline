@@ -10,6 +10,7 @@ export const blockNotFoundPage = async (data: BlockDataProps) => {
     <AppTheme
       title={title("Page Not Found", data.Config.APP.SITE_NAME)}
       scriptPaths={data.scriptPaths}
+      Config={data.Config}
     >
       <GridGap isRoot>
         <div class="graph">
