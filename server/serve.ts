@@ -1,11 +1,9 @@
-import { buildResponse, getRelativePaths, rebuildFiles, scriptPaths } from "./build"
+import { getRelativePaths, rebuildFiles, scriptPaths } from "."
 import { handleGetPages, handleStaticAssets } from "@gotpop-platform/package-server"
 
 import { Config } from "../src/config"
 import { ServerWebSocket } from "bun"
-// import { buildResponse } from "./build"
 import { contentMap } from "@gotpop-platform/package-markdown"
-import { log } from "console"
 import { logger } from "@gotpop-platform/package-logger"
 import { watch } from "fs/promises"
 
@@ -64,24 +62,6 @@ const server = Bun.serve({
 
 // Watch for file changes
 const watcher = watch(".", { recursive: true })
-
-// for await (const event of watcher) {
-//   if (event.filename?.includes("src")) {
-//     logger({ msg: `Content changed: ${event.filename}`, styles: ["yellow"] })
-
-//     // Reload content
-//     allContent = await loadContent()
-
-//     //  logger({ msg: "buildResponse", styles: ["green"] })
-
-//     console.log("buildResponse", buildResponse)
-
-//     // Notify clients
-//     for (const client of clients) {
-//       client.send("reload")
-//     }
-//   }
-// }
 
 // In serve.ts, modify the watcher:
 for await (const event of watcher) {
