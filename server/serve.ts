@@ -1,13 +1,15 @@
+import { buildResponse, getRelativePaths, rebuildFiles, scriptPaths } from "./build"
 import { handleGetPages, handleStaticAssets } from "@gotpop-platform/package-server"
 
 import { Config } from "../src/config"
 import { ServerWebSocket } from "bun"
+// import { buildResponse } from "./build"
 import { contentMap } from "@gotpop-platform/package-markdown"
+import { log } from "console"
 import { logger } from "@gotpop-platform/package-logger"
-import { scriptPaths } from "./build"
 import { watch } from "fs/promises"
 
-const clients = new Set<ServerWebSocket<unknown>>()
+export const clients = new Set<ServerWebSocket<unknown>>()
 let currentContent: Map<string, any>
 
 // Initial content load
@@ -63,14 +65,48 @@ const server = Bun.serve({
 // Watch for file changes
 const watcher = watch(".", { recursive: true })
 
+// for await (const event of watcher) {
+//   if (event.filename?.includes("src")) {
+//     logger({ msg: `Content changed: ${event.filename}`, styles: ["yellow"] })
+
+//     // Reload content
+//     allContent = await loadContent()
+
+//     //  logger({ msg: "buildResponse", styles: ["green"] })
+
+//     console.log("buildResponse", buildResponse)
+
+//     // Notify clients
+//     for (const client of clients) {
+//       client.send("reload")
+//     }
+//   }
+// }
+
+// In serve.ts, modify the watcher:
 for await (const event of watcher) {
-  if (event.filename?.includes(".md") || event.filename?.includes("src")) {
+  if (event.filename?.includes("src")) {
     logger({ msg: `Content changed: ${event.filename}`, styles: ["yellow"] })
+
+    // Rebuild if JS/TS files changed
+    if (event.filename.match(/\.(css|js|ts)$/)) {
+      const { success, buildResponse } = await rebuildFiles()
+
+      if (success) {
+        logger({ msg: "Build successful", styles: ["green"] })
+        // Update script paths
+        scriptPaths.length = 0
+
+        if (buildResponse) {
+          scriptPaths.push(...getRelativePaths(buildResponse))
+        }
+      }
+    }
 
     // Reload content
     allContent = await loadContent()
 
-    // Notify clients
+    // Notify clients only if build succeeded or no build was needed
     for (const client of clients) {
       client.send("reload")
     }
