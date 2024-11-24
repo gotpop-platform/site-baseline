@@ -3,12 +3,15 @@ import { layoutArticlesSlugSurface, stylesBlog } from "blocks"
 
 import { BlockDataProps } from "src/types/types"
 import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { scriptPaths } from "../../../server/build"
 import { title } from "@gotpop-platform/package-utilities"
 
 export const blockNotFoundPage = async (data: BlockDataProps) => {
   return (
-    <AppTheme title={title("Page Not Found", data.Config.APP.SITE_NAME)} scriptPaths={scriptPaths}>
+    <AppTheme
+      title={title("Page Not Found", data.Config.APP.SITE_NAME)}
+      scriptPaths={data.scriptPaths}
+      Config={data.Config}
+    >
       <GridGap isRoot>
         <div class="graph">
           {/* <MobileMenuTrigger /> */}

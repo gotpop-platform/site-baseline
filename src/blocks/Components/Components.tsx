@@ -44,7 +44,11 @@ export const blockPageComponents = async (data: BlockDataProps): Promise<JSX.Ele
   const { finalContent } = await renderComponents(mainContent)
 
   return (
-    <AppTheme title={title(slug, data.Config.APP.SITE_NAME)} scriptPaths={data.scriptPaths}>
+    <AppTheme
+      title={title(slug, data.Config.APP.SITE_NAME)}
+      scriptPaths={data.scriptPaths}
+      Config={data.Config}
+    >
       <GridFull isRoot>
         <HeaderMegaMenu />
         <Tag tag="main" styles={stylesDocs}>

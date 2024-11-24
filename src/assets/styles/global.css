@@ -48,6 +48,7 @@
 
 html {
   background-color: var(--colour-bg-site);
+  background-color: pink !important;
   color-scheme: var(--color-scheme);
   font-size: var(--root-font-size);
   interpolate-size: allow-keywords;
