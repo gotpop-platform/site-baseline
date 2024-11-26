@@ -1,4 +1,4 @@
-preload = ["./markdownLoader.ts"]
+preload = ["@gotpop-platform/package-markdown"]
 
 [install]
 registry = "https://registry.npmjs.org" # redeclare default!
