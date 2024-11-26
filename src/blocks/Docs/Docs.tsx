@@ -42,9 +42,8 @@ export const blockPageDocItem = async (data: BlockDataProps): Promise<JSX.Elemen
 
   return (
     <AppTheme
-      title={title(slug, data.Config.APP.SITE_NAME)}
+      title={title(slug, process.env.npm_package_config_app_site_name || "GotPop")}
       scriptPaths={data.scriptPaths}
-      Config={data.Config}
     >
       <GridGap isRoot>
         <div class="graph">

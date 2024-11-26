@@ -8,9 +8,8 @@ import { title } from "@gotpop-platform/package-utilities"
 export const blockNotFoundPage = async (data: BlockDataProps) => {
   return (
     <AppTheme
-      title={title("Page Not Found", data.Config.APP.SITE_NAME)}
+      title={title("Page Not Found", process.env.npm_package_config_app_site_name || "GotPop")}
       scriptPaths={data.scriptPaths}
-      Config={data.Config}
     >
       <GridGap isRoot>
         <div class="graph">

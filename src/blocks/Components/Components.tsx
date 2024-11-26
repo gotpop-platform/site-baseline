@@ -45,9 +45,8 @@ export const blockPageComponents = async (data: BlockDataProps): Promise<JSX.Ele
 
   return (
     <AppTheme
-      title={title(slug, data.Config.APP.SITE_NAME)}
+      title={title(slug, process.env.npm_package_config_app_site_name || "GotPop")}
       scriptPaths={data.scriptPaths}
-      Config={data.Config}
     >
       <GridFull isRoot>
         <HeaderMegaMenu />
