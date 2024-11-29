@@ -48,7 +48,7 @@
 
 html {
   background-color: var(--colour-bg-site);
-  background-color: purple !important;
+  background-color: pink !important;
   color-scheme: var(--color-scheme);
   font-size: var(--root-font-size);
   interpolate-size: allow-keywords;
@@ -62,13 +62,13 @@ html {
     --is-desktop: true;
   }
 
-  &::view-transition-old(slider) {
+  /* &::view-transition-old(slider) {
     animation: var(--animation-fadeout), var(--animation-slide-to-left);
   }
 
   &::view-transition-new(slider) {
     animation: var(--animation-fadein), var(--animation-slide-to-right);
-  }
+  } */
 }
 
 body {
