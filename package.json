@@ -1,6 +1,6 @@
 {
   "name": "baseline",
-  "module": "server/serve.ts ",
+  "module": "serve.ts ",
   "type": "module",
   "license": "MIT",
   "scripts": {
