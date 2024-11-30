@@ -11,10 +11,10 @@ import { getPageMetadata, title } from "@gotpop-platform/package-baseline"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "../Docs/Docs.style.vars"
 
 import { BlockDataProps } from "src/types/types"
-// import { content } from "./forms/button.md"
+import { content } from "./forms/button.md"
 import { jsxFactory } from "@gotpop-platform/package-baseline"
 
-// console.log("content :", content)
+console.log("content :", content)
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 

@@ -34,7 +34,6 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "@gotpop-platform/bun-plugin-copy-assets": "^1.0.9",
     "@gotpop-platform/package-baseline": "0.0.5"
   }
 }
