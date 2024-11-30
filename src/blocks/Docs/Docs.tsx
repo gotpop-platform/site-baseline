@@ -7,12 +7,12 @@ import {
   MobileMenuTrigger,
   Tag,
   renderComponents,
-} from "@gotpop-platform/package-components"
-import { getPageMetadata, title } from "@gotpop-platform/package-utilities"
+} from "@gotpop-platform/package-baseline"
+import { getPageMetadata, title } from "@gotpop-platform/package-baseline"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "."
 
 import { BlockDataProps } from "src/types/types"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { jsxFactory } from "@gotpop-platform/package-baseline"
 
 export const blockPageDocItem = async (data: BlockDataProps): Promise<JSX.Element> => {
   const { slug } = data.query

@@ -1,3 +1,3 @@
-import { startServer } from "@gotpop-platform/package-server"
+import { startServer } from "@gotpop-platform/package-baseline"
 
 startServer()

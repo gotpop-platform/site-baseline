@@ -5,28 +5,11 @@
       "path": ".."
     },
     {
-      "name": "package-components",
-      "path": "../../../packages/package-components"
-    },
-    {
-      "name": "package-markdown",
-      "path": "../../../packages/package-markdown"
-    },
-    {
-      "name": "package-utilities",
-      "path": "../../../packages/package-utilities"
-    },
-    {
-      "name": "package-server",
-      "path": "../../../packages/package-server"
-    },
-    {
       "name": "bun-plugin-copy-assets",
       "path": "../../../packages/bun-plugin-copy-assets"
     },
     {
-      "name": "package-logger",
-      "path": "../../../packages/package-logger"
+      "path": "../../../package-baseline"
     }
   ],
   "settings": {

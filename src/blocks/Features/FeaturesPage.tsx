@@ -7,12 +7,12 @@ import {
   TableOfContents,
   Tag,
   renderComponents,
-} from "@gotpop-platform/package-components"
+} from "@gotpop-platform/package-baseline"
 import { layoutArticlesSlugContent, layoutArticlesSlugSurface, layoutArticlesSlugToc } from "."
 
 import { BlockDataProps } from "src/types/types"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { title } from "@gotpop-platform/package-utilities"
+import { jsxFactory } from "@gotpop-platform/package-baseline"
+import { title } from "@gotpop-platform/package-baseline"
 
 export const blockPageFeaturePage = async (data: BlockDataProps): Promise<JSX.Element> => {
   const { env } = process

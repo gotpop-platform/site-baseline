@@ -6,13 +6,13 @@ import {
   MenuSide,
   Tag,
   renderComponents,
-} from "@gotpop-platform/package-components"
-import { getPageMetadata, title } from "@gotpop-platform/package-utilities"
+} from "@gotpop-platform/package-baseline"
+import { getPageMetadata, title } from "@gotpop-platform/package-baseline"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "../Docs/Docs.style.vars"
 
 import { BlockDataProps } from "src/types/types"
 // import { content } from "./forms/button.md"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+import { jsxFactory } from "@gotpop-platform/package-baseline"
 
 // console.log("content :", content)
 

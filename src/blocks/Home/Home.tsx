@@ -7,12 +7,12 @@ import {
   HeroItem,
   Tag,
   withItems,
-} from "@gotpop-platform/package-components"
+} from "@gotpop-platform/package-baseline"
 import { styleMain, stylesLayout } from "."
 
 import { BlockDataProps } from "src/types/types"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { title } from "@gotpop-platform/package-utilities"
+import { jsxFactory } from "@gotpop-platform/package-baseline"
+import { title } from "@gotpop-platform/package-baseline"
 
 const ArticleList = withItems(ArticleItem)
 

@@ -1,9 +1,9 @@
-import { AppTheme, Footer, GridGap, HeaderMegaMenu, Tag } from "@gotpop-platform/package-components"
+import { AppTheme, Footer, GridGap, HeaderMegaMenu, Tag } from "@gotpop-platform/package-baseline"
 import { layoutArticlesSlugSurface, stylesBlog } from "blocks"
 
 import { BlockDataProps } from "src/types/types"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { title } from "@gotpop-platform/package-utilities"
+import { jsxFactory } from "@gotpop-platform/package-baseline"
+import { title } from "@gotpop-platform/package-baseline"
 
 export const blockNotFoundPage = async (data: BlockDataProps) => {
   return (

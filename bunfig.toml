@@ -1,4 +1,4 @@
-preload = ["@gotpop-platform/package-markdown"]
+preload = ["@gotpop-platform/package-baseline"]
 
 [install]
 registry = "https://registry.npmjs.org" # redeclare default!
