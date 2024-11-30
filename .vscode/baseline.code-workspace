@@ -1,15 +1,16 @@
 {
   "folders": [
     {
-      "name": "site-baseline",
+      "name": "Site Baseline",
       "path": ".."
     },
     {
-      "name": "bun-plugin-copy-assets",
-      "path": "../../../packages/bun-plugin-copy-assets"
+      "name": "Bun Plugin Copy Assets",
+      "path": "../../bun-plugin-copy-assets"
     },
     {
-      "path": "../../../package-baseline"
+      "name": "Package Baseline",
+      "path": "../../package-baseline"
     }
   ],
   "settings": {
