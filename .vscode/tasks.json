@@ -2,7 +2,7 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Update all Bun packages",
+      "label": "Update Bun packages",
       "type": "shell",
       "command": "bun update --latest",
       "options": {
@@ -11,104 +11,31 @@
       "problemMatcher": []
     },
     {
-      "label": "Publish Components",
+      "label": "Link Bun packages in Package Baseline",
       "type": "shell",
-      "command": "bun pub",
+      "command": "bun link",
       "options": {
-        "cwd": "${workspaceFolder}/../../packages/package-components"
-      },
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "panel": "shared"
+        "cwd": "${workspaceFolder}/../package-baseline"
       },
       "problemMatcher": []
     },
     {
-      "label": "Publish Markdown",
+      "label": "Link Bun packages in Workspace Folder",
       "type": "shell",
-      "command": "bun pub",
+      "command": "bun link @gotpop-platform/package-baseline",
       "options": {
-        "cwd": "${workspaceFolder}/../../packages/package-markdown"
+        "cwd": "${workspaceFolder}"
       },
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "panel": "shared"
-      }
+      "problemMatcher": []
     },
     {
-      "label": "Publish Utilities",
-      "type": "shell",
-      "command": "bun pub",
-      "options": {
-        "cwd": "${workspaceFolder}/../../packages/package-utilities"
-      },
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "panel": "shared"
-      }
-    },
-    {
-      "label": "Publish Server",
-      "type": "shell",
-      "command": "bun pub",
-      "options": {
-        "cwd": "${workspaceFolder}/../../packages/package-server"
-      },
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "panel": "shared"
-      }
-    },
-    {
-      "label": "Publish Copy Assets Plugin",
-      "type": "shell",
-      "command": "bun pub",
-      "options": {
-        "cwd": "${workspaceFolder}/../../packages/bun-plugin-copy-assets"
-      },
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "panel": "shared"
-      }
-    },
-    {
-      "label": "Publish Logger",
-      "type": "shell",
-      "command": "bun pub",
-      "options": {
-        "cwd": "${workspaceFolder}/../../packages/package-logger"
-      },
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "panel": "shared"
-      }
-    },
-    {
-      "label": "Publish All Packages",
-      "dependsOrder": "sequence",
+      "label": "Update and Link Bun packages",
       "dependsOn": [
-        "Publish Logger",
-        "Publish Utilities",
-        "Publish Components",
-        "Publish Markdown",
-        "Publish Server",
-        "Publish Copy Assets Plugin"
+        "Update Bun packages",
+        "Link Bun packages in Package Baseline",
+        "Link Bun packages in Workspace Folder"
       ],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "panel": "shared"
-      }
+      "problemMatcher": []
     }
   ]
 }
