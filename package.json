@@ -1,18 +1,23 @@
 {
   "name": "baseline",
-  "module": "serve.ts ",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "serve.ts",
   "type": "module",
-  "license": "MIT",
   "scripts": {
+    "clean": "rm -rf dist node_modules",
     "dev": "bun run --watch --inspect serve.ts",
     "start": "bun run serve.ts",
-    "clean": "rm -rf dist",
-    "preclean": "rm -rf node_modules",
     "tsc": "tsc"
   },
-  "prettier": {
-    "printWidth": 100,
-    "semi": false
+  "dependencies": {
+    "@gotpop-platform/package-baseline": "0.0.5"
+  },
+  "peerDependencies": {
+    "@types/bun": "^1.1.14",
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
   },
   "config": {
     "app_site_name": "Baseline",
@@ -25,15 +30,12 @@
     "server_port": "2000",
     "server_router_style": "nextjs"
   },
+  "prettier": {
+    "printWidth": 100,
+    "semi": false
+  },
   "bun": {
     "version": ">=1.1.37"
   },
-  "peerDependencies": {
-    "@types/bun": "^1.1.14",
-    "@types/node": "^22.10.1",
-    "typescript": "^5.7.2"
-  },
-  "dependencies": {
-    "@gotpop-platform/package-baseline": "0.0.5"
-  }
+  "license": "MIT"
 }

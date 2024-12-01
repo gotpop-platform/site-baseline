@@ -1,5 +1,3 @@
-import type { MarkdownFileProps } from "@gotpop-platform/package-markdown"
-
 export const stylesDocs = {
   "--background-colour": "var(--transparent)",
   "--border-radius": "unset",
@@ -30,7 +28,11 @@ const style = {
   "--padding": "var(--spacing-md)",
 }
 
-export const stylesDocsLayout = ({ pageMetadata }: { pageMetadata: Record<string, string> }): Record<string, string>[] => [
+export const stylesDocsLayout = ({
+  pageMetadata,
+}: {
+  pageMetadata: Record<string, string>
+}): Record<string, string>[] => [
   {
     ...style,
     "--background-colour": "var(--grey-100)",
