@@ -35,7 +35,10 @@
         "Link Bun packages in Package Baseline",
         "Link Bun packages in Workspace Folder"
       ],
-      "problemMatcher": []
+      "problemMatcher": [],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      }
     }
   ]
 }

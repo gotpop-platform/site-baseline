@@ -6,13 +6,13 @@
   "module": "serve.ts",
   "type": "module",
   "scripts": {
-    "clean": "rm -rf dist node_modules",
-    "dev": "bun run --watch --inspect serve.ts",
+    "clean": "rm -rf dist node_modules bun.lockb",
+    "dev": "bun run --hot --inspect --open serve.ts",
     "start": "bun run serve.ts",
     "tsc": "tsc"
   },
   "dependencies": {
-    "@gotpop-platform/package-baseline": "0.0.5"
+    "@gotpop-platform/package-baseline": "^0.0.10"
   },
   "peerDependencies": {
     "@types/bun": "^1.1.14",
@@ -25,6 +25,7 @@
     "dir_pages": "src/pages",
     "dir_public": "dist",
     "format_date_day": "numeric",
+    "format_date_locale": "en-GB",
     "format_date_month": "long",
     "format_date_year": "numeric",
     "server_port": "2000",
