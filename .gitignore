@@ -177,3 +177,5 @@ dist
 # Node modules
 node_modules
 
+*.sqlite
+*.db
