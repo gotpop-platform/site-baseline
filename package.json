@@ -14,7 +14,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@gotpop-platform/package-baseline": "0.0.15"
+    "@gotpop-platform/package-baseline": "0.0.16"
   },
   "peerDependencies": {
     "@types/bun": "^1.1.14",
