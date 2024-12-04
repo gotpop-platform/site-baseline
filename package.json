@@ -7,12 +7,14 @@
   "type": "module",
   "scripts": {
     "clean": "rm -rf dist node_modules bun.lockb",
+    "open:chrome": "bun open.ts $npm_package_config_server_url chrome",
+    "predev": "bun clean && bun i && bun open:chrome",
     "dev": "bun run --hot --inspect --open serve.ts",
     "start": "bun run serve.ts",
     "tsc": "tsc"
   },
   "dependencies": {
-    "@gotpop-platform/package-baseline": "^0.0.10"
+    "@gotpop-platform/package-baseline": "^0.0.11"
   },
   "peerDependencies": {
     "@types/bun": "^1.1.14",
@@ -29,6 +31,7 @@
     "format_date_month": "long",
     "format_date_year": "numeric",
     "server_port": "2000",
+    "server_url": "http://localhost:2000",
     "server_router_style": "nextjs"
   },
   "prettier": {
