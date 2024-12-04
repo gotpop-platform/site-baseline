@@ -7,20 +7,23 @@ import {
   HeroItem,
   Tag,
   withItems,
-} from "@gotpop-platform/package-components"
+} from "@gotpop-platform/package-baseline"
 import { styleMain, stylesLayout } from "."
 
 import { BlockDataProps } from "src/types/types"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { title } from "@gotpop-platform/package-utilities"
+import { jsxFactory } from "@gotpop-platform/package-baseline"
+import { title } from "@gotpop-platform/package-baseline"
 
 const ArticleList = withItems(ArticleItem)
 
-export const block = ({ query, allContent, scriptPaths, Config }: BlockDataProps) => {
+export const block = ({ query, allContent, scriptPaths }: BlockDataProps) => {
   const allForms = allContent.get("Features")
 
   return (
-    <AppTheme title={title("Home", Config.APP.SITE_NAME)} scriptPaths={scriptPaths} Config={Config}>
+    <AppTheme
+      title={title("Home", process.env.npm_package_config_app_site_name || "GotPop")}
+      scriptPaths={scriptPaths}
+    >
       <GridGap isRoot>
         <HeaderMegaMenu />
         <Tag tag="main" styles={styleMain}>

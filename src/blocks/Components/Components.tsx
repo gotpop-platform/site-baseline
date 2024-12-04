@@ -6,13 +6,15 @@ import {
   MenuSide,
   Tag,
   renderComponents,
-} from "@gotpop-platform/package-components"
-import { getPageMetadata, title } from "@gotpop-platform/package-utilities"
+} from "@gotpop-platform/package-baseline"
+import { getPageMetadata, title } from "@gotpop-platform/package-baseline"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "../Docs/Docs.style.vars"
 
 import { BlockDataProps } from "src/types/types"
+import { jsxFactory } from "@gotpop-platform/package-baseline"
+
 // import { content } from "./forms/button.md"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
+// console.log("content :", content)
 
 const Fragment = ({ children }: { children?: JSX.Element }) => children || null
 
@@ -45,9 +47,8 @@ export const blockPageComponents = async (data: BlockDataProps): Promise<JSX.Ele
 
   return (
     <AppTheme
-      title={title(slug, data.Config.APP.SITE_NAME)}
+      title={title(slug, process.env.npm_package_config_app_site_name || "GotPop")}
       scriptPaths={data.scriptPaths}
-      Config={data.Config}
     >
       <GridFull isRoot>
         <HeaderMegaMenu />

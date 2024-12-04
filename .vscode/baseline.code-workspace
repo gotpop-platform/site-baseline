@@ -1,25 +1,12 @@
 {
   "folders": [
     {
+      "name": "Site Baseline",
       "path": ".."
     },
     {
-      "path": "../../../packages/package-components"
-    },
-    {
-      "path": "../../../packages/package-markdown"
-    },
-    {
-      "path": "../../../packages/package-utilities"
-    },
-    {
-      "path": "../../../packages/package-server"
-    },
-    {
-      "path": "../../../packages/bun-plugin-copy-assets"
-    },
-    {
-      "path": "../../../packages/package-logger"
+      "name": "Package Baseline",
+      "path": "../../package-baseline"
     }
   ],
   "settings": {

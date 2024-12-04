@@ -1,7 +1,9 @@
-preload = ["./markdownLoader.ts"]
+preload = ["@gotpop-platform/package-baseline"]
 
 [install]
 registry = "https://registry.npmjs.org" # redeclare default!
 
 [install.scopes]
 "@gotpop-platform" = { token = "$GITHUB_TOKEN", url = "https://npm.pkg.github.com/" }
+
+logLevel = "debug"

@@ -1,16 +1,15 @@
-import { AppTheme, Footer, GridGap, HeaderMegaMenu, Tag } from "@gotpop-platform/package-components"
+import { AppTheme, Footer, GridGap, HeaderMegaMenu, Tag } from "@gotpop-platform/package-baseline"
 import { layoutArticlesSlugSurface, stylesBlog } from "blocks"
 
 import { BlockDataProps } from "src/types/types"
-import { jsxFactory } from "@gotpop-platform/package-jsx-factory"
-import { title } from "@gotpop-platform/package-utilities"
+import { jsxFactory } from "@gotpop-platform/package-baseline"
+import { title } from "@gotpop-platform/package-baseline"
 
 export const blockNotFoundPage = async (data: BlockDataProps) => {
   return (
     <AppTheme
-      title={title("Page Not Found", data.Config.APP.SITE_NAME)}
+      title={title("Page Not Found", process.env.npm_package_config_app_site_name || "GotPop")}
       scriptPaths={data.scriptPaths}
-      Config={data.Config}
     >
       <GridGap isRoot>
         <div class="graph">
