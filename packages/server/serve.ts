@@ -10,13 +10,13 @@ const buildConfig = {
     // "src/assets/styles/index.css", // CSS parsing is still patchy
   ],
   outdir: env.npm_package_config_dir_public,
-  root: "./src",
+  root: env.npm_package_config_root,
   naming: "[dir]/[name]-[hash].[ext]",
   experimentalCss: true,
   plugins: [
     createCopyFilesPlugin({
-      inputDir: "src/assets",
-      outputDir: "dist/assets",
+      inputDir: "../client/src/assets",
+      outputDir: "../client/dist/assets",
       directories: ["fonts", "styles", "img"],
       preserveStructure: true,
       verbose: false,

@@ -1,0 +1,14 @@
+{
+  "name": "@gotpop-platform/client",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "echo \"No dev script specified\"",
+    "start": "bun run serve.ts",
+    "tsc": "tsc"
+  },
+  "dependencies": {
+    "bun-types": "latest"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "extends": "@gotpop-platform/package-baseline/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "jsxFactory": "jsxFactory",
+    "jsxFragmentFactory": "Fragment",
+    /* Paths */
+    "baseUrl": ".", // Resets the base URL to the root of the project
+    "paths": {
+      "blocks": ["src/blocks"]
+    }
+  },
+  "include": [
+    "./src/**/*", // All files in server's src directory
+    "../client/config/global.d.ts" // Reference to global types from client
+  ],
+  "exclude": ["../../node_modules", "dist", "**/*.spec.ts"]
+}

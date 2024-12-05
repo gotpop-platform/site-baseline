@@ -6,12 +6,10 @@
   "module": "serve.ts",
   "type": "module",
   "scripts": {
-    "clean": "rm -rf dist node_modules bun.lockb",
-    "open:chrome": "bun open.ts $npm_package_config_server_url chrome",
-    "predev": "bun clean && bun i && bun open:chrome",
-    "dev": "bun run --hot --inspect --open serve.ts",
-    "start": "bun run serve.ts",
-    "tsc": "tsc"
+    "clean": "rm -rf dist node_modules bun.lockb workspaces/*/node_modules",
+    "dev": "bun --cwd packages/server dev",
+    "start": "bun run workspace:@gotpop-platform/server:start",
+    "tsc": "bun run --parallel \"workspaces/*\" tsc"
   },
   "dependencies": {
     "@gotpop-platform/package-baseline": "0.0.17"
@@ -38,6 +36,11 @@
     "printWidth": 100,
     "semi": false
   },
+  "private": true,
+  "workspaces": [
+    "packages/client",
+    "packages/server"
+  ],
   "bun": {
     "version": ">=1.1.37"
   },
