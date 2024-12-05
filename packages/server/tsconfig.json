@@ -1,13 +1,15 @@
 {
   "extends": "@gotpop-platform/package-baseline/tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "jsx": "react",
     "jsxFactory": "jsxFactory",
     "jsxFragmentFactory": "Fragment",
-    /* Paths */
-    "baseUrl": ".", // Resets the base URL to the root of the project
+    "rootDir": "src",
+    "outDir": "dist",
     "paths": {
-      "blocks": ["src/blocks"]
+      "@/*": ["src/*"],
+      "blocks": ["../client/src/blocks"]
     }
   },
   "include": [

@@ -4,9 +4,9 @@ import { env } from "process"
 
 const buildConfig = {
   entrypoints: [
-    "src/assets/js/script.ts",
-    "src/assets/js/worklets/worklet.grid.ts",
-    "src/assets/js/worklets/worklet.hero.ts",
+    "../client/src/assets/js/script.ts",
+    "../client/src/assets/js/worklets/worklet.grid.ts",
+    "../client/src/assets/js/worklets/worklet.hero.ts",
     // "src/assets/styles/index.css", // CSS parsing is still patchy
   ],
   outdir: env.npm_package_config_dir_public,

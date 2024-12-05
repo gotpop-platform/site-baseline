@@ -7,12 +7,12 @@
   "type": "module",
   "scripts": {
     "clean": "rm -rf dist node_modules bun.lockb workspaces/*/node_modules",
-    "dev": "bun --cwd packages/server dev",
+    "dev": "PROJECT_ROOT=$PWD bun --cwd packages/server dev",
     "start": "bun run workspace:@gotpop-platform/server:start",
     "tsc": "bun run --parallel \"workspaces/*\" tsc"
   },
   "dependencies": {
-    "@gotpop-platform/package-baseline": "0.0.17"
+    "@gotpop-platform/package-baseline": "0.0.18"
   },
   "peerDependencies": {
     "@types/bun": "^1.1.14",
