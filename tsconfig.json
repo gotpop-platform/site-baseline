@@ -7,5 +7,5 @@
       "blocks": ["src/blocks"]
     }
   },
-  "include": ["src", "src/**/*", "config/global.d.ts"]
+  "include": ["src", "src/**/*", "packages/client/config/global.d.ts"]
 }

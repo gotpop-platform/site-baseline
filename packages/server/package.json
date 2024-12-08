@@ -1,0 +1,20 @@
+{
+  "name": "@gotpop-platform/server",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --hot --inspect serve.ts",
+    "start": "bun run serve.ts"
+  },
+  "config": {
+    "dir_content": "packages/client/src/blocks",
+    "dir_package": "packages/client",
+    "dir_pages": "packages/client/src/pages",
+    "dir_public": "packages/client/dist",
+    "root": "packages/client/src"
+  },
+  "dependencies": {
+    "bun-types": "latest"
+  }
+}

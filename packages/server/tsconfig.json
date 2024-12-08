@@ -1,0 +1,8 @@
+{
+  "extends": "@gotpop-platform/package-baseline/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "jsxFactory": "jsxFactory",
+    "jsxFragmentFactory": "Fragment"
+  }
+}
