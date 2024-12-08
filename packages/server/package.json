@@ -5,22 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "bun run --hot --inspect serve.ts",
-    "start": "bun run serve.ts",
-    "tsc": "tsc"
+    "start": "bun run serve.ts"
   },
   "config": {
-    "server_url": "http://localhost:2000",
-    "dir_pages": "../client/src/pages",
-    "app_site_name": "Baseline",
-    "dir_content": "../client/src/blocks",
-    "dir_public": "../client/dist",
-    "root": "../client/src",
-    "format_date_day": "numeric",
-    "format_date_locale": "en-GB",
-    "format_date_month": "long",
-    "format_date_year": "numeric",
-    "server_port": "2000",
-    "server_router_style": "nextjs"
+    "dir_content": "packages/client/src/blocks",
+    "dir_package": "packages/client",
+    "dir_pages": "packages/client/src/pages",
+    "dir_public": "packages/client/dist",
+    "root": "packages/client/src"
   },
   "dependencies": {
     "bun-types": "latest"

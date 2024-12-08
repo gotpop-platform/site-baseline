@@ -6,10 +6,10 @@
   "module": "serve.ts",
   "type": "module",
   "scripts": {
-    "clean": "rm -rf dist node_modules bun.lockb workspaces/*/node_modules",
+    "clean": "rm -rf dist node_modules bun.lockb packages/*/node_modules",
     "dev": "PROJECT_ROOT=$PWD bun --cwd packages/server dev",
     "start": "bun run workspace:@gotpop-platform/server:start",
-    "tsc": "bun run --parallel \"workspaces/*\" tsc"
+    "tsc": "tsc"
   },
   "dependencies": {
     "@gotpop-platform/package-baseline": "0.0.18"
@@ -29,8 +29,8 @@
     "format_date_month": "long",
     "format_date_year": "numeric",
     "server_port": "2000",
-    "server_url": "http://localhost:2000",
-    "server_router_style": "nextjs"
+    "server_router_style": "nextjs",
+    "server_url": "http://localhost:2000"
   },
   "prettier": {
     "printWidth": 100,
