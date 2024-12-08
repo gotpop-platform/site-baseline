@@ -12,7 +12,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
-    "@gotpop-platform/package-baseline": "^0.0.20"
+    "@gotpop-platform/package-baseline": "0.0.21"
   },
   "peerDependencies": {
     "@types/bun": "^1.1.14",
@@ -34,7 +34,18 @@
   },
   "prettier": {
     "printWidth": 100,
-    "semi": false
+    "semi": false,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "trailingComma": "es5",
+    "insertPragma": false,
+    "proseWrap": "preserve",
+    "htmlWhitespaceSensitivity": "css",
+    "endOfLine": "lf",
+    "embeddedLanguageFormatting": "auto",
+    "bracketSameLine": false,
+    "singleAttributePerLine": false,
+    "requirePragma": false
   },
   "private": true,
   "workspaces": [

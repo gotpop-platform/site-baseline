@@ -1,5 +1,3 @@
-/// <reference path="../../../../packages/client/config/global.d.ts" />
-
 if (typeof registerPaint !== "undefined") {
   class GridPainter {
     static get inputProperties() {
