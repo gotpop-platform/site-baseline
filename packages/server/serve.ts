@@ -39,4 +39,6 @@ const buildConfig = {
   ],
 }
 
-startServer({ buildConfig })
+const watchPaths = ["packages/client/src", "packages/server"]
+
+startServer({ buildConfig, watchPaths })
