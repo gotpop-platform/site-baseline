@@ -1,33 +1,28 @@
 import { createCopyFilesPlugin, startServer } from "@gotpop-platform/package-baseline"
+import { join, resolve } from "path"
 
 import { env } from "process"
-import path from "path"
 
-// Get absolute paths
-const CLIENT_ROOT = path.resolve(__dirname, "../client/src")
-const PUBLIC_DIR = path.resolve(env.PROJECT_ROOT || "", env.npm_package_config_dir_public || "dist")
-// console.log("PUBLIC_DIR :", PUBLIC_DIR)
-const INPUT_DIR = path.resolve(CLIENT_ROOT, "assets")
-// console.log("INPUT_DIR :", INPUT_DIR)
-const OUTPUT_DIR = path.resolve(PUBLIC_DIR, "assets")
-// console.log("OUTPUT_DIR :", OUTPUT_DIR)
-
-// path.join(env.PROJECT_ROOT || "", "packages/client/dist/assets")
+const ROOT = env.PROJECT_ROOT ?? resolve(__dirname, "../..")
+const ROOT_CLIENT = resolve(ROOT, "packages/client/src")
+const DIR_PUBLIC = resolve(ROOT, env.npm_package_config_dir_public || "dist")
+const DIR_INPUT = resolve(ROOT_CLIENT, "assets")
+const DIR_OUTPUT = resolve(DIR_PUBLIC, "assets")
 
 const buildConfig = {
   entrypoints: [
-    path.join(CLIENT_ROOT, "assets/js/script.ts"),
-    path.join(CLIENT_ROOT, "assets/js/worklets/worklet.grid.ts"),
-    path.join(CLIENT_ROOT, "assets/js/worklets/worklet.hero.ts"),
+    join(ROOT_CLIENT, "assets", "scripts", "script.ts"),
+    join(ROOT_CLIENT, "assets", "scripts", "worklets", "worklet.grid.ts"),
+    join(ROOT_CLIENT, "assets", "scripts", "worklets", "worklet.hero.ts"),
   ],
-  outdir: PUBLIC_DIR,
-  root: CLIENT_ROOT,
+  outdir: DIR_PUBLIC,
+  root: ROOT_CLIENT,
   naming: "[dir]/[name]-[hash].[ext]",
   experimentalCss: true,
   plugins: [
     createCopyFilesPlugin({
-      inputDir: INPUT_DIR,
-      outputDir: OUTPUT_DIR,
+      inputDir: DIR_INPUT,
+      outputDir: DIR_OUTPUT,
       directories: ["fonts", "styles", "img"],
       preserveStructure: true,
       verbose: false,
