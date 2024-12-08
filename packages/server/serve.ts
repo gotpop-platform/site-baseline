@@ -15,6 +15,7 @@ const buildConfig = {
     join(ROOT_CLIENT, "assets", "scripts", "worklets", "worklet.grid.ts"),
     join(ROOT_CLIENT, "assets", "scripts", "worklets", "worklet.hero.ts"),
   ],
+
   outdir: DIR_PUBLIC,
   root: ROOT_CLIENT,
   naming: "[dir]/[name]-[hash].[ext]",
@@ -26,7 +27,7 @@ const buildConfig = {
       directories: ["fonts", "styles", "img"],
       preserveStructure: true,
       verbose: false,
-      silent: false,
+      silent: true,
       onFile: async (src, dest) => {
         console.log(`Processing: ${src}`)
       },
@@ -34,6 +35,12 @@ const buildConfig = {
   ],
 }
 
-const watchPaths = ["packages/client/src", "packages/server"]
+const serverConfig = {
+  watchPaths: ["packages/client/src", "packages/server"],
+  silent: true,
+  hostname: "::",
+  development: env.NODE_ENV === "development",
+  port: Number(env.npm_package_config_server_port),
+}
 
-startServer({ buildConfig, watchPaths })
+startServer({ buildConfig, serverConfig })
