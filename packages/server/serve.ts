@@ -4,7 +4,7 @@ import { join, resolve } from "path"
 import { env } from "process"
 
 const ROOT = env.PROJECT_ROOT ?? resolve(__dirname, "../..")
-const ROOT_CLIENT = resolve(ROOT, "packages/client/src")
+const ROOT_CLIENT = resolve(ROOT, "packages/client")
 const DIR_PUBLIC = resolve(ROOT, env.npm_package_config_dir_public || "dist")
 const DIR_INPUT = resolve(ROOT_CLIENT, "assets")
 const DIR_OUTPUT = resolve(DIR_PUBLIC, "assets")
@@ -15,7 +15,6 @@ const buildConfig = {
     join(ROOT_CLIENT, "assets", "scripts", "worklets", "worklet.grid.ts"),
     join(ROOT_CLIENT, "assets", "scripts", "worklets", "worklet.hero.ts"),
   ],
-
   outdir: DIR_PUBLIC,
   root: ROOT_CLIENT,
   naming: "[dir]/[name]-[hash].[ext]",
@@ -36,7 +35,13 @@ const buildConfig = {
 }
 
 const serverConfig = {
-  watchPaths: ["packages/client/src", "packages/server"],
+  watchPaths: [
+    "packages/client/assets",
+    "packages/client/blocks",
+    "packages/client/pages",
+    "packages/client/types",
+    "packages/server",
+  ],
   silent: true,
   hostname: "::",
   development: env.NODE_ENV === "development",
