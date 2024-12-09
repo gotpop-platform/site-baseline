@@ -1,43 +1,10 @@
 {
+  "extends": "@gotpop-platform/package-baseline/tsconfig.json",
   "compilerOptions": {
-    "lib": ["dom", "ESNext"],
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleDetection": "force",
-    "allowJs": true,
-
-    /* Bundler mode */
-    "moduleResolution": "node",
-
-    "noEmit": true,
-
-    /* Linting */
-    "skipLibCheck": true,
-    "strict": true,
-    "noFallthroughCasesInSwitch": true,
-    "forceConsistentCasingInFileNames": true,
-
-    /* JSX */
-    "jsx": "react",
-    "jsxFactory": "jsxFactory",
-    "jsxFragmentFactory": "Fragment",
-
-    /* Paths */
-    "baseUrl": ".", // This must be specified if "paths" is specified
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "blocks": ["../client/src/blocks"],
-      "@/gotpop-platform/*": ["packages/*/"],
-      "components": ["src/components"],
-      "layouts": ["src/components/layouts"],
-      "variables": ["src/variables"],
-      "pages": ["src/pages"],
-      "generics": ["src/generics"],
-      "types": ["src/types"],
-      "utils": ["src/utils"]
-    },
-    "typeRoots": ["./src/types", "node_modules/@types"]
+      "blocks": ["./src/blocks"]
+    }
   },
-  "include": ["src/**/*", "packages/**/*", "global.d.ts"],
-  "exclude": ["node_modules", "dist", "**/*.spec.ts"]
+  "include": ["src/**/*", "global.d.ts"]
 }
