@@ -3,8 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "blocks": ["./src/blocks"]
+      "blocks": ["./blocks"]
     }
   },
-  "include": ["src/**/*", "global.d.ts"]
+  "include": ["src/**/*", "global.d.ts", "assets", "blocks", "pages", "types"]
 }

@@ -7,7 +7,7 @@ import {
   blockPageFeaturesIndex,
 } from "blocks"
 
-import { BlockDataProps } from "src/types/types"
+import { BlockDataProps } from "types/types"
 
 const pageCatch = async (data: BlockDataProps): Promise<JSX.Element> => {
   const { slug } = data.query

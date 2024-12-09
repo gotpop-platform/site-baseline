@@ -8,11 +8,10 @@
     "start": "bun run serve.ts"
   },
   "config": {
-    "dir_content": "packages/client/src/blocks",
+    "dir_content": "packages/client/blocks",
     "dir_package": "packages/client",
-    "dir_pages": "packages/client/src/pages",
-    "dir_public": "packages/client/dist",
-    "root": "packages/client/src"
+    "dir_pages": "packages/client/pages",
+    "dir_public": "packages/client/dist"
   },
   "dependencies": {
     "bun-types": "latest"
