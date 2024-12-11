@@ -39,7 +39,7 @@ const serverConfig = {
     "packages/client/assets",
     "packages/client/blocks",
     "packages/client/pages",
-    "packages/client/types",
+    "packages/types",
     "packages/server",
   ],
   silent: true,
