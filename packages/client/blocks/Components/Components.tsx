@@ -10,15 +10,15 @@ import {
 import { getPageMetadata, title } from "@gotpop-platform/package-baseline"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "../Docs/Docs.style.vars"
 
-import { BlockDataProps } from "src/types/types"
+import { BlockDataProps } from "@gotpop-platform/types"
 import { jsxFactory } from "@gotpop-platform/package-baseline"
 
 // import { content } from "./forms/button.md"
 // console.log("content :", content)
 
-const Fragment = ({ children }: { children?: JSX.Element }) => children || null
+const Fragment = ({ children }: { children?: string }) => children || null
 
-export const blockPageComponents = async (data: BlockDataProps): Promise<JSX.Element> => {
+export const blockPageComponents = async (data: BlockDataProps): Promise<string> => {
   const { slug } = data.query
   const defaultPath = ["components", "forms", "button"]
   const segments = slug === "components" ? defaultPath : slug?.split("/") || defaultPath
