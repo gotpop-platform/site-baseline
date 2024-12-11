@@ -10,7 +10,7 @@ import {
 } from "@gotpop-platform/package-baseline"
 import { styleMain, stylesLayout } from "."
 
-import { BlockDataProps } from "src/types/types"
+import { BlockDataProps } from "@gotpop-platform/types"
 import { jsxFactory } from "@gotpop-platform/package-baseline"
 import { title } from "@gotpop-platform/package-baseline"
 

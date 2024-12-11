@@ -10,13 +10,13 @@ import {
 } from "@gotpop-platform/package-baseline"
 import { styleArticlesSurfaceMain, stylesArticlesLayout } from "../Home"
 
-import { BlockDataProps } from "src/types/types"
+import { BlockDataProps } from "@gotpop-platform/types"
 import { jsxFactory } from "@gotpop-platform/package-baseline"
 import { title } from "@gotpop-platform/package-baseline"
 
 const ArticleList = withItems(ArticleItem)
 
-export const blockPageFeaturesIndex = async (data: BlockDataProps): Promise<JSX.Element> => {
+export const blockPageFeaturesIndex = async (data: BlockDataProps): Promise<string> => {
   const { slug } = data.query
 
   const allForms = data.allContent.get("Features")

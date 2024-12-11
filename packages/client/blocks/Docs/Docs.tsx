@@ -11,10 +11,10 @@ import {
 import { getPageMetadata, title } from "@gotpop-platform/package-baseline"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "."
 
-import { BlockDataProps } from "src/types/types"
+import { BlockDataProps } from "@gotpop-platform/types"
 import { jsxFactory } from "@gotpop-platform/package-baseline"
 
-export const blockPageDocItem = async (data: BlockDataProps): Promise<JSX.Element> => {
+export const blockPageDocItem = async (data: BlockDataProps): Promise<string> => {
   const { slug } = data.query
   const defaultPath = ["docs", "getting-started", "getting-started"]
   const segments = slug === "docs" ? defaultPath : slug?.split("/") || defaultPath

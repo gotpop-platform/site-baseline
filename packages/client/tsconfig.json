@@ -3,8 +3,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "blocks": ["./blocks"]
+      "blocks": ["./blocks"],
+      "@gotpop-platform/*": ["packages/*"]
     }
   },
-  "include": ["src/**/*", "global.d.ts", "assets", "blocks", "pages", "types"]
+  "include": ["src/**/*", "../types/global.d.ts", "assets", "blocks", "pages", "types"]
 }

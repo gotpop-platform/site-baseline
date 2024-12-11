@@ -10,11 +10,11 @@ import {
 } from "@gotpop-platform/package-baseline"
 import { layoutArticlesSlugContent, layoutArticlesSlugSurface, layoutArticlesSlugToc } from "."
 
-import { BlockDataProps } from "src/types/types"
+import { BlockDataProps } from "@gotpop-platform/types"
 import { jsxFactory } from "@gotpop-platform/package-baseline"
 import { title } from "@gotpop-platform/package-baseline"
 
-export const blockPageFeaturePage = async (data: BlockDataProps): Promise<JSX.Element> => {
+export const blockPageFeaturePage = async (data: BlockDataProps): Promise<string> => {
   const { env } = process
   const { slug } = data.query
   const [root, pageSlug] = slug.split("/")
