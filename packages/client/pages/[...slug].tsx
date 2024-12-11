@@ -7,9 +7,9 @@ import {
   blockPageFeaturesIndex,
 } from "blocks"
 
-import { BlockDataProps } from "types/types"
+import { BlockDataProps } from "@gotpop-platform/types"
 
-const pageCatch = async (data: BlockDataProps): Promise<JSX.Element> => {
+const pageCatch = async (data: BlockDataProps): Promise<string> => {
   const { slug } = data.query
 
   if (slug.startsWith("features")) {

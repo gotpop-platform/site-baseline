@@ -8,6 +8,7 @@
     "start": "bun run serve.ts"
   },
   "dependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "@gotpop-platform/types": "workspace:*"
   }
 }

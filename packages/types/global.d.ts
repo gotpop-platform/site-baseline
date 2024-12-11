@@ -1,9 +1,18 @@
-// JSX types
 declare global {
   namespace JSX {
-    interface Element {}
+    interface IntrinsicAttributes {
+      key?: string | number
+    }
+
     interface IntrinsicElements {
-      [elemName: string]: any
+      [elemName: string]: {
+        id?: string
+        class?: string
+        className?: string
+        style?: string | Record<string, string | number>
+        children?: string | string[]
+        [key: string]: string
+      }
     }
   }
 }

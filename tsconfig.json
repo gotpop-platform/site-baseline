@@ -1,11 +1,3 @@
 {
-  "extends": "@gotpop-platform/package-baseline/tsconfig.json",
-  "compilerOptions": {
-    /* Paths */
-    "baseUrl": ".", // Resets the base URL to the root of the project
-    "paths": {
-      "blocks": ["src/blocks"]
-    }
-  },
-  "include": ["src", "src/**/*", "**/global.d.ts"]
+  "extends": "@gotpop-platform/package-baseline/tsconfig.json"
 }

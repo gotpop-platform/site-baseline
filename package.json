@@ -1,14 +1,14 @@
 {
   "name": "baseline",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "module": "serve.ts",
+  "description": "Baseline starter kit",
+  "main": "packages/server/serve.ts",
+  "module": "packages/server/serve.ts",
   "type": "module",
   "scripts": {
     "clean": "rm -rf dist node_modules bun.lockb packages/*/node_modules",
     "dev": "PROJECT_ROOT=$PWD bun --cwd packages/server dev",
-    "start": "bun run workspace:@gotpop-platform/server:start",
+    "start": "PROJECT_ROOT=$PWD bun --cwd packages/server start",
     "tsc": "tsc"
   },
   "dependencies": {
@@ -21,16 +21,17 @@
   },
   "config": {
     "app_site_name": "Baseline",
-    "dir_content": "./src/blocks",
-    "dir_pages": "src/pages",
-    "dir_public": "dist",
     "format_date_day": "numeric",
     "format_date_locale": "en-GB",
     "format_date_month": "long",
     "format_date_year": "numeric",
     "server_port": "2000",
     "server_router_style": "nextjs",
-    "server_url": "http://localhost:2000"
+    "server_url": "http://localhost:2000",
+    "dir_content": "packages/client/blocks",
+    "dir_package": "packages/client",
+    "dir_pages": "packages/client/pages",
+    "dir_public": "packages/client/dist"
   },
   "prettier": {
     "printWidth": 100,
@@ -49,11 +50,10 @@
   },
   "private": true,
   "workspaces": [
-    "packages/client",
-    "packages/server"
+    "packages/*"
   ],
   "bun": {
-    "version": ">=1.1.37"
+    "version": ">=1.1.38"
   },
   "license": "MIT"
 }
