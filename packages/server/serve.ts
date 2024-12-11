@@ -35,13 +35,7 @@ const buildConfig = {
 }
 
 const serverConfig = {
-  watchPaths: [
-    "packages/client/assets",
-    "packages/client/blocks",
-    "packages/client/pages",
-    "packages/types",
-    "packages/server",
-  ],
+  watchPaths: ["packages/client", "packages/types", "packages/server"],
   silent: true,
   hostname: "::",
   development: env.NODE_ENV === "development",
