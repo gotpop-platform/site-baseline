@@ -7,7 +7,7 @@
   "type": "module",
   "scripts": {
     "clean": "rm -rf dist node_modules bun.lockb packages/*/node_modules",
-    "dev": "PROJECT_ROOT=$PWD bun --cwd packages/server dev",
+    "dev": "bun i && PROJECT_ROOT=$PWD bun --cwd packages/server dev",
     "start": "PROJECT_ROOT=$PWD bun --cwd packages/server start",
     "tsc": "tsc"
   },
