@@ -5,9 +5,9 @@ import {
   blockPageDocItem,
   blockPageFeaturePage,
   blockPageFeaturesIndex,
-} from "blocks"
+} from "@/client/blocks"
 
-import { BlockDataProps } from "@gotpop-platform/types"
+import { BlockDataProps } from "@/types"
 
 const pageCatch = async (data: BlockDataProps): Promise<string> => {
   const { slug } = data.query

@@ -1,11 +1,7 @@
 {
   "extends": "@gotpop-platform/package-baseline/tsconfig.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "blocks": ["./blocks"],
-      "@gotpop-platform/*": ["packages/*"]
-    }
-  },
-  "include": ["src/**/*", "../types/global.d.ts", "assets", "blocks", "pages", "types"]
+    "jsx": "react",
+    "jsxFactory": "jsxFactory"
+  }
 }

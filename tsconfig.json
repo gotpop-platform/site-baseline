@@ -1,7 +1,21 @@
 {
   "extends": "@gotpop-platform/package-baseline/tsconfig.json",
   "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "jsx": "react",
-    "jsxFactory": "jsxFactory"
-  }
+    "jsxFactory": "jsxFactory",
+    "types": ["bun-types"],
+    "allowJs": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": "."
+    // "paths": {
+    //   "@/*": ["packages/*"],
+
+    // }
+  },
+  "include": ["packages/**/*.ts", "packages/**/*.tsx"]
 }
