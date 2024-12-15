@@ -6,25 +6,28 @@ import {
   HeaderMegaMenu,
   MobileMenuTrigger,
   Tag,
-  withItems,
+  jsxFactory,
+  title,
+  withItems
 } from "@gotpop-platform/package-baseline"
 import { styleArticlesSurfaceMain, stylesArticlesLayout } from "../Home"
 
 import { BlockDataProps } from "@gotpop-platform/types"
-import { jsxFactory } from "@gotpop-platform/package-baseline"
-import { title } from "@gotpop-platform/package-baseline"
 
 const ArticleList = withItems(ArticleItem)
 
-export const blockPageFeaturesIndex = async (data: BlockDataProps): Promise<string> => {
-  const { slug } = data.query
-
-  const allForms = data.allContent.get("Features")
+export const blockPageFeaturesIndex = async ({
+  query,
+  allContent,
+  scriptPaths
+}: BlockDataProps): Promise<string> => {
+  const { slug } = query
+  const allForms = allContent.get("Features")
 
   return (
     <AppTheme
-      title={title(slug, process.env.npm_package_config_app_site_name || "GotPop")}
-      scriptPaths={data.scriptPaths}
+      title={title(slug)}
+      scriptPaths={scriptPaths}
     >
       <GridGap isRoot>
         <div class="graph">

@@ -1,13 +1,15 @@
 {
-  "name": "@gotpop-platform/server",
+  "name": "server",
   "version": "1.0.0",
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
     "dev": "bun run --hot --inspect serve.ts",
-    "start": "bun run serve.ts"
+    "start": "bun run serve.ts",
+    "in": "bun install"
   },
   "dependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "@gotpop-platform/package-baseline": "0.0.29"
   }
 }

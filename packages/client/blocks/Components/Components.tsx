@@ -5,13 +5,14 @@ import {
   HeaderMegaMenu,
   MenuSide,
   Tag,
+  getPageMetadata,
+  jsxFactory,
   renderComponents,
+  title
 } from "@gotpop-platform/package-baseline"
-import { getPageMetadata, title } from "@gotpop-platform/package-baseline"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "../Docs/Docs.style.vars"
 
 import { BlockDataProps } from "@gotpop-platform/types"
-import { jsxFactory } from "@gotpop-platform/package-baseline"
 
 // import { content } from "./forms/button.md"
 // console.log("content :", content)
@@ -41,13 +42,13 @@ export const blockPageComponents = async (data: BlockDataProps): Promise<string>
   }
 
   const docItem = currentLevel.get(docSlug)
-  const { pageMetadata, htmlSectionsMap } = docItem
+  const { htmlSectionsMap } = docItem
   const mainContent = htmlSectionsMap.get("main")
   const { finalContent } = await renderComponents(mainContent)
 
   return (
     <AppTheme
-      title={title(slug, process.env.npm_package_config_app_site_name || "GotPop")}
+      title={title(slug)}
       scriptPaths={data.scriptPaths}
     >
       <GridFull isRoot>

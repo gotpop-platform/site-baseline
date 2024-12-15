@@ -6,27 +6,30 @@ import {
   MobileMenuTrigger,
   TableOfContents,
   Tag,
+  jsxFactory,
   renderComponents,
+  title
 } from "@gotpop-platform/package-baseline"
 import { layoutArticlesSlugContent, layoutArticlesSlugSurface, layoutArticlesSlugToc } from "."
 
 import { BlockDataProps } from "@gotpop-platform/types"
-import { jsxFactory } from "@gotpop-platform/package-baseline"
-import { title } from "@gotpop-platform/package-baseline"
 
-export const blockPageFeaturePage = async (data: BlockDataProps): Promise<string> => {
-  const { env } = process
-  const { slug } = data.query
+export const blockPageFeaturePage = async ({
+  allContent,
+  query,
+  scriptPaths,
+}: BlockDataProps): Promise<string> => {
+  const { slug } = query
   const [root, pageSlug] = slug.split("/")
 
-  const { pageMetadata, htmlSectionsMap } = data.allContent.get("Features").get(pageSlug)
+  const { pageMetadata, htmlSectionsMap } = allContent.get("Features").get(pageSlug)
   const { sectionTableOfContents } = htmlSectionsMap.get("main")
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 
   return (
     <AppTheme
-      title={title(slug, env.npm_package_config_app_site_name || "GotPop")}
-      scriptPaths={data.scriptPaths}
+      title={title(slug)}
+      scriptPaths={scriptPaths}
     >
       <GridGap isRoot>
         <div class="graph">

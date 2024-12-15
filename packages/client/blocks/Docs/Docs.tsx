@@ -6,16 +6,21 @@ import {
   MenuSide,
   MobileMenuTrigger,
   Tag,
+  getPageMetadata,
+  jsxFactory,
   renderComponents,
+  title
 } from "@gotpop-platform/package-baseline"
-import { getPageMetadata, title } from "@gotpop-platform/package-baseline"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "."
 
 import { BlockDataProps } from "@gotpop-platform/types"
-import { jsxFactory } from "@gotpop-platform/package-baseline"
 
-export const blockPageDocItem = async (data: BlockDataProps): Promise<string> => {
-  const { slug } = data.query
+export const blockPageDocItem = async ({
+  allContent,
+  query,
+  scriptPaths
+}: BlockDataProps): Promise<string> => {
+  const { slug } = query
   const defaultPath = ["docs", "getting-started", "getting-started"]
   const segments = slug === "docs" ? defaultPath : slug?.split("/") || defaultPath
 
@@ -23,10 +28,11 @@ export const blockPageDocItem = async (data: BlockDataProps): Promise<string> =>
   const docSlug = rest.pop() || "getting-started"
   const directories = rest
 
-  const allDocs = data.allContent.get("Docs")
+  const allDocs = allContent.get("Docs")
   const allPageMetadata = getPageMetadata(allDocs)
 
   let currentLevel = allDocs
+
   for (const dir of directories) {
     currentLevel = currentLevel?.get(dir)
 
@@ -42,8 +48,8 @@ export const blockPageDocItem = async (data: BlockDataProps): Promise<string> =>
 
   return (
     <AppTheme
-      title={title(slug, process.env.npm_package_config_app_site_name || "GotPop")}
-      scriptPaths={data.scriptPaths}
+      title={title(slug)}
+      scriptPaths={scriptPaths}
     >
       <GridGap isRoot>
         <div class="graph">
