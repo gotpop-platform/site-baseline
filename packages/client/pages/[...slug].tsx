@@ -9,7 +9,7 @@ import {
 
 import { BlockDataProps } from "@gotpop-platform/types"
 
-const pageCatch = async (data: BlockDataProps): Promise<string> => {
+const pageCatch = async (data: BlockDataProps): Promise<any> => {
   const { slug } = data.query
 
   if (slug.startsWith("features")) {

@@ -1,7 +1,8 @@
 declare global {
   namespace JSX {
-    interface IntrinsicAttributes {
-      key?: string | number
+    interface Element {
+      type?: any
+      props?: any
     }
 
     interface IntrinsicElements {
@@ -10,9 +11,15 @@ declare global {
         class?: string
         className?: string
         style?: string | Record<string, string | number>
-        children?: string | string[]
-        [key: string]: string
+        children?: string | string[] | Element[]
+        [key: string]: any
       }
+    }
+
+    interface IntrinsicAttributes {
+      key?: string | number
+      id?: string
+      class?: string
     }
   }
 }

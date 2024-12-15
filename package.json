@@ -6,16 +6,10 @@
   "module": "packages/server/serve.ts",
   "type": "module",
   "scripts": {
-    "clean": "rm -rf dist node_modules bun.lockb packages/*/node_modules",
-    "dev": "PROJECT_ROOT=$PWD bun run --hot --inspect \"./packages/server/serve.ts\" --workspace=server",
-    "start": "PROJECT_ROOT=$PWD bun --cwd packages/server start",
-    "tsc": "bun run --workspaces  \"./packages/server\" tsc",
-    "in": "bun install --workspace=server --workspace=client "
-  },
-  "peerDependencies": {
-    "@types/bun": "^1.1.14",
-    "@types/node": "^22.10.1",
-    "typescript": "^5.7.2"
+    "clean": "rm -rf dist node_modules bun.lockb packages/*/node_modules packages/*/dist",
+    "dev": "PROJECT_ROOT=$PWD bun run --filter server dev",
+    "start": "PROJECT_ROOT=$PWD bun run --filter server start",
+    "typecheck": "bun run --filter '{server,client,types}' typecheck"
   },
   "config": {
     "app_site_name": "Baseline",
@@ -57,6 +51,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@gotpop-platform/package-baseline": "^0.0.30"
+    "@gotpop-platform/package-baseline": "^0.0.31",
+    "@types/bun": "^1.1.14"
   }
 }

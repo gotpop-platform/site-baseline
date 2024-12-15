@@ -4,12 +4,15 @@
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "dev": "bun run --hot --inspect serve.ts",
-    "start": "bun run serve.ts",
-    "in": "bun install"
+    "dev": "bun run --hot --inspect ./serve.ts",
+    "start": "bun run ./serve.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@types/bun": "^1.1.14",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
-    "bun-types": "latest",
-    "@gotpop-platform/package-baseline": "0.0.29"
+    "@gotpop-platform/types": "workspace:*"
   }
 }
