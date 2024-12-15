@@ -11,7 +11,7 @@
     "strict": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "jsxFactory": "jsxFactory",
     "jsxFragmentFactory": "Fragment",
     "baseUrl": ".",
