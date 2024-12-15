@@ -3,7 +3,7 @@ import { layoutArticlesSlugSurface, stylesBlog } from ".."
 
 import { BlockDataProps } from "@gotpop-platform/types"
 
-export const blockNotFoundPage = async (data: BlockDataProps) => {
+export const blockNotFoundPage = async (data: BlockDataProps): Promise<any> => {
   return (
     <AppTheme
       title={title("Page Not Found")}

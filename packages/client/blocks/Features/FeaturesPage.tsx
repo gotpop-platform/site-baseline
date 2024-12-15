@@ -18,7 +18,7 @@ export const blockPageFeaturePage = async ({
   allContent,
   query,
   scriptPaths,
-}: BlockDataProps): Promise<string> => {
+}: BlockDataProps): Promise<any> => {
   const { slug } = query
   const [root, pageSlug] = slug.split("/")
 

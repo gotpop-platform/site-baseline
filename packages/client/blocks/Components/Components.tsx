@@ -19,7 +19,7 @@ import { BlockDataProps } from "@gotpop-platform/types"
 
 const Fragment = ({ children }: { children?: string }) => children || null
 
-export const blockPageComponents = async (data: BlockDataProps): Promise<string> => {
+export const blockPageComponents = async (data: BlockDataProps) => {
   const { slug } = data.query
   const defaultPath = ["components", "forms", "button"]
   const segments = slug === "components" ? defaultPath : slug?.split("/") || defaultPath
@@ -55,9 +55,9 @@ export const blockPageComponents = async (data: BlockDataProps): Promise<string>
         <HeaderMegaMenu />
         <Tag tag="main" styles={stylesDocs}>
           <Tag tag="aside" class="docs-nav" styles={stylesDocsNav}>
-            <Fragment>
+            <>
               <MenuSide allPageMetadata={allPageMetadata} />
-            </Fragment>
+            </>
           </Tag>
           <Tag tag="section" class="docs-body" styles={stylesDocsBody}>
             {finalContent}

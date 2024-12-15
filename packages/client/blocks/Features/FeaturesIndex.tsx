@@ -20,7 +20,7 @@ export const blockPageFeaturesIndex = async ({
   query,
   allContent,
   scriptPaths
-}: BlockDataProps): Promise<string> => {
+}: BlockDataProps): Promise<any> => {
   const { slug } = query
   const allForms = allContent.get("Features")
 

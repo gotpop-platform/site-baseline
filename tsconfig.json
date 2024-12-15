@@ -16,13 +16,12 @@
     "jsxFragmentFactory": "Fragment",
     "baseUrl": ".",
     "paths": {
-      "@/gotpop/*": ["packages/*"],
       "@/client/*": ["packages/client/*"],
       "@/server/*": ["packages/server/*"],
       "@/types/*": ["packages/types/*"]
     },
     "types": ["bun"]
   },
-  "include": ["src/**/*", "packages/**/*", "**/global.d.ts"],
+  "include": ["packages/**/*", "**/*.d.ts"],
   "exclude": ["node_modules", "dist", "**/*.spec.ts"]
 }

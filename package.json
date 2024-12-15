@@ -51,7 +51,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@gotpop-platform/package-baseline": "^0.0.30",
+    "@gotpop-platform/package-baseline": "^0.0.31",
     "@types/bun": "^1.1.14"
   }
 }

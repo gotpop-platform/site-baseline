@@ -19,7 +19,7 @@ export const blockPageDocItem = async ({
   allContent,
   query,
   scriptPaths
-}: BlockDataProps): Promise<string> => {
+}: BlockDataProps) => {
   const { slug } = query
   const defaultPath = ["docs", "getting-started", "getting-started"]
   const segments = slug === "docs" ? defaultPath : slug?.split("/") || defaultPath
