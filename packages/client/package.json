@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "echo \"No dev script specified\""
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "@types/bun": "^1.1.14",

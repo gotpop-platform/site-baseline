@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "bun run --hot --inspect ./serve.ts",
     "start": "bun run ./serve.ts",
-    "tsc": "bun run tsc"
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "@types/bun": "^1.1.14",

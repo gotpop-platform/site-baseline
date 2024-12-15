@@ -9,7 +9,7 @@
     "clean": "rm -rf dist node_modules bun.lockb packages/*/node_modules packages/*/dist",
     "dev": "PROJECT_ROOT=$PWD bun run --filter server dev",
     "start": "PROJECT_ROOT=$PWD bun run --filter server start",
-    "tsc": "bun tsc"
+    "typecheck": "bun run --filter '{server,client,types}' typecheck"
   },
   "config": {
     "app_site_name": "Baseline",
@@ -51,6 +51,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@gotpop-platform/package-baseline": "^0.0.30"
+    "@gotpop-platform/package-baseline": "^0.0.30",
+    "@types/bun": "^1.1.14"
   }
 }

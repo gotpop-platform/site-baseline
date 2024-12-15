@@ -11,17 +11,14 @@
     "strict": true,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
+    "jsx": "preserve",
     "jsxFactory": "jsxFactory",
     "jsxFragmentFactory": "Fragment",
     "baseUrl": ".",
     "paths": {
-      "@/gotpop/*": ["packages/*"],
-      "@/client/*": ["packages/client/*"],
-      "@/server/*": ["packages/server/*"],
-      "@/types/*": ["packages/types/*"]
-    }
+      "block": ["./block"]
+    },
+    "types": ["bun"]
   },
-  "include": ["src/**/*", "packages/**/*", "**/global.d.ts"],
   "exclude": ["node_modules", "dist", "**/*.spec.ts"]
 }

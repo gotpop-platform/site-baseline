@@ -5,7 +5,7 @@ import {
   blockPageDocItem,
   blockPageFeaturePage,
   blockPageFeaturesIndex,
-} from "../blocks"
+} from "blocks"
 
 import { BlockDataProps } from "@gotpop-platform/types"
 
