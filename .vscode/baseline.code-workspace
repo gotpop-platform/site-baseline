@@ -10,23 +10,23 @@
     }
   ],
   "settings": {
-    "workbench.colorTheme": "Moonlight II",
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": true,
-    "editor.codeActionsOnSave": {
-      "source.fixAll": "always"
-    },
-    "github.copilot.editor.enableAutoCompletions": true,
-    "emmet.includeLanguages": {
-      "javascriptreact": "html",
-      "typescriptreact": "html"
-    },
     "[markdown]": {
       "editor.formatOnSave": false,
       "editor.formatOnPaste": false,
       "editor.formatOnType": false
     },
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "always"
+    },
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
     "editor.scrollbar.horizontal": "hidden",
-    "editor.scrollbar.vertical": "hidden"
+    "editor.scrollbar.vertical": "hidden",
+    "emmet.includeLanguages": {
+      "javascriptreact": "html",
+      "typescriptreact": "html"
+    },
+    "github.copilot.editor.enableAutoCompletions": true,
+    "workbench.colorTheme": "Moonlight II"
   }
 }

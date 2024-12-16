@@ -1,19 +1,20 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "ESNext"],
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleDetection": "force",
     "allowJs": true,
-    "moduleResolution": "node",
-    "noEmit": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
     "jsxFactory": "jsxFactory",
     "jsxFragmentFactory": "Fragment",
+    "lib": ["dom", "ESNext"],
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ESNext",
+    "typeRoots": ["./types", "./node_modules/@types"],
     "baseUrl": ".",
     "paths": {
       "@/client/*": ["packages/client/*"],
@@ -22,6 +23,6 @@
     },
     "types": ["bun"]
   },
-  "include": ["packages/**/*", "**/*.d.ts"],
+  "include": ["src/**/*", "packages/**/*", "**/*.tsx", "**/*.ts", "**/*.d.ts"],
   "exclude": ["node_modules", "dist", "**/*.spec.ts"]
 }
