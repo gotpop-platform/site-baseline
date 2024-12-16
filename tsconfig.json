@@ -1,4 +1,5 @@
 {
+  "$schema": "../package-baseline/tsconfig-schema.json",
   "compilerOptions": {
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
