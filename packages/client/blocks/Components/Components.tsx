@@ -8,56 +8,66 @@ import {
   getPageMetadata,
   jsxFactory,
   renderComponents,
-  title
+  title,
 } from "@gotpop-platform/package-baseline"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "../Docs/Docs.style.vars"
 
 import { BlockDataProps } from "@gotpop-platform/types"
 
+// Do not delete
 // import { content } from "./forms/button.md"
 // console.log("content :", content)
 
-const Fragment = ({ children }: { children?: string }) => children || null
-
-export const blockPageComponents = async (data: BlockDataProps) => {
-  const { slug } = data.query
-  const defaultPath = ["components", "forms", "button"]
+const getDirectoriesAndSlug = (slug: string | undefined, defaultPath: string[]) => {
   const segments = slug === "components" ? defaultPath : slug?.split("/") || defaultPath
-
   const [root, ...rest] = segments
-  const docSlug = rest.pop() || "button"
-  const directories = rest
+  const componentSlug = rest.pop() || "button"
 
-  const allDocs = data.allContent.get("Components")
-  const allPageMetadata = getPageMetadata(allDocs)
+  return { directories: rest, componentSlug }
+}
 
-  let currentLevel = allDocs
+const getCurrentLevel = (allComponents: Map<string, any>, directories: string[]) => {
+  let currentLevel: Map<string, any> | undefined = allComponents
 
   for (const dir of directories) {
-    currentLevel = currentLevel?.get(dir)
+    currentLevel = currentLevel.get(dir)
 
     if (!currentLevel) {
       throw new Error(`Directory "${dir}" not found`)
     }
   }
 
-  const docItem = currentLevel.get(docSlug)
-  const { htmlSectionsMap } = docItem
+  return currentLevel
+}
+
+export const blockPageComponents = async ({ query, allContent, scriptPaths }: BlockDataProps) => {
+  const { slug } = query || {}
+  const defaultPath = ["components", "forms", "button"]
+  const { directories, componentSlug } = getDirectoriesAndSlug(slug, defaultPath)
+  const allComponents = allContent.get("Components")
+
+  if (!allComponents) {
+    throw new Error("Components documentation not found")
+  }
+
+  const allPageMetadata = getPageMetadata(allComponents)
+  const currentLevel = getCurrentLevel(allComponents, directories)
+
+  if (!currentLevel.get(componentSlug)) {
+    throw new Error(`Document "${componentSlug}" not found in directory "${directories.join("/")}"`)
+  }
+
+  const { htmlSectionsMap } = currentLevel.get(componentSlug)
   const mainContent = htmlSectionsMap.get("main")
   const { finalContent } = await renderComponents(mainContent)
 
   return (
-    <AppTheme
-      title={title(slug)}
-      scriptPaths={data.scriptPaths}
-    >
+    <AppTheme title={title(slug)} scriptPaths={scriptPaths}>
       <GridFull isRoot>
         <HeaderMegaMenu />
         <Tag tag="main" styles={stylesDocs}>
           <Tag tag="aside" class="docs-nav" styles={stylesDocsNav}>
-            <>
-              <MenuSide allPageMetadata={allPageMetadata} />
-            </>
+            <MenuSide allPageMetadata={allPageMetadata} />
           </Tag>
           <Tag tag="section" class="docs-body" styles={stylesDocsBody}>
             {finalContent}
