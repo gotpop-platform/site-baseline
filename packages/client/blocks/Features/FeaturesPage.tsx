@@ -8,7 +8,7 @@ import {
   Tag,
   jsxFactory,
   renderComponents,
-  title
+  title,
 } from "@gotpop-platform/package-baseline"
 import { layoutArticlesSlugContent, layoutArticlesSlugSurface, layoutArticlesSlugToc } from "."
 
@@ -27,10 +27,7 @@ export const blockPageFeaturePage = async ({
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 
   return (
-    <AppTheme
-      title={title(slug)}
-      scriptPaths={scriptPaths}
-    >
+    <AppTheme title={slug} scriptPaths={scriptPaths}>
       <GridGap isRoot>
         <div class="graph">
           <MobileMenuTrigger />

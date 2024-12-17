@@ -9,17 +9,12 @@ import {
   getPageMetadata,
   jsxFactory,
   renderComponents,
-  title
 } from "@gotpop-platform/package-baseline"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "."
 
 import { BlockDataProps } from "@gotpop-platform/types"
 
-export const blockPageDocItem = async ({
-  allContent,
-  query,
-  scriptPaths
-}: BlockDataProps) => {
+export const blockPageDocItem = async ({ allContent, query, scriptPaths }: BlockDataProps) => {
   const { slug } = query
   const defaultPath = ["docs", "getting-started", "getting-started"]
   const segments = slug === "docs" ? defaultPath : slug?.split("/") || defaultPath
@@ -47,10 +42,7 @@ export const blockPageDocItem = async ({
   const { finalContent } = await renderComponents(mainContent)
 
   return (
-    <AppTheme
-      title={title(slug)}
-      scriptPaths={scriptPaths}
-    >
+    <AppTheme title={slug} scriptPaths={scriptPaths}>
       <GridGap isRoot>
         <div class="graph">
           <MobileMenuTrigger />

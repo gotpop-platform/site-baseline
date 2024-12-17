@@ -8,7 +8,6 @@ import {
   getPageMetadata,
   jsxFactory,
   renderComponents,
-  title,
 } from "@gotpop-platform/package-baseline"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "../Docs/Docs.style.vars"
 
@@ -62,7 +61,7 @@ export const blockPageComponents = async ({ query, allContent, scriptPaths }: Bl
   const { finalContent } = await renderComponents(mainContent)
 
   return (
-    <AppTheme title={title(slug)} scriptPaths={scriptPaths}>
+    <AppTheme title={slug} scriptPaths={scriptPaths}>
       <GridFull isRoot>
         <HeaderMegaMenu />
         <Tag tag="main" styles={stylesDocs}>

@@ -8,7 +8,7 @@ import {
   Tag,
   jsxFactory,
   title,
-  withItems
+  withItems,
 } from "@gotpop-platform/package-baseline"
 import { styleArticlesSurfaceMain, stylesArticlesLayout } from "../Home"
 
@@ -19,16 +19,13 @@ const ArticleList = withItems(ArticleItem)
 export const blockPageFeaturesIndex = async ({
   query,
   allContent,
-  scriptPaths
+  scriptPaths,
 }: BlockDataProps): Promise<any> => {
   const { slug } = query
   const allForms = allContent.get("Features")
 
   return (
-    <AppTheme
-      title={title(slug)}
-      scriptPaths={scriptPaths}
-    >
+    <AppTheme title={slug} scriptPaths={scriptPaths}>
       <GridGap isRoot>
         <div class="graph">
           <MobileMenuTrigger />
