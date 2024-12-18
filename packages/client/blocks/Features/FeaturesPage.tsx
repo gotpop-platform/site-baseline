@@ -8,7 +8,6 @@ import {
   Tag,
   jsxFactory,
   renderComponents,
-  title,
 } from "@gotpop-platform/package-baseline"
 import { layoutArticlesSlugContent, layoutArticlesSlugSurface, layoutArticlesSlugToc } from "."
 

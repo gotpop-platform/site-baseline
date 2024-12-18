@@ -7,7 +7,6 @@ import {
   MobileMenuTrigger,
   Tag,
   jsxFactory,
-  title,
   withItems,
 } from "@gotpop-platform/package-baseline"
 import { styleArticlesSurfaceMain, stylesArticlesLayout } from "../Home"
