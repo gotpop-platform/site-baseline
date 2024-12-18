@@ -11,6 +11,8 @@ const DIR_OUTPUT = resolve(DIR_PUBLIC, "assets")
 
 const buildConfig = {
   entrypoints: [
+    // Bun is still not ready
+    // join(ROOT_CLIENT, "assets", "styles", "index.css"),
     join(ROOT_CLIENT, "assets", "scripts", "script.ts"),
     join(ROOT_CLIENT, "assets", "scripts", "worklets", "worklet.grid.ts"),
     join(ROOT_CLIENT, "assets", "scripts", "worklets", "worklet.hero.ts"),
