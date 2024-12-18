@@ -9,7 +9,8 @@
     "clean": "rm -rf dist node_modules bun.lockb packages/*/node_modules packages/*/dist",
     "dev": "PROJECT_ROOT=$PWD bun run --filter server dev",
     "start": "PROJECT_ROOT=$PWD bun run --filter server start",
-    "typecheck": "bun run --filter '{server,client,types}' typecheck"
+    "typecheck": "bun run --filter '{server,client,types}' typecheck",
+    "time": "bun install --save-text-lockfile"
   },
   "config": {
     "app_site_name": "Baseline",
@@ -47,7 +48,7 @@
     "packages/types"
   ],
   "bun": {
-    "version": ">=1.1.38"
+    "version": ">=1.1.39"
   },
   "license": "MIT",
   "peerDependencies": {
