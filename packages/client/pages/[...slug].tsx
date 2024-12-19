@@ -12,27 +12,22 @@ import { BlockDataProps } from "@gotpop-platform/types"
 const pageCatch = async (data: BlockDataProps): Promise<any> => {
   const { slug } = data.query
 
-  if (slug.startsWith("features")) {
-    if (slug === "features") {
-      return blockPageFeaturesIndex(data)
-    } else {
-      return blockPageFeaturePage(data)
-    }
+  switch (true) {
+    case slug.startsWith("features"):
+      if (slug === "features") {
+        return blockPageFeaturesIndex(data)
+      } else {
+        return blockPageFeaturePage(data)
+      }
+    case slug.startsWith("docs"):
+      return blockPageDocItem(data)
+    case slug.startsWith("components"):
+      return blockPageComponents(data)
+    case slug === "404":
+      return blockNotFoundPage(data)
+    default:
+      return homePage(data)
   }
-
-  if (slug.startsWith("docs")) {
-    return blockPageDocItem(data)
-  }
-
-  if (slug.startsWith("components")) {
-    return blockPageComponents(data)
-  }
-
-  if (slug === "404") {
-    return blockNotFoundPage(data)
-  }
-
-  return homePage(data)
 }
 
 export default pageCatch
