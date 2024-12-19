@@ -1,10 +1,10 @@
 import {
-  block,
   blockNotFoundPage,
   blockPageComponents,
   blockPageDocItem,
   blockPageFeaturePage,
   blockPageFeaturesIndex,
+  homePage,
 } from "../blocks"
 
 import { BlockDataProps } from "@gotpop-platform/types"
@@ -32,7 +32,7 @@ const pageCatch = async (data: BlockDataProps): Promise<any> => {
     return blockNotFoundPage(data)
   }
 
-  return block(data)
+  return homePage(data)
 }
 
 export default pageCatch
