@@ -3,7 +3,7 @@
   "workspaces": {
     "": {
       "dependencies": {
-        "@gotpop-platform/package-baseline": "^0.0.31",
+        "@gotpop-platform/package-baseline": "^0.0.33",
       },
       "peerDependencies": {
         "@types/bun": "latest",
@@ -31,7 +31,7 @@
     },
   },
   "packages": {
-    "@gotpop-platform/package-baseline": ["@gotpop-platform/package-baseline@0.0.31", "https://npm.pkg.github.com/download/@gotpop-platform/package-baseline/0.0.31/db68a68c4e889942fc5523dace519f58a4d99c27", { "peerDependencies": { "@types/bun": "^1.1.11", "@types/node": "^22.7.4", "typescript": "^5.7.2" } }, "sha512-KBMtDZLdgRQdXwzOJTLoQ0bCkz0dNtQikAlgShcyQWckuk+lT19S3qT/eRhGqnRgVSQRqoTiMC8nUkDQXhK28w=="],
+    "@gotpop-platform/package-baseline": ["@gotpop-platform/package-baseline@0.0.33", "https://npm.pkg.github.com/download/@gotpop-platform/package-baseline/0.0.33/04a409a5e82e3cf2db6db31ce1addbbb0e2a89d9", { "peerDependencies": { "@types/bun": "latest", "@types/node": "latest", "typescript": "latest" } }, "sha512-+dk1S3SI18UhmnMsC9il7AnP0Owc/RVQMHof1u+fJA6yqQOICYS78BwVyfIby8VN4YGhpvCrou+/r3GSa2XZmQ=="],
 
     "@gotpop-platform/types": ["@gotpop-platform/types@workspace:packages/types", {}],
 
