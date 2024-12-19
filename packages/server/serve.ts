@@ -1,7 +1,26 @@
 import { createCopyFilesPlugin, startServer } from "@gotpop-platform/package-baseline"
 import { join, resolve } from "path"
 
+import { BuildConfig } from "bun"
 import { env } from "process"
+
+const MIME_TYPES = {
+  ".html": "text/html",
+  ".css": "text/css",
+  ".js": "text/javascript",
+  ".json": "application/json",
+  ".png": "image/png",
+  ".jpg": "image/jpeg",
+  ".jpeg": "image/jpeg",
+  ".gif": "image/gif",
+  ".svg": "image/svg+xml",
+  ".ico": "image/x-icon",
+  ".woff": "font/woff",
+  ".woff2": "font/woff2",
+} as const
+
+const ALLOWED_EXTENSIONS = [".js", ".css", ".woff2", ".png", ".jpg", ".svg", ".ico"]
+const MAX_FILE_SIZE = 5 * 1024 * 1024 // 5MB
 
 const ROOT = env.PROJECT_ROOT ?? resolve(__dirname, "../..")
 const ROOT_CLIENT = resolve(ROOT, "packages/client")
@@ -11,6 +30,8 @@ const DIR_OUTPUT = resolve(DIR_PUBLIC, "assets")
 
 const buildConfig = {
   entrypoints: [
+    // Bun is still not ready to bundle CSS files
+    // join(ROOT_CLIENT, "assets", "styles", "index.css"),
     join(ROOT_CLIENT, "assets", "scripts", "script.ts"),
     join(ROOT_CLIENT, "assets", "scripts", "worklets", "worklet.grid.ts"),
     join(ROOT_CLIENT, "assets", "scripts", "worklets", "worklet.hero.ts"),
@@ -19,6 +40,8 @@ const buildConfig = {
   root: ROOT_CLIENT,
   naming: "[dir]/[name]-[hash].[ext]",
   experimentalCss: true,
+  minify: true,
+  watch: env.NODE_ENV === "development",
   plugins: [
     createCopyFilesPlugin({
       inputDir: DIR_INPUT,
@@ -32,14 +55,18 @@ const buildConfig = {
       },
     }),
   ],
-}
+} as BuildConfig
 
 const serverConfig = {
-  watchPaths: ["packages/client", "packages/types", "packages/server"],
-  silent: true,
-  hostname: "::",
   development: env.NODE_ENV === "development",
+  hostname: "::",
   port: Number(env.npm_package_config_server_port),
+  silent: true,
+  watchPaths: ["packages/client", "packages/types", "packages/server"],
+  watchPathsExcluded: ["node_modules", ".git", "dist"],
+  mimeTypes: MIME_TYPES,
+  allowedExtensions: ALLOWED_EXTENSIONS,
+  maxFileSize: MAX_FILE_SIZE,
 }
 
 startServer({ buildConfig, serverConfig })

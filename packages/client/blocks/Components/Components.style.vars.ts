@@ -34,7 +34,6 @@ export const layoutBlog = (): Record<string, string | number>[] => [
     "--border-radius": "var(--radius-lg) 0 0 0",
     "--grid-column": "1 / span 16",
     "--grid-row": "1",
-    // "--transition-article": pageMetadata?.id ?? "",
   },
   {
     ...style,
@@ -42,7 +41,6 @@ export const layoutBlog = (): Record<string, string | number>[] => [
     "--border-radius": "0 var(--radius-lg) 0 0",
     "--grid-column": "17 / -1",
     "--grid-row": "1",
-    // "--transition-article": pageMetadata?.id ?? "",
   },
   {
     ...style,
@@ -50,7 +48,6 @@ export const layoutBlog = (): Record<string, string | number>[] => [
     "--border-radius": "0",
     "--grid-column": "1 / -1",
     "--grid-row": "2",
-    // "--transition-article": pageMetadata?.id ?? "",
   },
   {
     ...style,
@@ -58,20 +55,17 @@ export const layoutBlog = (): Record<string, string | number>[] => [
     "--border-radius": "0 0 var(--radius-lg) var(--radius-lg)",
     "--grid-column": "1 / -15",
     "--grid-row": "3",
-    // "--transition-article": pageMetadata?.id ?? "",
   },
   {
     ...style,
     "--background-colour": "var(--grey-500)",
     "--grid-column": "span 14",
     "--grid-row": "3",
-    // "--transition-article": pageMetadata?.id ?? "",
   },
   {
     ...style,
     "--background-colour": "var(--grey-600)",
     "--grid-column": "span 12",
     "--grid-row": "3",
-    // "--transition-article": pageMetadata?.id ?? "",
   },
 ]

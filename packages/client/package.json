@@ -5,6 +5,21 @@
   "scripts": {
     "typecheck": "tsc --noEmit"
   },
+  "prettier": {
+    "printWidth": 100,
+    "semi": false,
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "trailingComma": "es5",
+    "insertPragma": false,
+    "proseWrap": "preserve",
+    "htmlWhitespaceSensitivity": "css",
+    "endOfLine": "lf",
+    "embeddedLanguageFormatting": "auto",
+    "bracketSameLine": false,
+    "singleAttributePerLine": false,
+    "requirePragma": false
+  },
   "dependencies": {
     "@gotpop-platform/types": "workspace:*"
   }
