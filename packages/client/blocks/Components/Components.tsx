@@ -1,8 +1,4 @@
 import {
-  AppTheme,
-  Footer,
-  GridFull,
-  HeaderMegaMenu,
   MenuSide,
   Tag,
   getPageMetadata,
@@ -13,6 +9,7 @@ import { getCurrentLevel, getDirectoriesAndSlug } from "../shared"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "../Docs/Docs.style.vars"
 
 import { BlockDataProps } from "@gotpop-platform/types"
+import { Layout } from "../Layout"
 
 // Do not delete
 // import { content } from "./forms/button.md"
@@ -46,19 +43,15 @@ export const blockPageComponents = async ({ query, allContent, scriptPaths }: Bl
   const { finalContent } = await renderComponents(mainContent)
 
   return (
-    <AppTheme title={slug} scriptPaths={scriptPaths}>
-      <GridFull isRoot>
-        <HeaderMegaMenu />
-        <Tag tag="main" styles={stylesDocs}>
-          <Tag tag="aside" class="docs-nav" styles={stylesDocsNav}>
-            <MenuSide allPageMetadata={allPageMetadata} />
-          </Tag>
-          <Tag tag="section" class="docs-body" styles={stylesDocsBody}>
-            {finalContent}
-          </Tag>
+    <Layout title={slug} scriptPaths={scriptPaths}>
+      <Tag tag="main" styles={stylesDocs}>
+        <Tag tag="aside" class="docs-nav" styles={stylesDocsNav}>
+          <MenuSide allPageMetadata={allPageMetadata} />
         </Tag>
-        <Footer />
-      </GridFull>
-    </AppTheme>
+        <Tag tag="section" class="docs-body" styles={stylesDocsBody}>
+          {finalContent}
+        </Tag>
+      </Tag>
+    </Layout>
   )
 }
