@@ -6,7 +6,7 @@ import {
   renderComponents,
 } from "@gotpop-platform/package-baseline"
 import { getCurrentLevel, getDirectoriesAndSlug } from "../shared"
-import { stylesDocs, stylesDocsBody, stylesDocsNav } from "../Docs/Docs.style.vars"
+import { stylesDocs, stylesDocsBody, stylesDocsNav } from "../Docs/Docs.style"
 
 import { BlockDataProps } from "@gotpop-platform/types"
 import { Layout } from "../Layout"
