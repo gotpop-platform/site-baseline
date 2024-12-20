@@ -56,6 +56,6 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "@gotpop-platform/package-baseline": "^0.0.33"
+    "@gotpop-platform/package-baseline": "^0.0.34"
   }
 }

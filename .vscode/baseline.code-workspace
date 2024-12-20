@@ -12,6 +12,9 @@
   "settings": {
     "css.lint.unknownAtRules": "ignore",
     "css.lint.unknownProperties": "ignore",
+    "css.lint.validProperties": [],
+    "css.validate": true,
+    "css.lint.unknownVendorSpecificProperties": "ignore",
     "[markdown]": {
       "editor.formatOnSave": false,
       "editor.formatOnPaste": false,
