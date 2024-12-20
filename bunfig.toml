@@ -5,3 +5,5 @@ registry = "https://registry.npmjs.org"
 
 [install.scopes]
 "@gotpop-platform" = { token = "$GITHUB_TOKEN", url = "https://npm.pkg.github.com/" }
+
+# saveTextLockfile = true

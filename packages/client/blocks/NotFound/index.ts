@@ -1,2 +1,2 @@
-export * from './404'
-export * from './404.style.vars'
+export * from "./404"
+export * from "./404.style"

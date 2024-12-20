@@ -10,6 +10,11 @@
     }
   ],
   "settings": {
+    "css.lint.unknownAtRules": "ignore",
+    "css.lint.unknownProperties": "ignore",
+    "css.lint.validProperties": [],
+    "css.validate": true,
+    "css.lint.unknownVendorSpecificProperties": "ignore",
     "[markdown]": {
       "editor.formatOnSave": false,
       "editor.formatOnPaste": false,
@@ -27,6 +32,11 @@
       "typescriptreact": "html"
     },
     "github.copilot.editor.enableAutoCompletions": true,
+    "github.copilot.chat.codeGeneration.instructions": [
+      {
+        "file": "./code-style.md"
+      }
+    ],
     "workbench.colorTheme": "Moonlight II"
   }
 }

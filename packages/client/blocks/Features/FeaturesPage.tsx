@@ -1,9 +1,4 @@
 import {
-  AppTheme,
-  Footer,
-  GridGap,
-  HeaderMegaMenu,
-  MobileMenuTrigger,
   TableOfContents,
   Tag,
   jsxFactory,
@@ -12,6 +7,7 @@ import {
 import { layoutArticlesSlugContent, layoutArticlesSlugSurface, layoutArticlesSlugToc } from "."
 
 import { BlockDataProps } from "@gotpop-platform/types"
+import { Layout } from "../Layout"
 
 export const blockPageFeaturePage = async ({
   allContent,
@@ -26,26 +22,15 @@ export const blockPageFeaturePage = async ({
   const { finalContent } = await renderComponents(htmlSectionsMap.get("main"))
 
   return (
-    <AppTheme title={slug} scriptPaths={scriptPaths}>
-      <GridGap isRoot>
-        <div class="graph">
-          <MobileMenuTrigger />
-          <HeaderMegaMenu />
-          <Tag tag="main" styles={layoutArticlesSlugSurface}>
-            <Tag tag="aside" class="article-aside" styles={layoutArticlesSlugToc}>
-              <TableOfContents toc={sectionTableOfContents} />
-            </Tag>
-            <Tag
-              tag="section"
-              class="article-body"
-              styles={layoutArticlesSlugContent(pageMetadata.id)}
-            >
-              {finalContent}
-            </Tag>
-          </Tag>
-          <Footer />
-        </div>
-      </GridGap>
-    </AppTheme>
+    <Layout title={slug} scriptPaths={scriptPaths}>
+      <Tag tag="main" styles={layoutArticlesSlugSurface}>
+        <Tag tag="aside" class="article-aside" styles={layoutArticlesSlugToc}>
+          <TableOfContents toc={sectionTableOfContents} />
+        </Tag>
+        <Tag tag="section" class="article-body" styles={layoutArticlesSlugContent(pageMetadata.id)}>
+          {finalContent}
+        </Tag>
+      </Tag>
+    </Layout>
   )
 }

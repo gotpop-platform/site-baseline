@@ -2,6 +2,42 @@
   navigation: auto;
 }
 
+::view-transition-old(root),
+::view-transition-new(root) {
+  /* Reduce animation duration */
+  animation-duration: 250ms;
+  
+  /* Optimize timing function */
+  animation-timing-function: cubic-bezier(0.2, 0, 0.2, 1);
+  
+  /* Hardware acceleration hints */
+  transform-origin: 50% 50%;
+  transform: translateZ(0);
+  perspective: 1000px;
+  
+  /* Performance optimizations */
+  will-change: transform, opacity;
+  contain: layout paint style;
+  isolation: isolate;
+  
+  /* Prevent flickering */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  
+  /* Improve compositing */
+  opacity: 1;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+  transform: scale(1);
+}
+
+::view-transition-new(root) {
+  z-index: 2;
+  transform: scale(0.95);
+}
+
 :root {
   accent-color: var(--accent);
 }
@@ -48,7 +84,7 @@
 
 html {
   background-color: var(--colour-bg-site);
-  background-color: red !important;
+  background-color: pink !important;
   color-scheme: var(--color-scheme);
   font-size: var(--root-font-size);
   interpolate-size: allow-keywords;
