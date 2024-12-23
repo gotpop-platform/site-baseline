@@ -11,3 +11,5 @@ This project uses a single package which is also only using Bun with no addition
 This project does not use React
 
 This project uses JSX provided natively by Bun
+
+All HTML & CSS will be generated on the server 
