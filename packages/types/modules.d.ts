@@ -3,3 +3,9 @@ declare module "*.md" {
 
   export { content }
 }
+
+declare module "*.css" {
+  const content: string
+
+  export { content }
+}
