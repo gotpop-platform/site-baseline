@@ -16,6 +16,7 @@
     "strict": true,
     "target": "ESNext",
     "typeRoots": ["./types", "./node_modules/@types"],
+    "verbatimModuleSyntax": true,
     "baseUrl": ".",
     "paths": {
       "@/client/*": ["packages/client/*"],
