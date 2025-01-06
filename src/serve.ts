@@ -23,21 +23,21 @@ const ALLOWED_EXTENSIONS = [".js", ".css", ".woff2", ".png", ".jpg", ".svg", ".i
 const MAX_FILE_SIZE = 5 * 1024 * 1024 // 5MB
 
 const ROOT = env.PROJECT_ROOT ?? resolve(__dirname, "../..")
-const ROOT_CLIENT = resolve(ROOT, "packages/client")
+const ROOT_SRC = resolve(ROOT, "src")
 const DIR_PUBLIC = resolve(ROOT, env.npm_package_config_dir_public || "dist")
-const DIR_INPUT = resolve(ROOT_CLIENT, "assets")
+const DIR_INPUT = resolve(ROOT_SRC, "assets")
 const DIR_OUTPUT = resolve(DIR_PUBLIC, "assets")
 
 const buildConfig = {
   entrypoints: [
     // Bun is still not ready to bundle CSS files
-    // join(ROOT_CLIENT, "assets", "styles", "index.css"),
-    join(ROOT_CLIENT, "assets", "scripts", "script.ts"),
-    join(ROOT_CLIENT, "assets", "scripts", "worklets", "worklet.grid.ts"),
-    join(ROOT_CLIENT, "assets", "scripts", "worklets", "worklet.hero.ts"),
+    // join(ROOT_SRC, "assets", "styles", "index.css"),
+    join(ROOT_SRC, "assets", "scripts", "script.ts"),
+    join(ROOT_SRC, "assets", "scripts", "worklets", "worklet.grid.ts"),
+    join(ROOT_SRC, "assets", "scripts", "worklets", "worklet.hero.ts"),
   ],
   outdir: DIR_PUBLIC,
-  root: ROOT_CLIENT,
+  root: ROOT_SRC,
   naming: "[dir]/[name]-[hash].[ext]",
   experimentalCss: true,
   minify: true,
@@ -62,7 +62,7 @@ const serverConfig = {
   hostname: "::",
   port: Number(env.npm_package_config_server_port),
   silent: true,
-  watchPaths: ["packages/client", "packages/types", "packages/server"],
+  watchPaths: ["src/types", "src/blocks", "src/pages", "src/assets"],
   watchPathsExcluded: ["node_modules", ".git", "dist"],
   mimeTypes: MIME_TYPES,
   allowedExtensions: ALLOWED_EXTENSIONS,
