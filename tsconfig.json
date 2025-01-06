@@ -6,7 +6,7 @@
     "jsx": "react",
     "jsxFactory": "jsxFactory",
     "jsxFragmentFactory": "Fragment",
-    "lib": ["dom", "ESNext"],
+    "lib": ["ESNext"],
     "module": "ESNext",
     "moduleDetection": "force",
     "moduleResolution": "node",
