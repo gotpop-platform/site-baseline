@@ -6,7 +6,7 @@
   "module": "packages/server/serve.ts",
   "type": "module",
   "scripts": {
-    "clean": "rm -rf dist node_modules bun.lock packages/*/node_modules packages/*/dist",
+    "clean": "rm -rf dist node_modules bun.lock",
     "dev": "PROJECT_ROOT=$PWD bun run ./src/serve.ts",
     "start": "PROJECT_ROOT=$PWD bun run ./src/serve.ts",
     "typecheck": "bun run tsc"
@@ -23,7 +23,7 @@
     "dir_content": "src/blocks",
     "dir_package": "src",
     "dir_pages": "src/pages",
-    "dir_public": "src/dist"
+    "dir_public": "dist"
   },
   "prettier": {
     "printWidth": 100,
