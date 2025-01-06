@@ -3,7 +3,7 @@
   "workspaces": {
     "": {
       "dependencies": {
-        "@gotpop-platform/package-baseline": "^0.0.34",
+        "@gotpop-platform/package-baseline": "0.0.35",
       },
       "peerDependencies": {
         "@types/bun": "latest",
@@ -11,29 +11,9 @@
         "typescript": "latest",
       },
     },
-    "packages/client": {
-      "name": "client",
-      "version": "1.0.0",
-      "dependencies": {
-        "@gotpop-platform/types": "packages/types",
-      },
-    },
-    "packages/server": {
-      "name": "server",
-      "version": "1.0.0",
-      "dependencies": {
-        "@gotpop-platform/types": "packages/types",
-      },
-    },
-    "packages/types": {
-      "name": "@gotpop-platform/types",
-      "version": "1.0.0",
-    },
   },
   "packages": {
-    "@gotpop-platform/package-baseline": ["@gotpop-platform/package-baseline@0.0.34", "https://npm.pkg.github.com/download/@gotpop-platform/package-baseline/0.0.34/f07d555b4c6c5876a1babed3423f81220bf2b646", { "peerDependencies": { "@types/bun": "latest", "@types/node": "latest", "typescript": "latest" } }, "sha512-H9KnxGbbkAhgYqUsP4blsYfmhQqlAtSZdrswp/pFDHRrqkiadwlyCmcN2fzNiBF1RDH0Kz6YOGn4FO4eeuIs2w=="],
-
-    "@gotpop-platform/types": ["@gotpop-platform/types@workspace:packages/types", {}],
+    "@gotpop-platform/package-baseline": ["@gotpop-platform/package-baseline@0.0.35", "https://npm.pkg.github.com/download/@gotpop-platform/package-baseline/0.0.35/645a997c430d18aeea569f6bfd5a69a1c8f0004f", { "peerDependencies": { "@types/bun": "latest", "@types/node": "latest", "typescript": "latest" } }, "sha512-w3UPYh16ZFJpMtB+cMI9oFXFyDfvXefGVaKXap81qZ+SHij2Bu5TfHouo3ctOVe+GqrFncTrF58YBkHDbqtHWQ=="],
 
     "@types/bun": ["@types/bun@1.1.14", "", { "dependencies": { "bun-types": "1.1.37" } }, "sha512-opVYiFGtO2af0dnWBdZWlioLBoxSdDO5qokaazLhq8XQtGZbY4pY3/JxY8Zdf/hEwGubbp7ErZXoN1+h2yesxA=="],
 
@@ -42,10 +22,6 @@
     "@types/ws": ["@types/ws@8.5.13", "", { "dependencies": { "@types/node": "*" } }, "sha512-osM/gWBTPKgHV8XkTunnegTRIsvF6owmf5w+JtAfOw472dptdm0dlGv4xCt6GwQRcC2XVOvvRE/0bAoQcL2QkA=="],
 
     "bun-types": ["bun-types@1.1.37", "", { "dependencies": { "@types/node": "~20.12.8", "@types/ws": "~8.5.10" } }, "sha512-C65lv6eBr3LPJWFZ2gswyrGZ82ljnH8flVE03xeXxKhi2ZGtFiO4isRKTKnitbSqtRAcaqYSR6djt1whI66AbA=="],
-
-    "client": ["client@workspace:packages/client", { "dependencies": { "@gotpop-platform/types": "packages/types" } }],
-
-    "server": ["server@workspace:packages/server", { "dependencies": { "@gotpop-platform/types": "packages/types" } }],
 
     "typescript": ["typescript@5.7.2", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg=="],
 

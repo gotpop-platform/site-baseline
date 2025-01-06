@@ -42,7 +42,7 @@
   },
   "private": true,
   "bun": {
-    "version": ">=1.1.39"
+    "version": ">=1.1.42"
   },
   "license": "MIT",
   "peerDependencies": {
@@ -51,6 +51,6 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "@gotpop-platform/package-baseline": "^0.0.34"
+    "@gotpop-platform/package-baseline": "0.0.35"
   }
 }
