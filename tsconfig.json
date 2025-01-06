@@ -19,9 +19,7 @@
     "verbatimModuleSyntax": true,
     "baseUrl": ".",
     "paths": {
-      "@/client/*": ["packages/client/*"],
-      "@/server/*": ["packages/server/*"],
-      "@/types/*": ["packages/types/*"]
+      "@/types": ["src/types"]
     },
     "types": ["bun"]
   },

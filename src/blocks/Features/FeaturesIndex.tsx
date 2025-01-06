@@ -1,7 +1,7 @@
 import { ArticleItem, Footer, Tag, jsxFactory, withItems } from "@gotpop-platform/package-baseline"
 import { styleArticlesSurfaceMain, stylesArticlesLayout } from "../Home"
 
-import { BlockDataProps } from "@gotpop-platform/types"
+import type { BlockDataProps } from "@/types"
 import { Layout } from "../Layout"
 
 const ArticleList = withItems(ArticleItem)

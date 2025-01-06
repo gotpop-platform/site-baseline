@@ -6,7 +6,7 @@ import {
 } from "@gotpop-platform/package-baseline"
 import { layoutArticlesSlugContent, layoutArticlesSlugSurface, layoutArticlesSlugToc } from "."
 
-import { BlockDataProps } from "@gotpop-platform/types"
+import type { BlockDataProps } from "@/types"
 import { Layout } from "../Layout"
 
 export const blockPageFeaturePage = async ({

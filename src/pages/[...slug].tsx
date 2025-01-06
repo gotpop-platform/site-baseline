@@ -7,7 +7,7 @@ import {
   homePage,
 } from "../blocks"
 
-import { BlockDataProps } from "@gotpop-platform/types"
+import type { BlockDataProps } from "@/types"
 
 const pageCatch = async (data: BlockDataProps): Promise<any> => {
   const { slug } = data.query

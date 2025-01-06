@@ -8,7 +8,7 @@ import {
 import { getCurrentLevel, getDirectoriesAndSlug } from "../shared"
 import { stylesDocs, stylesDocsBody, stylesDocsNav } from "."
 
-import { BlockDataProps } from "@gotpop-platform/types"
+import type { BlockDataProps } from "@/types"
 import { Layout } from "../Layout"
 
 export const blockPageDocItem = async ({ allContent, query, scriptPaths }: BlockDataProps) => {

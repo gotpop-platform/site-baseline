@@ -1,7 +1,7 @@
 import { Tag, jsxFactory, title } from "@gotpop-platform/package-baseline"
 import { layoutArticlesSlugSurface, stylesBlog } from ".."
 
-import { BlockDataProps } from "@gotpop-platform/types"
+import type { BlockDataProps } from "@/types"
 import { Layout } from "../Layout" // Import Layout component
 
 export const blockNotFoundPage = async (data: BlockDataProps): Promise<any> => {
