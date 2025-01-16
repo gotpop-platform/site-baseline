@@ -1,7 +1,7 @@
 import { createCopyFilesPlugin, startServer } from "@gotpop-platform/package-baseline"
 import { join, resolve } from "path"
 
-import { BuildConfig } from "bun"
+import type { BuildConfig } from "bun"
 import { env } from "process"
 
 const MIME_TYPES = {
