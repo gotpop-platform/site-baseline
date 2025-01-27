@@ -9,3 +9,9 @@ declare module "*.css" {
 
   export { content }
 }
+
+declare module "*.html" {
+  const content: string
+
+  export { content, default }
+}

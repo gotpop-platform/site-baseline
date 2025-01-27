@@ -95,7 +95,7 @@ html {
   /* scrollbar-width: var(--scrollbar-width); */
 
   @media (width >= 768px) {
-    --is-desktop: true;
+    --is-desktop: true !important;
   }
 
   /* &::view-transition-old(slider) {

@@ -17,6 +17,8 @@
     "target": "ESNext",
     "typeRoots": ["./types", "./node_modules/@types"],
     "verbatimModuleSyntax": true,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
     "baseUrl": ".",
     "paths": {
       "@/types": ["src/types"]

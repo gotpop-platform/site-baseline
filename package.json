@@ -8,6 +8,8 @@
   "scripts": {
     "clean": "rm -rf dist node_modules bun.lock",
     "dev": "PROJECT_ROOT=$PWD bun run ./src/serve.ts",
+    "serve": "PROJECT_ROOT=$PWD bun run ./src/serve2.ts",
+    "build": "PROJECT_ROOT=$PWD bun run ./pipeline/build.ts",
     "start": "PROJECT_ROOT=$PWD bun run ./src/serve.ts",
     "typecheck": "bun run tsc"
   },
@@ -42,15 +44,16 @@
   },
   "private": true,
   "bun": {
-    "version": ">=1.1.42"
+    "version": ">=1.2.0"
   },
   "license": "MIT",
   "peerDependencies": {
-    "@types/bun": "latest",
+    "@types/bun": "^1.2.0",
     "@types/node": "latest",
     "typescript": "latest"
   },
   "dependencies": {
-    "@gotpop-platform/package-baseline": "0.0.35"
+    "@gotpop-platform/package-baseline": "0.0.35",
+    "@mdx-js/esbuild": "^3.1.0"
   }
 }
